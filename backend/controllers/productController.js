@@ -131,3 +131,33 @@ exports.updateProduct = async (req, res, next) => {
     })
 
 }
+
+// Delete Product   =>   /api/v1/admin/product/:id
+exports.deleteProduct = async (req, res, next) => {
+
+    const product = await Product.findById(req.params.id);
+
+    if (!product) {
+        return res.status(404).json({
+            success: false,
+            message: 'Product not found'
+        })
+    }
+
+    // if (!product) {
+    //     return next(new ErrorHandler('Product not found', 404));
+    // }
+
+    // // Deleting images associated with the product
+    // for (let i = 0; i < product.images.length; i++) {
+    //     const result = await cloudinary.v2.uploader.destroy(product.images[i].public_id)
+    // }
+
+    await product.remove();
+
+    res.status(200).json({
+        success: true,
+        message: 'Product is deleted.'
+    })
+
+}
