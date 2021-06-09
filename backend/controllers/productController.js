@@ -1,4 +1,5 @@
 const Product = require('../models/product')
+const ErrorHandler = require('../utils/errorHandler');
 
 // Create new product   =>   /api/v1/admin/product/new
 exports.newProduct = async (req, res, next) => {
@@ -51,15 +52,8 @@ exports.getSingleProduct = async (req, res, next) => {
 
     const product = await Product.findById(req.params.id);
 
-    // if (!product) {
-    //     return next(new ErrorHandler('Product not found', 404));
-    // }
-
     if (!product) {
-        return res.status(404).json({
-            success: false,
-            message: 'Product not found'
-        })
+        return next(new ErrorHandler('Product not found', 404));
     }
 
 
@@ -75,15 +69,8 @@ exports.updateProduct = async (req, res, next) => {
 
     let product = await Product.findById(req.params.id);
 
-    // if (!product) {
-    //     return next(new ErrorHandler('Product not found', 404));
-    // }
-
     if (!product) {
-        return res.status(404).json({
-            success: false,
-            message: 'Product not found'
-        })
+        return next(new ErrorHandler('Product not found', 404));
     }
 
     // let images = []
@@ -138,15 +125,8 @@ exports.deleteProduct = async (req, res, next) => {
     const product = await Product.findById(req.params.id);
 
     if (!product) {
-        return res.status(404).json({
-            success: false,
-            message: 'Product not found'
-        })
+        return next(new ErrorHandler('Product not found', 404));
     }
-
-    // if (!product) {
-    //     return next(new ErrorHandler('Product not found', 404));
-    // }
 
     // // Deleting images associated with the product
     // for (let i = 0; i < product.images.length; i++) {
