@@ -36,3 +36,9 @@ npm run seeder
 4. [Stripe](https:stripe.com)
 5. [PayPal](https://paypal.com)
 6. [Github](https://github.com)
+
+### For Email services you can choose the following services
+
+1. [Mailtrp](https://mailtrap.io) - This is only for testing purposes
+2. [SendGrid](https://sendgrid.com/)
+3. [Elastic Email](https://elasticemail.com)
