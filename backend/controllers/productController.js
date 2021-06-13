@@ -40,16 +40,19 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
 exports.getProducts = catchAsyncErrors(async (req, res, next) => {
   // return next(new ErrorHandler('My Error', 400))
 
-  const resPerPage = 8;
+  const resPerPage = 4;
 
   const productsCount = await Product.countDocuments();
 
   const apiFeatures = new APIFeatures(Product.find(), req.query)
     .search()
     .filter()
-    .pagination(resPerPage);
 
-  const products = await apiFeatures.query;
+    let products = await apiFeatures.query;
+    let filteredProductsCount = products.length;
+
+    apiFeatures.pagination(resPerPage)
+    products = await apiFeatures.query;
 
   // test delay for loading products
   // setTimeout(() => {
@@ -63,6 +66,8 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
     res.status(200).json({
       success: true,
       productsCount,
+      resPerPage,
+      filteredProductsCount,
       products,
     });
 });
