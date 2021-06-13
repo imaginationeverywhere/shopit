@@ -6,6 +6,7 @@ import Loader from '../layout/Loader';
 import MetaData from '../layout/MetaData';
 import { getProductDetails } from '../../actions/productActions';
 import { useAlert } from 'react-alert';
+import { addItemToCart } from '../../actions/cartActions';
 
 const ProductDetails = ({ match }) => {
   const [quantity, setQuantity] = useState(1);
@@ -24,6 +25,11 @@ const ProductDetails = ({ match }) => {
       return alert.error(error);
     }
   }, [dispatch, error, match.params.id, alert]);
+
+  const addToCart = () => {
+    dispatch(addItemToCart(match.params.id, quantity));
+    alert.success('Item Added to Cart');
+  };
 
   const increaseQty = () => {
     const count = document.querySelector('.count');
@@ -103,8 +109,10 @@ const ProductDetails = ({ match }) => {
                 type='button'
                 id='cart_btn'
                 className='btn btn-primary d-inline ml-4'
+                disabled={product.stock === 0}
+                onClick={addToCart}
               >
-                Add to Cart{' '}
+                Add to Cart
               </button>
 
               <hr />
