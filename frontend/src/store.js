@@ -4,7 +4,8 @@ import {
   productsReducer,
 } from './reducers/productReducers';
 
-import { authReducer, userReducer, forgotPasswordReducer } from './reducers/userReducers'
+import { authReducer, userReducer, forgotPasswordReducer } from './reducers/userReducers';
+import { cartReducer } from './reducers/cartReducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
@@ -14,6 +15,7 @@ const reducer = combineReducers({
   auth: authReducer,
   user: userReducer,
   forgotPassword: forgotPasswordReducer,
+  cart: cartReducer,
 });
 
 let initialState = {};
