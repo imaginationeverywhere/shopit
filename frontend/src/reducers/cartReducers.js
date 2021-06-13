@@ -1,26 +1,38 @@
-import { ADD_TO_CART } from '../constants/cartConstants'
+import { ADD_TO_CART, REMOVE_ITEM_CART } from '../constants/cartConstants';
 
-export const cartReducer = (state = { cartItems: [], shippingInfo: {} }, action) => {
-    switch (action.type) {
+export const cartReducer = (
+  state = { cartItems: [], shippingInfo: {} },
+  action
+) => {
+  switch (action.type) {
+    case ADD_TO_CART:
+      const item = action.payload;
 
-        case ADD_TO_CART:
-            const item = action.payload;
+      const isItemExist = state.cartItems.find(
+        (i) => i.product === item.product
+      );
 
-            const isItemExist = state.cartItems.find(i => i.product === item.product)
+      if (isItemExist) {
+        return {
+          ...state,
+          cartItems: state.cartItems.map((i) =>
+            i.product === isItemExist.product ? item : i
+          ),
+        };
+      } else {
+        return {
+          ...state,
+          cartItems: [...state.cartItems, item],
+        };
+      }
 
-            if (isItemExist) {
-                return {
-                    ...state,
-                    cartItems: state.cartItems.map(i => i.product === isItemExist.product ? item : i)
-                }
-            } else {
-                return {
-                    ...state,
-                    cartItems: [...state.cartItems, item]
-                }
-            }
+    case REMOVE_ITEM_CART:
+      return {
+        ...state,
+        cartItems: state.cartItems.filter((i) => i.product !== action.payload),
+      };
 
-        default:
-            return state
-    }
-}
+    default:
+      return state;
+  }
+};
