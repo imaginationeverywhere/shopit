@@ -1,40 +1,44 @@
 import React, { Fragment } from 'react';
 
+import { Link } from 'react-router-dom';
+
 const Header = () => {
   return (
     <Fragment>
-      <nav class='navbar row'>
-        <div class='col-12 col-md-3'>
-          <div class='navbar-brand'>
-            <img src='/images/shopit_logo.png' alt='Shop IT Logo' />
+      <nav className='navbar row'>
+        <div className='col-12 col-md-3'>
+          <div className='navbar-brand'>
+            <Link to='/'>
+              <img src='/images/shopit_logo.png' alt='' />
+            </Link>
           </div>
         </div>
 
-        <div class='col-12 col-md-6 mt-2 mt-md-0'>
-          <div class='input-group'>
+        <div className='col-12 col-md-6 mt-2 mt-md-0'>
+          <div className='input-group'>
             <input
               type='text'
               id='search_field'
-              class='form-control'
+              className='form-control'
               placeholder='Enter Product Name ...'
             />
-            <div class='input-group-append'>
-              <button id='search_btn' class='btn'>
-                <i class='fa fa-search' aria-hidden='true'></i>
+            <div className='input-group-append'>
+              <button id='search_btn' className='btn'>
+                <i className='fa fa-search' aria-hidden='true'></i>
               </button>
             </div>
           </div>
         </div>
 
-        <div class='col-12 col-md-3 mt-4 mt-md-0 text-center'>
-          <button class='btn' id='login_btn'>
+        <div className='col-12 col-md-3 mt-4 mt-md-0 text-center'>
+          <button className='btn' id='login_btn'>
             Login
           </button>
 
-          <span id='cart' class='ml-3'>
+          <span id='cart' className='ml-3'>
             Cart
           </span>
-          <span class='ml-1' id='cart_count'>
+          <span className='ml-1' id='cart_count'>
             2
           </span>
         </div>
