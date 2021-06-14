@@ -24,6 +24,7 @@ import OrderSuccess from './components/cart/OrderSuccess';
 
 // Order Imports
 import ListOrders from './components/order/ListOrders';
+import OrderDetails from './components/order/OrderDetails';
 
 // Product imports
 import ProductDetails from './components/product/ProductDetails';
@@ -87,6 +88,7 @@ function App() {
           />
 
           <ProtectedRoute path='/orders/me' component={ListOrders} exact />
+          <ProtectedRoute path="/order/:id" component={OrderDetails} exact />
         </div>
         <Footer />
       </div>
