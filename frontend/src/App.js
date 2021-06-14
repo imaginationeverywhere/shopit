@@ -17,7 +17,8 @@ import NewPassword from './components/user/NewPassword';
 
 // Cart Imports
 import Cart from './components/cart/Cart';
-import Shipping from './components/cart/Shipping'
+import Shipping from './components/cart/Shipping';
+import ConfirmOrder from './components/cart/ConfirmOrder';
 
 // Product imports
 import ProductDetails from './components/product/ProductDetails';
@@ -44,6 +45,7 @@ function App() {
 
           <Route path="/cart" component={Cart} exact />
           <ProtectedRoute path="/shipping" component={Shipping} />
+          <ProtectedRoute path="/confirm" component={ConfirmOrder} exact />
 
           <Route path='/login' component={Login} />
           <Route path='/register' component={Register} />
