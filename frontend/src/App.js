@@ -17,6 +17,7 @@ import NewPassword from './components/user/NewPassword';
 
 // Cart Imports
 import Cart from './components/cart/Cart';
+import Shipping from './components/cart/Shipping'
 
 // Product imports
 import ProductDetails from './components/product/ProductDetails';
@@ -37,11 +38,12 @@ function App() {
       <div className='App'>
         <Header />
         <div className='container container-fluid'>
-          <Route path='/' component={Home} exact />
-          <Route path='/search/:keyword' component={Home} />
-          <Route path='/product/:id' component={ProductDetails} exact />
+        <Route path="/" component={Home} exact />
+          <Route path="/search/:keyword" component={Home} />
+          <Route path="/product/:id" component={ProductDetails} exact />
 
-          <Route path='/cart' component={Cart} exact />
+          <Route path="/cart" component={Cart} exact />
+          <ProtectedRoute path="/shipping" component={Shipping} />
 
           <Route path='/login' component={Login} />
           <Route path='/register' component={Register} />
