@@ -21,6 +21,7 @@ import {
   myOrdersReducer,
   orderDetailsReducer,
   allOrdersReducer,
+  orderReducer,
 } from './reducers/orderReducers';
 
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -41,6 +42,7 @@ const reducer = combineReducers({
   allUsers: allUsersReducer,
   newProduct: newProductReducer,
   product: productReducer,
+  order: orderReducer,
 });
 
 let initialState = {
