@@ -31,6 +31,7 @@ import ProductDetails from './components/product/ProductDetails';
 
 // Admin Imports
 import Dashboard from './components/admin/Dashboard';
+import ProductsList from './components/admin/ProductsList';
 import NewProduct from './components/admin/NewProduct';
 
 import ProtectedRoute from './components/route/ProtectedRoute';
@@ -99,9 +100,10 @@ function App() {
         </div>
 
         <ProtectedRoute path="/dashboard" isAdmin={true} component={Dashboard} exact />
+        <ProtectedRoute path="/admin/products" isAdmin={true} component={ProductsList} exact />
         <ProtectedRoute path="/admin/product" isAdmin={true} component={NewProduct} exact />
 
-        
+
         {!loading && (!isAuthenticated || user.role !== 'admin') && (
           <Footer />
         )}
