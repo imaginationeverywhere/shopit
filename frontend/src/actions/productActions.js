@@ -21,6 +21,9 @@ import {
   UPDATE_PRODUCT_REQUEST,
   UPDATE_PRODUCT_SUCCESS,
   UPDATE_PRODUCT_FAIL,
+  GET_REVIEWS_REQUEST,
+  GET_REVIEWS_SUCCESS,
+  GET_REVIEWS_FAIL,
 } from '../constants/productConstants';
 
 import axios from 'axios';
@@ -54,29 +57,31 @@ export const getProducts =
 // Update Product (ADMIN)
 export const updateProduct = (id, productData) => async (dispatch) => {
   try {
+    dispatch({ type: UPDATE_PRODUCT_REQUEST });
 
-      dispatch({ type: UPDATE_PRODUCT_REQUEST })
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
 
-      const config = {
-          headers: {
-              'Content-Type': 'application/json'
-          }
-      }
+    const { data } = await axios.put(
+      `/api/v1/admin/product/${id}`,
+      productData,
+      config
+    );
 
-      const { data } = await axios.put(`/api/v1/admin/product/${id}`, productData, config)
-
-      dispatch({
-          type: UPDATE_PRODUCT_SUCCESS,
-          payload: data.success
-      })
-
+    dispatch({
+      type: UPDATE_PRODUCT_SUCCESS,
+      payload: data.success,
+    });
   } catch (error) {
-      dispatch({
-          type: UPDATE_PRODUCT_FAIL,
-          payload: error.response.data.message
-      })
+    dispatch({
+      type: UPDATE_PRODUCT_FAIL,
+      payload: error.response.data.message,
+    });
   }
-}
+};
 
 export const getProductDetails = (id) => async (dispatch) => {
   try {
@@ -165,6 +170,28 @@ export const getAdminProducts = () => async (dispatch) => {
     });
   }
 };
+
+// Get product reviews
+export const getProductReviews = (id) => async (dispatch) => {
+  try {
+
+      dispatch({ type: GET_REVIEWS_REQUEST })
+
+      const { data } = await axios.get(`/api/v1/reviews?id=${id}`)
+
+      dispatch({
+          type: GET_REVIEWS_SUCCESS,
+          payload: data.reviews
+      })
+
+  } catch (error) {
+
+      dispatch({
+          type: GET_REVIEWS_FAIL,
+          payload: error.response.data.message
+      })
+  }
+}
 
 // Delete product (Admin)
 export const deleteProduct = (id) => async (dispatch) => {
