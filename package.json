@@ -37,6 +37,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.3",
     "nodemailer": "^6.4.16",
+    "shippo": "^1.6.0",
     "stripe": "^8.128.0",
     "validator": "^13.1.17"
   },
