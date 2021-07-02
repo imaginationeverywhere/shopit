@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MDBDataTableV5 } from "mdbreact";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import "mdbreact/dist/css/mdb.css";
 
 import Loader from "../layout/Loader";
 import { getCarriers, setSelectedCarrier } from "../../actions/shipmentActions";
@@ -50,8 +52,8 @@ const CarrierList = () => {
         field: "amountWithCurrency",
       },
       {
-        label: "Days",
-        field: "days",
+        label: "Estimated Days",
+        field: "estimated_days",
       },
       {
         label: "Service Type",
@@ -79,7 +81,7 @@ const CarrierList = () => {
   }, [carriers]);
 
   return (
-    <div className="row d-flex justify-content-between">
+    <div id="carrier-list" className="row d-flex justify-content-between">
       {loading ? (
         <Loader />
       ) : (

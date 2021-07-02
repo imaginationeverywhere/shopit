@@ -18,10 +18,16 @@ const ProcessOrder = ({ match }) => {
     const dispatch = useDispatch();
 
     const { loading, order = {} } = useSelector(state => state.orderDetails)
-    const { shippingInfo, orderItems, paymentInfo, user, totalPrice, orderStatus } = order
+    const { shippingInfo, orderItems, paymentInfo, user, totalPrice, orderStatus = "" } = order
     const { error, isUpdated } = useSelector(state => state.order)
 
     const orderId = match.params.id;
+
+    useEffect(() => {
+        if (orderStatus.length) {
+            setStatus(orderStatus)
+        }
+    }, [orderStatus])
 
     useEffect(() => {
 

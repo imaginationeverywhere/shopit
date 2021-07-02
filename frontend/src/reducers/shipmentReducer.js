@@ -19,7 +19,7 @@ const carriers = (state = { data: [] }, action) => {
 const selectedCarrier = (state = {}, action) => {
   switch (action.type) {
     case SET_SELECTED_CARRIER_REQUEST:
-      return { ...state, carrier: action.payload };
+      return { ...state, ...action.payload };
     default:
       return state;
   }

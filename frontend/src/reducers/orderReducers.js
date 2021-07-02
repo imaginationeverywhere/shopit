@@ -28,25 +28,30 @@ export const newOrderReducer = (state = {}, action) => {
         case CREATE_ORDER_REQUEST:
             return {
                 ...state,
-                loading: true
+                loading: true,
+                success: false
             }
 
         case CREATE_ORDER_SUCCESS:
             return {
                 loading: false,
+                success: true,
                 order: action.payload
             }
 
         case CREATE_ORDER_FAIL:
             return {
                 loading: false,
+                success: false,
                 error: action.payload
             }
 
         case CLEAR_ERRORS:
             return {
                 ...state,
-                error: null
+                error: null,
+                success: false,
+                loading: false
             }
 
         default:

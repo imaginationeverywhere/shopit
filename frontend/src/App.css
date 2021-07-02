@@ -614,3 +614,7 @@ ul.CTAs a {
   font-size: 0.8rem;
   color: grey;
 }
+
+#carrier-list .mdb-datatable.dt-bootstrap4 {
+  width: 100%
+}

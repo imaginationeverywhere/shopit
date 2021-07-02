@@ -8,8 +8,8 @@ import { useSelector } from 'react-redux'
 import CarrierList from './CarrierList';
 
 const ConfirmOrder = ({ history }) => {
-  const { carrier = {} } = useSelector(
-    ({ shipment: { selectedCarrier = {} } = {} }) => selectedCarrier
+  const selectedCarrier = useSelector(
+    ({ shipment: { selectedCarrier = {} } = {} }) => selectedCarrier || {}
   );
   const [shippingPrice, setShippingPrice] = useState(0);
 
@@ -23,10 +23,10 @@ const ConfirmOrder = ({ history }) => {
   const totalPrice = (itemsPrice + shippingPrice + taxPrice).toFixed(2)
 
   useEffect(() => {
-    if (carrier.amount_local) {
-      setShippingPrice(parseInt(carrier.amount_local, 10));
+    if (selectedCarrier.amount_local) {
+      setShippingPrice(parseFloat(selectedCarrier.amount_local));
     }
-  }, [carrier]);
+  }, [selectedCarrier]);
 
   const processToPayment = () => {
     const data = {
