@@ -1,45 +1,48 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MDBDataTableV5 } from "mdbreact";
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import "mdbreact/dist/css/mdb.css";
 
 import Loader from "../layout/Loader";
 import { getCarriers, setSelectedCarrier } from "../../actions/shipmentActions";
+import Table from "../Common/Table";
 
-const TableWithCheckbox = ({ dataTable }) => {
-  const dispatch = useDispatch();
+// const TableWithCheckbox = ({ dataTable }) => {
+//   const dispatch = useDispatch();
 
-  const handleCheckboxClick = (e) => {
-    delete e.checkbox;
-    dispatch(setSelectedCarrier(e));
-  };
-  return (
-    <MDBDataTableV5
-      data={dataTable}
-      hover
-      entriesOptions={[5, 20, 25]}
-      entries={5}
-      pagesAmount={4}
-      checkbox
-      headCheckboxID="id2"
-      bodyCheckboxID="checkboxes2"
-      getValueCheckBox={(e) => {
-        handleCheckboxClick(e);
-      }}
-    />
-  );
-};
+//   const handleCheckboxClick = (e) => {
+//     // delete e.checkbox;
+//     dispatch(setSelectedCarrier(e));
+//   };
+//   return (
+//     <MDBDataTableV5
+//       data={dataTable}
+//       hover
+//       entriesOptions={[5, 20, 25]}
+//       entries={5}
+//       pagesAmount={4}
+//       checkbox
+//       headCheckboxID="id2"
+//       bodyCheckboxID="checkboxes2"
+//       getValueCheckBox={(e) => {
+//         handleCheckboxClick(e);
+//       }}
+//     />
+//   );
+// };
 
 const CarrierList = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getCarriers());
   }, []);
 
-  const { data: carriers, loading = true } = useSelector(
-    ({ shipment: { carriers = {} } = {} }) => carriers
-  );
+  const {
+    carriers: { data: carriers, loading = true } = {},
+    selectedCarrier = {},
+  } = useSelector(({ shipment = {} }) => shipment);
 
   const [dataTable, setDataTable] = useState({
     columns: [
@@ -80,12 +83,25 @@ const CarrierList = () => {
     }
   }, [carriers]);
 
+  const handleCheckboxClick = (selectedCarrier) => {
+    dispatch(setSelectedCarrier(selectedCarrier));
+  };
+
   return (
-    <div id="carrier-list" className="row d-flex justify-content-between">
+    <div id="carrier-list">
       {loading ? (
         <Loader />
       ) : (
-        dataTable.rows.length && <TableWithCheckbox dataTable={dataTable} />
+        dataTable.rows.length && (
+          <Table
+            tableData={dataTable}
+            checkbox
+            paginated
+            perPage={1}
+            handleCheckboxClick={handleCheckboxClick}
+            selectedRow={selectedCarrier}
+          />
+        )
       )}
     </div>
   );

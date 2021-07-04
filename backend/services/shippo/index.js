@@ -1,6 +1,31 @@
-const shippo = require('shippo')(process.env.SHIPPO_TOKEN)
-const Constants = require('../../utils/constants')
-const Constant = require('../../utils/constants')
+const shippo = require("shippo")(process.env.SHIPPO_TOKEN);
+const Constants = require("../../utils/constants");
+const Constant = require("../../utils/constants");
+
+const rateKeyMapper = (rate) =>
+  (({
+    amount,
+    amount_local,
+    currency,
+    currency_local,
+    duration_terms,
+    estimated_days,
+    provider,
+    servicelevel,
+    shipment,
+    carrier_account,
+  }) => ({
+    amount,
+    amount_local,
+    currency,
+    currency_local,
+    duration_terms,
+    estimated_days,
+    provider,
+    servicelevel,
+    shipment,
+    carrier_account,
+  }))(rate);
 
 const getCarriers = async (addressFrom = {}, addressTo = {}, parcel = {}) => {
   try {
@@ -8,63 +33,40 @@ const getCarriers = async (addressFrom = {}, addressTo = {}, parcel = {}) => {
       address_from: addressFrom,
       address_to: addressTo,
       parcels: [parcel],
-      async: false
-    })
+      async: false,
+    });
+    console.log("the response is=======", response);
     if (response.status === Constant.SUCCESS) {
-      const { rates = [] } = response
-      return rates.map(rate => {
-        return (({
-          amount,
-          amount_local,
-          currency,
-          currency_local,
-          duration_terms,
-          estimated_days,
-          provider,
-          servicelevel,
-          shipment,
-          carrier_account
-        }) => ({
-          amount,
-          amount_local,
-          currency,
-          currency_local,
-          duration_terms,
-          estimated_days,
-          provider,
-          servicelevel,
-          shipment,
-          carrier_account
-        }))(rate)
-      })
+      const { rates = [] } = response;
+      return rates.map((rate) => rateKeyMapper(rate));
     }
   } catch (error) {
-    console.log('the error is; =====', error)
+    console.log("the error is; =====", error);
   }
-}
+};
 
 const createShipment = async ({ shipmentId, carrierId, serviceLevelToken }) => {
   try {
-    const shipment = await shippo.shipment.retrieve(shipmentId)
+    const shipment = await shippo.shipment.retrieve(shipmentId);
     const response = await shippo.transaction.create({
       shipment: shipment,
       carrier_account: carrierId,
-      servicelevel_token: serviceLevelToken
-    })
+      servicelevel_token: serviceLevelToken,
+    });
 
     if (response.status === Constants.ERROR) {
-      throw (response.messages)
+      throw response.messages;
     }
-    return response
+    return response;
   } catch (error) {
-    console.log('Error is ShippoService.createShipment ----', error)
-    throw (error)
+    console.log("Error is ShippoService.createShipment ----", error);
+    throw error;
   }
-}
+};
 
 const ShippoService = {
   getCarriers,
-  createShipment
-}
+  createShipment,
+};
 
-module.exports = ShippoService
+module.exports = ShippoService;
