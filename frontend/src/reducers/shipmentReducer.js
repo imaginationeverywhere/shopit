@@ -10,7 +10,13 @@ const carriers = (state = { data: [] }, action) => {
     case GET_SHIPMENT_CARRIERS_REQUEST:
       return { ...state, loading: true };
     case GET_SHIPMENT_CARRIERS_SUCCESS:
-      return { ...state, data: action.payload.carriers, loading: false };
+      const updatedCarrier = {
+        ...state,
+        data: action.payload.carriers,
+        loading: false,
+      };
+      localStorage.setItem("carriers", JSON.stringify(updatedCarrier));
+      return updatedCarrier;
     default:
       return state;
   }
@@ -18,8 +24,12 @@ const carriers = (state = { data: [] }, action) => {
 
 const selectedCarrier = (state = {}, action) => {
   switch (action.type) {
-    case SET_SELECTED_CARRIER_REQUEST:
-      return { ...state, ...action.payload };
+    case SET_SELECTED_CARRIER_REQUEST: {
+      const updatedState = { ...state, ...action.payload };
+      localStorage.setItem("selectedCarrier", JSON.stringify(updatedState));
+
+      return updatedState;
+    }
     default:
       return state;
   }

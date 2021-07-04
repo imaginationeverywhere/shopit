@@ -57,8 +57,6 @@ const Table = ({
     handleCheckboxClick(row);
   };
 
-  console.log("the checkedRow is======", checkedRow);
-
   return (
     <Fragment>
       <div className="table-responsive">
