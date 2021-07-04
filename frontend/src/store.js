@@ -61,14 +61,14 @@ let initialState = {
     shippingInfo: localStorage.getItem("shippingInfo")
       ? JSON.parse(localStorage.getItem("shippingInfo"))
       : {},
-    shipment: {
-      carriers: localStorage.getItem("carriers")
-        ? localStorage.getItem("carriers")
-        : {},
-      selectedCarrier: localStorage.getItem("selectedCarrier")
-        ? localStorage.getItem("selectedCarrier")
-        : {},
-    },
+  },
+  shipment: {
+    carriers: localStorage.getItem("carriers")
+      ? JSON.parse(localStorage.getItem("carriers"))
+      : {},
+    selectedCarrier: localStorage.getItem("selectedCarrier")
+      ? JSON.parse(localStorage.getItem("selectedCarrier"))
+      : {},
   },
 };
 

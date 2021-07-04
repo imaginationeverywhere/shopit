@@ -20,6 +20,7 @@ const Table = ({
   perPage = 5,
   searchable,
   handleCheckboxClick,
+  selectedRow = {},
 }) => {
   const { columns = [], rows = [] } = tableData;
   const [lastPage, setLastPage] = useState(Math.ceil(rows.length / perPage));
@@ -65,13 +66,15 @@ const Table = ({
             <tr>
               {checkbox && <th scope="col"></th>}
               {columns.map((column) => (
-                <th scope="col">{column.label}</th>
+                <th scope="col" key={column.label}>
+                  {column.label}
+                </th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {paginatedRows.map((row) => (
-              <tr>
+            {paginatedRows.map((row, index) => (
+              <tr key={index}>
                 {checkbox && (
                   <td>
                     <Checkbox
@@ -82,7 +85,7 @@ const Table = ({
                   </td>
                 )}
                 {columns.map((column) => (
-                  <td>{row[column.field]}</td>
+                  <td key={column.field}>{row[column.field]}</td>
                 ))}
               </tr>
             ))}

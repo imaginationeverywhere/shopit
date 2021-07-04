@@ -35,7 +35,6 @@ const getCarriers = async (addressFrom = {}, addressTo = {}, parcel = {}) => {
       parcels: [parcel],
       async: false,
     });
-    console.log("the response is=======", response);
     if (response.status === Constant.SUCCESS) {
       const { rates = [] } = response;
       return rates.map((rate) => rateKeyMapper(rate));
