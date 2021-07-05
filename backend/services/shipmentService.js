@@ -8,9 +8,9 @@ const updateShipmentTracking = async ({
   trackingHistory,
 }) => {
   try {
-    // const shipment = await Shipment.findOne({ trackingNo })
+    // const shipment = await Shipment.findOne({ trackingNo }) // NOTE: please uncomment me whenever in production mode
 
-    const shipment = await Shipment.findById("60e34bd029980591a26de19a"); // testing the order status update
+    const shipment = await Shipment.findById("60e34bd029980591a26de19a"); //NOTE: this only for testing the order status update, please remove once in prod
     shipment.status = status;
     shipment.trackingHistory = trackingHistory;
 
