@@ -28,8 +28,11 @@ const parcel = {
 };
 
 exports.getCarriers = catchAsyncErrors(async (req, res) => {
+  /**
+   * Ideally addressTo would come from req.body, so as parcel details
+   */
   const carriers =
     (await ShippoService.getCarriers(addressFrom, addressTo, parcel)) || [];
-  const advancedCarriers = carriers.concat([...carriers]).concat([...carriers]);
+
   res.status(200).json({ success: true, carriers });
 });

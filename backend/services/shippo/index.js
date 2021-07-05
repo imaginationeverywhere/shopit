@@ -1,6 +1,5 @@
 const shippo = require("shippo")(process.env.SHIPPO_TOKEN);
 const Constants = require("../../utils/constants");
-const Constant = require("../../utils/constants");
 
 const rateKeyMapper = (rate) =>
   (({
@@ -35,7 +34,7 @@ const getCarriers = async (addressFrom = {}, addressTo = {}, parcel = {}) => {
       parcels: [parcel],
       async: false,
     });
-    if (response.status === Constant.SUCCESS) {
+    if (response.status === Constants.SUCCESS) {
       const { rates = [] } = response;
       return rates.map((rate) => rateKeyMapper(rate));
     }

@@ -3,6 +3,7 @@ const app = express();
 
 const cookieParser = require('cookie-parser')
 const fileUpload = require('express-fileupload')
+const Constants = require('./utils/constants');
 
 // const dotenv = require('dotenv');
 const path = require('path')
@@ -29,12 +30,12 @@ const order = require('./routes/order');
 const shipment = require('./routes/shipment');
 const webhooks = require('./routes/webhooks');
 
-app.use('/api/v1', products);
-app.use('/api/v1', auth)
-app.use('/api/v1', payment)
-app.use('/api/v1', order)
-app.use('/api/v1', shipment);
-app.use('/api/v1', webhooks)
+app.use(Constants.BASE_URL, products);
+app.use(Constants.BASE_URL, auth)
+app.use(Constants.BASE_URL, payment)
+app.use(Constants.BASE_URL, order)
+app.use(Constants.BASE_URL, shipment);
+app.use(Constants.BASE_URL, webhooks)
 
 if (process.env.NODE_ENV === 'PRODUCTION') {
   app.use(express.static(path.join(__dirname, '../frontend/build')))

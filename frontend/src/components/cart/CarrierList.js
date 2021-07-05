@@ -32,11 +32,12 @@ import Table from "../Common/Table/index";
 //   );
 // };
 
-const CarrierList = () => {
+const CarrierList = ({ cartItems, shippingInfo }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getCarriers());
+    const productIds = cartItems.map((item) => item.product);
+    dispatch(getCarriers({ productIds, shippingInfo }));
   }, []);
 
   const {

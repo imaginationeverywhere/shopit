@@ -126,7 +126,7 @@ const ConfirmOrder = ({ history }) => {
           </div>
         </div>
       </div>
-      <CarrierList />
+      <CarrierList cartItems={cartItems} shippingInfo={shippingInfo} />
     </Fragment>
   );
 };
