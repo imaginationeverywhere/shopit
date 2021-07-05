@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
+import TableFooter from "./TableFooter";
 
 const Checkbox = ({ value, handleCheckboxChange, row }) => {
   const { servicelevel: { token: valueToken } = {} } = value;
@@ -93,47 +94,13 @@ const Table = ({
         </table>
       </div>
       {(paginated || searchable) && (
-        <div className="table-footer">
-          {searchable && (
-            <div>
-              <input type="text" placeholder="search" />
-            </div>
-          )}
-          {paginated && (
-            <div>
-              <button
-                className="btn btn-small btn-outline-info page-change"
-                disabled={paginatedPage <= 1}
-                onClick={() =>
-                  handlePageChange({
-                    target: { name: "paginatedPage", value: paginatedPage - 1 },
-                  })
-                }
-              >
-                Prev
-              </button>
-              <input
-                type="text"
-                value={paginatedPage}
-                name="paginatedPage"
-                onChange={handlePageChange}
-                className="page-input"
-              />
-              <span>/{lastPage}</span>
-              <button
-                className="btn btn-small btn-outline-info page-change"
-                disabled={paginatedPage === lastPage}
-                onClick={() =>
-                  handlePageChange({
-                    target: { name: "paginatedPage", value: paginatedPage + 1 },
-                  })
-                }
-              >
-                Next
-              </button>
-            </div>
-          )}
-        </div>
+        <TableFooter
+          paginatedPage={paginatedPage}
+          handlePageChange={handlePageChange}
+          lastPage={lastPage}
+          searchable={searchable}
+          paginated={paginated}
+        />
       )}
     </Fragment>
   );

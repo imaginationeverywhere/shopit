@@ -6,7 +6,7 @@ import "mdbreact/dist/css/mdb.css";
 
 import Loader from "../layout/Loader";
 import { getCarriers, setSelectedCarrier } from "../../actions/shipmentActions";
-import Table from "../Common/Table";
+import Table from "../Common/Table/index";
 
 // const TableWithCheckbox = ({ dataTable }) => {
 //   const dispatch = useDispatch();
@@ -97,7 +97,7 @@ const CarrierList = () => {
             tableData={dataTable}
             checkbox
             paginated
-            perPage={1}
+            perPage={10}
             handleCheckboxClick={handleCheckboxClick}
             selectedRow={selectedCarrier}
           />
