@@ -4,6 +4,8 @@ const Constants = {
   PROCESSING: "Processing",
   SHIPPED: "Shipped",
   DELIVERED: "Delivered",
+  RETURNED: "Returned",
+  FAILURE: "Failure",
   BASE_URL: "/api/v1",
 };
 

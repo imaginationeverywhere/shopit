@@ -72,6 +72,8 @@ const STATUS_POS_TO_ORDER_STATUS = {
   0: Constants.PROCESSING,
   1: Constants.SHIPPED,
   2: Constants.DELIVERED,
+  3: Constants.RETURNED,
+  4: Constants.FAILURE,
 };
 
 const updateOrderStatus = async (orderId, status) => {
