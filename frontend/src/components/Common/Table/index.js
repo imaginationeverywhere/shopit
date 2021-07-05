@@ -1,17 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import TableFooter from "./TableFooter";
-
-const Checkbox = ({ value, handleCheckboxChange, row }) => {
-  const { servicelevel: { token: valueToken } = {} } = value;
-  const { servicelevel: { token: rowToken } = {} } = row;
-  return (
-    <input
-      type="checkbox"
-      checked={valueToken && valueToken === rowToken}
-      onChange={() => handleCheckboxChange(row)}
-    />
-  );
-};
+import Checkbox from "./Checkbox";
+import Columns from "./Columns";
 
 const Table = ({
   tableData,
@@ -24,21 +14,28 @@ const Table = ({
   selectedRow = {},
 }) => {
   const { columns = [], rows = [] } = tableData;
-  const [lastPage, setLastPage] = useState(Math.ceil(rows.length / perPage));
+  const [allRows, setAllRows] = useState(rows);
+  const [lastPage, setLastPage] = useState(Math.ceil(allRows.length / perPage));
   const [paginatedPage, setPaginatedPage] = useState(page);
   const [paginatedRows, setPaginatedRows] = useState(
-    rows.slice(paginatedPage - 1, paginatedPage - 1 + perPage)
+    allRows.slice(paginatedPage - 1, paginatedPage - 1 + perPage)
   );
   const [checkedRow, setCheckedRow] = useState(selectedRow);
 
   useEffect(() => {
-    if (rows.length) {
-      setLastPage(Math.ceil(rows.length / perPage));
+    if (allRows.length) {
+      setLastPage(Math.ceil(allRows.length / perPage));
       setPaginatedRows(
-        rows.slice(paginatedPage - 1, paginatedPage - 1 + perPage)
+        allRows.slice(paginatedPage - 1, paginatedPage - 1 + perPage)
       );
     }
-  }, [rows, perPage, paginatedPage]);
+  }, [allRows, perPage, paginatedPage]);
+
+  useEffect(() => {
+    if (rows.length) {
+      setAllRows(rows);
+    }
+  }, [rows]);
 
   useEffect(() => {
     setPaginatedPage(page);
@@ -59,18 +56,32 @@ const Table = ({
     handleCheckboxClick(row);
   };
 
+  const sortColumn = (columnField, order) => {
+    const sortedRows = allRows.sort((r1, r2) => {
+      if (order === "asc") {
+        return typeof r1[columnField] === "string"
+          ? r1[columnField].localeCompare(r2[columnField])
+          : r1[columnField] - r2[columnField];
+      } else {
+        return typeof r1[columnField] === "string"
+          ? r2[columnField].localeCompare(r1[columnField])
+          : r2[columnField] - r1[columnField];
+      }
+    });
+    setAllRows([...sortedRows]);
+  };
+
   return (
     <Fragment>
       <div className="table-responsive">
         <table className="table table-striped">
           <thead>
             <tr>
-              {checkbox && <th scope="col"></th>}
-              {columns.map((column) => (
-                <th scope="col" key={column.label}>
-                  {column.label}
-                </th>
-              ))}
+              <Columns
+                checkbox={checkbox}
+                columns={columns}
+                sortColumn={sortColumn}
+              />
             </tr>
           </thead>
           <tbody>

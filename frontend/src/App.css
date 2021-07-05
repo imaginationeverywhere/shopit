@@ -643,3 +643,16 @@ ul.CTAs a {
 #carrier-list button.page-change {
   border-radius: 10px;
 }
+
+#carrier-list .table-col {
+  cursor: pointer;
+}
+
+#carrier-list .table-col i {
+  padding-left: 5px;
+  visibility: hidden;
+}
+
+#carrier-list thead:hover i {
+  visibility: visible;
+}

@@ -51,8 +51,8 @@ const CarrierList = () => {
         field: "provider",
       },
       {
-        label: "Price",
-        field: "amountWithCurrency",
+        label: "Price ($)",
+        field: "amount_local",
       },
       {
         label: "Estimated Days",
