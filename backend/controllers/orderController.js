@@ -3,6 +3,8 @@ const Product = require('../models/product');
 
 const ErrorHandler = require('../utils/errorHandler');
 const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
+const OrderService = require('../services/orderService');
+const ShipmentService = require('../services/shipmentService');
 
 // Create a new order   =>  /api/v1/order/new
 exports.newOrder = catchAsyncErrors(async (req, res, next) => {
@@ -13,27 +15,32 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
         taxPrice,
         shippingPrice,
         totalPrice,
+        selectedCarrier,
         paymentInfo
     } = req.body;
 
-    const order = await Order.create({
-        orderItems,
-        shippingInfo,
-        itemsPrice,
-        taxPrice,
-        shippingPrice,
-        totalPrice,
-        paymentInfo,
-        paidAt: Date.now(),
-        user: req.user._id
-    })
-
-    res.status(200).json({
-        success: true,
-        order
-    })
+    try {
+        const order = await OrderService.createOrder({
+            orderItems,
+            shippingInfo,
+            itemsPrice,
+            taxPrice,
+            shippingPrice,
+            totalPrice,
+            paymentInfo,
+            selectedCarrier,
+            paidAt: Date.now(),
+            user: req.user._id
+        }, ShipmentService)
+        res.status(200).json({
+            success: true,
+            order
+        })
+    } catch (error) {
+        console.log('Error is creating order-----', error)
+        res.status(422).json({ success: false, message: 'Something went wrong' })
+    }
 })
-
 
 // Get single order   =>   /api/v1/order/:id
 exports.getSingleOrder = catchAsyncErrors(async (req, res, next) => {

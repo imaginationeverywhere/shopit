@@ -23,6 +23,7 @@ const orderSchema = mongoose.Schema({
             required: true
         }
     },
+    shipments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Shipment' }],
     user: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,

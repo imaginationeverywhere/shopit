@@ -31,7 +31,21 @@ const Payment = ({ history }) => {
 
     const { user } = useSelector(state => state.auth)
     const { cartItems, shippingInfo } = useSelector(state => state.cart);
+    const { shipment = '', carrier_account = '', servicelevel: { token = "" } = {} } = useSelector(({
+        shipment: { selectedCarrier = {} } = {}
+    }) => selectedCarrier || {})
+
+    const { loading, success, error: newOrderError } = useSelector(({ newOrder = {} }) => newOrder)
+
     const { error } = useSelector(state => state.newOrder)
+
+    if (!loading && success) {
+        history.push('/success')
+    }
+    if (!loading && newOrderError) {
+        alert.error(newOrderError)
+        history.push('/confirm')
+    }
 
     useEffect(() => {
 
@@ -44,7 +58,8 @@ const Payment = ({ history }) => {
 
     const order = {
         orderItems: cartItems,
-        shippingInfo
+        shippingInfo,
+        selectedCarrier: { shipmentId: shipment, carrierId: carrier_account, serviceLevelToken: token }
     }
 
     const orderInfo = JSON.parse(sessionStorage.getItem('orderInfo'));
@@ -107,8 +122,6 @@ const Payment = ({ history }) => {
                     }
 
                     dispatch(createOrder(order))
-
-                    history.push('/success')
                 } else {
                     alert.error('There is some issue while payment processing')
                 }
