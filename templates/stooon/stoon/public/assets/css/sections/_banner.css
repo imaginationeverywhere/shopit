@@ -1,0 +1,81 @@
+.banner-area{
+  background: red; }
+  .banner-area.banner-slider .banner-inner {
+    position: absolute;
+    margin-top: 37%; }
+  .banner-area.banner-slider .biking {
+    position: absolute;
+    margin-top: 20%; }
+  .banner-area.social-icon-style-01 {
+    position: absolute;
+    top: 50%;
+    left: 4%;
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .banner-area.social-icon-style-01 .icon-list {
+      margin-right: 2rem;
+      width: 30px;
+      height: 30px;
+      background: #000000;
+      border-radius: 50%;
+      text-align: center;
+      margin-bottom: 10px; }
+    .banner-area.social-icon-style-01 .icon-list:last-child {
+      margin-right: 0; }
+    .banner-area.social-icon-style-01 .icon-text {
+      font-size: 10px;
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      color: $color-white; }
+    .banner-area.social-icon-style-01 .icon-text:hover {
+      color: var(--main-color); }
+  .banner-area.video-btn {
+    position: absolute;
+    top: 80%;
+    left: 4%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 35.41px;
+    height: 35.41px;
+    background: var(--main-color);
+    text-align: center;
+    border-radius: 50%;
+    border: 5px solid var(--main-color); }
+  .banner-area.scroll {
+    position: absolute;
+    top: 80%;
+    left: 50%; }
+    .banner-area.scroll .scroll-btn {
+      width: 19px;
+      height: 42px;
+      border-radius: 9px;
+      border: 1px solid $color-white; }
+    .banner-area.scroll span {
+      font-size: 15px;
+      line-height: 25px;
+      font-family: var(--secondary-font); }
+  .banner-area.banner-btn {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .banner-area.banner-btn a {
+      background: var(--main-color);
+      font-size: 12px;
+      text-transform: uppercase;
+      padding: 0px 50px 0px 25px;
+      border-right: 7px solid $color-white;
+      border-radius: 0; }
+      .banner-area.banner-btn a:before {
+        content: "\A";
+        border-style: solid;
+        border-width: 5px 5px 5px 0;
+        border-color: transparent $color-white transparent transparent;
+        position: absolute;
+        right: 7px;
+        top: 9px; }

@@ -1,0 +1,42 @@
+.floating-icon {
+  display: none;
+  position: -webkit-sticky;
+  position: sticky;
+  left: 95%;
+  top: 50px;
+  display: inline-block;
+  -webkit-box-shadow: 1px 2px 4px #ccc;
+  box-shadow: 1px 2px 4px #ccc;
+  border-radius: 5px;
+  background: #fff;
+  z-index: 9999;
+  text-align: center; }
+  .floating-icon__is {
+    padding: 8px 12px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    font-size: 18px; }
+    .floating-icon__is:hover {
+      cursor: pointer; }
+
+.modal.show .modal-dialog {
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: relative;
+  top: 50%; }
+
+.modal.fade .modal-dialog {
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  -o-transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  -webkit-transform: translateV(-50%);
+  -ms-transform: translateV(-50%);
+  transform: translateV(-50%);
+  position: relative;
+  top: 50%; }
+
+/*# sourceMappingURL=_floating-icon.css.map */

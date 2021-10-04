@@ -1,0 +1,12 @@
+.image-box-style-02 {
+  position: relative; }
+  .image-box-style-02:before {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    content: '';
+    background: #FEF4F6;
+    border-radius: 50%;
+    z-index: -1;
+    left: 100px;
+    top: 100px; }
