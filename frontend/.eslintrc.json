@@ -4,7 +4,7 @@
   //   "browser": true,
   //   "es6": true
   // },
-  "extends": ["plugin:react/recommended", "standard", "prettier"],
+  // "extends": ["plugin:react/recommended", "standard", "prettier"],
   // "parserOptions": {
   //   "ecmaFeatures": {
   //     "jsx": true
@@ -12,7 +12,7 @@
   //   "ecmaVersion": 8,
   //   "sourceType": "module"
   // },
-  "plugins": ["react"]
+  // "plugins": ["react"]
   // "rules": {
   //   "react/prop-types": 0
   // }
