@@ -33,9 +33,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media #{ $medium-up } {
-    max-width: 720px;
-  }
+  
 }
 
 nav {
