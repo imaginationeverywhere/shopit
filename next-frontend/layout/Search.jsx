@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import { Input } from '../components';
 
-const Search = ({ history }) => {
+const Search = ({ className, history }) => {
 
     const [keyword, setKeyword] = useState('');
 
@@ -15,7 +16,7 @@ const Search = ({ history }) => {
     }
 
     return (
-        <form onSubmit={searchHandler} >
+        <form className={`${className} search-form`} onSubmit={searchHandler} >
             <div className="input-group">
                 <input
                     type="text"

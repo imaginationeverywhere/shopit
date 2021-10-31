@@ -4,6 +4,8 @@ $large-up: "only screen and (min-width: 992px)";
 
 // Colours
 $white: #fff;
+$light-gray: #ced4da;
+$gray: #808080;
 $dark-gray: #2e2e2e;
 $black: #212539;
 $midnight: #232f3e;
@@ -15,6 +17,7 @@ html {
   font-family: "Amazon Ember";
   margin: 0px;
   padding: 0px;
+  color: $black;
 }
 
 a,
@@ -22,26 +25,47 @@ a:hover {
   text-decoration: none;
 }
 
-.btn {
-  border-radius: 0.125rem;
-}
-
 .container {
-  padding: 0 15px;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   @media #{ $medium-up } {
     max-width: 720px;
   }
 }
 
 nav {
-  background-color: $midnight;
+  background: $midnight;
+  color: $white;
   padding: 1rem;
-  @media #{ $medium-up } {
+  position: sticky;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  & .items {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+  }
+
+  & .search {
+    display: none;
+    @media #{ $medium-up } {
+      display: block;
+      & input {
+        border: 0;
+      }
+    }
+  }
+  & .login-btn {
+      background: $light-orange;
   }
 }
 
@@ -51,52 +75,122 @@ nav {
     height: 100%;
     border: 0;
     padding: 0 0.8rem;
+    border-radius: 0 0.125rem 0.125rem 0;
   }
   &_field {
     padding: 0.5rem;
     border: 0;
+    border: 1px solid $light-gray;
   }
 }
 
-.input-group {
-  display: flex;
+.search-body {
+  margin: 20px 0;
+}
+
+// Components
+
+.input {
+  border: 1px solid $light-gray;
+  color: $gray;
+  border-radius: 0.25rem;
+  padding: 6px 12px;
+  &-container {
+    width: 100%;
+    margin: 0 0 1rem 0;
+    label {
+      display: inline-block;
+      font-weight: 700;
+      margin: 0 0 0.5rem 0;
+    }
+  }
+  &-group {
+    display: flex;
+  }
+}
+
+.btn {
+  border-radius: 0.125rem;
+  border: 0;
+  padding: 1rem 2rem;
+  &-sm {
+    padding: 0.5rem 1rem;
+  }
+}
+
+.search-body {
+  @media #{ $medium-up } {
+    display: none;
+  }
 }
 
 #login_btn,
 #view_btn {
   background-color: $deep-orange;
-  padding: 0.4rem 1.8rem;
   font-family: calibri;
   text-transform: uppercase;
   font-size: 0.8rem;
+  color: $white;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  display: block;
+}
+
+#login_btn {
+  width: 100%;
 }
 
 #view_btn {
   display: block;
   text-align: center;
-  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 }
+
+.form {
+  &-modal {
+    position: relative;
+    margin: 80px auto;
+    position: relative;
+    padding: 2.5rem 3rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    &-heading {
+      font-size: 2.5rem;
+      margin: 0 0 16px;
+    }
+    &-input {
+      width: -webkit-fill-available;
+    }
+    &-link {
+      color: gray;
+      float: right;
+      margin: 0 0 1rem;
+      &:last-child {
+        margin-top: 1rem;
+      }
+    }
+
+    @media #{ $medium-up } {
+      min-width: 400px;
+    }
+  }
+}
+
+// Cart
 
 #cart {
-  font-size: 1rem;
-  color: white;
-}
-
-#cart_count {
-  background-color: #febd69;
-  padding: 0.2rem 0.5rem;
-  border-radius: 0.2rem;
-  color: black;
-  font-weight: bold;
-  font-size: 0.9rem;
+  margin-right: 0.8rem;
+  @media #{ $medium-up } {
+    margin-right: 1.5rem;
+  }
+  &-badge {
+    background-color: #febd69;
+    padding: 0.4rem 0.7rem;
+    border-radius: 0.2rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: $black;
+  }
 }
 
 /* Home page */
-
-#view_btn {
-  background-color: $deep-orange;
-  color: $white;
-}
 
 .card-img-top {
   width: 200px;
@@ -116,10 +210,13 @@ nav {
 
 /* Footer */
 footer {
-  margin-top: 8rem;
-  color: grey;
-  bottom: 0;
   width: 100%;
+  position: relative;
+  bottom: 0;
+  padding: 0.5rem 0;
+  color: $gray;
+  text-align: center;
+  font-weight: bold;
 }
 
 /* Ratings */
@@ -159,6 +256,7 @@ footer {
   justify-content: space-between;
   border-radius: 4px;
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  max-width: 300px;
   &s {
     display: grid;
     grid-gap: 2rem;
