@@ -1,5 +1,7 @@
-async function handler(req, res) {
+import products from "../../../backend/data/products.json";
 
-}
+const productHandler = async (req, res) => {
+  res.status(200).json(products);
+};
 
-export default handler;
+export default productHandler;

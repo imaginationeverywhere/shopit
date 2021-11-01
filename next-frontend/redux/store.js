@@ -55,18 +55,21 @@ const reducer = combineReducers({
 
 let initialState = {
   cart: {
-    cartItems: localStorage.getItem("cartItems")
-      ? JSON.parse(localStorage.getItem("cartItems"))
-      : [],
-    shippingInfo: localStorage.getItem("shippingInfo")
+    // cartItems: localStorage.getItem("cartItems")
+    //   ? JSON.parse(localStorage.getItem("cartItems"))
+    //   : [],
+    cartItems: process.client
+      ? JSON.parse(localStorage.getItem("cartItems")) 
+      : {},
+    shippingInfo: process.client
       ? JSON.parse(localStorage.getItem("shippingInfo"))
       : {},
   },
   shipment: {
-    carriers: localStorage.getItem("carriers")
+    carriers: process.client
       ? JSON.parse(localStorage.getItem("carriers"))
       : {},
-    selectedCarrier: localStorage.getItem("selectedCarrier")
+    selectedCarrier: process.client
       ? JSON.parse(localStorage.getItem("selectedCarrier"))
       : {},
   },

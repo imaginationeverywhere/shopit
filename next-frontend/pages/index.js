@@ -1,3 +1,4 @@
+
 import Product from "../layout/product/Product.jsx";
 import Search from "../layout/Search.jsx";
 import products from "../../backend/data/products.json";
@@ -17,7 +18,7 @@ export default function Home({productList}) {
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps = async() => {
   return {
     props: {
       productList: products
