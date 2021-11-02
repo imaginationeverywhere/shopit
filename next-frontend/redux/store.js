@@ -53,25 +53,22 @@ const reducer = combineReducers({
   shipment: shipmentReducer,
 });
 
+const getLocalStorageItems = (key) => {
+  if(!process.client) {
+    return null;
+  }
+  return localStorage.getItem(key);
+  
+}
+
 let initialState = {
   cart: {
-    // cartItems: localStorage.getItem("cartItems")
-    //   ? JSON.parse(localStorage.getItem("cartItems"))
-    //   : [],
-    cartItems: process.client
-      ? JSON.parse(localStorage.getItem("cartItems")) 
-      : {},
-    shippingInfo: process.client
-      ? JSON.parse(localStorage.getItem("shippingInfo"))
-      : {},
+    cartItems: JSON.parse(getLocalStorageItems("cart")) || {},
+    shippingInfo: JSON.parse(getLocalStorageItems("shippingInfo")) || {},
   },
   shipment: {
-    carriers: process.client
-      ? JSON.parse(localStorage.getItem("carriers"))
-      : {},
-    selectedCarrier: process.client
-      ? JSON.parse(localStorage.getItem("selectedCarrier"))
-      : {},
+    carriers: JSON.parse(getLocalStorageItems("carriers")) || {},
+    selectedCarrier: JSON.parse(getLocalStorageItems("selectedCarriers")) || {}
   },
 };
 
