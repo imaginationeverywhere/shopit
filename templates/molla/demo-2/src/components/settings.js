@@ -36,6 +36,22 @@ export const mainSlider2 = { //slider_four
     }
 }
 
+export const introSlider = {
+    nav: false,
+    dots: true,
+    margin: 0,
+    loop: true,
+    responsive: {
+        768: {
+            nav: true
+        },
+        1200: {
+            nav: false
+        }
+    }
+}
+
+
 export const mainSlider3 = {
     nav: false,
     dots: false,
