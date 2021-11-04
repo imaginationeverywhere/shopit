@@ -236,6 +236,79 @@
         }
         
     ],
+    "bannerCategories": [
+        {
+            "image": "assets/images/home/cats/1.png",
+            "name": "Computer & Laptop"
+        },
+        {
+            "image": "assets/images/home/cats/2.png",
+            "name": "Digital Cameras"
+        },
+        {
+            "image": "assets/images/home/cats/3.png",
+            "name": "Smart Phones"
+        },
+        {
+            "image": "assets/images/home/cats/4.png",
+            "name": "Televisions"
+        },
+        {
+            "image": "assets/images/home/cats/5.png",
+            "name": "Audio"
+        },
+        {
+            "image": "assets/images/home/cats/6.png",
+            "name": "Smart Watches"
+        }
+    ],
+    "bannerContents": [
+        {
+            "sub_title": "Smart Offer",
+            "title": "Save $150",
+            "title_str": "on Samsung",
+            "title_br": "Galaxy Note9",
+            "img": "assets/images/home/banners/banner-1.png"
+        },
+        {
+            "sub_title": "Time Deals",
+            "title": "",
+            "title_str": "Bose SoundSport",
+            "title_br": "Time Deal -30%",
+            "img": "assets/images/home/banners/banner-2.jpg"
+        },
+        {
+            "sub_title": "Clearance",
+            "title": "",
+            "title_str": "GoPro - Fusion 360",
+            "title_br": "Save $70",
+            "img": "assets/images/home/banners/banner-3.png"
+        }
+    ],
+    "dealContents": [
+        {
+            "headerTitle": "Deal of the Day.",
+            "headerSubTitle": "Limited quantities.",
+            "productTitle": "Home Smart Speaker with  Google Assistant",
+            "newPrice": "$129.00",
+            "oldPrice": "$150.99",
+            "dataUntil": "+10h",
+            "bigImage": "assets/images/home/deals/bg-1.jpg",
+            "linkTitle": "Shop Now",
+            "link": "product/default/27"
+        },
+        {
+            "headerTitle": "Your Exclusive Offers.",
+            "headerSubTitle": "Sign in to see amazing deals.",
+            "productTitle": "Certified Wireless Charging  Pad for iPhone / Android",
+            "newPrice": "$29.99",
+            "oldPrice": "",
+            "dataUntil": "+11d",
+            "bigImage": "assets/images/home/deals/bg-2.jpg",
+            "linkTitle": "Sign In and Save money",
+            "link": "pages/login"
+        }
+    ],
     "banner": [
         {
             "img": "assets/images/home/banners/intro/banner-1.jpg",

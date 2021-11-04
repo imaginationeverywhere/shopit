@@ -444,6 +444,28 @@ export const productSlider = {
     }
 }
 
+export const productSlider2 = {
+    nav: true,
+    dots: false,
+    margin: 20,
+    loop: false,
+    responsive: {
+        0: {
+            items: 2
+        },
+        480: {
+            items: 2
+        },
+        992: {
+            items: 3
+        },
+        1200: {
+            items: 4,
+            nav: true
+        }
+    }
+}
+
 export const blogSlider = {
     nav: false,
     dots: false,
