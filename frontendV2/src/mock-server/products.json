@@ -285,6 +285,7 @@
         ],
         "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
         "stock": 103,
+        "featured": true,
         "category": [
             "Men",
             "Shoes",
@@ -1002,6 +1003,7 @@
         "id": 32,
         "name": "Petite Table Lamp",
         "price": 65,
+        "salePrice": 40.99,
         "pictures": [
             "assets/images/products/shop/product-12-1.jpg",
             "assets/images/products/shop/product-12-2.jpg",
@@ -1039,6 +1041,7 @@
         "id": 33,
         "name": "Madra Log Holder",
         "price": 40,
+        "salePrice": 29.99,
         "pictures": [
             "assets/images/products/shop/product-13-1.jpg",
             "assets/images/products/shop/product-13-2.jpg"
@@ -1066,6 +1069,7 @@
         "id": 34,
         "name": "Original Outdoor Beanbag",
         "price": 80,
+        "salePrice": 69.99,
         "pictures": [
             "assets/images/products/shop/product-14-1.jpg",
             "assets/images/products/shop/product-14-2.jpg",
@@ -1095,6 +1099,7 @@
         "id": 35,
         "name": "Wingback Chair",
         "price": 199,
+        "salePrice": 169.99,
         "pictures": [
             "assets/images/products/shop/product-15-1.jpg"
         ],
@@ -1144,7 +1149,8 @@
     {
         "id": 37,
         "name": "Biker jacket",
-        "price": 120.99,
+        "price": 125.99,
+        "salePrice": 99.99,
         "pictures": [
             "assets/images/home/products/product-10-1.jpg",
             "assets/images/home/products/product-10-2.jpg",

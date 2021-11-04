@@ -10,6 +10,7 @@ function DealCollection ( props ) {
 
     let { products } = props;
     products = products.slice( 35, 37 );
+    console.log(products);
 
     return (
         <div className="deal bg-image pt-8 pb-8" style={ { backgroundImage: `url(${process.env.PUBLIC_URL}/assets/images/home/banners/bg-1.jpg)` } }>
