@@ -10,6 +10,7 @@ import HomePage5 from "../components/home/home-5";
 import HomePage6 from "../components/home/home-6";
 import HomePage7 from "../components/home/home-7";
 import HomePage8 from "../components/home/home-8";
+import HomePage9 from "../components/home/home-9";
 
 export default function HomeRoute() {
   const getHomePage = (page) => {
@@ -30,6 +31,8 @@ export default function HomeRoute() {
         return HomePage7;
       case 8:
         return HomePage8;
+      case 9:
+        return HomePage9;
       default:
         return HomePage1;
     }
@@ -40,7 +43,7 @@ export default function HomeRoute() {
         <Route
           exact
           path={`${process.env.PUBLIC_URL}/`}
-          component={getHomePage(8)}
+          component={getHomePage(9)}
         />
       </Layout>
     </Switch>
