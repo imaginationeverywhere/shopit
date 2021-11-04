@@ -316,14 +316,25 @@
             "img": "assets/images/home/banners/intro/banner-1.jpg",
             "subtitle": "Clearence",
             "title": "Chairs & Chaises <br/>Up to 40% off",
-            "btnText": "Shop Now"
+            "btnText": "Shop Now",
+            "width": "575",
+            "height": "300"
         },
         {
             "img": "assets/images/home/banners/intro/banner-2.jpg",
             "subtitle": "New in",
             "title": "Best Lighting <br/>Collection",
             "btnText": "Discover Now",
-            "adClass": "mb-0"
+            "adClass": "mb-0",
+            "width": "575",
+            "height": "300"
+        },
+        {
+            "img": "assets/images/home/banners/banner-3.jpg",
+            "subtitle": "Limited time only.",
+            "title": "End of Season<br/>save 50% off",
+            "width": "585",
+            "height": "300"
         }
     ],
     "categories": [
