@@ -407,6 +407,26 @@
             "adClass": "banner-overlay text-white",
             "contentAdClass": "banner-content-right",
             "btnAdClass": "btn-outline-white-3 banner-link"
+        },
+        {
+            "img": "assets/images/home/banners/banner-1.jpg",
+            "width": 880,
+            "height": 500,
+            "subtitle": "New Collection",
+            "title": "Shop Women's",
+            "btnText": "<span>Discover Now</span>",
+            "adClass": "banner-big banner-overlay",
+            "contentAdClass": "banner-content-center"
+        },
+        {
+            "img": "assets/images/home/banners/banner-2.jpg",
+            "width": 880,
+            "height": 500,
+            "subtitle": "New Collection",
+            "title": "Shop Men's",
+            "btnText": "<span>Discover Now</span>",
+            "adClass": "banner-big banner-overlay",
+            "contentAdClass": "banner-content-center"
         }
     ],
     "instagram": [
