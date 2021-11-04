@@ -225,14 +225,16 @@
             "srcSet": "assets/images/home/sliders/slide-1-480w.jpg",
             "subtitle": "Topsale Collection",
             "title": "Living Room<br/>Furniture",
-            "price": "<sup class='intro-old-price'>$49,99</sup><span class='text-primary'>&nbsp;$29<sup>.99</sup></span>"
+            "price": "<sup class='intro-old-price'>$49,99</sup><span class='text-primary'>&nbsp;$29<sup>.99</sup></span>",
+            "btnText": "Discover Now"
         },
         {
             "image": "assets/images/home/sliders/slide-2.jpg",
             "srcSet": "assets/images/home/sliders/slide-2-480w.jpg",
             "subtitle": "News and Inspiration",
             "title": "New Arrivals",
-            "price": "<sup>Today:</sup><span class='text-primary'>&nbsp;$247<sup>.99</sup></span>"
+            "price": "<sup>Today:</sup><span class='text-primary'>&nbsp;$247<sup>.99</sup></span>",
+            "btnText": "Shop Now"
         }
         
     ],
@@ -386,6 +388,53 @@
             "btnAdClass": "btn-outline-white-3 banner-link"
         }
     ],
+    "instagram": [
+        {
+            "img": "assets/images/home/instagrams/1.jpg",
+            "likes": 387,
+            "comments": 45
+        },
+        {
+            "img": "assets/images/home/instagrams/2.jpg",
+            "likes": 691,
+            "comments": 87
+        },
+        {
+            "img": "assets/images/home/instagrams/3.jpg",
+            "likes": 321,
+            "comments": 54
+        },
+        {
+            "img": "assets/images/home/instagrams/4.jpg",
+            "likes": 44,
+            "comments": 55
+        },
+        {
+            "img": "assets/images/home/instagrams/5.jpg",
+            "likes": 128,
+            "comments": 99
+        },
+        {
+            "img": "assets/images/home/instagrams/6.jpg",
+            "likes": 433,
+            "comments": 25
+        },
+        {
+            "img": "assets/images/home/instagrams/7.jpg",
+            "likes": 588,
+            "comments": 44
+        },
+        {
+            "img": "assets/images/home/instagrams/8.jpg",
+            "likes": 87,
+            "comments": 23
+        },
+        {
+            "img": "assets/images/home/instagrams/9.jpg",
+            "likes": 87,
+            "comments": 23
+        }
+    ],
     "home_categories": [
         {
             "key": "Women",
@@ -415,5 +464,17 @@
             "name": "John Smith",
             "job": "Customer"
         }
+    ],
+    "arrivalCategories": [
+        "All",
+        "Clothing",
+        "Shoes & Boots",
+        "Accessories"
+    ],
+    "trendyCategories": [
+        "All",
+        "Women",
+        "Men",
+        "Accessories"
     ]
 }
