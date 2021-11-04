@@ -261,6 +261,29 @@ export const mainSlider12 = {
     }
 }
 
+export const featuredSlider = {
+    nav: false,
+    dots: true,
+    margin: 20,
+    loop: false,
+    responsive: {
+        0: {
+            items: 2
+        },
+        480: {
+            items: 2
+        },
+        768: {
+            items: 3
+        },
+        992: {
+            items: 3,
+            nav: true,
+            dots: false
+        }
+    }
+}
+
 export const featureSlider1 = {
     nav: false,
     dots: false,
@@ -478,6 +501,34 @@ export const bannerSlider = {
         },
         992: {
             items: 3
+        }
+    }
+}
+
+export const trendingSlider = {
+    nav: false,
+    dots: true,
+    margin: 20,
+    loop: false,
+    responsive: {
+        320: {
+            items: 2,
+        },
+        375: {
+            items: 2,
+        },
+        480: {
+            items: 2
+        },
+        768: {
+            items: 3
+        },
+        992: {
+            items: 4
+        },
+        1200: {
+            items: 4,
+            nav: true
         }
     }
 }

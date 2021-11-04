@@ -224,20 +224,17 @@
             "image": "assets/images/home/sliders/slide-1.jpg",
             "srcSet": "assets/images/home/sliders/slide-1-480w.jpg",
             "subtitle": "Topsale Collection",
-            "title": "Living Room<br/>Furniture"
+            "title": "Living Room<br/>Furniture",
+            "price": "<sup class='intro-old-price'>$49,99</sup><span class='text-primary'>&nbsp;$29<sup>.99</sup></span>"
         },
         {
             "image": "assets/images/home/sliders/slide-2.jpg",
             "srcSet": "assets/images/home/sliders/slide-2-480w.jpg",
             "subtitle": "News and Inspiration",
-            "title": "New Arrivals"
-        },
-        {
-            "image": "assets/images/home/sliders/slide-3.jpg",
-            "srcSet": "assets/images/home/sliders/slide-3-480w.jpg",
-            "subtitle": "Outdoor Furniture",
-            "title": "Outdoor Dining <br/>Furniture"
+            "title": "New Arrivals",
+            "price": "<sup>Today:</sup><span class='text-primary'>&nbsp;$247<sup>.99</sup></span>"
         }
+        
     ],
     "banner": [
         {
