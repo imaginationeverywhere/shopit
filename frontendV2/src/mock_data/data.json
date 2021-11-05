@@ -237,6 +237,7 @@
             "title": "Clothes Trending <br />Spring Collection 2020 <br /><span>from $12,99</span>",
             "btnText": "Discover Now "
         },
+        
         {
             "adClass": "banner-overlay-light",
             "image": "assets/images/home/banners/banner-4.jpg",
@@ -249,6 +250,80 @@
             "subtitle": "Amazing Value",
             "title": "<Link to='#'>Headphones Trending <br />JBL Harman <br /><span>from $59,99</span></Link>",
             "btnText": "Discover Now "
+        }
+    ],
+    "categoryBanners14": [
+        {
+            "categories": [
+                "Electronics",
+                [
+                    "Cell Phones",
+                    "Computers",
+                    "TV & Video",
+                    "Smart Home",
+                    "Audi",
+                    "Home Audio & Theater"
+                ]
+            ],
+            "background": "assets/images/home/banners/banner-bg-1.jpg",
+            "image": "assets/images/home/banners/banner-5.jpg",
+            "title": "Canon EOS <br/>Mega Sale <br/><span>Up To 20% Off</span>",
+            "subtitle": "Best Deals",
+            "height": 390
+        },
+        {
+            "categories": [
+                "Furniture",
+                [
+                    "Bedroom",
+                    "Office",
+                    "Living Room",
+                    "Kitchen & Dining",
+                    "Decoration",
+                    "Outdoor"
+                ]
+            ],
+            "background": "assets/images/home/banners/banner-bg-2.jpg",
+            "image": "assets/images/home/banners/banner-6.jpg",
+            "title": "Furniture Sets <br/><span>Up To 30% Off</span>",
+            "subtitle": "Best Deals",
+            "height": 390
+        },
+        {
+            "categories": [
+                "Clothing",
+                [
+                    "Best Sellers",
+                    "Trending",
+                    "Women",
+                    "Man",
+                    "Shoes",
+                    "Accessories"
+                ]
+            ],
+            "background": "assets/images/home/banners/banner-bg-3.jpg",
+            "image": "assets/images/home/banners/banner-9.jpg",
+            "title": "Clearance <br/>Outerwear<br/><span>Up To 70% Off</span>",
+            "subtitle": "Best Deals",
+            "height": 400
+        },
+        {
+            "categories": [
+                "Cooking",
+                [
+                    "Cookware",
+                    "Dinnerware",
+                    "Cups",
+                    "Microwaves",
+                    "Toasters",
+                    "Coffee Makers"
+                ]
+            ],
+            "background": "assets/images/home/banners/banner-bg-4.jpg",
+            "image": "assets/images/home/banners/banner-10.jpg",
+            "title": "Cooking <br/>Appliances <br/><span>Up To 30% Off</span>",
+            "subtitle": "Best Deals",
+            "height": 400
         }
     ],
     "productCategories": [
@@ -453,6 +528,16 @@
             "height": 500,
             "subtitle": "New Collection",
             "title": "Shop Women's",
+            "btnText": "<span>Discover Now</span>",
+            "adClass": "banner-big banner-overlay",
+            "contentAdClass": "banner-content-center"
+        },
+        {
+            "img": "assets/images/home/banners/banner-2.jpg",
+            "width": 880,
+            "height": 500,
+            "subtitle": "New Collection",
+            "title": "Shop Men's",
             "btnText": "<span>Discover Now</span>",
             "adClass": "banner-big banner-overlay",
             "contentAdClass": "banner-content-center"

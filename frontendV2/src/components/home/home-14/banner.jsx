@@ -2,7 +2,7 @@ import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link } from 'react-router-dom';
 
-import { safeContent } from '../../utils';
+import { safeContent } from '../../../utils';
 
 export default function Banner( props ) {
     const { adClass = "", contentAdClass = "", image, title, subtitle, price, btnText = "Shop Now", height } = props.data;

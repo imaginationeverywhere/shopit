@@ -3,16 +3,16 @@ import { Tabs, Tab, TabList, TabPanel } from 'react-tabs';
 import { connect } from 'react-redux';
 
 // import Custom Components
-import OwlCarousel from '../features/owl-carousel';
+import OwlCarousel from '../../features/owl-carousel';
 
-import ProductNine from '../features/product/product-nine';
-import { productSlider2 } from '../settings';
+import ProductNine from '../../features/product/product-nine';
+import { productSlider2 } from '../../settings';
 
 // import Actions & Services & data
-import { addToCart, toggleWishlist, addToCompare, showQuickViewModal } from '../../actions';
-import { getProductsByCategory, getFeaturedProducts } from '../../services';
+import { addToCart, toggleWishlist, addToCompare, showQuickViewModal } from '../../../actions';
+import { getProductsByCategory, getFeaturedProducts } from '../../../services';
 
-import data from '../../mock_data/data';
+import data from '../../../mock_data/data';
 
 function TrendyCollection( props ) {
     const { addToCart, toggleWishlist, addToCompare, showQuickViewModal } = props;

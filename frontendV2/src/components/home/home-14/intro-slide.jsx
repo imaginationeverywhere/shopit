@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { safeContent, isIEBrowser } from '../../utils';
+import { safeContent, isIEBrowser } from '../../../utils';
 
 export default function IntroSlide( props ) {
     const { image, srcSet, subtitle, title, price, text, btnText } = props.slide;

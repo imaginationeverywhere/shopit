@@ -2,28 +2,28 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 // import Custom Components
-import OwlCarousel from '../features/owl-carousel';
+import OwlCarousel from '../../features/owl-carousel';
 
 import CategoryBanner from './category-banner';
-import ProductNine from '../features/product/product-nine';
-import { productSlider1 } from '../settings';
+import ProductNine from '../../features/product/product-nine';
+import { productSlider1 } from '../../settings';
 
 // import Actions & Services & data
-import { addToCart, toggleWishlist, addToCompare, showQuickViewModal } from '../../actions';
+import { addToCart, toggleWishlist, addToCompare, showQuickViewModal } from '../../../actions';
 
-import data from '../../mock_data/data';
-import { getProductsByCategory } from '../../services';
+import data from '../../../mock_data/data';
+import { getProductsByCategory } from '../../../services';
 
 function ProductCollection( props ) {
     const { addToCart, toggleWishlist, addToCompare, showQuickViewModal, category } = props;
 
-    let products = props.products;
+    let{ products } = props;
     products = getProductsByCategory( products.slice( 35, 59 ), category );
 
     return (
         <div className="row cat-banner-row clothing">
             <div className="col-xl-3 col-xxl-4">
-                <CategoryBanner catban={ data.categoryBanners[ props.index ] } />
+                <CategoryBanner catban={ data.categoryBanners14[ props.index ] } />
             </div>
 
             <div className="col-xl-9 col-xxl-8">

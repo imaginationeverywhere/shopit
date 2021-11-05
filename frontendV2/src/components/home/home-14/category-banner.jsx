@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import { safeContent } from '../../utils';
+import { safeContent } from '../../../utils';
 
 function CategoryBanner( props ) {
     const { categories, image, subtitle, title = "", height } = props.catban;

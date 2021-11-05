@@ -2,16 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Banner from './banner';
-import PostTen from '../features/post/post-ten';
-import OwlCarousel from '../features/owl-carousel';
-import ProductTen from '../features/product/product-ten';
+import PostTen from '../../features/post/post-ten';
+import OwlCarousel from '../../features/owl-carousel';
+import ProductTen from '../../features/product/product-ten';
 
 // import Actions
-import { addToCart, toggleWishlist, addToCompare, showQuickViewModal } from '../../actions';
-import { sidebarSlider } from '../settings';
+import { addToCart, toggleWishlist, addToCompare, showQuickViewModal } from '../../../actions';
+import { sidebarSlider } from '../../settings';
 
-import posts from '../../mock_data/posts';
-import SmallProduct from '../features/product/product-sm';
+import posts from '../../../mock_data/posts';
+import SmallProduct from '../../features/product/product-sm';
 
 function Sidebar( props ) {
     const { banners, addToCart, toggleWishlist, addToCompare, showQuickViewModal } = props;
