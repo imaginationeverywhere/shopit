@@ -618,3 +618,10 @@ export const trendingSlider = {
         }
     }
 }
+
+export const ctaSlider = {
+    nav: false,
+    dots: true,
+    margin: 20,
+    loop: false
+}

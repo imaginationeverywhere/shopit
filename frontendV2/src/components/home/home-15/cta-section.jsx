@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import OwlCarousels from '../features/owl-carousel';
-import { ctaSlider } from '../settings';
+import OwlCarousels from '../../features/owl-carousel';
+import { ctaSlider } from '../../settings';
 
 function CTA( props ) {
     return (

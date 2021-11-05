@@ -3,7 +3,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link } from 'react-router-dom';
 
 // import Utils
-import { safeContent } from '../../utils';
+import { safeContent } from '../../../utils';
 
 function Banner( props ) {
     const { banner } = props;

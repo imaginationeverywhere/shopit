@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import ProductNine from '../features/product/product-nine';
+import ProductNine from '../../features/product/product-nine';
 import Banner from './banner';
 
 // import Action
-import { addToCart, toggleWishlist, showQuickViewModal, addToCompare } from '../../actions';
+import { addToCart, toggleWishlist, showQuickViewModal, addToCompare } from '../../../actions';
 
-import data from '../../mock_data/data';
+import data from '../../../mock_data/data';
 
 function SecondCollection( props ) {
     const { addToCart, toggleWishlist, showQuickViewModal, addToCompare } = props;
