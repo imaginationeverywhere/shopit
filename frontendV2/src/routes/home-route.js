@@ -19,7 +19,7 @@ import HomePage14 from "../components/home/home-14";
 import HomePage15 from "../components/home/home-15";
 import HomePage16 from "../components/home/home-16";
 import HomePage17 from "../components/home/home-17";
-// import HomePage6 from "../components/home/home-6";
+import HomePage18 from "../components/home/home-18";
 // import HomePage7 from "../components/home/home-7";
 // import HomePage8 from "../components/home/home-8";
 // import HomePage9 from "../components/home/home-9";
@@ -64,6 +64,8 @@ export default function HomeRoute() {
         return HomePage16;
       case 17:
         return HomePage17;
+      case 18:
+        return HomePage18;
       default:
         return HomePage1;
     }
@@ -74,7 +76,7 @@ export default function HomeRoute() {
         <Route
           exact
           path={`${process.env.PUBLIC_URL}/`}
-          component={getHomePage(17)}
+          component={getHomePage(18)}
         />
       </Layout>
     </Switch>
