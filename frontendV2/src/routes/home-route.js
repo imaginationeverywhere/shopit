@@ -21,7 +21,7 @@ import HomePage16 from "../components/home/home-16";
 import HomePage17 from "../components/home/home-17";
 import HomePage18 from "../components/home/home-18";
 import HomePage19 from "../components/home/home-19";
-// import HomePage7 from "../components/home/home-7";
+import HomePage20 from "../components/home/home-20";
 // import HomePage8 from "../components/home/home-8";
 // import HomePage9 from "../components/home/home-9";
 // import HomePage10 from "../components/home/home-10";
@@ -69,6 +69,8 @@ export default function HomeRoute() {
         return HomePage18;
       case 19:
         return HomePage19;
+      case 20:
+        return HomePage20;
       default:
         return HomePage1;
     }
