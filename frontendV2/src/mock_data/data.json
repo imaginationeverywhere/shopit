@@ -218,7 +218,46 @@
         "product/fullwidth",
         "product/masonry"
     ],
-    
+    "categoryBanners": [
+        {
+            "image": "assets/images/home/banners/banner-1.jpg",
+            "subtitle": "Weekend Sale",
+            "title": "Lighting <br />& Accessories <br /><span>25% off</span>",
+            "btnText": "Shop Now "
+        },
+        {
+            "image": "assets/images/home/banners/banner-3.jpg",
+            "subtitle": "Smart Offer",
+            "title": "Anniversary <br />Special <br /><span>15% off</span>",
+            "btnText": "Shop Now "
+        },
+        {
+            "image": "assets/images/home/banners/banner-2.jpg",
+            "subtitle": "Amazing Value",
+            "title": "Clothes Trending <br />Spring Collection 2020 <br /><span>from $12,99</span>",
+            "btnText": "Discover Now "
+        },
+        {
+            "adClass": "banner-overlay-light",
+            "image": "assets/images/home/banners/banner-4.jpg",
+            "subtitle": "Spring Sale is Coming",
+            "title": "<Link to='#'>All Smart Watches <br />Discount <br /><span class='text-primary'>15% off</span></Link>",
+            "btnText": "Discover Now "
+        },
+        {
+            "image": "assets/images/home/banners/banner-5.png",
+            "subtitle": "Amazing Value",
+            "title": "<Link to='#'>Headphones Trending <br />JBL Harman <br /><span>from $59,99</span></Link>",
+            "btnText": "Discover Now "
+        }
+    ],
+    "productCategories": [
+        "All",
+        "Electronics",
+        "Furniture",
+        "Clothes",
+        "Accessories"
+    ],
     "introBanners": [
         {
             "image": "assets/images/home/sliders/slide-1.jpg",
