@@ -17,7 +17,7 @@ import HomePage12 from "../components/home/home-12";
 import HomePage13 from "../components/home/home-13";
 import HomePage14 from "../components/home/home-14";
 import HomePage15 from "../components/home/home-15";
-// import HomePage4 from "../components/home/home-4";
+import HomePage16 from "../components/home/home-16";
 // import HomePage5 from "../components/home/home-5";
 // import HomePage6 from "../components/home/home-6";
 // import HomePage7 from "../components/home/home-7";
@@ -60,6 +60,8 @@ export default function HomeRoute() {
         return HomePage14;
       case 15:
         return HomePage15;
+      case 16:
+        return HomePage16;
       default:
         return HomePage1;
     }
