@@ -702,3 +702,31 @@ export const shopSlider = {
         }
     }
 }
+
+export const instagramSlider = {
+    nav: false,
+    dots: false,
+    margin: 0,
+    items: 5,
+    loop: false,
+    responsive: {
+        0: {
+            items: 2
+        },
+        360: {
+            items: 2
+        },
+        600: {
+            items: 3
+        },
+        992: {
+            items: 4
+        },
+        1200: {
+            items: 5
+        },
+        1500: {
+            items: 5
+        }
+    }
+}
