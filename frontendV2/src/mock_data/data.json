@@ -339,6 +339,7 @@
             "srcSet": "assets/images/home/sliders/slide-1-480w.jpg",
             "subtitle": "Topsale Collection",
             "title": "Living Room<br/>Furniture",
+            "content": "<h3>RUNNING &<br />TRAINING SHIRTS</h3>",
             "price": "<sup class='intro-old-price'>$49,99</sup><span class='text-primary'>&nbsp;$29<sup>.99</sup></span>",
             "btnText": "Discover Now"
         },
@@ -347,6 +348,7 @@
             "srcSet": "assets/images/home/sliders/slide-2-480w.jpg",
             "subtitle": "News and Inspiration",
             "title": "New Arrivals",
+            "content": "<h3>IT'S TIME TO UPGRADE<br />YOUR HIKING KIT</h3>",
             "price": "<sup>Today:</sup><span class='text-primary'>&nbsp;$247<sup>.99</sup></span>",
             "btnText": "Shop Now"
         }
@@ -430,6 +432,7 @@
             "img": "assets/images/home/banners/intro/banner-1.jpg",
             "subtitle": "Clearence",
             "title": "Chairs & Chaises <br/>Up to 40% off",
+            "content": "<h3>RUNNING APPAREL</h3><h3>END OF SEASON SALE</h3>",
             "btnText": "Shop Now",
             "adClass": "mb-0",
             "width": "575",
@@ -439,6 +442,7 @@
             "img": "assets/images/home/banners/intro/banner-2.jpg",
             "subtitle": "New in",
             "title": "Best Lighting <br/>Collection",
+            "content": "<h3>NEW SEASON</h3><h3>NEW GEAR</h3>",
             "btnText": "Discover Now",
             "adClass": "mb-0",
             "width": "575",
@@ -448,6 +452,7 @@
             "img": "assets/images/home/banners/banner-3.jpg",
             "subtitle": "Limited time only.",
             "title": "End of Season<br/>save 50% off",
+            "content": "<h3>SWIMWEAR SALE</h3><h3>SAVE UP TO 30%</h3>",
             "adClass": "mb-0",
             "width": "585",
             "height": "300"
@@ -456,6 +461,7 @@
             "img": "assets/images/home/banners/banner-3.jpg",
             "subtitle": "Limited time only.",
             "title": "End of Season<br/>save 50% off",
+            "content": "<h3>SWIMWEAR SALE</h3><h3>SAVE UP TO 30%</h3>",
             "adClass": "mb-0",
             "width": "585",
             "height": "300"
