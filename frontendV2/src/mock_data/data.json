@@ -335,22 +335,59 @@
     ],
     "introBanners": [
         {
+            "className": "col-12 col-md-4 col-lg-12 mt-2 mt-md-0 mt-lg-2",
             "image": "assets/images/home/sliders/slide-1.jpg",
             "srcSet": "assets/images/home/sliders/slide-1-480w.jpg",
             "subtitle": "Topsale Collection",
             "title": "Living Room<br/>Furniture",
             "content": "<h3>RUNNING &<br />TRAINING SHIRTS</h3>",
             "price": "<sup class='intro-old-price'>$49,99</sup><span class='text-primary'>&nbsp;$29<sup>.99</sup></span>",
+            "text": "<h4>power equipment</h4>",
             "btnText": "Discover Now"
         },
         {
+            "className": "col-12 col-md-4 col-lg-12 mt-2 mt-md-0 mt-lg-2",
             "image": "assets/images/home/sliders/slide-2.jpg",
             "srcSet": "assets/images/home/sliders/slide-2-480w.jpg",
             "subtitle": "News and Inspiration",
             "title": "New Arrivals",
             "content": "<h3>IT'S TIME TO UPGRADE<br />YOUR HIKING KIT</h3>",
             "price": "<sup>Today:</sup><span class='text-primary'>&nbsp;$247<sup>.99</sup></span>",
+            "text": "<h4>News and Inspo</h4>",
             "btnText": "Shop Now"
+        },
+        {
+            "className": "col-12 col-md-4 col-lg-12 mt-2 mt-md-0 mt-lg-2",
+            "image": "assets/images/home/sliders/slide-2.jpg",
+            "srcSet": "assets/images/home/sliders/slide-2-480w.jpg",
+            "subtitle": "News and Inspiration",
+            "title": "New Arrivals",
+            "content": "<h3>IT'S TIME TO UPGRADE<br />YOUR HIKING KIT</h3>",
+            "price": "<sup>Today:</sup><span class='text-primary'>&nbsp;$247<sup>.99</sup></span>",
+            "text": "<h4>New Arrivals</h4>",
+            "btnText": "Shop Now"
+        },
+        {
+            "className": "col-12 col-md-4 col-lg-12 mt-2 mt-md-0 mt-lg-2",
+            "image": "/assets/images/home/sliders/banner-2.jpg",
+            "srcSet": "assets/images/home/sliders/slide-2-480w.jpg",
+            "subtitle": "Outside",
+            "title": "<h2>outdoor</h2>",
+            "content": "<h3>CONTENT PLACEHOLDER</h3>",
+            "price": "<sup class='intro-old-price'>$49,99</sup><span class='text-primary'>&nbsp;$29<sup>.99</sup></span>",
+            "text": "<h4>power equipment</h4>",
+            "btnText": "shop now"
+        },
+        {
+            "className": "col-12 col-md-4 col-lg-12 mt-2 mt-md-0 mt-lg-2",
+            "image": "/assets/images/home/sliders/banner-3.jpg",
+            "srcSet": "assets/images/home/sliders/slide-2-480w.jpg",
+            "subtitle": "Deals n Savings",
+            "title": "<h3 class='highlight'>save 20%</h3><h3>&nbsp;or more</h3>",
+            "content": "<h3>DEALS PLACEHOLDER</h3>",
+            "price": "<sup class='intro-old-price'>$49,99</sup><span class='text-primary'>&nbsp;$29<sup>.99</sup></span>",
+            "text": "<h3>deals & savings</h3>",
+            "btnText": "shop now"
         }
         
     ],
