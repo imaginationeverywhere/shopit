@@ -105,15 +105,15 @@ function App() {
           <ProtectedRoute path="/order/:id" component={OrderDetails} exact />
         </div>
 
-        <ProtectedRoute path="/dashboard" isAdmin={true} component={Dashboard} exact />
-        <ProtectedRoute path="/admin/products" isAdmin={true} component={ProductsList} exact />
-        <ProtectedRoute path="/admin/product" isAdmin={true} component={NewProduct} exact />
-        <ProtectedRoute path="/admin/product/:id" isAdmin={true} component={UpdateProduct} exact />
-        <ProtectedRoute path="/admin/orders" isAdmin={true} component={OrdersList} exact />
-        <ProtectedRoute path="/admin/order/:id" isAdmin={true} component={ProcessOrder} exact />
-        <ProtectedRoute path="/admin/users" isAdmin={true} component={UsersList} exact />
-        <ProtectedRoute path="/admin/user/:id" isAdmin={true} component={UpdateUser} exact />
-        <ProtectedRoute path="/admin/reviews" isAdmin={true} component={ProductReviews} exact />
+        <Route path="/dashboard"  component={Dashboard} exact />
+        <Route path="/admin/products" isAdmin={true} component={ProductsList} exact />
+        <Route path="/admin/product" isAdmin={true} component={NewProduct} exact />
+        <Route path="/admin/product/:id" isAdmin={true} component={UpdateProduct} exact />
+        <Route path="/admin/orders" isAdmin={true} component={OrdersList} exact />
+        <Route path="/admin/order/:id" isAdmin={true} component={ProcessOrder} exact />
+        <Route path="/admin/users" isAdmin={true} component={UsersList} exact />
+        <Route path="/admin/user/:id" isAdmin={true} component={UpdateUser} exact />
+        <Route path="/admin/reviews" isAdmin={true} component={ProductReviews} exact />
 
         {!loading && (!isAuthenticated || user.role !== 'admin') && (
           <Footer />
