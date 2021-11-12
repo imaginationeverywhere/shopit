@@ -1,14 +1,12 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
-import Dashboard from "../components/pages/admin/Dashboard";
-import Layout from "../components/app";
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Dashboard from '../components/admin/Dashboard';
 
-export default function AdminRoute() {
+
+export default function AdminPages() {
     return (
-        <Switch>
-            <Layout>
-                <Route exact path={`${process.env.PUBLIC_URL}/admin/dashboard`} component={Dashboard}/>
-            </Layout>
+        <Switch> 
+                <Route exact path={ `${process.env.PUBLIC_URL}/admin/dashboard` } component={ Dashboard } /> 
         </Switch>
     );
 }
