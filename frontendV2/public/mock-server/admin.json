@@ -1,0 +1,12 @@
+[
+    {
+        "id": "sadfasd",
+        "name": "fine color template",
+        "isActive": false
+    },
+    {
+        "id": "aer43434",
+        "name": "ugly color template",
+        "isActive": true
+    }
+]
