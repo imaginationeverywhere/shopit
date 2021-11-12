@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Dashboard from "../components/admin/Dashboard";
+import Dashboard from "../components/pages/admin/Dashboard";
 import Layout from "../components/app";
 
 export default function AdminRoute() {
