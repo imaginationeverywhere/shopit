@@ -42,6 +42,7 @@
     "react-helmet": "^6.1.0",
     "shippo": "^1.6.0",
     "stripe": "^8.128.0",
+    "styled-components": "^5.3.3",
     "validator": "^13.1.17"
   },
   "devDependencies": {

@@ -88,7 +88,7 @@ export default function HomeRoute() {
         <Route
           exact
           path={`${process.env.PUBLIC_URL}/`}
-          component={getHomePage(2)}
+          component={getHomePage(9)}
         />
       </Layout>
     </Switch>

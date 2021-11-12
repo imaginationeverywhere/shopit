@@ -15,6 +15,9 @@
 	font-size: 1.2rem;
 	line-height: 1.5;
 	transition: all 0.4s ease;
+	@media #{(max-width: 768px)} {
+		display: none;
+	}
 
 	.mmenu-active & {
 		visibility: visible;

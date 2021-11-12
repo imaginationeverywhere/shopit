@@ -6,7 +6,7 @@ import store from '../store';
 // import Custom Components
 import Header from './common/header';
 import Footer from './common/footer';
-import MobileMenu from './common/mobile-menu';
+import MobileMenu from './admin/common/mobile-menu';
 
 // import Utils
 import { mobileMenu, preventProductDefault, removePreventProductDefault, stickyHeaderHandler } from '../utils';
@@ -16,6 +16,8 @@ import { closeQuickViewModal } from '../actions';
 
 // import data
 import { innerOverlayPaths } from '../mock_data/data';
+
+import classes from '../components/admin/style.module.scss';
 
 function App( props ) {
     let matchedCount = 0;
@@ -100,10 +102,9 @@ function App( props ) {
         <>
             <div className="page-wrapper">
                 <Header container={ container } urls={ prevPath } />
-
-                {
-                    props.children
-                }
+                <div className={classes['admin-page-wrapper']}>
+                    {props.children}
+                </div>
 
                 <Footer container={ container } />
 
