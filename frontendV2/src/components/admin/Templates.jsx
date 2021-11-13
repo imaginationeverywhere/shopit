@@ -12,14 +12,21 @@ const ActiveButton = styled.button`
   width: 100%;
   max-width: 180px;
   padding: 1.25rem;
+  border: 1px solid gray;
   border-radius: 0.25rem;
   background: ${({ isActive }) => (isActive ? "green" : "gray")};
   color: white;
+  :hover{
+    background: white;
+    color: green;
+    border: 1px solid green;
+  }
+  transition: 0.1s linear;
 `;
 
-function Templates({ history }) {
+function Templates () {
   const dispatch = useDispatch();
-  //const { templates } = useSelector((state) => state.templates);
+  //const { templates } = useSelector((state) => state);
   let [templateStatus, setTemplateStatus] = useState({
     templates,
     activeTemplate: null,
@@ -29,7 +36,7 @@ function Templates({ history }) {
     dispatch(getAllTemplates());
   }, []);
 
-  const toggleTemplate = (id) => {
+  const selectTemplate = (id) => {
     const i = id - 1;
     setTemplateStatus({
       ...templateStatus,
@@ -40,6 +47,13 @@ function Templates({ history }) {
 
     return i;
   };
+
+  const toggleSelectedTemplate = (id) =>{
+    const i = id - 1;
+    if (templateStatus.activeTemplate === templateStatus.templates[i]) {
+
+    }
+  }
 
   return (
     <>
@@ -64,7 +78,7 @@ function Templates({ history }) {
                   <ActiveButton
                     isActive={active}
                     onClick={() => {
-                      toggleTemplate(id);
+                      selectTemplate(id);
                       setIsActive(!active);
                       dispatch(setTemplate(id));
                     }}
