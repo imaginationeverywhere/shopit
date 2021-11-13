@@ -3,12 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { MDBDataTable } from "mdbreact";
-// import Card from "./ui/Card";
-// import classes from "./styles/style.module.scss";
+import { getTemplates } from "../../actions/templateAction";
+import templates from "../../mock-server/templates.json";
 
 function Templates({ history }) {
   const dispatch = useDispatch();
-  const { templates } = useSelector((state) => state.templates);
+  //const { templates } = useSelector((state) => state.templates);
+
+  useEffect(() => {
+    dispatch(getTemplates());
+  }, [dispatch]);
   console.log(templates);
   const setProducts = () => {
     const data = {
@@ -32,24 +36,22 @@ function Templates({ history }) {
       rows: [],
     };
 
-    // products.forEach((product) => {
-    //   data.rows.push({
-    //     id: product._id,
-    //     name: product.name,
-    //     price: `$${product.price}`,
-    //     stock: product.stock,
-    //     actions: (
-    //       <Fragment>
-    //         <Link
-    //           to={`/admin/template/${product._id}`}
-    //           className="btn btn-primary py-1 px-2"
-    //         >
-    //           <i className="fa fa-pencil"></i>
-    //         </Link>
-    //       </Fragment>
-    //     ),
-    //   });
-    // });
+    templates.forEach(({id, name}) => {
+      data.rows.push({
+        id: id,
+        name: name,
+        actions: (
+          <Fragment>
+            <Link
+              to={`/admin/template/${id}`}
+              className="btn btn-primary py-1 px-2"
+            >
+              <i className="fa fa-pencil"></i>
+            </Link>
+          </Fragment>
+        ),
+      });
+    });
 
     return data;
   };

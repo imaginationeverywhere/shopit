@@ -9,7 +9,7 @@ export const getTemplates = () => async (dispatch) => {
     dispatch({ type: GET_TEMPLATES_REQUEST });
     const { data } = await axios.get("mock-server/admin.json");
 
-    dispatch({ type: GET_TEMPLATES_SUCCESS, templates: data });
+    dispatch({ type: GET_TEMPLATES_SUCCESS, payload: data });
   } catch (e) {
     console.log(e.message);
   }

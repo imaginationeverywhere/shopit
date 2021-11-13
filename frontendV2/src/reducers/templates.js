@@ -29,8 +29,7 @@ export const templatesReducer = (state = initialState, action) => {
 };
 
 const persistConfig = {
-  keyPrefix: "molla-",
-  key: "products",
+  key: "templates",
   storage,
 };
 
