@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import Card from "./ui/Card";
-import classes from "./style.module.scss";
+import classes from "./styles/style.module.scss";
 
 function Dashboard() {
   return (

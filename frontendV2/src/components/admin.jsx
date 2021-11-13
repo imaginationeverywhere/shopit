@@ -17,7 +17,7 @@ import { closeQuickViewModal } from '../actions';
 // import data
 import { innerOverlayPaths } from '../mock_data/data';
 
-import classes from '../components/admin/style.module.scss';
+import classes from '../components/admin/styles/style.module.scss';
 
 function App( props ) {
     let matchedCount = 0;

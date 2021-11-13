@@ -30,7 +30,7 @@ function MobileMainNav( props ) {
                     </Link>
 
                 </li>
-                <li>
+                {/* <li>
                     <Link to={ `${process.env.PUBLIC_URL}/product/default/7` } className="sf-with-ul">
                         Product
                     </Link>
@@ -44,9 +44,9 @@ function MobileMainNav( props ) {
                         <li><Link to={ `${process.env.PUBLIC_URL}/product/fullwidth/2` }>Full Width</Link></li>
                         <li><Link to={ `${process.env.PUBLIC_URL}/product/masonry/4` }>Masonry Sticky Info</Link></li>
                     </ul>
-                </li>
+                </li> */}
 
-                <li>
+                {/* <li>
                     <Link to={ `${process.env.PUBLIC_URL}/admin/orders` }>
                         Orders
                     </Link>
@@ -72,7 +72,7 @@ function MobileMainNav( props ) {
                         <li><Link to={ `${process.env.PUBLIC_URL}/pages/404` }>Error 404</Link></li>
                         <li><Link to={ `${process.env.PUBLIC_URL}/pages/coming-soon` }>Coming Soon</Link></li>
                     </ul>
-                </li>
+                </li> */}
 
                 <li>
                     <Link to={ `${process.env.PUBLIC_URL}/admin/users` }>

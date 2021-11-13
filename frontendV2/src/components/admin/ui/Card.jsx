@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import classes from "../style.module.scss";
+import classes from "../styles/style.module.scss";
 
 const Card = ({ title, amount, unit }) => {
   return (

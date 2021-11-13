@@ -5,6 +5,7 @@ import { persistReducer } from "redux-persist";
 import storage from 'redux-persist/lib/storage';
 
 const initialState = {
+    loading: true,
     products: [],
     productDetail: [],
     quickView: false
@@ -15,6 +16,7 @@ const productReducer = ( state = initialState, action ) => {
         case RECEIVE_PRODUCTS:
             return {
                 ...state,
+                loading: false,
                 products: action.products
             };
 
