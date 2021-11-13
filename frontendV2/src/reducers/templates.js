@@ -1,6 +1,7 @@
 import {
   GET_TEMPLATES_REQUEST,
   GET_TEMPLATES_SUCCESS,
+  SET_TEMPLATE
 } from "../constants/adminConstants";
 import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
@@ -8,6 +9,7 @@ import storage from "redux-persist/lib/storage";
 const initialState = {
   loading: false,
   templates: [],
+  id: 1
 };
 
 export const templatesReducer = (state = initialState, action) => {
@@ -23,6 +25,11 @@ export const templatesReducer = (state = initialState, action) => {
         loading: false,
         templates: action.templates
       };
+    case SET_TEMPLATE:
+      return {
+        ...state,
+        id: action.id
+      }
     default:
       return state;
   }

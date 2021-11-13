@@ -29,27 +29,16 @@ function Templates({ history }) {
         },
         {
           label: "Status",
-          field: "status",
-          sort: "asc",
+          field: "status"
         },
       ],
       rows: [],
     };
 
-    templates.forEach(({id, name}) => {
+    templates.forEach(({id, name, isActive}) => {
+      let status = isActive ? 'Active' : 'Inactive'
       data.rows.push({
-        id: id,
-        name: name,
-        actions: (
-          <Fragment>
-            <Link
-              to={`/admin/template/${id}`}
-              className="btn btn-primary py-1 px-2"
-            >
-              <i className="fa fa-pencil"></i>
-            </Link>
-          </Fragment>
-        ),
+        id, name, status
       });
     });
 

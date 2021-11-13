@@ -1,22 +1,27 @@
 [
   {
     "id": "1",
-    "name": "Template 1"
+    "name": "Template 1",
+    "isActive": false
   },
   {
     "id": "2",
-    "name": "Template 2"
+    "name": "Template 2",
+    "isActive": false
   },
   {
     "id": "3",
-    "name": "Template 3"
+    "name": "Template 3",
+    "isActive": false
   },
   {
     "id": "4",
-    "name": "Template 4"
+    "name": "Template 4",
+    "isActive": false
   },
   {
     "id": "5",
-    "name": "Template 5"
+    "name": "Template 5",
+    "isActive": false
   }
 ]
