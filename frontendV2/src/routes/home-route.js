@@ -27,7 +27,12 @@ import HomePage22 from "../components/home/home-22";
 import HomePage23 from "../components/home/home-23";
 import HomePage24 from "../components/home/home-24";
 
+import { setTemplate } from "../actions/templateAction";
+
 export default function HomeRoute() {
+  const templateNo = setTemplate();
+  console.log(templateNo);
+
   const getHomePage = (page) => {
     switch (page) {
       case 1:
@@ -88,7 +93,7 @@ export default function HomeRoute() {
         <Route
           exact
           path={`${process.env.PUBLIC_URL}/`}
-          component={getHomePage(9)}
+          component={getHomePage(templateNo)}
         />
       </Layout>
     </Switch>

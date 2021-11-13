@@ -1,0 +1,15 @@
+.templates {
+    &-table {
+        margin: 0 auto 20px auto;
+        width: 70vw;
+        text-align: center;
+        border: 1px solid #eee;
+        & th, & td {
+            border: 1px solid #eee;
+            padding: 8px 1rem;
+        };
+        &-actions button{
+            margin: 0 auto;
+        }
+    }
+}

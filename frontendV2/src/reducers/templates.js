@@ -2,7 +2,7 @@ import {
   GET_TEMPLATES_REQUEST,
   GET_TEMPLATES_SUCCESS,
   SET_TEMPLATE
-} from "../constants/adminConstants";
+} from "../constants/action-types";
 import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 

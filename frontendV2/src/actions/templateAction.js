@@ -1,8 +1,4 @@
-import {
-  GET_TEMPLATES_REQUEST,
-  GET_TEMPLATES_SUCCESS,
-  SET_TEMPLATE
-} from "../constants/adminConstants";
+import { GET_TEMPLATES_REQUEST, GET_TEMPLATES_SUCCESS, SET_TEMPLATE } from "../constants/action-types";
 import axios from "axios";
 
 export const getTemplates = () => async (dispatch) => {
@@ -18,8 +14,9 @@ export const getTemplates = () => async (dispatch) => {
 
 export const setTemplate = (id) => async (dispatch) => {
   try {
-    dispatch({ type: SET_TEMPLATE}, id)
+    dispatch({ type: SET_TEMPLATE})
   } catch (e) {
     console.log(e.message);
   }
+  return id;
 }

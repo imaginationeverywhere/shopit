@@ -1,11 +1,11 @@
 /* Mobile Menu */
 .mobile-menu-container {
 	position: fixed;
-	//left: -280px;
-	//top: 0;
+	left: -280px;
+	top: 0;
 	bottom: 0;
 	z-index: 1001;
-	background-color: #fff;
+	background-color: #333;
 	width: 100%;
 	max-width: 280px;
 	overflow-y: scroll;
@@ -16,10 +16,10 @@
 	line-height: 1.5;
 	transition: all 0.4s ease;
 
-	// .mmenu-active & {
-	// 	visibility: visible;
-	// 	transform: translateX(280px);
-	// }
+	.mmenu-active & {
+		visibility: visible;
+		transform: translateX(280px);
+	}
 
 	.social-icons {
 		justify-content: center;
