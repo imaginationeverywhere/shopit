@@ -14,7 +14,7 @@ function Dashboard() {
         <div style={{marginBottom: '10px'}}>
           <Card title="Total Amount" amount="12,000,000" unit="$" />
         </div>
-        <div className={classes["admin-container"]}>
+        <div className={classes["admin-dashboard-container"]}>
           <Card title="Products" amount="guedhwi" />
           <Card title="Orders" amount="guedhwi" />
           <Card title="Users" amount="guedhwi" />

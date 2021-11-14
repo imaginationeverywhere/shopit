@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import classes from "../styles/style.module.scss";
 
-const Card = ({ title, amount, unit }) => {
+const Card = ({ title, amount, unit, link }) => {
   return (
     <div className={classes[`admin-card`]}>
       <div className="admin-card-details">
@@ -14,7 +14,7 @@ const Card = ({ title, amount, unit }) => {
 
       <div className={classes["admin-card-bottom"]}>
         <div className={classes["admin-card-link"]}>
-          <Link to="/">View Details</Link>
+          <Link to={`${process.env.PUBLIC_URL}/${link}`}>View Details</Link>
         </div>
       </div>
     </div>

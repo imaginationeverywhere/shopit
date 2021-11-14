@@ -7,11 +7,13 @@ function Sidebar() {
     <nav className={classes.sidebar}>
       <ul className="mobile-menu">
         <li>
-          <Link to={`${process.env.PUBLIC_URL}/`}>Home</Link>
-        </li>
-        <li>
           <Link to={`${process.env.PUBLIC_URL}/admin/dashboard`}>
             Dashboard
+          </Link>
+        </li>
+        <li>
+          <Link to={`${process.env.PUBLIC_URL}/admin/products`}>
+            Products
           </Link>
         </li>
         <li>
