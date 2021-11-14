@@ -7,7 +7,8 @@ import wishlistReducer from './wishlist';
 import compareReducer from './compare';
 import filterReducer from './filter';
 import modalReducer from './modal';
-import { templatesReducer } from './templates';
+import templatesReducer from './templates';
+import usersReducer from './users'
 
 const rootReducer = combineReducers( {
     data: productReducer,
@@ -16,7 +17,8 @@ const rootReducer = combineReducers( {
     compare: compareReducer,
     filters: filterReducer,
     modal: modalReducer,
-    templates: templatesReducer
+    templates: templatesReducer,
+    users: usersReducer
 } );
 
 export default rootReducer;

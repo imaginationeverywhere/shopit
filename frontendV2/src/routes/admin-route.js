@@ -3,8 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 import Layout from "../components/admin";
 import Dashboard from '../components/admin/Dashboard';
 import Templates from '../components/admin/Templates';
-import { ProductList } from '../components/admin/ProductList';
-
+import ProductList from '../components/admin/ProductList';
+import UsersList from '../components/admin/UsersList';
 
 
 export default function AdminPages() {
@@ -14,6 +14,7 @@ export default function AdminPages() {
                 <Route exact path={ `${process.env.PUBLIC_URL}/admin/dashboard` } component={ Dashboard } />
                 <Route exact path={ `${process.env.PUBLIC_URL}/admin/templates` } component={ Templates } />
                 <Route exact path={ `${process.env.PUBLIC_URL}/admin/products` } component={ ProductList } />
+                <Route exact path={ `${process.env.PUBLIC_URL}/admin/users` } component={ UsersList } />
             </Layout>
         </Switch>
     );

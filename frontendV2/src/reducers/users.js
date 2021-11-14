@@ -1,35 +1,33 @@
 import {
-  GET_TEMPLATES_REQUEST,
-  GET_TEMPLATES_SUCCESS,
-  SET_TEMPLATE
+  ALL_USERS_REQUEST,
+  ALL_USERS_SUCCESS,
+  ALL_USERS_FAIL,
 } from "../constants/action-types";
 import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-const initialState = {
-  loading: false,
-  templates: [],
-  id: null
-};
-
-const templatesReducer = (state = initialState, action) => {
+const usersReducer = (state = { users: [] }, action) => {
   switch (action.type) {
-    case GET_TEMPLATES_REQUEST:
+    case ALL_USERS_REQUEST:
       return {
         ...state,
         loading: true,
       };
-    case GET_TEMPLATES_SUCCESS:
+
+    case ALL_USERS_SUCCESS:
       return {
         ...state,
         loading: false,
-        templates: action.templates
+        users: action.payload,
       };
-    case SET_TEMPLATE:
+
+    case ALL_USERS_FAIL:
       return {
         ...state,
-        id: action.id
-      }
+        loading: false,
+        error: action.payload,
+      };
+
     default:
       return state;
   }
@@ -41,4 +39,4 @@ const persistConfig = {
   storage,
 };
 
-export default persistReducer(persistConfig, templatesReducer);
+export default persistReducer(persistConfig, usersReducer);

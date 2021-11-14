@@ -1,3 +1,4 @@
+import axios from "axios";
 import * as api from "../api";
 import * as types from "../constants/action-types";
 import { toast } from "react-toastify";
@@ -246,4 +247,26 @@ export const getAllTemplates = () => (dispatch) => {
 
 export const setTemplate = (id) => (dispatch) => {
   dispatch({ type: types.SET_TEMPLATE, id });
+  return id;
+};
+
+// Users
+
+// Get all users
+export const allUsers = () => async (dispatch) => {
+  try {
+    dispatch({ type: types.ALL_USERS_REQUEST });
+
+    const { data } = await axios.get('/api/v1/admin/users');
+
+    dispatch({
+      type: types.ALL_USERS_SUCCESS,
+      payload: data.users,
+    });
+  } catch (error) {
+    dispatch({
+      type: types.ALL_USERS_FAIL,
+      payload: error.response.data.message,
+    });
+  }
 };
