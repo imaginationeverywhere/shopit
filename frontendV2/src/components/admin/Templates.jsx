@@ -5,24 +5,8 @@ import styled from "styled-components";
 import { getAllTemplates, setTemplate } from "../../actions";
 import templates from "../../mock-server/templates.json";
 import classes from './styles/templates.module.scss';
+import TemplateTable from './ui/TemplateTable'
 
-const ActiveButton = styled.button`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  max-width: 180px;
-  padding: 1.25rem;
-  border: 1px solid gray;
-  border-radius: 0.25rem;
-  background: ${({ isActive }) => (isActive ? "green" : "gray")};
-  color: white;
-  :hover{
-    background: white;
-    color: green;
-    border: 1px solid green;
-  }
-  transition: 0.1s linear;
-`;
 
 function Templates () {
   const dispatch = useDispatch();
@@ -60,37 +44,11 @@ function Templates () {
       <Helmet>
         <title>Shopit|Admin Templates</title>
       </Helmet>
+      <section className={classes["templates-wrapper"]}>
       <h2>Templates</h2>
-      <table className={classes['templates-table']}>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Action</th>
-        </tr>
-        {templateStatus.templates.map(({ id, name, isActive }) => {
-          const [active, setIsActive] = useState(isActive);
-          return (
-            <tr key={id}>
-              <td>{id}</td>
-              <td>{name}</td>
-              <td className={classes['templates-table-actions']}>
-                {
-                  <ActiveButton
-                    isActive={active}
-                    onClick={() => {
-                      selectTemplate(id);
-                      setIsActive(!active);
-                      dispatch(setTemplate(id));
-                    }}
-                  >
-                    {active ? "Active" : "Set Template"}
-                  </ActiveButton>
-                }
-              </td>
-            </tr>
-          );
-        })}
-      </table>
+      <TemplateTable />
+
+      </section>
     </>
   );
 }

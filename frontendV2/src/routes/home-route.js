@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Route, Switch } from "react-router-dom";
 
+
 import Layout from "../components/app";
+import axios from "axios";
+
 import HomePage1 from "../components/home/home-1";
 import HomePage2 from "../components/home/home-2";
 import HomePage3 from "../components/home/home-3";
@@ -26,14 +29,14 @@ import HomePage21 from "../components/home/home-21";
 import HomePage22 from "../components/home/home-22";
 import HomePage23 from "../components/home/home-23";
 import HomePage24 from "../components/home/home-24";
+ 
 
-import { setTemplate } from "../actions/templateAction";
-
-export default function HomeRoute() {
-  const templateNo = setTemplate();
-  console.log(templateNo);
+const MAIN_API_URL = process.env.REACT_APP_API_URL;
+export default function HomeRoute() { 
+  const [template, setTemplate] = useState(1) 
 
   const getHomePage = (page) => {
+    
     switch (page) {
       case 1:
         return HomePage1;
@@ -87,13 +90,34 @@ export default function HomeRoute() {
         return HomePage1;
     }
   };
+
+  useEffect(() => {
+    axios
+    .get(MAIN_API_URL + "templates")
+    .then(function(response) {
+      console.log(response.data)
+      const active = response.data.templates.find(temp => temp.isActive === true);
+      setTemplate(active.templateId)
+    })
+    .catch(function(error) {
+      // handle error
+      console.log(error);
+    });
+  }, [])
+
+
+  useEffect(()=> {
+    console.log(template)
+  }, [template])
+
+
   return (
     <Switch>
       <Layout>
         <Route
           exact
           path={`${process.env.PUBLIC_URL}/`}
-          component={getHomePage(templateNo)}
+          component={getHomePage(template)}
         />
       </Layout>
     </Switch>

@@ -3,9 +3,6 @@ import { ToastContainer } from "react-toastify";
 import { matchPath } from "react-router-dom";
 import store from "../store";
 
-// import Custom Components
-import Header from "./common/header";
-import Footer from "./common/footer";
 //import MobileMenu from './admin/common/mobile-menu';
 import Sidebar from "./admin/Sidebar";
 
@@ -126,15 +123,13 @@ function App(props) {
   return (
     <>
       <div className="page-wrapper">
-        <Header container={container} urls={prevPath} />
-
         <div className={classes["admin-page-wrapper"]}>
           <Sidebar />
           <main>{props.children}</main>
         </div>
-
-        <Footer container={container} />
-
+        <div className="admin-footer">
+          <h3>All Rights Reserved</h3>
+        </div>
         <ToastContainer autoClose={3000} className="toast-container" />
       </div>
 

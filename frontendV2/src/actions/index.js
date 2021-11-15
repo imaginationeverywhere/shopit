@@ -240,14 +240,16 @@ export const receiveTemplates = (templates) => ({
 
 export const getAllTemplates = () => (dispatch) => {
   api.getTemplates().then((templates) => {
-    dispatch(receiveTemplates(templates));
+    dispatch(receiveTemplates(templates.templates));
     return templates;
   });
 };
 
-export const setTemplate = (id) => (dispatch) => {
-  dispatch({ type: types.SET_TEMPLATE, id });
-  return id;
+export const setTemplate = (templateId) => (dispatch) => {
+  console.log("here")
+  api.setTemplate(templateId).then((templates) => { 
+    return templates;
+  });
 };
 
 // Users

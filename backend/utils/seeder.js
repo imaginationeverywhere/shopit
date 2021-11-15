@@ -1,11 +1,14 @@
 const Product = require('../models/product');
 const User = require('../models/user');
+const Template = require('../models/template');
+
 
 const dotenv = require('dotenv');
 const connectDatabase = require('../config/database');
 
 const products = require('../data/products');
 const users = require('../data/users');
+const templates = require('../data/templates');
 
 // Setting dotenv file
 dotenv.config({ path: 'backend/config/config.env' })
@@ -25,9 +28,9 @@ const seedProducts = async () => {
         console.log('Users are deleted now')
 
         const val = await User.insertMany(users)
-        console.log(val)
-        console.log('Users added.')
-
+        
+        await Template.deleteMany();
+        await Template.insertMany(templates)
 
         process.exit();
 

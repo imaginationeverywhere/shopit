@@ -1,5 +1,6 @@
 main {
 	width: 100%;
+	min-height: 100vh;
 	margin: 0 2.5rem 6rem 2.5rem;
 }
 
@@ -7,6 +8,9 @@ main {
   &-page-wrapper {
     padding: 0 10px 0 0;
 	display: flex;
+  }
+  &-content-wrapper {
+    padding: 20px;
   }
   &-dashboard-container {
     display: grid;
@@ -36,6 +40,17 @@ main {
     &-link {
       margin: 10px 0 0 0;
     }
+	
+	&-footer{
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		background-color: white;
+		text-align: center;
+	}
+	h3{
+		text-align: center;
+	}
   }
 }
 

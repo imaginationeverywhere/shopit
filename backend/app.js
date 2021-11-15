@@ -7,6 +7,7 @@ const Constants = require('./utils/constants');
 
 // const dotenv = require('dotenv');
 const path = require('path')
+const cors = require('cors')
 
 const errorMiddleware = require('./middlewares/errors')
 
@@ -14,6 +15,7 @@ const errorMiddleware = require('./middlewares/errors')
 if (process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({ path: 'backend/config/config.env' })
 // dotenv.config({ path: 'backend/config/config.env' })
 
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({
   extended: true
@@ -29,6 +31,7 @@ const payment = require('./routes/payment');
 const order = require('./routes/order');
 const shipment = require('./routes/shipment');
 const webhooks = require('./routes/webhooks');
+const templates = require('./routes/templates');
 
 app.use(Constants.BASE_URL, products);
 app.use(Constants.BASE_URL, auth)
@@ -36,6 +39,7 @@ app.use(Constants.BASE_URL, payment)
 app.use(Constants.BASE_URL, order)
 app.use(Constants.BASE_URL, shipment);
 app.use(Constants.BASE_URL, webhooks)
+app.use(Constants.BASE_URL, templates)
 
 if (process.env.NODE_ENV === 'PRODUCTION') {
   app.use(express.static(path.join(__dirname, '../frontend/build')))

@@ -1,0 +1,117 @@
+[
+    {
+        "name": "template-1",
+        "isActive": true,
+        "templateId": 1
+    },
+    {
+        "name": "template-2",
+        "isActive": false,
+        "templateId": 2
+    },
+    {
+        "name": "template-3",
+        "isActive": false,
+        "templateId": 3
+    },
+    {
+        "name": "template-4",
+        "isActive": false,
+        "templateId": 4
+    },
+    {
+        "name": "template-5",
+        "isActive": false,
+        "templateId": 5
+    },
+    {
+        "name": "template-6",
+        "isActive": false,
+        "templateId": 6
+    },
+    {
+        "name": "template-7",
+        "isActive": false,
+        "templateId": 7
+    },
+    {
+        "name": "template-8",
+        "isActive": false,
+        "templateId": 8
+    },
+    {
+        "name": "template-9",
+        "isActive": false,
+        "templateId": 9
+    },
+    {
+        "name": "template-10",
+        "isActive": false,
+        "templateId": 10
+    },
+    {
+        "name": "template-11",
+        "isActive": false,
+        "templateId": 11
+    },
+    {
+        "name": "template-12",
+        "isActive": false,
+        "templateId": 12
+    },
+    {
+        "name": "template-13",
+        "isActive": false,
+        "templateId": 13
+    },
+    {
+        "name": "template-14",
+        "isActive": false,
+        "templateId": 14
+    },
+    {
+        "name": "template-15",
+        "isActive": false,
+        "templateId": 15
+    },
+    {
+        "name": "template-16",
+        "isActive": false,
+        "templateId": 16
+    },
+    {
+        "name": "template-17",
+        "isActive": false,
+        "templateId": 17
+    },
+    {
+        "name": "template-18",
+        "isActive": false,
+        "templateId": 18
+    },
+    {
+        "name": "template-19",
+        "isActive": false,
+        "templateId": 19
+    },
+    {
+        "name": "template-20",
+        "isActive": false,
+        "templateId": 20
+    },
+    {
+        "name": "template-21",
+        "isActive": false,
+        "templateId": 21
+    },
+    {
+        "name": "template-22",
+        "isActive": false,
+        "templateId": 22
+    },
+    {
+        "name": "template-23",
+        "isActive": false,
+        "templateId": 23
+    }
+]

@@ -24,7 +24,7 @@ function Dashboard() {
       <Helmet>
         <title>Shopit|Admin baba</title>
       </Helmet>
-      <div className={classes["page-wrapper"]}>
+      <div className={classes["admin-content-wrapper"]}>
         <h3>Dashboard</h3>
         <div style={{ marginBottom: "10px" }}>
           <Card
@@ -41,9 +41,9 @@ function Dashboard() {
             link="admin/products"
             hasBottom={true}
           />
-          <Card title="Orders" amount="guedhwi" hasBottom={true} />
-          <Card title="Users" amount="guedhwi" hasBottom={true} />
-          <Card title="Out of Stock" amount={getOutOfStockCount()} hasBottom={false} />
+          <Card title="Orders" amount="123" hasBottom={true} link="admin/products" />
+          <Card title="Templates" amount="12" hasBottom={true} link="admin/templates"/>
+          <Card title="Out of Stock" amount={getOutOfStockCount()} hasBottom={false} link="admin/products" />
         </div>
       </div>
     </>
