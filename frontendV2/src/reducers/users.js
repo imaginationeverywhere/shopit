@@ -35,7 +35,7 @@ const usersReducer = (state = { users: [] }, action) => {
 
 const persistConfig = {
   keyPrefix: "molla-",
-  key: "templates",
+  key: "users",
   storage,
 };
 

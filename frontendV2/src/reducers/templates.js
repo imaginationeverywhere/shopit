@@ -5,6 +5,7 @@ import {
 } from "../constants/action-types";
 import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import { getTemplates } from "../actions/templateAction";
 
 const initialState = {
   loading: false,
@@ -15,6 +16,7 @@ const initialState = {
 const templatesReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_TEMPLATES_REQUEST:
+      getTemplates()
       return {
         ...state,
         loading: true,

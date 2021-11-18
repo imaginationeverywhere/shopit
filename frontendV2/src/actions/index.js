@@ -238,11 +238,14 @@ export const receiveTemplates = (templates) => ({
   templates,
 });
 
-export const getAllTemplates = () => (dispatch) => {
-  api.getTemplates().then((templates) => {
-    dispatch(receiveTemplates(templates.templates));
-    return templates;
-  });
+export const getAllTemplates =  () =>  (dispatch) => {
+  api.getTemplates().then((data) => {
+    console.log(data.templates, " Working?")
+    dispatch({ 
+      type: types.GET_TEMPLATES_SUCCESS, 
+      templates: data.templates
+    })
+  })
 };
 
 export const setTemplate = (templateId) => (dispatch) => {
