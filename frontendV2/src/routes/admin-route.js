@@ -17,9 +17,9 @@ export default function AdminPages() {
                 <Route exact path={ `${process.env.PUBLIC_URL}/admin/products` } component={ ProductList } />
                 <Route exact path={ `${process.env.PUBLIC_URL}/admin/users` } component={ UsersList } />
             </AdminLayout>
-            <HomePageLayout>
+            {/* <HomePageLayout>
                 <Route exact path={ `${process.env.PUBLIC_URL}/admin/templates/preview/:id` } component={ PreviewPages } />
-            </HomePageLayout>
+            </HomePageLayout> */}
         </Switch>
     );
 };

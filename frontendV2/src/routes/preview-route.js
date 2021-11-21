@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from "react";
-import { Route, Switch } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Route, Switch, useParams } from "react-router-dom";
 
 import Layout from "../components/app";
 import axios from "axios";
@@ -28,11 +28,12 @@ import HomePage21 from "../components/home/home-21";
 import HomePage22 from "../components/home/home-22";
 import HomePage23 from "../components/home/home-23";
 import HomePage24 from "../components/home/home-24";
- 
 
-const MAIN_API_URL = process.env.REACT_APP_API_URL;
-export default function PreviewRoute({id}) { 
-  const [tempId, previewTemplate] = useState(id);
+
+export default function PreviewRoute() {
+  console.log('here')
+  // let {id} = useParams()
+  let id = 1
 
   const getHomePage = (page) => {
     switch (page) {
@@ -89,34 +90,21 @@ export default function PreviewRoute({id}) {
     }
   };
 
+
   useEffect(() => {
-    axios
-    .get(MAIN_API_URL + "templates")
-    .then(function(response) {
-      console.log(response.data)
-      const active = response.data.templates.find(temp => temp.templateId === id);
-      previewTemplate(active.templateId)
-    })
-    .catch(function(error) {
-      // handle error
-      console.log(error);
-    });
-  }, [])
-
-
-  useEffect(()=> {
+    console.log('id')
     console.log(id)
   }, [id])
 
 
   return (
     <Switch>
-      <Layout>
-        <Route
-          exact
-          path={`${process.env.PUBLIC_URL}/templates/preview/${tempId}`}
-          component={getHomePage(tempId)}
-        />
+    <Layout>
+      <Route
+        exact
+        path={`${process.env.PUBLIC_URL}/templates/preview/${id}`}
+        component={getHomePage(id)}
+      />
       </Layout>
     </Switch>
   );
