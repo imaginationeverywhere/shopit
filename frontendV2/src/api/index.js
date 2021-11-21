@@ -28,6 +28,18 @@ export const getTemplates = function() {
     });
 };
 
+export const previewTemplate = function(templateId) {
+  return axios
+    .get(MAIN_API_URL + "templates", {templateId})
+    .then(function(response) {
+      return response.data;
+    })
+    .catch(function(error) {
+      // handle error
+      console.log(error);
+    });
+};
+
 export const setTemplate = function(templateId) {
   return axios
     .post(MAIN_API_URL + "templates", {templateId})

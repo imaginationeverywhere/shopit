@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Fragment } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
 import classes from './styles/templates.module.scss';
 import TemplateTable from './ui/TemplateTable'

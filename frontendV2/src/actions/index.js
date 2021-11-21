@@ -240,7 +240,6 @@ export const receiveTemplates = (templates) => ({
 
 export const getAllTemplates =  () =>  (dispatch) => {
   api.getTemplates().then((data) => {
-    console.log(data.templates, " Working?")
     dispatch({ 
       type: types.GET_TEMPLATES_SUCCESS, 
       templates: data.templates
@@ -248,12 +247,18 @@ export const getAllTemplates =  () =>  (dispatch) => {
   })
 };
 
-export const setTemplate = (templateId) => (dispatch) => {
+export const setTemplate = (templateId) => async (dispatch) => {
   console.log("here")
-  api.setTemplate(templateId).then((templates) => { 
+  await api.setTemplate(templateId).then((templates) => { 
     return templates;
   });
 };
+
+export const previewTemplate = (templateId) => (dispatch) => {
+  api.previewTemplate(templateId).then(() => {
+    return templateId;
+  });
+}
 
 // Users
 

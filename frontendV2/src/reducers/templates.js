@@ -1,6 +1,7 @@
 import {
   GET_TEMPLATES_REQUEST,
   GET_TEMPLATES_SUCCESS,
+  PREVIEW_TEMPLATE,
   SET_TEMPLATE
 } from "../constants/action-types";
 import { persistReducer } from "redux-persist";
@@ -27,7 +28,7 @@ const templatesReducer = (state = initialState, action) => {
         loading: false,
         templates: action.templates
       };
-    case SET_TEMPLATE:
+    case SET_TEMPLATE || PREVIEW_TEMPLATE:
       return {
         ...state,
         id: action.id

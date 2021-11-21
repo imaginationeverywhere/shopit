@@ -1,15 +1,20 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import classes from "../styles/templates.module.scss";
-import { getAllTemplates, setTemplate } from "../../../actions";
+import {
+  getAllTemplates,
+  setTemplate,
+  previewTemplate,
+} from "../../../actions";
 
 const ActiveButton = styled.button`
   display: flex;
   justify-content: center;
   width: 100%;
   max-width: 180px;
-  padding: 1.25rem;
+  padding: 1rem;
   border: 1px solid gray;
   border-radius: 0.25rem;
   background: ${({ isActive }) => (isActive ? "green" : "gray")};
@@ -21,6 +26,7 @@ const ActiveButton = styled.button`
   }
   transition: 0.1s linear;
 `;
+
 function TemplateTable() {
   const dispatch = useDispatch();
 
@@ -28,9 +34,10 @@ function TemplateTable() {
     dispatch(getAllTemplates());
   }, []);
 
-  const { templates } = useSelector((state) => state.templates);
+  const { templates, loading } = useSelector((state) => state.templates);
 
   if (templates.length < 1) return null;
+
 
   return (
     <table className={classes["templates-table"]}>
@@ -40,18 +47,34 @@ function TemplateTable() {
         <th>Action</th>
       </tr>
       {templates.map(({ templateId, name, isActive }) => {
+        const handlePreview = () => {
+          previewTemplate(templateId);
+          dispatch({type: 'PREVIEW_TEMPLATE', id: templateId})
+        }
+      
         return (
           <tr key={templateId}>
             <td>{templateId}</td>
             <td>{name}</td>
             <td className={classes["templates-table-actions"]}>
               {
-                <ActiveButton
-                  isActive={isActive}
-                  onClick={setTemplate(templateId)}
-                >
-                  {isActive ? "Active" : "Set Template"}
-                </ActiveButton>
+                <>
+                  <Link
+                    to={`/templates/preview/${templateId}`}
+                    target="_blank"
+                    onClick={handlePreview}
+                  >
+                    Preview
+                  </Link>
+
+                  <ActiveButton
+                    onClick={setTemplate(templateId)}
+                    isActive={isActive}
+                  >
+                    {loading ? "Loading..." : ""}
+                    {!loading && isActive ? "Active" : "Set Template"}
+                  </ActiveButton>
+                </>
               }
             </td>
           </tr>

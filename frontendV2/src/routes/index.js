@@ -12,6 +12,7 @@ const BlogPages = React.lazy( () => import( './blogs-route.js' ) );
 const OtherPages = React.lazy( () => import( './others-route.js' ) );
 const HomePage = React.lazy( () => import( './home-route.js' ) );
 const AdminPages = React.lazy( () => import( './admin-route.js' ) );
+const PreviewPages = React.lazy( () => import('./preview-route'));
 
 export default function AppRoot() {
     useEffect( () => {
@@ -27,8 +28,8 @@ export default function AppRoot() {
                 <Route path={ `${process.env.PUBLIC_URL}/blog` } component={ BlogPages } />
                 <Route path={ `${process.env.PUBLIC_URL}/pages` } component={ OtherPages } />
                 <Route path={ `${process.env.PUBLIC_URL}/admin` } component={ AdminPages } />
+                <Route path={ `${process.env.PUBLIC_URL}/templates/preview/:id` } component={ PreviewPages } />
                 <Route path={ `${process.env.PUBLIC_URL}/` } component={ HomePage } />
-                
             </Switch>
         </React.Suspense>
     )

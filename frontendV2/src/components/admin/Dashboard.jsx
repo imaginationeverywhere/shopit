@@ -6,9 +6,7 @@ import classes from "./styles/style.module.scss";
 
 function Dashboard() {
   const { products } = useSelector((state) => state.data);
-  products.forEach((element) => {
-    console.log(element.stock);
-  });
+  const { templates } = useSelector((state) => state.templates);
 
   const getOutOfStockCount = () => {
     let count = 0;
@@ -42,7 +40,7 @@ function Dashboard() {
             hasBottom={true}
           />
           <Card title="Orders" amount="123" hasBottom={true} link="admin/products" />
-          <Card title="Templates" amount="12" hasBottom={true} link="admin/templates"/>
+          <Card title="Templates" amount={templates.length} hasBottom={true} link="admin/templates"/>
           <Card title="Out of Stock" amount={getOutOfStockCount()} hasBottom={false} link="admin/products" />
         </div>
       </div>
