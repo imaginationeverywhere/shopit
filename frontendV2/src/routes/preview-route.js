@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Route, Switch, useParams } from "react-router-dom";
-
-import Layout from "../components/app";
+import { useDispatch } from "react-redux";
+import { previewTemplate } from "../actions";
 import axios from "axios";
-
+import Layout from "../components/app";
 import HomePage1 from "../components/home/home-1";
 import HomePage2 from "../components/home/home-2";
 import HomePage3 from "../components/home/home-3";
@@ -31,9 +31,7 @@ import HomePage24 from "../components/home/home-24";
 
 
 export default function PreviewRoute() {
-  console.log('here')
-  // let {id} = useParams()
-  let id = 1
+  const { id } = useParams();
 
   const getHomePage = (page) => {
     switch (page) {
@@ -90,20 +88,14 @@ export default function PreviewRoute() {
     }
   };
 
-
-  useEffect(() => {
-    console.log('id')
-    console.log(id)
-  }, [id])
-
-
+  console.log(id)
   return (
     <Switch>
     <Layout>
       <Route
         exact
         path={`${process.env.PUBLIC_URL}/templates/preview/${id}`}
-        component={getHomePage(id)}
+        component={getHomePage(+id)}
       />
       </Layout>
     </Switch>
