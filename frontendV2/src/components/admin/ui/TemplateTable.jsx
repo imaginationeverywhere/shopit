@@ -63,8 +63,7 @@ function TemplateTable() {
                     to={`/templates/preview/${templateId}`}
                     target="_blank"
                     onClick={handlePreview}
-                  >
-                    Preview
+                  >Preview
                   </Link>
 
                   <ActiveButton
