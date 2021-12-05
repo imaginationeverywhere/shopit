@@ -28,6 +28,10 @@ cloudinary.config({
 
 const server = app.listen(process.env.PORT, () => {
     console.log(`Server started on process.env.PORT: ${ process.env.PORT} in ${ process.env.NODE_ENV} mode.`)
+});
+
+app.get('/', (req, res) => { 
+    res.send('App shoplift backend is running')
 })
 
 // Handle Unhandled Promise rejections
