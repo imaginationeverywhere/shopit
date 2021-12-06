@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 
 const connectDatabase = () => {
-    mongoose.connect('mongodb://127.0.0.1:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false', {
+    const uri = "mongodb+srv://develop:VhUR5azEqckE8H4Y@develop.1i8ll.mongodb.net/shopit?retryWrites=true&w=majority";
+    mongoose.connect(uri, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
@@ -10,13 +11,6 @@ const connectDatabase = () => {
     }).then(con => {
         console.log(`MongoDB Database connect with HOST: ${con.connection.host}`)
     })
-    // mongoose.connect(process.env.DB_LOCAL_URI, {
-    //     useNewUrlParser: true,
-    //     useUnifiedTopology: true,
-    //     useCreateIndex: true
-    // }).then(con => {
-    //     console.log(`MongoDB Database connect with HOST: ${con.connection.host}`)
-    // })
 }
 
 module.exports = connectDatabase;

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Route, Switch, useParams } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { previewTemplate } from "../actions";
 import axios from "axios";
@@ -31,7 +31,7 @@ import HomePage24 from "../components/home/home-24";
 
 
 export default function PreviewRoute() {
-  const { id } = useParams();
+  const { id } = 2;
 
   const getHomePage = (page) => {
     switch (page) {
@@ -88,7 +88,6 @@ export default function PreviewRoute() {
     }
   };
 
-  console.log(id)
   return (
     <Switch>
     <Layout>
