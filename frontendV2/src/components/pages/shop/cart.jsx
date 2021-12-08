@@ -155,64 +155,7 @@ function Cart( props ) {
                                                 <tr className="summary-subtotal">
                                                     <td>Subtotal:</td>
                                                     <td>${ total.toLocaleString( undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 } ) }</td>
-                                                </tr>
-                                                <tr className="summary-shipping">
-                                                    <td>Shipping:</td>
-                                                    <td>&nbsp;</td>
-                                                </tr>
-
-                                                <tr className="summary-shipping-row">
-                                                    <td>
-                                                        <div className="custom-control custom-radio">
-                                                            <input type="radio"
-                                                                id="free-shipping"
-                                                                name="shipping"
-                                                                className="custom-control-input"
-                                                                onChange={ ( e ) => onChangeShipping( "free" ) }
-                                                                defaultChecked={ "free" === prevShip ? true : false }
-                                                            />
-                                                            <label className="custom-control-label" htmlFor="free-shipping">Free Shipping</label>
-                                                        </div>
-                                                    </td>
-                                                    <td>$0.00</td>
-                                                </tr>
-
-                                                <tr className="summary-shipping-row">
-                                                    <td>
-                                                        <div className="custom-control custom-radio">
-                                                            <input type="radio"
-                                                                id="standard-shipping"
-                                                                name="shipping"
-                                                                className="custom-control-input"
-                                                                onChange={ ( e ) => onChangeShipping( "standard" ) }
-                                                                defaultChecked={ "standard" === prevShip ? true : false }
-                                                            />
-                                                            <label className="custom-control-label" htmlFor="standard-shipping">Standard:</label>
-                                                        </div>
-                                                    </td>
-                                                    <td>$10.00</td>
-                                                </tr>
-
-                                                <tr className="summary-shipping-row">
-                                                    <td>
-                                                        <div className="custom-control custom-radio">
-                                                            <input type="radio"
-                                                                id="express-shipping"
-                                                                name="shipping"
-                                                                className="custom-control-input"
-                                                                onChange={ ( e ) => onChangeShipping( "express" ) }
-                                                                defaultChecked={ "express" === prevShip ? true : false }
-                                                            />
-                                                            <label className="custom-control-label" htmlFor="express-shipping">Express:</label>
-                                                        </div>
-                                                    </td>
-                                                    <td>$20.00</td>
-                                                </tr>
-
-                                                <tr className="summary-shipping-estimate">
-                                                    <td>Estimate for Your Country<br /> <a href={ `${process.env.PUBLIC_URL}/shop/dashboard` }>Change address</a></td>
-                                                    <td>&nbsp;</td>
-                                                </tr>
+                                                </tr> 
 
                                                 <tr className="summary-total">
                                                     <td>Total:</td>

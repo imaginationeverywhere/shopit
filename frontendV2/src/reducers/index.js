@@ -18,7 +18,8 @@ const rootReducer = combineReducers( {
     filters: filterReducer,
     modal: modalReducer,
     templates: templatesReducer,
-    users: usersReducer
+    users: usersReducer,
+    
 } );
 
 export default rootReducer;
