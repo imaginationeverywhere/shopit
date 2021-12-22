@@ -6,9 +6,11 @@ const MAIN_API_URL = process.env.REACT_APP_API_URL;
 // API to get products from mock server
 export const getProducts = function() {
   return axios
-    .get(API_URL + "/mock-server/products.json")
+    .get(MAIN_API_URL + "products")
     .then(function(response) {
-      return response.data;
+      // const myData = response.data.products.map(({_id, ...rest}) => ({...rest, id: _id}));
+      // console.log({ myData });
+      return response.data.products;
     })
     .catch(function(error) {
       // handle error

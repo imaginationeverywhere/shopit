@@ -2,11 +2,13 @@ const Product = require('../models/product');
 const ErrorHandler = require('../utils/errorHandler');
 const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
 const APIFeatures = require('../utils/apiFeatures');
-const cloudinary = require('cloudinary')
+const cloudinary = require('cloudinary');
+const { arrayPad } = require('../utils/helpers');
+
+const oldProducts = require('../../frontendV2/src/mock-server/products.json');
 
 // Create new product   =>   /api/v1/admin/product/new
-exports.newProduct = catchAsyncErrors(async (req, res, next) => {
-
+exports.newProductOld = catchAsyncErrors(async (req, res, next) => {
   let images = []
   if (typeof req.body.images === 'string') {
       images.push(req.body.images)
@@ -32,6 +34,61 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
 
   const product = await Product.create(req.body);
 
+  res.status(201).json({
+      success: true,
+      product
+  })
+});
+
+exports.newProduct = catchAsyncErrors(async (req, res, next) => {
+  
+   const pictures = [];
+   const smPictures = [];
+   // default State of Small and large Pictures
+   req.body.pictures = [];
+   req.body.smPictures = [];
+   req.body.category = req.body.categories && req.body.categories.split(', ') || [];
+   req.body.brands = req.body.brands && req.body.brands.split(', ') || [];
+   req.body.variants = req.body.variants && req.body.variants.length &&  req.body.variants.split(', ').map(ele => ({ color: ele}));
+   req.body.imagesLinks = [];
+   if(req.files) {
+    const allFileKeys = Object.keys(req.files); 
+    
+    for (let i = 0; i < allFileKeys.length; i++) {
+      const pictureKey = allFileKeys[i];
+      const tempPath = req.files[pictureKey].tempFilePath;
+      const isSmallPictureType = pictureKey.includes('smPicture');
+      const isLargePictureType = pictureKey.includes('picture');
+
+      // make sure they are pictures and Small picture 
+      if(isSmallPictureType || isLargePictureType) {
+        const result = await cloudinary.v2.uploader.upload(tempPath, {
+            folder: 'products'
+        });
+        if(isSmallPictureType) {
+          smPictures.push(result.secure_url);
+        } else if(isLargePictureType) {
+          pictures.push(result.secure_url);
+        }
+
+          
+        req.body.imagesLinks.push({
+            public_id: result.public_id,
+            url: result.secure_url
+        });
+      }
+    }
+
+    if(pictures.length || smPictures.length) {
+      req.body.pictures = arrayPad(pictures, 4, pictures[0] || smPictures[0]); // Make sure product pictures has 4 images
+      req.body.smPictures = arrayPad(smPictures, 4, pictures[0] || smPictures[0]); // Make sure product small pictures has 4 images
+      console.log(req.body.pictures, req.body.smPictures)
+    }
+  }
+  req.body.user = req.user.id;
+
+  const product = await Product.create(req.body);
+  console.log(req.body)
   res.status(201).json({
       success: true,
       product
@@ -64,13 +121,27 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
   //     products,
   //   });
   // }, 2000);
-
+//   console.log('====================================');
+//   console.log({ products });
+//   console.log('====================================');
+  products = products.map(({_id, _doc: {numOfReviews, user, createdAt, ...rest} }, index) => {
+    return ({
+      id: index + 1, ...rest
+    })
+  } );
+  // console.log({products});
+  // const raw = [...products];
+  
+  //  console.log({ raw })
+  console.log('====================================');
+  console.log(oldProducts.length);
+  console.log('====================================');
     res.status(200).json({
       success: true,
       productsCount,
       resPerPage,
       filteredProductsCount,
-      products,
+      products: oldProducts,
     });
 });
 
@@ -255,4 +326,21 @@ exports.getAdminProducts = catchAsyncErrors(async (req, res, next) => {
       products
   })
 
-})
+});
+
+
+/*
+
+[
+  'https://res.cloudinary.com/imagination-everywhere-inc/image/upload/v1639478290/products/fy9v9lbbfvcdv6r3rz8j.jpg',
+  'https://res.cloudinary.com/imagination-everywhere-inc/image/upload/v1639478291/products/srnqeljdstlja6zpvrrr.jpg',
+  'https://res.cloudinary.com/imagination-everywhere-inc/image/upload/v1639478292/products/pvgj9dxa8o4kktxsceti.jpg',
+  'https://res.cloudinary.com/imagination-everywhere-inc/image/upload/v1639478293/products/szktytp4z2j4dbbmnezl.jpg'
+] [
+  'https://res.cloudinary.com/imagination-everywhere-inc/image/upload/v1639478294/products/bttc9f5t9t6m3axguoio.jpg',
+  'https://res.cloudinary.com/imagination-everywhere-inc/image/upload/v1639478295/products/ori4ouk0i63lqwxeebe8.jpg',
+  'https://res.cloudinary.com/imagination-everywhere-inc/image/upload/v1639478297/products/epjslt6t8emrnvyzdeh8.jpg',
+  'https://res.cloudinary.com/imagination-everywhere-inc/image/upload/v1639478298/products/cvzyynkw9xx8jlcazntw.jpg'
+]
+
+*/

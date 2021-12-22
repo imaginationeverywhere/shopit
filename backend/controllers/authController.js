@@ -9,9 +9,8 @@ const crypto = require('crypto');
 const cloudinary = require('cloudinary');
 
 // Register a user   => /api/v1/register
-exports.registerUser = catchAsyncErrors(async (req, res, next) => {
-
-    const result = await cloudinary.v2.uploader.upload(req.body.avatar, {
+exports.registerUser = catchAsyncErrors(async (req, res, next) => {   
+    const result = await cloudinary.v2.uploader.upload(req.files.avatar.tempFilePath, {
         folder: 'avatars',
         width: 150,
         crop: "scale"
@@ -39,7 +38,7 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
     // })
 })
 
-// Login User  =>  /a[i/v1/login
+// Login User  =>  /api/v1/login
 exports.loginUser = catchAsyncErrors(async (req, res, next) => {
     const { email, password } = req.body;
 

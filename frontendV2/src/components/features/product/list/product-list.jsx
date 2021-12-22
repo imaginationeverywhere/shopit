@@ -67,7 +67,7 @@ function ProductList( props ) {
     const itemsPerPage = units[ cols ];
 
     products = getVisibleProducts( products.slice( 20, 35 ), filters );
-
+// console.log(products.slice( 20, 35 ))
     return (
         <>
             <div className="toolbox">

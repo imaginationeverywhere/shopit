@@ -10,10 +10,9 @@ const productSchema = new mongoose.Schema({
     price: {
         type: Number,
         required: [true, 'Please enter product price'],
-        maxLength: [5, 'Product name cannot exceed 5 characters'],
         default: 0.0
     },
-    description: {
+    shortDesc: {
         type: String,
         required: [true, 'Please enter product description'],
     },
@@ -21,7 +20,15 @@ const productSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    images: [
+    reviews: {
+        type: Number,
+        default: 0
+    },
+    top: {
+        type: Boolean,
+        default: false
+    },
+    imageLinks: [
         {
             public_id: {
                 type: String,
@@ -33,31 +40,55 @@ const productSchema = new mongoose.Schema({
             },
         }
     ],
-    category: {
-        type: String,
-        required: [true, 'Please select category for this product'],
-        enum: {
-            values: [
-                'Electronics',
-                'Cameras',
-                'Laptops',
-                'Accessories',
-                'Headphones',
-                'Food',
-                "Books",
-                'Clothes/Shoes',
-                'Beauty/Health',
-                'Sports',
-                'Outdoor',
-                'Home'
-            ],
-            message: 'Please select correct category for product'
+    pictures: [
+        {
+            type: String,
+            required: true
         }
-    },
-    seller: {
-        type: String,
-        required: [true, 'Please enter product seller']
-    },
+    ],
+    smPictures: [
+        {
+            type: String,
+            required: true
+        }
+    ],
+    brands: [
+        {
+            type: String,
+            required: true
+        }
+    ],
+    category: [
+        {
+            type: String,
+            required: [true, 'Please select category for this product'],
+            enum: {
+                values: [
+                    'Electronics',
+                    'Cameras',
+                    'Laptops',
+                    'Accessories',
+                    'Headphones',
+                    'Food',
+                    "Books",
+                    'Clothes/Shoes',
+                    'Beauty/Health',
+                    'Sports',
+                    'Outdoor',
+                    'Home'
+                ],
+                message: 'Please select correct category for product'
+            }
+       }
+    ],
+    variants: [
+        {
+            color: {
+                type: String,
+                required: true
+            }
+        }
+    ],
     stock: {
         type: Number,
         required: [true, 'Please enter product stock'],
@@ -68,27 +99,6 @@ const productSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    reviews: [
-        {
-            user: {
-                type: mongoose.Schema.ObjectId,
-                ref: 'User',
-                required: true
-            },
-            name: {
-                type: String,
-                required: true
-            },
-            rating: {
-                type: Number,
-                required: true
-            },
-            comment: {
-                type: String,
-                required: true
-            }
-        }
-    ],
     user: {
         type: mongoose.Schema.ObjectId,
         ref: 'User',
