@@ -11,27 +11,17 @@ exports.draftOrder = catchAsyncErrors(async (req, res, next) => {
     const {
         orderItems,
         shippingInfo,
-        itemsPrice,
-        taxPrice,
-        shippingPrice,
         totalPrice,
-        selectedCarrier,
-        paymentInfo
+        userDetails,
     } = req.body;
 
     try {
-        const order = await OrderService.createOrder({
+        const order = await OrderService.createDraftOrder({
             orderItems,
             shippingInfo,
-            itemsPrice,
-            taxPrice,
-            shippingPrice,
             totalPrice,
-            paymentInfo,
-            selectedCarrier,
-            paidAt: Date.now(),
-            user: req.user._id
-        }, ShipmentService)
+            userDetails,
+        })
         res.status(200).json({
             success: true,
             order

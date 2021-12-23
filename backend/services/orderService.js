@@ -1,7 +1,47 @@
+const bcrypt = require('bcryptjs');
 const Order = require("../models/order");
+const User = require("../models/user");
 const fetch = require("node-fetch");
 const Constants = require("../utils/constants");
 
+
+
+const getUser = async (userDetails) => {
+  const user = await User.find({ email: userDetails.email })
+  if (!user) {
+    let newUser;
+    //create user here and proceed
+    bcrypt.genSalt(10, function (err, salt) {
+      bcrypt.hash("B4c0/\/", salt, function (err, hash) {
+        newUser = await User.create({
+          name: userDetails.fullname,
+          email: userDetails.email,
+          password: hash,
+          phone: userDetails.phone,
+        })
+        return newUser
+      });
+    });
+  }
+  return user
+}
+const createDraftOrder = async ({
+  orderItems,
+  shippingInfo,
+  totalPrice,
+  userDetails,
+}) => {
+  //first step check if user already exists
+  const user = await getUser(userDetails)
+  const orderId = await generateOrderId()
+  const draftOrder = await Order.create({
+    shippingInfo,
+    user: user._id,
+    orderItems,
+    totalPrice,
+    orderStatus: 'status',
+  })
+}
 const subscribeForTracking = async ({ carrier, trackingNo, orderId }) => {
   const body = JSON.stringify({
     carrier: "shippo",
@@ -22,20 +62,6 @@ const subscribeForTracking = async ({ carrier, trackingNo, orderId }) => {
     .then((res) => res.json())
     .then((json) => console.log("====subscribe for tracking"));
 };
-const createDraftOrder = async({
-  orderItems,
-  shippingInfo,
-  itemsPrice,
-  taxPrice,
-  shippingPrice,
-  totalPrice,
-  paymentInfo,
-  selectedCarrier,
-  paidAt,
-  user,
-}) => {
-  
-}
 const createOrder = async (
   {
     orderItems,

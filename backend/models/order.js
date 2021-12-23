@@ -51,6 +51,11 @@ const orderSchema = mongoose.Schema({
             type: String
         }
     },
+    orderId: {
+        type: String,
+        required: true,
+        unique: true,
+    },
     paidAt: {
         type: Date
     },
