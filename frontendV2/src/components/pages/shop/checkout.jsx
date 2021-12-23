@@ -19,6 +19,14 @@ function Checkout(props) {
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
     const [extras, setExtras] = useState('')
+    const [state, setState] = useState('')
+    const [city, setCity] = useState('')
+    const [street1, setStreet1] = useState('')
+    const [street2, setStreet2] = useState('')
+    const [zip, setZip] = useState('')
+    const [error, setError] = useState('')
+    const [showError, setShowError] = useState(false)
+
 
     const shippingPrice = { "free": 0, "standard": 10, "express": 20 };
     const shippingObj = { "free": "Free shipping", "standard": "Standard", "express": "Express" };
@@ -50,6 +58,35 @@ function Checkout(props) {
         }
     }, [])
 
+    const validateFields = () => {
+        if (!firstName || !lastName || !email || !phone || !extras || !state || !city || !street1 || !street2 || !zip  ){
+            setError('Kindly complete all required fields')
+            return false
+        }
+        //check email to be sure it's correct
+        if (String(email)
+        .toLowerCase()
+        .match(
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        )){
+            return true
+        }
+        setError('Invalid email entered')
+        return false
+    }
+
+    const handleSubmit = () => {
+        setShowError(false)
+        setError('')
+
+        if (!validateFields){
+            setShowError(true)
+            return false
+        }
+
+        // create draft order and generate checkout ID. 
+        
+    }
 
     return (
         <>
@@ -73,7 +110,7 @@ function Checkout(props) {
                                     <label htmlFor="checkout-discount-input" className="text-truncate">Have a coupon? <span>Click here to enter your code</span></label>
                                 </form>
                             </div>
-                            <form action="#">
+                            <form action="#" onSubmit={handleSubmit}>
                                 <div className="row">
                                     <BillingDetails
                                         setFirstName={setFirstName}
@@ -81,6 +118,11 @@ function Checkout(props) {
                                         setEmail={setEmail}
                                         setPhone={setPhone}
                                         setExtras={setExtras}
+                                        setState={setState}
+                                        setCity={setCity}
+                                        setStreet1={setStreet1}
+                                        setStreet2={setStreet2}
+                                        setZip={setZip}
                                     />
 
                                     <aside className="col-lg-3">
@@ -118,32 +160,8 @@ function Checkout(props) {
                                                 </tbody>
                                             </table>
 
-                                            <Accordion type="checkout">
-                                                <Card title="Direct bank transfer" expanded={true}>
-                                                    Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
-                                                </Card>
-
-                                                <Card title="Check payments">
-                                                    Ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
-                                                </Card>
-
-                                                <Card title="Cash on delivery">
-                                                    Quisque volutpat mattis eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
-                                                </Card>
-
-                                                <Card title='PayPal'>
-                                                    <small className="float-right paypal-link">What is PayPal?</small>
-                                                    Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum.
-                                                </Card>
-
-                                                <Card title='Credit Card (Stripe)'>
-                                                    <img src={`${process.env.PUBLIC_URL}/assets/images/payments-summary.png`} alt="payments cards" />
-                                                    Donec nec justo eget felis facilisis fermentum.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Lorem ipsum dolor sit ame.
-                                                </Card>
-                                            </Accordion>
-
                                             <button type="submit" className="btn btn-outline-primary-2 btn-order btn-block">
-                                                <span className="btn-text">Place Order</span>
+                                                <span className=" ">Complete Purchase</span>
                                             </button>
                                         </div>
                                     </aside>

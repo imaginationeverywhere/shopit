@@ -22,7 +22,20 @@ const subscribeForTracking = async ({ carrier, trackingNo, orderId }) => {
     .then((res) => res.json())
     .then((json) => console.log("====subscribe for tracking"));
 };
-
+const createDraftOrder = async({
+  orderItems,
+  shippingInfo,
+  itemsPrice,
+  taxPrice,
+  shippingPrice,
+  totalPrice,
+  paymentInfo,
+  selectedCarrier,
+  paidAt,
+  user,
+}) => {
+  
+}
 const createOrder = async (
   {
     orderItems,
@@ -66,6 +79,7 @@ const POSSIBLE_STATUSES = {
   RETURNED: 3,
   FAILURE: 4,
   UNKNOWN: 5,
+  DRAFT: 6
 };
 
 const STATUS_POS_TO_ORDER_STATUS = {
@@ -74,6 +88,7 @@ const STATUS_POS_TO_ORDER_STATUS = {
   2: Constants.DELIVERED,
   3: Constants.RETURNED,
   4: Constants.FAILURE,
+  5: Constants.DRAFT
 };
 
 const updateOrderStatus = async (orderId, status) => {
@@ -87,6 +102,7 @@ const updateOrderStatus = async (orderId, status) => {
 const OrderService = {
   createOrder,
   updateOrderStatus,
+  createDraftOrder
 };
 
 module.exports = OrderService;

@@ -7,6 +7,43 @@ const OrderService = require('../services/orderService');
 const ShipmentService = require('../services/shipmentService');
 
 // Create a new order   =>  /api/v1/order/new
+exports.draftOrder = catchAsyncErrors(async (req, res, next) => {
+    const {
+        orderItems,
+        shippingInfo,
+        itemsPrice,
+        taxPrice,
+        shippingPrice,
+        totalPrice,
+        selectedCarrier,
+        paymentInfo
+    } = req.body;
+
+    try {
+        const order = await OrderService.createOrder({
+            orderItems,
+            shippingInfo,
+            itemsPrice,
+            taxPrice,
+            shippingPrice,
+            totalPrice,
+            paymentInfo,
+            selectedCarrier,
+            paidAt: Date.now(),
+            user: req.user._id
+        }, ShipmentService)
+        res.status(200).json({
+            success: true,
+            order
+        })
+    } catch (error) {
+        console.log('Error is creating order-----', error)
+        res.status(422).json({ success: false, message: 'Something went wrong' })
+    }
+})
+
+
+// Create a new order   =>  /api/v1/order/new
 exports.newOrder = catchAsyncErrors(async (req, res, next) => {
     const {
         orderItems,
