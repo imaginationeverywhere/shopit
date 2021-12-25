@@ -11,7 +11,7 @@
 		max-width: 70vw;
 		text-align: right;
 		border: 1px solid #eee;
-		max-height: 400px;
+		max-height: calc(100vh - 120px);
 		overflow-y: scroll;
 		& thead {
 			position: sticky;
@@ -30,7 +30,7 @@
 			margin: 0 auto;
 		}
 		&-container {
-			max-height: 400px;
+			max-height: calc(100vh - 120px);
 			overflow-y: scroll;
 		}
 	}

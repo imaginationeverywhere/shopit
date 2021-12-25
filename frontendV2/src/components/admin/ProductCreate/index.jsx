@@ -10,9 +10,11 @@ import ProductForm from './ProductForm';
 import { toast } from "react-toastify";
 import Skeleton from '../common/components/Skeleton';
 import { getSelectValues, getUpdateProductDetails, getUpdateProductImages } from '../utils/helpers';
-import { addProducts } from '../../../api';
+import { addProducts, updateProducts } from '../../../api';
 import { withRouter } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import store from '../../../store';
+import { getAllProducts } from '../../../actions';
 // import { useParams } from 'react-router-dom';
 // import {
 //   getUpdateProductDetails,
@@ -39,20 +41,39 @@ const getStrFromUrlsObj = (images, imageObj) => {
   return str;
 };
 
+const defaultImageValue = {
+  picture1: '',
+  picture2: '',
+  picture3: '',
+  picture4: '',
+  smPicture1: '',
+  smPicture2: '',
+  smPicture3: '',
+  smPicture4: '',
+}
+
+const defaultProductValues = {
+  name: '',
+  shortDesc: '',
+  price: 0,
+  distance: 0,
+  weight: 0,
+  length: 0,
+  width: 0,
+  height: 0,
+  mass: 0,
+  category: null,
+  brands: null,
+  sizes: null,
+  stock: 0,
+  variants: null,
+}
+
 const ProductCreate = ({ match }) => {
    // get id params from url
   const productId = match && match.params && match.params.productId;
   const { products } = useSelector((state) => state.data);
-  const [imageObj, setImageObj] = useState({
-    picture1: null,
-    picture2: null,
-    picture3: null,
-    picture4: null,
-    smPicture1: null,
-    smPicture2: null,
-    smPicture3: null,
-    smPicture4: null,
-  });
+  const [imageObj, setImageObj] = useState(defaultImageValue);
   const setImage = (name, file) => {
     setImageObj((prev) => ({ ...prev, [name]: file }));
   };
@@ -62,38 +83,10 @@ const ProductCreate = ({ match }) => {
   // const { setFiles, urls, loading: imgUrlLoading } = useUpload();
   const [addProductLoading, setAddProductLoading] = useState(false);
   const [isUpdatingProduct, setIsUpdatingProduct] = useState(false);
-  const { formValues, handleChange, resetForm, checkAllRequired } = useForm({
-    name: '',
-    shortDesc: '',
-    price: 0,
-    distance: 0,
-    weight: 0,
-    length: 0,
-    width: 0,
-    height: 0,
-    mass: 0,
-    category: null,
-    brands: null,
-    sizes: null,
-    stock: 0,
-    variants: null,
-  });
+  const { formValues, handleChange, resetForm, checkAllRequired } = useForm(defaultProductValues);
 
 
   const genericLoading = productId ? isUpdatingProduct : addProductLoading;
-
-
-  // useEffect(() => {
-  //   if (addProductSuccess) {
-  //     resetForm();
-  //     setImageObj({
-  //       image1: null,
-  //       image2: null,
-  //       image3: null,
-  //       image4: null,
-  //     });
-  //   }
-  // }, [addProductSuccess]);
 
 
 
@@ -108,13 +101,14 @@ const ProductCreate = ({ match }) => {
   const createNewProduct = async (body) => {
     setAddProductLoading(true);
     try {
-
       const res = await addProducts({
         body
       });
 
       if(res.data) {
         toast.success('Product added successfully');
+        setImageObj(defaultImageValue);
+        resetForm(defaultProductValues)
       }
     } catch (error) {
       console.log(error.message)
@@ -123,12 +117,31 @@ const ProductCreate = ({ match }) => {
     setAddProductLoading(false);
   }
 
+  const upateExistingProduct = async (body) => {
+    setIsUpdatingProduct(true);
+    try {
+      const res = await updateProducts({
+        body,
+        id: productId
+      });
+
+      if(res.data) {
+        toast.success('Product updated successfully');
+      }
+    } catch (error) {
+      console.log(error.message)
+       toast.error('Something went wrong');
+    }
+    setIsUpdatingProduct(false);
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!imageObj.picture1) {
       toast.error('Primary image is required');
       return;
     }
+
     const req = {
       ...formValues,
       category: getSelectValues(formValues.category),
@@ -137,16 +150,14 @@ const ProductCreate = ({ match }) => {
       variants: formValues.variants.join(', '),
       ...imageObj
     }
-    // const imagesArr = Object.values(imageObj).filter(
-    //   (fileImg) => fileImg && typeof fileImg === 'object'
-    // );
 
-    // imagesArr.length ? setFiles(imagesArr) : makeSubmission();
     const myApiForm = new FormData();
     Object.keys(req).forEach((key) => {
-      myApiForm.append(key, req[key]);
+      myApiForm.append(key, req[key] || '');
     });
-    await createNewProduct(myApiForm);
+    const func = productId ? upateExistingProduct : createNewProduct;
+    await func(myApiForm);
+    store.dispatch( getAllProducts() );
   };
 
   return (
@@ -174,7 +185,7 @@ const ProductCreate = ({ match }) => {
                 loading={genericLoading}
               />
               <ProductForm
-                // payload={singleProduct.product}
+                payload={singleProduct}
                 loading={genericLoading}
                 updateType={!!productId}
                 formValues={formValues}

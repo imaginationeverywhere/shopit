@@ -86,3 +86,13 @@ export const addProducts = async ({body}) => {
   });
 
 }
+
+export const updateProducts = async ({id, body}) => {
+  return axios({
+    method: 'put',
+    url: `${MAIN_API_URL}admin/product/${id}`,
+    data: body, 
+    contentType: 'multipart/form-data',
+    headers: myHeaders()
+  });
+}

@@ -2,9 +2,18 @@ import { useState } from 'react';
 
 const useForm = (formInput) => {
   const [formValues, setFormValues] = useState(formInput);
-
+  const cleanForm = (raw) => {
+    const actualRec = {};
+    Object.keys(formInput).forEach((key) => {
+      if(raw[key] !== undefined) {
+       actualRec[key] = raw[key];
+      }
+    });
+    return actualRec
+  }
+  
   const resetForm = (resetInput) => {
-    if (resetInput) setFormValues((prevVal) => ({ ...prevVal, ...resetInput }));
+    if (resetInput) setFormValues((prevVal) => ({ ...prevVal, ...cleanForm(resetInput) }));
     else {
       setFormValues((prevVal) => {
         const newVals = {};

@@ -106,7 +106,7 @@ const ImageHandler = ({ image, setImage, name, primary }) => {
           data-max-size='2000'
         />
       </>
-      {localImageUrl && (
+      {(localImageUrl || image) && (
         <div
           onClick={() => {
             setImage(name, null);

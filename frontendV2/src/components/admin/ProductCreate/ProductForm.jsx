@@ -1,76 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ColorVariantComp from './ColorVariantComp';
 import DashboardInput from '../common/components/DashboardInput';
 import DashboardSelect from '../common/components/DashboardSelect';
 import DashboardTextArea from '../common/components/DashboardTextArea';
-// import { getOptions } from '../../utils/helpers';
+
 import PriceInput from '../common/components/PriceInput';
 import { brands, categories, sizes } from '../utils/helpers';
-// import {
-//   useProductInfoDispatch,
-//   useProductInfoState,
-// } from '../../context/ProductInfoContext';
-// import { useStoreDispatch, useStoreState } from '../../context/StoreContext';
-
-// const getAttributeArr = (attr) => {
-//   const newAttr = [];
-//   const optionIds = [];
-
-//   if (!attr.length)
-//     return {
-//       newAttr: [
-//         { name: 'attribute_0', attributeType: '', attributeOption: '' },
-//       ],
-//       optionIds,
-//     };
-
-//   attr.forEach(({ name: attributeType, options }) => {
-//     options.forEach.(({ id: attributeOption }) => {
-//       attributeOption &&
-//         newAttr.push({
-//           name: `attribute_${newAttr.length}`,
-//           attributeType,
-//           attributeOption,
-//         });
-//       attributeOption && optionIds.push(attributeOption);
-//     });
-//   });
-
-//   return { newAttr: [...newAttr], optionIds };
-// };
-
-// const FormLink = ({ name, setFormType, type }) => (
-//   <div
-//     onClick={() => setFormType(name)}
-//     className={`btn-click flexed-center ${
-//       type && name && (type.toLowerCase() === name.toLowerCase()) ? 'active-link' : ''
-//     }`}
-//   >
-//     <span>{name}</span>
-//   </div>
-// );
 
 const ProductForm = ({
   formValues,
   handleChange,
-  setOptionsId,
-  payload,
-  updateType,
   loading: addProductLoading
 }) => {
-  // const { getStores } = useStoreDispatch();
-  // const { getBrands, getCategories } = useProductInfoDispatch();
-  // const { addProductLoading } = useItemState();
-  // const { brands, categories } = useProductInfoState();
-  // const { stores } = useStoreState();
-  const [variants, setVariants] = useState([])
-
-
-  // useEffect(() => {
-  //   getCategories();
-  //   getStores({ variables: { offset: 0, limit: 100 } });
-  //   getBrands();
-  // }, []);
 
 
   return (

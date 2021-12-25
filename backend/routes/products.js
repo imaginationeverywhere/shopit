@@ -25,7 +25,7 @@ router
   .post( newProduct);
 router
   .route('/admin/product/:id')
-  .put(isAuthenticatedUser, authorizeRoles('admin'), updateProduct)
+  .put(updateProduct)
   .delete(isAuthenticatedUser, authorizeRoles('admin'), deleteProduct);
 
 router.route('/review').put(isAuthenticatedUser, createProductReview);

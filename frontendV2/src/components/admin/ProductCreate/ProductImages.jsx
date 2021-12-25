@@ -17,13 +17,13 @@ const ProductImages = ({ imageObj, setImage }) => {
     </div>
     <div className='image-upload-wrap'>
       <ImageHandler
-        name='smPicture5'
+        name='smPicture1'
         image={imageObj.smPicture1}
         setImage={setImage}
       />
-      <ImageHandler name='smPicture6' image={imageObj.smPicture2} setImage={setImage} />
-      <ImageHandler name='smPicture7' image={imageObj.smPicture3} setImage={setImage} />
-      <ImageHandler name='smPicture8' image={imageObj.smPicture4} setImage={setImage} />
+      <ImageHandler name='smPicture2' image={imageObj.smPicture2} setImage={setImage} />
+      <ImageHandler name='smPicture3' image={imageObj.smPicture3} setImage={setImage} />
+      <ImageHandler name='smPicture4' image={imageObj.smPicture4} setImage={setImage} />
     </div>
     </>
     

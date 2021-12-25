@@ -146,6 +146,7 @@ export const getUpdateProductDetails = (product) => {
     sizes,
     category,
     brands,
+    parcel = {},
   } = product;
 
   const variantColor = [];
@@ -166,6 +167,7 @@ export const getUpdateProductDetails = (product) => {
     sizes: sizes && sizes.map((ele) => ({ label: ele, value: ele})),
     category: category && category.map((ele) => ({ label: ele, value: ele})),
     brands: brands && brands.map((ele) => ({ label: ele, value: ele})),
+    ...parcel,
   };
   return productDetails;
 }
