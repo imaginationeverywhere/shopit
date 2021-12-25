@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import ColorVariantComp from './ColorVariantComp';
-import DashboardInput from './components/DashboardInput';
-import DashboardSelect from './components/DashboardSelect';
-import DashboardTextArea from './components/DashboardTextArea';
+import DashboardInput from '../common/components/DashboardInput';
+import DashboardSelect from '../common/components/DashboardSelect';
+import DashboardTextArea from '../common/components/DashboardTextArea';
 // import { getOptions } from '../../utils/helpers';
-import PriceInput from './components/PriceInput';
+import PriceInput from '../common/components/PriceInput';
 import { brands, categories, sizes } from './utils/helpers';
 // import {
 //   useProductInfoDispatch,
@@ -121,8 +121,8 @@ const ProductForm = ({
           onChange={handleChange}
           label='Brand'
           placeholder=' '
-          name='brand'
-          value={formValues.brand}
+          name='brands'
+          value={formValues.brands}
           options={brands}
           required
           isMulti
@@ -142,8 +142,8 @@ const ProductForm = ({
               onChange={handleChange}
               label='Sizes'
               placeholder=' '
-              name='size'
-              value={formValues.size}
+              name='sizes'
+              value={formValues.sizes}
               options={sizes}
               required
               isMulti

@@ -148,15 +148,6 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
     }
   );
 
-  console.log(products);
-
-  // console.log({products});
-  // const raw = [...products];
-
-  //  console.log({ raw })
-  console.log('====================================');
-  console.log(oldProducts.length);
-  console.log('====================================');
   res.status(200).json({
     success: true,
     productsCount,

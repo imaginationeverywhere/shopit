@@ -8,9 +8,9 @@ import NewProductNav from './NewProductNav';
 import ProductImages from './ProductImages';
 import ProductForm from './ProductForm';
 import { toast } from "react-toastify";
-import Skeleton from './components/Skeleton';
+import Skeleton from '../common/components/Skeleton';
 import { getSelectValues } from './utils/helpers';
-import Axios from 'axios';
+import { addProducts } from '../../../api';
 // import { useParams } from 'react-router-dom';
 // import {
 //   getUpdateProductDetails,
@@ -74,8 +74,8 @@ const ProductCreate = () => {
     height: 30,
     mass: 30,
     category: null,
-    brand: null,
-    size: null,
+    brands: null,
+    sizes: null,
     stock: 45,
     variants: null,
   });
@@ -153,14 +153,12 @@ const ProductCreate = () => {
   // }, [singleProduct, singleProductLoading, productId]);
   
 
-  const addProduct = async (body) => {
+  const createNewProduct = async (body) => {
     setAddProductLoading(true);
     try {
 
-      const res = await Axios({
-        method: 'post',
-        url: 'http://localhost:5000/api/v1/products',
-        data: body,
+      const res = await addProducts({
+        body
       });
 
       if(res.data) {
@@ -183,8 +181,8 @@ const ProductCreate = () => {
     const req = {
       ...formValues,
       category: getSelectValues(formValues.category),
-      sizes: getSelectValues(formValues.sizes),
-      brands: getSelectValues(formValues.brands),
+      sizes: getSelectValues(formValues.size),
+      brands: getSelectValues(formValues.brand),
       variants: formValues.variants.join(', '),
       ...imageObj
     }
@@ -197,7 +195,7 @@ const ProductCreate = () => {
     Object.keys(req).forEach((key) => {
       myApiForm.append(key, req[key]);
     });
-    await addProduct(myApiForm);
+    await createNewProduct(myApiForm);
   };
 
   return (

@@ -1,5 +1,13 @@
 import axios from "axios";
 
+axios.interceptors.response.use(null, error => {
+  // clear token for 401 error
+  if (error.response && error.response.status === 401) {
+    localStorage.removeItem("token");
+  }
+  return Promise.reject(error);
+});
+
 const API_URL = process.env.PUBLIC_URL;
 const MAIN_API_URL = process.env.REACT_APP_API_URL;
 
@@ -53,3 +61,18 @@ export const setTemplate = function(templateId) {
       console.log(error);
     });
 };
+
+export const adminLogin = async (values) => {
+    const res = await axios.post(`${MAIN_API_URL}login`, values);
+    return res.data;
+}
+
+export const addProducts = async ({body}) => {
+  return axios({
+    method: 'post',
+    url: `${MAIN_API_URL}admin/product/new`,
+    data: body, 
+    contentType: 'multipart/form-data',
+  });
+
+}

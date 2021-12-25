@@ -1,5 +1,5 @@
 import React from 'react';
-import DashboardButton from './components/DashboardButton';
+import DashboardButton from '../common/components/DashboardButton';
 
 const NewProductNav = ({
   checkAllRequired,

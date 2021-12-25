@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import HintIcon from '../../SVGs/HintIcon';
+import HintIcon from '../../../ProductCreate/SVGs/HintIcon';
 import CutIcon from './CutIcon';
 import './PriceInput.scss';
 

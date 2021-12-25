@@ -1,9 +1,9 @@
 import React from 'react';
 import './ImageHandler.scss';
 import { useState } from 'react';
-import PlusIconNew from '../../SVGs/PlusIconNew';
+import PlusIconNew from '../../../ProductCreate/SVGs/PlusIconNew';
 // import { useToastFuncs } from '../../context/ToastContexts';
-import Trash from '../../SVGs/Trash';
+import Trash from '../../../ProductCreate/SVGs/Trash';
 
 const ImageHandler = ({ image, setImage, name, primary }) => {
   const [localImageUrl, setLocalImageUrl] = useState(null);
@@ -92,7 +92,7 @@ const ImageHandler = ({ image, setImage, name, primary }) => {
               <p>
                 {dragging
                   ? 'Drop Image here'
-                  : 'Drag Images here or click to upload'}
+                  : 'Drag or click to upload'}
               </p>
             </div>
           )}

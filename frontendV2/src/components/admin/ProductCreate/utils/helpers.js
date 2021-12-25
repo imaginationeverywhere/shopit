@@ -1,4 +1,4 @@
-
+import jwt_decode from 'jwt-decode';
 
 export const getValue = (options, checkValue) => {
   console.log('====================================');
@@ -15,9 +15,8 @@ export const getValue = (options, checkValue) => {
 };
 
 
-export const getSelectValues = (arr = []) => {
-  arr.map(({ value}) => value).join(', ')
-}
+export const getSelectValues = (arr = []) => arr.map(({ value}) => value).join(', ');
+
 
 export const getOptions = (arr) => {
   if (!arr) return [];
@@ -126,3 +125,17 @@ export const brands = [
     value: 'New Balance'
   }
 ]
+
+export const isTokenValid = () => {
+  const token = localStorage.getItem('token');
+  if (token) {
+    const decoded = jwt_decode(token);
+    const currentTime = Date.now() / 1000;
+    if (decoded.exp < currentTime) {
+      localStorage.removeItem('token');
+      return false;
+    }
+    return true;
+  }
+  return false;
+}

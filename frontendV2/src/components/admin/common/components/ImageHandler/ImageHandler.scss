@@ -1,6 +1,6 @@
 .imagehandler {
 	width: 21%;
-	border: 1px dashed #3d6abe;
+	border: 1px dashed #c66;
 	position: relative;
 
 	.delete-btn {
@@ -19,7 +19,7 @@
 	}
 
 	img {
-		height: 12em;
+		height: 8em;
 		width: 100%;
 		object-fit: contain;
 		margin: 0 auto;
@@ -35,7 +35,7 @@
 				margin-top: 1em;
 				font-size: 0.9em;
 				font-family: 'Avenir_Roman';
-				color: #3d6abe;
+				color: #c66;
 				text-align: center;
 			}
 
@@ -44,7 +44,7 @@
 				margin-bottom: 0.5em;
 				font-size: 1.2em;
 				font-family: 'Avenir_Heavy';
-				color: #3d6abe;
+				color: #c66;
 				text-align: center;
 			}
 		}

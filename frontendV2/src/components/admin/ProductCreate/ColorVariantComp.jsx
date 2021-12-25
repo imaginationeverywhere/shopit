@@ -1,5 +1,5 @@
 import React from 'react';
-import CheckIcon from './components/CheckboxNew/CheckIconNew';
+import CheckIcon from '../common/components/CheckboxNew/CheckIconNew';
 
 const ColorSelect = ({ isSelected, color, onSelect}) => (
   <div onClick={() => onSelect(color, isSelected)} className={`color-variant ${isSelected ? 'selected-color' : ''}`}>
