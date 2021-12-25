@@ -89,14 +89,42 @@ const productSchema = new mongoose.Schema({
             }
         }
     ],
+    sizes: [
+        {
+            type: String,
+            required: false
+        }
+    ],
+    parcel: {
+        distance: {
+            type: Number,
+            required: true
+        },
+        height:  {
+            type: Number,
+            required: true
+        },
+        width:  {
+            type: Number,
+            required: true
+        },
+        length:  {
+            type: Number,
+            required: true
+        },
+        mass:  {
+            type: Number,
+            required: true
+        },
+        weight:  {
+            type: Number,
+            required: true
+        },
+    },
     stock: {
         type: Number,
         required: [true, 'Please enter product stock'],
         maxLength: [5, 'Product name cannot exceed 5 characters'],
-        default: 0
-    },
-    numOfReviews: {
-        type: Number,
         default: 0
     },
     user: {

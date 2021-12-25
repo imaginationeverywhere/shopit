@@ -47,7 +47,7 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
   req.body.pictures = [];
   req.body.smPictures = [];
   req.body.category =
-    (req.body.categories && req.body.categories.split(', ')) || [];
+    (req.body.category && req.body.category.split(', ')) || [];
   req.body.brands = (req.body.brands && req.body.brands.split(', ')) || [];
   req.body.variants =
     req.body.variants &&
@@ -92,9 +92,18 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
     }
   }
   req.body.user = req.user.id;
+  const parcel = {
+    distance: req.body.distance,
+    weight: req.body.weight,
+    width: req.body.width,
+    height: req.body.height,
+    length: req.body.length,
+    mass: req.body.mass,
+  };
+  req.body.parcel = parcel;
 
   const product = await Product.create(req.body);
-  console.log(req.body);
+
   res.status(201).json({
     success: true,
     product,
@@ -133,7 +142,7 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
   products = products.map(
     ({ _id, _doc: { numOfReviews, user, createdAt, ...rest } }, index) => {
       return {
-        id: index + 1,
+        id: _id,
         ...rest,
       };
     }
@@ -153,7 +162,7 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
     productsCount,
     resPerPage,
     filteredProductsCount,
-    products: oldProducts,
+    products,
   });
 });
 
