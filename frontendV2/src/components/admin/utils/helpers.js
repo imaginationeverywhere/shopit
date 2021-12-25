@@ -135,7 +135,6 @@ export const isTokenValid = () => {
 }
 
 export const getUpdateProductDetails = (product) => {
-  console.log("{product}");
   if(!product) return product
   const {
     name,
@@ -174,8 +173,8 @@ export const getUpdateProductDetails = (product) => {
 
 export const getUpdateProductImages = (product) => {
   const {
-    pictures,
-    smPictures,
+    rawPictures: pictures,
+    rawSmPictures: smPictures,
   } = product;
   const obj = {};
   pictures.forEach((picture, index) => {

@@ -373,15 +373,11 @@ function QuickView(props) {
 
       {open && (
         <Lightbox
-          mainSrc={process.env.PUBLIC_URL + '/' + images[photoIndex]}
+          mainSrc={images[photoIndex]}
           nextSrc={
-            process.env.PUBLIC_URL +
-            '/' +
             images[(photoIndex + 1) % images.length]
           }
           prevSrc={
-            process.env.PUBLIC_URL +
-            '/' +
             images[(photoIndex + images.length - 1) % images.length]
           }
           onCloseRequest={closeLightBoxHandler}

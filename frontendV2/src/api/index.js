@@ -18,9 +18,14 @@ export const getProducts = function() {
   return axios
     .get(MAIN_API_URL + "products")
     .then(function(response) {
-      // const myData = response.data.products.map(({_id, ...rest}) => ({...rest, id: _id}));
-      // console.log({ myData });
-      return response.data.products;
+      const myData = response.data && response.data.products.map(({_id, ...rest}) => ({...rest, 
+        id: _id, 
+        rawSmPictures: rest.smPictures,
+        rawPictures: rest.pictures,
+        smPictures: rest.smPictures.filter((url) => !!url),
+        pictures: rest.pictures.filter((url) => !!url),
+      }));
+      return myData;
     })
     .catch(function(error) {
       // handle error

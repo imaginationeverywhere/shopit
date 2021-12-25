@@ -7,7 +7,6 @@ import { withRouter } from 'react-router-dom';
 
 const ProductList = ({ history }) => {
   const { products } = useSelector((state) => state.data);
-   console.log(products);
   return (
     <>
       <Helmet>

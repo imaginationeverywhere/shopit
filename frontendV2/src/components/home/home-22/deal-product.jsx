@@ -15,7 +15,7 @@ function ProductTwo ( props ) {
                     <span className="product-label label-limited">limited time sale</span>
 
                     <Link to={ `${process.env.PUBLIC_URL}/product/default/${product.id}` }>
-                        <img src={ process.env.PUBLIC_URL + '/' + product.pictures[ 0 ] } alt="Product desc" className="product-image" style={ { minHeight: height + "px" } } />
+                        <img src={ product.pictures[ 0 ] } alt="Product desc" className="product-image" style={ { minHeight: height + "px" } } />
                         {/* { product.pictures[ 1 ] ? <img src={ process.env.PUBLIC_URL + '/' + product.pictures[ 1 ] } alt={ 1 } className="product-image-hover" /> : '' } */ }
                     </Link>
                 </figure>
