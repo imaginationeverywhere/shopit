@@ -18,10 +18,8 @@ const useForm = (formInput) => {
 
   const checkAllRequired = (except = []) => {
     let allRequired = true;
-    console.log(formValues);
     Object.keys(formValues).forEach((key) => {
       if (!except.includes(key) && !formValues[key]) {
-        console.log(key);
         allRequired = false;
       }
     });

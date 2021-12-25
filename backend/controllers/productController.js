@@ -41,6 +41,18 @@ exports.newProductOld = catchAsyncErrors(async (req, res, next) => {
 });
 
 exports.newProduct = catchAsyncErrors(async (req, res, next) => {
+  req.user = {
+    avatar: {
+      public_id: 'avatars/wqogidodejlqlkqizpjj',
+      url: 'https://res.cloudinary.com/imagination-everywhere-inc/image/upload/v1638956971/avatars/wqogidodejlqlkqizpjj.jpg'
+    },
+    role: 'admin',
+    _id: '61b07fab20ead018cf8e90d0',
+    name: 'kelvin esegbona',
+    email: 'kevoesegbona@gmail.com',
+    createdAt:' 2021-12-08T09:49:31.390Z',
+    __v: 0
+}
   const pictures = [];
   const smPictures = [];
   // default State of Small and large Pictures

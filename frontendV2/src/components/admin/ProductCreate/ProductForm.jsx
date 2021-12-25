@@ -5,7 +5,7 @@ import DashboardSelect from '../common/components/DashboardSelect';
 import DashboardTextArea from '../common/components/DashboardTextArea';
 // import { getOptions } from '../../utils/helpers';
 import PriceInput from '../common/components/PriceInput';
-import { brands, categories, sizes } from './utils/helpers';
+import { brands, categories, sizes } from '../utils/helpers';
 // import {
 //   useProductInfoDispatch,
 //   useProductInfoState,

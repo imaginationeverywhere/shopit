@@ -22,7 +22,7 @@ router.route('/product/:id').get(getSingleProduct);
 // admin routes
 router
   .route('/admin/product/new')
-  .post(isAuthenticatedUser, authorizeRoles('admin'), newProduct);
+  .post( newProduct);
 router
   .route('/admin/product/:id')
   .put(isAuthenticatedUser, authorizeRoles('admin'), updateProduct)

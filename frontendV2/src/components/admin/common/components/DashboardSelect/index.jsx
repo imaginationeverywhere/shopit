@@ -1,7 +1,7 @@
 import React from 'react';
 import './DashboardSelect.scss';
 import SelectSearchComp from 'react-select';
-import { getValue } from '../../../ProductCreate/utils/helpers';
+import { getValue } from '../../../utils/helpers';
 
 const DashboardSelect = ({
   options,

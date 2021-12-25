@@ -1,16 +1,10 @@
 import jwt_decode from 'jwt-decode';
 
 export const getValue = (options, checkValue) => {
-  console.log('====================================');
-  console.log({ options, checkValue });
-  console.log('====================================');
   if (!options || !checkValue) {
     return [];
   }
   const obj = options.filter((option) => option.value === checkValue);
-  console.log('====================================');
-  console.log({ obj });
-  console.log('====================================');
   return obj;
 };
 
@@ -138,4 +132,55 @@ export const isTokenValid = () => {
     return true;
   }
   return false;
+}
+
+export const getUpdateProductDetails = (product) => {
+  console.log("{product}");
+  if(!product) return product
+  const {
+    name,
+    price,
+    pictures,
+    smPictures,
+    variants,
+    sizes,
+    category,
+    brands,
+  } = product;
+
+  const variantColor = [];
+
+  variants && variants.forEach(variant => {
+    const color = variant && variant.color;
+    color && variantColor.push(color);
+  });
+
+
+  const productDetails = {
+    ...product,
+    name,
+    price,
+    pictures,
+    smPictures,
+    variants: variantColor,
+    sizes: sizes && sizes.map((ele) => ({ label: ele, value: ele})),
+    category: category && category.map((ele) => ({ label: ele, value: ele})),
+    brands: brands && brands.map((ele) => ({ label: ele, value: ele})),
+  };
+  return productDetails;
+}
+
+export const getUpdateProductImages = (product) => {
+  const {
+    pictures,
+    smPictures,
+  } = product;
+  const obj = {};
+  pictures.forEach((picture, index) => {
+    obj[`picture${index + 1}`] = picture;
+    });
+    smPictures.forEach((picture, index) => {
+      obj[`smPicture${index + 1}`] = picture;
+      });
+      return obj;
 }

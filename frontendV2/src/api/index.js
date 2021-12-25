@@ -1,5 +1,7 @@
 import axios from "axios";
 
+// axios.defaults.withCredentials = true
+
 axios.interceptors.response.use(null, error => {
   // clear token for 401 error
   if (error.response && error.response.status === 401) {
@@ -25,6 +27,13 @@ export const getProducts = function() {
       console.log(error);
     });
 };
+
+const myHeaders = () => {
+  return ( { 
+      'Cookie': 'token=' + localStorage.getItem('token'), 
+    }
+  )
+}
 
 export const getTemplates = function() {
   return axios
@@ -73,6 +82,7 @@ export const addProducts = async ({body}) => {
     url: `${MAIN_API_URL}admin/product/new`,
     data: body, 
     contentType: 'multipart/form-data',
+    headers: myHeaders()
   });
 
 }

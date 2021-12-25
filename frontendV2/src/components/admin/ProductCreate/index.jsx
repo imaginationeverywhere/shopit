@@ -9,8 +9,10 @@ import ProductImages from './ProductImages';
 import ProductForm from './ProductForm';
 import { toast } from "react-toastify";
 import Skeleton from '../common/components/Skeleton';
-import { getSelectValues } from './utils/helpers';
+import { getSelectValues, getUpdateProductDetails, getUpdateProductImages } from '../utils/helpers';
 import { addProducts } from '../../../api';
+import { withRouter } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 // import { useParams } from 'react-router-dom';
 // import {
 //   getUpdateProductDetails,
@@ -37,7 +39,10 @@ const getStrFromUrlsObj = (images, imageObj) => {
   return str;
 };
 
-const ProductCreate = () => {
+const ProductCreate = ({ match }) => {
+   // get id params from url
+  const productId = match && match.params && match.params.productId;
+  const { products } = useSelector((state) => state.data);
   const [imageObj, setImageObj] = useState({
     picture1: null,
     picture2: null,
@@ -52,65 +57,31 @@ const ProductCreate = () => {
     setImageObj((prev) => ({ ...prev, [name]: file }));
   };
 
-  // const { addProduct, updateProduct } = useItemDispatch();
-
-  // const {
-  //   addProductSuccess,
-  //   addProductLoading,
-  //   isUpdatingProduct,
-  // } = useItemState();
+  const singleProduct = products && products.find((product) => product.id === productId);
 
   // const { setFiles, urls, loading: imgUrlLoading } = useUpload();
   const [addProductLoading, setAddProductLoading] = useState(false);
   const [isUpdatingProduct, setIsUpdatingProduct] = useState(false);
   const { formValues, handleChange, resetForm, checkAllRequired } = useForm({
-    name: 'new prod',
-    shortDesc: 'desc',
-    price: 123,
-    distance: 20,
-    weight: 30,
-    length: 30,
-    width: 30,
-    height: 30,
-    mass: 30,
+    name: '',
+    shortDesc: '',
+    price: 0,
+    distance: 0,
+    weight: 0,
+    length: 0,
+    width: 0,
+    height: 0,
+    mass: 0,
     category: null,
     brands: null,
     sizes: null,
-    stock: 45,
+    stock: 0,
     variants: null,
   });
 
-  // const { getSingleProduct } = useItemDispatch();
-  // const { singleProductLoading, singleProduct } = useItemState();
-  const { productId } = {};
 
   const genericLoading = productId ? isUpdatingProduct : addProductLoading;
 
-  const submitItem = () => {
-    // const urlsInStr = getStrFromUrlsObj(urls, imageObj);
-    // const dataInput = {
-    //   variables: {
-    //     ...(productId ? { id: productId } : {}),
-    //     input: {
-    //       ...formValues,
-    //       isFreeShipping: Boolean(formValues.isFreeShipping),
-    //       isPayOnDelivery: Boolean(formValues.isPayOnDelivery),
-    //       weight: Number(formValues.weight),
-    //       price: Number(formValues.price),
-    //       initialPrice: Number(formValues.price),
-    //       quantity: Number(formValues.quantity),
-    //       primaryImage:
-    //         urls.length && typeof imageObj.image1 === 'object'
-    //           ? urls[0].url
-    //           : singleProduct.product.primaryImage,
-    //       images: urlsInStr,
-    //       maxReturnPeriod: 3,
-    //     },
-    //     attributeOptionIds,
-    //   },
-    // };
-    // productId ? updateProduct(dataInput) : addProduct(dataInput);
-  };
 
   // useEffect(() => {
   //   if (addProductSuccess) {
@@ -124,33 +95,14 @@ const ProductCreate = () => {
   //   }
   // }, [addProductSuccess]);
 
-  // useEffect(() => {
-  //   productId &&
-  //     getSingleProduct({
-  //       variables: { id: productId, offset: 0, limit: 0, filter: '' },
-  //     });
-  // }, []);
 
-  // const makeSubmission = () => {
-  //   if (checkAllRequired(['isFreeShipping', 'isPayOnDelivery'])) {
-  //     submitItem();
-  //   } else {
-  //     Toast.error('Please enter all required fields');
-  //   }
-  // };
 
-  // useEffect(() => {
-  //   if (urls) {
-  //     makeSubmission();
-  //   }
-  // }, [urls]);
-
-  // useEffect(() => {
-  //   if (productId && !singleProductLoading && singleProduct.product) {
-  //     resetForm(getUpdateProductDetails(singleProduct));
-  //     setImageObj(getUpdateProductImages(singleProduct));
-  //   }
-  // }, [singleProduct, singleProductLoading, productId]);
+  useEffect(() => {
+    if (productId && singleProduct && !formValues.name) {
+      resetForm(getUpdateProductDetails(singleProduct));
+      setImageObj(getUpdateProductImages(singleProduct));
+    }
+  }, [singleProduct, productId]);
   
 
   const createNewProduct = async (body) => {
@@ -162,7 +114,6 @@ const ProductCreate = () => {
       });
 
       if(res.data) {
-        console.log(res.data);
         toast.success('Product added successfully');
       }
     } catch (error) {
@@ -181,8 +132,8 @@ const ProductCreate = () => {
     const req = {
       ...formValues,
       category: getSelectValues(formValues.category),
-      sizes: getSelectValues(formValues.size),
-      brands: getSelectValues(formValues.brand),
+      sizes: getSelectValues(formValues.sizes),
+      brands: getSelectValues(formValues.brands),
       variants: formValues.variants.join(', '),
       ...imageObj
     }
@@ -205,7 +156,7 @@ const ProductCreate = () => {
           onSubmit={handleSubmit}
           className='new-product-div'
         >
-          {productId ? (
+          {productId && !singleProduct ? (
             <Skeleton height='80vh' />
           ) : (
             <>
@@ -236,4 +187,4 @@ const ProductCreate = () => {
   );
 };
 
-export default ProductCreate;
+export default withRouter(ProductCreate);

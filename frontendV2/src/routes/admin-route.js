@@ -14,8 +14,9 @@ export default function AdminPages() {
     return (
         <Switch> 
             <AdminLayout>
-             <Login />
-            <Route exact path={ `${process.env.PUBLIC_URL}/admin/products/create` } component={ ProductCreate } />
+                <Login />
+                <Route exact path={ `${process.env.PUBLIC_URL}/admin/products/create` } component={ ProductCreate } />
+                <Route exact path={ `${process.env.PUBLIC_URL}/admin/products/edit/:productId` } component={ ProductCreate } />
                 <Route exact path={ `${process.env.PUBLIC_URL}/admin/dashboard` } component={ Dashboard } />
                 <Route exact path={ `${process.env.PUBLIC_URL}/admin/templates` } component={ Templates } />
                 <Route exact path={ `${process.env.PUBLIC_URL}/admin/products` } component={ ProductList } />

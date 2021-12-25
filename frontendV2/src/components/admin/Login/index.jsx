@@ -7,7 +7,7 @@ import './Login.scss';
 // import CutIcon from '../common/components/PriceInput/CutIcon';
 import { toast } from 'react-toastify';
 import { adminLogin } from '../../../api';
-import { isTokenValid } from '../ProductCreate/utils/helpers';
+import { isTokenValid } from '../utils/helpers';
 
 const index = () => {
   const [showModal, setShowModal] = useState(true);
