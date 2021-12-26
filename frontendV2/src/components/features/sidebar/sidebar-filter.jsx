@@ -10,7 +10,7 @@ import { getCountByCategory } from '../../../services';
 import { toggleCategoryFilter, resetFilter, toggleSizeFilter, toggleBrandFilter, toggleColorFilter, filterPrice, filterSort } from '../../../actions';
 
 function SideBarFilter( props ) {
-    const [ value, setValue ] = useState( { max: 3000, min: 0 } );
+    const [ value, setValue ] = useState( { max: 30000000, min: 0 } );
 
     const sortby = [ "Default", "Popularity", "Average Rating", "Newness", "Price: Low to High", "Price: High to Low" ];
     const colors = [ "#b87145", "#f0c04a", "#333333", "#cc3333", "#ebebeb" ];
@@ -220,7 +220,7 @@ function SideBarFilter( props ) {
                                                     <div className="price-slider">
                                                         <InputRange
                                                             formatLabel={ value => `$${value}` }
-                                                            maxValue={ 3000 }
+                                                            maxValue={ 30000 }
                                                             minValue={ 0 }
                                                             step={ 50 }
                                                             value={ value }

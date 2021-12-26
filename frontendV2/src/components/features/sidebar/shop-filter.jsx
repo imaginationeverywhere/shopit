@@ -12,7 +12,7 @@ import { toggleCategoryFilter, resetFilter, toggleSizeFilter, toggleBrandFilter,
 import { findIndex } from '../../../utils';
 
 function ShopFilter( props ) {
-    const [ value, setValue ] = useState( { max: 1000, min: 0 } );
+    const [ value, setValue ] = useState( { max: 1000000, min: 0 } );
 
     const sizes = [ "XS", "S", "M", "L", "XL", "XXL" ];
     const brands = [ "Next", "River Island", "Geox", "New Balance", "UGG", "F&F", "Nike" ];
@@ -194,7 +194,7 @@ function ShopFilter( props ) {
                                         <div className="price-slider">
                                             <InputRange
                                                 formatLabel={ value => `$${value}` }
-                                                maxValue={ 1000 }
+                                                maxValue={ 100000 }
                                                 minValue={ 0 }
                                                 step={ 100 }
                                                 value={ value }

@@ -37,7 +37,7 @@ function CartMenu( props ) {
 
                                         <figure className="product-image-container">
                                             <Link to={ `${process.env.PUBLIC_URL}/product/default/7` } className="product-image">
-                                                <img src={ process.env.PUBLIC_URL + '/' + item.pictures[ 0 ] } data-oi={ process.env.PUBLIC_URL + '/' + item.pictures[ 0 ] } alt="product" />
+                                                <img src={ item.pictures[ 0 ] } data-oi={ item.pictures[ 0 ] } alt="product" />
                                             </Link>
                                         </figure>
                                         <button className="btn-remove" title="Remove Product" onClick={ () => removeFromCart( item.id ) }><i className="icon-close"></i></button>

@@ -11,7 +11,7 @@ import { toggleCategoryFilter, resetFilter, toggleSizeFilter, toggleBrandFilter,
 import { findIndex } from '../../../utils';
 
 function ShopSidebar( props ) {
-    const [ value, setValue ] = useState( { max: 1000, min: 0 } )
+    const [ value, setValue ] = useState( { max: 1000000, min: 0 } )
     const [ toggle, setToggle ] = useState( false );
     const sizes = [ "XS", "S", "M", "L", "XL", "XXL" ];
     const brands = [ "Next", "River Island", "Geox", "New Balance", "UGG", "F&F", "Nike" ];
@@ -20,7 +20,7 @@ function ShopSidebar( props ) {
     const { filters, products } = props;
 
     _data.shop_categories.map( ( item, index ) => {
-        return categoryCountArr.push( getCountByCategory( products.slice( 0, 47 ), item.name ) )
+        return categoryCountArr.push( getCountByCategory( products.slice( 0, 47 ), item.name && item.name.toLowerCase() ) )
     } );
 
     useEffect( () => {
@@ -214,7 +214,7 @@ function ShopSidebar( props ) {
                                             <div className="price-slider">
                                                 <InputRange
                                                     formatLabel={ value => `$${value}` }
-                                                    maxValue={ 1000 }
+                                                    maxValue={ 100000 }
                                                     minValue={ 0 }
                                                     step={ 50 }
                                                     value={ value }
