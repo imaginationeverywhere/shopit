@@ -1,11 +1,11 @@
-import axios from "axios";
+import axios from 'axios';
 
 // axios.defaults.withCredentials = true
 
-axios.interceptors.response.use(null, error => {
+axios.interceptors.response.use(null, (error) => {
   // clear token for 401 error
   if (error.response && error.response.status === 401) {
-    localStorage.removeItem("token");
+    localStorage.removeItem('token');
   }
   return Promise.reject(error);
 });
@@ -13,20 +13,33 @@ axios.interceptors.response.use(null, error => {
 const API_URL = process.env.PUBLIC_URL;
 const MAIN_API_URL = process.env.REACT_APP_API_URL;
 
+export const axiosInstance = axios.create({
+  baseURL: MAIN_API_URL,
+  withCredentials: true,
+  headers: {
+    'Access-Control-Allow-Headers':
+      'Access-Control-Allow-Origin, Access-Control-Allow-Headers, Content-Type',
+    'Access-Control-Allow-Origin': '*',
+  },
+});
+
 // API to get products from mock server
 export const getProducts = function() {
-  return axios
-    .get(MAIN_API_URL + "products")
+  return axiosInstance
+    .get('products')
     .then(function(response) {
-      const myData = response.data && response.data.products.map(({_id, sizes, ...rest}) => ({...rest, 
-        id: _id, 
-        size: sizes,
-        sizes,
-        rawSmPictures: rest.smPictures,
-        rawPictures: rest.pictures,
-        smPictures: rest.smPictures.filter((url) => !!url),
-        pictures: rest.pictures.filter((url) => !!url),
-      }));
+      const myData =
+        response.data &&
+        response.data.products.map(({ _id, sizes, ...rest }) => ({
+          ...rest,
+          id: _id,
+          size: sizes,
+          sizes,
+          rawSmPictures: rest.smPictures,
+          rawPictures: rest.pictures,
+          smPictures: rest.smPictures.filter((url) => !!url),
+          pictures: rest.pictures.filter((url) => !!url),
+        }));
       return myData;
     })
     .catch(function(error) {
@@ -36,15 +49,14 @@ export const getProducts = function() {
 };
 
 const myHeaders = () => {
-  return ( { 
-      'Cookie': 'token=' + localStorage.getItem('token'), 
-    }
-  )
-}
+  return {
+    Cookie: 'token=' + localStorage.getItem('token'),
+  };
+};
 
 export const getTemplates = function() {
-  return axios
-    .get(MAIN_API_URL + "templates")
+  return axiosInstance
+    .get('templates')
     .then(function(response) {
       return response.data;
     })
@@ -55,8 +67,8 @@ export const getTemplates = function() {
 };
 
 export const previewTemplate = function(templateId) {
-  return axios
-    .get(MAIN_API_URL + "templates", {templateId})
+  return axiosInstance
+    .get('templates', { templateId })
     .then(function(response) {
       return response.data;
     })
@@ -67,8 +79,8 @@ export const previewTemplate = function(templateId) {
 };
 
 export const setTemplate = function(templateId) {
-  return axios
-    .post(MAIN_API_URL + "templates", {templateId})
+  return axiosInstance
+    .post('templates', { templateId })
     .then(function(response) {
       return response.data;
     })
@@ -78,29 +90,22 @@ export const setTemplate = function(templateId) {
     });
 };
 
-export const adminLogin = async (values) => {
-    const res = await axios.post(`${MAIN_API_URL}login`, values);
-    return res.data;
-}
+export const login = async (values) => {
+  const res = await axiosInstance.post(`login`, values);
+  return res.data;
+};
 
-export const addProducts = async ({body}) => {
-  return axios({
-    method: 'post',
-    url: `${MAIN_API_URL}admin/product/new`,
-    data: body, 
+export const addProducts = async ({ body }) => {
+  return axiosInstance.post('admin/product/new', body, {
     contentType: 'multipart/form-data',
-    headers: myHeaders()
+    headers: myHeaders(),
   });
+};
 
-}
-
-export const updateProducts = async ({id, body}) => {
-  return axios({
-    method: 'put',
-    url: `${MAIN_API_URL}admin/product/${id}`,
-    data: body, 
+export const updateProducts = async ({ id, body }) => {
+  return axiosInstance.put(`admin/product/${id}`, body, {
     contentType: 'multipart/form-data',
-    headers: myHeaders()
+    headers: myHeaders(),
   });
 }
 
