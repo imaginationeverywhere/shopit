@@ -38,9 +38,9 @@ function MediaThree( props ) {
                     <figure className="product-separated-item" key={ index + product.name + product.id }>
 
                         <Magnifier
-                            imageSrc={ process.env.PUBLIC_URL + '/' + item }
+                            imageSrc={ item }
                             imageAlt="Example"
-                            largeImageSrc={ process.env.PUBLIC_URL + '/' + bigImages[ parseInt( index ) ] } // Optional
+                            largeImageSrc={ bigImages[ parseInt( index ) ] } // Optional
                             dragToMove={ false }
                             mouseActivation="hover"
                             cursorStyleActive="crosshair"
@@ -83,7 +83,7 @@ function MediaThree( props ) {
 
 function mapStateToProps( state, props ) {
     return {
-        product: state.data.products.filter( product => product.id === parseInt( props.id ) )[ 0 ]
+        product: state.data.products.filter( product => product.id === props.id )[ 0 ]
     }
 }
 

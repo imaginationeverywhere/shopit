@@ -37,14 +37,14 @@ function ProductTwo ( props ) {
                     <Link to={ `${process.env.PUBLIC_URL}/product/default/${product.id}` }>
                         <LazyLoadImage
                             alt="product"
-                            src={ `${process.env.PUBLIC_URL}/${product.pictures[ 0 ]}` }
+                            src={ `${product.pictures[ 0 ]}` }
                             threshold={ 400 }
                         />
 
                         { product.pictures[ 1 ] ?
                             <LazyLoadImage
                                 alt="product"
-                                src={ `${process.env.PUBLIC_URL}/${product.pictures[ 1 ]}` }
+                                src={ `${product.pictures[ 1 ]}` }
                                 wrapperClassName="product-image-hover product-image"
                                 threshold={ 400 }
                             />

@@ -66,9 +66,9 @@ function MediaFour( props ) {
                     { product.top ? <span className="product-label label-top">Top</span> : '' }
 
                     <Magnifier
-                        imageSrc={ process.env.PUBLIC_URL + '/' + product.pictures[ 0 ] }
+                        imageSrc={ product.pictures[ 0 ] }
                         imageAlt="Example"
-                        largeImageSrc={ process.env.PUBLIC_URL + '/' + bigImages[ 0 ] } // Optional
+                        largeImageSrc={ bigImages[ 0 ] } // Optional
                         dragToMove={ false }
                         mouseActivation="hover"
                         cursorStyleActive="crosshair"
@@ -85,7 +85,7 @@ function MediaFour( props ) {
                         product.pictures.map( ( item, index ) =>
                             parseInt( index ) > 0 ?
                                 <Link className={ `product-gallery-item ${2 === index ? 'gallery-item-wide' : ''}` } to="#" data-image={ item } data-zoom-image={ bigImages[ index ] } key={ index }>
-                                    <img src={ process.env.PUBLIC_URL + '/' + smallImages[ index ] } alt="product back" />
+                                    <img src={ smallImages[ index ] } alt="product back" />
                                 </Link> : ''
                         )
                     }
@@ -95,9 +95,9 @@ function MediaFour( props ) {
             {
                 isOpen ?
                     <Lightbox
-                        mainSrc={ process.env.PUBLIC_URL + '/' + bigImages[ photoIndex ] }
-                        nextSrc={ process.env.PUBLIC_URL + '/' + bigImages[ ( photoIndex + 1 ) % bigImages.length ] }
-                        prevSrc={ process.env.PUBLIC_URL + '/' + bigImages[ ( photoIndex + bigImages.length - 1 ) % bigImages.length ] }
+                        mainSrc={ bigImages[ photoIndex ] }
+                        nextSrc={ bigImages[ ( photoIndex + 1 ) % bigImages.length ] }
+                        prevSrc={ bigImages[ ( photoIndex + bigImages.length - 1 ) % bigImages.length ] }
                         onCloseRequest={ closeLightBox }
                         onMovePrevRequest={ setNextHandler }
                         onMoveNextRequest={ setPrevHandler }
@@ -110,7 +110,7 @@ function MediaFour( props ) {
 
 function mapStateToProps( state, props ) {
     return {
-        product: state.data.products.filter( product => product.id === parseInt( props.id ) )[ 0 ]
+        product: state.data.products.filter( product => product.id ===  props.id )[ 0 ]
     }
 }
 

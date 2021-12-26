@@ -27,14 +27,14 @@ function ProductFive( props ) {
                     <Link to={ `${process.env.PUBLIC_URL}/product/default/${product.id}` }>
                         <img
                             alt="product"
-                            src={ `${process.env.PUBLIC_URL}/${product.pictures[ 0 ]}` }
+                            src={ `${product.pictures[ 0 ]}` }
                         />
 
                         { product.pictures[ 1 ] ?
                             <span className="product-image-hover product-image">
                                 <img
                                     alt="product"
-                                    src={ `${process.env.PUBLIC_URL}/${product.pictures[ 1 ]}` }
+                                    src={ `${product.pictures[ 1 ]}` }
                                 />
                             </span>
                             : ''

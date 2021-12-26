@@ -66,7 +66,7 @@ function ProductSidebar( props ) {
                                                 <figure className="product-media">
                                                     <a href={ `${process.env.PUBLIC_URL}/product/default/${item.id}` }>
                                                         <img
-                                                            src={ `${process.env.PUBLIC_URL}/${item.pictures[ 0 ]}` }
+                                                            src={ `${item.pictures[ 0 ]}` }
                                                             alt="Product"
                                                             className="product-image"
                                                         />
@@ -94,7 +94,7 @@ function ProductSidebar( props ) {
                                                 <figure className="product-media">
                                                     <a href={ `${process.env.PUBLIC_URL}/product/default/${item.id}` }>
                                                         <img
-                                                            src={ `${process.env.PUBLIC_URL}/${item.pictures[ 0 ]}` }
+                                                            src={ `${item.pictures[ 0 ]}` }
                                                             alt="Product"
                                                             className="product-image"
                                                         />

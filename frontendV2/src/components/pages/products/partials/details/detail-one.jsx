@@ -257,12 +257,12 @@ function ProductDetailOne(props) {
 function mapStateToProps(state, props) {
   return {
     product: state.data.products.filter(
-      (product) => product.id === parseInt(props.id)
+      (product) => product.id === props.id
     )[0],
     isWishlist:
       findIndex(
         state.wishlist.list,
-        (item) => item.id === parseInt(props.id)
+        (item) => item.id === props.id
       ) !== -1
         ? true
         : false,

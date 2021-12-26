@@ -20,15 +20,15 @@ function Breadcrumb(props) {
     if ('function' !== typeof parent[x]) path.push(parent[x]);
   }
 
-  currentProducts = products.filter((item) => item.id === parseInt(productId));
+  currentProducts = products.filter((item) => item.id === productId);
 
   // get product for prev button.
-  prevProducts = products.filter((item) => item.id < parseInt(productId));
+  prevProducts = products.filter((item) => item.id < productId);
   if (!prevProducts || !prevProducts.length) prevProduct = currentProducts[0];
   else prevProduct = prevProducts[prevProducts.length - 1];
 
   // get product for next button.
-  nextProducts = products.filter((item) => item.id > parseInt(productId));
+  nextProducts = products.filter((item) => item.id > productId);
   if (!nextProducts || nextProducts.length === 0)
     nextProduct = currentProducts[0];
   else nextProduct = nextProducts[0];
@@ -85,7 +85,7 @@ function Breadcrumb(props) {
                   <figure>
                     <img
                       src={
-                        process.env.PUBLIC_URL + '/' + prevProduct.pictures[0]
+                        prevProduct.pictures[0]
                       }
                       alt="Product"
                     />
@@ -111,7 +111,7 @@ function Breadcrumb(props) {
                   <figure>
                     <img
                       src={
-                        process.env.PUBLIC_URL + '/' + nextProduct.pictures[0]
+                        nextProduct.pictures[0]
                       }
                       alt="Product"
                     />
