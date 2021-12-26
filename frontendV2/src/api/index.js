@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-// axios.defaults.withCredentials = true
 
 axios.interceptors.response.use(null, (error) => {
   // clear token for 401 error

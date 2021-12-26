@@ -84,7 +84,7 @@ const ImageHandler = ({ image, setImage, name, primary }) => {
           onDragLeave={handleDragLeave}
         >
           {localImageUrl || image ? (
-            <img src={localImageUrl || image} alt='uploaded image' />
+            <img src={localImageUrl || image} alt='product pic' />
           ) : (
             <div className='drag-here flexed-column-center'>
               {primary && <span>Primary image</span>}

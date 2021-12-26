@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import './ProductCreate.scss';
 import { useState } from 'react';
-// import { useItemDispatch, useItemState } from '../../context/ItemContext';
-// import useUpload from '../../customHook/useUpload';
 import useForm from '../customHook/useForm';
 import NewProductNav from './NewProductNav';
 import ProductImages from './ProductImages';
@@ -57,7 +55,6 @@ const ProductCreate = ({ match, history }) => {
 
   const singleProduct = products && products.find((product) => product.id === productId);
 
-  // const { setFiles, urls, loading: imgUrlLoading } = useUpload();
   const [addProductLoading, setAddProductLoading] = useState(false);
   const [isUpdatingProduct, setIsUpdatingProduct] = useState(false);
   const [isDeletingProduct, setIsDeletingProduct] = useState(false);
@@ -76,7 +73,7 @@ const ProductCreate = ({ match, history }) => {
       // get all products
       store.dispatch(getAllProducts());
       // push to products page
-      history.push('/admin/dashboard/products')
+      history.push('/admin/products')
     } catch (error) {
       toast.error('Error deleting product');
     }
