@@ -53,7 +53,7 @@ function ProductListTwo( props ) {
     }, [] )
 
     useEffect( () => {
-        products = getVisibleProducts( props.products.slice( 20, 35 ), filters );
+        products = getVisibleProducts( props.products.slice( -15 ), filters );
 
         if ( products.length > 8 ) {
             setHasMore( true );

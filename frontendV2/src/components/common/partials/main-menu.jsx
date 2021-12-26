@@ -6,7 +6,7 @@ const getRandomProductId = ( product = [] ) => {
     let min = Math.ceil( 0 );
     let max = Math.floor( product.length - 1);
     const rand = Math.floor( Math.random() * ( max - min ) ) + min;
-    return product[rand].id;
+    return product[rand] ? product[rand].id : 1;
 };
 
 export default function MainMenu( props ) {

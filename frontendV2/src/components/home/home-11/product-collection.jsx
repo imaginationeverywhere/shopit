@@ -17,7 +17,7 @@ function ProductCollection( props ) {
 
     let { filters, toggleWishlist, showQuickViewModal, addToCart } = props;
     let products = props.products;
-    products = getVisibleProducts( products.slice( 20, 35 ), filters );
+    products = getVisibleProducts( products.slice( -15 ), filters );
 
     useEffect( () => {
         isotopeLoad( isotope, imagesLoaded, '.products-container', '.product-item', '.product-filter', "fitRows" );

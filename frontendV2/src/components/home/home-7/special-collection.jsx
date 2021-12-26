@@ -13,7 +13,7 @@ import { addToCart, toggleWishlist } from '../../../actions';
 function SpecialCollection( props ) {
     const { addToCart, toggleWishlist } = props;
     let products = props.products;
-    products = products.slice( 20, 35 );
+    products = products.slice( -15 );
 
     let featuredProducts = getFeaturedProducts( products );
     let saleProducts = getSaleProducts( products );
