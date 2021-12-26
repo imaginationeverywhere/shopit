@@ -48,31 +48,31 @@ export const categories = [
     value: 'furniture',
   },
   {
-    label: 'sofas & sleeper sofas',
+    label: 'Sofas & Sleeper Sofas',
     value: 'sofas & sleeper sofas',
   },
   {
-    label: 'beds',
+    label: 'Beds',
     value: 'beds',
   },
   {
-    label: 'electronics',
+    label: 'Electronics',
     value: 'electronics',
   },
   {
-    label: 'arm chair & chaises',
+    label: 'Arm Chair & Chaises',
     value: 'arm chair & chaises',
   },
   {
-    label: 'decoration',
+    label: 'Decoration',
     value: 'decoration',
   },
   {
-    label: 'lightning',
+    label: 'Lightning',
     value: 'lightning',
   },
   {
-    label: 'coffee & tables',
+    label: 'Coffee & Tables',
     value: 'coffee & tables',
   },
   {
@@ -89,7 +89,7 @@ export const categories = [
   },
   {
     label: "Clothing",
-    value: "Clothing"
+    value: "clothing"
   }
 ]
 
