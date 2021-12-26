@@ -1,10 +1,10 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from "react";
 
 const Columns = ({ checkbox, columns, sortColumn }) => {
   const [columnSorting, setColumnSorting] = useState({});
-  const DEFAULT_SORTING = 'asc';
-  const DESC_SORTING = 'desc';
-  const ASC_SORTING = 'asc';
+  const DEFAULT_SORTING = "asc";
+  const DESC_SORTING = "desc";
+  const ASC_SORTING = "asc";
 
   const handleClick = (column) => {
     columnSorting[column.field] === ASC_SORTING
@@ -28,14 +28,14 @@ const Columns = ({ checkbox, columns, sortColumn }) => {
 
   return (
     <Fragment>
-      {checkbox && <th scope='col'></th>}
+      {checkbox && <th scope="col"></th>}
       {columns.map((column) => (
-        <th scope='col' key={column.label} className='table-col'>
+        <th scope="col" key={column.label} className="table-col">
           <span onClick={() => handleClick(column)}>{column.label}</span>
           {columnSorting[column.field] === DEFAULT_SORTING ? (
-            <i className='fas fa-arrow-up'></i>
+            <i className="fas fa-arrow-up"></i>
           ) : (
-            <i className='fas fa-arrow-down'></i>
+            <i className="fas fa-arrow-down"></i>
           )}
         </th>
       ))}

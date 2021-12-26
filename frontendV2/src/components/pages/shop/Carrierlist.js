@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { MDBDataTableV5 } from 'mdbreact';
-// import '@fortawesome/fontawesome-free/css/all.min.css';
-// import 'mdbreact/dist/css/mdb.css';
+import 'mdbreact/dist/css/mdb.css';
 
-import Loader from '../layout/Loader';
-import { getCarriers, setSelectedCarrier } from '../../actions/shipmentActions';
-import Table from '../Common/Table/index';
+import Loader from '../../Loader';
+import {
+  getCarriers,
+  setSelectedCarrier,
+} from '../../../actions/shipmentActions';
+import Table from '../Table/index';
+
 const addressFrom = {
   name: 'Shawn Ippotle',
   street1: '777 Brockton Avenue',
@@ -23,52 +25,21 @@ const addressTo = {
   zip: '14020',
   country: 'US',
 };
-const parcel = {
-  length: '5',
-  width: '5',
-  height: '5',
-  distance_unit: 'in',
-  weight: '2',
-  mass_unit: 'lb',
-};
-// const TableWithCheckbox = ({ dataTable }) => {
-//   const dispatch = useDispatch();
 
-//   const handleCheckboxClick = (e) => {
-//     // delete e.checkbox;
-//     dispatch(setSelectedCarrier(e));
-//   };
-//   return (
-//     <MDBDataTableV5
-//       data={dataTable}
-//       hover
-//       entriesOptions={[5, 20, 25]}
-//       entries={5}
-//       pagesAmount={4}
-//       checkbox
-//       headCheckboxID="id2"
-//       bodyCheckboxID="checkboxes2"
-//       getValueCheckBox={(e) => {
-//         handleCheckboxClick(e);
-//       }}
-//     />
-//   );
-// };
-
-const CarrierList = ({ cartItems, shippingInfo }) => {
+const CarrierList = () => {
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    const productIds = cartItems.map((item) => item.product);
-    // dispatch(getCarriers({ productIds, shippingInfo }));
-    dispatch(getCarriers({ addressFrom, addressTo, parcel }));
-  }, []);
-
   const {
+    cartlist: { cart, shippingInfo },
     carriers: { data: carriers, loading = true } = {},
     selectedCarrier = {},
-  } = useSelector(({ shipment = {} }) => shipment);
-
+  } = useSelector((store) => store);
+  const parcels = useCallback(
+    (cart) => cart.reduce((acc, product) => [...acc, ...product.parcels], []),
+    [cart]
+  );
+  useEffect(() => {
+    dispatch(getCarriers({ addressFrom, addressTo, parcels: parcels(cart) }));
+  }, []);
   const [dataTable, setDataTable] = useState({
     columns: [
       {
@@ -107,7 +78,6 @@ const CarrierList = ({ cartItems, shippingInfo }) => {
       });
     }
   }, [carriers]);
-
   const handleCheckboxClick = (selectedCarrier) => {
     dispatch(setSelectedCarrier(selectedCarrier));
   };

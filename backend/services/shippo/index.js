@@ -1,5 +1,5 @@
-const shippo = require("shippo")(process.env.SHIPPO_TOKEN);
-const Constants = require("../../utils/constants");
+const shippo = require('shippo')(process.env.SHIPPO_TOKEN);
+const Constants = require('../../utils/constants');
 
 const rateKeyMapper = (rate) =>
   (({
@@ -26,12 +26,12 @@ const rateKeyMapper = (rate) =>
     carrier_account,
   }))(rate);
 
-const getCarriers = async (addressFrom = {}, addressTo = {}, parcel = {}) => {
+const getCarriers = async (addressFrom = {}, addressTo = {}, parcels = []) => {
   try {
     const response = await shippo.shipment.create({
       address_from: addressFrom,
       address_to: addressTo,
-      parcels: [parcel],
+      parcels,
       async: false,
     });
     if (response.status === Constants.SUCCESS) {
@@ -39,7 +39,7 @@ const getCarriers = async (addressFrom = {}, addressTo = {}, parcel = {}) => {
       return rates.map((rate) => rateKeyMapper(rate));
     }
   } catch (error) {
-    console.log("the error is; =====", error);
+    console.log('the error is; =====', error);
   }
 };
 
@@ -57,7 +57,7 @@ const createShipment = async ({ shipmentId, carrierId, serviceLevelToken }) => {
     }
     return response;
   } catch (error) {
-    console.log("Error is ShippoService.createShipment ----", error);
+    console.log('Error is ShippoService.createShipment ----', error);
     throw error;
   }
 };

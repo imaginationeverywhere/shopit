@@ -1,17 +1,15 @@
-import axios from "axios";
+import axios from 'axios';
 import {
   GET_SHIPMENT_CARRIERS_FAIL,
   GET_SHIPMENT_CARRIERS_REQUEST,
   GET_SHIPMENT_CARRIERS_SUCCESS,
   SET_SELECTED_CARRIER_REQUEST,
-} from "../constants/shipmentConstants";
+} from '../constants/shipmentConstants';
 
 export const getCarriers = (payload) => async (dispatch) => {
   try {
     dispatch({ type: GET_SHIPMENT_CARRIERS_REQUEST });
-
     const link = `/api/v1/shipment/carriers`;
-
     const { data } = await axios.post(link, payload);
 
     dispatch({

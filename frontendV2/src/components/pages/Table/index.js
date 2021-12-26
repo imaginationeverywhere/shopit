@@ -73,6 +73,7 @@ const Table = ({
 
   return (
     <Fragment>
+      <h3 className='summary-title '>Carriers</h3>
       <div className='table-responsive'>
         <table className='table table-striped'>
           <thead>
@@ -84,7 +85,7 @@ const Table = ({
               />
             </tr>
           </thead>
-          <tbody>
+          <tbody className='table-adjustment'>
             {paginatedRows.map((row, index) => (
               <tr key={index}>
                 {checkbox && (
