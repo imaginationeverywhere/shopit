@@ -20,7 +20,7 @@ export const getVisibleProducts = ( products, { sortBy, category, size, brand, c
         } else {
             catResult = true;
         }
-
+  console.log(item.size, size)
         if ( size && size.length > 0 ) {
             for ( let i = 0; i < size.length; i++ ) {
                 if ( -1 !== findIndex( item.size, sz => sz === size[ i ] ) )

@@ -18,8 +18,10 @@ export const getProducts = function() {
   return axios
     .get(MAIN_API_URL + "products")
     .then(function(response) {
-      const myData = response.data && response.data.products.map(({_id, ...rest}) => ({...rest, 
+      const myData = response.data && response.data.products.map(({_id, sizes, ...rest}) => ({...rest, 
         id: _id, 
+        size: sizes,
+        sizes,
         rawSmPictures: rest.smPictures,
         rawPictures: rest.pictures,
         smPictures: rest.smPictures.filter((url) => !!url),
