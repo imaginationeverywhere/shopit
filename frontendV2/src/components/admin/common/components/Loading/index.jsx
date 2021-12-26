@@ -7,7 +7,7 @@ import './Loading.scss';
 
 const Loading = ({ classes, color }) => (
   <div
-    style={{ borderColor: color }}
+    style={{ borderColor: color || '#c66' }}
     className={`loading-icon ${classes || ''}`}
   />
 );

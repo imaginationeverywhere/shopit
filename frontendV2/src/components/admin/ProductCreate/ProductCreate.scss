@@ -320,4 +320,27 @@
 			}
 		}
 	}
+	.confirm-modal {
+		background-color: white;
+		max-width: 400px;
+		padding: 3em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		position: relative;
+		.cut-icon {
+			position: absolute;
+			top: 1.5em;
+			right: 1.5em;
+			cursor: pointer;
+		}
+		.buttons {
+			margin-top: 2em;
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+		}
+	}
 }

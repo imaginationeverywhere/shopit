@@ -10,36 +10,13 @@ import ProductForm from './ProductForm';
 import { toast } from "react-toastify";
 import Skeleton from '../common/components/Skeleton';
 import { getSelectValues, getUpdateProductDetails, getUpdateProductImages } from '../utils/helpers';
-import { addProducts, updateProducts } from '../../../api';
+import { addProducts, deleteProducts, updateProducts } from '../../../api';
 import { withRouter } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import store from '../../../store';
 import { getAllProducts } from '../../../actions';
-// import { useParams } from 'react-router-dom';
-// import {
-//   getUpdateProductDetails,
-//   getUpdateProductImages,
-// } from '../../utils/helpers';
+import ConfirmModal from './ConfirmModal';
 
-const getStrFromUrlsObj = (images, imageObj) => {
-  const imgArrWithUrl = [];
-  Object.keys(imageObj).forEach((eleKey) => {
-    if (typeof imageObj[eleKey] === 'string') {
-      imgArrWithUrl.push(imageObj[eleKey]);
-    }
-  });
-  // images.forEach(({ url }) => {
-  //   imgArrWithUrl.push(url);
-  // });
-
-  let str = '';
-
-  // imgArrWithUrl.forEach((url, index) => {
-  //   str += index + 1 < imgArrWithUrl.length ? `${url},` : url;
-  // });
-
-  return str;
-};
 
 const defaultImageValue = {
   picture1: '',
@@ -69,7 +46,7 @@ const defaultProductValues = {
   variants: null,
 }
 
-const ProductCreate = ({ match }) => {
+const ProductCreate = ({ match, history }) => {
    // get id params from url
   const productId = match && match.params && match.params.productId;
   const { products } = useSelector((state) => state.data);
@@ -83,11 +60,28 @@ const ProductCreate = ({ match }) => {
   // const { setFiles, urls, loading: imgUrlLoading } = useUpload();
   const [addProductLoading, setAddProductLoading] = useState(false);
   const [isUpdatingProduct, setIsUpdatingProduct] = useState(false);
+  const [isDeletingProduct, setIsDeletingProduct] = useState(false);
   const { formValues, handleChange, resetForm, checkAllRequired } = useForm(defaultProductValues);
+  const [ showDeleteConfirmModal, setShowDeleteConfirmModal ] = useState(false);
 
 
-  const genericLoading = productId ? isUpdatingProduct : addProductLoading;
+  const genericLoading = productId ? (isUpdatingProduct || isDeletingProduct) : addProductLoading;
 
+
+  const handleDelete = async () => {
+    setIsDeletingProduct(true);
+    try {
+      await deleteProducts({ id: productId});
+      toast.success('Product deleted successfully');
+      // get all products
+      store.dispatch(getAllProducts());
+      // push to products page
+      history.push('/admin/dashboard/products')
+    } catch (error) {
+      toast.error('Error deleting product');
+    }
+    setIsDeletingProduct(false);
+  }
 
 
   useEffect(() => {
@@ -176,6 +170,7 @@ const ProductCreate = ({ match }) => {
                 resetForm={resetForm}
                 checkAllRequired={checkAllRequired}
                 submitLoading={genericLoading}
+                deleteProduct={() => setShowDeleteConfirmModal(true)}
               />
               <ProductImages
                 updateType={!!productId}
@@ -194,6 +189,7 @@ const ProductCreate = ({ match }) => {
             </>
           )}
         </form>
+        {showDeleteConfirmModal && <ConfirmModal onSubmit={handleDelete} closeModal={() => setShowDeleteConfirmModal(false)} />}
       </div>
   );
 };

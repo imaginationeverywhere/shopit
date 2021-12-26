@@ -29,7 +29,7 @@ const ProductList = ({ history }) => {
             </tr>
           </thead>
           <tbody>
-            {products.map(({ id, name, price, stock }) => {
+            {products && products.map(({ id, name, price, stock }) => {
               return (
                 <tr style={{cursor: 'pointer'}} onClick={() => history && history.push('/admin/products/edit/' + id)} key={id}>
                   <td>{id}</td>

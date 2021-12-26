@@ -103,3 +103,11 @@ export const updateProducts = async ({id, body}) => {
     headers: myHeaders()
   });
 }
+
+export const deleteProducts = async ({id}) => {
+  return axios({
+    method: 'delete',
+    url: `${MAIN_API_URL}admin/product/${id}`,
+    headers: myHeaders()
+  });
+}
