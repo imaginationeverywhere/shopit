@@ -1,35 +1,47 @@
 const express = require('express');
 const app = express();
 
-const cookieParser = require('cookie-parser')
-const fileUpload = require('express-fileupload')
+const cookieParser = require('cookie-parser');
+const fileUpload = require('express-fileupload');
 const Constants = require('./utils/constants');
 
 // const dotenv = require('dotenv');
-const path = require('path')
-const cors = require('cors')
+const path = require('path');
+const cors = require('cors');
 
-const errorMiddleware = require('./middlewares/errors')
+const errorMiddleware = require('./middlewares/errors');
 
 // Setting up config file
-if (process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({ path: 'backend/config/config.env' })
+if (process.env.NODE_ENV !== 'PRODUCTION')
+  require('dotenv').config({ path: 'backend/config/config.env' });
 // dotenv.config({ path: 'backend/config/config.env' })
 
-app.use(cors())
-app.use(express.json())
-app.use(express.urlencoded({
-  extended: true
-}));
-app.use(cookieParser())
-app.use(fileUpload(
-  {
+app.use(
+  cors({
+    credentials: true,
+    allowedHeaders: [
+      'Access-Control-Allow-Origin',
+      'Access-Control-Allow-Headers',
+      'Content-Type',
+    ],
+    origin: 'http://localhost:3000',
+  })
+);
+
+app.use(express.json());
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
+app.use(cookieParser());
+app.use(
+  fileUpload({
     limits: { fileSize: 50 * 1024 * 1024 },
     useTempFiles: true,
     tempFileDir: '/tmp/',
-  }
-));
-
-
+  })
+);
 
 // Import all routes
 const products = require('./routes/products');
@@ -41,19 +53,19 @@ const webhooks = require('./routes/webhooks');
 const templates = require('./routes/templates');
 
 app.use(Constants.BASE_URL, products);
-app.use(Constants.BASE_URL, auth)
-app.use(Constants.BASE_URL, payment)
-app.use(Constants.BASE_URL, order)
+app.use(Constants.BASE_URL, auth);
+app.use(Constants.BASE_URL, payment);
+app.use(Constants.BASE_URL, order);
 app.use(Constants.BASE_URL, shipment);
-app.use(Constants.BASE_URL, webhooks)
-app.use(Constants.BASE_URL, templates)
+app.use(Constants.BASE_URL, webhooks);
+app.use(Constants.BASE_URL, templates);
 
 if (process.env.NODE_ENV === 'PRODUCTION') {
-  app.use(express.static(path.join(__dirname, '../frontend/build')))
+  app.use(express.static(path.join(__dirname, '../frontend/build')));
 
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../frontend/build/index.html'))
-  })
+    res.sendFile(path.resolve(__dirname, '../frontend/build/index.html'));
+  });
 }
 
 // Middleware to handle errors
