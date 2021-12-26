@@ -39,18 +39,6 @@ exports.newProductOld = catchAsyncErrors(async (req, res, next) => {
 });
 
 exports.newProduct = catchAsyncErrors(async (req, res, next) => {
-	req.user = {
-		avatar: {
-			public_id: 'avatars/wqogidodejlqlkqizpjj',
-			url: 'https://res.cloudinary.com/imagination-everywhere-inc/image/upload/v1638956971/avatars/wqogidodejlqlkqizpjj.jpg',
-		},
-		role: 'admin',
-		_id: '61b07fab20ead018cf8e90d0',
-		name: 'kelvin esegbona',
-		email: 'kevoesegbona@gmail.com',
-		createdAt: ' 2021-12-08T09:49:31.390Z',
-		__v: 0,
-	};
 	// default State of Small and large Pictures
 	req.body.pictures = [];
 	req.body.smPictures = [];
@@ -128,18 +116,6 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
 	if (!oldProduct) {
 		return next(new ErrorHandler('Product not found', 404));
 	}
-	req.user = {
-		avatar: {
-			public_id: 'avatars/wqogidodejlqlkqizpjj',
-			url: 'https://res.cloudinary.com/imagination-everywhere-inc/image/upload/v1638956971/avatars/wqogidodejlqlkqizpjj.jpg',
-		},
-		role: 'admin',
-		_id: '61b07fab20ead018cf8e90d0',
-		name: 'kelvin esegbona',
-		email: 'kevoesegbona@gmail.com',
-		createdAt: ' 2021-12-08T09:49:31.390Z',
-		__v: 0,
-	};
 
 	req.body.pictures = [];
 	req.body.smPictures = [];
@@ -367,6 +343,7 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
 	product.smPictures = product.smPictures || [];
 	product.pictures = product.pictures || [];
   const allImages = product.smPictures.concat(product.pictures);
+	console.log(allImages);
 	// Deleting images associated with the product
 	for (let i = 0; i < allImages.length; i++) {
 		const publicId = getPublicId(allImages[i]);
@@ -374,7 +351,7 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
 			publicId
 		);
 	}
-
+console.log('mongoose to delete')
 	await product.remove();
 
 	res.status(200).json({

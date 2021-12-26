@@ -110,9 +110,7 @@ export const updateProducts = async ({ id, body }) => {
 }
 
 export const deleteProducts = async ({id}) => {
-  return axios({
-    method: 'delete',
-    url: `${MAIN_API_URL}admin/product/${id}`,
-    headers: myHeaders()
+  return axiosInstance.delete(`admin/product/${id}`, {}, {
+    headers: myHeaders(),
   });
 }

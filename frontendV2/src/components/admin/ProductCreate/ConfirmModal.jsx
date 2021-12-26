@@ -3,7 +3,7 @@ import DashboardButton from '../common/components/DashboardButton'
 import ModalWrapComp from '../common/components/ModalWrapComp'
 import CutIcon from '../common/components/PriceInput/CutIcon'
 
-const ConfirmModal = ({ closeModal, onSubmit }) => {
+const ConfirmModal = ({ closeModal, onSubmit, loading }) => {
   return (
     <ModalWrapComp closeModal={closeModal}>
       <div className='confirm-modal'>
@@ -12,7 +12,7 @@ const ConfirmModal = ({ closeModal, onSubmit }) => {
         <h6>Are you sure you want to Delete?</h6>
         <div className="buttons">
           <DashboardButton name='Cancel' onClick={closeModal} />
-          <DashboardButton name='Confirm' colored onClick={onSubmit} />
+          <DashboardButton loadingColor='#fff' name='Confirm' loading={loading} disabled={loading} colored onClick={onSubmit} />
         </div>
       </div>
     </ModalWrapComp>

@@ -189,7 +189,7 @@ const ProductCreate = ({ match, history }) => {
             </>
           )}
         </form>
-        {showDeleteConfirmModal && <ConfirmModal onSubmit={handleDelete} closeModal={() => setShowDeleteConfirmModal(false)} />}
+        {showDeleteConfirmModal && <ConfirmModal loading={isDeletingProduct} onSubmit={handleDelete} closeModal={() => setShowDeleteConfirmModal(false)} />}
       </div>
   );
 };

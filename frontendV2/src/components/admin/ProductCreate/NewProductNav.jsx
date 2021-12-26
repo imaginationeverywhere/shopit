@@ -27,6 +27,8 @@ const NewProductNav = ({
             onClick={() => deleteProduct()}
             disabled={submitLoading}
             type='button'
+            loading={submitLoading}
+            loadingColor='#c66'
           />
         )}
         <DashboardButton
@@ -38,6 +40,7 @@ const NewProductNav = ({
           type='submit'
           loading={submitLoading}
           colored
+          loadingColor='#fff'
         />
       </div>
     </header>
