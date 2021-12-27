@@ -1,4 +1,5 @@
-import axios from 'axios';
+import { axiosInstance } from '../api';
+
 import {
   GET_SHIPMENT_CARRIERS_FAIL,
   GET_SHIPMENT_CARRIERS_REQUEST,
@@ -9,10 +10,8 @@ import {
 export const getCarriers = payload => async dispatch => {
   try {
     dispatch({ type: GET_SHIPMENT_CARRIERS_REQUEST });
+    const { data } = await axiosInstance.post('/shipment/carriers', payload);
 
-    const link = `http://localhost:4000/api/v1/shipment/carriers`;
-
-    const { data } = await axios.post(link, payload);
     dispatch({
       type: GET_SHIPMENT_CARRIERS_SUCCESS,
       payload: data,
