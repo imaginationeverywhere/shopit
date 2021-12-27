@@ -1,16 +1,15 @@
-import React from 'react';
-import './ImageHandler.scss';
-import { useState } from 'react';
-import PlusIconNew from '../../../ProductCreate/SVGs/PlusIconNew';
+import React from "react";
+import "./ImageHandler.scss";
+import { useState } from "react";
+import PlusIconNew from "../../../ProductCreate/SVGs/PlusIconNew";
 // import { useToastFuncs } from '../../context/ToastContexts';
-import Trash from '../../../ProductCreate/SVGs/Trash';
-import { useEffect } from 'react';
+import Trash from "../../../ProductCreate/SVGs/Trash";
+import { useEffect } from "react";
 
 const ImageHandler = ({ image, setImage, name, primary }) => {
   const [localImageUrl, setLocalImageUrl] = useState(null);
   const [dragging, setDragging] = useState(false);
   // const Toast = useToastFuncs();
-
 
   const loadFilePath = async (file) => {
     const readPath = new FileReader();
@@ -22,7 +21,7 @@ const ImageHandler = ({ image, setImage, name, primary }) => {
     const [imgFile] = files;
     const { size, type } = imgFile;
     const threeMB = 3000000;
-    if (size < threeMB || type.split('/')[0] === 'image') {
+    if (size < threeMB || type.split("/")[0] === "image") {
       return imgFile;
     }
     // Toast.error(
@@ -73,12 +72,12 @@ const ImageHandler = ({ image, setImage, name, primary }) => {
     }
   };
   return (
-    <div className={`imagehandler ${localImageUrl ? 'has-image' : ''}`}>
+    <div className={`imagehandler ${localImageUrl ? "has-image" : ""}`}>
       <>
         <label
           htmlFor={`${name}_changePhoto`}
           className={`upload-here flexed-column-center ${
-            dragging ? 'drag' : localImageUrl || image ? '' : 'opace-sect'
+            dragging ? "drag" : localImageUrl || image ? "" : "opace-sect"
           }`}
           onDrop={handleDrop}
           onDragEnter={handleDragEnter}
@@ -86,37 +85,33 @@ const ImageHandler = ({ image, setImage, name, primary }) => {
           onDragLeave={handleDragLeave}
         >
           {image ? (
-            <img src={localImageUrl || image} alt='product pic' />
+            <img src={localImageUrl || image} alt="product pic" />
           ) : (
-            <div className='drag-here flexed-column-center'>
+            <div className="drag-here flexed-column-center">
               {primary && <span>Primary image</span>}
               <PlusIconNew />
-              <p>
-                {dragging
-                  ? 'Drop Image here'
-                  : 'Drag or click to upload'}
-              </p>
+              <p>{dragging ? "Drop Image here" : "Drag or click to upload"}</p>
             </div>
           )}
         </label>
         <input
           id={`${name}_changePhoto`}
-          className='hidden'
-          type='file'
+          className="hidden"
+          type="file"
           onChange={handleChange}
-          accept='image/*'
-          data-max-size='2000'
+          accept="image/*"
+          data-max-size="2000"
         />
       </>
-      {(image) && (
+      {image && (
         <div
           onClick={() => {
             setImage(name, null);
             setLocalImageUrl(null);
           }}
-          className='delete-btn flexed-center'
+          className="delete-btn flexed-center"
         >
-          <Trash color='#C8372D' />
+          <Trash color="#C8372D" />
         </div>
       )}
     </div>

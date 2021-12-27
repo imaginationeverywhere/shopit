@@ -1,33 +1,33 @@
-import React from 'react';
+import React from "react";
 
 // import jsons
-import data from '../../mock_data/data';
+import data from "../../mock_data/data";
 
-function Service( props ) {
-    const { adClass = "bg-transparent", iconAdClass = "text-dark" } = props;
+function Service(props) {
+  const { adClass = "bg-transparent", iconAdClass = "text-dark" } = props;
 
-    return (
-        <div className={ `icon-boxes-container ${adClass}` }>
-            <div className="container">
-                <div className="row">
-                    { data.services.slice( 0, 4 ).map( ( item, index ) =>
-                        <div className="col-sm-6 col-lg-3" key={ index }>
-                            <div className="icon-box icon-box-side">
-                                <span className={ `icon-box-icon ${iconAdClass}` }>
-                                    <i className={ item.icon }></i>
-                                </span>
+  return (
+    <div className={`icon-boxes-container ${adClass}`}>
+      <div className="container">
+        <div className="row">
+          {data.services.slice(0, 4).map((item, index) => (
+            <div className="col-sm-6 col-lg-3" key={index}>
+              <div className="icon-box icon-box-side">
+                <span className={`icon-box-icon ${iconAdClass}`}>
+                  <i className={item.icon}></i>
+                </span>
 
-                                <div className="icon-box-content">
-                                    <h3 className="icon-box-title">{ item.title }</h3>
-                                    <p>{ item.subtitle }</p>
-                                </div>
-                            </div>
-                        </div>
-                    ) }
+                <div className="icon-box-content">
+                  <h3 className="icon-box-title">{item.title}</h3>
+                  <p>{item.subtitle}</p>
                 </div>
+              </div>
             </div>
+          ))}
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
-export default React.memo( Service );
+export default React.memo(Service);

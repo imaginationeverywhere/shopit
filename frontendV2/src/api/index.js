@@ -1,10 +1,9 @@
-import axios from 'axios';
-
+import axios from "axios";
 
 axios.interceptors.response.use(null, (error) => {
   // clear token for 401 error
   if (error.response && error.response.status === 401) {
-    localStorage.removeItem('token');
+    localStorage.removeItem("token");
   }
   return Promise.reject(error);
 });
@@ -16,17 +15,17 @@ export const axiosInstance = axios.create({
   baseURL: MAIN_API_URL,
   withCredentials: true,
   headers: {
-    'Access-Control-Allow-Headers':
-      'Access-Control-Allow-Origin, Access-Control-Allow-Headers, Content-Type',
-    'Access-Control-Allow-Origin': '*',
+    "Access-Control-Allow-Headers":
+      "Access-Control-Allow-Origin, Access-Control-Allow-Headers, Content-Type",
+    "Access-Control-Allow-Origin": "*",
   },
 });
 
 // API to get products from mock server
-export const getProducts = function() {
+export const getProducts = function () {
   return axiosInstance
-    .get('products')
-    .then(function(response) {
+    .get("products")
+    .then(function (response) {
       const myData =
         response.data &&
         response.data.products.map(({ _id, sizes, ...rest }) => ({
@@ -41,7 +40,7 @@ export const getProducts = function() {
         }));
       return myData;
     })
-    .catch(function(error) {
+    .catch(function (error) {
       // handle error
       console.log(error);
     });
@@ -49,41 +48,41 @@ export const getProducts = function() {
 
 const myHeaders = () => {
   return {
-    Cookie: 'token=' + localStorage.getItem('token'),
+    Cookie: "token=" + localStorage.getItem("token"),
   };
 };
 
-export const getTemplates = function() {
+export const getTemplates = function () {
   return axiosInstance
-    .get('templates')
-    .then(function(response) {
+    .get("templates")
+    .then(function (response) {
       return response.data;
     })
-    .catch(function(error) {
+    .catch(function (error) {
       // handle error
       console.log(error);
     });
 };
 
-export const previewTemplate = function(templateId) {
+export const previewTemplate = function (templateId) {
   return axiosInstance
-    .get('templates', { templateId })
-    .then(function(response) {
+    .get("templates", { templateId })
+    .then(function (response) {
       return response.data;
     })
-    .catch(function(error) {
+    .catch(function (error) {
       // handle error
       console.log(error);
     });
 };
 
-export const setTemplate = function(templateId) {
+export const setTemplate = function (templateId) {
   return axiosInstance
-    .post('templates', { templateId })
-    .then(function(response) {
+    .post("templates", { templateId })
+    .then(function (response) {
       return response.data;
     })
-    .catch(function(error) {
+    .catch(function (error) {
       // handle error
       console.log(error);
     });
@@ -100,21 +99,25 @@ export const register = async (values) => {
 };
 
 export const addProducts = async ({ body }) => {
-  return axiosInstance.post('admin/product/new', body, {
-    contentType: 'multipart/form-data',
+  return axiosInstance.post("admin/product/new", body, {
+    contentType: "multipart/form-data",
     headers: myHeaders(),
   });
 };
 
 export const updateProducts = async ({ id, body }) => {
   return axiosInstance.put(`admin/product/${id}`, body, {
-    contentType: 'multipart/form-data',
+    contentType: "multipart/form-data",
     headers: myHeaders(),
   });
-}
+};
 
-export const deleteProducts = async ({id}) => {
-  return axiosInstance.delete(`admin/product/${id}`, {}, {
-    headers: myHeaders(),
-  });
-}
+export const deleteProducts = async ({ id }) => {
+  return axiosInstance.delete(
+    `admin/product/${id}`,
+    {},
+    {
+      headers: myHeaders(),
+    }
+  );
+};

@@ -1,35 +1,35 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 // import { MDBDataTableV5 } from 'mdbreact';
 // import '@fortawesome/fontawesome-free/css/all.min.css';
 // import 'mdbreact/dist/css/mdb.css';
 
-import Loader from '../layout/Loader';
-import { getCarriers, setSelectedCarrier } from '../../actions/shipmentActions';
-import Table from '../Common/Table/index';
+import Loader from "../layout/Loader";
+import { getCarriers, setSelectedCarrier } from "../../actions/shipmentActions";
+import Table from "../Common/Table/index";
 const addressFrom = {
-  name: 'Shawn Ippotle',
-  street1: '777 Brockton Avenue',
-  city: 'Abington',
-  state: 'MA',
-  zip: '2351',
-  country: 'US',
+  name: "Shawn Ippotle",
+  street1: "777 Brockton Avenue",
+  city: "Abington",
+  state: "MA",
+  zip: "2351",
+  country: "US",
 };
 const addressTo = {
-  name: 'Mr Hippo',
-  street1: '4133 Veterans Memorial Drive',
-  city: 'Batavia',
-  state: 'NY',
-  zip: '14020',
-  country: 'US',
+  name: "Mr Hippo",
+  street1: "4133 Veterans Memorial Drive",
+  city: "Batavia",
+  state: "NY",
+  zip: "14020",
+  country: "US",
 };
 const parcel = {
-  length: '5',
-  width: '5',
-  height: '5',
-  distance_unit: 'in',
-  weight: '2',
-  mass_unit: 'lb',
+  length: "5",
+  width: "5",
+  height: "5",
+  distance_unit: "in",
+  weight: "2",
+  mass_unit: "lb",
 };
 // const TableWithCheckbox = ({ dataTable }) => {
 //   const dispatch = useDispatch();
@@ -72,20 +72,20 @@ const CarrierList = ({ cartItems, shippingInfo }) => {
   const [dataTable, setDataTable] = useState({
     columns: [
       {
-        label: 'Name',
-        field: 'provider',
+        label: "Name",
+        field: "provider",
       },
       {
-        label: 'Price ($)',
-        field: 'amount_local',
+        label: "Price ($)",
+        field: "amount_local",
       },
       {
-        label: 'Estimated Days',
-        field: 'estimated_days',
+        label: "Estimated Days",
+        field: "estimated_days",
       },
       {
-        label: 'Service Type',
-        field: 'serviceType',
+        label: "Service Type",
+        field: "serviceType",
       },
     ],
     rows: [],
@@ -113,7 +113,7 @@ const CarrierList = ({ cartItems, shippingInfo }) => {
   };
 
   return (
-    <div id='carrier-list'>
+    <div id="carrier-list">
       {loading ? (
         <Loader />
       ) : (

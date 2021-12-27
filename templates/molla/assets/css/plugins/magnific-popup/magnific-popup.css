@@ -65,4 +65,5 @@ C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$left\".\A         on line 104 of A:/New folder/molla_landing/assets/sass/plugins/magnific-popup/_main.scss\A         from line 1 of A:\New folder\molla_landing\assets\sass\plugins\magnific-popup\magnific-popup.scss"; }
+  content: 'Error: Undefined variable: "$left".\A         on line 104 of A:/New folder/molla_landing/assets/sass/plugins/magnific-popup/_main.scss\A         from line 1 of A:\New folder\molla_landing\assets\sass\plugins\magnific-popup\magnific-popup.scss';
+}

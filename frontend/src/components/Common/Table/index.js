@@ -1,7 +1,7 @@
-import React, { Fragment, useEffect, useState } from 'react';
-import TableFooter from './TableFooter';
-import Checkbox from './Checkbox';
-import Columns from './Columns';
+import React, { Fragment, useEffect, useState } from "react";
+import TableFooter from "./TableFooter";
+import Checkbox from "./Checkbox";
+import Columns from "./Columns";
 
 const Table = ({
   tableData,
@@ -58,12 +58,12 @@ const Table = ({
 
   const sortColumn = (columnField, order) => {
     const sortedRows = allRows.sort((r1, r2) => {
-      if (order === 'asc') {
-        return typeof r1[columnField] === 'string'
+      if (order === "asc") {
+        return typeof r1[columnField] === "string"
           ? r1[columnField].localeCompare(r2[columnField])
           : r1[columnField] - r2[columnField];
       } else {
-        return typeof r1[columnField] === 'string'
+        return typeof r1[columnField] === "string"
           ? r2[columnField].localeCompare(r1[columnField])
           : r2[columnField] - r1[columnField];
       }
@@ -73,8 +73,8 @@ const Table = ({
 
   return (
     <Fragment>
-      <div className='table-responsive'>
-        <table className='table table-striped'>
+      <div className="table-responsive">
+        <table className="table table-striped">
           <thead>
             <tr>
               <Columns

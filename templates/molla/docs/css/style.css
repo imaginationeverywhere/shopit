@@ -54,4 +54,5 @@ C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: base/base.\A        Load path: A:/xampp/htdocs/react/molla/docs/sass\A         on line 82 of A:\xampp\htdocs\react\molla\docs\sass\style.scss\A \A 77: \A 78: @import 'config/fonts';\A 79: @import 'config/variables';\A 80: \A 81: /*-------------------- 1.General Styles ---------- */\A 82: @import 'base/base';\A 83: @import 'base/type';\A 84: @import 'base/layout';\A 85: \A 86: /*-------------------- 2.Headers --------------------*/\A 87: @import 'base/headers/header';"; }
+  content: "Error: File to import not found or unreadable: base/base.\A        Load path: A:/xampp/htdocs/react/molla/docs/sass\A         on line 82 of A:\xampp\htdocs\react\molla\docs\sass\style.scss\A \A 77: \A 78: @import 'config/fonts';\A 79: @import 'config/variables';\A 80: \A 81: /*-------------------- 1.General Styles ---------- */\A 82: @import 'base/base';\A 83: @import 'base/type';\A 84: @import 'base/layout';\A 85: \A 86: /*-------------------- 2.Headers --------------------*/\A 87: @import 'base/headers/header';";
+}

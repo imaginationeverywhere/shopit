@@ -10,7 +10,7 @@ export const Input = ({
 }) => {
   return (
     <div className="input-container">
-    <label htmlFor={id}>{label}</label>
+      <label htmlFor={id}>{label}</label>
       <input
         id={id}
         className={`input ${className}`}

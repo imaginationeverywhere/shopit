@@ -68,19 +68,17 @@ function TrendyCollection(props) {
                 adClass="owl-full carousel-equal-height carousel-with-shadow"
                 carouselOptions={trendingSlider}
               >
-                {getProductsByCategory(products, cat ).map(
-                  (item, index) => (
-                    <ProductNine
-                      product={item}
-                      key={"trendy" + index}
-                      onAddToCart={addToCart}
-                      onToggleWishlist={toggleWishlist}
-                      onAddToCompare={addToCompare}
-                      showQuickView={showQuickViewModal}
-                      type={2}
-                    />
-                  )
-                )}
+                {getProductsByCategory(products, cat).map((item, index) => (
+                  <ProductNine
+                    product={item}
+                    key={"trendy" + index}
+                    onAddToCart={addToCart}
+                    onToggleWishlist={toggleWishlist}
+                    onAddToCompare={addToCompare}
+                    showQuickView={showQuickViewModal}
+                    type={2}
+                  />
+                ))}
               </OwlCarousel>
             </TabPanel>
           ))}

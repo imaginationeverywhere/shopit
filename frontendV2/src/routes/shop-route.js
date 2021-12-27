@@ -1,15 +1,15 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
 
-import Layout from '../components/app';
-import Sidebar from '../components/pages/shop/sidebar';
-import NoSidebar from '../components/pages/shop/nosidebar';
-import ProductCategory from '../components/pages/shop/product-category';
-import MyAccount from '../components/pages/shop/dashboard';
-import Wishlist from '../components/pages/shop/wishlist';
-import Cart from '../components/pages/shop/cart';
-import Checkout from '../components/pages/shop/checkout';
-import Market from '../components/pages/shop/market';
+import Layout from "../components/app";
+import Sidebar from "../components/pages/shop/sidebar";
+import NoSidebar from "../components/pages/shop/nosidebar";
+import ProductCategory from "../components/pages/shop/product-category";
+import MyAccount from "../components/pages/shop/dashboard";
+import Wishlist from "../components/pages/shop/wishlist";
+import Cart from "../components/pages/shop/cart";
+import Checkout from "../components/pages/shop/checkout";
+import Market from "../components/pages/shop/market";
 
 export default function ShopRoute() {
   return (

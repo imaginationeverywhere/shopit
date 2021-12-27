@@ -1,29 +1,29 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import 'mdbreact/dist/css/mdb.css';
+import React, { useEffect, useState, useCallback } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import "mdbreact/dist/css/mdb.css";
 
-import Loader from '../../Loader';
+import Loader from "../../Loader";
 import {
   getCarriers,
   setSelectedCarrier,
-} from '../../../actions/shipmentActions';
-import Table from '../Table/index';
+} from "../../../actions/shipmentActions";
+import Table from "../Table/index";
 
 const addressFrom = {
-  name: 'Shawn Ippotle',
-  street1: '777 Brockton Avenue',
-  city: 'Abington',
-  state: 'MA',
-  zip: '2351',
-  country: 'US',
+  name: "Shawn Ippotle",
+  street1: "777 Brockton Avenue",
+  city: "Abington",
+  state: "MA",
+  zip: "2351",
+  country: "US",
 };
 const addressTo = {
-  name: 'Mr Hippo',
-  street1: '4133 Veterans Memorial Drive',
-  city: 'Batavia',
-  state: 'NY',
-  zip: '14020',
-  country: 'US',
+  name: "Mr Hippo",
+  street1: "4133 Veterans Memorial Drive",
+  city: "Batavia",
+  state: "NY",
+  zip: "14020",
+  country: "US",
 };
 
 const CarrierList = () => {
@@ -43,20 +43,20 @@ const CarrierList = () => {
   const [dataTable, setDataTable] = useState({
     columns: [
       {
-        label: 'Name',
-        field: 'provider',
+        label: "Name",
+        field: "provider",
       },
       {
-        label: 'Price ($)',
-        field: 'amount_local',
+        label: "Price ($)",
+        field: "amount_local",
       },
       {
-        label: 'Estimated Days',
-        field: 'estimated_days',
+        label: "Estimated Days",
+        field: "estimated_days",
       },
       {
-        label: 'Service Type',
-        field: 'serviceType',
+        label: "Service Type",
+        field: "serviceType",
       },
     ],
     rows: [],
@@ -83,7 +83,7 @@ const CarrierList = () => {
   };
 
   return (
-    <div id='carrier-list'>
+    <div id="carrier-list">
       {loading ? (
         <Loader />
       ) : (

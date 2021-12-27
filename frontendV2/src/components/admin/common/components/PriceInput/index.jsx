@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import HintIcon from '../../../ProductCreate/SVGs/HintIcon';
-import CutIcon from './CutIcon';
-import './PriceInput.scss';
+import React, { useState } from "react";
+import HintIcon from "../../../ProductCreate/SVGs/HintIcon";
+import CutIcon from "./CutIcon";
+import "./PriceInput.scss";
 
 const PriceInput = ({
   labelName,
@@ -13,19 +13,19 @@ const PriceInput = ({
 }) => {
   const [showHint, setShowHint] = useState();
   return (
-    <div onMouseLeave={() => setShowHint(false)} className='priceinput'>
-      <label className='label' htmlFor={`input-${name}`}>
+    <div onMouseLeave={() => setShowHint(false)} className="priceinput">
+      <label className="label" htmlFor={`input-${name}`}>
         {labelName}
-        {required && <small className='asterik ml-1'>*</small>}
+        {required && <small className="asterik ml-1">*</small>}
         {hintMessage && (
-          <div className='hint-wrap'>
-            <div className='pointer' onMouseOver={() => setShowHint(true)}>
+          <div className="hint-wrap">
+            <div className="pointer" onMouseOver={() => setShowHint(true)}>
               <HintIcon />
             </div>
             {showHint && (
-              <div onMouseOver={() => setShowHint(true)} className='hint-menu'>
+              <div onMouseOver={() => setShowHint(true)} className="hint-menu">
                 <p>{hintMessage}</p>
-                <div onClick={() => setShowHint(false)} className='pointer'>
+                <div onClick={() => setShowHint(false)} className="pointer">
                   <CutIcon />
                 </div>
               </div>
@@ -33,15 +33,15 @@ const PriceInput = ({
           </div>
         )}
       </label>
-      <div className='inp-wrap flexed-row'>
-        <label className='strong-label' htmlFor={`input-${name}`}>
+      <div className="inp-wrap flexed-row">
+        <label className="strong-label" htmlFor={`input-${name}`}>
           USD
         </label>
         <input
-          autoComplete='off'
+          autoComplete="off"
           id={`input-${name}`}
           name={name}
-          type={type || 'text'}
+          type={type || "text"}
           {...rest}
           required={required}
         />

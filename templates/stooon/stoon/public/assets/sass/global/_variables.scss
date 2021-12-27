@@ -1,13 +1,11 @@
-
 //== Template Main Color
-$color-main : #FF8E78;
-$color-white : #fff;
-$color-black : #000;
-$color-para : #A4A4A4;
-$color-gray : #F5F5F5;
-$color-gray99 : #F9F9FA;
-$color-gray80 : #cccccc;
-
+$color-main: #ff8e78;
+$color-white: #fff;
+$color-black: #000;
+$color-para: #a4a4a4;
+$color-gray: #f5f5f5;
+$color-gray99: #f9f9fa;
+$color-gray80: #cccccc;
 
 /*-----------------
     # Typography
@@ -17,11 +15,11 @@ $color-gray80 : #cccccc;
 @import url("https://fonts.googleapis.com/css?family=Cormorant:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap");
 
 @font-face {
-    font-family: "Reey";
-    src: url("../fonts/reey-regular.otf") format("opentype");
-    font-weight: 400;
+  font-family: "Reey";
+  src: url("../fonts/reey-regular.otf") format("opentype");
+  font-weight: 400;
 }
 
 //  transition
-$transition: all .3s ease-in;
-$transition-long: all .5s ease-in;
+$transition: all 0.3s ease-in;
+$transition-long: all 0.5s ease-in;

@@ -27,12 +27,12 @@ import {
   DELETE_REVIEW_REQUEST,
   DELETE_REVIEW_SUCCESS,
   DELETE_REVIEW_FAIL,
-} from '../constants/productConstants';
+} from "../constants/productConstants";
 
-import axios from 'axios';
+import axios from "axios";
 
 export const getProducts =
-  (keyword = '', currentPage = 1, price, category, rating = 0) =>
+  (keyword = "", currentPage = 1, price, category, rating = 0) =>
   async (dispatch) => {
     try {
       dispatch({ type: ALL_PRODUCTS_REQUEST });
@@ -64,7 +64,7 @@ export const updateProduct = (id, productData) => async (dispatch) => {
 
     const config = {
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     };
 
@@ -110,7 +110,7 @@ export const newProduct = (productData) => async (dispatch) => {
 
     const config = {
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     };
 
@@ -138,7 +138,7 @@ export const newReview = (reviewData) => async (dispatch) => {
 
     const config = {
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     };
 

@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { connect, useSelector } from 'react-redux';
-import { Helmet } from 'react-helmet';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { connect, useSelector } from "react-redux";
+import { Helmet } from "react-helmet";
 // import Custom Components
-import PageHeader from '../../common/page-header';
-import Breadcrumb from '../../common/breadcrumb';
+import PageHeader from "../../common/page-header";
+import Breadcrumb from "../../common/breadcrumb";
 
-import { getCartTotal } from '../../../services';
-import { quantityInputs, isIEBrowser } from '../../../utils';
-import { changeQty, removeFromCart, changeShipping } from '../../../actions';
-import CarrierList from './Carrierlist';
+import { getCartTotal } from "../../../services";
+import { quantityInputs, isIEBrowser } from "../../../utils";
+import { changeQty, removeFromCart, changeShipping } from "../../../actions";
+import CarrierList from "./Carrierlist";
 
 function Cart(props) {
   const { cartlist, total, removeFromCart } = props;
@@ -60,21 +60,21 @@ function Cart(props) {
         <title>Molla React eCommerce Template | Shopping Cart</title>
       </Helmet>
 
-      <h1 className='d-none'>Molla React eCommerce Template - Shopping Cart</h1>
+      <h1 className="d-none">Molla React eCommerce Template - Shopping Cart</h1>
 
-      <div className='main'>
-        <PageHeader title='Shopping Cart' subTitle='Shop' />
+      <div className="main">
+        <PageHeader title="Shopping Cart" subTitle="Shop" />
         <Breadcrumb
-          title='Shopping Cart'
-          parent1={['Shop', 'shop/sidebar/list']}
+          title="Shopping Cart"
+          parent1={["Shop", "shop/sidebar/list"]}
         />
 
-        <div className='page-content'>
-          <div className='cart'>
-            <div className='container'>
-              <div className='row'>
-                <div className='col-lg-9'>
-                  <table className='table table-cart table-mobile'>
+        <div className="page-content">
+          <div className="cart">
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-9">
+                  <table className="table table-cart table-mobile">
                     <thead>
                       <tr>
                         <th>Product</th>
@@ -88,25 +88,25 @@ function Cart(props) {
                     <tbody>
                       {cartlist.length > 0 ? (
                         cartlist.map((item, index) => (
-                          <tr key={'cart-item-' + index}>
-                            <td className='product-col'>
-                              <div className='product'>
-                                <figure className='product-media'>
+                          <tr key={"cart-item-" + index}>
+                            <td className="product-col">
+                              <div className="product">
+                                <figure className="product-media">
                                   <Link
                                     to={`${process.env.PUBLIC_URL}/product/default/${item.id}`}
                                   >
                                     <img
                                       src={
                                         process.env.PUBLIC_URL +
-                                        '/' +
+                                        "/" +
                                         item.pictures[0]
                                       }
-                                      alt='Product'
+                                      alt="Product"
                                     />
                                   </Link>
                                 </figure>
 
-                                <h3 className='product-title'>
+                                <h3 className="product-title">
                                   <Link
                                     to={`${process.env.PUBLIC_URL}/product/default/${item.id}`}
                                   >
@@ -116,7 +116,7 @@ function Cart(props) {
                               </div>
                             </td>
 
-                            <td className='price-col'>
+                            <td className="price-col">
                               $
                               {0 < item.discount
                                 ? item.salePrice.toLocaleString(undefined, {
@@ -130,27 +130,27 @@ function Cart(props) {
                             </td>
 
                             <td
-                              className='quantity-col'
-                              id={'quantity-input-wrapper-' + index}
+                              className="quantity-col"
+                              id={"quantity-input-wrapper-" + index}
                             >
                               <div
-                                className='cart-product-quantity'
+                                className="cart-product-quantity"
                                 onClick={(e) => onChangeQty(e, item.id)}
                               >
                                 <input
-                                  type='number'
-                                  className='form-control'
+                                  type="number"
+                                  className="form-control"
                                   defaultValue={item.qty}
-                                  min='1'
+                                  min="1"
                                   max={item.stock}
-                                  step='1'
-                                  data-decimals='0'
+                                  step="1"
+                                  data-decimals="0"
                                   required
                                 />
                               </div>
                             </td>
 
-                            <td className='total-col'>
+                            <td className="total-col">
                               $
                               {item.sum.toLocaleString(undefined, {
                                 minimumFractionDigits: 2,
@@ -158,12 +158,12 @@ function Cart(props) {
                               })}
                             </td>
 
-                            <td className='remove-col'>
+                            <td className="remove-col">
                               <button
-                                className='btn-remove'
+                                className="btn-remove"
                                 onClick={(e) => removeFromCart(item.id)}
                               >
-                                <i className='icon-close'></i>
+                                <i className="icon-close"></i>
                               </button>
                             </td>
                           </tr>
@@ -171,9 +171,9 @@ function Cart(props) {
                       ) : (
                         <tr>
                           <td>
-                            <p className='pl-2 pt-1 pb-1'>
-                              {' '}
-                              No Products in Cart{' '}
+                            <p className="pl-2 pt-1 pb-1">
+                              {" "}
+                              No Products in Cart{" "}
                             </p>
                           </td>
                         </tr>
@@ -181,42 +181,42 @@ function Cart(props) {
                     </tbody>
                   </table>
 
-                  <div className='cart-bottom'>
+                  <div className="cart-bottom">
                     <div
-                      className='cart-discount'
-                      style={{ minHeight: isIEBrowser() ? '40px' : 'auto' }}
+                      className="cart-discount"
+                      style={{ minHeight: isIEBrowser() ? "40px" : "auto" }}
                     >
-                      <form action='#'>
-                        <div className='input-group'>
+                      <form action="#">
+                        <div className="input-group">
                           <input
-                            type='text'
-                            className='form-control'
-                            required=''
-                            placeholder='coupon code'
+                            type="text"
+                            className="form-control"
+                            required=""
+                            placeholder="coupon code"
                           />
-                          <div className='input-group-append'>
-                            <button className='btn ' type='submit'>
-                              <i className='icon-long-arrow-right'></i>
+                          <div className="input-group-append">
+                            <button className="btn " type="submit">
+                              <i className="icon-long-arrow-right"></i>
                             </button>
                           </div>
                         </div>
                       </form>
                     </div>
 
-                    <button className='btn btn-outline-dark-2'>
+                    <button className="btn btn-outline-dark-2">
                       <span>UPDATE CART</span>
-                      <i className='icon-refresh'></i>
+                      <i className="icon-refresh"></i>
                     </button>
                   </div>
                   <CarrierList />
                 </div>
-                <aside className='col-lg-3'>
-                  <div className='summary summary-cart'>
-                    <h3 className='summary-title'>Cart Total</h3>
+                <aside className="col-lg-3">
+                  <div className="summary summary-cart">
+                    <h3 className="summary-title">Cart Total</h3>
 
-                    <table className='table table-summary'>
+                    <table className="table table-summary">
                       <tbody>
-                        <tr className='summary-subtotal'>
+                        <tr className="summary-subtotal">
                           <td>Subtotal:</td>
                           <td>
                             $
@@ -226,18 +226,18 @@ function Cart(props) {
                             })}
                           </td>
                         </tr>
-                        <tr className='summary-shipping'>
+                        <tr className="summary-shipping">
                           <td>Shipping:</td>
                           <td> ${shippingPrice}</td>
                         </tr>
-                        <tr className='summary-shipping'>
+                        <tr className="summary-shipping">
                           <td>Tax:</td>
                           <td> ${taxPrice}</td>
                         </tr>
-                        <tr className='summary-shipping-estimate'>
+                        <tr className="summary-shipping-estimate">
                           <td>
                             Estimate for Your Country
-                            <br />{' '}
+                            <br />{" "}
                             <a
                               href={`${process.env.PUBLIC_URL}/shop/dashboard`}
                             >
@@ -247,7 +247,7 @@ function Cart(props) {
                           <td>&nbsp;</td>
                         </tr>
 
-                        <tr className='summary-total'>
+                        <tr className="summary-total">
                           <td>Total:</td>
                           <td>
                             $
@@ -264,7 +264,7 @@ function Cart(props) {
                     </table>
 
                     <button
-                      className='btn btn-outline-primary-2 btn-order btn-block'
+                      className="btn btn-outline-primary-2 btn-order btn-block"
                       onClick={goToCheckout}
                     >
                       PROCEED TO CHECKOUT
@@ -273,10 +273,10 @@ function Cart(props) {
 
                   <Link
                     to={`${process.env.PUBLIC_URL}/shop/sidebar/list`}
-                    className='btn btn-outline-dark-2 btn-block mb-3'
+                    className="btn btn-outline-dark-2 btn-block mb-3"
                   >
                     <span>CONTINUE SHOPPING</span>
-                    <i className='icon-refresh'></i>
+                    <i className="icon-refresh"></i>
                   </Link>
                 </aside>
               </div>

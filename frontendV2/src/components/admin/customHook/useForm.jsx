@@ -1,24 +1,25 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const useForm = (formInput) => {
   const [formValues, setFormValues] = useState(formInput);
   const cleanForm = (raw) => {
     const actualRec = {};
     Object.keys(formInput).forEach((key) => {
-      if(raw[key] !== undefined) {
-       actualRec[key] = raw[key];
+      if (raw[key] !== undefined) {
+        actualRec[key] = raw[key];
       }
     });
-    return actualRec
-  }
-  
+    return actualRec;
+  };
+
   const resetForm = (resetInput) => {
-    if (resetInput) setFormValues((prevVal) => ({ ...prevVal, ...cleanForm(resetInput) }));
+    if (resetInput)
+      setFormValues((prevVal) => ({ ...prevVal, ...cleanForm(resetInput) }));
     else {
       setFormValues((prevVal) => {
         const newVals = {};
         Object.keys(prevVal).forEach((key) => {
-          newVals[key] = '';
+          newVals[key] = "";
         });
         return newVals;
       });
@@ -43,7 +44,10 @@ const useForm = (formInput) => {
   };
 
   return {
-    handleChange, formValues, resetForm, checkAllRequired
+    handleChange,
+    formValues,
+    resetForm,
+    checkAllRequired,
   };
 };
 

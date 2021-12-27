@@ -1,9 +1,9 @@
-import { persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+import { persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 import {
   GET_SHIPMENT_CARRIERS_REQUEST,
   GET_SHIPMENT_CARRIERS_SUCCESS,
-} from '../constants/shipmentConstants';
+} from "../constants/shipmentConstants";
 
 const carriersReducer = (state = { data: [] }, action) => {
   switch (action.type) {
@@ -15,7 +15,7 @@ const carriersReducer = (state = { data: [] }, action) => {
         data: action.payload.carriers,
         loading: false,
       };
-      localStorage.setItem('carriersReducer', JSON.stringify(updatedCarrier));
+      localStorage.setItem("carriersReducer", JSON.stringify(updatedCarrier));
       return updatedCarrier;
     default:
       return state;
@@ -23,8 +23,8 @@ const carriersReducer = (state = { data: [] }, action) => {
 };
 
 const persistConfig = {
-  keyPrefix: 'molla-',
-  key: 'carriers',
+  keyPrefix: "molla-",
+  key: "carriers",
   storage,
 };
 

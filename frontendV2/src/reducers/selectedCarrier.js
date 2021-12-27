@@ -1,13 +1,13 @@
-import { persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-import { SET_SELECTED_CARRIER_REQUEST } from '../constants/shipmentConstants';
+import { persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import { SET_SELECTED_CARRIER_REQUEST } from "../constants/shipmentConstants";
 
 const selectedCarrierReducer = (state = {}, action) => {
   switch (action.type) {
     case SET_SELECTED_CARRIER_REQUEST: {
       const updatedState = { ...state, ...action.payload };
       localStorage.setItem(
-        'selectedCarrierReducer',
+        "selectedCarrierReducer",
         JSON.stringify(updatedState)
       );
 
@@ -19,8 +19,8 @@ const selectedCarrierReducer = (state = {}, action) => {
 };
 
 const persistConfig = {
-  keyPrefix: 'molla-',
-  key: 'selected',
+  keyPrefix: "molla-",
+  key: "selected",
   storage,
 };
 

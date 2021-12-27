@@ -1,12 +1,12 @@
 [
-    {
-        "id": "1",
-        "name": "fine color template",
-        "isActive": false
-    },
-    {
-        "id": "2",
-        "name": "ugly color template",
-        "isActive": true
-    }
+  {
+    "id": "1",
+    "name": "fine color template",
+    "isActive": false
+  },
+  {
+    "id": "2",
+    "name": "ugly color template",
+    "isActive": true
+  }
 ]

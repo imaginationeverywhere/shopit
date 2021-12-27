@@ -1,27 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import { Tabs, TabList, Tab, TabPanel } from 'react-tabs';
-import { connect } from 'react-redux';
-import Modal from 'react-modal';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
+import { connect } from "react-redux";
+import Modal from "react-modal";
 
-import { closeModal } from '../../../actions';
-import { validate } from '../../../utils';
-import { login, register } from '../../../api';
-import loader from '../../../assets/loader.gif';
+import { closeModal } from "../../../actions";
+import { validate } from "../../../utils";
+import { login, register } from "../../../api";
+import loader from "../../../assets/loader.gif";
 
 const customStyles = {
   content: {
-    top: '50%',
-    transform: 'translateY(-50%)',
+    top: "50%",
+    transform: "translateY(-50%)",
   },
   overlay: {
-    backgroundColor: 'rgba(77,77,77,0.6)',
-    zIndex: '10000',
+    backgroundColor: "rgba(77,77,77,0.6)",
+    zIndex: "10000",
   },
 };
 
-Modal.setAppElement('#root');
+Modal.setAppElement("#root");
 
 function LoginModal(props) {
   const { showModal, modal } = props;
@@ -29,11 +29,11 @@ function LoginModal(props) {
 
   function closeModal() {
     document
-      .getElementById('login-modal')
-      .classList.remove('ReactModal__Content--after-open');
+      .getElementById("login-modal")
+      .classList.remove("ReactModal__Content--after-open");
 
     timer = setTimeout(() => {
-      props.closeModal('login');
+      props.closeModal("login");
     }, 200);
   }
 
@@ -47,11 +47,11 @@ function LoginModal(props) {
   const [loading, setLoading] = useState(false);
 
   const [inputs, setInputs] = useState({
-    name: '',
-    'singin-email': '',
-    'singin-password': '',
-    'register-email': '',
-    'register-password': '',
+    name: "",
+    "singin-email": "",
+    "singin-password": "",
+    "register-email": "",
+    "register-password": "",
   });
 
   const handleChange = (event) => {
@@ -75,12 +75,12 @@ function LoginModal(props) {
     const inputMap = signup
       ? {
           name: inputs.name,
-          'register-email': inputs['register-email'],
-          'register-password': inputs['register-password'],
+          "register-email": inputs["register-email"],
+          "register-password": inputs["register-password"],
         }
       : {
-          'singin-email': inputs['singin-email'],
-          'singin-password': inputs['singin-password'],
+          "singin-email": inputs["singin-email"],
+          "singin-password": inputs["singin-password"],
         };
 
     const errorMap = Object.keys(inputMap).reduce(
@@ -107,23 +107,23 @@ function LoginModal(props) {
       if (signup) {
         await register({
           name: inputs.name,
-          email: inputMap['register-email'],
-          password: inputMap['register-password'],
+          email: inputMap["register-email"],
+          password: inputMap["register-password"],
         });
       } else
         await login({
-          email: inputMap['singin-email'],
-          password: inputMap['singin-password'],
+          email: inputMap["singin-email"],
+          password: inputMap["singin-password"],
         });
 
-      toast.success(signup ? 'Registration Successful' : 'Login Successful');
+      toast.success(signup ? "Registration Successful" : "Login Successful");
       closeModal();
     } catch (err) {
       console.log(err?.response?.data?.errMessage);
       let msg;
       if (err?.response?.data?.errMessage)
         msg = err?.response?.data?.errMessage;
-      else msg = signup ? 'Registration failed' : 'Login failed';
+      else msg = signup ? "Registration failed" : "Login failed";
       toast.error(msg);
     }
 
@@ -132,7 +132,7 @@ function LoginModal(props) {
 
   return (
     <Modal
-      isOpen={showModal && 'login' === modal}
+      isOpen={showModal && "login" === modal}
       onRequestClose={closeModal}
       style={customStyles}
       contentLabel="Login Modal"
@@ -166,7 +166,7 @@ function LoginModal(props) {
                 </TabList>
 
                 <div className="tab-content">
-                  <TabPanel style={{ paddingTop: '2rem' }}>
+                  <TabPanel style={{ paddingTop: "2rem" }}>
                     <div>
                       <form onSubmit={handleSubmit}>
                         <div className="form-group">
@@ -180,9 +180,9 @@ function LoginModal(props) {
                             name="singin-email"
                             required
                             onChange={handleChange}
-                            value={inputs['singin-email']}
+                            value={inputs["singin-email"]}
                           />
-                          {errors['singin-email'] && (
+                          {errors["singin-email"] && (
                             <small>Please enter a correct email address</small>
                           )}
                         </div>
@@ -194,11 +194,11 @@ function LoginModal(props) {
                             className="form-control"
                             id="singin-password-2"
                             name="singin-password"
-                            value={inputs['singin-password']}
+                            value={inputs["singin-password"]}
                             required
                             onChange={handleChange}
                           />
-                          {errors['singin-email'] && (
+                          {errors["singin-email"] && (
                             <small>
                               Please enter a password longer than 8 characters
                             </small>
@@ -267,7 +267,7 @@ function LoginModal(props) {
                           id="name-2"
                           name="name"
                           required
-                          value={inputs['name']}
+                          value={inputs["name"]}
                           onChange={handleChange}
                         />
                         {errors.name && (
@@ -285,10 +285,10 @@ function LoginModal(props) {
                           id="register-email-2"
                           name="register-email"
                           required
-                          value={inputs['register-email']}
+                          value={inputs["register-email"]}
                           onChange={handleChange}
                         />
-                        {errors['register-email'] && (
+                        {errors["register-email"] && (
                           <small>Please enter a correct email address</small>
                         )}
                       </div>
@@ -301,10 +301,10 @@ function LoginModal(props) {
                           id="register-password-2"
                           name="register-password"
                           required
-                          value={inputs['register-password']}
+                          value={inputs["register-password"]}
                           onChange={handleChange}
                         />
-                        {errors['register-password'] && (
+                        {errors["register-password"] && (
                           <small>
                             Please enter a password longer than 8 characters
                           </small>

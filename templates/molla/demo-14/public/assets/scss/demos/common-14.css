@@ -84,4 +84,5 @@ C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$primary-color\".\A         on line 9 of C:\New folder\demo-14\public\assets\scss\demos\common-14.scss\A \A 4: 			max-width: 540px;\A 5: 		}\A 6: 	}\A 7: 	.widget-about-info {\A 8: 		a {\A 9: 			color: $primary-color;\A 10: 		}\A 11: 	}\A 12: 	.widget-newsletter form {\A 13: 		padding-top: 2.3rem;\A 14: 		.form-control::placeholder {"; }
+  content: 'Error: Undefined variable: "$primary-color".\A         on line 9 of C:\New folder\demo-14\public\assets\scss\demos\common-14.scss\A \A 4: 			max-width: 540px;\A 5: 		}\A 6: 	}\A 7: 	.widget-about-info {\A 8: 		a {\A 9: 			color: $primary-color;\A 10: 		}\A 11: 	}\A 12: 	.widget-newsletter form {\A 13: 		padding-top: 2.3rem;\A 14: 		.form-control::placeholder {';
+}

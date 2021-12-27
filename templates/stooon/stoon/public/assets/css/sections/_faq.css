@@ -1,51 +1,64 @@
 .accordion-style {
-  width: 100%; }
-  .accordion-style .custom-control:last-child {
-    margin-bottom: 0px !important; }
-  .accordion-style .card {
-    border: none;
-    border-bottom: 1px solid #ddd;
-    background-color: transparent;
-    border-radius: 0px; }
-    .accordion-style .card:last-child {
-      border-bottom: 0px; }
-    .accordion-style .card + .card {
-      margin-top: 0px; }
-    .accordion-style .card .card-header {
-      padding: 16px 20px;
-      border: none;
-      background: #F5F5F5; }
-      .accordion-style .card .card-header a {
-        display: block;
-        font-size: 14px;
-        color: #141414;
-        font-weight: 600;
-        text-transform: uppercase; }
-        .accordion-style .card .card-header a:after {
-          position: absolute;
-          right: 30px;
-          top: 15px;
-          font-family: "fontawesome";
-          font-size: 16px;
-          color: #666; }
-        .accordion-style .card .card-header a[aria-expanded="false"]:after {
-          content: "\f067"; }
-        .accordion-style .card .card-header a[aria-expanded="true"] {
-          color: #141414; }
-          .accordion-style .card .card-header a[aria-expanded="true"]:after {
-            content: "\f068";
-            color: #141414;
-            font-weight: 100; }
-    .accordion-style .card .card-body {
-      padding: 0px 20px;
-      color: #404040;
-      text-decoration: none;
-      font-family: var(--body-font);
-      font-size: 15px;
-      letter-spacing: 0.21px;
-      font-weight: 400; }
+  width: 100%;
+}
+.accordion-style .custom-control:last-child {
+  margin-bottom: 0px !important;
+}
+.accordion-style .card {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background-color: transparent;
+  border-radius: 0px;
+}
+.accordion-style .card:last-child {
+  border-bottom: 0px;
+}
+.accordion-style .card + .card {
+  margin-top: 0px;
+}
+.accordion-style .card .card-header {
+  padding: 16px 20px;
+  border: none;
+  background: #f5f5f5;
+}
+.accordion-style .card .card-header a {
+  display: block;
+  font-size: 14px;
+  color: #141414;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.accordion-style .card .card-header a:after {
+  position: absolute;
+  right: 30px;
+  top: 15px;
+  font-family: "fontawesome";
+  font-size: 16px;
+  color: #666;
+}
+.accordion-style .card .card-header a[aria-expanded="false"]:after {
+  content: "\f067";
+}
+.accordion-style .card .card-header a[aria-expanded="true"] {
+  color: #141414;
+}
+.accordion-style .card .card-header a[aria-expanded="true"]:after {
+  content: "\f068";
+  color: #141414;
+  font-weight: 100;
+}
+.accordion-style .card .card-body {
+  padding: 0px 20px;
+  color: #404040;
+  text-decoration: none;
+  font-family: var(--body-font);
+  font-size: 15px;
+  letter-spacing: 0.21px;
+  font-weight: 400;
+}
 
 .accordion-area h3 {
   font-size: 36px;
   line-height: 54px;
-  font-weight: 600; }
+  font-weight: 600;
+}
