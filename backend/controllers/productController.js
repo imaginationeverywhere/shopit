@@ -94,12 +94,12 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
 
   req.body.user = req.user._id;
   const parcel = {
-    distance: req.body.distance,
+    distance_unit: req.body.distance_unit,
     weight: req.body.weight,
     width: req.body.width,
     height: req.body.height,
     length: req.body.length,
-    mass: req.body.mass,
+    mass_unit: req.body.mass_unit,
   };
   req.body.parcel = parcel;
 

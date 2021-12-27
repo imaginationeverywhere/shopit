@@ -105,20 +105,12 @@ export const massList = [
 
 export const distanceList = [
   {
-    label: 'cm',
-    value: 'cm'
-  }, 
-  {
     label: 'in',
     value: 'in'
   }, 
   {
     label: 'ft',
     value: 'ft'
-  }, 
-  {
-    label: 'mm',
-    value: 'mm'
   }, 
   {
     label: 'm',
