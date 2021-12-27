@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import BaseProduct from "../../features/product/common/base-product";
+import BaseProduct from '../../features/product/common/base-product';
 
 class ProductTwo extends BaseProduct {
   render() {
@@ -29,7 +29,7 @@ class ProductTwo extends BaseProduct {
               {product.author.map((author, index) => (
                 <span key={index} className="mr-0">
                   <Link to="#">{author}</Link>
-                  {index < product.author.length - 1 ? " and " : ""}
+                  {index < product.author.length - 1 ? ' and ' : ''}
                 </span>
               ))}
             </div>
@@ -42,7 +42,7 @@ class ProductTwo extends BaseProduct {
         </div>
       </div>
     ) : (
-      ""
+      ''
     );
   }
 }

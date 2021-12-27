@@ -1,38 +1,38 @@
-import React, { useState } from "react";
-import Modal from "react-modal";
-import Lightbox from "react-image-lightbox";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import imagesLoaded from "imagesloaded";
+import React, { useState } from 'react';
+import Modal from 'react-modal';
+import Lightbox from 'react-image-lightbox';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import imagesLoaded from 'imagesloaded';
 
-import OwlCarousel from "../../owl-carousel";
+import OwlCarousel from '../../owl-carousel';
 
 import {
   addToCart,
   toggleWishlist,
   closeQuickViewModal,
-} from "../../../../actions";
+} from '../../../../actions';
 import {
   findIndex,
   quantityInputs,
   isIEBrowser,
   safeContent,
   productGallery,
-} from "../../../../utils";
+} from '../../../../utils';
 
 const customStyles = {
   content: {
-    top: "50%",
-    transform: "translateY(-50%)",
+    top: '50%',
+    transform: 'translateY(-50%)',
   },
   overlay: {
-    backgroundColor: "rgba(51,51,51,0.6)",
-    zIndex: "10000",
+    backgroundColor: 'rgba(51,51,51,0.6)',
+    zIndex: '10000',
   },
 };
 
-Modal.setAppElement("#root");
+Modal.setAppElement('#root');
 
 function QuickView(props) {
   const {
@@ -56,12 +56,12 @@ function QuickView(props) {
 
   function afterOpenModal() {
     quantityInputs();
-    let imgLoad = imagesLoaded(".product-lg", { background: true });
+    let imgLoad = imagesLoaded('.product-lg', { background: true });
 
-    imgLoad.on("done", function (instance, image) {
+    imgLoad.on('done', function(instance, image) {
       document
-        .querySelector(".skel-pro-single.skel-quickview")
-        .classList.add("loaded");
+        .querySelector('.skel-pro-single.skel-quickview')
+        .classList.add('loaded');
     });
   }
 
@@ -71,7 +71,7 @@ function QuickView(props) {
 
   const addToCartHandler = () => {
     if (productDetail.stock > 0) {
-      addToCart(productDetail, document.querySelector("#qty-quickview").value);
+      addToCart(productDetail, document.querySelector('#qty-quickview').value);
     }
   };
 
@@ -95,7 +95,7 @@ function QuickView(props) {
     setIndex((photoIndex + 1) % images.length);
   };
 
-  if (!productDetail || !productDetail.name) return "";
+  if (!productDetail || !productDetail.name) return '';
 
   let ratings = productDetail.ratings * 20;
   let images = productDetail.lgPictures
@@ -131,7 +131,7 @@ function QuickView(props) {
                 {images.map((item, index) => (
                   <div
                     className="intro-slide bg-transparent"
-                    key={"gallery" + index}
+                    key={'gallery' + index}
                   >
                     <img src={item} alt="Desc" />
                     <button
@@ -151,9 +151,9 @@ function QuickView(props) {
                   onClick={preventNav}
                   to="#"
                   className={`carousel-dot d-block ${
-                    0 === index ? "active" : ""
+                    0 === index ? 'active' : ''
                   }`}
-                  key={"product-dot-" + index}
+                  key={'product-dot-' + index}
                 >
                   <img src={item} alt="dot" />
                 </Link>
@@ -181,7 +181,7 @@ function QuickView(props) {
                 <div className="ratings">
                   <div
                     className="ratings-val"
-                    style={{ width: ratings + "%" }}
+                    style={{ width: ratings + '%' }}
                   ></div>
                 </div>
                 <span className="ratings-text">
@@ -207,19 +207,19 @@ function QuickView(props) {
                       return (
                         <Link
                           to="#"
-                          key={"quickview-img-" + index}
-                          className={0 === index ? "active" : ""}
+                          key={'quickview-img-' + index}
+                          className={0 === index ? 'active' : ''}
                         >
                           <LazyLoadImage
                             alt="product"
                             src={
                               process.env.PUBLIC_URL +
-                              "/" +
+                              '/' +
                               (vari.image
                                 ? vari.image
                                 : vari.model
                                 ? vari.model
-                                : "")
+                                : '')
                             }
                             effect="blur"
                             className="skeletion-container"
@@ -233,17 +233,17 @@ function QuickView(props) {
                   <div className="details-filter-row product-nav product-nav-dots">
                     {productDetail.variants.map((vari, i) => (
                       <button
-                        className={0 === i ? "active" : ""}
+                        className={0 === i ? 'active' : ''}
                         style={{ backgroundColor: vari.color }}
                         data-image={vari}
                         // data-zoom-image={ vari.bigImages[ i ] }
-                        key={productDetail.id + "-" + i}
+                        key={productDetail.id + '-' + i}
                       ></button>
                     ))}
                   </div>
                 )
               ) : (
-                ""
+                ''
               )}
 
               <div className="details-filter-row details-row-size">
@@ -269,7 +269,7 @@ function QuickView(props) {
                     <button
                       className="btn-product btn-cart w-100"
                       onClick={addToCartHandler}
-                      style={{ minHeight: isIEBrowser() ? "44px" : "auto" }}
+                      style={{ minHeight: isIEBrowser() ? '44px' : 'auto' }}
                     >
                       <span>add to cart</span>
                     </button>
@@ -278,20 +278,20 @@ function QuickView(props) {
                   <div className="col-sm-6">
                     <button
                       className={`btn-product btn-wishlist ${
-                        props.wishlist ? "added-to-wishlist" : ""
+                        props.wishlist ? 'added-to-wishlist' : ''
                       }`}
                       onClick={toggleWishlistHandler}
                       title={
                         props.wishlist
-                          ? "Remove from wishlist"
-                          : "Add to wishlist"
+                          ? 'Remove from wishlist'
+                          : 'Add to wishlist'
                       }
-                      style={{ minHeight: isIEBrowser() ? "20px" : "auto" }}
+                      style={{ minHeight: isIEBrowser() ? '20px' : 'auto' }}
                     >
                       <span>
                         {props.wishlist
-                          ? "remove from wishlist"
-                          : "add to wishlist"}
+                          ? 'remove from wishlist'
+                          : 'add to wishlist'}
                       </span>
                     </button>
                   </div>
@@ -311,11 +311,11 @@ function QuickView(props) {
                     {productDetail.category.map((cat, index) => (
                       <span
                         className="mr-0 mb-1"
-                        key={"quick_cat" + index}
-                        style={{ whiteSpace: "pre" }}
+                        key={'quick_cat' + index}
+                        style={{ whiteSpace: 'pre' }}
                       >
                         {cat}
-                        {index < productDetail.category.length - 1 ? ", " : ""}
+                        {index < productDetail.category.length - 1 ? ', ' : ''}
                       </span>
                     ))}
                   </div>
@@ -391,7 +391,7 @@ const mapStateToProps = (state, ownprops) => {
   if (
     findIndex(
       state.wishlist.list,
-      (item) => item.id === state.data.productDetail.id
+      item => item.id === state.data.productDetail.id,
     ) !== -1
   )
     wishlist = true;

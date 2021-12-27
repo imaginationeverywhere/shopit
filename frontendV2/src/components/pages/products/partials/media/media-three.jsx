@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import { connect } from "react-redux";
-import { Magnifier } from "react-image-magnifiers";
-import Lightbox from "react-image-lightbox";
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { Magnifier } from 'react-image-magnifiers';
+import Lightbox from 'react-image-lightbox';
 
 function MediaThree(props) {
   const { product } = props;
 
   if (!product) {
-    window.location = process.env.PUBLIC_URL + "pages/404";
+    window.location = process.env.PUBLIC_URL + 'pages/404';
   }
 
   const bigImages = product.lgPictures ? product.lgPictures : product.pictures;
@@ -24,12 +24,12 @@ function MediaThree(props) {
   }
 
   const setNextHandler = () => {
-    setPhotoIndex((photoIndex) => (photoIndex + 1) % bigImages.length);
+    setPhotoIndex(photoIndex => (photoIndex + 1) % bigImages.length);
   };
 
   const setPrevHandler = () => {
     setPhotoIndex(
-      (photoIndex) => (photoIndex + bigImages.length - 1) % bigImages.length
+      photoIndex => (photoIndex + bigImages.length - 1) % bigImages.length,
     );
   };
 
@@ -61,7 +61,7 @@ function MediaThree(props) {
                 <i className="icon-arrows"></i>
               </button>
             ) : (
-              ""
+              ''
             )}
             {parseInt(index) === 0 && product.discount > 0 ? (
               <span className="product-label label-sale">Sale</span>
@@ -70,7 +70,7 @@ function MediaThree(props) {
             ) : parseInt(index) === 0 && product.top > 0 ? (
               <span className="product-label label-top">Top</span>
             ) : (
-              ""
+              ''
             )}
           </figure>
         ))}
@@ -78,15 +78,15 @@ function MediaThree(props) {
 
       {isOpen ? (
         <Lightbox
-          mainSrc={process.env.PUBLIC_URL + "/" + bigImages[photoIndex]}
+          mainSrc={process.env.PUBLIC_URL + '/' + bigImages[photoIndex]}
           nextSrc={
             process.env.PUBLIC_URL +
-            "/" +
+            '/' +
             bigImages[(photoIndex + 1) % bigImages.length]
           }
           prevSrc={
             process.env.PUBLIC_URL +
-            "/" +
+            '/' +
             bigImages[(photoIndex + bigImages.length - 1) % bigImages.length]
           }
           onCloseRequest={closeLightBox}
@@ -94,7 +94,7 @@ function MediaThree(props) {
           onMoveNextRequest={setPrevHandler}
         />
       ) : (
-        ""
+        ''
       )}
     </>
   );
@@ -102,9 +102,7 @@ function MediaThree(props) {
 
 function mapStateToProps(state, props) {
   return {
-    product: state.data.products.filter(
-      (product) => product.id === props.id
-    )[0],
+    product: state.data.products.filter(product => product.id === props.id)[0],
   };
 }
 

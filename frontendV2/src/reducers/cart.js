@@ -5,15 +5,15 @@ import {
   CHANGE_SHIPPING,
   REFRESH_STORE,
   SAVE_SHIPPING_INFO,
-} from "../constants/action-types";
-import { findIndex, makeParcelArray } from "../utils";
-import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+} from '../constants/action-types';
+import { findIndex, makeParcelArray } from '../utils';
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 const initialState = {
   cart: [],
   shippingInfo: {},
-  shipping: "free",
+  shipping: 'free',
 };
 
 function cartReducer(state = initialState, action) {
@@ -21,7 +21,7 @@ function cartReducer(state = initialState, action) {
     case ADD_TO_CART:
       const productId = action.product.id;
 
-      if (findIndex(state.cart, (product) => product.id === productId) !== -1) {
+      if (findIndex(state.cart, product => product.id === productId) !== -1) {
         const cart = state.cart.reduce((cartAcc, product) => {
           if (product.id === productId) {
             cartAcc.push({
@@ -30,13 +30,13 @@ function cartReducer(state = initialState, action) {
               parcels: makeParcelArray(
                 parseInt(product.qty) + parseInt(action.qty),
                 {
-                  length: "5",
-                  width: "5",
-                  height: "5",
-                  distance_unit: "in",
-                  weight: "2",
-                  mass_unit: "lb",
-                }
+                  length: '5',
+                  width: '5',
+                  height: '5',
+                  distance_unit: 'in',
+                  weight: '2',
+                  mass_unit: 'lb',
+                },
               ),
               sum:
                 (product.discount ? product.salePrice : product.price) *
@@ -58,12 +58,12 @@ function cartReducer(state = initialState, action) {
             ...action.product,
             qty: action.qty,
             parcels: makeParcelArray(parseInt(action.qty), {
-              length: "5",
-              width: "5",
-              height: "5",
-              distance_unit: "in",
-              weight: "2",
-              mass_unit: "lb",
+              length: '5',
+              width: '5',
+              height: '5',
+              distance_unit: 'in',
+              weight: '2',
+              mass_unit: 'lb',
             }),
             sum:
               (action.product.discount
@@ -76,7 +76,7 @@ function cartReducer(state = initialState, action) {
     case REMOVE_FROM_CART:
       return {
         ...state,
-        cart: state.cart.filter((item) => item.id !== action.productId),
+        cart: state.cart.filter(item => item.id !== action.productId),
       };
 
     case CHANGE_QTY:
@@ -86,12 +86,12 @@ function cartReducer(state = initialState, action) {
             ...product,
             qty: action.qty,
             parcels: makeParcelArray(parseInt(action.qty), {
-              length: "5",
-              width: "5",
-              height: "5",
-              distance_unit: "in",
-              weight: "2",
-              mass_unit: "lb",
+              length: '5',
+              width: '5',
+              height: '5',
+              distance_unit: 'in',
+              weight: '2',
+              mass_unit: 'lb',
             }),
             sum:
               (product.discount ? product.salePrice : product.price) *
@@ -106,7 +106,7 @@ function cartReducer(state = initialState, action) {
       return { ...state, cart };
 
     case REFRESH_STORE:
-      return { ...state, cart: [], shipping: "free" };
+      return { ...state, cart: [], shipping: 'free' };
 
     case CHANGE_SHIPPING:
       return { ...state, shipping: action.shipping };
@@ -122,8 +122,8 @@ function cartReducer(state = initialState, action) {
 }
 
 const persistConfig = {
-  keyPrefix: "molla-",
-  key: "cartlist",
+  keyPrefix: 'molla-',
+  key: 'cartlist',
   storage,
 };
 

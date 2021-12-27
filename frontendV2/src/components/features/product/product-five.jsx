@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Countdown from "react-countdown";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Countdown from 'react-countdown';
 
-import { rendererTwo } from "../count-down";
+import { rendererTwo } from '../count-down';
 
 function ProductFive(props) {
   const { product, onAddToCart, showQuickView } = props;
@@ -18,24 +18,24 @@ function ProductFive(props) {
   return product ? (
     <div
       className={`product product-4 text-center ${
-        0 === product.stock ? "product-disabled" : ""
+        0 === product.stock ? 'product-disabled' : ''
       }`}
     >
       <figure className="product-media">
         {product.new ? (
           <span className="product-label label-circle label-new">New</span>
         ) : (
-          ""
+          ''
         )}
         {product.top ? (
           <span className="product-label label-circle label-top">Top</span>
         ) : (
-          ""
+          ''
         )}
         {product.discount ? (
           <span className="product-label label-circle label-sale">Sale</span>
         ) : (
-          ""
+          ''
         )}
 
         <Link to={`${process.env.PUBLIC_URL}/product/default/${product.id}`}>
@@ -46,7 +46,7 @@ function ProductFive(props) {
               <img alt="product" src={`${product.pictures[1]}`} />
             </span>
           ) : (
-            ""
+            ''
           )}
         </Link>
 
@@ -58,7 +58,7 @@ function ProductFive(props) {
             </div>
           </div>
         ) : (
-          ""
+          ''
         )}
 
         <div className="product-action-vertical">
@@ -125,16 +125,16 @@ function ProductFive(props) {
         {0 === product.stock ? (
           <div className="product-label-text">Out Of Stock</div>
         ) : (
-          ""
+          ''
         )}
 
         {product.variants ? (
           product.variants[0].model ? (
             <div className="product-nav product-nav-thumbs">
               {product.variants.map((vari, i) => (
-                <Link to="#" key={i} className={0 === i ? "active" : ""}>
+                <Link to="#" key={i} className={0 === i ? 'active' : ''}>
                   <img
-                    src={process.env.PUBLIC_URL + "/" + vari.model}
+                    src={process.env.PUBLIC_URL + '/' + vari.model}
                     alt="product desc"
                   />
                 </Link>
@@ -146,19 +146,19 @@ function ProductFive(props) {
                 <Link
                   to="#"
                   key={i}
-                  className={0 === i ? "active" : ""}
+                  className={0 === i ? 'active' : ''}
                   style={{ background: vari.color }}
                 ></Link>
               ))}
             </div>
           )
         ) : (
-          ""
+          ''
         )}
       </div>
     </div>
   ) : (
-    ""
+    ''
   );
 }
 

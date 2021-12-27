@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { getCartCount, getCartTotal } from "../../../services";
-import { removeFromCart } from "../../../actions";
-import { safeContent } from "../../../utils";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { getCartCount, getCartTotal } from '../../../services';
+import { removeFromCart } from '../../../actions';
+import { safeContent } from '../../../utils';
 
 function CartMenu(props) {
   const { cartlist, removeFromCart } = props;
@@ -26,7 +26,7 @@ function CartMenu(props) {
 
       <div
         className={`dropdown-menu dropdown-menu-right ${
-          cartlist.length === 0 ? "text-center" : ""
+          cartlist.length === 0 ? 'text-center' : ''
         }`}
       >
         {0 === cartlist.length ? (

@@ -1,21 +1,21 @@
-const Product = require("../models/product");
-const ErrorHandler = require("../utils/errorHandler");
-const catchAsyncErrors = require("../middlewares/catchAsyncErrors");
-const APIFeatures = require("../utils/apiFeatures");
-const cloudinary = require("cloudinary");
-const { getPublicId, getOldImagesFromProduct } = require("../utils/helpers");
+const Product = require('../models/product');
+const ErrorHandler = require('../utils/errorHandler');
+const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
+const APIFeatures = require('../utils/apiFeatures');
+const cloudinary = require('cloudinary');
+const { getPublicId, getOldImagesFromProduct } = require('../utils/helpers');
 
 exports.newProduct = catchAsyncErrors(async (req, res, next) => {
   // default State of Small and large Pictures
   req.body.pictures = [];
   req.body.smPictures = [];
   req.body.category =
-    (req.body.category && req.body.category.split(", ")) || [];
-  req.body.brands = (req.body.brands && req.body.brands.split(", ")) || [];
+    (req.body.category && req.body.category.split(', ')) || [];
+  req.body.brands = (req.body.brands && req.body.brands.split(', ')) || [];
   req.body.variants =
     req.body.variants &&
     req.body.variants.length &&
-    req.body.variants.split(", ").map((ele) => ({ color: ele }));
+    req.body.variants.split(', ').map((ele) => ({ color: ele }));
   req.body.imagesLinks = [];
   req.body.user = req.user.id;
   const parcel = {
@@ -29,28 +29,28 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
   req.body.parcel = parcel;
 
   const imgObj = {
-    picture1: req.body.picture1 || "",
-    picture2: req.body.picture2 || "",
-    picture3: req.body.picture3 || "",
-    picture4: req.body.picture4 || "",
-    smPicture1: req.body.smPicture1 || "",
-    smPicture2: req.body.smPicture2 || "",
-    smPicture3: req.body.smPicture3 || "",
-    smPicture4: req.body.smPicture4 || "",
+    picture1: req.body.picture1 || '',
+    picture2: req.body.picture2 || '',
+    picture3: req.body.picture3 || '',
+    picture4: req.body.picture4 || '',
+    smPicture1: req.body.smPicture1 || '',
+    smPicture2: req.body.smPicture2 || '',
+    smPicture3: req.body.smPicture3 || '',
+    smPicture4: req.body.smPicture4 || '',
   };
 
   const keysArr = Object.keys(imgObj);
 
   for (let i = 0; i < keysArr.length; i++) {
     const pictureKey = keysArr[i];
-    const isSmallPictureType = pictureKey.includes("smPicture");
-    const isLargePictureType = pictureKey.includes("picture");
+    const isSmallPictureType = pictureKey.includes('smPicture');
+    const isLargePictureType = pictureKey.includes('picture');
 
     if (req.files && req.files[pictureKey]) {
       // its a file
       const tempPath = req.files[pictureKey].tempFilePath;
       const result = await cloudinary.v2.uploader.upload(tempPath, {
-        folder: "products",
+        folder: 'products',
       });
       if (isSmallPictureType) {
         req.body.smPictures.push(result.secure_url);
@@ -78,18 +78,18 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
   let oldProduct = await Product.findById(req.params.id);
 
   if (!oldProduct) {
-    return next(new ErrorHandler("Product not found", 404));
+    return next(new ErrorHandler('Product not found', 404));
   }
 
   req.body.pictures = [];
   req.body.smPictures = [];
   req.body.category =
-    (req.body.category && req.body.category.split(", ")) || [];
-  req.body.brands = (req.body.brands && req.body.brands.split(", ")) || [];
+    (req.body.category && req.body.category.split(', ')) || [];
+  req.body.brands = (req.body.brands && req.body.brands.split(', ')) || [];
   req.body.variants =
     req.body.variants &&
     req.body.variants.length &&
-    req.body.variants.split(", ").map((ele) => ({ color: ele }));
+    req.body.variants.split(', ').map((ele) => ({ color: ele }));
   req.body.imagesLinks = [];
 
   req.body.user = req.user._id;
@@ -104,14 +104,14 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
   req.body.parcel = parcel;
 
   const imgObj = {
-    picture1: req.body.picture1 || "",
-    picture2: req.body.picture2 || "",
-    picture3: req.body.picture3 || "",
-    picture4: req.body.picture4 || "",
-    smPicture1: req.body.smPicture1 || "",
-    smPicture2: req.body.smPicture2 || "",
-    smPicture3: req.body.smPicture3 || "",
-    smPicture4: req.body.smPicture4 || "",
+    picture1: req.body.picture1 || '',
+    picture2: req.body.picture2 || '',
+    picture3: req.body.picture3 || '',
+    picture4: req.body.picture4 || '',
+    smPicture1: req.body.smPicture1 || '',
+    smPicture2: req.body.smPicture2 || '',
+    smPicture3: req.body.smPicture3 || '',
+    smPicture4: req.body.smPicture4 || '',
   };
 
   const oldImgObj = getOldImagesFromProduct(oldProduct);
@@ -119,8 +119,8 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
 
   for (let i = 0; i < keysArr.length; i++) {
     const pictureKey = keysArr[i];
-    const isSmallPictureType = pictureKey.includes("smPicture");
-    const isLargePictureType = pictureKey.includes("picture");
+    const isSmallPictureType = pictureKey.includes('smPicture');
+    const isLargePictureType = pictureKey.includes('picture');
 
     if (oldImgObj[pictureKey] && !imgObj[pictureKey]) {
       // remove delete images from cloudinarry
@@ -132,7 +132,7 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
       // its a file
       const tempPath = req.files[pictureKey].tempFilePath;
       const result = await cloudinary.v2.uploader.upload(tempPath, {
-        folder: "products",
+        folder: 'products',
       });
       if (isSmallPictureType) {
         req.body.smPictures.push(result.secure_url);
@@ -141,9 +141,9 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
       }
     } else {
       if (isSmallPictureType) {
-        req.body.smPictures.push(imgObj[pictureKey] || "");
+        req.body.smPictures.push(imgObj[pictureKey] || '');
       } else {
-        req.body.pictures.push(imgObj[pictureKey] || "");
+        req.body.pictures.push(imgObj[pictureKey] || '');
       }
     }
   }
@@ -195,7 +195,7 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
         id: _id,
         ...rest,
       };
-    }
+    },
   );
 
   res.status(200).json({
@@ -212,7 +212,7 @@ exports.getSingleProduct = catchAsyncErrors(async (req, res, next) => {
   const product = await Product.findById(req.params.id);
 
   if (!product) {
-    return next(new ErrorHandler("Product not found", 404));
+    return next(new ErrorHandler('Product not found', 404));
   }
 
   res.status(200).json({
@@ -226,7 +226,7 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
   const product = await Product.findById(req.params.id);
 
   if (!product) {
-    return next(new ErrorHandler("Product not found", 404));
+    return next(new ErrorHandler('Product not found', 404));
   }
   product.smPictures = product.smPictures || [];
   product.pictures = product.pictures || [];
@@ -241,7 +241,7 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
 
   res.status(200).json({
     success: true,
-    message: "Product is deleted.",
+    message: 'Product is deleted.',
   });
 });
 
@@ -259,7 +259,7 @@ exports.createProductReview = catchAsyncErrors(async (req, res, next) => {
   const product = await Product.findById(productId);
 
   const isReviewed = product.reviews.find(
-    (r) => r.user.toString() === req.user._id.toString()
+    (r) => r.user.toString() === req.user._id.toString(),
   );
 
   if (isReviewed) {
@@ -302,7 +302,7 @@ exports.deleteReview = catchAsyncErrors(async (req, res, next) => {
   console.log(product);
 
   const reviews = product.reviews.filter(
-    (review) => review._id.toString() !== req.query.id.toString()
+    (review) => review._id.toString() !== req.query.id.toString(),
   );
 
   const numOfReviews = reviews.length;
@@ -322,7 +322,7 @@ exports.deleteReview = catchAsyncErrors(async (req, res, next) => {
       new: true,
       runValidators: true,
       useFindAndModify: false,
-    }
+    },
   );
 
   res.status(200).json({

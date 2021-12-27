@@ -1,15 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 function Breadcrumb(props) {
   const {
     title,
     products,
     adClass,
-    type = "normal",
-    slug = "default",
-    container = "container",
+    type = 'normal',
+    slug = 'default',
+    container = 'container',
     productId,
     ...parent
   } = props;
@@ -17,31 +17,31 @@ function Breadcrumb(props) {
   let x, prevProducts, prevProduct, currentProducts, nextProducts, nextProduct;
 
   for (x in parent) {
-    if ("function" !== typeof parent[x]) path.push(parent[x]);
+    if ('function' !== typeof parent[x]) path.push(parent[x]);
   }
 
-  currentProducts = products.filter((item) => item.id === productId);
+  currentProducts = products.filter(item => item.id === productId);
 
   // get product for prev button.
-  prevProducts = products.filter((item) => item.id < productId);
+  prevProducts = products.filter(item => item.id < productId);
   if (!prevProducts || !prevProducts.length) prevProduct = currentProducts[0];
   else prevProduct = prevProducts[prevProducts.length - 1];
 
   // get product for next button.
-  nextProducts = products.filter((item) => item.id > productId);
+  nextProducts = products.filter(item => item.id > productId);
   if (!nextProducts || nextProducts.length === 0)
     nextProduct = currentProducts[0];
   else nextProduct = nextProducts[0];
 
   return (
     <nav aria-label="breadcrumb" className={`breadcrumb-nav ${adClass}`}>
-      {type === "normal" ? (
+      {type === 'normal' ? (
         <div className={container}>
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
               <Link to={`${process.env.PUBLIC_URL}`}>Home</Link>
             </li>
-            {path.map((item) => (
+            {path.map(item => (
               <li className="breadcrumb-item" key={item[0]}>
                 <Link to={`${process.env.PUBLIC_URL}/${item[1]}`}>
                   {item[0]}
@@ -53,7 +53,7 @@ function Breadcrumb(props) {
             </li>
           </ol>
         </div>
-      ) : type === "product" ? (
+      ) : type === 'product' ? (
         <div className={`${container}  d-flex align-items-center`}>
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
@@ -88,7 +88,7 @@ function Breadcrumb(props) {
                   <h3 className="product-name">{prevProduct.name}</h3>
                 </div>
               ) : (
-                ""
+                ''
               )}
             </Link>
 
@@ -110,13 +110,13 @@ function Breadcrumb(props) {
                   <h3 className="product-name">{nextProduct.name}</h3>
                 </div>
               ) : (
-                ""
+                ''
               )}
             </Link>
           </nav>
         </div>
       ) : (
-        ""
+        ''
       )}
     </nav>
   );

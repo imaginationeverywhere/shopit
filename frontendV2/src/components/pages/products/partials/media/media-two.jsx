@@ -1,15 +1,15 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Magnifier } from "react-image-magnifiers";
-import OwlCarousel from "../../../../features/owl-carousel";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Magnifier } from 'react-image-magnifiers';
+import OwlCarousel from '../../../../features/owl-carousel';
 
-import { mainSlider9 } from "../../../../settings";
+import { mainSlider9 } from '../../../../settings';
 
 function MediaTwo(props) {
   const { product } = props;
 
   if (!product) {
-    window.location = process.env.PUBLIC_URL + "pages/404";
+    window.location = process.env.PUBLIC_URL + 'pages/404';
   }
 
   const bigImages = product.lgPictures ? product.lgPictures : product.pictures;
@@ -21,7 +21,7 @@ function MediaTwo(props) {
           adClass="product-gallery-carousel owl-full owl-nav-dark cols-1 cols-md-2 cols-lg-3"
           hasChildren={product.pictures.length}
           carouselOptions={mainSlider9}
-          carouselId={"galleryProduct" + product.id}
+          carouselId={'galleryProduct' + product.id}
         >
           {product.pictures.map((item, index) => (
             <Magnifier
@@ -32,7 +32,7 @@ function MediaTwo(props) {
               mouseActivation="hover"
               cursorStyleActive="crosshair"
               className="product-gallery-image"
-              key={"gallery-" + index}
+              key={'gallery-' + index}
             />
           ))}
         </OwlCarousel>
@@ -43,9 +43,7 @@ function MediaTwo(props) {
 
 function mapStateToProps(state, props) {
   return {
-    product: state.data.products.filter(
-      (product) => product.id === props.id
-    )[0],
+    product: state.data.products.filter(product => product.id === props.id)[0],
   };
 }
 

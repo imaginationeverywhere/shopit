@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { connect, useSelector } from "react-redux";
-import { Helmet } from "react-helmet";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { connect, useSelector } from 'react-redux';
+import { Helmet } from 'react-helmet';
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
 
-import { getCartTotal } from "../../../services";
-import { quantityInputs, isIEBrowser } from "../../../utils";
-import { changeQty, removeFromCart, changeShipping } from "../../../actions";
-import CarrierList from "./Carrierlist";
+import { getCartTotal } from '../../../services';
+import { quantityInputs, isIEBrowser } from '../../../utils';
+import { changeQty, removeFromCart, changeShipping } from '../../../actions';
+import CarrierList from './Carrierlist';
 
 function Cart(props) {
   const { cartlist, total, removeFromCart } = props;
@@ -20,7 +20,7 @@ function Cart(props) {
 
   const taxPrice = Number((0.05 * total).toFixed(2));
 
-  const { selectedCarrier = {} } = useSelector((store) => store);
+  const { selectedCarrier = {} } = useSelector(store => store);
 
   useEffect(() => {
     if (selectedCarrier.amount_local) {
@@ -32,11 +32,11 @@ function Cart(props) {
     cartlist.map((item, index) => {
       if (
         document.querySelector(
-          `#quantity-input-wrapper-${index} .input-group input`
+          `#quantity-input-wrapper-${index} .input-group input`,
         )
       ) {
         document.querySelector(
-          `#quantity-input-wrapper-${index} .input-group input`
+          `#quantity-input-wrapper-${index} .input-group input`,
         ).value = item.qty;
       }
       return item;
@@ -46,7 +46,7 @@ function Cart(props) {
   function onChangeQty(e, productId) {
     props.changeQty(
       productId,
-      e.currentTarget.querySelector('input[type="number"]').value
+      e.currentTarget.querySelector('input[type="number"]').value,
     );
   }
 
@@ -66,7 +66,7 @@ function Cart(props) {
         <PageHeader title="Shopping Cart" subTitle="Shop" />
         <Breadcrumb
           title="Shopping Cart"
-          parent1={["Shop", "shop/sidebar/list"]}
+          parent1={['Shop', 'shop/sidebar/list']}
         />
 
         <div className="page-content">
@@ -88,7 +88,7 @@ function Cart(props) {
                     <tbody>
                       {cartlist.length > 0 ? (
                         cartlist.map((item, index) => (
-                          <tr key={"cart-item-" + index}>
+                          <tr key={'cart-item-' + index}>
                             <td className="product-col">
                               <div className="product">
                                 <figure className="product-media">
@@ -98,7 +98,7 @@ function Cart(props) {
                                     <img
                                       src={
                                         process.env.PUBLIC_URL +
-                                        "/" +
+                                        '/' +
                                         item.pictures[0]
                                       }
                                       alt="Product"
@@ -131,11 +131,11 @@ function Cart(props) {
 
                             <td
                               className="quantity-col"
-                              id={"quantity-input-wrapper-" + index}
+                              id={'quantity-input-wrapper-' + index}
                             >
                               <div
                                 className="cart-product-quantity"
-                                onClick={(e) => onChangeQty(e, item.id)}
+                                onClick={e => onChangeQty(e, item.id)}
                               >
                                 <input
                                   type="number"
@@ -161,7 +161,7 @@ function Cart(props) {
                             <td className="remove-col">
                               <button
                                 className="btn-remove"
-                                onClick={(e) => removeFromCart(item.id)}
+                                onClick={e => removeFromCart(item.id)}
                               >
                                 <i className="icon-close"></i>
                               </button>
@@ -172,8 +172,8 @@ function Cart(props) {
                         <tr>
                           <td>
                             <p className="pl-2 pt-1 pb-1">
-                              {" "}
-                              No Products in Cart{" "}
+                              {' '}
+                              No Products in Cart{' '}
                             </p>
                           </td>
                         </tr>
@@ -184,7 +184,7 @@ function Cart(props) {
                   <div className="cart-bottom">
                     <div
                       className="cart-discount"
-                      style={{ minHeight: isIEBrowser() ? "40px" : "auto" }}
+                      style={{ minHeight: isIEBrowser() ? '40px' : 'auto' }}
                     >
                       <form action="#">
                         <div className="input-group">
@@ -237,7 +237,7 @@ function Cart(props) {
                         <tr className="summary-shipping-estimate">
                           <td>
                             Estimate for Your Country
-                            <br />{" "}
+                            <br />{' '}
                             <a
                               href={`${process.env.PUBLIC_URL}/shop/dashboard`}
                             >
@@ -256,7 +256,7 @@ function Cart(props) {
                               {
                                 minimumFractionDigits: 2,
                                 maximumFractionDigits: 2,
-                              }
+                              },
                             )}
                           </td>
                         </tr>
@@ -288,7 +288,7 @@ function Cart(props) {
   );
 }
 
-export const mapStateToProps = (state) => ({
+export const mapStateToProps = state => ({
   cartlist: state.cartlist.cart,
   total: getCartTotal(state.cartlist.cart),
   prevShip: state.cartlist.shipping,

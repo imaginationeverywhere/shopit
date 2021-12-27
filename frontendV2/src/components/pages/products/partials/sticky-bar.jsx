@@ -1,22 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import { addToCart, toggleWishlist } from "../../../../actions";
+import { addToCart, toggleWishlist } from '../../../../actions';
 
-import { findIndex } from "../../../../utils";
+import { findIndex } from '../../../../utils';
 
 function StickyBar(props) {
   const { product, addToCart, toggleWishlist, isWishlist } = props;
 
   const addToCartHandler = () => {
     if (0 !== product.stock)
-      addToCart(product, document.querySelector("#sticky-cart-qty").value);
+      addToCart(product, document.querySelector('#sticky-cart-qty').value);
   };
 
   const wishlistHandler = () => {
     if (isWishlist) {
-      window.location = process.env.PUBLIC_URL + "/shop/wishlist";
+      window.location = process.env.PUBLIC_URL + '/shop/wishlist';
     } else {
       toggleWishlist(product, isWishlist);
     }
@@ -81,12 +81,12 @@ function StickyBar(props) {
               </button>
               <button
                 className={`btn-product btn-wishlist pr-0 pl-0 ${
-                  isWishlist ? "added-to-wishlist" : "remove-from-wishlist"
+                  isWishlist ? 'added-to-wishlist' : 'remove-from-wishlist'
                 }`}
                 onClick={wishlistHandler}
-                title={isWishlist ? "Go to wishlist" : "Add to wishlist"}
+                title={isWishlist ? 'Go to wishlist' : 'Add to wishlist'}
               >
-                <span>{isWishlist ? "go to wishlist" : "add to wishlist"}</span>
+                <span>{isWishlist ? 'go to wishlist' : 'add to wishlist'}</span>
               </button>
             </div>
           </div>
@@ -97,13 +97,13 @@ function StickyBar(props) {
 }
 
 const mapStateToProps = (state, props) => ({
-  product: state.data.products.filter((product) => product.id === props.id)[0],
+  product: state.data.products.filter(product => product.id === props.id)[0],
   isWishlist:
-    findIndex(state.wishlist.list, (item) => item.id === props.id) !== -1
+    findIndex(state.wishlist.list, item => item.id === props.id) !== -1
       ? true
       : false,
 });
 
 export default connect(mapStateToProps, { addToCart, toggleWishlist })(
-  StickyBar
+  StickyBar,
 );

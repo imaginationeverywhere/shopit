@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const getRandomProductId = (product = []) => {
   let min = Math.ceil(0);
@@ -10,24 +10,24 @@ const getRandomProductId = (product = []) => {
 };
 
 export default function MainMenu(props) {
-  const [path, setPath] = useState("");
-  const PUBLIC_URL = "/react/molla";
-  const { products } = useSelector((state) => state.data);
+  const [path, setPath] = useState('');
+  const PUBLIC_URL = '/react/molla';
+  const { products } = useSelector(state => state.data);
 
   useEffect(() => {
     setPath(window.location.href);
   });
 
   function showAllDemos(e) {
-    let demoItems = document.querySelectorAll(".demo-item.hidden");
+    let demoItems = document.querySelectorAll('.demo-item.hidden');
 
     for (let i = 0; i < demoItems.length; i++) {
-      demoItems[i].classList.toggle("show");
+      demoItems[i].classList.toggle('show');
     }
 
     document
-      .querySelector(".view-all-demos")
-      .classList.toggle("disabled-hidden");
+      .querySelector('.view-all-demos')
+      .classList.toggle('disabled-hidden');
     e.preventDefault();
   }
 
@@ -354,7 +354,7 @@ export default function MainMenu(props) {
             </div>
           </div>
         </li>
-        <li className={path.indexOf("shop") > -1 ? "active" : ""}>
+        <li className={path.indexOf('shop') > -1 ? 'active' : ''}>
           <Link
             to={`${process.env.PUBLIC_URL}/shop/sidebar/list`}
             className="sf-with-ul"
@@ -372,9 +372,9 @@ export default function MainMenu(props) {
                       <ul>
                         <li
                           className={
-                            path.indexOf("shop/sidebar/list") > -1
-                              ? "active"
-                              : ""
+                            path.indexOf('shop/sidebar/list') > -1
+                              ? 'active'
+                              : ''
                           }
                         >
                           <Link
@@ -385,9 +385,9 @@ export default function MainMenu(props) {
                         </li>
                         <li
                           className={
-                            path.indexOf("shop/sidebar/2cols") > -1
-                              ? "active"
-                              : ""
+                            path.indexOf('shop/sidebar/2cols') > -1
+                              ? 'active'
+                              : ''
                           }
                         >
                           <Link
@@ -398,9 +398,9 @@ export default function MainMenu(props) {
                         </li>
                         <li
                           className={
-                            path.indexOf("shop/sidebar/3cols") > -1
-                              ? "active"
-                              : ""
+                            path.indexOf('shop/sidebar/3cols') > -1
+                              ? 'active'
+                              : ''
                           }
                         >
                           <Link
@@ -411,9 +411,9 @@ export default function MainMenu(props) {
                         </li>
                         <li
                           className={
-                            path.indexOf("shop/sidebar/4cols") > -1
-                              ? "active"
-                              : ""
+                            path.indexOf('shop/sidebar/4cols') > -1
+                              ? 'active'
+                              : ''
                           }
                         >
                           <Link
@@ -424,7 +424,7 @@ export default function MainMenu(props) {
                         </li>
                         <li
                           className={
-                            path.indexOf("shop/market") > -1 ? "active" : ""
+                            path.indexOf('shop/market') > -1 ? 'active' : ''
                           }
                         >
                           <Link to={`${process.env.PUBLIC_URL}/shop/market`}>
@@ -440,9 +440,9 @@ export default function MainMenu(props) {
                       <ul>
                         <li
                           className={
-                            path.indexOf("shop/nosidebar/boxed") > -1
-                              ? "active"
-                              : ""
+                            path.indexOf('shop/nosidebar/boxed') > -1
+                              ? 'active'
+                              : ''
                           }
                         >
                           <Link
@@ -456,9 +456,9 @@ export default function MainMenu(props) {
                         </li>
                         <li
                           className={
-                            path.indexOf("shop/nosidebar/fullwidth") > -1
-                              ? "active"
-                              : ""
+                            path.indexOf('shop/nosidebar/fullwidth') > -1
+                              ? 'active'
+                              : ''
                           }
                         >
                           <Link
@@ -475,9 +475,9 @@ export default function MainMenu(props) {
                       <ul>
                         <li
                           className={
-                            path.indexOf("shop/category/boxed") > -1
-                              ? "active"
-                              : ""
+                            path.indexOf('shop/category/boxed') > -1
+                              ? 'active'
+                              : ''
                           }
                         >
                           <Link
@@ -488,9 +488,9 @@ export default function MainMenu(props) {
                         </li>
                         <li
                           className={
-                            path.indexOf("shop/category/fullwidth") > -1
-                              ? "active"
-                              : ""
+                            path.indexOf('shop/category/fullwidth') > -1
+                              ? 'active'
+                              : ''
                           }
                         >
                           <Link
@@ -507,7 +507,7 @@ export default function MainMenu(props) {
                       <ul>
                         <li
                           className={
-                            path.indexOf("shop/cart") > -1 ? "active" : ""
+                            path.indexOf('shop/cart') > -1 ? 'active' : ''
                           }
                         >
                           <Link to={`${process.env.PUBLIC_URL}/shop/cart`}>
@@ -516,7 +516,7 @@ export default function MainMenu(props) {
                         </li>
                         <li
                           className={
-                            path.indexOf("shop/checkout") > -1 ? "active" : ""
+                            path.indexOf('shop/checkout') > -1 ? 'active' : ''
                           }
                         >
                           <Link to={`${process.env.PUBLIC_URL}/shop/checkout`}>
@@ -525,7 +525,7 @@ export default function MainMenu(props) {
                         </li>
                         <li
                           className={
-                            path.indexOf("shop/wishlist") > -1 ? "active" : ""
+                            path.indexOf('shop/wishlist') > -1 ? 'active' : ''
                           }
                         >
                           <Link to={`${process.env.PUBLIC_URL}/shop/wishlist`}>
@@ -534,7 +534,7 @@ export default function MainMenu(props) {
                         </li>
                         <li
                           className={
-                            path.indexOf("shop/dashboard") > -1 ? "active" : ""
+                            path.indexOf('shop/dashboard') > -1 ? 'active' : ''
                           }
                         >
                           <Link to={`${process.env.PUBLIC_URL}/shop/dashboard`}>
@@ -543,7 +543,7 @@ export default function MainMenu(props) {
                         </li>
                         <li
                           className={
-                            path.indexOf("#Lookbook") > -1 ? "active" : ""
+                            path.indexOf('#Lookbook') > -1 ? 'active' : ''
                           }
                         >
                           <Link to="#Lookbook">Lookbook</Link>
@@ -581,7 +581,7 @@ export default function MainMenu(props) {
             </div>
           </div>
         </li>
-        <li className={path.indexOf("product/") > -1 ? "active" : ""}>
+        <li className={path.indexOf('product/') > -1 ? 'active' : ''}>
           <Link
             to={`${process.env.PUBLIC_URL}/product/default/7`}
             className="sf-with-ul"
@@ -597,7 +597,7 @@ export default function MainMenu(props) {
                   <ul>
                     <li
                       className={
-                        path.indexOf("product/default") > -1 ? "active" : ""
+                        path.indexOf('product/default') > -1 ? 'active' : ''
                       }
                     >
                       <Link
@@ -610,7 +610,7 @@ export default function MainMenu(props) {
                     </li>
                     <li
                       className={
-                        path.indexOf("product/centered") > -1 ? "active" : ""
+                        path.indexOf('product/centered') > -1 ? 'active' : ''
                       }
                     >
                       <Link
@@ -623,7 +623,7 @@ export default function MainMenu(props) {
                     </li>
                     <li
                       className={
-                        path.indexOf("product/extended") > -1 ? "active" : ""
+                        path.indexOf('product/extended') > -1 ? 'active' : ''
                       }
                     >
                       <Link
@@ -638,7 +638,7 @@ export default function MainMenu(props) {
                     </li>
                     <li
                       className={
-                        path.indexOf("product/gallery") > -1 ? "active" : ""
+                        path.indexOf('product/gallery') > -1 ? 'active' : ''
                       }
                     >
                       <Link
@@ -651,7 +651,7 @@ export default function MainMenu(props) {
                     </li>
                     <li
                       className={
-                        path.indexOf("product/sticky") > -1 ? "active" : ""
+                        path.indexOf('product/sticky') > -1 ? 'active' : ''
                       }
                     >
                       <Link
@@ -664,7 +664,7 @@ export default function MainMenu(props) {
                     </li>
                     <li
                       className={
-                        path.indexOf("product/sidebar") > -1 ? "active" : ""
+                        path.indexOf('product/sidebar') > -1 ? 'active' : ''
                       }
                     >
                       <Link
@@ -677,7 +677,7 @@ export default function MainMenu(props) {
                     </li>
                     <li
                       className={
-                        path.indexOf("product/fullwidth") > -1 ? "active" : ""
+                        path.indexOf('product/fullwidth') > -1 ? 'active' : ''
                       }
                     >
                       <Link
@@ -690,7 +690,7 @@ export default function MainMenu(props) {
                     </li>
                     <li
                       className={
-                        path.indexOf("product/masonry") > -1 ? "active" : ""
+                        path.indexOf('product/masonry') > -1 ? 'active' : ''
                       }
                     >
                       <Link
@@ -728,7 +728,7 @@ export default function MainMenu(props) {
             </div>
           </div>
         </li>
-        <li className={path.indexOf("pages") > -1 ? "active" : ""}>
+        <li className={path.indexOf('pages') > -1 ? 'active' : ''}>
           <Link
             to={`${process.env.PUBLIC_URL}/pages/about`}
             className="sf-with-ul"
@@ -737,7 +737,7 @@ export default function MainMenu(props) {
           </Link>
 
           <ul>
-            <li className={path.indexOf("pages/about") > -1 ? "active" : ""}>
+            <li className={path.indexOf('pages/about') > -1 ? 'active' : ''}>
               <Link
                 to={`${process.env.PUBLIC_URL}/pages/about`}
                 className="sf-with-ul"
@@ -748,10 +748,10 @@ export default function MainMenu(props) {
               <ul>
                 <li
                   className={
-                    path.indexOf("pages/about") > -1 &&
-                    path.indexOf("pages/about-2") === -1
-                      ? "active"
-                      : ""
+                    path.indexOf('pages/about') > -1 &&
+                    path.indexOf('pages/about-2') === -1
+                      ? 'active'
+                      : ''
                   }
                 >
                   <Link to={`${process.env.PUBLIC_URL}/pages/about`}>
@@ -759,7 +759,7 @@ export default function MainMenu(props) {
                   </Link>
                 </li>
                 <li
-                  className={path.indexOf("pages/about-2") > -1 ? "active" : ""}
+                  className={path.indexOf('pages/about-2') > -1 ? 'active' : ''}
                 >
                   <Link to={`${process.env.PUBLIC_URL}/pages/about-2`}>
                     About 02
@@ -767,7 +767,7 @@ export default function MainMenu(props) {
                 </li>
               </ul>
             </li>
-            <li className={path.indexOf("pages/contact") > -1 ? "active" : ""}>
+            <li className={path.indexOf('pages/contact') > -1 ? 'active' : ''}>
               <Link
                 to={`${process.env.PUBLIC_URL}/pages/contact`}
                 className="sf-with-ul"
@@ -778,10 +778,10 @@ export default function MainMenu(props) {
               <ul>
                 <li
                   className={
-                    path.indexOf("pages/contact") > -1 &&
-                    path.indexOf("pages/contact-2") === -1
-                      ? "active"
-                      : ""
+                    path.indexOf('pages/contact') > -1 &&
+                    path.indexOf('pages/contact-2') === -1
+                      ? 'active'
+                      : ''
                   }
                 >
                   <Link to={`${process.env.PUBLIC_URL}/pages/contact`}>
@@ -790,7 +790,7 @@ export default function MainMenu(props) {
                 </li>
                 <li
                   className={
-                    path.indexOf("pages/contact-2") > -1 ? "active" : ""
+                    path.indexOf('pages/contact-2') > -1 ? 'active' : ''
                   }
                 >
                   <Link to={`${process.env.PUBLIC_URL}/pages/contact-2`}>
@@ -799,17 +799,17 @@ export default function MainMenu(props) {
                 </li>
               </ul>
             </li>
-            <li className={path.indexOf("pages/login") > -1 ? "active" : ""}>
+            <li className={path.indexOf('pages/login') > -1 ? 'active' : ''}>
               <Link to={`${process.env.PUBLIC_URL}/pages/login`}>Login</Link>
             </li>
-            <li className={path.indexOf("pages/faq") > -1 ? "active" : ""}>
+            <li className={path.indexOf('pages/faq') > -1 ? 'active' : ''}>
               <Link to={`${process.env.PUBLIC_URL}/pages/faq`}>FAQs</Link>
             </li>
-            <li className={path.indexOf("pages/404") > -1 ? "active" : ""}>
+            <li className={path.indexOf('pages/404') > -1 ? 'active' : ''}>
               <Link to={`${process.env.PUBLIC_URL}/pages/404`}>Error 404</Link>
             </li>
             <li
-              className={path.indexOf("pages/coming-soon") > -1 ? "active" : ""}
+              className={path.indexOf('pages/coming-soon') > -1 ? 'active' : ''}
             >
               <Link to={`${process.env.PUBLIC_URL}/pages/coming-soon`}>
                 Coming Soon
@@ -817,7 +817,7 @@ export default function MainMenu(props) {
             </li>
           </ul>
         </li>
-        <li className={path.indexOf("blog/") > -1 ? "active" : ""}>
+        <li className={path.indexOf('blog/') > -1 ? 'active' : ''}>
           <Link
             to={`${process.env.PUBLIC_URL}/blog/classic`}
             className="sf-with-ul"
@@ -826,13 +826,13 @@ export default function MainMenu(props) {
           </Link>
 
           <ul>
-            <li className={path.indexOf("blog/classic") > -1 ? "active" : ""}>
+            <li className={path.indexOf('blog/classic') > -1 ? 'active' : ''}>
               <Link to={`${process.env.PUBLIC_URL}/blog/classic`}>Classic</Link>
             </li>
-            <li className={path.indexOf("blog/listing") > -1 ? "active" : ""}>
+            <li className={path.indexOf('blog/listing') > -1 ? 'active' : ''}>
               <Link to={`${process.env.PUBLIC_URL}/blog/listing`}>Listing</Link>
             </li>
-            <li className={path.indexOf("blog/grid") > -1 ? "active" : ""}>
+            <li className={path.indexOf('blog/grid') > -1 ? 'active' : ''}>
               <Link
                 to={`${process.env.PUBLIC_URL}/blog/grid/2cols`}
                 className="sf-with-ul"
@@ -842,7 +842,7 @@ export default function MainMenu(props) {
               <ul>
                 <li
                   className={
-                    path.indexOf("blog/grid/2cols") > -1 ? "active" : ""
+                    path.indexOf('blog/grid/2cols') > -1 ? 'active' : ''
                   }
                 >
                   <Link to={`${process.env.PUBLIC_URL}/blog/grid/2cols`}>
@@ -851,7 +851,7 @@ export default function MainMenu(props) {
                 </li>
                 <li
                   className={
-                    path.indexOf("blog/grid/3cols") > -1 ? "active" : ""
+                    path.indexOf('blog/grid/3cols') > -1 ? 'active' : ''
                   }
                 >
                   <Link to={`${process.env.PUBLIC_URL}/blog/grid/3cols`}>
@@ -860,7 +860,7 @@ export default function MainMenu(props) {
                 </li>
                 <li
                   className={
-                    path.indexOf("blog/grid/4cols") > -1 ? "active" : ""
+                    path.indexOf('blog/grid/4cols') > -1 ? 'active' : ''
                   }
                 >
                   <Link to={`${process.env.PUBLIC_URL}/blog/grid/4cols`}>
@@ -869,7 +869,7 @@ export default function MainMenu(props) {
                 </li>
                 <li
                   className={
-                    path.indexOf("blog/grid/sidebar") > -1 ? "active" : ""
+                    path.indexOf('blog/grid/sidebar') > -1 ? 'active' : ''
                   }
                 >
                   <Link to={`${process.env.PUBLIC_URL}/blog/grid/sidebar`}>
@@ -878,7 +878,7 @@ export default function MainMenu(props) {
                 </li>
               </ul>
             </li>
-            <li className={path.indexOf("blog/masonry") > -1 ? "active" : ""}>
+            <li className={path.indexOf('blog/masonry') > -1 ? 'active' : ''}>
               <Link
                 to={`${process.env.PUBLIC_URL}/blog/masonry/2cols`}
                 className="sf-with-ul"
@@ -888,7 +888,7 @@ export default function MainMenu(props) {
               <ul>
                 <li
                   className={
-                    path.indexOf("blog/masonry/2cols") > -1 ? "active" : ""
+                    path.indexOf('blog/masonry/2cols') > -1 ? 'active' : ''
                   }
                 >
                   <Link to={`${process.env.PUBLIC_URL}/blog/masonry/2cols`}>
@@ -897,7 +897,7 @@ export default function MainMenu(props) {
                 </li>
                 <li
                   className={
-                    path.indexOf("blog/masonry/3cols") > -1 ? "active" : ""
+                    path.indexOf('blog/masonry/3cols') > -1 ? 'active' : ''
                   }
                 >
                   <Link to={`${process.env.PUBLIC_URL}/blog/masonry/3cols`}>
@@ -906,7 +906,7 @@ export default function MainMenu(props) {
                 </li>
                 <li
                   className={
-                    path.indexOf("blog/masonry/4cols") > -1 ? "active" : ""
+                    path.indexOf('blog/masonry/4cols') > -1 ? 'active' : ''
                   }
                 >
                   <Link to={`${process.env.PUBLIC_URL}/blog/masonry/4cols`}>
@@ -915,7 +915,7 @@ export default function MainMenu(props) {
                 </li>
                 <li
                   className={
-                    path.indexOf("blog/masonry/sidebar") > -1 ? "active" : ""
+                    path.indexOf('blog/masonry/sidebar') > -1 ? 'active' : ''
                   }
                 >
                   <Link to={`${process.env.PUBLIC_URL}/blog/masonry/sidebar`}>
@@ -924,7 +924,7 @@ export default function MainMenu(props) {
                 </li>
               </ul>
             </li>
-            <li className={path.indexOf("blog/mask") > -1 ? "active" : ""}>
+            <li className={path.indexOf('blog/mask') > -1 ? 'active' : ''}>
               <Link
                 to={`${process.env.PUBLIC_URL}/blog/mask/grid`}
                 className="sf-with-ul"
@@ -934,7 +934,7 @@ export default function MainMenu(props) {
               <ul>
                 <li
                   className={
-                    path.indexOf("blog/mask/grid") > -1 ? "active" : ""
+                    path.indexOf('blog/mask/grid') > -1 ? 'active' : ''
                   }
                 >
                   <Link to={`${process.env.PUBLIC_URL}/blog/mask/grid`}>
@@ -943,7 +943,7 @@ export default function MainMenu(props) {
                 </li>
                 <li
                   className={
-                    path.indexOf("blog/mask/masonry") > -1 ? "active" : ""
+                    path.indexOf('blog/mask/masonry') > -1 ? 'active' : ''
                   }
                 >
                   <Link to={`${process.env.PUBLIC_URL}/blog/mask/masonry`}>
@@ -952,7 +952,7 @@ export default function MainMenu(props) {
                 </li>
               </ul>
             </li>
-            <li className={path.indexOf("blog/single") > -1 ? "active" : ""}>
+            <li className={path.indexOf('blog/single') > -1 ? 'active' : ''}>
               <Link
                 to={`${process.env.PUBLIC_URL}/blog/single/3`}
                 className="sf-with-ul"
@@ -961,21 +961,21 @@ export default function MainMenu(props) {
               </Link>
               <ul>
                 <li
-                  className={path.indexOf("blog/single/") > -1 ? "active" : ""}
+                  className={path.indexOf('blog/single/') > -1 ? 'active' : ''}
                 >
                   <Link to={`${process.env.PUBLIC_URL}/blog/single/3`}>
                     Default with sidebar
                   </Link>
                 </li>
                 <li
-                  className={path.indexOf("blog/single-2") > -1 ? "active" : ""}
+                  className={path.indexOf('blog/single-2') > -1 ? 'active' : ''}
                 >
                   <Link to={`${process.env.PUBLIC_URL}/blog/single-2/97`}>
                     Fullwidth no sidebar
                   </Link>
                 </li>
                 <li
-                  className={path.indexOf("blog/single-3") > -1 ? "active" : ""}
+                  className={path.indexOf('blog/single-3') > -1 ? 'active' : ''}
                 >
                   <Link to={`${process.env.PUBLIC_URL}/blog/single-3/98`}>
                     Fullwidth with sidebar
@@ -985,7 +985,7 @@ export default function MainMenu(props) {
             </li>
           </ul>
         </li>
-        <li className={path.indexOf("element") > -1 ? "active" : ""}>
+        <li className={path.indexOf('element') > -1 ? 'active' : ''}>
           <Link
             to={`${process.env.PUBLIC_URL}/elements`}
             className="sf-with-ul"
@@ -995,7 +995,7 @@ export default function MainMenu(props) {
 
           <ul>
             <li
-              className={path.indexOf("elements/products") > -1 ? "active" : ""}
+              className={path.indexOf('elements/products') > -1 ? 'active' : ''}
             >
               <Link to={`${process.env.PUBLIC_URL}/elements/products`}>
                 Products
@@ -1003,7 +1003,7 @@ export default function MainMenu(props) {
             </li>
             <li
               className={
-                path.indexOf("elements/typography") > -1 ? "active" : ""
+                path.indexOf('elements/typography') > -1 ? 'active' : ''
               }
             >
               <Link to={`${process.env.PUBLIC_URL}/elements/typography`}>
@@ -1011,14 +1011,14 @@ export default function MainMenu(props) {
               </Link>
             </li>
             <li
-              className={path.indexOf("elements/titles") > -1 ? "active" : ""}
+              className={path.indexOf('elements/titles') > -1 ? 'active' : ''}
             >
               <Link to={`${process.env.PUBLIC_URL}/elements/titles`}>
                 Titles
               </Link>
             </li>
             <li
-              className={path.indexOf("elements/banners") > -1 ? "active" : ""}
+              className={path.indexOf('elements/banners') > -1 ? 'active' : ''}
             >
               <Link to={`${process.env.PUBLIC_URL}/elements/banners`}>
                 Banners
@@ -1026,7 +1026,7 @@ export default function MainMenu(props) {
             </li>
             <li
               className={
-                path.indexOf("elements/categories") > -1 ? "active" : ""
+                path.indexOf('elements/categories') > -1 ? 'active' : ''
               }
             >
               <Link to={`${process.env.PUBLIC_URL}/elements/categories`}>
@@ -1035,7 +1035,7 @@ export default function MainMenu(props) {
             </li>
             <li
               className={
-                path.indexOf("elements/video-banners") > -1 ? "active" : ""
+                path.indexOf('elements/video-banners') > -1 ? 'active' : ''
               }
             >
               <Link to={`${process.env.PUBLIC_URL}/elements/video-banners`}>
@@ -1043,7 +1043,7 @@ export default function MainMenu(props) {
               </Link>
             </li>
             <li
-              className={path.indexOf("elements/buttons") > -1 ? "active" : ""}
+              className={path.indexOf('elements/buttons') > -1 ? 'active' : ''}
             >
               <Link to={`${process.env.PUBLIC_URL}/elements/buttons`}>
                 Buttons
@@ -1051,19 +1051,19 @@ export default function MainMenu(props) {
             </li>
             <li
               className={
-                path.indexOf("elements/accordions") > -1 ? "active" : ""
+                path.indexOf('elements/accordions') > -1 ? 'active' : ''
               }
             >
               <Link to={`${process.env.PUBLIC_URL}/elements/accordions`}>
                 Accordions
               </Link>
             </li>
-            <li className={path.indexOf("elements/tabs") > -1 ? "active" : ""}>
+            <li className={path.indexOf('elements/tabs') > -1 ? 'active' : ''}>
               <Link to={`${process.env.PUBLIC_URL}/elements/tabs`}>Tabs</Link>
             </li>
             <li
               className={
-                path.indexOf("elements/testimonials") > -1 ? "active" : ""
+                path.indexOf('elements/testimonials') > -1 ? 'active' : ''
               }
             >
               <Link to={`${process.env.PUBLIC_URL}/elements/testimonials`}>
@@ -1072,7 +1072,7 @@ export default function MainMenu(props) {
             </li>
             <li
               className={
-                path.indexOf("elements/blog-posts") > -1 ? "active" : ""
+                path.indexOf('elements/blog-posts') > -1 ? 'active' : ''
               }
             >
               <Link to={`${process.env.PUBLIC_URL}/elements/blog-posts`}>
@@ -1081,21 +1081,21 @@ export default function MainMenu(props) {
             </li>
             <li
               className={
-                path.indexOf("elements/portfolios") > -1 ? "active" : ""
+                path.indexOf('elements/portfolios') > -1 ? 'active' : ''
               }
             >
               <Link to={`${process.env.PUBLIC_URL}/elements/portfolios`}>
                 Portfolio
               </Link>
             </li>
-            <li className={path.indexOf("elements/cta") > -1 ? "active" : ""}>
+            <li className={path.indexOf('elements/cta') > -1 ? 'active' : ''}>
               <Link to={`${process.env.PUBLIC_URL}/elements/cta`}>
                 Call to Action
               </Link>
             </li>
             <li
               className={
-                path.indexOf("elements/icon-boxes") > -1 ? "active" : ""
+                path.indexOf('elements/icon-boxes') > -1 ? 'active' : ''
               }
             >
               <Link to={`${process.env.PUBLIC_URL}/elements/icon-boxes`}>
