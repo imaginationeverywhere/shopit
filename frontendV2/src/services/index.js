@@ -13,13 +13,14 @@ export const getVisibleProducts = ( products, { sortBy, category, size, brand, c
 
         if ( category && category.length > 0 ) {
             for ( let i = 0; i < category.length; i++ ) {
-                if ( -1 !== findIndex( item.category, cat => cat === category[ i ] ) || ( category[ i ] === "Sale" && item.discount > 0 ) || ( category[ i ] === 'All' ) )
+                // console.log(item.category, category[i] && category[i].toLowerCase(), '????>.khvghcyfg')
+                if ( -1 !== findIndex( item.category, cat => cat === category[ i ].toLowerCase() ) || ( category[ i ] === "Sale" && item.discount > 0 ) || ( category[ i ] === 'All' ) )
                     catResult = true;
             }
         } else {
             catResult = true;
         }
-
+  console.log(item.size, size)
         if ( size && size.length > 0 ) {
             for ( let i = 0; i < size.length; i++ ) {
                 if ( -1 !== findIndex( item.size, sz => sz === size[ i ] ) )

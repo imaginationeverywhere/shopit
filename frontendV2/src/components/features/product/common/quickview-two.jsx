@@ -103,7 +103,7 @@ function QuickView( props ) {
                             {
                                 smallPictures.map( ( item, index ) => (
                                     <Link onClick={ preventNav } to="#" className={ `carousel-dot d-block p-0 mb-1 ${0 === index ? 'active' : ''}` } key={ "product-dot-" + index }>
-                                        <img src={ process.env.PUBLIC_URL + '/' + item } alt="dot" />
+                                        <img src={item } alt="dot" />
                                     </Link>
                                 ) )
                             }
@@ -119,7 +119,7 @@ function QuickView( props ) {
                                 {
                                     images.map( ( item, index ) => (
                                         <div className="intro-slide bg-transparent" key={ "gallery" + index }>
-                                            <img src={ process.env.PUBLIC_URL + '/' + item } alt="Desc" />
+                                            <img src={ item } alt="Desc" />
                                             <button className="btn-fullscreen" onClick={ () => openLightBox( index ) }>
                                                 <i className="icon-arrows"></i>
                                             </button>

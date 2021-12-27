@@ -12,7 +12,7 @@ function ProductListThree( props ) {
     const { filterSort, filters, addToCart, showQuickViewModal } = props
     const [ startPos, setPos ] = useState( 0 );
     let products = props.products;
-    products = getVisibleProducts( products.slice( 20, 35 ), filters );
+    products = getVisibleProducts( products.slice( -15 ), filters );
     let count = products.length;
     const maxCount = 8;
 

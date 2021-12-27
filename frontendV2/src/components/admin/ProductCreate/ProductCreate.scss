@@ -1,0 +1,323 @@
+.productcreate {
+	padding: 1.5em;
+	// height: calc(100vh - 60px);
+	overflow-y: scroll;
+	input,
+	select {
+		outline: none;
+	}
+	.flexed-space-between {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.mb-1 {
+		margin-bottom: 1em;
+	}
+
+	.app-modal {
+		display: flex;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		align-items: center;
+		justify-content: center;
+		z-index: 3000;
+		background-color: rgba(0, 0, 0, 0);
+
+		.action-card {
+			max-height: 90vh;
+			background-color: white;
+			padding: 1em 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			position: relative;
+			width: 60%;
+			max-width: 600px;
+			min-width: 400px;
+
+			.cut-icon {
+				position: absolute;
+				cursor: pointer;
+				top: 1em;
+				right: 1em;
+				transform: scale(0.8);
+			}
+			h3 {
+				font-family: 'Avenir_Heavy';
+				font-size: 1.3em;
+				margin: 0;
+				margin-bottom: 1em;
+				text-align: center;
+				color: #595d6e;
+				text-transform: capitalize;
+			}
+
+			p {
+				font-family: 'Avenir_Medium';
+				font-size: 1em;
+				margin: 0.5em 0 1em;
+				margin-bottom: 1em;
+				text-align: center;
+				color: #595d6e;
+			}
+			span {
+				font-family: 'Avenir_Book';
+				color: #595d6e;
+			}
+			.button-wrap {
+				display: flex;
+				margin-top: 1em;
+				button {
+					padding: 0.8em 2em;
+					border: none;
+					border-radius: 3px;
+					margin: 0 1em;
+					cursor: pointer;
+					span {
+						font-family: 'Avenir_Heavy';
+						font-size: 1em;
+						margin: 0 auto;
+						text-align: center;
+					}
+				}
+
+				.proceed {
+					background-color: #c66;
+					border: 1px solid #c66;
+					span {
+						color: white;
+					}
+				}
+				.cancel {
+					border: 1px solid #c66;
+					background-color: transparent;
+					span {
+						color: #c66;
+					}
+				}
+			}
+		}
+	}
+
+	.row-reverse {
+		flex-direction: row-reverse;
+	}
+
+	.flexed-space-around {
+		display: flex;
+		justify-content: space-around;
+	}
+
+	.flexed-center {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.flexed-column-center {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.flexed-col {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.side-input {
+		display: flex;
+		justify-content: space-between;
+		.input,
+		.text-area,
+		.select-wrap,
+		.date-picker {
+			width: 49%;
+			margin-left: 0;
+			margin-right: 0;
+			margin: 0;
+		}
+		margin: 0;
+	}
+
+	.center-content {
+		display: flex;
+		height: 100vh;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	.hidden {
+		display: none !important;
+	}
+
+	.new-product-div {
+		background-color: white;
+		min-height: 80vh;
+		margin: 0 auto;
+		border: 1px solid #e2e5ec;
+		border-radius: 4px;
+
+		header {
+			padding: 1.5em;
+			border-bottom: 1px solid #e2e5ec;
+			h4 {
+				font-size: 1em;
+				margin: 0;
+				font-family: 'Avenir_Heavy';
+				color: #464457;
+			}
+			.marg-2 {
+				margin: 0 1em;
+			}
+		}
+
+		.image-upload-wrap {
+			padding: 1.5em;
+			background-color: #fef9f9;
+			border-bottom: 1px solid #e2e5ec;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.product-form {
+			.color-variant-list {
+				margin: 1em auto;
+				display: flex;
+				flex-wrap: wrap;
+				grid-row-gap: 1%;
+				width: 100%;
+				padding: 1em;
+				background-color: white;
+				box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+				.color-variant {
+					margin: 2px;
+					cursor: pointer;
+					border-radius: 50%;
+					padding: 4px;
+					border: 1px dashed transparent;
+					height: calc(1.7em + 10px);
+					width: calc(1.7em + 10px);
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					.circle {
+						height: 1.7em;
+						width: 1.7em;
+						border-radius: 50%;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+					}
+				}
+				.selected-color {
+					border: 0.4px dashed #636363c5;
+				}
+			}
+
+			.form-header {
+				display: flex;
+				border-bottom: 1px solid #e2e5ec;
+				.btn-click {
+					width: 8.5em;
+					height: 4em;
+					cursor: pointer;
+					border-bottom: 3px solid transparent;
+					span {
+						font-size: 1em;
+						font-family: 'Avenir_Medium';
+						color: #464457;
+					}
+				}
+
+				.active-link {
+					border-bottom: 3px solid #c66;
+				}
+			}
+
+			.form-main {
+				display: flex;
+				align-items: flex-start;
+				.other-product-detail {
+					flex-grow: 1;
+					border-right: 1px solid #e2e5ec;
+					.general-form {
+						padding: 1.5em;
+						height: 520px;
+					}
+					.product-name-info {
+						display: grid;
+						grid-template-columns: 48% 24% 24%;
+						column-gap: 2%;
+						margin-bottom: 1.5em;
+					}
+
+					.weight-info {
+						display: grid;
+						grid-template-columns: 49% 49%;
+						column-gap: 2%;
+					}
+
+					.mb-1 {
+						margin-bottom: 1.5em;
+					}
+					.mt-1 {
+						margin-top: 1.5em;
+					}
+
+					.attributes-form {
+						padding: 1.5em;
+						height: 480px;
+						overflow-y: scroll;
+						.attr-info {
+							display: grid;
+							grid-template-columns: 42% 42% 10%;
+							column-gap: 2%;
+							margin-top: 1.5em;
+							align-items: flex-end;
+							margin-bottom: 2em;
+
+							.delete-btn {
+								max-width: 40px;
+								padding: 0.6em;
+								background-color: #f7f7fa;
+								border: 1px solid #e2e5ec;
+								border-radius: 5px;
+								height: 2.3em;
+								cursor: pointer;
+							}
+						}
+					}
+
+					h5 {
+						font-size: 1em;
+						font-family: 'Avenir_Heavy';
+						color: #595d6e;
+						text-align: center;
+						margin: 0.7em auto;
+						max-width: 250px;
+					}
+				}
+
+				.price-form {
+					width: 30%;
+					padding: 2em 1.5em;
+					height: 400px;
+				}
+			}
+
+			.shipping-comp {
+				padding: 1.5em;
+				height: 480px;
+			}
+		}
+	}
+}

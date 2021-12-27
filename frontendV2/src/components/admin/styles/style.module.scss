@@ -1,57 +1,57 @@
 main {
 	width: 100%;
 	min-height: 100vh;
-	margin: 0 2.5rem 6rem 2.5rem;
+	padding: 0 2.5rem 1rem 2.5rem;
 }
 
 .admin {
-  &-page-wrapper {
-    padding: 0 10px 0 0;
-	display: flex;
-  }
-  &-content-wrapper {
-    padding: 20px;
-  }
-  &-dashboard-container {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  &-card {
-    padding: 1.25rem;
-    text-align: center;
-    box-shadow: 6px 6px 6px #ccc;
-    border: 1px solid #eee;
-    border-radius: 0.25rem;
-    &-title {
-      text-align: center;
-    }
-
-    &-details {
-      margin: 0 0 20px 0;
-    }
-  
-    &-bottom {
-      display: flex;
-      justify-content: space-between;
-      border-top: 1px solid #ccc;
-    }
-
-    &-link {
-      margin: 10px 0 0 0;
-    }
-	
-	&-footer{
+	&-page-wrapper {
+		padding: 0 10px 0 0;
 		display: flex;
-		justify-content: center;
-		width: 100%;
-		background-color: white;
-		text-align: center;
 	}
-	h3{
-		text-align: center;
+	&-content-wrapper {
+		padding: 20px;
 	}
-  }
+	&-dashboard-container {
+		display: grid;
+		gap: 2rem;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	&-card {
+		padding: 1.25rem;
+		text-align: center;
+		box-shadow: 6px 6px 6px #ccc;
+		border: 1px solid #eee;
+		border-radius: 0.25rem;
+		&-title {
+			text-align: center;
+		}
+
+		&-details {
+			margin: 0 0 20px 0;
+		}
+
+		&-bottom {
+			display: flex;
+			justify-content: space-between;
+			border-top: 1px solid #ccc;
+		}
+
+		&-link {
+			margin: 10px 0 0 0;
+		}
+
+		&-footer {
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			background-color: white;
+			text-align: center;
+		}
+		h3 {
+			text-align: center;
+		}
+	}
 }
 
 /* Mobile Menu */
@@ -65,7 +65,7 @@ main {
 	width: 100%;
 	max-width: 280px;
 	overflow-y: scroll;
-	box-shadow: .1rem 0 .6rem 0 rgba(51, 51, 51, 0.5);
+	box-shadow: 0.1rem 0 0.6rem 0 rgba(51, 51, 51, 0.5);
 	will-change: transform;
 	visibility: hidden;
 	font-size: 1.2rem;
@@ -88,11 +88,11 @@ main {
 		font-size: 1.2rem;
 		background-color: transparent;
 		margin-bottom: 0;
-		color: rgba(255, 255, 255, .45);
-		border-color: rgba(255, 255, 255, .45);
+		color: rgba(255, 255, 255, 0.45);
+		border-color: rgba(255, 255, 255, 0.45);
 
 		& + .social-icon {
-			margin-left: .8rem;
+			margin-left: 0.8rem;
 		}
 
 		&:hover,
@@ -114,7 +114,7 @@ main {
 	width: 3rem;
 	height: 3rem;
 	position: absolute;
-	top: .7rem;
+	top: 0.7rem;
 	right: 1rem;
 	padding: 0;
 	z-index: 9;
@@ -122,7 +122,7 @@ main {
 	font-size: 1.6rem;
 	line-height: 1;
 	color: #fff;
-	transition: color .35s;
+	transition: color 0.35s;
 
 	&:hover,
 	&:focus {
@@ -156,7 +156,7 @@ main {
 
 .mobile-menu {
 	margin: 0;
-	padding:0;
+	padding: 0;
 	list-style: none;
 	> li {
 		> a {
@@ -173,7 +173,7 @@ main {
 			display: block;
 			padding: 1rem 4.5rem 1rem 2rem;
 			color: #fff;
-			border-bottom: .1rem solid rgba(255, 255, 255, .08);
+			border-bottom: 0.1rem solid rgba(255, 255, 255, 0.08);
 
 			&:hover,
 			&:focus {
@@ -182,7 +182,7 @@ main {
 				outline: none !important;
 			}
 		}
-		
+
 		&.open,
 		&.active {
 			> a {
@@ -192,19 +192,19 @@ main {
 
 		ul {
 			margin: 0;
-			padding: .7rem 0 .9rem;
+			padding: 0.7rem 0 0.9rem;
 			display: none;
 			margin-bottom: 0;
-			border-bottom: .1rem solid rgba(255, 255, 255, .08);
+			border-bottom: 0.1rem solid rgba(255, 255, 255, 0.08);
 
 			li a {
-				padding-top: .6rem;
-				padding-bottom: .6rem;
+				padding-top: 0.6rem;
+				padding-bottom: 0.6rem;
 				padding-left: 3.5rem;
 				border-bottom: none;
 
 				&:not(:hover):not(:focus) {
-					color: rgba(255, 255, 255, .8);
+					color: rgba(255, 255, 255, 0.8);
 				}
 			}
 
@@ -216,7 +216,7 @@ main {
 			}
 
 			ul {
-				border-top: .1rem solid rgba(255, 255, 255, .08);
+				border-top: 0.1rem solid rgba(255, 255, 255, 0.08);
 				li a {
 					padding-left: 5rem;
 				}
@@ -250,12 +250,12 @@ main {
 	margin-top: -1.5rem;
 	border-radius: 0;
 	background-color: transparent;
-	cursor:pointer;
+	cursor: pointer;
 	outline: none;
 	transition: color 0.35s;
 
 	&::after {
-		font-family: "molla";
+		font-family: 'molla';
 		content: '\f110';
 		display: inline-block;
 	}
@@ -282,14 +282,14 @@ main {
 		-webkit-appearance: none;
 		font-size: 1.2rem;
 		line-height: 1.5;
-		padding: .8rem 1.5rem;
+		padding: 0.8rem 1.5rem;
 		max-width: calc(100% - 36px);
 		background-color: #333;
-		border-color: rgba(255, 255, 255, .1);
+		border-color: rgba(255, 255, 255, 0.1);
 		border-right-width: 0;
 
 		&::placeholder {
-			color: rgba(255, 255, 255, .45);
+			color: rgba(255, 255, 255, 0.45);
 		}
 
 		&:focus {
@@ -302,7 +302,7 @@ main {
 	.btn {
 		font-size: 1.2rem;
 		min-width: 3.6rem;
-		padding: .8rem .2rem;
+		padding: 0.8rem 0.2rem;
 	}
 }
 
@@ -313,7 +313,7 @@ main {
 		border: none;
 
 		.mobile-nav,
-		.mobile-cats-nav  {
+		.mobile-cats-nav {
 			margin-bottom: 0;
 		}
 	}
@@ -326,13 +326,13 @@ main {
 .nav.nav-pills-mobile {
 	display: flex;
 	align-items: center;
-	border-bottom: .1rem solid rgba(255, 255, 255, .1);
-	margin: 0 0 .2rem;
+	border-bottom: 0.1rem solid rgba(255, 255, 255, 0.1);
+	margin: 0 0 0.2rem;
 
 	.nav-item {
 		flex-grow: 1;
 		flex-basis: 0;
-		margin: 0 0 -.1rem;
+		margin: 0 0 -0.1rem;
 
 		&.show .nav-link {
 			color: orange;
@@ -346,17 +346,16 @@ main {
 		font-size: 1.3rem;
 		line-height: 1.5;
 		text-transform: uppercase;
-		border-bottom: .2rem solid transparent !important;
+		border-bottom: 0.2rem solid transparent !important;
 		background: none;
-		padding: .8rem 2rem;
-		transition: all .35s ease;
+		padding: 0.8rem 2rem;
+		transition: all 0.35s ease;
 
 		&.active,
 		&:hover,
-		&:focus
-		{
+		&:focus {
 			color: orange;
-			border-bottom-color:orange !important;
+			border-bottom-color: orange !important;
 		}
 	}
 }
@@ -373,8 +372,8 @@ main {
 			position: relative;
 			display: block;
 			padding: 1rem 4.5rem 1rem 2rem;
-			color: rgba(255, 255, 255, .8);
-			border-bottom: .1rem solid rgba(255, 255, 255, .08);
+			color: rgba(255, 255, 255, 0.8);
+			border-bottom: 0.1rem solid rgba(255, 255, 255, 0.08);
 
 			&.mobile-cats-lead {
 				font-weight: 500;

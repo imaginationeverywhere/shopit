@@ -13,21 +13,21 @@ function ProductOne( props ) {
     return (
         product ?
             <div className="product-big">
-                <img src={ product.backPictures ? process.env.PUBLIC_URL + '/' + product.backPictures[ 0 ] : process.env.PUBLIC_URL + '/' + product.pictures[ 0 ] } alt="product bg" width="452" height="390" />
+                <img src={ product.backPictures ?  product.backPictures[ 0 ] :  product.pictures[ 0 ] } alt="product bg" width="452" height="390" />
 
                 <div className="product-wrap">
                     <figure className="product-media">
                         <Link to={ `${process.env.PUBLIC_URL}/product/default/${product.id}` }>
                             <LazyLoadImage
                                 alt="product"
-                                src={ `${process.env.PUBLIC_URL}/${product.pictures[ 0 ]}` }
+                                src={ `${product.pictures[ 0 ]}` }
                                 threshold={ 400 }
                             />
 
                             { product.pictures[ 1 ] ?
                                 <LazyLoadImage
                                     alt="product"
-                                    src={ `${process.env.PUBLIC_URL}/${product.pictures[ 1 ]}` }
+                                    src={ `${product.pictures[ 1 ]}` }
                                     wrapperClassName="product-image-hover product-image"
                                     threshold={ 400 }
                                 />

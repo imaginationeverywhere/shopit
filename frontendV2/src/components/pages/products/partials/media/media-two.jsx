@@ -20,9 +20,9 @@ function MediaTwo( props ) {
                 <OwlCarousel adClass="product-gallery-carousel owl-full owl-nav-dark cols-1 cols-md-2 cols-lg-3" hasChildren={ product.pictures.length } carouselOptions={ mainSlider9 } carouselId={ "galleryProduct" + product.id }>
                     { product.pictures.map( ( item, index ) =>
                         <Magnifier
-                            imageSrc={ process.env.PUBLIC_URL + '/' + product.pictures[ index ] }
+                            imageSrc={ product.pictures[ index ] }
                             imageAlt="Example"
-                            largeImageSrc={ process.env.PUBLIC_URL + '/' + bigImages[ index ] } // Optional
+                            largeImageSrc={ bigImages[ index ] } // Optional
                             dragToMove={ false }
                             mouseActivation="hover"
                             cursorStyleActive="crosshair"
@@ -38,7 +38,7 @@ function MediaTwo( props ) {
 
 function mapStateToProps( state, props ) {
     return {
-        product: state.data.products.filter( product => product.id === parseInt( props.id ) )[ 0 ]
+        product: state.data.products.filter( product => product.id ===  props.id )[ 0 ]
     }
 }
 

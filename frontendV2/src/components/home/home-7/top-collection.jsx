@@ -12,7 +12,7 @@ function TopCollection( props ) {
     const { addToCart, toggleWishlist } = props;
     let categories = [ "All", "Furniture", "Decoration", "Lighting" ];
     let products = props.products;
-    products = products.slice( 20, 35 );
+    products = products.slice( -15 );
 
     let topProducts = getTopSellingProducts( products );
 
