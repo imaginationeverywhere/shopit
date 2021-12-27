@@ -1,209 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>Stooon - Fashion eCommerce React Template</title>
-    <meta charset="utf-8">
-    <meta name="description" content="Stoon - Fashion eCommerce React Template">
-    <meta name="author" content="App">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Stoon - Fashion eCommerce React Template"
+    />
+    <meta name="author" content="App" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- Fav icon -->
-    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link rel="shortcut icon" href="assets/img/favicon.png" />
     <!-- Font Family-->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
     <!-- bootstrap css -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- prettify css -->
-    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet" />
     <!-- bootstrap-responsiv css -->
-    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet" />
     <!-- style css -->
-    <link href="assets/css/documenter_style.css" rel="stylesheet">
+    <link href="assets/css/documenter_style.css" rel="stylesheet" />
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <style>
-    html,
-    body {
-        background-color: #FFFFFF;
+      html,
+      body {
+        background-color: #ffffff;
         color: #383838;
-        font-family: 'Poppins', sans-serif !important;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+        font-family: "Poppins", sans-serif !important;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
         color: #383838;
-    }
+      }
 
-    section table {
-        background-color: #FFFFFF;
-    }
+      section table {
+        background-color: #ffffff;
+      }
 
-     ::-moz-selection {
+      ::-moz-selection {
         background: #444444;
-        color: #DDDDDD;
-    }
+        color: #dddddd;
+      }
 
-     ::selection {
+      ::selection {
         background: #444444;
-        color: #DDDDDD;
-    }
+        color: #dddddd;
+      }
 
-    a.brand {
+      a.brand {
         background-image: url(assets/img/logo.png);
-    }
+      }
 
-    a,
-    a:hover,
-    a:active {
-        color: #0000FF;
-    }
+      a,
+      a:hover,
+      a:active {
+        color: #0000ff;
+      }
 
-    hr {
-        border-top: 1px solid #EBEBEB;
-        border-bottom: 1px solid #FFFFFF;
-    }
+      hr {
+        border-top: 1px solid #ebebeb;
+        border-bottom: 1px solid #ffffff;
+      }
 
-    div.navbar-inner,
-    .navbar .nav li ul {
-        background: #DDDDDD;
+      div.navbar-inner,
+      .navbar .nav li ul {
+        background: #dddddd;
         color: #222222;
-    }
+      }
 
-    a.btn-navbar {
-        background: #DDDDDD;
+      a.btn-navbar {
+        background: #dddddd;
         color: #222222;
-    }
+      }
 
-    .navbar .nav li a {
+      .navbar .nav li a {
         color: #222222;
-        text-shadow: 1px 1px 0px #EEEEEE;
-    }
+        text-shadow: 1px 1px 0px #eeeeee;
+      }
 
-    .navbar .nav li a:hover,
-    .navbar .nav li.active a {
+      .navbar .nav li a:hover,
+      .navbar .nav li.active a {
         text-shadow: none;
-    }
+      }
 
-    div.navbar-inner ul {}
+      div.navbar-inner ul {
+      }
 
-    .navbar .nav>li a {
+      .navbar .nav > li a {
         color: #444444;
-    }
+      }
 
-    .navbar .nav>li a:hover,
-    a.btn-navbar:hover {
+      .navbar .nav > li a:hover,
+      a.btn-navbar:hover {
         background: #444444;
-        color: #DDDDDD;
-    }
+        color: #dddddd;
+      }
 
-    .navbar .nav .active>a,
-    .navbar .nav .active>a:hover,
-    a.btn-navbar:active {
+      .navbar .nav .active > a,
+      .navbar .nav .active > a:hover,
+      a.btn-navbar:active {
         background-color: #444444;
-        color: #DDDDDD;
-    }
+        color: #dddddd;
+      }
 
-    .navbar .nav li ul li a:hover {
+      .navbar .nav li ul li a:hover {
         background: #444444;
-        color: #DDDDDD;
-    }
+        color: #dddddd;
+      }
 
-    .navbar .nav li ul li a:active {
+      .navbar .nav li ul li a:active {
         background: #444444;
-        color: #DDDDDD;
-    }
+        color: #dddddd;
+      }
 
-    .btn-primary {
-        background-image: -moz-linear-gradient(top, #0088CC, #0044CC);
-        background-image: -ms-linear-gradient(top, #0088CC, #0044CC);
-        background-image: -webkit-gradient(linear, 0 0, 0 0088%, from(#DDDDDD), to(#0044CC));
-        background-image: -webkit-linear-gradient(top, #0088CC, #0044CC);
-        background-image: -o-linear-gradient(top, #0088CC, #0044CC);
-        background-image: linear-gradient(top, #0088CC, #0044CC);
+      .btn-primary {
+        background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+        background-image: -ms-linear-gradient(top, #0088cc, #0044cc);
+        background-image: -webkit-gradient(
+          linear,
+          0 0,
+          0 0088%,
+          from(#dddddd),
+          to(#0044cc)
+        );
+        background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+        background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+        background-image: linear-gradient(top, #0088cc, #0044cc);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088CC', endColorstr='#0044CC', GradientType=0);
-        border-color: #0044CC #0044CC #bfbfbf;
-        color: #FFFFFF;
-    }
+        border-color: #0044cc #0044cc #bfbfbf;
+        color: #ffffff;
+      }
 
-    .btn-primary:hover,
-    .btn-primary:active,
-    .btn-primary.active,
-    .btn-primary.disabled,
-    .btn-primary[disabled] {
-        background-color: #0044CC;
-    }
+      .btn-primary:hover,
+      .btn-primary:active,
+      .btn-primary.active,
+      .btn-primary.disabled,
+      .btn-primary[disabled] {
+        background-color: #0044cc;
+      }
 
-    #documenter_copyright {
+      #documenter_copyright {
         display: block !important;
         visibility: visible !important;
-    }
+      }
 
-    #theme_options2 img {
+      #theme_options2 img {
         border: 1px solid #eee;
         margin: 10px 0;
         max-width: 100%;
         padding: 10px;
-    }
+      }
 
-
-
-    li {
+      li {
         line-height: 30px;
-    }
+      }
 
-
-
-    .card {
+      .card {
         box-shadow: 0 0px 4px rgba(0, 0, 0, 0.24);
         margin-bottom: 1.875rem;
         border-radius: 0;
         padding: 26px;
-    }
+      }
 
-    .card-header {
+      .card-header {
         padding: 0px 0px 19px 2px;
         font-size: 22px;
         font-weight: bold;
         border-bottom: #80808073 1px solid;
         margin-bottom: 15px;
-    }
+      }
 
-
-
-    .filetree {
+      .filetree {
         background: #fafafa;
         border: 4px solid #dbdbdb;
         border-radius: 4px;
         margin: 0 0 24px;
         padding: 16px 32px;
-    }
+      }
 
-    .filetree .file {
+      .filetree .file {
         display: block;
-        font-family: Roboto, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-        letter-spacing: .3px;
+        font-family: Roboto, "Helvetica Neue Light", "Helvetica Neue", Helvetica,
+          Arial, "Lucida Grande", sans-serif;
+        letter-spacing: 0.3px;
         line-height: 32px;
         color: #333;
-    }
+      }
 
-    .filetree .children {
+      .filetree .children {
         padding-left: 24px;
         position: relative;
         overflow: hidden;
-    }
+      }
 
-    .filetree .children .file {
+      .filetree .children .file {
         position: relative;
-    }
+      }
 
-    .filetree .children .file:before {
-        content: '';
+      .filetree .children .file:before {
+        content: "";
         left: -18px;
         bottom: 16px;
         width: 16px;
@@ -213,137 +223,223 @@
         border-style: solid;
         border-color: #dbdbdb;
         border-radius: 0 0 0 3px;
-    }
+      }
 
-    @media print {
+      @media print {
         * {
-            box-shadow: none!important;
+          box-shadow: none !important;
         }
         .filetree {
-            max-width: 100%;
+          max-width: 100%;
         }
-    }
+      }
     </style>
-</head>
+  </head>
 
-<body class="documenter-project-Reale Aste-" data-spy="scroll" id="top">
+  <body class="documenter-project-Reale Aste-" data-spy="scroll" id="top">
     <!-- Documentation Navbar -->
     <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="#">Stooon - Fashion eCommerce React Template</a>
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li><a href="#overview" title="Overview">Overview</a></li>
-                        <li><a href="#stared" title="Getting Started">Getting Started</a></li>
-                        <li><a href="#htmlstructure" title="HTML Structure">Structure</a></li>
-                    </ul>
-                </div>
-            </div>
+      <div class="navbar-inner">
+        <div class="container">
+          <a
+            class="btn btn-navbar"
+            data-toggle="collapse"
+            data-target=".nav-collapse"
+          >
+            <span class="icon-bar"></span> <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#"
+            >Stooon - Fashion eCommerce React Template</a
+          >
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="#overview" title="Overview">Overview</a></li>
+              <li>
+                <a href="#stared" title="Getting Started">Getting Started</a>
+              </li>
+              <li>
+                <a href="#htmlstructure" title="HTML Structure">Structure</a>
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
     </div>
     <!-- End of Navbar -->
     <!-- Main Container Beginning -->
     <div class="container documenter_content" id="overview">
-        <div id="documenter-cover">
-            <div class="masthead">
-                <h1 style="text-align: center">Stooon - Fashion eCommerce React Template</h1>
-                <p style="text-align: center">created: 14/06/2020</p>
-                <p class="download-info"> <a href="support@condingeek.net" class="btn btn-large">24/7 Support: Send Us a message by mail support@condingeek.net</a> </p>
-            </div>
-            <!-- masthead -->
-            <div id="intro">
-                <p class="highlight hero-unit">Stooon is a dedicated eCommerce site canvas with a shopping collection and 5 Different Home pages. Of course, Stooon suits fashion and accessories stores just as well. With its multi-purpose approach, you can expect Stooon to quickly and easily cater to your needs. There is a good chance you will not even want to make any edits and customization tweaks, rather use Stooon out of the box. You can brand and personalize Stooon to your wants speedily.</p>
-                <p class="highlight hero-unit">Thank you for purchasing our react template. If you have any questions that are beyond the scope of this help file, please feel free to Drop Message at <a href="https://themeforest.net/user/codingeek" target="_blank">Profile Page</a></p>
-            </div>
-            <!-- intro -->
+      <div id="documenter-cover">
+        <div class="masthead">
+          <h1 style="text-align: center">
+            Stooon - Fashion eCommerce React Template
+          </h1>
+          <p style="text-align: center">created: 14/06/2020</p>
+          <p class="download-info">
+            <a href="support@condingeek.net" class="btn btn-large"
+              >24/7 Support: Send Us a message by mail support@condingeek.net</a
+            >
+          </p>
         </div>
-        <section id="stared">
-            <div class="page-header">
-                <h3>Getting Started</h3>
-                <hr class="notop">
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    Installation
-                </div>
-                <div class="card-body">
-                    <ul>
-                        <li><b>Node.js and NPM :</b> You can download Node.js from https://nodejs.org. NPM comes bundled with Node.js.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    Install Npm Packages
-                </div>
-                <div class="card-body">
-                    <ul>
-                        <li><b>NPM :</b> You must have to <code>npm install</code> packages. You can do this by running npm install from the root of your project to install all the necessary dependencies.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    Development server
-                </div>
-                <div class="card-body">
-                    <ul>
-                        <li>Run <code> npm start </code> for a dev server. Navigate to http://localhost:3000/ . The app will automatically reload if you change any of the source files.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    Build
-                </div>
-                <div class="card-body">
-                    <ul>
-                        <li>Run <code>npm run build</code> to build the project. The build artifacts will be stored in the build/ directory. Use the <code> npm run build --prod </code> flag for a production build.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        <!-- masthead -->
+        <div id="intro">
+          <p class="highlight hero-unit">
+            Stooon is a dedicated eCommerce site canvas with a shopping
+            collection and 5 Different Home pages. Of course, Stooon suits
+            fashion and accessories stores just as well. With its multi-purpose
+            approach, you can expect Stooon to quickly and easily cater to your
+            needs. There is a good chance you will not even want to make any
+            edits and customization tweaks, rather use Stooon out of the box.
+            You can brand and personalize Stooon to your wants speedily.
+          </p>
+          <p class="highlight hero-unit">
+            Thank you for purchasing our react template. If you have any
+            questions that are beyond the scope of this help file, please feel
+            free to Drop Message at
+            <a href="https://themeforest.net/user/codingeek" target="_blank"
+              >Profile Page</a
+            >
+          </p>
+        </div>
+        <!-- intro -->
+      </div>
+      <section id="stared">
+        <div class="page-header">
+          <h3>Getting Started</h3>
+          <hr class="notop" />
+        </div>
+        <div class="card">
+          <div class="card-header">Installation</div>
+          <div class="card-body">
+            <ul>
+              <li>
+                <b>Node.js and NPM :</b> You can download Node.js from
+                https://nodejs.org. NPM comes bundled with Node.js.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">Install Npm Packages</div>
+          <div class="card-body">
+            <ul>
+              <li>
+                <b>NPM :</b> You must have to <code>npm install</code> packages.
+                You can do this by running npm install from the root of your
+                project to install all the necessary dependencies.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">Development server</div>
+          <div class="card-body">
+            <ul>
+              <li>
+                Run <code> npm start </code> for a dev server. Navigate to
+                http://localhost:3000/ . The app will automatically reload if
+                you change any of the source files.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">Build</div>
+          <div class="card-body">
+            <ul>
+              <li>
+                Run <code>npm run build</code> to build the project. The build
+                artifacts will be stored in the build/ directory. Use the
+                <code> npm run build --prod </code> flag for a production build.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-        <section id="htmlstructure">
-            <div class="page-header">
-                <h3>Structure and Customization</h3>
-                <hr class="notop">
-            </div>
-            <h3>Packge json File</h3>
-            <img src="assets/img/package-js.png" alt="">
-            <h3>Index js ( Basename and Route )</h3>
-            <img src="assets/img/index-js.png" alt="">
-            <h3>Header and  Menu</h3>
-            <img src="assets/img/header.png" alt="">
-            <h3>Footer</h3>
-            <img src="assets/img/footer.png" alt="">
-            <h3>Section Components</h3>
-            <img src="assets/img/home-components.png" alt="">
-            <h3>Blog Components</h3>
-            <img src="assets/img/blog-components.png" alt="">
-        </section>
-        <section id="thanks">
-            <div class="page-header">
-                <h3>Thanks</h3>
-                <hr class="notop">
-            </div>
-            <h4 id="thanks_span_style"><span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">Once again thank you for purchasing one of our Templates , if you like our Templates please rate us</span></h4>
-            <h2 style="margin: 0px 0px 18px; padding: 0px; border: 0px; outline: 0px; font-weight: 100; font-size: 20px;  font-family: 'Poppins', sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);"> Best Regards</h2>
-            <h3 style="margin: 18px 0px 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 100; font-size: 26px;  font-family: 'Poppins', sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);"> Codingeek</h3>
-        </section>
-        <hr />
-        <footer>
-            <p>Copyright Codingeek 2020 </p>
-        </footer>
+      <section id="htmlstructure">
+        <div class="page-header">
+          <h3>Structure and Customization</h3>
+          <hr class="notop" />
+        </div>
+        <h3>Packge json File</h3>
+        <img src="assets/img/package-js.png" alt="" />
+        <h3>Index js ( Basename and Route )</h3>
+        <img src="assets/img/index-js.png" alt="" />
+        <h3>Header and Menu</h3>
+        <img src="assets/img/header.png" alt="" />
+        <h3>Footer</h3>
+        <img src="assets/img/footer.png" alt="" />
+        <h3>Section Components</h3>
+        <img src="assets/img/home-components.png" alt="" />
+        <h3>Blog Components</h3>
+        <img src="assets/img/blog-components.png" alt="" />
+      </section>
+      <section id="thanks">
+        <div class="page-header">
+          <h3>Thanks</h3>
+          <hr class="notop" />
+        </div>
+        <h4 id="thanks_span_style">
+          <span
+            style="
+              margin: 0px;
+              padding: 0px;
+              border: 0px;
+              outline: 0px;
+              font-weight: 700;
+              font-style: inherit;
+              font-family: inherit;
+              vertical-align: baseline;
+            "
+            >Once again thank you for purchasing one of our Templates , if you
+            like our Templates please rate us</span
+          >
+        </h4>
+        <h2
+          style="
+            margin: 0px 0px 18px;
+            padding: 0px;
+            border: 0px;
+            outline: 0px;
+            font-weight: 100;
+            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+            vertical-align: baseline;
+            color: rgb(56, 56, 56);
+          "
+        >
+          Best Regards
+        </h2>
+        <h3
+          style="
+            margin: 18px 0px 0px;
+            padding: 0px;
+            border: 0px;
+            outline: 0px;
+            font-weight: 100;
+            font-size: 26px;
+            font-family: 'Poppins', sans-serif;
+            vertical-align: baseline;
+            color: rgb(56, 56, 56);
+          "
+        >
+          Codingeek
+        </h3>
+      </section>
+      <hr />
+      <footer>
+        <p>Copyright Codingeek 2020</p>
+      </footer>
     </div>
     <!-- /container -->
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script>
-    document.createElement('section');
-    var duration = '500',
-        easing = 'swing';
+      document.createElement("section");
+      var duration = "500",
+        easing = "swing";
     </script>
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/jquery.scrollTo.js"></script>
@@ -351,6 +447,5 @@
     <script src="assets/js/scripts.js"></script>
     <script src="assets/js/google-code-prettify/prettify.js"></script>
     <script src="assets/js/bootstrap-min.js"></script>
-</body>
-
+  </body>
 </html>

@@ -62,4 +62,5 @@ C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$left\".\A         on line 55 of A:\New folder\molla_landing\assets\sass\plugins\jquery.countdown.scss\A \A 50: }\A 51: \A 52: .countdown-section {\A 53: 	position: relative;\A 54: 	display: block;\A 55: 	float: $left;\A 56: 	font-size: 75%;\A 57: 	text-align: center;\A 58: 	margin-left: 10px;\A 59: 	margin-right: 10px;\A 60: }"; }
+  content: 'Error: Undefined variable: "$left".\A         on line 55 of A:\New folder\molla_landing\assets\sass\plugins\jquery.countdown.scss\A \A 50: }\A 51: \A 52: .countdown-section {\A 53: 	position: relative;\A 54: 	display: block;\A 55: 	float: $left;\A 56: 	font-size: 75%;\A 57: 	text-align: center;\A 58: 	margin-left: 10px;\A 59: 	margin-right: 10px;\A 60: }';
+}

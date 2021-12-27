@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import classes from '../admin/styles/sidebar.module.scss';
+import classes from "../admin/styles/sidebar.module.scss";
 
 function Sidebar() {
   return (
@@ -12,9 +12,7 @@ function Sidebar() {
           </Link>
         </li>
         <li>
-          <Link to={`${process.env.PUBLIC_URL}/admin/products`}>
-            Products
-          </Link>
+          <Link to={`${process.env.PUBLIC_URL}/admin/products`}>Products</Link>
         </li>
         <li>
           <Link
@@ -25,7 +23,7 @@ function Sidebar() {
           </Link>
         </li>
         <li>
-          <Link to={`${process.env.PUBLIC_URL}/admin/users`}>Users</Link>  
+          <Link to={`${process.env.PUBLIC_URL}/admin/users`}>Users</Link>
         </li>
       </ul>
     </nav>

@@ -1,18 +1,19 @@
 .templates {
-    &-wrapper{
-        margin: 30px;
+  &-wrapper {
+    margin: 30px;
+  }
+  &-table {
+    width: 100%;
+    max-width: 70vw;
+    text-align: center;
+    border: 1px solid #eee;
+    & th,
+    & td {
+      border: 1px solid #eee;
+      padding: 8px 1rem;
     }
-    &-table {
-        width: 100%;
-        max-width: 70vw;
-        text-align: center;
-        border: 1px solid #eee;
-        & th, & td {
-            border: 1px solid #eee;
-            padding: 8px 1rem;
-        };
-        &-actions button{
-            margin: 0 auto;
-        }
+    &-actions button {
+      margin: 0 auto;
     }
+  }
 }
