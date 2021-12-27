@@ -5,52 +5,7 @@ const APIFeatures = require('../utils/apiFeatures');
 const cloudinary = require('cloudinary');
 const { getPublicId, getOldImagesFromProduct } = require('../utils/helpers');
 
-// Create new product   =>   /api/v1/admin/product/new
-exports.newProductOld = catchAsyncErrors(async (req, res, next) => {
-	let images = [];
-	if (typeof req.body.images === 'string') {
-		images.push(req.body.images);
-	} else {
-		images = req.body.images;
-	}
-
-	let imagesLinks = [];
-
-	for (let i = 0; i < images.length; i++) {
-		const result = await cloudinary.v2.uploader.upload(images[i], {
-			folder: 'products',
-		});
-
-		imagesLinks.push({
-			public_id: result.public_id,
-			url: result.secure_url,
-		});
-	}
-
-	req.body.images = imagesLinks;
-	req.body.user = req.user.id;
-
-	const product = await Product.create(req.body);
-
-	res.status(201).json({
-		success: true,
-		product,
-	});
-});
-
 exports.newProduct = catchAsyncErrors(async (req, res, next) => {
-	req.user = {
-		avatar: {
-			public_id: 'avatars/wqogidodejlqlkqizpjj',
-			url: 'https://res.cloudinary.com/imagination-everywhere-inc/image/upload/v1638956971/avatars/wqogidodejlqlkqizpjj.jpg',
-		},
-		role: 'admin',
-		_id: '61b07fab20ead018cf8e90d0',
-		name: 'kelvin esegbona',
-		email: 'kevoesegbona@gmail.com',
-		createdAt: ' 2021-12-08T09:49:31.390Z',
-		__v: 0,
-	};
 	// default State of Small and large Pictures
 	req.body.pictures = [];
 	req.body.smPictures = [];
@@ -128,18 +83,6 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
 	if (!oldProduct) {
 		return next(new ErrorHandler('Product not found', 404));
 	}
-	req.user = {
-		avatar: {
-			public_id: 'avatars/wqogidodejlqlkqizpjj',
-			url: 'https://res.cloudinary.com/imagination-everywhere-inc/image/upload/v1638956971/avatars/wqogidodejlqlkqizpjj.jpg',
-		},
-		role: 'admin',
-		_id: '61b07fab20ead018cf8e90d0',
-		name: 'kelvin esegbona',
-		email: 'kevoesegbona@gmail.com',
-		createdAt: ' 2021-12-08T09:49:31.390Z',
-		__v: 0,
-	};
 
 	req.body.pictures = [];
 	req.body.smPictures = [];
@@ -283,57 +226,6 @@ exports.getSingleProduct = catchAsyncErrors(async (req, res, next) => {
 	});
 });
 
-// Update Product   =>   /api/v1/admin/product/:id
-exports.updateProductOld = catchAsyncErrors(async (req, res, next) => {
-	let product = await Product.findById(req.params.id);
-
-	if (!product) {
-		return next(new ErrorHandler('Product not found', 404));
-	}
-
-	let images = [];
-	if (typeof req.body.images === 'string') {
-		images.push(req.body.images);
-	} else {
-		images = req.body.images;
-	}
-
-	if (images !== undefined) {
-		// Deleting images associated with the product
-		for (let i = 0; i < product.images.length; i++) {
-			const result = await cloudinary.v2.uploader.destroy(
-				product.images[i].public_id
-			);
-		}
-
-		let imagesLinks = [];
-
-		for (let i = 0; i < images.length; i++) {
-			const result = await cloudinary.v2.uploader.upload(images[i], {
-				folder: 'products',
-			});
-
-			imagesLinks.push({
-				public_id: result.public_id,
-				url: result.secure_url,
-			});
-		}
-
-		req.body.images = imagesLinks;
-	}
-
-	product = await Product.findByIdAndUpdate(req.params.id, req.body, {
-		new: true,
-		runValidators: true,
-		useFindAndModify: false,
-	});
-
-	res.status(200).json({
-		success: true,
-		product,
-	});
-});
-
 // Delete Product   =>   /api/v1/admin/product/:id
 exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
 	const product = await Product.findById(req.params.id);
@@ -341,14 +233,17 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
 	if (!product) {
 		return next(new ErrorHandler('Product not found', 404));
 	}
-
+	product.smPictures = product.smPictures || [];
+	product.pictures = product.pictures || [];
+  const allImages = product.smPictures.concat(product.pictures);
+	console.log(allImages);
 	// Deleting images associated with the product
-	for (let i = 0; i < product.images.length; i++) {
-		const result = await cloudinary.v2.uploader.destroy(
-			product.images[i].public_id
+	for (let i = 0; i < allImages.length; i++) {
+		const publicId = getPublicId(allImages[i]);
+		publicId && await cloudinary.v2.uploader.destroy(
+			publicId
 		);
 	}
-
 	await product.remove();
 
 	res.status(200).json({

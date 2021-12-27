@@ -4,11 +4,13 @@ import { useState } from 'react';
 import PlusIconNew from '../../../ProductCreate/SVGs/PlusIconNew';
 // import { useToastFuncs } from '../../context/ToastContexts';
 import Trash from '../../../ProductCreate/SVGs/Trash';
+import { useEffect } from 'react';
 
 const ImageHandler = ({ image, setImage, name, primary }) => {
   const [localImageUrl, setLocalImageUrl] = useState(null);
   const [dragging, setDragging] = useState(false);
   // const Toast = useToastFuncs();
+
 
   const loadFilePath = async (file) => {
     const readPath = new FileReader();
@@ -83,8 +85,8 @@ const ImageHandler = ({ image, setImage, name, primary }) => {
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
         >
-          {localImageUrl || image ? (
-            <img src={localImageUrl || image} alt='uploaded image' />
+          {image ? (
+            <img src={localImageUrl || image} alt='product pic' />
           ) : (
             <div className='drag-here flexed-column-center'>
               {primary && <span>Primary image</span>}
@@ -106,7 +108,7 @@ const ImageHandler = ({ image, setImage, name, primary }) => {
           data-max-size='2000'
         />
       </>
-      {(localImageUrl || image) && (
+      {(image) && (
         <div
           onClick={() => {
             setImage(name, null);

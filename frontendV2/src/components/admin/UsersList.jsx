@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import { Helmet } from "react-helmet";
 import classes from "./styles/product-list.module.scss";

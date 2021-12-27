@@ -6,6 +6,7 @@ const NewProductNav = ({
   resetForm,
   submitLoading,
   updateType,
+  deleteProduct
 }) => {
   return (
     <header className='flexed-row flexed-space-between'>
@@ -19,6 +20,17 @@ const NewProductNav = ({
             disabled={submitLoading}
           />
         )}
+        {updateType && (
+          <DashboardButton
+            name='Delete Product'
+            classes='marg-2'
+            onClick={() => deleteProduct()}
+            disabled={submitLoading}
+            type='button'
+            loading={submitLoading}
+            loadingColor='#c66'
+          />
+        )}
         <DashboardButton
           name={updateType ? 'Update Product' : 'Save Product'}
           disabled={
@@ -28,6 +40,7 @@ const NewProductNav = ({
           type='submit'
           loading={submitLoading}
           colored
+          loadingColor='#fff'
         />
       </div>
     </header>

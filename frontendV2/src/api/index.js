@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-// axios.defaults.withCredentials = true
 
 axios.interceptors.response.use(null, (error) => {
   // clear token for 401 error
@@ -112,4 +111,10 @@ export const updateProducts = async ({ id, body }) => {
     contentType: 'multipart/form-data',
     headers: myHeaders(),
   });
-};
+}
+
+export const deleteProducts = async ({id}) => {
+  return axiosInstance.delete(`admin/product/${id}`, {}, {
+    headers: myHeaders(),
+  });
+}
