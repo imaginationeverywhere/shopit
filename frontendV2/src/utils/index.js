@@ -548,6 +548,11 @@ export const findIndex = function(array, cb) {
 };
 
 /**
+ * Creates an array of parcel
+ */
+export const makeParcelArray = (length, parcel) =>
+  Array.from(Array(length), (_) => parcel);
+/**
  * utils to set countto in about-2
  */
 export const countTo = function() {

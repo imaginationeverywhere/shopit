@@ -4,7 +4,7 @@ export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
 // Refresh Store
 export const REFRESH_STORE = 'REFRESH_STORE';
 
-//Quick     
+//Quick
 export const SHOW_QUICKVIEW = 'SHOW_QUICKVIEW';
 export const CLOSE_QUICKVIEW = 'CLOSE_QUICKVIEW';
 
@@ -13,6 +13,7 @@ export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const CHANGE_QTY = 'CHANGE_QTY';
 export const CHANGE_SHIPPING = 'CHANGE_SHIPPING';
+export const SAVE_SHIPPING_INFO = 'SAVE_SHIPPING_INFO';
 
 // WishList
 export const TOGGLE_WISHLIST = 'TOGGLE_WISHLIST';

@@ -18,26 +18,26 @@ import AppRoute from './routes';
 import { initFunctions } from './utils';
 
 import LoadingOverlay from './components/features/loading-overlay';
-
+import './App.css';
 export function Root() {
-    initFunctions();
-    store.dispatch( getAllProducts() );
+  initFunctions();
+  store.dispatch(getAllProducts());
 
-    useEffect( () => {
-        if ( store.getState().modal.current !== 7 ) {
-            store.dispatch( refreshStore( 7 ) );
-        }
-    }, [] )
+  useEffect(() => {
+    if (store.getState().modal.current !== 7) {
+      store.dispatch(refreshStore(7));
+    }
+  }, []);
 
-    return (
-        <Provider store={ store } >
-            <PersistGate persistor={ persistor } loading={ <LoadingOverlay /> }>
-                <BrowserRouter basename={ '/' } >
-                    <AppRoute />
-                </BrowserRouter>
-            </PersistGate>
-        </Provider>
-    );
+  return (
+    <Provider store={store}>
+      <PersistGate persistor={persistor} loading={<LoadingOverlay />}>
+        <BrowserRouter basename={'/'}>
+          <AppRoute />
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
+  );
 }
 
-ReactDOM.render( <Root />, document.getElementById( 'root' ) );
+ReactDOM.render(<Root />, document.getElementById('root'));

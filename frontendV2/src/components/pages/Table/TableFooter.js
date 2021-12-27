@@ -17,7 +17,7 @@ const TableFooter = ({
       {paginated && (
         <div>
           <button
-            className='btn btn-small btn-outline-info page-change'
+            className='btn btn-small theme-color page-change'
             disabled={paginatedPage <= 1}
             onClick={() =>
               handlePageChange({
@@ -36,7 +36,7 @@ const TableFooter = ({
           />
           <span>/{lastPage}</span>
           <button
-            className='btn btn-small btn-outline-info page-change'
+            className='btn btn-small theme-color page-change'
             disabled={paginatedPage === lastPage}
             onClick={() =>
               handlePageChange({
