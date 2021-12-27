@@ -19,12 +19,12 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
   req.body.imagesLinks = [];
   req.body.user = req.user.id;
   const parcel = {
-    distance: req.body.distance,
+    distance_unit: req.body.distance_unit,
     weight: req.body.weight,
     width: req.body.width,
     height: req.body.height,
     length: req.body.length,
-    mass: req.body.mass,
+    mass_unit: req.body.mass_unit,
   };
   req.body.parcel = parcel;
 
@@ -190,9 +190,14 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
   //   console.log({ products });
   //   console.log('====================================');
   products = products.map(
-    ({ _id, _doc: { numOfReviews, user, createdAt, ...rest } }, index) => {
+    ({ _id, _doc: { numOfReviews, user, createdAt, parcel = {}, ...rest } }, index) => {
       return {
         id: _id,
+        parcel: {
+          ...parcel,
+          distance_unit: parcel.distance_unit || 'in',
+          mass_unit: parcel.mass_unit || 'lb',
+        },
         ...rest,
       };
     },

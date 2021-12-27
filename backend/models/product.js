@@ -96,8 +96,8 @@ const productSchema = new mongoose.Schema({
     },
   ],
   parcel: {
-    distance: {
-      type: Number,
+    distance_unit: {
+      type: String,
       required: true,
     },
     height: {
@@ -112,8 +112,8 @@ const productSchema = new mongoose.Schema({
       type: Number,
       required: true,
     },
-    mass: {
-      type: Number,
+    mass_unit: {
+      type: String,
       required: true,
     },
     weight: {

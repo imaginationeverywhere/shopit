@@ -1,13 +1,5 @@
 import jwt_decode from "jwt-decode";
 
-export const getValue = (options, checkValue) => {
-  if (!options || !checkValue) {
-    return [];
-  }
-  const obj = options.filter((option) => option.value === checkValue);
-  return obj;
-};
-
 export const getSelectValues = (arr = []) =>
   arr.map(({ value }) => value).join(", ");
 
@@ -91,6 +83,52 @@ export const categories = [
     value: "clothing",
   },
 ];
+
+export const massList = [
+{
+  label: 'g',
+  value: 'g'
+}, 
+{
+  label: 'oz',
+  value: 'oz'
+}, 
+{
+  label: 'lb',
+  value: 'lb'
+}, 
+{
+  label: 'kg',
+  value: 'kg'
+}, 
+];
+
+export const distanceList = [
+  {
+    label: 'cm',
+    value: 'cm'
+  }, 
+  {
+    label: 'in',
+    value: 'in'
+  }, 
+  {
+    label: 'ft',
+    value: 'ft'
+  }, 
+  {
+    label: 'mm',
+    value: 'mm'
+  }, 
+  {
+    label: 'm',
+    value: 'm'
+  }, 
+  {
+    label: 'yd',
+    value: 'yd'
+  }, 
+  ];
 
 export const brands = [
   {
@@ -179,5 +217,13 @@ export const getUpdateProductImages = (product) => {
   smPictures.forEach((picture, index) => {
     obj[`smPicture${index + 1}`] = picture;
   });
+  return obj;
+};
+
+export const getValue = (options, checkValue) => {
+  if (!options || !checkValue) {
+    return null;
+  }
+  const obj = options.filter((option) => option.value === checkValue);
   return obj;
 };

@@ -5,7 +5,8 @@ import DashboardSelect from "../common/components/DashboardSelect";
 import DashboardTextArea from "../common/components/DashboardTextArea";
 
 import PriceInput from "../common/components/PriceInput";
-import { brands, categories, sizes } from "../utils/helpers";
+import { brands, categories, massList, sizes, distanceList } from "../utils/helpers";
+import Select from "../common/components/Select";
 
 const ProductForm = ({
   formValues,
@@ -34,15 +35,16 @@ const ProductForm = ({
                 required
                 disabled={addProductLoading}
               />
-              <DashboardInput
-                labelName="Stock"
-                name="stock"
-                value={formValues.stock}
-                onChange={handleChange}
-                type="number"
-                required
-                disabled={addProductLoading}
-              />
+            <Select
+              onChange={handleChange}
+              label="Mass Unit"
+              placeholder=" "
+              name="mass_unit"
+              value={formValues.mass_unit}
+              options={massList}
+              required
+              disabled={addProductLoading}
+            />
             </div>
             <DashboardSelect
               onChange={handleChange}
@@ -69,13 +71,13 @@ const ProductForm = ({
             />
             <div className="weight-info">
               <DashboardInput
-                type="number"
-                labelName="Distance (in)"
-                name="distance"
-                value={formValues.distance}
-                disabled={addProductLoading}
+                labelName="Stock"
+                name="stock"
+                value={formValues.stock}
                 onChange={handleChange}
+                type="number"
                 required
+                disabled={addProductLoading}
               />
               <DashboardSelect
                 onChange={handleChange}
@@ -89,13 +91,6 @@ const ProductForm = ({
                 disabled={addProductLoading}
               />
             </div>
-            <DashboardTextArea
-              labelName="Description"
-              name="shortDesc"
-              value={formValues.shortDesc}
-              onChange={handleChange}
-              required
-            />
             <div className="weight-info mt-1">
               <div className="weight-info">
                 <DashboardInput
@@ -127,17 +122,25 @@ const ProductForm = ({
                   onChange={handleChange}
                   required
                 />
-                <DashboardInput
-                  labelName="Mass (lb)"
-                  type="number"
-                  name="mass"
-                  value={formValues.mass}
-                  disabled={addProductLoading}
-                  onChange={handleChange}
-                  required
-                />
+              <Select
+                onChange={handleChange}
+                label="Distance Unit"
+                placeholder=" "
+                name="distance_unit"
+                value={formValues.distance_unit}
+                options={distanceList}
+                required
+                disabled={addProductLoading}
+              />
               </div>
             </div>
+            <DashboardTextArea
+              labelName="Description"
+              name="shortDesc"
+              value={formValues.shortDesc}
+              onChange={handleChange}
+              required
+            />
           </div>
         </div>
         <div className="price-form">
@@ -148,7 +151,6 @@ const ProductForm = ({
             onChange={handleChange}
             placeholder="0.00"
             required
-            // hintMessage='Product actual price'
           />
 
           <ColorVariantComp
