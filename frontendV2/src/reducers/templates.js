@@ -2,7 +2,7 @@ import {
   GET_TEMPLATES_REQUEST,
   GET_TEMPLATES_SUCCESS,
   PREVIEW_TEMPLATE,
-  SET_TEMPLATE
+  SET_TEMPLATE,
 } from "../constants/action-types";
 import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
@@ -11,13 +11,13 @@ import { getTemplates } from "../actions/templateAction";
 const initialState = {
   loading: false,
   templates: [],
-  id: null
+  id: null,
 };
 
 const templatesReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_TEMPLATES_REQUEST:
-      getTemplates()
+      getTemplates();
       return {
         ...state,
         loading: true,
@@ -26,13 +26,13 @@ const templatesReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        templates: action.templates
+        templates: action.templates,
       };
     case SET_TEMPLATE || PREVIEW_TEMPLATE:
       return {
         ...state,
-        id: action.id
-      }
+        id: action.id,
+      };
     default:
       return state;
   }

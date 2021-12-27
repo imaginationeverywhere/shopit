@@ -238,18 +238,18 @@ export const receiveTemplates = (templates) => ({
   templates,
 });
 
-export const getAllTemplates =  () =>  (dispatch) => {
+export const getAllTemplates = () => (dispatch) => {
   api.getTemplates().then((data) => {
-    dispatch({ 
-      type: types.GET_TEMPLATES_SUCCESS, 
-      templates: data.templates
-    })
-  })
+    dispatch({
+      type: types.GET_TEMPLATES_SUCCESS,
+      templates: data.templates,
+    });
+  });
 };
 
 export const setTemplate = (templateId) => async (dispatch) => {
-  console.log("here")
-  await api.setTemplate(templateId).then((templates) => { 
+  console.log("here");
+  await api.setTemplate(templateId).then((templates) => {
     return templates;
   });
 };
@@ -258,7 +258,7 @@ export const previewTemplate = (templateId) => (dispatch) => {
   api.previewTemplate(templateId).then(() => {
     return templateId;
   });
-}
+};
 
 // Users
 
@@ -267,7 +267,7 @@ export const allUsers = () => async (dispatch) => {
   try {
     dispatch({ type: types.ALL_USERS_REQUEST });
 
-    const { data } = await axios.get('/api/v1/admin/users');
+    const { data } = await axios.get("/api/v1/admin/users");
 
     dispatch({
       type: types.ALL_USERS_SUCCESS,

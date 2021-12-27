@@ -39,9 +39,24 @@ function Dashboard() {
             link="admin/products"
             hasBottom={true}
           />
-          <Card title="Orders" amount="123" hasBottom={true} link="admin/products" />
-          <Card title="Templates" amount={templates.length} hasBottom={true} link="admin/templates"/>
-          <Card title="Out of Stock" amount={getOutOfStockCount()} hasBottom={false} link="admin/products" />
+          <Card
+            title="Orders"
+            amount="123"
+            hasBottom={true}
+            link="admin/products"
+          />
+          <Card
+            title="Templates"
+            amount={templates.length}
+            hasBottom={true}
+            link="admin/templates"
+          />
+          <Card
+            title="Out of Stock"
+            amount={getOutOfStockCount()}
+            hasBottom={false}
+            link="admin/products"
+          />
         </div>
       </div>
     </>

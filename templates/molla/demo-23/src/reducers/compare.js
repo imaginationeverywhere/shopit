@@ -1,50 +1,59 @@
-import { ADD_TO_COMPARE, REMOVE_FROM_COMPARE, RESET_COMPARE } from "../constants/action-types";
+import {
+  ADD_TO_COMPARE,
+  REMOVE_FROM_COMPARE,
+  RESET_COMPARE,
+} from "../constants/action-types";
 import { findIndex } from "../utils";
 
 import { persistReducer } from "redux-persist";
-import storage from 'redux-persist/lib/storage';
+import storage from "redux-persist/lib/storage";
 
-function compareReducer( state = {
-    items: []
-}, action ) {
-    switch ( action.type ) {
-        case ADD_TO_COMPARE:
-            const productId = action.product.id;
+function compareReducer(
+  state = {
+    items: [],
+  },
+  action
+) {
+  switch (action.type) {
+    case ADD_TO_COMPARE:
+      const productId = action.product.id;
 
-            if ( findIndex( state.items, product => product.id === productId ) !== -1 ) {
-                const items = state.items.reduce( ( cartAcc, product ) => {
-                    if ( product.id === productId ) {
-                        cartAcc.push( { ...product } )
-                    } else {
-                        cartAcc.push( product )
-                    }
+      if (
+        findIndex(state.items, (product) => product.id === productId) !== -1
+      ) {
+        const items = state.items.reduce((cartAcc, product) => {
+          if (product.id === productId) {
+            cartAcc.push({ ...product });
+          } else {
+            cartAcc.push(product);
+          }
 
-                    return cartAcc
-                }, [] )
+          return cartAcc;
+        }, []);
 
-                return { ...state, items }
-            }
+        return { ...state, items };
+      }
 
-            return { ...state, items: [ ...state.items, action.product ] }
+      return { ...state, items: [...state.items, action.product] };
 
-        case REMOVE_FROM_COMPARE:
-            return {
-                items: state.items.filter( id => id !== action.productId )
-            }
+    case REMOVE_FROM_COMPARE:
+      return {
+        items: state.items.filter((id) => id !== action.productId),
+      };
 
-        case RESET_COMPARE:
-            return {
-                items: []
-            }
-        default:
-    }
-    return state;
+    case RESET_COMPARE:
+      return {
+        items: [],
+      };
+    default:
+  }
+  return state;
 }
 
 const persistConfig = {
-    keyPrefix: "molla-",
-    key: "comparelist",
-    storage
-}
+  keyPrefix: "molla-",
+  key: "comparelist",
+  storage,
+};
 
-export default persistReducer( persistConfig, compareReducer );
+export default persistReducer(persistConfig, compareReducer);

@@ -1,4 +1,3 @@
-
 # shopit
 
 ## Complete E-commerce site built with Node.js, React, Redux, Express, MongoDB
@@ -33,7 +32,7 @@ npm run seeder
 
 1. [Amazon Web Services](https://aws.amazon.com/)
 2. [Cloudinary](https://cloudinary.com/)
-3. [mongodb Atlas]([https://mongodb](https://www.mongodb.com/cloud/atlas))
+3. [mongodb Atlas](<[https://mongodb](https://www.mongodb.com/cloud/atlas)>)
 4. [Stripe](https:stripe.com)
 5. [PayPal](https://paypal.com)
 6. [Github](https://github.com)

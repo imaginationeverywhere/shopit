@@ -19,8 +19,8 @@ $light-text: #999999 !default;
 $dark-text: #333333 !default;
 $headings-text: $dark-text !default;
 
-$font-family: 'Poppins', sans-serif !default;
-$second-font-family: 'Poppins', sans-serif !default;
+$font-family: "Poppins", sans-serif !default;
+$second-font-family: "Poppins", sans-serif !default;
 
 $social-facebook: #8f79ed;
 $social-twitter: #79c8ed;
@@ -36,20 +36,20 @@ $social-vk: #cb2320;
 $social-whatsapp: #0072b7;
 
 $breakpoints: (
-	xs: 480px,
-	sm: 576px,
-	md: 768px,
-	lg: 992px,
-	xl: 1200px,
-	xxl: 1600px,
-	xlst: 1920px
+  xs: 480px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1600px,
+  xlst: 1920px,
 );
 
 $max-breakpoints: (
-	xs: 479px,
-	sm: 575px,
-	md: 767px,
-	lg: 991px,
-	xl: 1199px,
-	xxl: 1599px
+  xs: 479px,
+  sm: 575px,
+  md: 767px,
+  lg: 991px,
+  xl: 1199px,
+  xxl: 1599px,
 );

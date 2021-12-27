@@ -1,41 +1,53 @@
 /* Type */
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
   font-weight: 500;
   line-height: 1.1;
   margin-bottom: 1.4rem;
   color: $headings-text;
-  letter-spacing: -.03em;
+  letter-spacing: -0.03em;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: 4rem;
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: 3.6rem;
 }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: 2.6rem;
 }
 
-h4, .h4 {
+h4,
+.h4 {
   font-size: 2.2rem;
 }
 
-h5, .h5 {
+h5,
+.h5 {
   font-size: 2rem;
-  letter-spacing: -.025em;
+  letter-spacing: -0.025em;
 }
 
-h6, .h6 {
+h6,
+.h6 {
   font-size: 1.6rem;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
 }
 
 a {
@@ -99,7 +111,7 @@ blockquote {
     font-style: normal;
     font-weight: 500;
     color: #333333;
-    letter-spacing: -.01em;
+    letter-spacing: -0.01em;
     line-height: 1;
 
     span {
@@ -119,23 +131,27 @@ blockquote {
   }
 }
 
-@include mq('md') {
-  h1, .h1 {
+@include mq("md") {
+  h1,
+  .h1 {
     font-size: 5rem;
   }
 
-  h2, .h2 {
+  h2,
+  .h2 {
     font-size: 4rem;
   }
 
-  h3, .h3 {
+  h3,
+  .h3 {
     font-size: 3rem;
   }
 
-  h4, .h4 {
+  h4,
+  .h4 {
     font-size: 2.4rem;
   }
 }
 
-@include mq('lg') {
+@include mq("lg") {
 }
