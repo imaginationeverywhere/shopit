@@ -11,7 +11,7 @@ class ProductTwo extends BaseProduct{
             product ?  
             <div className="product-big">
 
-                <img src={ product.backPictures ? process.env.PUBLIC_URL + '/' + product.backPictures[0] : process.env.PUBLIC_URL + '/' + product.pictures[0] } alt="product bg" width="452" height="390" />
+                <img src={ product.backPictures ?  product.backPictures[0] :  product.pictures[0] } alt="product bg" width="452" height="390" />
 
                 <div className="product-wrap">
                     <figure className="product-media">

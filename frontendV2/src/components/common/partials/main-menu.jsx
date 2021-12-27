@@ -1,9 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+
+const getRandomProductId = ( product = [] ) => {
+    let min = Math.ceil( 0 );
+    let max = Math.floor( product.length - 1);
+    const rand = Math.floor( Math.random() * ( max - min ) ) + min;
+    return product[rand] ? product[rand].id : 1;
+};
 
 export default function MainMenu( props ) {
     const [ path, setPath ] = useState( "" );
     const PUBLIC_URL = "/react/molla";
+    const { products } = useSelector( state => state.data );
 
     useEffect( () => {
         setPath( window.location.href );
@@ -274,14 +283,14 @@ export default function MainMenu( props ) {
                                 <div className="menu-col">
                                     <div className="menu-title">Product Details</div>
                                     <ul>
-                                        <li className={ path.indexOf( "product/default" ) > -1 ? 'active' : '' }><Link to={ `${process.env.PUBLIC_URL}/product/default/7` }>Default</Link></li>
-                                        <li className={ path.indexOf( "product/centered" ) > -1 ? 'active' : '' }><Link to={ `${process.env.PUBLIC_URL}/product/centered/9` }>Centered</Link></li>
-                                        <li className={ path.indexOf( "product/extended" ) > -1 ? 'active' : '' }><Link to={ `${process.env.PUBLIC_URL}/product/extended/8` }><span>Extended Info<span className="tip tip-new">New</span></span></Link></li>
-                                        <li className={ path.indexOf( "product/gallery" ) > -1 ? 'active' : '' }><Link to={ `${process.env.PUBLIC_URL}/product/gallery/1` }>Gallery</Link></li>
-                                        <li className={ path.indexOf( "product/sticky" ) > -1 ? 'active' : '' }><Link to={ `${process.env.PUBLIC_URL}/product/sticky/6` }>Sticky Info</Link></li>
-                                        <li className={ path.indexOf( "product/sidebar" ) > -1 ? 'active' : '' }><Link to={ `${process.env.PUBLIC_URL}/product/sidebar/5` }>Boxed With Sidebar</Link></li>
-                                        <li className={ path.indexOf( "product/fullwidth" ) > -1 ? 'active' : '' }><Link to={ `${process.env.PUBLIC_URL}/product/fullwidth/2` }>Full Width</Link></li>
-                                        <li className={ path.indexOf( "product/masonry" ) > -1 ? 'active' : '' }><Link to={ `${process.env.PUBLIC_URL}/product/masonry/4` }>Masonry Sticky Info</Link></li>
+                                        <li className={ path.indexOf( "product/default" ) > -1 ? 'active' : '' }><Link to={ `${process.env.PUBLIC_URL}/product/default/${getRandomProductId(products)}` }>Default</Link></li>
+                                        <li className={ path.indexOf( "product/centered" ) > -1 ? 'active' : '' }><Link to={ `${process.env.PUBLIC_URL}/product/centered/${getRandomProductId(products)}` }>Centered</Link></li>
+                                        <li className={ path.indexOf( "product/extended" ) > -1 ? 'active' : '' }><Link to={ `${process.env.PUBLIC_URL}/product/extended/${getRandomProductId(products)}` }><span>Extended Info<span className="tip tip-new">New</span></span></Link></li>
+                                        <li className={ path.indexOf( "product/gallery" ) > -1 ? 'active' : '' }><Link to={ `${process.env.PUBLIC_URL}/product/gallery/${getRandomProductId(products)}` }>Gallery</Link></li>
+                                        <li className={ path.indexOf( "product/sticky" ) > -1 ? 'active' : '' }><Link to={ `${process.env.PUBLIC_URL}/product/sticky/${getRandomProductId(products)}` }>Sticky Info</Link></li>
+                                        <li className={ path.indexOf( "product/sidebar" ) > -1 ? 'active' : '' }><Link to={ `${process.env.PUBLIC_URL}/product/sidebar/${getRandomProductId(products)}` }>Boxed With Sidebar</Link></li>
+                                        <li className={ path.indexOf( "product/fullwidth" ) > -1 ? 'active' : '' }><Link to={ `${process.env.PUBLIC_URL}/product/fullwidth/${getRandomProductId(products)}` }>Full Width</Link></li>
+                                        <li className={ path.indexOf( "product/masonry" ) > -1 ? 'active' : '' }><Link to={ `${process.env.PUBLIC_URL}/product/masonry/${getRandomProductId(products)}` }>Masonry Sticky Info</Link></li>
                                     </ul>
                                 </div>
                             </div>

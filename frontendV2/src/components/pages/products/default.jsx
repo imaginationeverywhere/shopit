@@ -13,79 +13,80 @@ import QuickView from '../../features/product/common/quickview';
 
 import { productGallery } from '../../../utils';
 
-function SingleProduct( props ) {
-    let productId = props.match.params.id;
+function SingleProduct(props) {
+  let productId = props.match.params.id;
 
-    useEffect( () => {
-        productGallery();
+  useEffect(() => {
+    productGallery();
 
-        document.querySelector( '.skel-pro-single' ).classList.remove( 'loaded' );
+    document.querySelector('.skel-pro-single').classList.remove('loaded');
 
-        let imgLoad = imagesLoaded( ".product-main-image", { background: true } );
+    let imgLoad = imagesLoaded('.product-main-image', { background: true });
 
-        imgLoad.on( 'done', function ( instance, image ) {
-            document.querySelector( '.skel-pro-single' ).classList.add( 'loaded' );
-        } );
-    }, [ productId ] )
+    imgLoad.on('done', function(instance, image) {
+      document.querySelector('.skel-pro-single').classList.add('loaded');
+    });
+  }, [productId]);
 
-    return (
-        <>
-            <Helmet>
-                <title>Molla React eCommerce Template | Product Default</title>
-            </Helmet>
+  return (
+    <>
+      <Helmet>
+        <title>Molla React eCommerce Template | Product Default</title>
+      </Helmet>
 
-            <h1 className="d-none">Molla React eCommerce Template - Product Default</h1>
-            <div className="main">
-                <Breadcrumb
-                    title="Default"
-                    type="product"
-                    slug="default"
-                    adClass="breadcrumb-nav border-0 mb-0"
-                    productId={ productId }
-                    parent1={ [ "Products", "product" ] }
-                />
+      <h1 className="d-none">
+        Molla React eCommerce Template - Product Default
+      </h1>
+      <div className="main">
+        <Breadcrumb
+          title="Default"
+          type="product"
+          slug="default"
+          adClass="breadcrumb-nav border-0 mb-0"
+          productId={productId}
+          parent1={['Products', 'product']}
+        />
 
-                <div className="page-content">
-                    <div className="container">
-                        <div className="product-details-top skeleton-body">
-                            <div className="row skel-pro-single">
-                                <div className="col-md-6">
-                                    <div className="skel-product-gallery">
-                                    </div>
+        <div className="page-content">
+          <div className="container">
+            <div className="product-details-top skeleton-body">
+              <div className="row skel-pro-single">
+                <div className="col-md-6">
+                  <div className="skel-product-gallery"></div>
 
-                                    <MediaOne id={ productId } />
-                                </div>
-
-                                <div className="col-md-6">
-                                    <div className="entry-summary row">
-                                        <div className="col-md-12">
-                                            <div className="entry-summary1"></div>
-                                        </div>
-
-                                        <div className="col-md-12">
-                                            <div className="entry-summary2"></div>
-                                        </div>
-                                    </div>
-
-                                    <ProductDetailOne id={ productId } />
-                                </div>
-                            </div>
-                        </div>
-
-                        <DescOne id={ productId } />
-
-                        <h2 className="title text-center mb-4">You May Also Like</h2>
-
-                        <RelatedProducts />
-                    </div>
+                  <MediaOne id={productId} />
                 </div>
 
-                <StickyBar id={ productId } />
+                <div className="col-md-6">
+                  <div className="entry-summary row">
+                    <div className="col-md-12">
+                      <div className="entry-summary1"></div>
+                    </div>
 
-                <QuickView />
+                    <div className="col-md-12">
+                      <div className="entry-summary2"></div>
+                    </div>
+                  </div>
+
+                  <ProductDetailOne id={productId} />
+                </div>
+              </div>
             </div>
-        </>
-    )
+
+            <DescOne id={productId} />
+
+            <h2 className="title text-center mb-4">You May Also Like</h2>
+
+            <RelatedProducts />
+          </div>
+        </div>
+
+        <StickyBar id={productId} />
+
+        <QuickView />
+      </div>
+    </>
+  );
 }
 
 export default SingleProduct;

@@ -10,6 +10,7 @@ function Dashboard() {
 
   const getOutOfStockCount = () => {
     let count = 0;
+    if(!products) return count;
     for (let i = 0; i < products.length; i++) {
       if (products[i].stock === 0) {
         count++;

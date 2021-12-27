@@ -14,7 +14,7 @@ function RelatedProducts( props ) {
     return (
         <OwlCarousel adClass="owl-simple carousel-equal-height carousel-with-shadow cols-lg-4 cols-md-3 cols-xs-2 cols-1" carouselOptions={ mainSlider8 } carouselId="relatedProducts">
             {
-                products.slice( 20, 25 ).map( ( item, index ) => (
+                products.slice( 0, 5 ).map( ( item, index ) => (
                     <ProductSix
                         product={ item }
                         onAddToCart={ addToCart }
