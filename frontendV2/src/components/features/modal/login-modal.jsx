@@ -7,7 +7,8 @@ import Modal from 'react-modal';
 
 import { closeModal } from '../../../actions';
 import { validate } from '../../../utils';
-import { login } from '../../../api';
+import { login, register } from '../../../api';
+import loader from '../../../assets/loader.gif';
 
 const customStyles = {
   content: {
@@ -43,10 +44,14 @@ function LoginModal(props) {
   });
 
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const [inputs, setInputs] = useState({
+    name: '',
     'singin-email': '',
     'singin-password': '',
+    'register-email': '',
+    'register-password': '',
   });
 
   const handleChange = (event) => {
@@ -63,13 +68,20 @@ function LoginModal(props) {
     });
   };
 
-  const handlelogin = async (e) => {
+  const handleSubmit = async (e, signup) => {
     e.preventDefault();
+    setLoading(true);
 
-    const inputMap = {
-      'singin-email': inputs['singin-email'],
-      'singin-password': inputs['singin-password'],
-    };
+    const inputMap = signup
+      ? {
+          name: inputs.name,
+          'register-email': inputs['register-email'],
+          'register-password': inputs['register-password'],
+        }
+      : {
+          'singin-email': inputs['singin-email'],
+          'singin-password': inputs['singin-password'],
+        };
 
     const errorMap = Object.keys(inputMap).reduce(
       (acc, inputName) => ({
@@ -86,17 +98,37 @@ function LoginModal(props) {
       (inputName) => errorMap[inputName]
     );
 
-    if (shouldNotSubmit) return;
+    if (shouldNotSubmit) {
+      setLoading(false);
+      return;
+    }
 
-    await login({
-      email: inputMap['singin-email'],
-      password: inputMap['singin-password'],
-    });
+    try {
+      if (signup) {
+        await register({
+          name: inputs.name,
+          email: inputMap['register-email'],
+          password: inputMap['register-password'],
+        });
+      } else
+        await login({
+          email: inputMap['singin-email'],
+          password: inputMap['singin-password'],
+        });
 
-    toast.success('Login Successful');
+      toast.success(signup ? 'Registration Successful' : 'Login Successful');
+      closeModal();
+    } catch (err) {
+      console.log(err?.response?.data?.errMessage);
+      let msg;
+      if (err?.response?.data?.errMessage)
+        msg = err?.response?.data?.errMessage;
+      else msg = signup ? 'Registration failed' : 'Login failed';
+      toast.error(msg);
+    }
+
+    setLoading(false);
   };
-
-  //   console.log(errors);
 
   return (
     <Modal
@@ -136,7 +168,7 @@ function LoginModal(props) {
                 <div className="tab-content">
                   <TabPanel style={{ paddingTop: '2rem' }}>
                     <div>
-                      <form onSubmit={handlelogin}>
+                      <form onSubmit={handleSubmit}>
                         <div className="form-group">
                           <label htmlFor="singin-email-2">
                             Username or email address *
@@ -179,7 +211,11 @@ function LoginModal(props) {
                             className="btn btn-outline-primary-2"
                           >
                             <span>LOG IN</span>
-                            <i className="icon-long-arrow-right"></i>
+                            {loading ? (
+                              <img src={loader} width={30} alt="Loading..." />
+                            ) : (
+                              <i className="icon-long-arrow-right"></i>
+                            )}
                           </button>
 
                           <div className="custom-control custom-checkbox">
@@ -222,7 +258,23 @@ function LoginModal(props) {
                   </TabPanel>
 
                   <TabPanel>
-                    <form action="#">
+                    <form onSubmit={(e) => handleSubmit(e, true)}>
+                      <div className="form-group">
+                        <label htmlFor="name-2">Your full name *</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="name-2"
+                          name="name"
+                          required
+                          value={inputs['name']}
+                          onChange={handleChange}
+                        />
+                        {errors.name && (
+                          <small>Please enter first and last name</small>
+                        )}
+                      </div>
+
                       <div className="form-group">
                         <label htmlFor="register-email-2">
                           Your email address *
@@ -233,7 +285,12 @@ function LoginModal(props) {
                           id="register-email-2"
                           name="register-email"
                           required
+                          value={inputs['register-email']}
+                          onChange={handleChange}
                         />
+                        {errors['register-email'] && (
+                          <small>Please enter a correct email address</small>
+                        )}
                       </div>
 
                       <div className="form-group">
@@ -244,7 +301,14 @@ function LoginModal(props) {
                           id="register-password-2"
                           name="register-password"
                           required
+                          value={inputs['register-password']}
+                          onChange={handleChange}
                         />
+                        {errors['register-password'] && (
+                          <small>
+                            Please enter a password longer than 8 characters
+                          </small>
+                        )}
                       </div>
 
                       <div className="form-footer">
@@ -253,7 +317,11 @@ function LoginModal(props) {
                           className="btn btn-outline-primary-2"
                         >
                           <span>SIGN UP</span>
-                          <i className="icon-long-arrow-right"></i>
+                          {loading ? (
+                            <img src={loader} width={30} alt="Loading..." />
+                          ) : (
+                            <i className="icon-long-arrow-right"></i>
+                          )}
                         </button>
 
                         <div className="custom-control custom-checkbox">

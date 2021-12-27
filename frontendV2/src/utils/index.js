@@ -681,8 +681,11 @@ const email = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)
 const password = /^[^\n]{8,}$/;
 
 export const patterns = {
+  name: /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/,
   'singin-email': email,
   'singin-password': password,
+  'register-email': email,
+  'register-password': password,
 };
 
 export const validate = (field, Regex) => {

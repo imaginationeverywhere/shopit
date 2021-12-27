@@ -95,6 +95,11 @@ export const login = async (values) => {
   return res.data;
 };
 
+export const register = async (values) => {
+  const res = await axiosInstance.post(`register`, values);
+  return res.data;
+};
+
 export const addProducts = async ({ body }) => {
   return axiosInstance.post('admin/product/new', body, {
     contentType: 'multipart/form-data',
