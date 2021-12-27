@@ -29,14 +29,7 @@ function cartReducer(state = initialState, action) {
               qty: parseInt(product.qty) + parseInt(action.qty),
               parcels: makeParcelArray(
                 parseInt(product.qty) + parseInt(action.qty),
-                {
-                  length: '5',
-                  width: '5',
-                  height: '5',
-                  distance_unit: 'in',
-                  weight: '2',
-                  mass_unit: 'lb',
-                },
+                product?.parcel,
               ),
               sum:
                 (product.discount ? product.salePrice : product.price) *
@@ -57,14 +50,10 @@ function cartReducer(state = initialState, action) {
           {
             ...action.product,
             qty: action.qty,
-            parcels: makeParcelArray(parseInt(action.qty), {
-              length: '5',
-              width: '5',
-              height: '5',
-              distance_unit: 'in',
-              weight: '2',
-              mass_unit: 'lb',
-            }),
+            parcels: makeParcelArray(
+              parseInt(action.qty),
+              action.product?.parcel,
+            ),
             sum:
               (action.product.discount
                 ? action.product.salePrice
@@ -85,14 +74,7 @@ function cartReducer(state = initialState, action) {
           cartAcc.push({
             ...product,
             qty: action.qty,
-            parcels: makeParcelArray(parseInt(action.qty), {
-              length: '5',
-              width: '5',
-              height: '5',
-              distance_unit: 'in',
-              weight: '2',
-              mass_unit: 'lb',
-            }),
+            parcels: makeParcelArray(parseInt(action.qty), product?.parcel),
             sum:
               (product.discount ? product.salePrice : product.price) *
               action.qty,

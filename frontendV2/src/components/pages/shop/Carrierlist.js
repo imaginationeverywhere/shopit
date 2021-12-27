@@ -1,29 +1,29 @@
-import React, { useEffect, useState, useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import "mdbreact/dist/css/mdb.css";
+import React, { useEffect, useState, useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import 'mdbreact/dist/css/mdb.css';
 
-import Loader from "../../Loader";
+import Loader from '../../Loader';
 import {
   getCarriers,
   setSelectedCarrier,
-} from "../../../actions/shipmentActions";
-import Table from "../Table/index";
+} from '../../../actions/shipmentActions';
+import Table from '../Table/index';
 
 const addressFrom = {
-  name: "Shawn Ippotle",
-  street1: "777 Brockton Avenue",
-  city: "Abington",
-  state: "MA",
-  zip: "2351",
-  country: "US",
+  name: 'Shawn Ippotle',
+  street1: '777 Brockton Avenue',
+  city: 'Abington',
+  state: 'MA',
+  zip: '2351',
+  country: 'US',
 };
 const addressTo = {
-  name: "Mr Hippo",
-  street1: "4133 Veterans Memorial Drive",
-  city: "Batavia",
-  state: "NY",
-  zip: "14020",
-  country: "US",
+  name: 'Mr Hippo',
+  street1: '4133 Veterans Memorial Drive',
+  city: 'Batavia',
+  state: 'NY',
+  zip: '14020',
+  country: 'US',
 };
 
 const CarrierList = () => {
@@ -32,31 +32,40 @@ const CarrierList = () => {
     cartlist: { cart, shippingInfo },
     carriers: { data: carriers, loading = true } = {},
     selectedCarrier = {},
-  } = useSelector((store) => store);
+  } = useSelector(store => store);
+
   const parcels = useCallback(
-    (cart) => cart.reduce((acc, product) => [...acc, ...product.parcels], []),
-    [cart]
+    cart =>
+      cart.reduce((acc, product) => {
+        if (product?.parcel) {
+          return [...acc, product?.parcel];
+        }
+
+        return acc;
+      }, []),
+    [cart],
   );
+
   useEffect(() => {
     dispatch(getCarriers({ addressFrom, addressTo, parcels: parcels(cart) }));
   }, []);
   const [dataTable, setDataTable] = useState({
     columns: [
       {
-        label: "Name",
-        field: "provider",
+        label: 'Name',
+        field: 'provider',
       },
       {
-        label: "Price ($)",
-        field: "amount_local",
+        label: 'Price ($)',
+        field: 'amount_local',
       },
       {
-        label: "Estimated Days",
-        field: "estimated_days",
+        label: 'Estimated Days',
+        field: 'estimated_days',
       },
       {
-        label: "Service Type",
-        field: "serviceType",
+        label: 'Service Type',
+        field: 'serviceType',
       },
     ],
     rows: [],
@@ -66,7 +75,7 @@ const CarrierList = () => {
     if (carriers.length) {
       setDataTable({
         ...dataTable,
-        rows: carriers.map((carrier) => {
+        rows: carriers.map(carrier => {
           if (carrier.servicelevel) {
             carrier.serviceType = carrier.servicelevel.name;
           }
@@ -78,7 +87,7 @@ const CarrierList = () => {
       });
     }
   }, [carriers]);
-  const handleCheckboxClick = (selectedCarrier) => {
+  const handleCheckboxClick = selectedCarrier => {
     dispatch(setSelectedCarrier(selectedCarrier));
   };
 
@@ -87,7 +96,7 @@ const CarrierList = () => {
       {loading ? (
         <Loader />
       ) : (
-        dataTable.rows.length && (
+        !!dataTable.rows.length && (
           <Table
             tableData={dataTable}
             checkbox

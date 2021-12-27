@@ -1,0 +1,57 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "jsx-a11y"],
+  "rules": {
+    "react/prop-types": 0,
+    "react/no-unescaped-entities": 0,
+    "react/display-name": "off",
+    "no-prototype-builtins": "off",
+    "react/no-string-refs": "off",
+    "react/no-find-dom-node": "off",
+    "jsx-a11y/alt-text": 2,
+    "react/react-in-jsx-scope": "off",
+    "no-console": "off"
+  },
+  "globals": {
+    "__isBrowser__": true
+  },
+  "parser": "babel-eslint",
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.js"],
+      "env": {
+        "jest": true
+      },
+      "plugins": ["jest"],
+      "rules": {
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error"
+      }
+    }
+  ]
+}
