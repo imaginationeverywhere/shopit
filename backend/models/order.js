@@ -51,11 +51,6 @@ const orderSchema = mongoose.Schema({
             type: String
         }
     },
-    orderId: {
-        type: String,
-        required: true,
-        unique: true,
-    },
     paidAt: {
         type: Date
     },
@@ -90,7 +85,7 @@ const orderSchema = mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
-    }
+    },
 })
 
 module.exports = mongoose.model('Order', orderSchema)

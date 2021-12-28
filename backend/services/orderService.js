@@ -8,23 +8,21 @@ const Constants = require("../utils/constants");
 
 const getUser = async (userDetails) => {
   const user = await User.find({ email: userDetails.email })
-  if (!user) {
-    let newUser;
-    //create user here and proceed
-    bcrypt.genSalt(10, function (err, salt) {
-      bcrypt.hash("B4c0/\/", salt, function (err, hash) {
-        newUser = await User.create({
-          name: userDetails.fullname,
-          email: userDetails.email,
-          password: hash,
-          phone: userDetails.phone,
-        })
-        return newUser
-      });
-    });
+  if (user.length) {
+    return user[0]._id
   }
-  return user
+  const salt = await bcrypt.genSalt(10)
+  const hash = await bcrypt.hash("B4c0/\/", salt)
+  const newUser = await User.create({
+    name: userDetails.fullname,
+    email: userDetails.email,
+    password: hash,
+    phone: userDetails.phone,
+  })
+  return newUser._id;
 }
+
+
 const createDraftOrder = async ({
   orderItems,
   shippingInfo,
@@ -33,14 +31,18 @@ const createDraftOrder = async ({
 }) => {
   //first step check if user already exists
   const user = await getUser(userDetails)
-  const orderId = await generateOrderId()
   const draftOrder = await Order.create({
     shippingInfo,
-    user: user._id,
+    user,
     orderItems,
     totalPrice,
-    orderStatus: 'status',
+    orderStatus: Constants.DRAFT,
   })
+
+  return {
+    orderId: draftOrder._id,
+    status: draftOrder.orderStatus
+  }
 }
 const subscribeForTracking = async ({ carrier, trackingNo, orderId }) => {
   const body = JSON.stringify({

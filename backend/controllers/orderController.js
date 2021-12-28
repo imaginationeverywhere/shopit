@@ -15,6 +15,7 @@ exports.draftOrder = catchAsyncErrors(async (req, res, next) => {
         userDetails,
     } = req.body;
 
+    //validation ??
     try {
         const order = await OrderService.createDraftOrder({
             orderItems,

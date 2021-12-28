@@ -7,11 +7,13 @@ const {
     myOrders,
     allOrders,
     updateOrder,
-    deleteOrder
+    deleteOrder,
+    draftOrder
 } = require('../controllers/orderController')
 
 const { isAuthenticatedUser, authorizeRoles } = require('../middlewares/auth')
 
+router.route('/order/draft').post(draftOrder);
 router.route('/order/new').post(isAuthenticatedUser, newOrder);
 
 router.route('/order/:id').get(isAuthenticatedUser, getSingleOrder);
