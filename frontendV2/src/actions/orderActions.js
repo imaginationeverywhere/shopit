@@ -37,7 +37,6 @@ export const createDraftOrder = (order) => async (dispatch, getState) => {
 
         const { data } = await axios.post(API_URL+'order/draft', order, config)
 
-        console.log(data)
         dispatch({
             type: CREATE_DRAFT_ORDER_SUCCESS,
             payload: data
@@ -73,16 +72,17 @@ export const myOrders = () => async (dispatch) => {
 }
 
 // Get order details
-export const getOrderDetails = (id) => async (dispatch) => {
+export const getOrderDetails = (orderId) => async (dispatch) => {
     try {
 
         dispatch({ type: ORDER_DETAILS_REQUEST });
 
-        const { data } = await axios.get(`/api/v1/order/${id}`)
+        const { data } = await axios.get(`${API_URL}order/${orderId}`)
 
+        console.log(data)
         dispatch({
             type: ORDER_DETAILS_SUCCESS,
-            payload: data.order
+            payload: data
         })
 
     } catch (error) {

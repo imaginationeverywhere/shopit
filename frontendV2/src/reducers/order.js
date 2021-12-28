@@ -4,6 +4,9 @@ import {
     CREATE_DRAFT_ORDER_REQUEST,
     CREATE_DRAFT_ORDER_SUCCESS,
     CREATE_DRAFT_ORDER_FAIL,
+    ORDER_DETAILS_REQUEST,
+    ORDER_DETAILS_SUCCESS,
+    ORDER_DETAILS_FAIL
 } from "../constants/orderConstants";
 
 const initialState = {
@@ -24,10 +27,30 @@ const orderReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                order: action.order,
+                order: action.payload.order,
                 error: ""
             };
         case CREATE_DRAFT_ORDER_FAIL:
+            return {
+                ...state,
+                loading: false,
+                error: "An error occurred. Please contact support"
+            };
+        case ORDER_DETAILS_REQUEST:
+            return {
+                ...state,
+                loading: true,
+                error: "",
+                order: {}
+            };
+        case ORDER_DETAILS_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                order: action.payload.order,
+                error: ""
+            };
+        case ORDER_DETAILS_FAIL:
             return {
                 ...state,
                 loading: false,
@@ -42,7 +65,8 @@ const orderReducer = (state = initialState, action) => {
 const persistConfig = {
     keyPrefix: "molla-",
     key: "order",
-    storage
+    storage,
+    blacklist: ['order']
 }
 
 export default persistReducer(persistConfig, orderReducer);

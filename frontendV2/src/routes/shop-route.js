@@ -10,6 +10,7 @@ import Wishlist from '../components/pages/shop/wishlist';
 import Cart from '../components/pages/shop/cart';
 import Checkout from '../components/pages/shop/checkout';
 import Market from '../components/pages/shop/market';
+import CompleteCheckout from '../components/pages/shop/complete-checkout';
 
 export default function ShopRoute() {
     return (
@@ -23,6 +24,7 @@ export default function ShopRoute() {
                 <Route exact path={ `${process.env.PUBLIC_URL}/shop/wishlist` } component={ Wishlist } />
                 <Route exact path={ `${process.env.PUBLIC_URL}/shop/cart` } component={ Cart } />
                 <Route exact path={ `${process.env.PUBLIC_URL}/shop/checkout` } component={ Checkout } />
+                <Route exact path={ `${process.env.PUBLIC_URL}/shop/checkout/:orderId` } component={ CompleteCheckout } />
             </Layout>
         </Switch>
     );

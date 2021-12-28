@@ -6,8 +6,6 @@ import { Helmet } from 'react-helmet';
 // import Custom Components
 import PageHeader from '../../common/page-header';
 import Breadcrumb from '../../common/breadcrumb';
-import Accordion from '../../features/accordion/accordion';
-import Card from '../../features/accordion/card';
 
 import { getCartTotal } from '../../../services';
 import BillingDetails from '../../features/checkout/billing-details';
@@ -18,7 +16,6 @@ function Checkout(props) {
 
     const { cartlist, total, order } = props;
 
-    console.log( { cartlist, total, order } )
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
@@ -117,8 +114,10 @@ function Checkout(props) {
     }
 
     useEffect(() => {
-        console.log(order)
-    }, [order])
+        if(order.order && order.order.orderId){
+            props.history.push(`/shop/checkout/${order.order.orderId}`)
+        }
+    }, [order.order])
 
     return (
         <>
