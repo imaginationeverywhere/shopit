@@ -11,7 +11,7 @@ import { getCartTotal } from '../../../services';
 import { quantityInputs, isIEBrowser } from '../../../utils';
 import { changeQty, removeFromCart, changeShipping } from '../../../actions';
 
-function Cart( props ) {
+function Cart( props ) { 
     const { cartlist, total, removeFromCart, prevShip } = props;
 
     const [ shipping, setShipping ] = useState( prevShip );
@@ -38,9 +38,7 @@ function Cart( props ) {
         props.changeQty( productId, e.currentTarget.querySelector( 'input[type="number"]' ).value );
     }
 
-    function goToCheckout() {
-        props.changeShipping( shipping );
-    }
+   
 
     return (
         <>
@@ -166,12 +164,14 @@ function Cart( props ) {
                                             </tbody>
                                         </table>
 
+                                        <Link to="/shop/checkout">
                                         <button
                                             className="btn btn-outline-primary-2 btn-order btn-block"
-                                            onClick={ goToCheckout }
+                                            
                                         >
                                             PROCEED TO CHECKOUT
                                         </button>
+                                        </Link>
                                     </div>
 
                                     <Link to={ `${process.env.PUBLIC_URL}/shop/sidebar/list` } className="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE SHOPPING</span><i className="icon-refresh"></i></Link>
