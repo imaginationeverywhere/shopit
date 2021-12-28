@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { Helmet } from 'react-helmet';
 
 // import Custom Components
@@ -11,9 +11,14 @@ import Card from '../../features/accordion/card';
 
 import { getCartTotal } from '../../../services';
 import BillingDetails from '../../features/checkout/billing-details';
+import { createDraftOrder } from '../../../actions/orderActions';
 
 function Checkout(props) {
-    const { cartlist, total } = props;
+    const dispatch = useDispatch()
+
+    const { cartlist, total, order } = props;
+
+    console.log( { cartlist, total, order } )
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
@@ -59,34 +64,61 @@ function Checkout(props) {
     }, [])
 
     const validateFields = () => {
-        if (!firstName || !lastName || !email || !phone || !extras || !state || !city || !street1 || !street2 || !zip  ){
+        if (!firstName || !lastName || !email || !phone || !extras || !state || !city || !street1 || !street2 || !zip) {
             setError('Kindly complete all required fields')
             return false
         }
         //check email to be sure it's correct
         if (String(email)
-        .toLowerCase()
-        .match(
-          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        )){
+            .toLowerCase()
+            .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            )) {
             return true
         }
         setError('Invalid email entered')
         return false
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault()
         setShowError(false)
         setError('')
 
-        if (!validateFields){
+        if (!validateFields) {
             setShowError(true)
             return false
         }
 
         // create draft order and generate checkout ID. 
-        
+        const orderObject = {
+            orderItems: {
+                product: "61c8e78a877763645c790268",
+                quantity: 2
+            },
+            shippingInfo: {
+                street1,
+                city,
+                state,
+                zip,
+                country:"US",
+                phone,
+                email
+            },
+            totalPrice: total,
+            userDetails: {
+                fullname: firstName+ ' '+ lastName,
+                email,
+                phone,
+            }
+        }
+
+        dispatch(createDraftOrder(orderObject))
     }
+
+    useEffect(() => {
+        console.log(order)
+    }, [order])
 
     return (
         <>
@@ -160,8 +192,10 @@ function Checkout(props) {
                                                 </tbody>
                                             </table>
 
-                                            <button type="submit" className="btn btn-outline-primary-2 btn-order btn-block">
-                                                <span className=" ">Complete Purchase</span>
+                                            <button type="submit" className="btn btn-outline-primary-2 btn-order btn-block" disabled={order.loading}>
+                                                <span className=" ">
+                                                   {order.loading ? "Loading..." : "Proceed to payment"} 
+                                                </span>
                                             </button>
                                         </div>
                                     </aside>
@@ -178,6 +212,7 @@ function Checkout(props) {
 export const mapStateToProps = (state) => ({
     cartlist: state.cartlist.cart,
     total: getCartTotal(state.cartlist.cart),
+    order: state.order,
     shipping: state.cartlist.shipping
 })
 

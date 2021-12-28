@@ -1,9 +1,9 @@
 import axios from 'axios'
 
 import {
-    CREATE_ORDER_REQUEST,
-    CREATE_ORDER_SUCCESS,
-    CREATE_ORDER_FAIL,
+    CREATE_DRAFT_ORDER_REQUEST,
+    CREATE_DRAFT_ORDER_SUCCESS,
+    CREATE_DRAFT_ORDER_FAIL,
     MY_ORDERS_REQUEST,
     MY_ORDERS_SUCCESS,
     MY_ORDERS_FAIL,
@@ -22,10 +22,12 @@ import {
     CLEAR_ERRORS
 } from '../constants/orderConstants'
 
-export const createOrder = (order) => async (dispatch, getState) => {
+const API_URL = process.env.REACT_APP_API_URL;
+
+export const createDraftOrder = (order) => async (dispatch, getState) => {
     try {
 
-        dispatch({ type: CREATE_ORDER_REQUEST })
+        dispatch({ type: CREATE_DRAFT_ORDER_REQUEST })
 
         const config = {
             headers: {
@@ -33,16 +35,17 @@ export const createOrder = (order) => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.post('/api/v1/order/new', order, config)
+        const { data } = await axios.post(API_URL+'order/draft', order, config)
 
+        console.log(data)
         dispatch({
-            type: CREATE_ORDER_SUCCESS,
+            type: CREATE_DRAFT_ORDER_SUCCESS,
             payload: data
         })
 
     } catch (error) {
         dispatch({
-            type: CREATE_ORDER_FAIL,
+            type: CREATE_DRAFT_ORDER_FAIL,
             payload: error.response.data.message
         })
     }
@@ -54,7 +57,7 @@ export const myOrders = () => async (dispatch) => {
 
         dispatch({ type: MY_ORDERS_REQUEST });
 
-        const { data } = await axios.get('/api/v1/orders/me')
+        const { data } = await axios.get('api/v1/orders/me')
 
         dispatch({
             type: MY_ORDERS_SUCCESS,

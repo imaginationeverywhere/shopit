@@ -9,6 +9,7 @@ import filterReducer from './filter';
 import modalReducer from './modal';
 import templatesReducer from './templates';
 import usersReducer from './users'
+import orderReducer from './order'
 
 const rootReducer = combineReducers( {
     data: productReducer,
@@ -19,7 +20,7 @@ const rootReducer = combineReducers( {
     modal: modalReducer,
     templates: templatesReducer,
     users: usersReducer,
-    
+    order: orderReducer
 } );
 
 export default rootReducer;
