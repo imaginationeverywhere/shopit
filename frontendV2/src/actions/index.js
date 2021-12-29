@@ -82,6 +82,13 @@ export const removeFromWishlist = (productId) => (dispatch) => {
   });
 };
 
+export const clearCart = () => (dispatch) => {
+  dispatch({
+    type: types.CLEAR_CART
+  })
+};
+
+
 // add item to cart from wishlist
 export const addToCartFromWishlist = (product, qty) => (dispatch) => {
   toast.success("Item added to Cart");

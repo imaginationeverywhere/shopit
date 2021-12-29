@@ -11,6 +11,7 @@ import Cart from '../components/pages/shop/cart';
 import Checkout from '../components/pages/shop/checkout';
 import Market from '../components/pages/shop/market';
 import CompleteCheckout from '../components/pages/shop/complete-checkout';
+import OrderConfirmation from '../components/pages/shop/order-confirmation';
 
 export default function ShopRoute() {
     return (
@@ -25,6 +26,7 @@ export default function ShopRoute() {
                 <Route exact path={ `${process.env.PUBLIC_URL}/shop/cart` } component={ Cart } />
                 <Route exact path={ `${process.env.PUBLIC_URL}/shop/checkout` } component={ Checkout } />
                 <Route exact path={ `${process.env.PUBLIC_URL}/shop/checkout/:orderId` } component={ CompleteCheckout } />
+                <Route exact path={ `${process.env.PUBLIC_URL}/shop/order/confirmation/:orderId` } component={ OrderConfirmation } />
             </Layout>
         </Switch>
     );
