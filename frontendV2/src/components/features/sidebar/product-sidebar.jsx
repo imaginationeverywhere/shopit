@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import OwlCarousel from "../owl-carousel";
+import OwlCarousel from '../owl-carousel';
 
 function ProductSidebar(props) {
   const [toggle, setToggle] = useState(0);
@@ -10,16 +10,16 @@ function ProductSidebar(props) {
   products = products.slice(8, 16);
 
   useEffect(() => {
-    window.addEventListener("resize", resizeHandle);
+    window.addEventListener('resize', resizeHandle);
     resizeHandle();
 
     return () => {
-      window.removeEventListener("resize", resizeHandle);
+      window.removeEventListener('resize', resizeHandle);
     };
   }, []);
 
   function resizeHandle() {
-    if (document.querySelector("body").offsetWidth < 992) {
+    if (document.querySelector('body').offsetWidth < 992) {
       setToggle(true);
     } else {
       setToggle(false);
@@ -28,27 +28,27 @@ function ProductSidebar(props) {
 
   function hideSideBar() {
     if (
-      document.querySelector("body").classList.contains("sidebar-filter-active")
+      document.querySelector('body').classList.contains('sidebar-filter-active')
     ) {
-      document.querySelector("body").classList.remove("sidebar-filter-active");
+      document.querySelector('body').classList.remove('sidebar-filter-active');
     }
   }
 
   function toggleSideBar() {
     if (
-      document.querySelector("body").classList.contains("sidebar-filter-active")
+      document.querySelector('body').classList.contains('sidebar-filter-active')
     ) {
-      document.querySelector("body").classList.remove("sidebar-filter-active");
+      document.querySelector('body').classList.remove('sidebar-filter-active');
     } else {
-      document.querySelector("body").classList.add("sidebar-filter-active");
+      document.querySelector('body').classList.add('sidebar-filter-active');
     }
   }
 
   function closeSideBar() {
     if (
-      document.querySelector("body").classList.contains("sidebar-filter-active")
+      document.querySelector('body').classList.contains('sidebar-filter-active')
     ) {
-      document.querySelector("body").classList.remove("sidebar-filter-active");
+      document.querySelector('body').classList.remove('sidebar-filter-active');
     }
   }
 
@@ -56,18 +56,18 @@ function ProductSidebar(props) {
     <>
       <div
         className={`${
-          toggle ? "sidebar-filter right" : "sidebar"
+          toggle ? 'sidebar-filter right' : 'sidebar'
         } sidebar-product`}
       >
         <div
           className={
-            toggle ? "sidebar-filter-wrapper product-sidebar-wrapper" : ""
+            toggle ? 'sidebar-filter-wrapper product-sidebar-wrapper' : ''
           }
         >
           <button
             onClick={closeSideBar}
             className="btn-product btn-close"
-            style={{ marginLeft: "auto", marginRight: "5px" }}
+            style={{ marginLeft: 'auto', marginRight: '5px' }}
           >
             <i className="icon-close"></i>
           </button>
@@ -88,7 +88,7 @@ function ProductSidebar(props) {
                           href={`${process.env.PUBLIC_URL}/product/default/${item.id}`}
                         >
                           <img
-                            src={`${process.env.PUBLIC_URL}/${item.pictures[0]}`}
+                            src={`${item.pictures[0]}`}
                             alt="Product"
                             className="product-image"
                           />
@@ -125,7 +125,7 @@ function ProductSidebar(props) {
                           href={`${process.env.PUBLIC_URL}/product/default/${item.id}`}
                         >
                           <img
-                            src={`${process.env.PUBLIC_URL}/${item.pictures[0]}`}
+                            src={`${item.pictures[0]}`}
                             alt="Product"
                             className="product-image"
                           />
@@ -144,7 +144,7 @@ function ProductSidebar(props) {
                           <span className="new-price">${item.price}</span>
                           {item.salePrice && (
                             <span className="old-price">
-                              ${item.salePrice}{" "}
+                              ${item.salePrice}{' '}
                             </span>
                           )}
                         </div>
@@ -184,7 +184,7 @@ function ProductSidebar(props) {
           <i className="icon-cog"></i>
         </button>
       ) : (
-        ""
+        ''
       )}
       <div className="sidebar-filter-overlay" onClick={hideSideBar}></div>
     </>

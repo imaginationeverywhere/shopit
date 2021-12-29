@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 function SmallProduct(props) {
   const { product } = props;
@@ -13,7 +13,7 @@ function SmallProduct(props) {
 
           <LazyLoadImage
             alt="product"
-            src={`${process.env.PUBLIC_URL}/${product.pictures[0]}`}
+            src={`${product.pictures[0]}`}
             threshold={400}
           />
         </Link>
@@ -65,7 +65,7 @@ function SmallProduct(props) {
       </div>
     </div>
   ) : (
-    ""
+    ''
   );
 }
 

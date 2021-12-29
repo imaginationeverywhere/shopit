@@ -1,13 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-import { isIEBrowser } from "../../../../../utils";
+import { isIEBrowser } from '../../../../../utils';
 
 function DescOne(props) {
   const { product } = props;
-
   return (
     <Tabs selectedTabClassName="show" selectedTabPanelClassName="active show">
       <div className="product-details-tab">
@@ -40,12 +39,12 @@ function DescOne(props) {
                 a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam
                 porttitor mauris sit amet orci. Aenean dignissim pellentesque
                 felis. Phasellus ultrices nulla quis nibh. Quisque a lectus.
-                Donec consectetuer ligula vulputate sem tristique cursus.{" "}
+                Donec consectetuer ligula vulputate sem tristique cursus.{' '}
               </p>
               <ul>
                 <li>
                   Nunc nec porttitor turpis. In eu risus enim. In vitae mollis
-                  elit.{" "}
+                  elit.{' '}
                 </li>
                 <li>Vivamus finibus vel mauris ut vehicula.</li>
                 <li>
@@ -59,7 +58,7 @@ function DescOne(props) {
                 a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam
                 porttitor mauris sit amet orci. Aenean dignissim pellentesque
                 felis. Phasellus ultrices nulla quis nibh. Quisque a lectus.
-                Donec consectetuer ligula vulputate sem tristique cursus.{" "}
+                Donec consectetuer ligula vulputate sem tristique cursus.{' '}
               </p>
             </div>
           </TabPanel>
@@ -72,7 +71,7 @@ function DescOne(props) {
                 odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
                 turpis. Suspendisse urna viverra non, semper suscipit, posuere
                 a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam
-                porttitor mauris sit amet orci.{" "}
+                porttitor mauris sit amet orci.{' '}
               </p>
 
               <h3>Fabric & care</h3>
@@ -83,7 +82,7 @@ function DescOne(props) {
                 <li>Snake print trim interior </li>
                 <li>Adjustable cross body strap</li>
                 <li>
-                  {" "}
+                  {' '}
                   Height: 31cm; Width: 32cm; Depth: 12cm; Handle Drop: 61cm
                 </li>
               </ul>
@@ -98,12 +97,12 @@ function DescOne(props) {
               <h3>Delivery & returns</h3>
               <p>
                 We deliver to over 100 countries around the world. For full
-                details of the delivery options we offer, please view our{" "}
+                details of the delivery options we offer, please view our{' '}
                 <Link to="#">Delivery information</Link>
                 <br />
                 We hope you’ll love every purchase, but if you ever need to
                 return an item you can do so within a month of receipt. For full
-                details of how to make a return, please view our{" "}
+                details of how to make a return, please view our{' '}
                 <Link to="#">Returns information</Link>
               </p>
             </div>
@@ -115,7 +114,7 @@ function DescOne(props) {
               <div className="review">
                 <div
                   className="row no-gutters"
-                  style={isIEBrowser() ? { flexDirection: "row" } : {}}
+                  style={isIEBrowser() ? { flexDirection: 'row' } : {}}
                 >
                   <div className="col-auto">
                     <h4>
@@ -126,7 +125,7 @@ function DescOne(props) {
                       <div className="ratings">
                         <div
                           className="ratings-val"
-                          style={{ width: "80%" }}
+                          style={{ width: '80%' }}
                         ></div>
                       </div>
                     </div>
@@ -160,7 +159,7 @@ function DescOne(props) {
               <div className="review">
                 <div
                   className="row no-gutters"
-                  style={isIEBrowser() ? { flexDirection: "row" } : {}}
+                  style={isIEBrowser() ? { flexDirection: 'row' } : {}}
                 >
                   <div className="col-auto">
                     <h4>
@@ -171,7 +170,7 @@ function DescOne(props) {
                       <div className="ratings">
                         <div
                           className="ratings-val"
-                          style={{ width: "100%" }}
+                          style={{ width: '100%' }}
                         ></div>
                       </div>
                     </div>
@@ -212,9 +211,7 @@ function DescOne(props) {
 
 function mapStateToProps(state, props) {
   return {
-    product: state.data.products.filter(
-      (product) => product.id === parseInt(props.id)
-    )[0],
+    product: state.data.products.filter(product => product.id === props.id)[0],
   };
 }
 

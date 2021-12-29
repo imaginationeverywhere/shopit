@@ -1,0 +1,40 @@
+.dashboard-select {
+  width: 100%;
+
+  span {
+    display: flex;
+    color: #464457;
+    font-size: 0.9em;
+    font-family: "Avenir_Roman";
+    margin-bottom: 0.6em;
+  }
+
+  .dash-select-search {
+    position: relative;
+    font-family: "Avenir_Roman";
+    font-size: 0.9em;
+    width: 100%;
+    margin: 0;
+    div {
+      &:focus {
+        outline: none;
+      }
+    }
+    .css-yk16xz-control {
+      min-height: 30px !important;
+      height: 3.1em !important;
+      background-color: #fef9f9;
+      border: 1px solid #e2e5ec;
+      border-radius: 5px;
+    }
+    .css-1pahdxg-control {
+      background-color: #fef9f9;
+      border: 1px solid #e2e5ec;
+      border-radius: 5px;
+      box-shadow: none !important;
+      outline: none !important;
+      min-height: 30px !important;
+      height: 3.1em !important;
+    }
+  }
+}

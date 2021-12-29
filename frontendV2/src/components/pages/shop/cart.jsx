@@ -1,54 +1,57 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { Helmet } from "react-helmet";
-
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { connect, useSelector } from 'react-redux';
+import { Helmet } from 'react-helmet';
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
 
-import { getCartTotal } from "../../../services";
-import { quantityInputs, isIEBrowser } from "../../../utils";
-import { changeQty, removeFromCart, changeShipping } from "../../../actions";
+import { getCartTotal } from '../../../services';
+import { quantityInputs, isIEBrowser } from '../../../utils';
+import { changeQty, removeFromCart, changeShipping } from '../../../actions';
+import CarrierList from './Carrierlist';
 
 function Cart(props) {
-  const { cartlist, total, removeFromCart, prevShip } = props;
-
-  const [shipping, setShipping] = useState(prevShip);
-  const shippingPrice = { free: 0, standard: 10, express: 20 };
-
+  const { cartlist, total, removeFromCart } = props;
+  const [shippingPrice, setShippingPrice] = useState(0);
   useEffect(() => {
     quantityInputs();
   });
+
+  const taxPrice = Number((0.05 * total).toFixed(2));
+
+  const { selectedCarrier = {} } = useSelector(store => store);
+
+  useEffect(() => {
+    if (selectedCarrier.amount_local) {
+      setShippingPrice(parseFloat(selectedCarrier.amount_local));
+    }
+  }, [selectedCarrier]);
 
   useEffect(() => {
     cartlist.map((item, index) => {
       if (
         document.querySelector(
-          `#quantity-input-wrapper-${index} .input-group input`
+          `#quantity-input-wrapper-${index} .input-group input`,
         )
       ) {
         document.querySelector(
-          `#quantity-input-wrapper-${index} .input-group input`
+          `#quantity-input-wrapper-${index} .input-group input`,
         ).value = item.qty;
       }
       return item;
     });
   }, [cartlist]);
 
-  function onChangeShipping(val) {
-    setShipping(val);
-  }
-
   function onChangeQty(e, productId) {
     props.changeQty(
       productId,
-      e.currentTarget.querySelector('input[type="number"]').value
+      e.currentTarget.querySelector('input[type="number"]').value,
     );
   }
 
   function goToCheckout() {
-    props.changeShipping(shipping);
+    // props.changeShipping(shipping);
   }
 
   return (
@@ -63,7 +66,7 @@ function Cart(props) {
         <PageHeader title="Shopping Cart" subTitle="Shop" />
         <Breadcrumb
           title="Shopping Cart"
-          parent1={["Shop", "shop/sidebar/list"]}
+          parent1={['Shop', 'shop/sidebar/list']}
         />
 
         <div className="page-content">
@@ -85,7 +88,7 @@ function Cart(props) {
                     <tbody>
                       {cartlist.length > 0 ? (
                         cartlist.map((item, index) => (
-                          <tr key={"cart-item-" + index}>
+                          <tr key={'cart-item-' + index}>
                             <td className="product-col">
                               <div className="product">
                                 <figure className="product-media">
@@ -95,7 +98,7 @@ function Cart(props) {
                                     <img
                                       src={
                                         process.env.PUBLIC_URL +
-                                        "/" +
+                                        '/' +
                                         item.pictures[0]
                                       }
                                       alt="Product"
@@ -128,11 +131,11 @@ function Cart(props) {
 
                             <td
                               className="quantity-col"
-                              id={"quantity-input-wrapper-" + index}
+                              id={'quantity-input-wrapper-' + index}
                             >
                               <div
                                 className="cart-product-quantity"
-                                onClick={(e) => onChangeQty(e, item.id)}
+                                onClick={e => onChangeQty(e, item.id)}
                               >
                                 <input
                                   type="number"
@@ -158,7 +161,7 @@ function Cart(props) {
                             <td className="remove-col">
                               <button
                                 className="btn-remove"
-                                onClick={(e) => removeFromCart(item.id)}
+                                onClick={e => removeFromCart(item.id)}
                               >
                                 <i className="icon-close"></i>
                               </button>
@@ -169,8 +172,8 @@ function Cart(props) {
                         <tr>
                           <td>
                             <p className="pl-2 pt-1 pb-1">
-                              {" "}
-                              No Products in Cart{" "}
+                              {' '}
+                              No Products in Cart{' '}
                             </p>
                           </td>
                         </tr>
@@ -181,7 +184,7 @@ function Cart(props) {
                   <div className="cart-bottom">
                     <div
                       className="cart-discount"
-                      style={{ minHeight: isIEBrowser() ? "40px" : "auto" }}
+                      style={{ minHeight: isIEBrowser() ? '40px' : 'auto' }}
                     >
                       <form action="#">
                         <div className="input-group">
@@ -192,10 +195,7 @@ function Cart(props) {
                             placeholder="coupon code"
                           />
                           <div className="input-group-append">
-                            <button
-                              className="btn btn-outline-primary-2"
-                              type="submit"
-                            >
+                            <button className="btn " type="submit">
                               <i className="icon-long-arrow-right"></i>
                             </button>
                           </div>
@@ -208,6 +208,7 @@ function Cart(props) {
                       <i className="icon-refresh"></i>
                     </button>
                   </div>
+                  <CarrierList />
                 </div>
                 <aside className="col-lg-3">
                   <div className="summary summary-cart">
@@ -227,85 +228,16 @@ function Cart(props) {
                         </tr>
                         <tr className="summary-shipping">
                           <td>Shipping:</td>
-                          <td>&nbsp;</td>
+                          <td> ${shippingPrice}</td>
                         </tr>
-
-                        <tr className="summary-shipping-row">
-                          <td>
-                            <div className="custom-control custom-radio">
-                              <input
-                                type="radio"
-                                id="free-shipping"
-                                name="shipping"
-                                className="custom-control-input"
-                                onChange={(e) => onChangeShipping("free")}
-                                defaultChecked={
-                                  "free" === prevShip ? true : false
-                                }
-                              />
-                              <label
-                                className="custom-control-label"
-                                htmlFor="free-shipping"
-                              >
-                                Free Shipping
-                              </label>
-                            </div>
-                          </td>
-                          <td>$0.00</td>
+                        <tr className="summary-shipping">
+                          <td>Tax:</td>
+                          <td> ${taxPrice}</td>
                         </tr>
-
-                        <tr className="summary-shipping-row">
-                          <td>
-                            <div className="custom-control custom-radio">
-                              <input
-                                type="radio"
-                                id="standard-shipping"
-                                name="shipping"
-                                className="custom-control-input"
-                                onChange={(e) => onChangeShipping("standard")}
-                                defaultChecked={
-                                  "standard" === prevShip ? true : false
-                                }
-                              />
-                              <label
-                                className="custom-control-label"
-                                htmlFor="standard-shipping"
-                              >
-                                Standard:
-                              </label>
-                            </div>
-                          </td>
-                          <td>$10.00</td>
-                        </tr>
-
-                        <tr className="summary-shipping-row">
-                          <td>
-                            <div className="custom-control custom-radio">
-                              <input
-                                type="radio"
-                                id="express-shipping"
-                                name="shipping"
-                                className="custom-control-input"
-                                onChange={(e) => onChangeShipping("express")}
-                                defaultChecked={
-                                  "express" === prevShip ? true : false
-                                }
-                              />
-                              <label
-                                className="custom-control-label"
-                                htmlFor="express-shipping"
-                              >
-                                Express:
-                              </label>
-                            </div>
-                          </td>
-                          <td>$20.00</td>
-                        </tr>
-
                         <tr className="summary-shipping-estimate">
                           <td>
                             Estimate for Your Country
-                            <br />{" "}
+                            <br />{' '}
                             <a
                               href={`${process.env.PUBLIC_URL}/shop/dashboard`}
                             >
@@ -319,12 +251,12 @@ function Cart(props) {
                           <td>Total:</td>
                           <td>
                             $
-                            {(total + shippingPrice[shipping]).toLocaleString(
+                            {(total + shippingPrice + taxPrice).toLocaleString(
                               undefined,
                               {
                                 minimumFractionDigits: 2,
                                 maximumFractionDigits: 2,
-                              }
+                              },
                             )}
                           </td>
                         </tr>
@@ -356,7 +288,7 @@ function Cart(props) {
   );
 }
 
-export const mapStateToProps = (state) => ({
+export const mapStateToProps = state => ({
   cartlist: state.cartlist.cart,
   total: getCartTotal(state.cartlist.cart),
   prevShip: state.cartlist.shipping,

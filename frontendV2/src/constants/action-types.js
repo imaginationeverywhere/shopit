@@ -13,6 +13,7 @@ export const ADD_TO_CART = "ADD_TO_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 export const CHANGE_QTY = "CHANGE_QTY";
 export const CHANGE_SHIPPING = "CHANGE_SHIPPING";
+export const SAVE_SHIPPING_INFO = "SAVE_SHIPPING_INFO";
 
 // WishList
 export const TOGGLE_WISHLIST = "TOGGLE_WISHLIST";

@@ -16,7 +16,18 @@ if (process.env.NODE_ENV !== "PRODUCTION")
   require("dotenv").config({ path: "backend/config/config.env" });
 // dotenv.config({ path: 'backend/config/config.env' })
 
-app.use(cors());
+app.use(
+  cors({
+    credentials: true,
+    allowedHeaders: [
+      "Access-Control-Allow-Origin",
+      "Access-Control-Allow-Headers",
+      "Content-Type",
+    ],
+    origin: "http://localhost:3000",
+  })
+);
+
 app.use(express.json());
 app.use(
   express.urlencoded({
@@ -24,7 +35,13 @@ app.use(
   })
 );
 app.use(cookieParser());
-app.use(fileUpload());
+app.use(
+  fileUpload({
+    limits: { fileSize: 50 * 1024 * 1024 },
+    useTempFiles: true,
+    tempFileDir: "/tmp/",
+  })
+);
 
 // Import all routes
 const products = require("./routes/products");

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 
-import ProductEight from "../product-two";
-import QuickView from "../common/quickview";
+import ProductEight from '../product-two';
+import QuickView from '../common/quickview';
 
 import {
   addToCart,
@@ -10,8 +10,8 @@ import {
   addToCompare,
   showQuickViewModal,
   filterSort,
-} from "../../../../actions";
-import { getVisibleProducts } from "../../../../services";
+} from '../../../../actions';
+import { getVisibleProducts } from '../../../../services';
 
 function ProductListTwo(props) {
   let {
@@ -30,13 +30,13 @@ function ProductListTwo(props) {
   const [loading, setLoading] = useState(false);
 
   const classList = {
-    boxed: "col-6 col-md-4 col-lg-4 col-xl-3",
-    fullwidth: "col-6 col-md-4 col-lg-4 col-xl-3 col-xxl-2",
+    boxed: 'col-6 col-md-4 col-lg-4 col-xl-3',
+    fullwidth: 'col-6 col-md-4 col-lg-4 col-xl-3 col-xxl-2',
   };
-  products = getVisibleProducts(products.slice(20, 35), filters);
+  products = getVisibleProducts(products.slice(0, 35), filters);
 
   function showSideBar() {
-    document.querySelector("body").classList.add("sidebar-filter-active");
+    document.querySelector('body').classList.add('sidebar-filter-active');
   }
 
   function changeFilter(e) {
@@ -49,7 +49,7 @@ function ProductListTwo(props) {
       setLoading(true);
 
       timer = setTimeout(() => {
-        setLoadedCount((prevCount) => prevCount + 4);
+        setLoadedCount(prevCount => prevCount + 4);
         setLoading(false);
 
         if (loadedCount >= products.length - 4) {
@@ -70,7 +70,7 @@ function ProductListTwo(props) {
   }, []);
 
   useEffect(() => {
-    products = getVisibleProducts(props.products.slice(20, 35), filters);
+    products = getVisibleProducts(props.products.slice(-15), filters);
 
     if (products.length > 8) {
       setHasMore(true);
@@ -86,7 +86,7 @@ function ProductListTwo(props) {
           <button
             className="sidebar-toggler"
             onClick={showSideBar}
-            style={{ padding: "0" }}
+            style={{ padding: '0' }}
           >
             <i className="icon-bars"></i>Filters
           </button>
@@ -94,10 +94,10 @@ function ProductListTwo(props) {
 
         <div className="toolbox-center">
           <div className="toolbox-info">
-            Showing{" "}
+            Showing{' '}
             <span>
               {Math.min(loadedCount, products.length)} of {products.length}
-            </span>{" "}
+            </span>{' '}
             Products
           </div>
         </div>
@@ -154,14 +154,14 @@ function ProductListTwo(props) {
             )}
           </button>
         ) : (
-          ""
+          ''
         )}
       </div>
     </>
   );
 }
 
-export const mapStateToProps = (state) => {
+export const mapStateToProps = state => {
   return {
     products: state.data.products ? state.data.products : [],
     filters: state.filters,

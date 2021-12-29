@@ -1,13 +1,36 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { MDBDataTableV5 } from "mdbreact";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "mdbreact/dist/css/mdb.css";
+// import { MDBDataTableV5 } from 'mdbreact';
+// import '@fortawesome/fontawesome-free/css/all.min.css';
+// import 'mdbreact/dist/css/mdb.css';
 
 import Loader from "../layout/Loader";
 import { getCarriers, setSelectedCarrier } from "../../actions/shipmentActions";
 import Table from "../Common/Table/index";
-
+const addressFrom = {
+  name: "Shawn Ippotle",
+  street1: "777 Brockton Avenue",
+  city: "Abington",
+  state: "MA",
+  zip: "2351",
+  country: "US",
+};
+const addressTo = {
+  name: "Mr Hippo",
+  street1: "4133 Veterans Memorial Drive",
+  city: "Batavia",
+  state: "NY",
+  zip: "14020",
+  country: "US",
+};
+const parcel = {
+  length: "5",
+  width: "5",
+  height: "5",
+  distance_unit: "in",
+  weight: "2",
+  mass_unit: "lb",
+};
 // const TableWithCheckbox = ({ dataTable }) => {
 //   const dispatch = useDispatch();
 
@@ -37,7 +60,8 @@ const CarrierList = ({ cartItems, shippingInfo }) => {
 
   useEffect(() => {
     const productIds = cartItems.map((item) => item.product);
-    dispatch(getCarriers({ productIds, shippingInfo }));
+    // dispatch(getCarriers({ productIds, shippingInfo }));
+    dispatch(getCarriers({ addressFrom, addressTo, parcel }));
   }, []);
 
   const {

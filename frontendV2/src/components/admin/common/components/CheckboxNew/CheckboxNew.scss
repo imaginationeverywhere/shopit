@@ -1,0 +1,50 @@
+.checkbox-new {
+  height: 3em;
+  border: none;
+  display: flex;
+  position: relative;
+  label {
+    color: #959cb6;
+    font-size: 0.9em;
+    font-family: "Avenir_Book";
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    .checkIcon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 1.2em;
+      width: 1.2em;
+      border: 1px solid #959cb6;
+      box-sizing: border-box;
+      box-shadow: inset 0px 2px 1px rgba(0, 0, 0, 0.0590183);
+      border-radius: 3px;
+      .checked {
+        display: none;
+      }
+    }
+    span {
+      display: block;
+      margin-right: 2.5em;
+      font-size: 0.9em;
+      width: 9em;
+      text-align: left;
+    }
+  }
+  input {
+    display: none;
+  }
+
+  input:checked + label .checked {
+    display: flex;
+    font-size: 0.7em;
+  }
+  input:checked + label .checkIcon {
+    border-color: #1b63dc;
+  }
+}

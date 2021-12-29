@@ -4,16 +4,16 @@
     "name": "Beige metal hoop tote bag",
     "price": 76,
     "pictures": [
-      "assets/images/products/elements/product-1-1.jpg",
-      "assets/images/products/elements/product-1-2.jpg",
-      "assets/images/products/elements/product-1-3.jpg",
-      "assets/images/products/elements/product-1-4.jpg"
+      "/assets/images/products/elements/product-1-1.jpg",
+      "/assets/images/products/elements/product-1-2.jpg",
+      "/assets/images/products/elements/product-1-3.jpg",
+      "/assets/images/products/elements/product-1-4.jpg"
     ],
     "smPictures": [
-      "assets/images/products/elements/product-1-1-300x300.jpg",
-      "assets/images/products/elements/product-1-2-300x300.jpg",
-      "assets/images/products/elements/product-1-3-300x300.jpg",
-      "assets/images/products/elements/product-1-4-300x300.jpg"
+      "/assets/images/products/elements/product-1-1-300x300.jpg",
+      "/assets/images/products/elements/product-1-2-300x300.jpg",
+      "/assets/images/products/elements/product-1-3-300x300.jpg",
+      "/assets/images/products/elements/product-1-4-300x300.jpg"
     ],
     "shortDesc": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing. Sed lectus.",
     "category": ["Women"],
@@ -28,16 +28,16 @@
     "name": "Beige ring handle circle cross body bag",
     "price": 55,
     "pictures": [
-      "assets/images/products/single/fullwidth/1-big.jpg",
-      "assets/images/products/single/fullwidth/2-big.jpg",
-      "assets/images/products/single/fullwidth/3-big.jpg",
-      "assets/images/products/single/fullwidth/4-big.jpg"
+      "/assets/images/products/single/fullwidth/1-big.jpg",
+      "/assets/images/products/single/fullwidth/2-big.jpg",
+      "/assets/images/products/single/fullwidth/3-big.jpg",
+      "/assets/images/products/single/fullwidth/4-big.jpg"
     ],
     "smPictures": [
-      "assets/images/products/single/fullwidth/1.jpg",
-      "assets/images/products/single/fullwidth/2.jpg",
-      "assets/images/products/single/fullwidth/3.jpg",
-      "assets/images/products/single/fullwidth/4.jpg"
+      "/assets/images/products/single/fullwidth/1.jpg",
+      "/assets/images/products/single/fullwidth/2.jpg",
+      "/assets/images/products/single/fullwidth/3.jpg",
+      "/assets/images/products/single/fullwidth/4.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna. Morbi i",
     "stock": 53,
@@ -65,16 +65,16 @@
     "name": "Beige V neck button cardigan",
     "price": 72,
     "pictures": [
-      "assets/images/products/elements/product-2-1.jpg",
-      "assets/images/products/elements/product-2-2.jpg",
-      "assets/images/products/elements/product-2-3.jpg",
-      "assets/images/products/elements/product-2-4.jpg"
+      "/assets/images/products/elements/product-2-1.jpg",
+      "/assets/images/products/elements/product-2-2.jpg",
+      "/assets/images/products/elements/product-2-3.jpg",
+      "/assets/images/products/elements/product-2-4.jpg"
     ],
     "smPictures": [
-      "assets/images/products/elements/product-2-1-300x300.jpg",
-      "assets/images/products/elements/product-2-2-300x300.jpg",
-      "assets/images/products/elements/product-2-3-300x300.jpg",
-      "assets/images/products/elements/product-2-4-300x300.jpg"
+      "/assets/images/products/elements/product-2-1-300x300.jpg",
+      "/assets/images/products/elements/product-2-2-300x300.jpg",
+      "/assets/images/products/elements/product-2-3-300x300.jpg",
+      "/assets/images/products/elements/product-2-4-300x300.jpg"
     ],
     "shortDesc": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing. Sed lectus.",
     "category": ["Women"],
@@ -88,16 +88,16 @@
     "name": "Black denim dungaree dress",
     "price": 60,
     "pictures": [
-      "assets/images/products/single/sidebar/product-5-1.jpg",
-      "assets/images/products/single/sidebar/product-5-2.jpg",
-      "assets/images/products/single/sidebar/product-5-3.jpg",
-      "assets/images/products/single/sidebar/product-5-4.jpg"
+      "/assets/images/products/single/sidebar/product-5-1.jpg",
+      "/assets/images/products/single/sidebar/product-5-2.jpg",
+      "/assets/images/products/single/sidebar/product-5-3.jpg",
+      "/assets/images/products/single/sidebar/product-5-4.jpg"
     ],
     "smPictures": [
-      "assets/images/products/single/sidebar/product-5-1-300x190.jpg",
-      "assets/images/products/single/sidebar/product-5-2-300x190.jpg",
-      "assets/images/products/single/sidebar/product-5-3-300x190.jpg",
-      "assets/images/products/single/sidebar/product-5-4-300x190.jpg"
+      "/assets/images/products/single/sidebar/product-5-1-300x190.jpg",
+      "/assets/images/products/single/sidebar/product-5-2-300x190.jpg",
+      "/assets/images/products/single/sidebar/product-5-3-300x190.jpg",
+      "/assets/images/products/single/sidebar/product-5-4-300x190.jpg"
     ],
     "shortDesc": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing. Sed lectus.",
     "stock": 203,
@@ -122,16 +122,16 @@
     "name": "Black faux leather chain trim sandals",
     "price": 90,
     "pictures": [
-      "assets/images/products/elements/5-big.jpg",
-      "assets/images/products/elements/6-big.jpg",
-      "assets/images/products/elements/7-big.jpg",
-      "assets/images/products/elements/8-big.jpg"
+      "/assets/images/products/elements/5-big.jpg",
+      "/assets/images/products/elements/6-big.jpg",
+      "/assets/images/products/elements/7-big.jpg",
+      "/assets/images/products/elements/8-big.jpg"
     ],
     "smPictures": [
-      "assets/images/products/elements/5.jpg",
-      "assets/images/products/elements/6.jpg",
-      "assets/images/products/elements/7.jpg",
-      "assets/images/products/elements/8.jpg"
+      "/assets/images/products/elements/5.jpg",
+      "/assets/images/products/elements/6.jpg",
+      "/assets/images/products/elements/7.jpg",
+      "/assets/images/products/elements/8.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "category": ["Shoes", "Boots"],
@@ -146,16 +146,16 @@
     "price": 310,
     "salePrice": 190,
     "pictures": [
-      "assets/images/products/elements/product-3-1.jpg",
-      "assets/images/products/elements/product-3-2.jpg",
-      "assets/images/products/elements/product-3-3.jpg",
-      "assets/images/products/elements/product-3-4.jpg"
+      "/assets/images/products/elements/product-3-1.jpg",
+      "/assets/images/products/elements/product-3-2.jpg",
+      "/assets/images/products/elements/product-3-3.jpg",
+      "/assets/images/products/elements/product-3-4.jpg"
     ],
     "smPictures": [
-      "assets/images/products/elements/product-3-1-300x300.jpg",
-      "assets/images/products/elements/product-3-2-300x300.jpg",
-      "assets/images/products/elements/product-3-3-300x300.jpg",
-      "assets/images/products/elements/product-3-4-300x300.jpg"
+      "/assets/images/products/elements/product-3-1-300x300.jpg",
+      "/assets/images/products/elements/product-3-2-300x300.jpg",
+      "/assets/images/products/elements/product-3-3-300x300.jpg",
+      "/assets/images/products/elements/product-3-4-300x300.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "category": ["Women"],
@@ -171,16 +171,16 @@
     "name": "Dark yellow lace cut out swing dress",
     "price": 84,
     "pictures": [
-      "assets/images/products/single/default/1-big.jpg",
-      "assets/images/products/single/default/2-big.jpg",
-      "assets/images/products/single/default/3-big.jpg",
-      "assets/images/products/single/default/4-big.jpg"
+      "/assets/images/products/single/default/1-big.jpg",
+      "/assets/images/products/single/default/2-big.jpg",
+      "/assets/images/products/single/default/3-big.jpg",
+      "/assets/images/products/single/default/4-big.jpg"
     ],
     "smPictures": [
-      "assets/images/products/single/default/1.jpg",
-      "assets/images/products/single/default/2.jpg",
-      "assets/images/products/single/default/3.jpg",
-      "assets/images/products/single/default/4.jpg"
+      "/assets/images/products/single/default/1.jpg",
+      "/assets/images/products/single/default/2.jpg",
+      "/assets/images/products/single/default/3.jpg",
+      "/assets/images/products/single/default/4.jpg"
     ],
     "shortDesc": "Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi.",
     "category": ["Dresses"],
@@ -202,16 +202,16 @@
     "name": "Yellow tie strap block heel sandals",
     "price": 68,
     "pictures": [
-      "assets/images/products/single/extended/1-big.jpg",
-      "assets/images/products/single/extended/2-big.jpg",
-      "assets/images/products/single/extended/3-big.jpg",
-      "assets/images/products/single/extended/4-big.jpg"
+      "/assets/images/products/single/extended/1-big.jpg",
+      "/assets/images/products/single/extended/2-big.jpg",
+      "/assets/images/products/single/extended/3-big.jpg",
+      "/assets/images/products/single/extended/4-big.jpg"
     ],
     "smPictures": [
-      "assets/images/products/single/extended/1.jpg",
-      "assets/images/products/single/extended/2.jpg",
-      "assets/images/products/single/extended/3.jpg",
-      "assets/images/products/single/extended/4.jpg"
+      "/assets/images/products/single/extended/1.jpg",
+      "/assets/images/products/single/extended/2.jpg",
+      "/assets/images/products/single/extended/3.jpg",
+      "/assets/images/products/single/extended/4.jpg"
     ],
     "shortDesc": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing. Sed lectus.",
     "stock": 33,
@@ -239,14 +239,14 @@
     "name": "Loafers",
     "price": 67,
     "pictures": [
-      "assets/images/products/single/centered/1-big.jpg",
-      "assets/images/products/single/centered/2-big.jpg",
-      "assets/images/products/single/centered/3-big.jpg"
+      "/assets/images/products/single/centered/1-big.jpg",
+      "/assets/images/products/single/centered/2-big.jpg",
+      "/assets/images/products/single/centered/3-big.jpg"
     ],
     "smPictures": [
-      "assets/images/products/single/centered/1.jpg",
-      "assets/images/products/single/centered/2.jpg",
-      "assets/images/products/single/centered/3.jpg"
+      "/assets/images/products/single/centered/1.jpg",
+      "/assets/images/products/single/centered/2.jpg",
+      "/assets/images/products/single/centered/3.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 103,
@@ -273,16 +273,16 @@
     "price": 12.99,
     "salePrice": 7.99,
     "pictures": [
-      "assets/images/products/single/sidebar/product-1-1.jpg",
-      "assets/images/products/single/sidebar/product-1-2.jpg",
-      "assets/images/products/single/sidebar/product-1-3.jpg",
-      "assets/images/products/single/sidebar/product-1-4.jpg"
+      "/assets/images/products/single/sidebar/product-1-1.jpg",
+      "/assets/images/products/single/sidebar/product-1-2.jpg",
+      "/assets/images/products/single/sidebar/product-1-3.jpg",
+      "/assets/images/products/single/sidebar/product-1-4.jpg"
     ],
     "smPictures": [
-      "assets/images/products/single/sidebar/product-1-1-300x408.jpg",
-      "assets/images/products/single/sidebar/product-1-2-300x408.jpg",
-      "assets/images/products/single/sidebar/product-1-3-300x408.jpg",
-      "assets/images/products/single/sidebar/product-1-4-300x408.jpg"
+      "/assets/images/products/single/sidebar/product-1-1-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-1-2-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-1-3-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-1-4-300x408.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 23,
@@ -298,14 +298,14 @@
     "price": 14.99,
     "salePrice": 9.99,
     "pictures": [
-      "assets/images/products/single/sidebar/product-2-1.jpg",
-      "assets/images/products/single/sidebar/product-2-2.jpg",
-      "assets/images/products/single/sidebar/product-2-3.jpg"
+      "/assets/images/products/single/sidebar/product-2-1.jpg",
+      "/assets/images/products/single/sidebar/product-2-2.jpg",
+      "/assets/images/products/single/sidebar/product-2-3.jpg"
     ],
     "smPictures": [
-      "assets/images/products/single/sidebar/product-2-1-300x408.jpg",
-      "assets/images/products/single/sidebar/product-2-2-300x408.jpg",
-      "assets/images/products/single/sidebar/product-2-3-300x408.jpg"
+      "/assets/images/products/single/sidebar/product-2-1-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-2-2-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-2-3-300x408.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 23,
@@ -322,14 +322,14 @@
     "price": 19.99,
     "salePrice": 29.99,
     "pictures": [
-      "assets/images/products/single/sidebar/product-3-1.jpg",
-      "assets/images/products/single/sidebar/product-3-2.jpg",
-      "assets/images/products/single/sidebar/product-3-3.jpg"
+      "/assets/images/products/single/sidebar/product-3-1.jpg",
+      "/assets/images/products/single/sidebar/product-3-2.jpg",
+      "/assets/images/products/single/sidebar/product-3-3.jpg"
     ],
     "smPictures": [
-      "assets/images/products/single/sidebar/product-3-1-300x408.jpg",
-      "assets/images/products/single/sidebar/product-3-2-300x408.jpg",
-      "assets/images/products/single/sidebar/product-3-3-300x408.jpg"
+      "/assets/images/products/single/sidebar/product-3-1-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-3-2-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-3-3-300x408.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 203,
@@ -344,16 +344,16 @@
     "name": "Biker jacket",
     "price": 23.99,
     "pictures": [
-      "assets/images/products/single/sidebar/product-4-1.jpg",
-      "assets/images/products/single/sidebar/product-4-2.jpg",
-      "assets/images/products/single/sidebar/product-4-3.jpg",
-      "assets/images/products/single/sidebar/product-4-4.jpg"
+      "/assets/images/products/single/sidebar/product-4-1.jpg",
+      "/assets/images/products/single/sidebar/product-4-2.jpg",
+      "/assets/images/products/single/sidebar/product-4-3.jpg",
+      "/assets/images/products/single/sidebar/product-4-4.jpg"
     ],
     "smPictures": [
-      "assets/images/products/single/sidebar/product-4-1-300x408.jpg",
-      "assets/images/products/single/sidebar/product-4-2-300x408.jpg",
-      "assets/images/products/single/sidebar/product-4-3-300x408.jpg",
-      "assets/images/products/single/sidebar/product-4-4-300x408.jpg"
+      "/assets/images/products/single/sidebar/product-4-1-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-4-2-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-4-3-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-4-4-300x408.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 203,
@@ -363,10 +363,10 @@
     "reviews": 2,
     "variants": [
       {
-        "model": "assets/images/products/single/sidebar/product-4-1-thumb.jpg"
+        "model": "/assets/images/products/single/sidebar/product-4-1-thumb.jpg"
       },
       {
-        "model": "assets/images/products/single/sidebar/product-4-2-thumb.jpg"
+        "model": "/assets/images/products/single/sidebar/product-4-2-thumb.jpg"
       }
     ]
   },
@@ -376,14 +376,14 @@
     "price": 17.99,
     "salePrice": 12.99,
     "pictures": [
-      "assets/images/products/single/sidebar/product-9-1.jpg",
-      "assets/images/products/single/sidebar/product-9-2.jpg",
-      "assets/images/products/single/sidebar/product-9-3.jpg"
+      "/assets/images/products/single/sidebar/product-9-1.jpg",
+      "/assets/images/products/single/sidebar/product-9-2.jpg",
+      "/assets/images/products/single/sidebar/product-9-3.jpg"
     ],
     "smPictures": [
-      "assets/images/products/single/sidebar/product-9-1-300x408.jpg",
-      "assets/images/products/single/sidebar/product-9-2-300x408.jpg",
-      "assets/images/products/single/sidebar/product-9-3-300x408.jpg"
+      "/assets/images/products/single/sidebar/product-9-1-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-9-2-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-9-3-300x408.jpg"
     ],
     "shortDesc": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing. Sed lectus.",
     "stock": 3,
@@ -399,16 +399,16 @@
     "name": "Denim Jacket",
     "price": 19.99,
     "pictures": [
-      "assets/images/products/single/sidebar/product-7-1.jpg",
-      "assets/images/products/single/sidebar/product-7-2.jpg",
-      "assets/images/products/single/sidebar/product-7-3.jpg",
-      "assets/images/products/single/sidebar/product-7-4.jpg"
+      "/assets/images/products/single/sidebar/product-7-1.jpg",
+      "/assets/images/products/single/sidebar/product-7-2.jpg",
+      "/assets/images/products/single/sidebar/product-7-3.jpg",
+      "/assets/images/products/single/sidebar/product-7-4.jpg"
     ],
     "smPictures": [
-      "assets/images/products/single/sidebar/product-7-1-300x408.jpg",
-      "assets/images/products/single/sidebar/product-7-2-300x408.jpg",
-      "assets/images/products/single/sidebar/product-7-3-300x408.jpg",
-      "assets/images/products/single/sidebar/product-7-4-300x408.jpg"
+      "/assets/images/products/single/sidebar/product-7-1-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-7-2-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-7-3-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-7-4-300x408.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 3,
@@ -418,13 +418,13 @@
     "reviews": 2,
     "variants": [
       {
-        "model": "assets/images/products/single/sidebar/product-7-1-thumb.jpg"
+        "model": "/assets/images/products/single/sidebar/product-7-1-thumb.jpg"
       },
       {
-        "model": "assets/images/products/single/sidebar/product-7-2-thumb.jpg"
+        "model": "/assets/images/products/single/sidebar/product-7-2-thumb.jpg"
       },
       {
-        "model": "assets/images/products/single/sidebar/product-7-3-thumb.jpg"
+        "model": "/assets/images/products/single/sidebar/product-7-3-thumb.jpg"
       }
     ]
   },
@@ -433,16 +433,16 @@
     "name": "Linen-blend paper bag trousers",
     "price": 15.99,
     "pictures": [
-      "assets/images/products/single/sidebar/product-8-1.jpg",
-      "assets/images/products/single/sidebar/product-8-2.jpg",
-      "assets/images/products/single/sidebar/product-8-3.jpg",
-      "assets/images/products/single/sidebar/product-8-4.jpg"
+      "/assets/images/products/single/sidebar/product-8-1.jpg",
+      "/assets/images/products/single/sidebar/product-8-2.jpg",
+      "/assets/images/products/single/sidebar/product-8-3.jpg",
+      "/assets/images/products/single/sidebar/product-8-4.jpg"
     ],
     "smPictures": [
-      "assets/images/products/single/sidebar/product-8-1-300x408.jpg",
-      "assets/images/products/single/sidebar/product-8-2-300x408.jpg",
-      "assets/images/products/single/sidebar/product-8-3-300x408.jpg",
-      "assets/images/products/single/sidebar/product-8-4-300x408.jpg"
+      "/assets/images/products/single/sidebar/product-8-1-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-8-2-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-8-3-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-8-4-300x408.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 3,
@@ -452,10 +452,10 @@
     "reviews": 2,
     "variants": [
       {
-        "model": "assets/images/products/single/sidebar/product-8-1-thumb.jpg"
+        "model": "/assets/images/products/single/sidebar/product-8-1-thumb.jpg"
       },
       {
-        "model": "assets/images/products/single/sidebar/product-8-2-thumb.jpg"
+        "model": "/assets/images/products/single/sidebar/product-8-2-thumb.jpg"
       }
     ]
   },
@@ -464,16 +464,16 @@
     "name": "Small bucket bag",
     "price": 14.99,
     "pictures": [
-      "assets/images/products/single/sidebar/product-6-1.jpg",
-      "assets/images/products/single/sidebar/product-6-2.jpg",
-      "assets/images/products/single/sidebar/product-6-3.jpg",
-      "assets/images/products/single/sidebar/product-6-4.jpg"
+      "/assets/images/products/single/sidebar/product-6-1.jpg",
+      "/assets/images/products/single/sidebar/product-6-2.jpg",
+      "/assets/images/products/single/sidebar/product-6-3.jpg",
+      "/assets/images/products/single/sidebar/product-6-4.jpg"
     ],
     "smPictures": [
-      "assets/images/products/single/sidebar/product-6-1-300x408.jpg",
-      "assets/images/products/single/sidebar/product-6-2-300x408.jpg",
-      "assets/images/products/single/sidebar/product-6-3-300x408.jpg",
-      "assets/images/products/single/sidebar/product-6-4-300x408.jpg"
+      "/assets/images/products/single/sidebar/product-6-1-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-6-2-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-6-3-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-6-4-300x408.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 3,
@@ -483,10 +483,10 @@
     "reviews": 3,
     "variants": [
       {
-        "model": "assets/images/products/single/sidebar/product-6-1-thumb.jpg"
+        "model": "/assets/images/products/single/sidebar/product-6-1-thumb.jpg"
       },
       {
-        "model": "assets/images/products/single/sidebar/product-6-2-thumb.jpg"
+        "model": "/assets/images/products/single/sidebar/product-6-2-thumb.jpg"
       }
     ]
   },
@@ -495,14 +495,14 @@
     "name": "Sandals",
     "price": 17.99,
     "pictures": [
-      "assets/images/products/single/sidebar/product-10-1.jpg",
-      "assets/images/products/single/sidebar/product-10-2.jpg",
-      "assets/images/products/single/sidebar/product-10-3.jpg"
+      "/assets/images/products/single/sidebar/product-10-1.jpg",
+      "/assets/images/products/single/sidebar/product-10-2.jpg",
+      "/assets/images/products/single/sidebar/product-10-3.jpg"
     ],
     "smPictures": [
-      "assets/images/products/single/sidebar/product-10-1-300x408.jpg",
-      "assets/images/products/single/sidebar/product-10-2-300x408.jpg",
-      "assets/images/products/single/sidebar/product-10-3-300x408.jpg"
+      "/assets/images/products/single/sidebar/product-10-1-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-10-2-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-10-3-300x408.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 0,
@@ -517,14 +517,14 @@
     "name": "Short wrap dress",
     "price": 14.99,
     "pictures": [
-      "assets/images/products/single/sidebar/product-11-1.jpg",
-      "assets/images/products/single/sidebar/product-11-2.jpg",
-      "assets/images/products/single/sidebar/product-11-3.jpg"
+      "/assets/images/products/single/sidebar/product-11-1.jpg",
+      "/assets/images/products/single/sidebar/product-11-2.jpg",
+      "/assets/images/products/single/sidebar/product-11-3.jpg"
     ],
     "smPictures": [
-      "assets/images/products/single/sidebar/product-11-1-300x408.jpg",
-      "assets/images/products/single/sidebar/product-11-2-300x408.jpg",
-      "assets/images/products/single/sidebar/product-11-3-300x408.jpg"
+      "/assets/images/products/single/sidebar/product-11-1-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-11-2-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-11-3-300x408.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 20,
@@ -539,14 +539,14 @@
     "name": "Sandals",
     "price": 24.99,
     "pictures": [
-      "assets/images/products/single/sidebar/product-12-1.jpg",
-      "assets/images/products/single/sidebar/product-12-2.jpg",
-      "assets/images/products/single/sidebar/product-12-3.jpg"
+      "/assets/images/products/single/sidebar/product-12-1.jpg",
+      "/assets/images/products/single/sidebar/product-12-2.jpg",
+      "/assets/images/products/single/sidebar/product-12-3.jpg"
     ],
     "smPictures": [
-      "assets/images/products/single/sidebar/product-12-1-300x408.jpg",
-      "assets/images/products/single/sidebar/product-12-2-300x408.jpg",
-      "assets/images/products/single/sidebar/product-12-3-300x408.jpg"
+      "/assets/images/products/single/sidebar/product-12-1-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-12-2-300x408.jpg",
+      "/assets/images/products/single/sidebar/product-12-3-300x408.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "category": ["Shoes", "Men"],
@@ -560,12 +560,12 @@
     "name": "2-Seater",
     "price": 2486,
     "pictures": [
-      "assets/images/products/shop/product-1-1.jpg",
-      "assets/images/products/shop/product-1-2.jpg"
+      "/assets/images/products/shop/product-1-1.jpg",
+      "/assets/images/products/shop/product-1-2.jpg"
     ],
     "smPictures": [
-      "assets/images/products/shop/product-1-1-300x300.jpg",
-      "assets/images/products/shop/product-1-2-300x300.jpg"
+      "/assets/images/products/shop/product-1-1-300x300.jpg",
+      "/assets/images/products/shop/product-1-2-300x300.jpg"
     ],
     "shortDesc": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing. Sed lectus.",
     "stock": 0,
@@ -580,12 +580,12 @@
     "name": "Block Side Table/Trolly",
     "price": 210,
     "pictures": [
-      "assets/images/products/shop/product-2-1.jpg",
-      "assets/images/products/shop/product-2-2.jpg"
+      "/assets/images/products/shop/product-2-1.jpg",
+      "/assets/images/products/shop/product-2-2.jpg"
     ],
     "smPictures": [
-      "assets/images/products/shop/product-2-1-300x300.jpg",
-      "assets/images/products/shop/product-2-2-300x300.jpg"
+      "/assets/images/products/shop/product-2-1-300x300.jpg",
+      "/assets/images/products/shop/product-2-2-300x300.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 10,
@@ -601,12 +601,12 @@
     "price": 25,
     "salePrice": 20,
     "pictures": [
-      "assets/images/products/shop/product-3-1.jpg",
-      "assets/images/products/shop/product-3-2.jpg"
+      "/assets/images/products/shop/product-3-1.jpg",
+      "/assets/images/products/shop/product-3-2.jpg"
     ],
     "smPictures": [
-      "assets/images/products/shop/product-3-1-300x300.jpg",
-      "assets/images/products/shop/product-3-2-300x300.jpg"
+      "/assets/images/products/shop/product-3-1-300x300.jpg",
+      "/assets/images/products/shop/product-3-2-300x300.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 10,
@@ -624,12 +624,12 @@
     "name": "Can 2-Seater Sofa",
     "price": 60,
     "pictures": [
-      "assets/images/products/shop/product-4-1.jpg",
-      "assets/images/products/shop/product-4-2.jpg"
+      "/assets/images/products/shop/product-4-1.jpg",
+      "/assets/images/products/shop/product-4-2.jpg"
     ],
     "smPictures": [
-      "assets/images/products/shop/product-4-1-300x300.jpg",
-      "assets/images/products/shop/product-4-2-300x300.jpg"
+      "/assets/images/products/shop/product-4-1-300x300.jpg",
+      "/assets/images/products/shop/product-4-2-300x300.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 10,
@@ -656,12 +656,12 @@
     "name": "Roots Sofa Bed",
     "price": 449,
     "pictures": [
-      "assets/images/products/shop/product-11-1.jpg",
-      "assets/images/products/shop/product-11-2.jpg"
+      "/assets/images/products/shop/product-11-1.jpg",
+      "/assets/images/products/shop/product-11-2.jpg"
     ],
     "smPictures": [
-      "assets/images/products/shop/product-11-1-300x300.jpg",
-      "assets/images/products/shop/product-11-2-300x300.jpg"
+      "/assets/images/products/shop/product-11-1-300x300.jpg",
+      "/assets/images/products/shop/product-11-2-300x300.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 2,
@@ -677,12 +677,12 @@
     "name": "Carronade Table Lamp",
     "price": 130,
     "pictures": [
-      "assets/images/products/shop/product-6-1.jpg",
-      "assets/images/products/shop/product-6-2.jpg"
+      "/assets/images/products/shop/product-6-1.jpg",
+      "/assets/images/products/shop/product-6-2.jpg"
     ],
     "smPictures": [
-      "assets/images/products/shop/product-6-1-300x300.jpg",
-      "assets/images/products/shop/product-6-2-300x300.jpg"
+      "/assets/images/products/shop/product-6-1-300x300.jpg",
+      "/assets/images/products/shop/product-6-2-300x300.jpg"
     ],
     "shortDesc": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing. Sed lectus.",
     "stock": 10,
@@ -706,12 +706,12 @@
     "name": "Cushion Set 3 Pieces",
     "price": 199,
     "pictures": [
-      "assets/images/products/shop/product-7-1.jpg",
-      "assets/images/products/shop/product-7-2.jpg"
+      "/assets/images/products/shop/product-7-1.jpg",
+      "/assets/images/products/shop/product-7-2.jpg"
     ],
     "smPictures": [
-      "assets/images/products/shop/product-7-1-300x300.jpg",
-      "assets/images/products/shop/product-7-2-300x300.jpg"
+      "/assets/images/products/shop/product-7-1-300x300.jpg",
+      "/assets/images/products/shop/product-7-2-300x300.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 12,
@@ -726,14 +726,14 @@
     "name": "Flow Slim Armchair",
     "price": 97,
     "pictures": [
-      "assets/images/products/shop/product-8-1.jpg",
-      "assets/images/products/shop/product-8-2.jpg",
-      "assets/images/products/shop/product-8-3.jpg"
+      "/assets/images/products/shop/product-8-1.jpg",
+      "/assets/images/products/shop/product-8-2.jpg",
+      "/assets/images/products/shop/product-8-3.jpg"
     ],
     "smPictures": [
-      "assets/images/products/shop/product-8-1-300x300.jpg",
-      "assets/images/products/shop/product-8-2-300x300.jpg",
-      "assets/images/products/shop/product-8-3-300x300.jpg"
+      "/assets/images/products/shop/product-8-1-300x300.jpg",
+      "/assets/images/products/shop/product-8-2-300x300.jpg",
+      "/assets/images/products/shop/product-8-3-300x300.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 12,
@@ -750,12 +750,12 @@
     "salePrice": 250,
     "discount": 30,
     "pictures": [
-      "assets/images/products/shop/product-9-1.jpg",
-      "assets/images/products/shop/product-9-2.jpg"
+      "/assets/images/products/shop/product-9-1.jpg",
+      "/assets/images/products/shop/product-9-2.jpg"
     ],
     "smPictures": [
-      "assets/images/products/shop/product-9-1-300x300.jpg",
-      "assets/images/products/shop/product-9-2-300x300.jpg"
+      "/assets/images/products/shop/product-9-1-300x300.jpg",
+      "/assets/images/products/shop/product-9-2-300x300.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 8,
@@ -781,12 +781,12 @@
     "name": "Garden Armchair",
     "price": 94,
     "pictures": [
-      "assets/images/products/shop/product-10-1.jpg",
-      "assets/images/products/shop/product-10-2.jpg"
+      "/assets/images/products/shop/product-10-1.jpg",
+      "/assets/images/products/shop/product-10-2.jpg"
     ],
     "smPictures": [
-      "assets/images/products/shop/product-10-1-300x300.jpg",
-      "assets/images/products/shop/product-10-2-300x300.jpg"
+      "/assets/images/products/shop/product-10-1-300x300.jpg",
+      "/assets/images/products/shop/product-10-2-300x300.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 8,
@@ -812,12 +812,12 @@
     "name": "Carronade Large Suspension Lamp",
     "price": 341,
     "pictures": [
-      "assets/images/products/shop/product-5-1.jpg",
-      "assets/images/products/shop/product-5-2.jpg"
+      "/assets/images/products/shop/product-5-1.jpg",
+      "/assets/images/products/shop/product-5-2.jpg"
     ],
     "smPictures": [
-      "assets/images/products/shop/product-5-1-300x300.jpg",
-      "assets/images/products/shop/product-5-2-300x300.jpg"
+      "/assets/images/products/shop/product-5-1-300x300.jpg",
+      "/assets/images/products/shop/product-5-2-300x300.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 10,
@@ -844,14 +844,14 @@
     "price": 65,
     "salePrice": 40.99,
     "pictures": [
-      "assets/images/products/shop/product-12-1.jpg",
-      "assets/images/products/shop/product-12-2.jpg",
-      "assets/images/products/shop/product-12-3.jpg"
+      "/assets/images/products/shop/product-12-1.jpg",
+      "/assets/images/products/shop/product-12-2.jpg",
+      "/assets/images/products/shop/product-12-3.jpg"
     ],
     "smPictures": [
-      "assets/images/products/shop/product-12-1-300x300.jpg",
-      "assets/images/products/shop/product-12-2-300x300.jpg",
-      "assets/images/products/shop/product-12-3-300x300.jpg"
+      "/assets/images/products/shop/product-12-1-300x300.jpg",
+      "/assets/images/products/shop/product-12-2-300x300.jpg",
+      "/assets/images/products/shop/product-12-3-300x300.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 14,
@@ -878,12 +878,12 @@
     "price": 40,
     "salePrice": 29.99,
     "pictures": [
-      "assets/images/products/shop/product-13-1.jpg",
-      "assets/images/products/shop/product-13-2.jpg"
+      "/assets/images/products/shop/product-13-1.jpg",
+      "/assets/images/products/shop/product-13-2.jpg"
     ],
     "smPictures": [
-      "assets/images/products/shop/product-13-1-300x300.jpg",
-      "assets/images/products/shop/product-13-2-300x300.jpg"
+      "/assets/images/products/shop/product-13-1-300x300.jpg",
+      "/assets/images/products/shop/product-13-2-300x300.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 10,
@@ -900,16 +900,16 @@
     "price": 80,
     "salePrice": 69.99,
     "pictures": [
-      "assets/images/products/shop/product-14-1.jpg",
-      "assets/images/products/shop/product-14-2.jpg",
-      "assets/images/products/shop/product-14-3.jpg",
-      "assets/images/products/shop/product-14-4.jpg"
+      "/assets/images/products/shop/product-14-1.jpg",
+      "/assets/images/products/shop/product-14-2.jpg",
+      "/assets/images/products/shop/product-14-3.jpg",
+      "/assets/images/products/shop/product-14-4.jpg"
     ],
     "smPictures": [
-      "assets/images/products/shop/product-14-1-300x300.jpg",
-      "assets/images/products/shop/product-14-2-300x300.jpg",
-      "assets/images/products/shop/product-14-3-300x300.jpg",
-      "assets/images/products/shop/product-14-4-300x300.jpg"
+      "/assets/images/products/shop/product-14-1-300x300.jpg",
+      "/assets/images/products/shop/product-14-2-300x300.jpg",
+      "/assets/images/products/shop/product-14-3-300x300.jpg",
+      "/assets/images/products/shop/product-14-4-300x300.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 4,
@@ -924,8 +924,8 @@
     "name": "Wingback Chair",
     "price": 199,
     "salePrice": 169.99,
-    "pictures": ["assets/images/products/shop/product-15-1.jpg"],
-    "smPictures": ["assets/images/products/shop/product-15-1-300x300.jpg"],
+    "pictures": ["/assets/images/products/shop/product-15-1.jpg"],
+    "smPictures": ["/assets/images/products/shop/product-15-1-300x300.jpg"],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 4,
     "category": ["Armchairs & Chaises", "Decor", "Sofas & Sleeper Sofas"],
@@ -939,12 +939,12 @@
     "price": 29.99,
     "salePrice": 19.99,
     "pictures": [
-      "assets/images/home/products/product-1-1.jpg",
-      "assets/images/home/products/product-1-2.jpg"
+      "/assets/images/home/products/product-1-1.jpg",
+      "/assets/images/home/products/product-1-2.jpg"
     ],
     "smPictures": [
-      "assets/images/home/products/product-1-1-296x300.jpg",
-      "assets/images/home/products/product-1-2-296x300.jpg"
+      "/assets/images/home/products/product-1-1-296x300.jpg",
+      "/assets/images/home/products/product-1-2-296x300.jpg"
     ],
     "shortDesc": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing. Sed lectus.",
     "stock": 8,
@@ -962,16 +962,16 @@
     "price": 125.99,
     "salePrice": 99.99,
     "pictures": [
-      "assets/images/home/products/product-10-1.jpg",
-      "assets/images/home/products/product-10-2.jpg",
-      "assets/images/home/products/product-10-3.jpg",
-      "assets/images/home/products/product-10-4.jpg"
+      "/assets/images/home/products/product-10-1.jpg",
+      "/assets/images/home/products/product-10-2.jpg",
+      "/assets/images/home/products/product-10-3.jpg",
+      "/assets/images/home/products/product-10-4.jpg"
     ],
     "smPictures": [
-      "assets/images/home/products/product-10-1-296x300.jpg",
-      "assets/images/home/products/product-10-2-296x300.jpg",
-      "assets/images/home/products/product-10-3-296x300.jpg",
-      "assets/images/home/products/product-10-4-296x300.jpg"
+      "/assets/images/home/products/product-10-1-296x300.jpg",
+      "/assets/images/home/products/product-10-2-296x300.jpg",
+      "/assets/images/home/products/product-10-3-296x300.jpg",
+      "/assets/images/home/products/product-10-4-296x300.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ",
     "stock": 10,
@@ -994,14 +994,14 @@
     "name": "Sandals",
     "price": 449,
     "pictures": [
-      "assets/images/home/products/product-2-1.jpg",
-      "assets/images/home/products/product-2-2.jpg",
-      "assets/images/home/products/product-2-3.jpg"
+      "/assets/images/home/products/product-2-1.jpg",
+      "/assets/images/home/products/product-2-2.jpg",
+      "/assets/images/home/products/product-2-3.jpg"
     ],
     "smPictures": [
-      "assets/images/home/products/product-2-1-296x300.jpg",
-      "assets/images/home/products/product-2-2-296x300.jpg",
-      "assets/images/home/products/product-2-3-296x300.jpg"
+      "/assets/images/home/products/product-2-1-296x300.jpg",
+      "/assets/images/home/products/product-2-2-296x300.jpg",
+      "/assets/images/home/products/product-2-3-296x300.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ",
     "stock": 10,
@@ -1017,14 +1017,14 @@
     "price": 310,
     "salePrice": 190,
     "pictures": [
-      "assets/images/home/products/product-11-1.jpg",
-      "assets/images/home/products/product-11-2.jpg",
-      "assets/images/home/products/product-11-3.jpg"
+      "/assets/images/home/products/product-11-1.jpg",
+      "/assets/images/home/products/product-11-2.jpg",
+      "/assets/images/home/products/product-11-3.jpg"
     ],
     "smPictures": [
-      "assets/images/home/products/product-11-1-296x300.jpg",
-      "assets/images/home/products/product-11-2-296x300.jpg",
-      "assets/images/home/products/product-11-3-296x300.jpg"
+      "/assets/images/home/products/product-11-1-296x300.jpg",
+      "/assets/images/home/products/product-11-2-296x300.jpg",
+      "/assets/images/home/products/product-11-3-296x300.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ",
     "stock": 10,
@@ -1042,14 +1042,14 @@
     "name": "Short wrap dress",
     "price": 80,
     "pictures": [
-      "assets/images/home/products/product-12-1.jpg",
-      "assets/images/home/products/product-12-2.jpg",
-      "assets/images/home/products/product-12-3.jpg"
+      "/assets/images/home/products/product-12-1.jpg",
+      "/assets/images/home/products/product-12-2.jpg",
+      "/assets/images/home/products/product-12-3.jpg"
     ],
     "smPictures": [
-      "assets/images/home/products/product-12-1-296x300.jpg",
-      "assets/images/home/products/product-12-2-296x300.jpg",
-      "assets/images/home/products/product-12-3-296x300.jpg"
+      "/assets/images/home/products/product-12-1-296x300.jpg",
+      "/assets/images/home/products/product-12-2-296x300.jpg",
+      "/assets/images/home/products/product-12-3-296x300.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ",
     "stock": 10,
@@ -1065,14 +1065,14 @@
     "price": 84,
     "salePrice": 50,
     "pictures": [
-      "assets/images/home/products/product-3-1.jpg",
-      "assets/images/home/products/product-3-2.jpg",
-      "assets/images/home/products/product-3-3.jpg"
+      "/assets/images/home/products/product-3-1.jpg",
+      "/assets/images/home/products/product-3-2.jpg",
+      "/assets/images/home/products/product-3-3.jpg"
     ],
     "smPictures": [
-      "assets/images/home/products/product-3-1-296x300.jpg",
-      "assets/images/home/products/product-3-2-296x300.jpg",
-      "assets/images/home/products/product-3-3-296x300.jpg"
+      "/assets/images/home/products/product-3-1-296x300.jpg",
+      "/assets/images/home/products/product-3-2-296x300.jpg",
+      "/assets/images/home/products/product-3-3-296x300.jpg"
     ],
     "discount": 20,
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
@@ -1089,12 +1089,12 @@
     "name": "Sunglasses",
     "price": 56,
     "pictures": [
-      "assets/images/home/products/product-4-1.jpg",
-      "assets/images/home/products/product-4-2.jpg"
+      "/assets/images/home/products/product-4-1.jpg",
+      "/assets/images/home/products/product-4-2.jpg"
     ],
     "smPictures": [
-      "assets/images/home/products/product-4-1-296x300.jpg",
-      "assets/images/home/products/product-4-2-296x300.jpg"
+      "/assets/images/home/products/product-4-1-296x300.jpg",
+      "/assets/images/home/products/product-4-2-296x300.jpg"
     ],
     "shortDesc": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing. Sed lectus.",
     "stock": 10,
@@ -1121,14 +1121,14 @@
     "price": 80.95,
     "salePrice": 70,
     "pictures": [
-      "assets/images/home/products/product-14-1.jpg",
-      "assets/images/home/products/product-14-2.jpg",
-      "assets/images/home/products/product-14-3.jpg"
+      "/assets/images/home/products/product-14-1.jpg",
+      "/assets/images/home/products/product-14-2.jpg",
+      "/assets/images/home/products/product-14-3.jpg"
     ],
     "smPictures": [
-      "assets/images/home/products/product-14-1-296x300.jpg",
-      "assets/images/home/products/product-14-2-296x300.jpg",
-      "assets/images/home/products/product-14-3-296x300.jpg"
+      "/assets/images/home/products/product-14-1-296x300.jpg",
+      "/assets/images/home/products/product-14-2-296x300.jpg",
+      "/assets/images/home/products/product-14-3-296x300.jpg"
     ],
     "shortDesc": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing. Sed lectus.",
     "stock": 10,
@@ -1144,14 +1144,14 @@
     "name": "Trainers",
     "price": 54,
     "pictures": [
-      "assets/images/home/products/product-13-1.jpg",
-      "assets/images/home/products/product-13-2.jpg",
-      "assets/images/home/products/product-13-3.jpg"
+      "/assets/images/home/products/product-13-1.jpg",
+      "/assets/images/home/products/product-13-2.jpg",
+      "/assets/images/home/products/product-13-3.jpg"
     ],
     "smPictures": [
-      "assets/images/home/products/product-13-1-296x300.jpg",
-      "assets/images/home/products/product-13-2-296x300.jpg",
-      "assets/images/home/products/product-13-3-296x300.jpg"
+      "/assets/images/home/products/product-13-1-296x300.jpg",
+      "/assets/images/home/products/product-13-2-296x300.jpg",
+      "/assets/images/home/products/product-13-3-296x300.jpg"
     ],
     "shortDesc": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing. Sed lectus.",
     "stock": 10,
@@ -1174,16 +1174,16 @@
     "price": 94,
     "salePrice": 93,
     "pictures": [
-      "assets/images/home/products/product-5-1.jpg",
-      "assets/images/home/products/product-5-2.jpg",
-      "assets/images/home/products/product-5-3.jpg",
-      "assets/images/home/products/product-5-4.jpg"
+      "/assets/images/home/products/product-5-1.jpg",
+      "/assets/images/home/products/product-5-2.jpg",
+      "/assets/images/home/products/product-5-3.jpg",
+      "/assets/images/home/products/product-5-4.jpg"
     ],
     "smPictures": [
-      "assets/images/home/products/product-5-1-296x300.jpg",
-      "assets/images/home/products/product-5-2-296x300.jpg",
-      "assets/images/home/products/product-5-3-296x300.jpg",
-      "assets/images/home/products/product-5-4-296x300.jpg"
+      "/assets/images/home/products/product-5-1-296x300.jpg",
+      "/assets/images/home/products/product-5-2-296x300.jpg",
+      "/assets/images/home/products/product-5-3-296x300.jpg",
+      "/assets/images/home/products/product-5-4-296x300.jpg"
     ],
     "shortDesc": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing. Sed lectus.",
     "stock": 10,
@@ -1213,16 +1213,16 @@
     "name": "Dress with a belt",
     "price": 199,
     "pictures": [
-      "assets/images/home/products/product-6-1.jpg",
-      "assets/images/home/products/product-6-2.jpg",
-      "assets/images/home/products/product-6-3.jpg",
-      "assets/images/home/products/product-6-4.jpg"
+      "/assets/images/home/products/product-6-1.jpg",
+      "/assets/images/home/products/product-6-2.jpg",
+      "/assets/images/home/products/product-6-3.jpg",
+      "/assets/images/home/products/product-6-4.jpg"
     ],
     "smPictures": [
-      "assets/images/home/products/product-6-1-296x300.jpg",
-      "assets/images/home/products/product-6-2-296x300.jpg",
-      "assets/images/home/products/product-6-3-296x300.jpg",
-      "assets/images/home/products/product-6-4-296x300.jpg"
+      "/assets/images/home/products/product-6-1-296x300.jpg",
+      "/assets/images/home/products/product-6-2-296x300.jpg",
+      "/assets/images/home/products/product-6-3-296x300.jpg",
+      "/assets/images/home/products/product-6-4-296x300.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 14,
@@ -1236,16 +1236,16 @@
     "name": "Long-sleeved blouse",
     "price": 84,
     "pictures": [
-      "assets/images/home/products/product-7-1.jpg",
-      "assets/images/home/products/product-7-2.jpg",
-      "assets/images/home/products/product-7-3.jpg",
-      "assets/images/home/products/product-7-4.jpg"
+      "/assets/images/home/products/product-7-1.jpg",
+      "/assets/images/home/products/product-7-2.jpg",
+      "/assets/images/home/products/product-7-3.jpg",
+      "/assets/images/home/products/product-7-4.jpg"
     ],
     "smPictures": [
-      "assets/images/home/products/product-7-1-296x300.jpg",
-      "assets/images/home/products/product-7-2-296x300.jpg",
-      "assets/images/home/products/product-7-3-296x300.jpg",
-      "assets/images/home/products/product-7-4-296x300.jpg"
+      "/assets/images/home/products/product-7-1-296x300.jpg",
+      "/assets/images/home/products/product-7-2-296x300.jpg",
+      "/assets/images/home/products/product-7-3-296x300.jpg",
+      "/assets/images/home/products/product-7-4-296x300.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 22,
@@ -1260,16 +1260,16 @@
     "name": "Vest dress",
     "price": 89.99,
     "pictures": [
-      "assets/images/home/products/product-8-1.jpg",
-      "assets/images/home/products/product-8-2.jpg",
-      "assets/images/home/products/product-8-3.jpg",
-      "assets/images/home/products/product-8-4.jpg"
+      "/assets/images/home/products/product-8-1.jpg",
+      "/assets/images/home/products/product-8-2.jpg",
+      "/assets/images/home/products/product-8-3.jpg",
+      "/assets/images/home/products/product-8-4.jpg"
     ],
     "smPictures": [
-      "assets/images/home/products/product-8-1-296x300.jpg",
-      "assets/images/home/products/product-8-2-296x300.jpg",
-      "assets/images/home/products/product-8-3-296x300.jpg",
-      "assets/images/home/products/product-8-4-296x300.jpg"
+      "/assets/images/home/products/product-8-1-296x300.jpg",
+      "/assets/images/home/products/product-8-2-296x300.jpg",
+      "/assets/images/home/products/product-8-3-296x300.jpg",
+      "/assets/images/home/products/product-8-4-296x300.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 22,
@@ -1284,14 +1284,14 @@
     "price": 84,
     "salePrice": 50,
     "pictures": [
-      "assets/images/home/products/product-9-1.jpg",
-      "assets/images/home/products/product-9-2.jpg",
-      "assets/images/home/products/product-9-3.jpg"
+      "/assets/images/home/products/product-9-1.jpg",
+      "/assets/images/home/products/product-9-2.jpg",
+      "/assets/images/home/products/product-9-3.jpg"
     ],
     "smPictures": [
-      "assets/images/home/products/product-9-1-296x300.jpg",
-      "assets/images/home/products/product-9-2-296x300.jpg",
-      "assets/images/home/products/product-9-3-296x300.jpg"
+      "/assets/images/home/products/product-9-1-296x300.jpg",
+      "/assets/images/home/products/product-9-2-296x300.jpg",
+      "/assets/images/home/products/product-9-3-296x300.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 22,
@@ -1306,16 +1306,16 @@
     "name": "Linen-blend paper bag trousers",
     "price": 60,
     "pictures": [
-      "assets/images/home/products/product-15-1.jpg",
-      "assets/images/home/products/product-15-2.jpg",
-      "assets/images/home/products/product-15-3.jpg",
-      "assets/images/home/products/product-15-4.jpg"
+      "/assets/images/home/products/product-15-1.jpg",
+      "/assets/images/home/products/product-15-2.jpg",
+      "/assets/images/home/products/product-15-3.jpg",
+      "/assets/images/home/products/product-15-4.jpg"
     ],
     "smPictures": [
-      "assets/images/home/products/product-15-1-296x300.jpg",
-      "assets/images/home/products/product-15-2-296x300.jpg",
-      "assets/images/home/products/product-15-3-296x300.jpg",
-      "assets/images/home/products/product-15-4-296x300.jpg"
+      "/assets/images/home/products/product-15-1-296x300.jpg",
+      "/assets/images/home/products/product-15-2-296x300.jpg",
+      "/assets/images/home/products/product-15-3-296x300.jpg",
+      "/assets/images/home/products/product-15-4-296x300.jpg"
     ],
     "shortDesc": "Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, ",
     "stock": 22,

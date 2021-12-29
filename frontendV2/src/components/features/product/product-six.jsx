@@ -1,16 +1,16 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import Countdown from "react-countdown";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import Countdown from 'react-countdown';
 
-import { rendererOne } from "../count-down";
+import { rendererOne } from '../count-down';
 
-import { findIndex } from "../../../utils";
+import { findIndex } from '../../../utils';
 
 function ProductSix(props) {
   const {
     product,
-    type = "product",
+    type = 'product',
     isWishlist,
     onAddToCart,
     showQuickView,
@@ -32,7 +32,7 @@ function ProductSix(props) {
 
   const wishlistHandler = () => {
     if (isWishlist) {
-      window.location = process.env.PUBLIC_URL + "/shop/wishlist";
+      window.location = process.env.PUBLIC_URL + '/shop/wishlist';
     } else {
       onToggleWishlist(product, isWishlist);
     }
@@ -47,69 +47,63 @@ function ProductSix(props) {
   return product ? (
     <div
       className={`product product-5 text-center ${
-        0 === product.stock ? "product-disabled" : ""
+        0 === product.stock ? 'product-disabled' : ''
       }`}
     >
       <figure className="product-media">
         {product.new ? (
           <span className="product-label label-new">New</span>
         ) : (
-          ""
+          ''
         )}
         {product.top ? (
           <span className="product-label label-top">Top</span>
         ) : (
-          ""
+          ''
         )}
         {product.discount ? (
           <span className="product-label label-sale">Sale</span>
         ) : (
-          ""
+          ''
         )}
         {0 === product.stock ? (
           <span className="product-label label-out">Out Of Stock</span>
         ) : (
-          ""
+          ''
         )}
 
         <Link
           to={`${process.env.PUBLIC_URL}/product/default/${product.id}`}
           onClick={toTop}
         >
-          <img
-            alt="product"
-            src={`${process.env.PUBLIC_URL}/${product.pictures[0]}`}
-          />
+          <img alt="product" src={`${product.pictures[0]}`} />
 
           {product.pictures[1] ? (
             <span className="product-image-hover product-image">
-              <img
-                alt="product"
-                src={`${process.env.PUBLIC_URL}/${product.pictures[1]}`}
-              />
+              <img alt="product" src={`${product.pictures[1]}`} />
             </span>
           ) : (
-            ""
+            ''
           )}
         </Link>
 
-        {type !== "sidebar" && 0 < product.discount ? (
+        {type !== 'sidebar' && 0 < product.discount ? (
           <div className="product-countdown countdown-primary">
             <Countdown date={`2021-02-01T01:02:03`} renderer={rendererOne} />
           </div>
         ) : (
-          ""
+          ''
         )}
 
         <div className="product-action-vertical">
           <button
             className={`btn-product-icon btn-wishlist ${
-              isWishlist ? "added-to-wishlist" : "remove-from-wishlist"
+              isWishlist ? 'added-to-wishlist' : 'remove-from-wishlist'
             }`}
             onClick={wishlistHandler}
-            title={isWishlist ? "Go to wishlist" : "Add to wishlist"}
+            title={isWishlist ? 'Go to wishlist' : 'Add to wishlist'}
           >
-            <span>{isWishlist ? "go to wishlist" : "add to wishlist"}</span>
+            <span>{isWishlist ? 'go to wishlist' : 'add to wishlist'}</span>
           </button>
 
           <button
@@ -182,7 +176,7 @@ function ProductSix(props) {
       </div>
     </div>
   ) : (
-    ""
+    ''
   );
 }
 
@@ -191,7 +185,7 @@ export const mapStateToProps = (state, ownprops) => {
     isWishlist:
       findIndex(
         state.wishlist.list,
-        (item) => item.id === ownprops.product.id
+        item => item.id === ownprops.product.id,
       ) !== -1
         ? true
         : false,

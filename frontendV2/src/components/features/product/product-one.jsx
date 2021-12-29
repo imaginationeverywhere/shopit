@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 function ProductOne(props) {
   const { product, onAddToCart, showQuickView } = props;
@@ -19,42 +19,42 @@ function ProductOne(props) {
         {product.new ? (
           <span className="product-label label-new">New</span>
         ) : (
-          ""
+          ''
         )}
         {product.top ? (
           <span className="product-label label-top">Top</span>
         ) : (
-          ""
+          ''
         )}
         {product.discount ? (
           <span className="product-label label-sale">
             {product.discount}% off
           </span>
         ) : (
-          ""
+          ''
         )}
         {0 === product.stock ? (
           <span className="product-label label-out">Out of Stock</span>
         ) : (
-          ""
+          ''
         )}
 
         <Link to={`${process.env.PUBLIC_URL}/product/default/${product.id}`}>
           <LazyLoadImage
             alt="product"
-            src={`${process.env.PUBLIC_URL}/${product.pictures[0]}`}
+            src={`${product.pictures[0]}`}
             threshold={400}
           />
 
           {product.pictures[1] ? (
             <LazyLoadImage
               alt="product"
-              src={`${process.env.PUBLIC_URL}/${product.pictures[1]}`}
+              src={`${product.pictures[1]}`}
               wrapperClassName="product-image-hover product-image"
               threshold={400}
             />
           ) : (
-            ""
+            ''
           )}
         </Link>
 
@@ -78,7 +78,7 @@ function ProductOne(props) {
           {product.category.map((cat, index) => (
             <span key={index} className="mr-0">
               <Link to="#">{cat}</Link>
-              {index < product.category.length - 1 ? ", " : ""}
+              {index < product.category.length - 1 ? ', ' : ''}
             </span>
           ))}
         </div>
@@ -130,7 +130,7 @@ function ProductOne(props) {
           <div className="ratings">
             <div
               className="ratings-val"
-              style={{ width: product.ratings * 20 + "%" }}
+              style={{ width: product.ratings * 20 + '%' }}
             ></div>
           </div>
           <span className="ratings-text">({product.reviews} Reviews )</span>
@@ -140,9 +140,9 @@ function ProductOne(props) {
           product.variants[0].model ? (
             <div className="product-nav product-nav-thumbs">
               {product.variants.map((vari, i) => (
-                <Link to="#" key={i} className={0 === i ? "active" : ""}>
+                <Link to="#" key={i} className={0 === i ? 'active' : ''}>
                   <img
-                    src={process.env.PUBLIC_URL + "/" + vari.model}
+                    src={process.env.PUBLIC_URL + '/' + vari.model}
                     alt="product desc"
                   />
                 </Link>
@@ -154,19 +154,19 @@ function ProductOne(props) {
                 <Link
                   to="#"
                   key={i}
-                  className={0 === i ? "active" : ""}
+                  className={0 === i ? 'active' : ''}
                   style={{ background: vari.color }}
                 ></Link>
               ))}
             </div>
           )
         ) : (
-          ""
+          ''
         )}
       </div>
     </div>
   ) : (
-    ""
+    ''
   );
 }
 

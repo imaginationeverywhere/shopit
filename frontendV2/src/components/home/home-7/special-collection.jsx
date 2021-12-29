@@ -1,23 +1,23 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Tab, Tabs, TabPanel, TabList } from "react-tabs";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Tab, Tabs, TabPanel, TabList } from 'react-tabs';
 
 // Import Custom Component
-import OwlCarousel from "../../features/owl-carousel";
-import ProductNine from "../../features/product/product-nine";
-import { productSlider } from "../../settings";
+import OwlCarousel from '../../features/owl-carousel';
+import ProductNine from '../../features/product/product-nine';
+import { productSlider } from '../../settings';
 
 import {
   getFeaturedProducts,
   getSaleProducts,
   getTopRatingProducts,
-} from "../../../services";
-import { addToCart, toggleWishlist } from "../../../actions";
+} from '../../../services';
+import { addToCart, toggleWishlist } from '../../../actions';
 
 function SpecialCollection(props) {
   const { addToCart, toggleWishlist } = props;
   let products = props.products;
-  products = products.slice(20, 35);
+  products = products.slice(-15);
 
   let featuredProducts = getFeaturedProducts(products);
   let saleProducts = getSaleProducts(products);
@@ -107,5 +107,5 @@ const mapStateToProps = (state, props) => {
 };
 
 export default connect(mapStateToProps, { addToCart, toggleWishlist })(
-  SpecialCollection
+  SpecialCollection,
 );

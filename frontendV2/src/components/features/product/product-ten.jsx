@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 function ProductOne(props) {
   const { product, onAddToCart } = props;
@@ -13,9 +13,7 @@ function ProductOne(props) {
     <div className="product-big">
       <img
         src={
-          product.backPictures
-            ? process.env.PUBLIC_URL + "/" + product.backPictures[0]
-            : process.env.PUBLIC_URL + "/" + product.pictures[0]
+          product.backPictures ? product.backPictures[0] : product.pictures[0]
         }
         alt="product bg"
         width="452"
@@ -27,19 +25,19 @@ function ProductOne(props) {
           <Link to={`${process.env.PUBLIC_URL}/product/default/${product.id}`}>
             <LazyLoadImage
               alt="product"
-              src={`${process.env.PUBLIC_URL}/${product.pictures[0]}`}
+              src={`${product.pictures[0]}`}
               threshold={400}
             />
 
             {product.pictures[1] ? (
               <LazyLoadImage
                 alt="product"
-                src={`${process.env.PUBLIC_URL}/${product.pictures[1]}`}
+                src={`${product.pictures[1]}`}
                 wrapperClassName="product-image-hover product-image"
                 threshold={400}
               />
             ) : (
-              ""
+              ''
             )}
           </Link>
         </figure>
@@ -51,10 +49,10 @@ function ProductOne(props) {
               ? product.author.map((author, index) => (
                   <span key={index} className="mr-0">
                     <Link to="#">{author}</Link>
-                    {index < product.author.length - 1 ? " and " : ""}
+                    {index < product.author.length - 1 ? ' and ' : ''}
                   </span>
                 ))
-              : ""}
+              : ''}
           </div>
 
           <h3 className="product-title">
@@ -109,7 +107,7 @@ function ProductOne(props) {
       </div>
     </div>
   ) : (
-    ""
+    ''
   );
 }
 

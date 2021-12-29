@@ -1,18 +1,23 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import {
   addToCart,
   addToCompare,
   toggleWishlist,
-} from "../../../../../actions";
+} from '../../../../../actions';
 
-import { quantityInputs, isIEBrowser, findIndex } from "../../../../../utils";
+import { quantityInputs, isIEBrowser, findIndex } from '../../../../../utils';
 
 function ProductDetailFour(props) {
-  const { product, isWishlist, addToCart, toggleWishlist, addToCompare } =
-    props;
+  const {
+    product,
+    isWishlist,
+    addToCart,
+    toggleWishlist,
+    addToCompare,
+  } = props;
 
   useEffect(() => {
     quantityInputs();
@@ -20,7 +25,7 @@ function ProductDetailFour(props) {
 
   const addToCartHandler = () => {
     if (0 !== product.stock)
-      addToCart(product, document.querySelector("#qty").value);
+      addToCart(product, document.querySelector('#qty').value);
   };
 
   const addToCompareHandler = () => {
@@ -29,7 +34,7 @@ function ProductDetailFour(props) {
 
   const wishlistHandler = () => {
     if (isWishlist) {
-      window.location = process.env.PUBLIC_URL + "/shop/wishlist";
+      window.location = process.env.PUBLIC_URL + '/shop/wishlist';
     } else {
       toggleWishlist(product, isWishlist);
     }
@@ -46,7 +51,7 @@ function ProductDetailFour(props) {
               <div className="ratings">
                 <div
                   className="ratings-val"
-                  style={{ width: product.ratings * 20 + "%" }}
+                  style={{ width: product.ratings * 20 + '%' }}
                 ></div>
               </div>
 
@@ -109,7 +114,7 @@ function ProductDetailFour(props) {
                       <Link
                         to="#"
                         key={i}
-                        className={0 === i ? "active" : ""}
+                        className={0 === i ? 'active' : ''}
                         style={{ backgroundColor: vari.color }}
                       ></Link>
                     ))}
@@ -121,10 +126,10 @@ function ProductDetailFour(props) {
                           <Link
                             to="#"
                             key={i}
-                            className={0 === i ? "active" : ""}
+                            className={0 === i ? 'active' : ''}
                           >
                             <img
-                              src={process.env.PUBLIC_URL + "/" + vari.model}
+                              src={process.env.PUBLIC_URL + '/' + vari.model}
                               alt="product desc"
                             />
                           </Link>
@@ -134,20 +139,20 @@ function ProductDetailFour(props) {
                           <Link
                             to="#"
                             key={i}
-                            className={0 === i ? "active" : ""}
+                            className={0 === i ? 'active' : ''}
                           >
                             <img
-                              src={process.env.PUBLIC_URL + "/" + vari.image}
+                              src={process.env.PUBLIC_URL + '/' + vari.image}
                               alt="product desc"
                             />
                           </Link>
                         ))
-                      : ""}
+                      : ''}
                   </div>
                 )}
               </div>
             ) : (
-              ""
+              ''
             )}
 
             <div className="details-filter-row details-row-size mb-md-1">
@@ -202,13 +207,13 @@ function ProductDetailFour(props) {
               <div className="details-action-wrapper">
                 <button
                   className={`btn-product btn-wishlist pl-0 pr-0 ${
-                    isWishlist ? "added-to-wishlist" : "remove-from-wishlist"
+                    isWishlist ? 'added-to-wishlist' : 'remove-from-wishlist'
                   }`}
                   onClick={wishlistHandler}
-                  title={isWishlist ? "Go to wishlist" : "Add to wishlist"}
+                  title={isWishlist ? 'Go to wishlist' : 'Add to wishlist'}
                 >
                   <span>
-                    {isWishlist ? "Go to Wishlist" : "Add to Wishlist"}
+                    {isWishlist ? 'Go to Wishlist' : 'Add to Wishlist'}
                   </span>
                 </button>
 
@@ -216,7 +221,7 @@ function ProductDetailFour(props) {
                   className="btn-product btn-compare pr-0"
                   title="Compare"
                   onClick={addToCompareHandler}
-                  style={{ minWidth: isIEBrowser() ? "157px" : "none" }}
+                  style={{ minWidth: isIEBrowser() ? '157px' : 'none' }}
                 >
                   <span>Add to Compare</span>
                 </button>
@@ -229,7 +234,7 @@ function ProductDetailFour(props) {
                 {product.category.map((cat, index) => (
                   <span key={index} className="mr-0">
                     <Link to="#">{cat}</Link>
-                    {index < product.category.length - 1 ? ", " : ""}
+                    {index < product.category.length - 1 ? ', ' : ''}
                   </span>
                 ))}
               </div>
@@ -280,14 +285,9 @@ function ProductDetailFour(props) {
 
 function mapStateToProps(state, props) {
   return {
-    product: state.data.products.filter(
-      (product) => product.id === parseInt(props.id)
-    )[0],
+    product: state.data.products.filter(product => product.id === props.id)[0],
     isWishlist:
-      findIndex(
-        state.wishlist.list,
-        (item) => item.id === parseInt(props.id)
-      ) !== -1
+      findIndex(state.wishlist.list, item => item.id === props.id) !== -1
         ? true
         : false,
   };

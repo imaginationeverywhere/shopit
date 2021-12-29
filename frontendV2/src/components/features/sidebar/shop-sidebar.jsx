@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-import InputRange from "react-input-range";
-import { SlideToggle } from "react-slide-toggle";
-import { Link } from "react-router-dom";
-import "react-input-range/lib/css/index.css";
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import InputRange from 'react-input-range';
+import { SlideToggle } from 'react-slide-toggle';
+import { Link } from 'react-router-dom';
+import 'react-input-range/lib/css/index.css';
 
-import _data from "../../../mock_data/data";
-import { getCountByCategory } from "../../../services";
+import _data from '../../../mock_data/data';
+import { getCountByCategory } from '../../../services';
 import {
   toggleCategoryFilter,
   resetFilter,
@@ -14,88 +14,91 @@ import {
   toggleBrandFilter,
   toggleColorFilter,
   filterPrice,
-} from "../../../actions";
-import { findIndex } from "../../../utils";
+} from '../../../actions';
+import { findIndex } from '../../../utils';
 
 function ShopSidebar(props) {
-  const [value, setValue] = useState({ max: 1000, min: 0 });
+  const [value, setValue] = useState({ max: 1000000, min: 0 });
   const [toggle, setToggle] = useState(false);
-  const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
+  const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
   const brands = [
-    "Next",
-    "River Island",
-    "Geox",
-    "New Balance",
-    "UGG",
-    "F&F",
-    "Nike",
+    'Next',
+    'River Island',
+    'Geox',
+    'New Balance',
+    'UGG',
+    'F&F',
+    'Nike',
   ];
   const colors = [
-    "#b87145",
-    "#f0c04a",
-    "#333333",
-    "#cc3333",
-    "#3399cc",
-    "#669933",
-    "#f2719c",
-    "#ebebeb",
+    '#b87145',
+    '#f0c04a',
+    '#333333',
+    '#cc3333',
+    '#3399cc',
+    '#669933',
+    '#f2719c',
+    '#ebebeb',
   ];
   let categoryCountArr = [];
   const { filters, products } = props;
 
   _data.shop_categories.map((item, index) => {
     return categoryCountArr.push(
-      getCountByCategory(products.slice(0, 47), item.name)
+      getCountByCategory(
+        products.slice(0, 47),
+        item.name && item.name.toLowerCase(),
+      ),
     );
   });
 
   useEffect(() => {
-    window.addEventListener("resize", resizeHandle);
+    window.addEventListener('resize', resizeHandle);
     resizeHandle();
 
     return () => {
-      window.removeEventListener("resize", resizeHandle);
+      window.removeEventListener('resize', resizeHandle);
     };
   }, []);
 
   function resizeHandle() {
-    if (document.querySelector("body").offsetWidth < 992) setToggle(true);
+    if (document.querySelector('body').offsetWidth < 992) setToggle(true);
     else setToggle(false);
   }
 
   function changeIcon(e) {
-    e.target.classList.toggle("collapsed");
+    e.target.classList.toggle('collapsed');
   }
 
   function hideSideBar() {
     if (
-      document.querySelector("body").classList.contains("sidebar-filter-active")
+      document.querySelector('body').classList.contains('sidebar-filter-active')
     )
-      document.querySelector("body").classList.remove("sidebar-filter-active");
+      document.querySelector('body').classList.remove('sidebar-filter-active');
   }
 
   function toggleSideBar() {
     if (
-      document.querySelector("body").classList.contains("sidebar-filter-active")
+      document.querySelector('body').classList.contains('sidebar-filter-active')
     )
-      document.querySelector("body").classList.remove("sidebar-filter-active");
-    else document.querySelector("body").classList.add("sidebar-filter-active");
+      document.querySelector('body').classList.remove('sidebar-filter-active');
+    else document.querySelector('body').classList.add('sidebar-filter-active');
   }
 
   function clearAll(e) {
     let items = document
-      .querySelector(".sidebar-shop")
-      .querySelectorAll("input");
+      .querySelector('.sidebar-shop')
+      .querySelectorAll('input');
     for (let i = 0; i < items.length; i++) {
       items[i].checked = false;
     }
 
     items = document
-      .querySelector(".sidebar-shop")
-      .querySelectorAll(".selected");
+      .querySelector('.sidebar-shop')
+      .querySelectorAll('.selected');
 
     for (let i = 0; i < items.length; i++) {
-      items[i].classList.remove("selected");
+      items[i].classList.remove('selected');
     }
 
     setValue({ max: 1000, min: 0 });
@@ -106,15 +109,15 @@ function ShopSidebar(props) {
   return (
     <>
       <aside
-        className={`${toggle ? "sidebar-filter" : "sidebar"} sidebar-shop`}
+        className={`${toggle ? 'sidebar-filter' : 'sidebar'} sidebar-shop`}
       >
-        <div className={toggle ? "sidebar-filter-wrapper" : ""}>
+        <div className={toggle ? 'sidebar-filter-wrapper' : ''}>
           <div className="widget widget-clean">
             <label>Filters:</label>
             <a
               href="#a"
               className="sidebar-filter-clear"
-              onClick={(e) => clearAll(e)}
+              onClick={e => clearAll(e)}
             >
               ClearAll
             </a>
@@ -126,7 +129,7 @@ function ShopSidebar(props) {
                 <h3 className="widget-title">
                   <a
                     href="#category"
-                    onClick={(e) => {
+                    onClick={e => {
                       onToggle(e);
                       changeIcon(e);
                       e.preventDefault();
@@ -149,14 +152,14 @@ function ShopSidebar(props) {
                               type="checkbox"
                               className="custom-control-input"
                               id={`cat-${index + 1}`}
-                              onClick={(e) =>
+                              onClick={e =>
                                 props.toggleCategoryFilter(item.name)
                               }
                               defaultChecked={
                                 -1 <
                                 findIndex(
-                                  filters["category"],
-                                  (filter) => filter === item.name
+                                  filters['category'],
+                                  filter => filter === item.name,
                                 )
                                   ? true
                                   : false
@@ -188,7 +191,7 @@ function ShopSidebar(props) {
                 <h3 className="widget-title">
                   <a
                     href="#Size"
-                    onClick={(e) => {
+                    onClick={e => {
                       onToggle(e);
                       changeIcon(e);
                       e.preventDefault();
@@ -210,12 +213,12 @@ function ShopSidebar(props) {
                               type="checkbox"
                               className="custom-control-input"
                               id={`size-${index + 1}`}
-                              onClick={(e) => props.toggleSizeFilter(item)}
+                              onClick={e => props.toggleSizeFilter(item)}
                               defaultChecked={
                                 -1 <
                                 findIndex(
-                                  filters["size"],
-                                  (filter) => filter === item
+                                  filters['size'],
+                                  filter => filter === item,
                                 )
                                   ? true
                                   : false
@@ -243,7 +246,7 @@ function ShopSidebar(props) {
                 <h3 className="widget-title">
                   <a
                     href="#colour"
-                    onClick={(e) => {
+                    onClick={e => {
                       onToggle(e);
                       changeIcon(e);
                       e.preventDefault();
@@ -264,14 +267,14 @@ function ShopSidebar(props) {
                           className={
                             -1 <
                             findIndex(
-                              filters["color"],
-                              (filter) => filter === item
+                              filters['color'],
+                              filter => filter === item,
                             )
-                              ? "selected"
-                              : ""
+                              ? 'selected'
+                              : ''
                           }
                           style={{ background: item }}
-                          onClick={(e) => {
+                          onClick={e => {
                             props.toggleColorFilter(item);
                             e.preventDefault();
                           }}
@@ -293,7 +296,7 @@ function ShopSidebar(props) {
                 <h3 className="widget-title">
                   <a
                     href="#brand"
-                    onClick={(e) => {
+                    onClick={e => {
                       onToggle(e);
                       changeIcon(e);
                       e.preventDefault();
@@ -315,12 +318,12 @@ function ShopSidebar(props) {
                               type="checkbox"
                               className="custom-control-input"
                               id={`brand-${index + 1}`}
-                              onClick={(e) => props.toggleBrandFilter(item)}
+                              onClick={e => props.toggleBrandFilter(item)}
                               defaultChecked={
                                 -1 <
                                 findIndex(
-                                  filters["brand"],
-                                  (filter) => filter === item
+                                  filters['brand'],
+                                  filter => filter === item,
                                 )
                                   ? true
                                   : false
@@ -348,7 +351,7 @@ function ShopSidebar(props) {
                 <h3 className="widget-title">
                   <a
                     href="#price"
-                    onClick={(e) => {
+                    onClick={e => {
                       onToggle(e);
                       changeIcon(e);
                       e.preventDefault();
@@ -373,12 +376,12 @@ function ShopSidebar(props) {
 
                       <div className="price-slider">
                         <InputRange
-                          formatLabel={(value) => `$${value}`}
-                          maxValue={1000}
+                          formatLabel={value => `$${value}`}
+                          maxValue={100000}
                           minValue={0}
                           step={50}
                           value={value}
-                          onChange={(value) => {
+                          onChange={value => {
                             setValue(value);
                             props.filterPrice(value);
                           }}
@@ -397,14 +400,14 @@ function ShopSidebar(props) {
           <i className="icon-cog"></i>
         </button>
       ) : (
-        ""
+        ''
       )}
       <div className="sidebar-filter-overlay" onClick={hideSideBar}></div>
     </>
   );
 }
 
-export const mapStateToProps = (state) => {
+export const mapStateToProps = state => {
   return {
     filters: state.filters,
     products: state.data.products ? state.data.products : [],

@@ -1,7 +1,7 @@
 main {
   width: 100%;
   min-height: 100vh;
-  margin: 0 2.5rem 6rem 2.5rem;
+  padding: 0 2.5rem 1rem 2.5rem;
 }
 
 .admin {
@@ -255,8 +255,8 @@ main {
   transition: color 0.35s;
 
   &::after {
-    font-family: "molla";
-    content: "\f110";
+    font-family: 'molla';
+    content: '\f110';
     display: inline-block;
   }
 
@@ -266,7 +266,7 @@ main {
   }
 
   .open > a > &::after {
-    content: "\e802";
+    content: '\e802';
   }
 }
 

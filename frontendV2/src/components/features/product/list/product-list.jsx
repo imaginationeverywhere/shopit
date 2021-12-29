@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import Link from "react-router-dom/Link";
-import { connect } from "react-redux";
-import imagesLoaded from "imagesloaded";
+import React, { useState, useEffect } from 'react';
+import Link from 'react-router-dom/Link';
+import { connect } from 'react-redux';
+import imagesLoaded from 'imagesloaded';
 
-import ProductSix from "../product-six";
-import ProductEight from "../product-eight";
-import QuickView from "../common/quickview";
-import Pagination from "../../pagination";
+import ProductSix from '../product-six';
+import ProductEight from '../product-eight';
+import QuickView from '../common/quickview';
+import Pagination from '../../pagination';
 
 import {
   addToCart,
@@ -14,8 +14,8 @@ import {
   addToCompare,
   showQuickViewModal,
   filterSort,
-} from "../../../../actions";
-import { getVisibleProducts } from "../../../../services";
+} from '../../../../actions';
+import { getVisibleProducts } from '../../../../services';
 
 function ProductList(props) {
   let {
@@ -34,21 +34,21 @@ function ProductList(props) {
 
   useEffect(() => {
     document
-      .querySelector(".skeleton-body.skel-shop-products")
-      .classList.remove("loaded");
+      .querySelector('.skeleton-body.skel-shop-products')
+      .classList.remove('loaded');
     document
-      .querySelector(".skeleton-body.skel-shop-sidebar")
-      .classList.remove("loaded");
+      .querySelector('.skeleton-body.skel-shop-sidebar')
+      .classList.remove('loaded');
 
-    let imgLoad = imagesLoaded(".products", { background: true });
+    let imgLoad = imagesLoaded('.products', { background: true });
 
-    imgLoad.on("done", function (instance, image) {
+    imgLoad.on('done', function(instance, image) {
       document
-        .querySelector(".skeleton-body.skel-shop-products")
-        .classList.add("loaded");
+        .querySelector('.skeleton-body.skel-shop-products')
+        .classList.add('loaded');
       document
-        .querySelector(".skeleton-body.skel-shop-sidebar")
-        .classList.add("loaded");
+        .querySelector('.skeleton-body.skel-shop-sidebar')
+        .classList.add('loaded');
     });
 
     setCols(column);
@@ -56,33 +56,33 @@ function ProductList(props) {
 
   useEffect(() => {
     document
-      .querySelector(".skeleton-body.skel-shop-products")
-      .classList.remove("loaded");
+      .querySelector('.skeleton-body.skel-shop-products')
+      .classList.remove('loaded');
 
-    let imgLoad = imagesLoaded(".products", { background: true });
+    let imgLoad = imagesLoaded('.products', { background: true });
 
-    imgLoad.on("done", function (instance, image) {
+    imgLoad.on('done', function(instance, image) {
       document
-        .querySelector(".skeleton-body.skel-shop-products")
-        .classList.add("loaded");
+        .querySelector('.skeleton-body.skel-shop-products')
+        .classList.add('loaded');
     });
   }, [filters]);
 
   function changePos(pos) {
     setStart(pos);
 
-    document.querySelector(".skeleton-body.skel-shop-products") &&
+    document.querySelector('.skeleton-body.skel-shop-products') &&
       document
-        .querySelector(".skeleton-body.skel-shop-products")
-        .classList.remove("loaded");
+        .querySelector('.skeleton-body.skel-shop-products')
+        .classList.remove('loaded');
 
-    let imgLoad = imagesLoaded(".products", { background: true });
+    let imgLoad = imagesLoaded('.products', { background: true });
 
-    imgLoad.on("done", function (instance, image) {
-      document.querySelector(".skeleton-body.skel-shop-products") &&
+    imgLoad.on('done', function(instance, image) {
+      document.querySelector('.skeleton-body.skel-shop-products') &&
         document
-          .querySelector(".skeleton-body.skel-shop-products")
-          .classList.add("loaded");
+          .querySelector('.skeleton-body.skel-shop-products')
+          .classList.add('loaded');
     });
 
     window.scrollTo({
@@ -96,25 +96,25 @@ function ProductList(props) {
   }
 
   const grid = {
-    "2cols": "col-6",
-    "3cols": "col-6 col-md-4 col-lg-4",
-    "4cols": "col-6 col-md-4 col-lg-4 col-xl-3",
+    '2cols': 'col-6',
+    '3cols': 'col-6 col-md-4 col-lg-4',
+    '4cols': 'col-6 col-md-4 col-lg-4 col-xl-3',
   };
-  const units = { list: 6, "2cols": 6, "3cols": 9, "4cols": 12 };
+  const units = { list: 6, '2cols': 6, '3cols': 9, '4cols': 12 };
   const itemsPerPage = units[cols];
 
-  products = getVisibleProducts(products.slice(20, 35), filters);
-
+  products = getVisibleProducts(products, filters);
+  // console.log(products.slice( -15 ))
   return (
     <>
       <div className="toolbox">
         <div className="toolbox-left">
           <div className="toolbox-info">
-            Showing{" "}
+            Showing{' '}
             <span>
-              {Math.min(itemsPerPage, products.length - start)} of{" "}
+              {Math.min(itemsPerPage, products.length - start)} of{' '}
               {products.length}
-            </span>{" "}
+            </span>{' '}
             Products
           </div>
         </div>
@@ -138,9 +138,9 @@ function ProductList(props) {
           </div>
 
           <div className="toolbox-layout">
-            <Link to={process.env.PUBLIC_URL + "/shop/sidebar/list"}>
+            <Link to={process.env.PUBLIC_URL + '/shop/sidebar/list'}>
               <button
-                className={`btn-layout ${"list" === cols ? "active" : ""}`}
+                className={`btn-layout ${'list' === cols ? 'active' : ''}`}
               >
                 <svg width="16" height="10">
                   <rect x="0" y="0" width="4" height="4"></rect>
@@ -151,9 +151,9 @@ function ProductList(props) {
               </button>
             </Link>
 
-            <Link to={process.env.PUBLIC_URL + "/shop/sidebar/2cols"}>
+            <Link to={process.env.PUBLIC_URL + '/shop/sidebar/2cols'}>
               <button
-                className={`btn-layout ${"2cols" === cols ? "active" : ""}`}
+                className={`btn-layout ${'2cols' === cols ? 'active' : ''}`}
               >
                 <svg width="10" height="10">
                   <rect x="0" y="0" width="4" height="4"></rect>
@@ -164,9 +164,9 @@ function ProductList(props) {
               </button>
             </Link>
 
-            <Link to={process.env.PUBLIC_URL + "/shop/sidebar/3cols"}>
+            <Link to={process.env.PUBLIC_URL + '/shop/sidebar/3cols'}>
               <button
-                className={`btn-layout ${"3cols" === cols ? "active" : ""}`}
+                className={`btn-layout ${'3cols' === cols ? 'active' : ''}`}
               >
                 <svg width="16" height="10">
                   <rect x="0" y="0" width="4" height="4"></rect>
@@ -179,9 +179,9 @@ function ProductList(props) {
               </button>
             </Link>
 
-            <Link to={process.env.PUBLIC_URL + "/shop/sidebar/4cols"}>
+            <Link to={process.env.PUBLIC_URL + '/shop/sidebar/4cols'}>
               <button
-                className={`btn-layout ${"4cols" === cols ? "active" : ""}`}
+                className={`btn-layout ${'4cols' === cols ? 'active' : ''}`}
               >
                 <svg width="22" height="10">
                   <rect x="0" y="0" width="4" height="4"></rect>
@@ -200,9 +200,9 @@ function ProductList(props) {
       </div>
 
       <div className="products mb-3">
-        {"list" === cols ? (
+        {'list' === cols ? (
           products.slice(start, start + 6).map((item, index) => (
-            <div key={"seleton-" + index}>
+            <div key={'seleton-' + index}>
               <div className="skel-pro skel-pro-list"></div>
 
               <ProductEight
@@ -217,7 +217,7 @@ function ProductList(props) {
         ) : (
           <div className="row">
             {products.slice(start, start + itemsPerPage).map((item, index) => (
-              <div className={grid[cols]} key={"product" + index}>
+              <div className={grid[cols]} key={'product' + index}>
                 <div className="skel-pro"></div>
 
                 <ProductSix
@@ -236,7 +236,7 @@ function ProductList(props) {
       </div>
 
       <Pagination
-        aclass={`${"list" === props.cols ? "" : "justify-content-center"}`}
+        aclass={`${'list' === props.cols ? '' : 'justify-content-center'}`}
         count={products.length}
         unit={itemsPerPage}
         onChange={changePos}
@@ -247,7 +247,7 @@ function ProductList(props) {
   );
 }
 
-export const mapStateToProps = (state) => {
+export const mapStateToProps = state => {
   return {
     filters: state.filters,
     products: state.data.products ? state.data.products : [],

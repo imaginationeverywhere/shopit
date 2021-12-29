@@ -18,7 +18,7 @@ import AppRoute from "./routes";
 import { initFunctions } from "./utils";
 
 import LoadingOverlay from "./components/features/loading-overlay";
-
+import "./App.css";
 export function Root() {
   initFunctions();
   store.dispatch(getAllProducts());

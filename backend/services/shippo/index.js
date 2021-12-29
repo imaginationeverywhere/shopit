@@ -26,12 +26,12 @@ const rateKeyMapper = (rate) =>
     carrier_account,
   }))(rate);
 
-const getCarriers = async (addressFrom = {}, addressTo = {}, parcel = {}) => {
+const getCarriers = async (addressFrom = {}, addressTo = {}, parcels = []) => {
   try {
     const response = await shippo.shipment.create({
       address_from: addressFrom,
       address_to: addressTo,
-      parcels: [parcel],
+      parcels,
       async: false,
     });
     if (response.status === Constants.SUCCESS) {
