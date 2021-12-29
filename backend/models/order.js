@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
 const orderSchema = mongoose.Schema({
     shippingInfo: {
@@ -31,26 +31,10 @@ const orderSchema = mongoose.Schema({
             required: true
         }
     },
-    shipments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Shipment' }],
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref: 'User'
+    city: {
+      type: String,
+      required: true,
     },
-    orderItems: [
-        {
-            quantity: {
-                type: Number,
-                required: true,
-                default: 1
-            },
-            product: {
-                type: mongoose.Schema.Types.ObjectId,
-                required: true,
-                ref: 'Product'
-            }
-        }
-    ],
     paymentInfo: {
         id: {
             type: String
@@ -59,41 +43,81 @@ const orderSchema = mongoose.Schema({
             type: String
         }
     },
-    paidAt: {
-        type: Date
-    },
-    itemsPrice: {
-        type: Number,
-        required: true,
-        default: 0.0
-    },
-    taxPrice: {
-        type: Number,
-        required: true,
-        default: 0.0
-    },
-    shippingPrice: {
-        type: Number,
-        required: true,
-        default: 0.0
-    },
-    totalPrice: {
-        type: Number,
-        required: true,
-        default: 0.0
-    },
-    orderStatus: {
+    
+  shipments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Shipment" }],
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: "User",
+  },
+  orderItems: [
+    {
+      name: {
         type: String,
+        required: false,
+      },
+      quantity: {
+        type: Number,
         required: true,
-        default: 'Processing'
+      },
+      image: {
+        type: String,
+        required: false,
+      },
+      price: {
+        type: Number,
+        required: false,
+      },
+      product: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: "Product",
+      },
     },
-    deliveredAt: {
-        type: Date
+  ],
+  paymentInfo: {
+    id: {
+      type: String,
     },
-    createdAt: {
-        type: Date,
-        default: Date.now
+    status: {
+      type: String,
     },
-})
+  },
+  paidAt: {
+    type: Date,
+  },
+  itemsPrice: {
+    type: Number,
+    required: true,
+    default: 0.0,
+  },
+  taxPrice: {
+    type: Number,
+    required: true,
+    default: 0.0,
+  },
+  shippingPrice: {
+    type: Number,
+    required: true,
+    default: 0.0,
+  },
+  totalPrice: {
+    type: Number,
+    required: true,
+    default: 0.0,
+  },
+  orderStatus: {
+    type: String,
+    required: true,
+    default: "Processing",
+  },
+  deliveredAt: {
+    type: Date,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
 
-module.exports = mongoose.model('Order', orderSchema)
+module.exports = mongoose.model("Order", orderSchema);

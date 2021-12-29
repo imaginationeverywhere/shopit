@@ -10,6 +10,8 @@ import modalReducer from './modal';
 import templatesReducer from './templates';
 import usersReducer from './users'
 import orderReducer from './order'
+import carrierReducer from "./carriers";
+import selectedCarrierReducer from "./selectedCarrier";
 
 const rootReducer = combineReducers( {
     data: productReducer,
@@ -20,7 +22,9 @@ const rootReducer = combineReducers( {
     modal: modalReducer,
     templates: templatesReducer,
     users: usersReducer,
-    order: orderReducer
+    order: orderReducer,
+    carriers: carrierReducer,
+    selectedCarrier: selectedCarrierReducer,
 } );
-
+ 
 export default rootReducer;

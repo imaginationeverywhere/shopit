@@ -9,9 +9,7 @@ import {
 export const getCarriers = (payload) => async (dispatch) => {
   try {
     dispatch({ type: GET_SHIPMENT_CARRIERS_REQUEST });
-
     const link = `/api/v1/shipment/carriers`;
-
     const { data } = await axios.post(link, payload);
 
     dispatch({

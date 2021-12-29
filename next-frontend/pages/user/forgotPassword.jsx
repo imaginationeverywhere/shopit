@@ -8,7 +8,9 @@ const ForgotPassword = () => {
       <Link href="/user/login">
         <a className="form-modal-link">Sign In</a>
       </Link>
-      <button className="btn" type="submit" id="login_btn">Send email</button>
+      <button className="btn" type="submit" id="login_btn">
+        Send email
+      </button>
     </FormModal>
   );
 };

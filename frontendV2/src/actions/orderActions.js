@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from "axios";
 
 import {
     CREATE_DRAFT_ORDER_REQUEST,
@@ -29,11 +29,7 @@ export const createDraftOrder = (order) => async (dispatch, getState) => {
 
         dispatch({ type: CREATE_DRAFT_ORDER_REQUEST })
 
-        const config = {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }
+    const { data } = await axios.post("/api/v1/order/new", order, config);
 
         const { data } = await axios.post(API_URL+'order/draft', order, config)
 
@@ -52,9 +48,10 @@ export const createDraftOrder = (order) => async (dispatch, getState) => {
 
 // Get curretly logged in user orders
 export const myOrders = () => async (dispatch) => {
-    try {
+  try {
+    dispatch({ type: MY_ORDERS_REQUEST });
 
-        dispatch({ type: MY_ORDERS_REQUEST });
+    const { data } = await axios.get("/api/v1/orders/me");
 
         const { data } = await axios.get('api/v1/orders/me')
 
@@ -85,86 +82,88 @@ export const getOrderDetails = (orderId) => async (dispatch) => {
             payload: data
         })
 
-    } catch (error) {
-        dispatch({
-            type: ORDER_DETAILS_FAIL,
-            payload: error.response.data.message
-        })
-    }
-}
+    dispatch({
+      type: ORDER_DETAILS_SUCCESS,
+      payload: data.order,
+    });
+  } catch (error) {
+    dispatch({
+      type: ORDER_DETAILS_FAIL,
+      payload: error.response.data.message,
+    });
+  }
+};
 
 // Get all orders - ADMIN
 export const allOrders = () => async (dispatch) => {
-    try {
+  try {
+    dispatch({ type: ALL_ORDERS_REQUEST });
 
-        dispatch({ type: ALL_ORDERS_REQUEST });
+    const { data } = await axios.get(`/api/v1/admin/orders`);
 
-        const { data } = await axios.get(`/api/v1/admin/orders`)
-
-        dispatch({
-            type: ALL_ORDERS_SUCCESS,
-            payload: data
-        })
-
-    } catch (error) {
-        dispatch({
-            type: ALL_ORDERS_FAIL,
-            payload: error.response.data.message
-        })
-    }
-}
+    dispatch({
+      type: ALL_ORDERS_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: ALL_ORDERS_FAIL,
+      payload: error.response.data.message,
+    });
+  }
+};
 
 // update order
 export const updateOrder = (id, orderData) => async (dispatch) => {
-    try {
+  try {
+    dispatch({ type: UPDATE_ORDER_REQUEST });
 
-        dispatch({ type: UPDATE_ORDER_REQUEST })
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
 
-        const config = {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }
+    const { data } = await axios.put(
+      `/api/v1/admin/order/${id}`,
+      orderData,
+      config
+    );
 
-        const { data } = await axios.put(`/api/v1/admin/order/${id}`, orderData, config)
-
-        dispatch({
-            type: UPDATE_ORDER_SUCCESS,
-            payload: data.success
-        })
-
-    } catch (error) {
-        dispatch({
-            type: UPDATE_ORDER_FAIL,
-            payload: error.response.data.message
-        })
-    }
-}
+    dispatch({
+      type: UPDATE_ORDER_SUCCESS,
+      payload: data.success,
+    });
+  } catch (error) {
+    dispatch({
+      type: UPDATE_ORDER_FAIL,
+      payload: error.response.data.message,
+    });
+  }
+};
 
 // Delete order
 export const deleteOrder = (id) => async (dispatch) => {
-    try {
+  try {
+    dispatch({ type: DELETE_ORDER_REQUEST });
 
-        dispatch({ type: DELETE_ORDER_REQUEST })
+    const { data } = await axios.delete(`/api/v1/admin/order/${id}`);
 
-        const { data } = await axios.delete(`/api/v1/admin/order/${id}`)
-
-        dispatch({
-            type: DELETE_ORDER_SUCCESS,
-            payload: data.success
-        })
-
-    } catch (error) {
-        dispatch({
-            type: DELETE_ORDER_FAIL,
-            payload: error.response.data.message
-        })
-    }
-}
+    dispatch({
+      type: DELETE_ORDER_SUCCESS,
+      payload: data.success,
+    });
+  } catch (error) {
+    dispatch({
+      type: DELETE_ORDER_FAIL,
+      payload: error.response.data.message,
+    });
+  }
+};
 
 // Clear Errors
 export const clearErrors = () => async (dispatch) => {
-    dispatch({
-        type: CLEAR_ERRORS
-    })
-}
+  dispatch({
+    type: CLEAR_ERRORS,
+  });
+};

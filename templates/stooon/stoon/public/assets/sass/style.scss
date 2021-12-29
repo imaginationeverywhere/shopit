@@ -7,7 +7,6 @@ Description: Stooon is a fashion eCommerce bootstrap 4 html template.
 Version: 1.0.0
 */
 
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -39,9 +38,8 @@ Version: 1.0.0
 @import "global/_global";
 @import "global/_theme";
 
-
 //== Pages
-//== Sections 
+//== Sections
 @import "sections/_navbar";
 @import "sections/_banner";
 @import "sections/_collection";
@@ -70,7 +68,6 @@ Version: 1.0.0
 @import "sections/_cart";
 @import "sections/_others";
 @import "sections/_footer";
-
 
 //== Elements
 @import "elements/_back_top";

@@ -1,13 +1,7 @@
-
-
 const ProductDetails = () => {
-  return (
-    <div>Hi</div>
-  )
-}
+  return <div>Hi</div>;
+};
 
-export const getStaticPaths = async () => {
-
-}
+export const getStaticPaths = async () => {};
 
 export default ProductDetails;

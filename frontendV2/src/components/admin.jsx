@@ -127,9 +127,9 @@ function App(props) {
           <Sidebar />
           <main>{props.children}</main>
         </div>
-        <div className="admin-footer">
+        {/* <div className="admin-footer">
           <h3>All Rights Reserved</h3>
-        </div>
+        </div> */}
         <ToastContainer autoClose={3000} className="toast-container" />
       </div>
 

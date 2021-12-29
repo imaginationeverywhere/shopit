@@ -1,20 +1,20 @@
 [
-    {
-        "name": "Senior Man",
-        "email": "seniorman@test.com",
-        "password": "password",
-        "avatar" : {
-            "public_id" : "products/61oXGZ60GfL_fixco9",
-            "url" : "https://res.cloudinary.com/bookit/image/upload/v1614877995/products/61oXGZ60GfL_fixco9.jpg"
-        }
-    },
-    {
-        "name": "Junior Girl",
-        "email": "juniorgirl@test.com",
-        "password": "password",
-        "avatar" : {
-            "public_id" : "products/61oXGZ60GfL_fixco9",
-            "url" : "https://res.cloudinary.com/bookit/image/upload/v1614877995/products/61oXGZ60GfL_fixco9.jpg"
-        }
+  {
+    "name": "Senior Man",
+    "email": "seniorman@test.com",
+    "password": "password",
+    "avatar": {
+      "public_id": "products/61oXGZ60GfL_fixco9",
+      "url": "https://res.cloudinary.com/bookit/image/upload/v1614877995/products/61oXGZ60GfL_fixco9.jpg"
     }
+  },
+  {
+    "name": "Junior Girl",
+    "email": "juniorgirl@test.com",
+    "password": "password",
+    "avatar": {
+      "public_id": "products/61oXGZ60GfL_fixco9",
+      "url": "https://res.cloudinary.com/bookit/image/upload/v1614877995/products/61oXGZ60GfL_fixco9.jpg"
+    }
+  }
 ]

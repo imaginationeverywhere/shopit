@@ -1,839 +1,682 @@
 {
-	"info": {
-		"_postman_id": "e1c6f70b-8a5c-4f1f-b62d-14e497a3ee91",
-		"name": "ShopIT",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "Products",
-			"item": [
-				{
-					"name": "GET All Products",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{DOMAIN}}/admin/products",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"admin",
-								"products"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create New Product",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n        \"name\" : \"SanDisk Ultra 128GB SDXC UHS-I Memory Card up to 80MB/s\",\n        \"price\" : \"45.89\",\n        \"description\" : \"Ultra-fast cards (2) to take better pictures and Full HD videos (1) with your compact to mid-range point-and-shoot cameras and camcorders. With SanDisk Ultra SDXC UHS-I cards you’ll benefit from faster downloads, high capacity, and better performance to capture and store 128GB (5) of high quality pictures and Full HD video (1). Take advantage of ultra-fast read speeds of up to 80MB/s (3) to save time moving photos and videos from the card to your computer. From a leader in flash memory storage, SanDisk Ultra SDXC UHS-I cards are compatible with SDHC and SDXC digital devices, and come with a 10-year limited warranty (6).\",\n        \"ratings\" : 4.5,\n        \"images\" : [{\n            \"public_id\" : \"products/dsvbpny402gelwugv2le\",\n            \"url\" : \"https://res.cloudinary.com/bookit/image/upload/v1608062030/products/dsvbpny402gelwugv2le.jpg\"\n        }],\n        \"category\" : \"Electronics\",\n        \"seller\" : \"Ebay\",\n        \"stock\" : 50,\n        \"numOfReviews\" : 32,\n        \"reviews\": []\n    }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{DOMAIN}}/api/v1/admin/product/new",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"admin",
-								"product",
-								"new"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete a Product",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{DOMAIN}}/api/v1/admin/product/60c018252a2c3d7c18423046",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"admin",
-								"product",
-								"60c018252a2c3d7c18423046"
-							]
-						},
-						"description": "Delete a Product by ID"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Single Product by ID",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{DOMAIN}}/api/v1/product/60bfe61332e57b998be565a2",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"product",
-								"60bfe61332e57b998be565a2"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update Product",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n            \"price\": 47.89,\n            \"ratings\": 4.5,\n            \"stock\": 50,\n            \"numOfReviews\": 32,\n            \"_id\": \"60bfe61332e57b998be5659e\",\n            \"name\": \"SanDisk Ultra 128GB SDXC UHS-I Memory Card up to 80MB/s\",\n            \"description\": \"Ultra-fast cards (2) to take better pictures and Full HD videos (1) with your compact to mid-range point-and-shoot cameras and camcorders. With SanDisk Ultra SDXC UHS-I cards you’ll benefit from faster downloads, high capacity, and better performance to capture and store 128GB (5) of high quality pictures and Full HD video (1). Take advantage of ultra-fast read speeds of up to 80MB/s (3) to save time moving photos and videos from the card to your computer. From a leader in flash memory storage, SanDisk Ultra SDXC UHS-I cards are compatible with SDHC and SDXC digital devices, and come with a 10-year limited warranty (6).\",\n            \"images\": [\n                {\n                    \"_id\": \"60bfe61332e57b998be5659f\",\n                    \"public_id\": \"products/dsvbpny402gelwugv2le\",\n                    \"url\": \"https://res.cloudinary.com/bookit/image/upload/v1608062030/products/dsvbpny402gelwugv2le.jpg\"\n                }\n            ],\n            \"category\": \"Electronics\",\n            \"seller\": \"Ebay\",\n            \"reviews\": [],\n            \"createdAt\": \"2021-06-08T21:50:11.777Z\",\n            \"__v\": 0\n        }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{DOMAIN}}/api/v1/admin/product/60bfe61332e57b998be5659a",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"admin",
-								"product",
-								"60bfe61332e57b998be5659a"
-							]
-						},
-						"description": "Update Product by ID"
-					},
-					"response": []
-				},
-				{
-					"name": "Filter Products by price",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{DOMAIN}}/api/v1/products?keyword=apple&price[gte]=1&price[lte]=200",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"products"
-							],
-							"query": [
-								{
-									"key": "keyword",
-									"value": "apple"
-								},
-								{
-									"key": "price[gte]",
-									"value": "1"
-								},
-								{
-									"key": "price[lte]",
-									"value": "200"
-								}
-							]
-						},
-						"description": "gte to lte"
-					},
-					"response": []
-				},
-				{
-					"name": "Filter for Products",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{DOMAIN}}/api/v1/products?keyword=apple&category=Laptops",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"products"
-							],
-							"query": [
-								{
-									"key": "keyword",
-									"value": "apple"
-								},
-								{
-									"key": "category",
-									"value": "Laptops"
-								}
-							]
-						},
-						"description": "Filter By Category"
-					},
-					"response": []
-				},
-				{
-					"name": "Search for Products",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{DOMAIN}}/api/v1/products?keyword=apple",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"products"
-							],
-							"query": [
-								{
-									"key": "keyword",
-									"value": "apple"
-								}
-							]
-						},
-						"description": "using the product name as the keyword"
-					},
-					"response": []
-				},
-				{
-					"name": "Pagination",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{DOMAIN}}/api/v1/products?page=3",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"products"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "3"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "DELETE A Product Review",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{DOMAIN}}/reviews?productId=60bfe61332e57b998be565a0&id=60c459442bc693638d47285f",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"reviews"
-							],
-							"query": [
-								{
-									"key": "productId",
-									"value": "60bfe61332e57b998be565a0"
-								},
-								{
-									"key": "id",
-									"value": "60c459442bc693638d47285f"
-								}
-							]
-						},
-						"description": "Delete a Product Review"
-					},
-					"response": []
-				},
-				{
-					"name": "GET All Products",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{DOMAIN}}/products?page=1",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"products"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "1"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Authentication",
-			"item": [
-				{
-					"name": "Register A new user",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n   \"name\":\"Amen\",\n   \"email\":\"mojaray2k@gmail.com\",\n   \"password\":\"password123\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{DOMAIN}}/register",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"register"
-							]
-						},
-						"description": "Returns a JWT Todken"
-					},
-					"response": []
-				},
-				{
-					"name": "Login New User",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n   \"email\":\"mojaray2k@gmail.com\",\n   \"password\":\"password123\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{DOMAIN}}/login",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Logout User",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{DOMAIN}}/logout",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"logout"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Forgot Password",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\":\"mojaray2k@gmail.com\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{DOMAIN}}/password/forgot",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"password",
-								"forgot"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Reset Password",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"password\": \"password1234\",\n    \"confirmPassword\": \"password1234\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{DOMAIN}}/password/reset/cab91c78e2fc6d5572e971af5b3a44e357442066",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"password",
-								"reset",
-								"cab91c78e2fc6d5572e971af5b3a44e357442066"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Users",
-			"item": [
-				{
-					"name": "Get User Profile",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{DOMAIN}}/me",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"me"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update Password",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"oldPassword\":\"password1234\",\n    \"password\":\"password123\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{DOMAIN}}/password/update",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"password",
-								"update"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update Profile",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Amen Moja Ra\",\n    \"email\": \"mojaray2k@gmail.com\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{DOMAIN}}/me/update",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"me",
-								"update"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Admin",
-			"item": [
-				{
-					"name": "Get All Users",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{DOMAIN}}/admin/users",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"admin",
-								"users"
-							]
-						},
-						"description": "Only for Admins"
-					},
-					"response": []
-				},
-				{
-					"name": "Get User Details",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{DOMAIN}}/admin/user/60c1f6eed2318a8801d1d712",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"admin",
-								"user",
-								"60c1f6eed2318a8801d1d712"
-							]
-						},
-						"description": "This can only be done by the admin"
-					},
-					"response": []
-				},
-				{
-					"name": "Update User - ADMIN",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Amen Ra\",\n    \"email\": \"mojaray2k@live.com\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{DOMAIN}}/admin/user/60c439f5dbc8c217d1a033dc",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"admin",
-								"user",
-								"60c439f5dbc8c217d1a033dc"
-							]
-						},
-						"description": "Admin can update a user profile"
-					},
-					"response": []
-				},
-				{
-					"name": "Delete User - ADMIN",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Amen Ra\",\n    \"email\": \"mojaray2k@live.com\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{DOMAIN}}/admin/user/60c439f5dbc8c217d1a033dc",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"admin",
-								"user",
-								"60c439f5dbc8c217d1a033dc"
-							]
-						},
-						"description": "Admin can delete a user"
-					},
-					"response": []
-				},
-				{
-					"name": "GET All Products - Admin",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{DOMAIN}}/admin/products",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"admin",
-								"products"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Orders",
-			"item": [
-				{
-					"name": "Create New Order and Save it in the Database",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"itemsPrice\" : 2.75,\n\t\"taxPrice\" : 0.14,\n\t\"shippingPrice\" : 25,\n\t\"totalPrice\" : 27.89,\n\t\"orderItems\" : [\n\t\t{\n\t\t\t\"product\" : \"60bfe61332e57b998be5659e\",\n\t\t\t\"name\" : \"Kauffman Orchards Homegrown McIntosh Apples\",\n\t\t\t\"price\" : 2.75,\n\t\t\t\"image\" : \"https://res.cloudinary.com/shopit/image/upload/v1606293152/products/i0k1wdwi5hrpmzwxvsds.jpg\",\n\t\t\t\"quantity\" : 1\n\t\t}\n\t],\n\t\"shippingInfo\" : {\n\t\t\"address\" : \"3951  Smith Street\",\n\t\t\"city\" : \"New York\",\n\t\t\"phoneNo\" : 5555551234,\n\t\t\"postalCode\" : 10001,\n\t\t\"country\" : \"United States\"\n\t},\n\t\"paymentInfo\" : {\n\t\t\"id\" : \"pi_1HrMVNAlHMiRMt8E1BguvVIo\",\n\t\t\"status\": \"succeeded\"\n\t}\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{DOMAIN}}/order/new",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"order",
-								"new"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Git Single Order",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{DOMAIN}}/order/60c446368989fe39d699e218",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"order",
-								"60c446368989fe39d699e218"
-							]
-						},
-						"description": "Get Single Order"
-					},
-					"response": []
-				},
-				{
-					"name": "Get My Orders",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{DOMAIN}}/orders/me",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"orders",
-								"me"
-							]
-						},
-						"description": "Get A User's Orders when they are logged in"
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Orders",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{DOMAIN}}/admin/orders",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"admin",
-								"orders"
-							]
-						},
-						"description": "Admin can See All Orders"
-					},
-					"response": []
-				},
-				{
-					"name": "Update and Process Order",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"status\": \"Delivered\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{DOMAIN}}/admin/order/60c45347714f7243d1facad7",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"admin",
-								"order",
-								"60c45347714f7243d1facad7"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Order",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"status\": \"Delivered\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{DOMAIN}}/admin/order/60c45347714f7243d1facad7",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"admin",
-								"order",
-								"60c45347714f7243d1facad7"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Reviews",
-			"item": [
-				{
-					"name": "Create or Update A Review",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"rating\": 5,\n    \"comment\": \"This is a kool product\",\n    \"productId\": \"60bfe61332e57b998be565a0\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{DOMAIN}}/review",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"review"
-							]
-						},
-						"description": "Create or update a review of a product"
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Product Reviews",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"rating\": 5,\n    \"comment\": \"This is a kool product\",\n    \"productId\": \"60bfe61332e57b998be565a0\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{DOMAIN}}/reviews?id=60bfe61332e57b998be565a0",
-							"host": [
-								"{{DOMAIN}}"
-							],
-							"path": [
-								"reviews"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "60bfe61332e57b998be565a0"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		}
-	]
+  "info": {
+    "_postman_id": "e1c6f70b-8a5c-4f1f-b62d-14e497a3ee91",
+    "name": "ShopIT",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "GET All Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{DOMAIN}}/admin/products",
+              "host": ["{{DOMAIN}}"],
+              "path": ["admin", "products"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create New Product",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n        \"name\" : \"SanDisk Ultra 128GB SDXC UHS-I Memory Card up to 80MB/s\",\n        \"price\" : \"45.89\",\n        \"description\" : \"Ultra-fast cards (2) to take better pictures and Full HD videos (1) with your compact to mid-range point-and-shoot cameras and camcorders. With SanDisk Ultra SDXC UHS-I cards you’ll benefit from faster downloads, high capacity, and better performance to capture and store 128GB (5) of high quality pictures and Full HD video (1). Take advantage of ultra-fast read speeds of up to 80MB/s (3) to save time moving photos and videos from the card to your computer. From a leader in flash memory storage, SanDisk Ultra SDXC UHS-I cards are compatible with SDHC and SDXC digital devices, and come with a 10-year limited warranty (6).\",\n        \"ratings\" : 4.5,\n        \"images\" : [{\n            \"public_id\" : \"products/dsvbpny402gelwugv2le\",\n            \"url\" : \"https://res.cloudinary.com/bookit/image/upload/v1608062030/products/dsvbpny402gelwugv2le.jpg\"\n        }],\n        \"category\" : \"Electronics\",\n        \"seller\" : \"Ebay\",\n        \"stock\" : 50,\n        \"numOfReviews\" : 32,\n        \"reviews\": []\n    }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{DOMAIN}}/api/v1/admin/product/new",
+              "host": ["{{DOMAIN}}"],
+              "path": ["api", "v1", "admin", "product", "new"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a Product",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{DOMAIN}}/api/v1/admin/product/60c018252a2c3d7c18423046",
+              "host": ["{{DOMAIN}}"],
+              "path": [
+                "api",
+                "v1",
+                "admin",
+                "product",
+                "60c018252a2c3d7c18423046"
+              ]
+            },
+            "description": "Delete a Product by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Single Product by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{DOMAIN}}/api/v1/product/60bfe61332e57b998be565a2",
+              "host": ["{{DOMAIN}}"],
+              "path": ["api", "v1", "product", "60bfe61332e57b998be565a2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Product",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n            \"price\": 47.89,\n            \"ratings\": 4.5,\n            \"stock\": 50,\n            \"numOfReviews\": 32,\n            \"_id\": \"60bfe61332e57b998be5659e\",\n            \"name\": \"SanDisk Ultra 128GB SDXC UHS-I Memory Card up to 80MB/s\",\n            \"description\": \"Ultra-fast cards (2) to take better pictures and Full HD videos (1) with your compact to mid-range point-and-shoot cameras and camcorders. With SanDisk Ultra SDXC UHS-I cards you’ll benefit from faster downloads, high capacity, and better performance to capture and store 128GB (5) of high quality pictures and Full HD video (1). Take advantage of ultra-fast read speeds of up to 80MB/s (3) to save time moving photos and videos from the card to your computer. From a leader in flash memory storage, SanDisk Ultra SDXC UHS-I cards are compatible with SDHC and SDXC digital devices, and come with a 10-year limited warranty (6).\",\n            \"images\": [\n                {\n                    \"_id\": \"60bfe61332e57b998be5659f\",\n                    \"public_id\": \"products/dsvbpny402gelwugv2le\",\n                    \"url\": \"https://res.cloudinary.com/bookit/image/upload/v1608062030/products/dsvbpny402gelwugv2le.jpg\"\n                }\n            ],\n            \"category\": \"Electronics\",\n            \"seller\": \"Ebay\",\n            \"reviews\": [],\n            \"createdAt\": \"2021-06-08T21:50:11.777Z\",\n            \"__v\": 0\n        }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{DOMAIN}}/api/v1/admin/product/60bfe61332e57b998be5659a",
+              "host": ["{{DOMAIN}}"],
+              "path": [
+                "api",
+                "v1",
+                "admin",
+                "product",
+                "60bfe61332e57b998be5659a"
+              ]
+            },
+            "description": "Update Product by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Filter Products by price",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{DOMAIN}}/api/v1/products?keyword=apple&price[gte]=1&price[lte]=200",
+              "host": ["{{DOMAIN}}"],
+              "path": ["api", "v1", "products"],
+              "query": [
+                {
+                  "key": "keyword",
+                  "value": "apple"
+                },
+                {
+                  "key": "price[gte]",
+                  "value": "1"
+                },
+                {
+                  "key": "price[lte]",
+                  "value": "200"
+                }
+              ]
+            },
+            "description": "gte to lte"
+          },
+          "response": []
+        },
+        {
+          "name": "Filter for Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{DOMAIN}}/api/v1/products?keyword=apple&category=Laptops",
+              "host": ["{{DOMAIN}}"],
+              "path": ["api", "v1", "products"],
+              "query": [
+                {
+                  "key": "keyword",
+                  "value": "apple"
+                },
+                {
+                  "key": "category",
+                  "value": "Laptops"
+                }
+              ]
+            },
+            "description": "Filter By Category"
+          },
+          "response": []
+        },
+        {
+          "name": "Search for Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{DOMAIN}}/api/v1/products?keyword=apple",
+              "host": ["{{DOMAIN}}"],
+              "path": ["api", "v1", "products"],
+              "query": [
+                {
+                  "key": "keyword",
+                  "value": "apple"
+                }
+              ]
+            },
+            "description": "using the product name as the keyword"
+          },
+          "response": []
+        },
+        {
+          "name": "Pagination",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{DOMAIN}}/api/v1/products?page=3",
+              "host": ["{{DOMAIN}}"],
+              "path": ["api", "v1", "products"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "3"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE A Product Review",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{DOMAIN}}/reviews?productId=60bfe61332e57b998be565a0&id=60c459442bc693638d47285f",
+              "host": ["{{DOMAIN}}"],
+              "path": ["reviews"],
+              "query": [
+                {
+                  "key": "productId",
+                  "value": "60bfe61332e57b998be565a0"
+                },
+                {
+                  "key": "id",
+                  "value": "60c459442bc693638d47285f"
+                }
+              ]
+            },
+            "description": "Delete a Product Review"
+          },
+          "response": []
+        },
+        {
+          "name": "GET All Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{DOMAIN}}/products?page=1",
+              "host": ["{{DOMAIN}}"],
+              "path": ["products"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Register A new user",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"name\":\"Amen\",\n   \"email\":\"mojaray2k@gmail.com\",\n   \"password\":\"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{DOMAIN}}/register",
+              "host": ["{{DOMAIN}}"],
+              "path": ["register"]
+            },
+            "description": "Returns a JWT Todken"
+          },
+          "response": []
+        },
+        {
+          "name": "Login New User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"email\":\"mojaray2k@gmail.com\",\n   \"password\":\"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{DOMAIN}}/login",
+              "host": ["{{DOMAIN}}"],
+              "path": ["login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout User",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{DOMAIN}}/logout",
+              "host": ["{{DOMAIN}}"],
+              "path": ["logout"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Forgot Password",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\":\"mojaray2k@gmail.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{DOMAIN}}/password/forgot",
+              "host": ["{{DOMAIN}}"],
+              "path": ["password", "forgot"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Reset Password",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"password\": \"password1234\",\n    \"confirmPassword\": \"password1234\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{DOMAIN}}/password/reset/cab91c78e2fc6d5572e971af5b3a44e357442066",
+              "host": ["{{DOMAIN}}"],
+              "path": [
+                "password",
+                "reset",
+                "cab91c78e2fc6d5572e971af5b3a44e357442066"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Get User Profile",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{DOMAIN}}/me",
+              "host": ["{{DOMAIN}}"],
+              "path": ["me"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Password",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"oldPassword\":\"password1234\",\n    \"password\":\"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{DOMAIN}}/password/update",
+              "host": ["{{DOMAIN}}"],
+              "path": ["password", "update"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Profile",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Amen Moja Ra\",\n    \"email\": \"mojaray2k@gmail.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{DOMAIN}}/me/update",
+              "host": ["{{DOMAIN}}"],
+              "path": ["me", "update"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{DOMAIN}}/admin/users",
+              "host": ["{{DOMAIN}}"],
+              "path": ["admin", "users"]
+            },
+            "description": "Only for Admins"
+          },
+          "response": []
+        },
+        {
+          "name": "Get User Details",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{DOMAIN}}/admin/user/60c1f6eed2318a8801d1d712",
+              "host": ["{{DOMAIN}}"],
+              "path": ["admin", "user", "60c1f6eed2318a8801d1d712"]
+            },
+            "description": "This can only be done by the admin"
+          },
+          "response": []
+        },
+        {
+          "name": "Update User - ADMIN",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Amen Ra\",\n    \"email\": \"mojaray2k@live.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{DOMAIN}}/admin/user/60c439f5dbc8c217d1a033dc",
+              "host": ["{{DOMAIN}}"],
+              "path": ["admin", "user", "60c439f5dbc8c217d1a033dc"]
+            },
+            "description": "Admin can update a user profile"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete User - ADMIN",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Amen Ra\",\n    \"email\": \"mojaray2k@live.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{DOMAIN}}/admin/user/60c439f5dbc8c217d1a033dc",
+              "host": ["{{DOMAIN}}"],
+              "path": ["admin", "user", "60c439f5dbc8c217d1a033dc"]
+            },
+            "description": "Admin can delete a user"
+          },
+          "response": []
+        },
+        {
+          "name": "GET All Products - Admin",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{DOMAIN}}/admin/products",
+              "host": ["{{DOMAIN}}"],
+              "path": ["admin", "products"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Create New Order and Save it in the Database",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"itemsPrice\" : 2.75,\n\t\"taxPrice\" : 0.14,\n\t\"shippingPrice\" : 25,\n\t\"totalPrice\" : 27.89,\n\t\"orderItems\" : [\n\t\t{\n\t\t\t\"product\" : \"60bfe61332e57b998be5659e\",\n\t\t\t\"name\" : \"Kauffman Orchards Homegrown McIntosh Apples\",\n\t\t\t\"price\" : 2.75,\n\t\t\t\"image\" : \"https://res.cloudinary.com/shopit/image/upload/v1606293152/products/i0k1wdwi5hrpmzwxvsds.jpg\",\n\t\t\t\"quantity\" : 1\n\t\t}\n\t],\n\t\"shippingInfo\" : {\n\t\t\"address\" : \"3951  Smith Street\",\n\t\t\"city\" : \"New York\",\n\t\t\"phoneNo\" : 5555551234,\n\t\t\"postalCode\" : 10001,\n\t\t\"country\" : \"United States\"\n\t},\n\t\"paymentInfo\" : {\n\t\t\"id\" : \"pi_1HrMVNAlHMiRMt8E1BguvVIo\",\n\t\t\"status\": \"succeeded\"\n\t}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{DOMAIN}}/order/new",
+              "host": ["{{DOMAIN}}"],
+              "path": ["order", "new"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Git Single Order",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{DOMAIN}}/order/60c446368989fe39d699e218",
+              "host": ["{{DOMAIN}}"],
+              "path": ["order", "60c446368989fe39d699e218"]
+            },
+            "description": "Get Single Order"
+          },
+          "response": []
+        },
+        {
+          "name": "Get My Orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{DOMAIN}}/orders/me",
+              "host": ["{{DOMAIN}}"],
+              "path": ["orders", "me"]
+            },
+            "description": "Get A User's Orders when they are logged in"
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{DOMAIN}}/admin/orders",
+              "host": ["{{DOMAIN}}"],
+              "path": ["admin", "orders"]
+            },
+            "description": "Admin can See All Orders"
+          },
+          "response": []
+        },
+        {
+          "name": "Update and Process Order",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"status\": \"Delivered\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{DOMAIN}}/admin/order/60c45347714f7243d1facad7",
+              "host": ["{{DOMAIN}}"],
+              "path": ["admin", "order", "60c45347714f7243d1facad7"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Order",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"status\": \"Delivered\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{DOMAIN}}/admin/order/60c45347714f7243d1facad7",
+              "host": ["{{DOMAIN}}"],
+              "path": ["admin", "order", "60c45347714f7243d1facad7"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Reviews",
+      "item": [
+        {
+          "name": "Create or Update A Review",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"rating\": 5,\n    \"comment\": \"This is a kool product\",\n    \"productId\": \"60bfe61332e57b998be565a0\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{DOMAIN}}/review",
+              "host": ["{{DOMAIN}}"],
+              "path": ["review"]
+            },
+            "description": "Create or update a review of a product"
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Product Reviews",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"rating\": 5,\n    \"comment\": \"This is a kool product\",\n    \"productId\": \"60bfe61332e57b998be565a0\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{DOMAIN}}/reviews?id=60bfe61332e57b998be565a0",
+              "host": ["{{DOMAIN}}"],
+              "path": ["reviews"],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "60bfe61332e57b998be565a0"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
 }

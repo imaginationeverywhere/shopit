@@ -65,201 +65,201 @@
 /*-------------------- 6.   SPACING & HELPERS    --------------------*/
 /*-------------------- 7.   FONT ICONS   --------------------*/
 
-/*-------------------- 8.   HomePage    --------------------*/   
+/*-------------------- 8.   HomePage    --------------------*/
 
 /*-------------------- END of TABLE OF CONTENTS  ---------- */
 
 /* Main CSS File */
-@import 'mixins/clearfix';
-@import 'mixins/breakpoints';
-@import 'mixins/lazy';
-@import 'mixins/buttons';
+@import "mixins/clearfix";
+@import "mixins/breakpoints";
+@import "mixins/lazy";
+@import "mixins/buttons";
 
-@import 'config/fonts';
-@import 'config/variables';
+@import "config/fonts";
+@import "config/variables";
 
 /*-------------------- 1.General Styles ---------- */
-@import 'base/base';
-@import 'base/type';
-@import 'base/layout';
+@import "base/base";
+@import "base/type";
+@import "base/layout";
 
 /*-------------------- 2.Headers --------------------*/
-@import 'base/headers/header';
-@import 'base/headers/header-2';
-@import 'base/headers/header-5';
+@import "base/headers/header";
+@import "base/headers/header-2";
+@import "base/headers/header-5";
 
 /*-------------------- 2.1.Menu --------------------*/
-@import 'base/headers/menu';
+@import "base/headers/menu";
 
 /*-------------------- 2.2.Vertical Menu --------------------*/
-@import 'base/headers/vertical-menu';
+@import "base/headers/vertical-menu";
 
 /*-------------------- 2.3.Sticky Header --------------------*/
-@import 'base/headers/sticky-header';
+@import "base/headers/sticky-header";
 
 /*-------------------- 2.4.Mobiel Menu --------------------*/
-@import 'base/headers/mobile-menu';
-@import 'base/headers/mobile-menu-light';
+@import "base/headers/mobile-menu";
+@import "base/headers/mobile-menu-light";
 
 /*-------------------- 3.Footer --------------------*/
-@import 'base/footers/footer';
-@import 'base/footers/footer-2';
+@import "base/footers/footer";
+@import "base/footers/footer-2";
 
 /*-------------------- 4.Elements --------------------*/
 /*-------------------- 4.1.Page Header --------------------*/
-@import 'elements/page-header';
+@import "elements/page-header";
 
 /*-------------------- 4.2.BreadCrumbs --------------------*/
-@import 'elements/breadcrumb';
+@import "elements/breadcrumb";
 
 /*-------------------- 4.3.Titles --------------------*/
-@import 'elements/titles';
+@import "elements/titles";
 
 /*-------------------- 4.4.Icon boxes --------------------*/
-@import 'elements/icon-boxes';
+@import "elements/icon-boxes";
 
 /*-------------------- 4.5.Cards --------------------*/
-@import 'elements/cards';
+@import "elements/cards";
 
 /*-------------------- 4.6.Tabs --------------------*/
-@import 'elements/tabs';
+@import "elements/tabs";
 
 /*-------------------- 4.7.Buttons --------------------*/
-@import 'elements/buttons';
+@import "elements/buttons";
 
 /*-------------------- 4.8.Products --------------------*/
-@import 'elements/products';
+@import "elements/products";
 
 /*-------------------- 4.9.Banners --------------------*/
-@import 'elements/banners';
+@import "elements/banners";
 
 /*-------------------- 4.10.Banners Video --------------------*/
-@import 'elements/banners-video';
+@import "elements/banners-video";
 
 /*-------------------- 4.11.Banners Category --------------------*/
-@import 'elements/banners-category';
+@import "elements/banners-category";
 
 /*-------------------- 4.12.Social Icons --------------------*/
-@import 'elements/social-icons';
+@import "elements/social-icons";
 
 /*-------------------- 4.13.Testimonials --------------------*/
-@import 'elements/testimonials';
+@import "elements/testimonials";
 
 /*-------------------- 4.14.Forms --------------------*/
-@import 'elements/forms';
+@import "elements/forms";
 
 /*-------------------- 4.15.Call to Actions --------------------*/
-@import 'elements/cta';
+@import "elements/cta";
 
 /*-------------------- 4.16.Tables --------------------*/
-@import 'elements/tables';
+@import "elements/tables";
 
 /*-------------------- 4.17. Counters --------------------*/
-@import 'elements/counters';
+@import "elements/counters";
 
 /*-------------------- 4.18.Pagination --------------------*/
-@import 'elements/pagination';
+@import "elements/pagination";
 
 /*-------------------- 4.19.Modals --------------------*/
-@import 'elements/modals';
+@import "elements/modals";
 
 /*-------------------- 4.20.Alerts --------------------*/
-@import 'elements/alerts';
+@import "elements/alerts";
 
 /*-------------------- 4.21.Instagram Feeds --------------------*/
-@import 'elements/instagram-feed';
+@import "elements/instagram-feed";
 
 /*-------------------- 4.22.Elements list --------------------*/
-@import 'elements/list';
+@import "elements/list";
 
 /*-------------------- 4.23.Overlay --------------------*/
-@import 'elements/overlay';
+@import "elements/overlay";
 
 /*-------------------- 4.24.Countdown --------------------*/
-@import 'elements/countdown';
+@import "elements/countdown";
 
 /*-------------------- 4.25.LightBox --------------------*/
-@import 'elements/image-lightbox';
+@import "elements/image-lightbox";
 
 /*-------------------- 4.26.Slider --------------------*/
-@import 'elements/slider';
+@import "elements/slider";
 
 /*-------------------- 4.27.Toast --------------------*/
-@import 'elements/toast';
+@import "elements/toast";
 
 /*-------------------- 4.28.Skeleton --------------------*/
-@import 'elements/skeleton';
+@import "elements/skeleton";
 
 /*-------------------- 4.29.Animations --------------------*/
-@import 'elements/animations';
+@import "elements/animations";
 
 /*-------------------- 4.30.Lazy --------------------*/
-@import 'elements/lazy-load';
+@import "elements/lazy-load";
 
 /*-------------------- 5.Pages --------------------*/
 /*-------------------- 5.1.Home --------------------*/
-@import 'pages/home';
+@import "pages/home";
 
 /*-------------------- 5.2.Category --------------------*/
-@import 'pages/category';
+@import "pages/category";
 
 /*-------------------- 5.3.Product Pages --------------------*/
-@import 'pages/product';
+@import "pages/product";
 
 /*-------------------- 5.4.Blog --------------------*/
-@import 'pages/blog';
+@import "pages/blog";
 
 /*-------------------- 5.5.Single/Blog Post --------------------*/
-@import 'pages/single';
+@import "pages/single";
 
 /*-------------------- 5.6.Portfolio --------------------*/
-@import 'pages/portfolio';
+@import "pages/portfolio";
 
 /*-------------------- 5.7.About --------------------*/
-@import 'pages/about';
+@import "pages/about";
 
 /*-------------------- 5.8.About 2 --------------------*/
-@import 'pages/about-2';
+@import "pages/about-2";
 
 /*-------------------- 5.9.Contact --------------------*/
-@import 'pages/contact';
+@import "pages/contact";
 
 /*-------------------- 5.10.Contact 2 --------------------*/
-@import 'pages/contact-2';
+@import "pages/contact-2";
 
 /*-------------------- 5.11.Login --------------------*/
-@import 'pages/login';
+@import "pages/login";
 
 /*-------------------- 5.12.Category Banner Page --------------------*/
-@import 'pages/category-banner-page';
+@import "pages/category-banner-page";
 
 /*-------------------- 5.13.Checkout --------------------*/
-@import 'pages/checkout';
+@import "pages/checkout";
 
 /*-------------------- 5.14.Wishlist --------------------*/
-@import 'pages/wishlist';
+@import "pages/wishlist";
 
 /*-------------------- 5.15.Cart --------------------*/
-@import 'pages/cart';
+@import "pages/cart";
 
 /*-------------------- 5.16.Dashboard --------------------*/
-@import 'pages/dashboard';
+@import "pages/dashboard";
 
 /*-------------------- 5.17.404 --------------------*/
-@import 'pages/404';
+@import "pages/404";
 
 /*-------------------- 5.18.Coming Soon --------------------*/
-@import 'pages/coming-soon';
+@import "pages/coming-soon";
 
 /*-------------------- 5.19.Category Market --------------------*/
-@import 'pages/category-market';
+@import "pages/category-market";
 
 /*-------------------- 6.Spacing + Helpers --------------------*/
-@import 'config/helpers';
-@import 'config/spacing';
+@import "config/helpers";
+@import "config/spacing";
 
 /*-------------------- 7.Font Icons --------------------*/
 // @import 'elements/font-icons';
 
 /*-------------------- 8.HomePage --------------------*/
-@import 'demos/common-15';
+@import "demos/common-15";

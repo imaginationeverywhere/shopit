@@ -38,7 +38,6 @@ function TemplateTable() {
 
   if (templates.length < 1) return null;
 
-
   return (
     <table className={classes["templates-table"]}>
       <tr>
@@ -49,9 +48,9 @@ function TemplateTable() {
       {templates.map(({ templateId, name, isActive }) => {
         const handlePreview = () => {
           previewTemplate(templateId);
-          dispatch({type: 'PREVIEW_TEMPLATE', id: templateId})
-        }
-      
+          dispatch({ type: "PREVIEW_TEMPLATE", id: templateId });
+        };
+
         return (
           <tr key={templateId}>
             <td>{templateId}</td>
@@ -63,7 +62,8 @@ function TemplateTable() {
                     to={`/templates/preview/${templateId}`}
                     target="_blank"
                     onClick={handlePreview}
-                  >Preview
+                  >
+                    Preview
                   </Link>
 
                   <ActiveButton

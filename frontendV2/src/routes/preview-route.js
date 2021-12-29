@@ -29,7 +29,6 @@ import HomePage22 from "../components/home/home-22";
 import HomePage23 from "../components/home/home-23";
 import HomePage24 from "../components/home/home-24";
 
-
 export default function PreviewRoute() {
   const { id } = 2;
 
@@ -90,12 +89,12 @@ export default function PreviewRoute() {
 
   return (
     <Switch>
-    <Layout>
-      <Route
-        exact
-        path={`${process.env.PUBLIC_URL}/templates/preview/${id}`}
-        component={getHomePage(+id)}
-      />
+      <Layout>
+        <Route
+          exact
+          path={`${process.env.PUBLIC_URL}/templates/preview/${id}`}
+          component={getHomePage(+id)}
+        />
       </Layout>
     </Switch>
   );

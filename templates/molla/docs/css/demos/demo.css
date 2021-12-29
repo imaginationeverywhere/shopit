@@ -55,4 +55,5 @@ C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'mq'.\A         on line 92 of A:\Workplace\React\molla\Molla2.0\work\molla-doc\sass\demos\demo.scss, in `mq'\A         from line 92 of A:\Workplace\React\molla\Molla2.0\work\molla-doc\sass\demos\demo.scss\A \A 87: .cols-2:not(.owl-loaded) > * {\A 88: 	flex: 0 0 50%;\A 89: 	max-width: 50%;\A 90: }\A 91: \A 92: @include mq('md') {\A 93: 	.cols-md-3:not(.owl-loaded) > * {\A 94: 		flex: 0 0 calc(100% / 3);\A 95: 		max-width: 0 0 calc(100% / 3);\A 96: 	}\A 97: }"; }
+  content: "Error: Undefined mixin 'mq'.\A         on line 92 of A:\Workplace\React\molla\Molla2.0\work\molla-doc\sass\demos\demo.scss, in `mq'\A         from line 92 of A:\Workplace\React\molla\Molla2.0\work\molla-doc\sass\demos\demo.scss\A \A 87: .cols-2:not(.owl-loaded) > * {\A 88: 	flex: 0 0 50%;\A 89: 	max-width: 50%;\A 90: }\A 91: \A 92: @include mq('md') {\A 93: 	.cols-md-3:not(.owl-loaded) > * {\A 94: 		flex: 0 0 calc(100% / 3);\A 95: 		max-width: 0 0 calc(100% / 3);\A 96: 	}\A 97: }";
+}

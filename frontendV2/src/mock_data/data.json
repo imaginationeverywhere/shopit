@@ -1,688 +1,665 @@
 {
-    "team_members": [
-        {
-            "img": "assets/images/team/about-2/member-1.jpg",
-            "name": "Samanta Grey",
-            "title": "Founder & CEO"
-        },
-        {
-            "img": "assets/images/team/about-2/member-2.jpg",
-            "name": "Bruce Sutton",
-            "title": "Sales & Marketing Manager"
-        },
-        {
-            "img": "assets/images/team/about-2/member-3.jpg",
-            "name": "Jat Joy",
-            "title": "Product Manager"
-        },
-        {
-            "img": "assets/images/team/about-2/member-4.jpg",
-            "name": "Mark Pocket",
-            "title": "Product Manager"
-        },
-        {
-            "img": "assets/images/team/about-2/member-5.jpg",
-            "name": "Damion Blue",
-            "title": "Sales & Marketing Manager"
-        },
-        {
-            "img": "assets/images/team/about-2/member-6.jpg",
-            "name": "Lenard Smith",
-            "title": "Product Manager"
-        },
-        {
-            "img": "assets/images/team/about-2/member-7.jpg",
-            "name": "Rachel Green",
-            "title": "Product Manager"
-        },
-        {
-            "img": "assets/images/team/about-2/member-8.jpg",
-            "name": "David Doe",
-            "title": "Product Manager"
-        }
-    ],
-    "brands": {
-        "default": [
-            {
-                "name": "brand",
-                "image": "assets/images/brands/1.png"
-            },
-            {
-                "name": "brand",
-                "image": "assets/images/brands/2.png"
-            },
-            {
-                "name": "brand",
-                "image": "assets/images/brands/3.png"
-            },
-            {
-                "name": "brand",
-                "image": "assets/images/brands/4.png"
-            },
-            {
-                "name": "brand",
-                "image": "assets/images/brands/5.png"
-            },
-            {
-                "name": "brand",
-                "image": "assets/images/brands/6.png"
-            },
-            {
-                "name": "brand",
-                "image": "assets/images/brands/7.png"
-            },
-            {
-                "name": "brand",
-                "image": "assets/images/brands/8.png"
-            },
-            {
-                "name": "brand",
-                "image": "assets/images/brands/9.png"
-            }
-        ]
+  "team_members": [
+    {
+      "img": "assets/images/team/about-2/member-1.jpg",
+      "name": "Samanta Grey",
+      "title": "Founder & CEO"
     },
-    "shop_categories": [
-        {
-            "id": 1,
-            "name": "Furniture"
-        },
-        {
-            "id": 2,
-            "name": "Coffee & Tables"
-        },
-        {
-            "id": 3,
-            "name": "Lighting"
-        },
-        {
-            "id": 4,
-            "name": "Decoration"
-        },
-        {
-            "id": 5,
-            "name": "Electronics"
-        },
-        {
-            "id": 6,
-            "name": "Beds"
-        },
-        {
-            "id": 7,
-            "name": "Armchairs & Chaises"
-        },
-        {
-            "id": 8,
-            "name": "Sofas & Sleeper Sofas"
-        }
-    ],
-    "elementsUrl": [
-        {
-            "url": "/elements/accordions",
-            "name": "accordions",
-            "class": "img-accordions"
-        },
-        {
-            "url": "/elements/banners",
-            "name": "banners",
-            "class": "img-banners"
-        },
-        {
-            "url": "/elements/blog-posts",
-            "name": "blog posts",
-            "class": "img-blog-posts"
-        },
-        {
-            "url": "/elements/buttons",
-            "name": "buttons",
-            "class": "img-buttons"
-        },
-        {
-            "url": "/elements/cta",
-            "name": "call to action",
-            "class": "img-cta"
-        },
-        {
-            "url": "/elements/icon-boxes",
-            "name": "icon boxes",
-            "class": "img-icon-boxes"
-        },
-        {
-            "url": "/elements/portfolios",
-            "name": "portfolio",
-            "class": "img-portfolio"
-        },
-        {
-            "url": "/elements/categories",
-            "name": "product catigories",
-            "class": "img-product-categories"
-        },
-        {
-            "url": "/elements/products",
-            "name": "products",
-            "class": "img-products"
-        },
-        {
-            "url": "/elements/tabs",
-            "name": "tabs",
-            "class": "img-tabs"
-        },
-        {
-            "url": "/elements/testimonials",
-            "name": "testimonials",
-            "class": "img-testimonials"
-        },
-        {
-            "url": "/elements/titles",
-            "name": "titles",
-            "class": "img-titles"
-        },
-        {
-            "url": "/elements/typography",
-            "name": "typography",
-            "class": "img-typography"
-        },
-        {
-            "url": "/elements/video-banners",
-            "name": "video",
-            "class": "img-video"
-        }
-    ],
-    "services": [
-        {
-            "id": 8,
-            "icon": "icon-truck",
-            "title": "Payment & Delivery",
-            "subtitle": "Free shipping for orders over $50"
-        },
-        {
-            "id": 9,
-            "icon": "icon-rotate-left",
-            "title": "Return & Refund",
-            "subtitle": "Free 100% money back guarantee"
-        },
-        {
-            "id": 10,
-            "icon": "icon-headphones",
-            "title": "Quality Support",
-            "subtitle": "Alway online feedback 24/7"
-        }
-    ],
-    "innerOverlayPaths": [
-        "shop/sidebar",
-        "product/default",
-        "product/centered",
-        "product/extended",
-        "product/gallery",
-        "product/sticky",
-        "product/sidebar",
-        "product/fullwidth",
-        "product/masonry"
-    ],
-    "categoryBanners": [
-        {
-            "image": "assets/images/home/banners/banner-1.jpg",
-            "subtitle": "Weekend Sale",
-            "title": "Lighting <br />& Accessories <br /><span>25% off</span>",
-            "btnText": "Shop Now "
-        },
-        {
-            "image": "assets/images/home/banners/banner-3.jpg",
-            "subtitle": "Smart Offer",
-            "title": "Anniversary <br />Special <br /><span>15% off</span>",
-            "btnText": "Shop Now "
-        },
-        {
-            "image": "assets/images/home/banners/banner-2.jpg",
-            "subtitle": "Amazing Value",
-            "title": "Clothes Trending <br />Spring Collection 2020 <br /><span>from $12,99</span>",
-            "btnText": "Discover Now "
-        },
-        
-        {
-            "adClass": "banner-overlay-light",
-            "image": "assets/images/home/banners/banner-4.jpg",
-            "subtitle": "Spring Sale is Coming",
-            "title": "<Link to='#'>All Smart Watches <br />Discount <br /><span class='text-primary'>15% off</span></Link>",
-            "btnText": "Discover Now "
-        },
-        {
-            "image": "assets/images/home/banners/banner-5.png",
-            "subtitle": "Amazing Value",
-            "title": "<Link to='#'>Headphones Trending <br />JBL Harman <br /><span>from $59,99</span></Link>",
-            "btnText": "Discover Now "
-        }
-    ],
-    "categoryBanners14": [
-        {
-            "categories": [
-                "Electronics",
-                [
-                    "Cell Phones",
-                    "Computers",
-                    "TV & Video",
-                    "Smart Home",
-                    "Audi",
-                    "Home Audio & Theater"
-                ]
-            ],
-            "background": "assets/images/home/banners/banner-bg-1.jpg",
-            "image": "assets/images/home/banners/banner-5.jpg",
-            "title": "Canon EOS <br/>Mega Sale <br/><span>Up To 20% Off</span>",
-            "subtitle": "Best Deals",
-            "height": 390
-        },
-        {
-            "categories": [
-                "Furniture",
-                [
-                    "Bedroom",
-                    "Office",
-                    "Living Room",
-                    "Kitchen & Dining",
-                    "Decoration",
-                    "Outdoor"
-                ]
-            ],
-            "background": "assets/images/home/banners/banner-bg-2.jpg",
-            "image": "assets/images/home/banners/banner-6.jpg",
-            "title": "Furniture Sets <br/><span>Up To 30% Off</span>",
-            "subtitle": "Best Deals",
-            "height": 390
-        },
-        {
-            "categories": [
-                "Clothing",
-                [
-                    "Best Sellers",
-                    "Trending",
-                    "Women",
-                    "Man",
-                    "Shoes",
-                    "Accessories"
-                ]
-            ],
-            "background": "assets/images/home/banners/banner-bg-3.jpg",
-            "image": "assets/images/home/banners/banner-9.jpg",
-            "title": "Clearance <br/>Outerwear<br/><span>Up To 70% Off</span>",
-            "subtitle": "Best Deals",
-            "height": 400
-        },
-        {
-            "categories": [
-                "Cooking",
-                [
-                    "Cookware",
-                    "Dinnerware",
-                    "Cups",
-                    "Microwaves",
-                    "Toasters",
-                    "Coffee Makers"
-                ]
-            ],
-            "background": "assets/images/home/banners/banner-bg-4.jpg",
-            "image": "assets/images/home/banners/banner-10.jpg",
-            "title": "Cooking <br/>Appliances <br/><span>Up To 30% Off</span>",
-            "subtitle": "Best Deals",
-            "height": 400
-        }
-    ],
-    "productCategories": [
-        "All",
-        "Electronics",
-        "Furniture",
-        "Clothes",
-        "Accessories"
-    ],
-    "introBanners": [
-        {
-            "className": "col-12 col-md-4 col-lg-12 mt-2 mt-md-0 mt-lg-2",
-            "image": "assets/images/home/sliders/slide-1.jpg",
-            "srcSet": "assets/images/home/sliders/slide-1-480w.jpg",
-            "subtitle": "Topsale Collection",
-            "title": "Living Room<br/>Furniture",
-            "content": "<h3>RUNNING &<br />TRAINING SHIRTS</h3>",
-            "price": "<sup class='intro-old-price'>$49,99</sup><span class='text-primary'>&nbsp;$29<sup>.99</sup></span>",
-            "text": "<h4>power equipment</h4>",
-            "btnText": "Discover Now"
-        },
-        {
-            "className": "col-12 col-md-4 col-lg-12 mt-2 mt-md-0 mt-lg-2",
-            "image": "assets/images/home/sliders/slide-2.jpg",
-            "srcSet": "assets/images/home/sliders/slide-2-480w.jpg",
-            "subtitle": "News and Inspiration",
-            "title": "New Arrivals",
-            "content": "<h3>IT'S TIME TO UPGRADE<br />YOUR HIKING KIT</h3>",
-            "price": "<sup>Today:</sup><span class='text-primary'>&nbsp;$247<sup>.99</sup></span>",
-            "text": "<h4>News and Inspo</h4>",
-            "btnText": "Shop Now"
-        },
-        {
-            "className": "col-12 col-md-4 col-lg-12 mt-2 mt-md-0 mt-lg-2",
-            "image": "assets/images/home/sliders/slide-2.jpg",
-            "srcSet": "assets/images/home/sliders/slide-2-480w.jpg",
-            "subtitle": "News and Inspiration",
-            "title": "New Arrivals",
-            "content": "<h3>IT'S TIME TO UPGRADE<br />YOUR HIKING KIT</h3>",
-            "price": "<sup>Today:</sup><span class='text-primary'>&nbsp;$247<sup>.99</sup></span>",
-            "text": "<h4>New Arrivals</h4>",
-            "btnText": "Shop Now"
-        },
-        {
-            "className": "col-12 col-md-4 col-lg-12 mt-2 mt-md-0 mt-lg-2",
-            "image": "/assets/images/home/sliders/banner-2.jpg",
-            "srcSet": "assets/images/home/sliders/slide-2-480w.jpg",
-            "subtitle": "Outside",
-            "title": "<h2>outdoor</h2>",
-            "content": "<h3>CONTENT PLACEHOLDER</h3>",
-            "price": "<sup class='intro-old-price'>$49,99</sup><span class='text-primary'>&nbsp;$29<sup>.99</sup></span>",
-            "text": "<h4>power equipment</h4>",
-            "btnText": "shop now"
-        },
-        {
-            "className": "col-12 col-md-4 col-lg-12 mt-2 mt-md-0 mt-lg-2",
-            "image": "/assets/images/home/sliders/banner-3.jpg",
-            "srcSet": "assets/images/home/sliders/slide-2-480w.jpg",
-            "subtitle": "Deals n Savings",
-            "title": "<h3 class='highlight'>save 20%</h3><h3>&nbsp;or more</h3>",
-            "content": "<h3>DEALS PLACEHOLDER</h3>",
-            "price": "<sup class='intro-old-price'>$49,99</sup><span class='text-primary'>&nbsp;$29<sup>.99</sup></span>",
-            "text": "<h3>deals & savings</h3>",
-            "btnText": "shop now"
-        }
-        
-    ],
-    "bannerCategories": [
-        {
-            "image": "assets/images/home/cats/1.png",
-            "name": "Computer & Laptop"
-        },
-        {
-            "image": "assets/images/home/cats/2.png",
-            "name": "Digital Cameras"
-        },
-        {
-            "image": "assets/images/home/cats/3.png",
-            "name": "Smart Phones"
-        },
-        {
-            "image": "assets/images/home/cats/4.png",
-            "name": "Televisions"
-        },
-        {
-            "image": "assets/images/home/cats/5.png",
-            "name": "Audio"
-        },
-        {
-            "image": "assets/images/home/cats/6.png",
-            "name": "Smart Watches"
-        }
-    ],
-    "bannerContents": [
-        {
-            "sub_title": "Smart Offer",
-            "title": "Save $150",
-            "title_str": "on Samsung",
-            "title_br": "Galaxy Note9",
-            "img": "assets/images/home/banners/banner-1.png"
-        },
-        {
-            "sub_title": "Time Deals",
-            "title": "",
-            "title_str": "Bose SoundSport",
-            "title_br": "Time Deal -30%",
-            "img": "assets/images/home/banners/banner-2.jpg"
-        },
-        {
-            "sub_title": "Clearance",
-            "title": "",
-            "title_str": "GoPro - Fusion 360",
-            "title_br": "Save $70",
-            "img": "assets/images/home/banners/banner-3.png"
-        }
-    ],
-    "dealContents": [
-        {
-            "headerTitle": "Deal of the Day.",
-            "headerSubTitle": "Limited quantities.",
-            "productTitle": "Home Smart Speaker with  Google Assistant",
-            "newPrice": "$129.00",
-            "oldPrice": "$150.99",
-            "dataUntil": "+10h",
-            "bigImage": "assets/images/home/deals/bg-1.jpg",
-            "linkTitle": "Shop Now",
-            "link": "product/default/27"
-        },
-        {
-            "headerTitle": "Your Exclusive Offers.",
-            "headerSubTitle": "Sign in to see amazing deals.",
-            "productTitle": "Certified Wireless Charging  Pad for iPhone / Android",
-            "newPrice": "$29.99",
-            "oldPrice": "",
-            "dataUntil": "+11d",
-            "bigImage": "assets/images/home/deals/bg-2.jpg",
-            "linkTitle": "Sign In and Save money",
-            "link": "pages/login"
-        }
-    ],
-    "banner": [
-        {
-            "img": "assets/images/home/banners/intro/banner-1.jpg",
-            "subtitle": "Clearence",
-            "title": "Chairs & Chaises <br/>Up to 40% off",
-            "content": "<h3>RUNNING APPAREL</h3><h3>END OF SEASON SALE</h3>",
-            "btnText": "Shop Now",
-            "adClass": "mb-0",
-            "width": "575",
-            "height": "300"
-        },
-        {
-            "img": "assets/images/home/banners/intro/banner-2.jpg",
-            "subtitle": "New in",
-            "title": "Best Lighting <br/>Collection",
-            "content": "<h3>NEW SEASON</h3><h3>NEW GEAR</h3>",
-            "btnText": "Discover Now",
-            "adClass": "mb-0",
-            "width": "575",
-            "height": "300"
-        },
-        {
-            "img": "assets/images/home/banners/banner-3.jpg",
-            "subtitle": "Limited time only.",
-            "title": "End of Season<br/>save 50% off",
-            "content": "<h3>SWIMWEAR SALE</h3><h3>SAVE UP TO 30%</h3>",
-            "adClass": "mb-0",
-            "width": "585",
-            "height": "300"
-        },
-        {
-            "img": "assets/images/home/banners/banner-3.jpg",
-            "subtitle": "Limited time only.",
-            "title": "End of Season<br/>save 50% off",
-            "content": "<h3>SWIMWEAR SALE</h3><h3>SAVE UP TO 30%</h3>",
-            "adClass": "mb-0",
-            "width": "585",
-            "height": "300"
-        }
-    ],
-    "categories": [
-        "All",
-        "Furniture",
-        "Decoration",
-        "Lighting"
-    ],
-    "banners": [
-        {
-            "img": "assets/images/home/banners/banner-1.jpg",
-            "width": 880,
-            "height": 500,
-            "subtitle": "New Collection",
-            "title": "Shop Women's",
-            "btnText": "<span>Discover Now</span>",
-            "adClass": "banner-big banner-overlay",
-            "contentAdClass": "banner-content-center"
-        },
-        {
-            "img": "assets/images/home/banners/banner-2.jpg",
-            "width": 880,
-            "height": 500,
-            "subtitle": "New Collection",
-            "title": "Shop Men's",
-            "btnText": "<span>Discover Now</span>",
-            "adClass": "banner-big banner-overlay",
-            "contentAdClass": "banner-content-center"
-        },
-        {
-            "img": "assets/images/home/banners/banner-3.jpg",
-            "width": 580,
-            "height": 300,
-            "subtitle": "Flip Flop",
-            "title": "Summer<br />sale -70% off",
-            "btnText": "Shop Now",
-            "adClass": "banner-overlay text-white",
-            "contentAdClass": "banner-content-right",
-            "btnAdClass": "btn-outline-white-3 banner-link"
-        },
-        {
-            "img": "assets/images/home/banners/banner-4.jpg",
-            "width": 580,
-            "height": 300,
-            "subtitle": "Accessories",
-            "title": "2020 Winter<br />up to 50% off",
-            "btnText": "Shop Now",
-            "adClass": "banner-overlay color-grey",
-            "contentAdClass": "",
-            "btnAdClass": "banner-link",
-            "textColor": ""
-        },
-        {
-            "img": "assets/images/home/banners/banner-5.jpg",
-            "width": 580,
-            "height": 300,
-            "subtitle": "New in",
-            "title": "Women’s<br />sportswear",
-            "btnText": "Shop Now",
-            "adClass": "banner-overlay text-white",
-            "contentAdClass": "banner-content-right",
-            "btnAdClass": "btn-outline-white-3 banner-link"
-        },
-        {
-            "img": "assets/images/home/banners/banner-1.jpg",
-            "width": 880,
-            "height": 500,
-            "subtitle": "New Collection",
-            "title": "Shop Women's",
-            "btnText": "<span>Discover Now</span>",
-            "adClass": "banner-big banner-overlay",
-            "contentAdClass": "banner-content-center"
-        },
-        {
-            "img": "assets/images/home/banners/banner-2.jpg",
-            "width": 880,
-            "height": 500,
-            "subtitle": "New Collection",
-            "title": "Shop Men's",
-            "btnText": "<span>Discover Now</span>",
-            "adClass": "banner-big banner-overlay",
-            "contentAdClass": "banner-content-center"
-        },
-        {
-            "img": "assets/images/home/banners/banner-2.jpg",
-            "width": 880,
-            "height": 500,
-            "subtitle": "New Collection",
-            "title": "Shop Men's",
-            "btnText": "<span>Discover Now</span>",
-            "adClass": "banner-big banner-overlay",
-            "contentAdClass": "banner-content-center"
-        }
-    ],
-    "instagram": [
-        {
-            "img": "assets/images/home/instagrams/1.jpg",
-            "likes": 387,
-            "comments": 45
-        },
-        {
-            "img": "assets/images/home/instagrams/2.jpg",
-            "likes": 691,
-            "comments": 87
-        },
-        {
-            "img": "assets/images/home/instagrams/3.jpg",
-            "likes": 321,
-            "comments": 54
-        },
-        {
-            "img": "assets/images/home/instagrams/4.jpg",
-            "likes": 44,
-            "comments": 55
-        },
-        {
-            "img": "assets/images/home/instagrams/5.jpg",
-            "likes": 128,
-            "comments": 99
-        },
-        {
-            "img": "assets/images/home/instagrams/6.jpg",
-            "likes": 433,
-            "comments": 25
-        },
-        {
-            "img": "assets/images/home/instagrams/7.jpg",
-            "likes": 588,
-            "comments": 44
-        },
-        {
-            "img": "assets/images/home/instagrams/8.jpg",
-            "likes": 87,
-            "comments": 23
-        },
-        {
-            "img": "assets/images/home/instagrams/9.jpg",
-            "likes": 87,
-            "comments": 23
-        }
-    ],
-    "home_categories": [
-        {
-            "key": "Women",
-            "value": "Women's Clothing"
-        },
-        {
-            "key": "Men",
-            "value": "Men's Clothing"
-        }
-    ],
-    "testimonials": [
-        {
-            "lead": "“Really great store”",
-            "content": "“ Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra<br>a, ultricies in, diam. Sed arcu. ”",
-            "name": "Charly Smith",
-            "job": "Customer"
-        },
-        {
-            "lead": "“Friendly Support”",
-            "content": "“ Impedit, ratione sequi, sunt incidunt magnam et. Delectus obcaecati optio eius error libero perferendis nesciunt atque dolores magni recusandae! Doloremque quidem error eum quis similique doloribus natus qui ut ipsum.”",
-            "name": "Damon Stone",
-            "job": "Customer"
-        },
-        {
-            "lead": "“Free Shipping”",
-            "content": "“ Molestias animi illo natus ut quod neque ad accusamus praesentium fuga! Dolores odio alias sapiente odit delectus quasi, explicabo a, modi voluptatibus. Perferendis perspiciatis, voluptate, distinctio earum veritatis animi tempora eget blandit nunc tortor mollis ”",
-            "name": "John Smith",
-            "job": "Customer"
-        }
-    ],
-    "arrivalCategories": [
-        "All",
-        "Clothing",
-        "Shoes & Boots",
-        "Accessories"
-    ],
-    "trendyCategories": [
-        "All",
-        "Women",
-        "Men",
-        "Accessories"
+    {
+      "img": "assets/images/team/about-2/member-2.jpg",
+      "name": "Bruce Sutton",
+      "title": "Sales & Marketing Manager"
+    },
+    {
+      "img": "assets/images/team/about-2/member-3.jpg",
+      "name": "Jat Joy",
+      "title": "Product Manager"
+    },
+    {
+      "img": "assets/images/team/about-2/member-4.jpg",
+      "name": "Mark Pocket",
+      "title": "Product Manager"
+    },
+    {
+      "img": "assets/images/team/about-2/member-5.jpg",
+      "name": "Damion Blue",
+      "title": "Sales & Marketing Manager"
+    },
+    {
+      "img": "assets/images/team/about-2/member-6.jpg",
+      "name": "Lenard Smith",
+      "title": "Product Manager"
+    },
+    {
+      "img": "assets/images/team/about-2/member-7.jpg",
+      "name": "Rachel Green",
+      "title": "Product Manager"
+    },
+    {
+      "img": "assets/images/team/about-2/member-8.jpg",
+      "name": "David Doe",
+      "title": "Product Manager"
+    }
+  ],
+  "brands": {
+    "default": [
+      {
+        "name": "brand",
+        "image": "assets/images/brands/1.png"
+      },
+      {
+        "name": "brand",
+        "image": "assets/images/brands/2.png"
+      },
+      {
+        "name": "brand",
+        "image": "assets/images/brands/3.png"
+      },
+      {
+        "name": "brand",
+        "image": "assets/images/brands/4.png"
+      },
+      {
+        "name": "brand",
+        "image": "assets/images/brands/5.png"
+      },
+      {
+        "name": "brand",
+        "image": "assets/images/brands/6.png"
+      },
+      {
+        "name": "brand",
+        "image": "assets/images/brands/7.png"
+      },
+      {
+        "name": "brand",
+        "image": "assets/images/brands/8.png"
+      },
+      {
+        "name": "brand",
+        "image": "assets/images/brands/9.png"
+      }
     ]
+  },
+  "shop_categories": [
+    {
+      "id": 1,
+      "name": "Furniture"
+    },
+    {
+      "id": 2,
+      "name": "Coffee & Tables"
+    },
+    {
+      "id": 3,
+      "name": "Lighting"
+    },
+    {
+      "id": 4,
+      "name": "Decoration"
+    },
+    {
+      "id": 5,
+      "name": "Electronics"
+    },
+    {
+      "id": 6,
+      "name": "Beds"
+    },
+    {
+      "id": 7,
+      "name": "Armchairs & Chaises"
+    },
+    {
+      "id": 8,
+      "name": "Sofas & Sleeper Sofas"
+    }
+  ],
+  "elementsUrl": [
+    {
+      "url": "/elements/accordions",
+      "name": "accordions",
+      "class": "img-accordions"
+    },
+    {
+      "url": "/elements/banners",
+      "name": "banners",
+      "class": "img-banners"
+    },
+    {
+      "url": "/elements/blog-posts",
+      "name": "blog posts",
+      "class": "img-blog-posts"
+    },
+    {
+      "url": "/elements/buttons",
+      "name": "buttons",
+      "class": "img-buttons"
+    },
+    {
+      "url": "/elements/cta",
+      "name": "call to action",
+      "class": "img-cta"
+    },
+    {
+      "url": "/elements/icon-boxes",
+      "name": "icon boxes",
+      "class": "img-icon-boxes"
+    },
+    {
+      "url": "/elements/portfolios",
+      "name": "portfolio",
+      "class": "img-portfolio"
+    },
+    {
+      "url": "/elements/categories",
+      "name": "product catigories",
+      "class": "img-product-categories"
+    },
+    {
+      "url": "/elements/products",
+      "name": "products",
+      "class": "img-products"
+    },
+    {
+      "url": "/elements/tabs",
+      "name": "tabs",
+      "class": "img-tabs"
+    },
+    {
+      "url": "/elements/testimonials",
+      "name": "testimonials",
+      "class": "img-testimonials"
+    },
+    {
+      "url": "/elements/titles",
+      "name": "titles",
+      "class": "img-titles"
+    },
+    {
+      "url": "/elements/typography",
+      "name": "typography",
+      "class": "img-typography"
+    },
+    {
+      "url": "/elements/video-banners",
+      "name": "video",
+      "class": "img-video"
+    }
+  ],
+  "services": [
+    {
+      "id": 8,
+      "icon": "icon-truck",
+      "title": "Payment & Delivery",
+      "subtitle": "Free shipping for orders over $50"
+    },
+    {
+      "id": 9,
+      "icon": "icon-rotate-left",
+      "title": "Return & Refund",
+      "subtitle": "Free 100% money back guarantee"
+    },
+    {
+      "id": 10,
+      "icon": "icon-headphones",
+      "title": "Quality Support",
+      "subtitle": "Alway online feedback 24/7"
+    }
+  ],
+  "innerOverlayPaths": [
+    "shop/sidebar",
+    "product/default",
+    "product/centered",
+    "product/extended",
+    "product/gallery",
+    "product/sticky",
+    "product/sidebar",
+    "product/fullwidth",
+    "product/masonry"
+  ],
+  "categoryBanners": [
+    {
+      "image": "assets/images/home/banners/banner-1.jpg",
+      "subtitle": "Weekend Sale",
+      "title": "Lighting <br />& Accessories <br /><span>25% off</span>",
+      "btnText": "Shop Now "
+    },
+    {
+      "image": "assets/images/home/banners/banner-3.jpg",
+      "subtitle": "Smart Offer",
+      "title": "Anniversary <br />Special <br /><span>15% off</span>",
+      "btnText": "Shop Now "
+    },
+    {
+      "image": "assets/images/home/banners/banner-2.jpg",
+      "subtitle": "Amazing Value",
+      "title": "Clothes Trending <br />Spring Collection 2020 <br /><span>from $12,99</span>",
+      "btnText": "Discover Now "
+    },
+
+    {
+      "adClass": "banner-overlay-light",
+      "image": "assets/images/home/banners/banner-4.jpg",
+      "subtitle": "Spring Sale is Coming",
+      "title": "<Link to='#'>All Smart Watches <br />Discount <br /><span class='text-primary'>15% off</span></Link>",
+      "btnText": "Discover Now "
+    },
+    {
+      "image": "assets/images/home/banners/banner-5.png",
+      "subtitle": "Amazing Value",
+      "title": "<Link to='#'>Headphones Trending <br />JBL Harman <br /><span>from $59,99</span></Link>",
+      "btnText": "Discover Now "
+    }
+  ],
+  "categoryBanners14": [
+    {
+      "categories": [
+        "Electronics",
+        [
+          "Cell Phones",
+          "Computers",
+          "TV & Video",
+          "Smart Home",
+          "Audi",
+          "Home Audio & Theater"
+        ]
+      ],
+      "background": "assets/images/home/banners/banner-bg-1.jpg",
+      "image": "assets/images/home/banners/banner-5.jpg",
+      "title": "Canon EOS <br/>Mega Sale <br/><span>Up To 20% Off</span>",
+      "subtitle": "Best Deals",
+      "height": 390
+    },
+    {
+      "categories": [
+        "Furniture",
+        [
+          "Bedroom",
+          "Office",
+          "Living Room",
+          "Kitchen & Dining",
+          "Decoration",
+          "Outdoor"
+        ]
+      ],
+      "background": "assets/images/home/banners/banner-bg-2.jpg",
+      "image": "assets/images/home/banners/banner-6.jpg",
+      "title": "Furniture Sets <br/><span>Up To 30% Off</span>",
+      "subtitle": "Best Deals",
+      "height": 390
+    },
+    {
+      "categories": [
+        "Clothing",
+        ["Best Sellers", "Trending", "Women", "Man", "Shoes", "Accessories"]
+      ],
+      "background": "assets/images/home/banners/banner-bg-3.jpg",
+      "image": "assets/images/home/banners/banner-9.jpg",
+      "title": "Clearance <br/>Outerwear<br/><span>Up To 70% Off</span>",
+      "subtitle": "Best Deals",
+      "height": 400
+    },
+    {
+      "categories": [
+        "Cooking",
+        [
+          "Cookware",
+          "Dinnerware",
+          "Cups",
+          "Microwaves",
+          "Toasters",
+          "Coffee Makers"
+        ]
+      ],
+      "background": "assets/images/home/banners/banner-bg-4.jpg",
+      "image": "assets/images/home/banners/banner-10.jpg",
+      "title": "Cooking <br/>Appliances <br/><span>Up To 30% Off</span>",
+      "subtitle": "Best Deals",
+      "height": 400
+    }
+  ],
+  "productCategories": [
+    "All",
+    "Electronics",
+    "Furniture",
+    "Clothes",
+    "Accessories"
+  ],
+  "introBanners": [
+    {
+      "className": "col-12 col-md-4 col-lg-12 mt-2 mt-md-0 mt-lg-2",
+      "image": "assets/images/home/sliders/slide-1.jpg",
+      "srcSet": "assets/images/home/sliders/slide-1-480w.jpg",
+      "subtitle": "Topsale Collection",
+      "title": "Living Room<br/>Furniture",
+      "content": "<h3>RUNNING &<br />TRAINING SHIRTS</h3>",
+      "price": "<sup class='intro-old-price'>$49,99</sup><span class='text-primary'>&nbsp;$29<sup>.99</sup></span>",
+      "text": "<h4>power equipment</h4>",
+      "btnText": "Discover Now"
+    },
+    {
+      "className": "col-12 col-md-4 col-lg-12 mt-2 mt-md-0 mt-lg-2",
+      "image": "assets/images/home/sliders/slide-2.jpg",
+      "srcSet": "assets/images/home/sliders/slide-2-480w.jpg",
+      "subtitle": "News and Inspiration",
+      "title": "New Arrivals",
+      "content": "<h3>IT'S TIME TO UPGRADE<br />YOUR HIKING KIT</h3>",
+      "price": "<sup>Today:</sup><span class='text-primary'>&nbsp;$247<sup>.99</sup></span>",
+      "text": "<h4>News and Inspo</h4>",
+      "btnText": "Shop Now"
+    },
+    {
+      "className": "col-12 col-md-4 col-lg-12 mt-2 mt-md-0 mt-lg-2",
+      "image": "assets/images/home/sliders/slide-2.jpg",
+      "srcSet": "assets/images/home/sliders/slide-2-480w.jpg",
+      "subtitle": "News and Inspiration",
+      "title": "New Arrivals",
+      "content": "<h3>IT'S TIME TO UPGRADE<br />YOUR HIKING KIT</h3>",
+      "price": "<sup>Today:</sup><span class='text-primary'>&nbsp;$247<sup>.99</sup></span>",
+      "text": "<h4>New Arrivals</h4>",
+      "btnText": "Shop Now"
+    },
+    {
+      "className": "col-12 col-md-4 col-lg-12 mt-2 mt-md-0 mt-lg-2",
+      "image": "/assets/images/home/sliders/banner-2.jpg",
+      "srcSet": "assets/images/home/sliders/slide-2-480w.jpg",
+      "subtitle": "Outside",
+      "title": "<h2>outdoor</h2>",
+      "content": "<h3>CONTENT PLACEHOLDER</h3>",
+      "price": "<sup class='intro-old-price'>$49,99</sup><span class='text-primary'>&nbsp;$29<sup>.99</sup></span>",
+      "text": "<h4>power equipment</h4>",
+      "btnText": "shop now"
+    },
+    {
+      "className": "col-12 col-md-4 col-lg-12 mt-2 mt-md-0 mt-lg-2",
+      "image": "/assets/images/home/sliders/banner-3.jpg",
+      "srcSet": "assets/images/home/sliders/slide-2-480w.jpg",
+      "subtitle": "Deals n Savings",
+      "title": "<h3 class='highlight'>save 20%</h3><h3>&nbsp;or more</h3>",
+      "content": "<h3>DEALS PLACEHOLDER</h3>",
+      "price": "<sup class='intro-old-price'>$49,99</sup><span class='text-primary'>&nbsp;$29<sup>.99</sup></span>",
+      "text": "<h3>deals & savings</h3>",
+      "btnText": "shop now"
+    }
+  ],
+  "bannerCategories": [
+    {
+      "image": "assets/images/home/cats/1.png",
+      "name": "Computer & Laptop"
+    },
+    {
+      "image": "assets/images/home/cats/2.png",
+      "name": "Digital Cameras"
+    },
+    {
+      "image": "assets/images/home/cats/3.png",
+      "name": "Smart Phones"
+    },
+    {
+      "image": "assets/images/home/cats/4.png",
+      "name": "Televisions"
+    },
+    {
+      "image": "assets/images/home/cats/5.png",
+      "name": "Audio"
+    },
+    {
+      "image": "assets/images/home/cats/6.png",
+      "name": "Smart Watches"
+    }
+  ],
+  "bannerContents": [
+    {
+      "sub_title": "Smart Offer",
+      "title": "Save $150",
+      "title_str": "on Samsung",
+      "title_br": "Galaxy Note9",
+      "img": "assets/images/home/banners/banner-1.png"
+    },
+    {
+      "sub_title": "Time Deals",
+      "title": "",
+      "title_str": "Bose SoundSport",
+      "title_br": "Time Deal -30%",
+      "img": "assets/images/home/banners/banner-2.jpg"
+    },
+    {
+      "sub_title": "Clearance",
+      "title": "",
+      "title_str": "GoPro - Fusion 360",
+      "title_br": "Save $70",
+      "img": "assets/images/home/banners/banner-3.png"
+    }
+  ],
+  "dealContents": [
+    {
+      "headerTitle": "Deal of the Day.",
+      "headerSubTitle": "Limited quantities.",
+      "productTitle": "Home Smart Speaker with  Google Assistant",
+      "newPrice": "$129.00",
+      "oldPrice": "$150.99",
+      "dataUntil": "+10h",
+      "bigImage": "assets/images/home/deals/bg-1.jpg",
+      "linkTitle": "Shop Now",
+      "link": "product/default/27"
+    },
+    {
+      "headerTitle": "Your Exclusive Offers.",
+      "headerSubTitle": "Sign in to see amazing deals.",
+      "productTitle": "Certified Wireless Charging  Pad for iPhone / Android",
+      "newPrice": "$29.99",
+      "oldPrice": "",
+      "dataUntil": "+11d",
+      "bigImage": "assets/images/home/deals/bg-2.jpg",
+      "linkTitle": "Sign In and Save money",
+      "link": "pages/login"
+    }
+  ],
+  "banner": [
+    {
+      "img": "assets/images/home/banners/intro/banner-1.jpg",
+      "subtitle": "Clearence",
+      "title": "Chairs & Chaises <br/>Up to 40% off",
+      "content": "<h3>RUNNING APPAREL</h3><h3>END OF SEASON SALE</h3>",
+      "btnText": "Shop Now",
+      "adClass": "mb-0",
+      "width": "575",
+      "height": "300"
+    },
+    {
+      "img": "assets/images/home/banners/intro/banner-2.jpg",
+      "subtitle": "New in",
+      "title": "Best Lighting <br/>Collection",
+      "content": "<h3>NEW SEASON</h3><h3>NEW GEAR</h3>",
+      "btnText": "Discover Now",
+      "adClass": "mb-0",
+      "width": "575",
+      "height": "300"
+    },
+    {
+      "img": "assets/images/home/banners/banner-3.jpg",
+      "subtitle": "Limited time only.",
+      "title": "End of Season<br/>save 50% off",
+      "content": "<h3>SWIMWEAR SALE</h3><h3>SAVE UP TO 30%</h3>",
+      "adClass": "mb-0",
+      "width": "585",
+      "height": "300"
+    },
+    {
+      "img": "assets/images/home/banners/banner-3.jpg",
+      "subtitle": "Limited time only.",
+      "title": "End of Season<br/>save 50% off",
+      "content": "<h3>SWIMWEAR SALE</h3><h3>SAVE UP TO 30%</h3>",
+      "adClass": "mb-0",
+      "width": "585",
+      "height": "300"
+    }
+  ],
+  "categories": ["All", "Furniture", "Decoration", "Lighting"],
+  "banners": [
+    {
+      "img": "assets/images/home/banners/banner-1.jpg",
+      "width": 880,
+      "height": 500,
+      "subtitle": "New Collection",
+      "title": "Shop Women's",
+      "btnText": "<span>Discover Now</span>",
+      "adClass": "banner-big banner-overlay",
+      "contentAdClass": "banner-content-center"
+    },
+    {
+      "img": "assets/images/home/banners/banner-2.jpg",
+      "width": 880,
+      "height": 500,
+      "subtitle": "New Collection",
+      "title": "Shop Men's",
+      "btnText": "<span>Discover Now</span>",
+      "adClass": "banner-big banner-overlay",
+      "contentAdClass": "banner-content-center"
+    },
+    {
+      "img": "assets/images/home/banners/banner-3.jpg",
+      "width": 580,
+      "height": 300,
+      "subtitle": "Flip Flop",
+      "title": "Summer<br />sale -70% off",
+      "btnText": "Shop Now",
+      "adClass": "banner-overlay text-white",
+      "contentAdClass": "banner-content-right",
+      "btnAdClass": "btn-outline-white-3 banner-link"
+    },
+    {
+      "img": "assets/images/home/banners/banner-4.jpg",
+      "width": 580,
+      "height": 300,
+      "subtitle": "Accessories",
+      "title": "2020 Winter<br />up to 50% off",
+      "btnText": "Shop Now",
+      "adClass": "banner-overlay color-grey",
+      "contentAdClass": "",
+      "btnAdClass": "banner-link",
+      "textColor": ""
+    },
+    {
+      "img": "assets/images/home/banners/banner-5.jpg",
+      "width": 580,
+      "height": 300,
+      "subtitle": "New in",
+      "title": "Women’s<br />sportswear",
+      "btnText": "Shop Now",
+      "adClass": "banner-overlay text-white",
+      "contentAdClass": "banner-content-right",
+      "btnAdClass": "btn-outline-white-3 banner-link"
+    },
+    {
+      "img": "assets/images/home/banners/banner-1.jpg",
+      "width": 880,
+      "height": 500,
+      "subtitle": "New Collection",
+      "title": "Shop Women's",
+      "btnText": "<span>Discover Now</span>",
+      "adClass": "banner-big banner-overlay",
+      "contentAdClass": "banner-content-center"
+    },
+    {
+      "img": "assets/images/home/banners/banner-2.jpg",
+      "width": 880,
+      "height": 500,
+      "subtitle": "New Collection",
+      "title": "Shop Men's",
+      "btnText": "<span>Discover Now</span>",
+      "adClass": "banner-big banner-overlay",
+      "contentAdClass": "banner-content-center"
+    },
+    {
+      "img": "assets/images/home/banners/banner-2.jpg",
+      "width": 880,
+      "height": 500,
+      "subtitle": "New Collection",
+      "title": "Shop Men's",
+      "btnText": "<span>Discover Now</span>",
+      "adClass": "banner-big banner-overlay",
+      "contentAdClass": "banner-content-center"
+    }
+  ],
+  "instagram": [
+    {
+      "img": "assets/images/home/instagrams/1.jpg",
+      "likes": 387,
+      "comments": 45
+    },
+    {
+      "img": "assets/images/home/instagrams/2.jpg",
+      "likes": 691,
+      "comments": 87
+    },
+    {
+      "img": "assets/images/home/instagrams/3.jpg",
+      "likes": 321,
+      "comments": 54
+    },
+    {
+      "img": "assets/images/home/instagrams/4.jpg",
+      "likes": 44,
+      "comments": 55
+    },
+    {
+      "img": "assets/images/home/instagrams/5.jpg",
+      "likes": 128,
+      "comments": 99
+    },
+    {
+      "img": "assets/images/home/instagrams/6.jpg",
+      "likes": 433,
+      "comments": 25
+    },
+    {
+      "img": "assets/images/home/instagrams/7.jpg",
+      "likes": 588,
+      "comments": 44
+    },
+    {
+      "img": "assets/images/home/instagrams/8.jpg",
+      "likes": 87,
+      "comments": 23
+    },
+    {
+      "img": "assets/images/home/instagrams/9.jpg",
+      "likes": 87,
+      "comments": 23
+    }
+  ],
+  "home_categories": [
+    {
+      "key": "Women",
+      "value": "Women's Clothing"
+    },
+    {
+      "key": "Men",
+      "value": "Men's Clothing"
+    }
+  ],
+  "testimonials": [
+    {
+      "lead": "“Really great store”",
+      "content": "“ Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra<br>a, ultricies in, diam. Sed arcu. ”",
+      "name": "Charly Smith",
+      "job": "Customer"
+    },
+    {
+      "lead": "“Friendly Support”",
+      "content": "“ Impedit, ratione sequi, sunt incidunt magnam et. Delectus obcaecati optio eius error libero perferendis nesciunt atque dolores magni recusandae! Doloremque quidem error eum quis similique doloribus natus qui ut ipsum.”",
+      "name": "Damon Stone",
+      "job": "Customer"
+    },
+    {
+      "lead": "“Free Shipping”",
+      "content": "“ Molestias animi illo natus ut quod neque ad accusamus praesentium fuga! Dolores odio alias sapiente odit delectus quasi, explicabo a, modi voluptatibus. Perferendis perspiciatis, voluptate, distinctio earum veritatis animi tempora eget blandit nunc tortor mollis ”",
+      "name": "John Smith",
+      "job": "Customer"
+    }
+  ],
+  "arrivalCategories": ["All", "Clothing", "Shoes & Boots", "Accessories"],
+  "trendyCategories": ["All", "Women", "Men", "Accessories"]
 }
