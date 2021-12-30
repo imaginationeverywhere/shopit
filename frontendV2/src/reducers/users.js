@@ -2,9 +2,9 @@ import {
   ALL_USERS_REQUEST,
   ALL_USERS_SUCCESS,
   ALL_USERS_FAIL,
-} from "../constants/action-types";
-import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+} from '../constants/action-types';
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 const usersReducer = (state = { users: [] }, action) => {
   switch (action.type) {
@@ -34,8 +34,8 @@ const usersReducer = (state = { users: [] }, action) => {
 };
 
 const persistConfig = {
-  keyPrefix: "molla-",
-  key: "users",
+  keyPrefix: 'molla-',
+  key: 'users',
   storage,
 };
 

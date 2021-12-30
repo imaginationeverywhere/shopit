@@ -1,9 +1,9 @@
 /* Demo 19 Homepage 19 */
-@import "../mixins/clearfix";
-@import "../mixins/breakpoints";
-@import "../mixins/lazy";
+@import '../mixins/clearfix';
+@import '../mixins/breakpoints';
+@import '../mixins/lazy';
 
-@import "../config/variables";
+@import '../config/variables';
 
 $primary-color: #fcb842;
 $secondary-color: #eca62d;
@@ -36,8 +36,8 @@ $secondary-color: #eca62d;
 
 .sidenav-title {
   &::before {
-    content: "\f131";
-    font-family: "molla";
+    content: '\f131';
+    font-family: 'molla';
     border: none;
     font-size: 2.2rem;
     line-height: 1;
@@ -135,7 +135,7 @@ $secondary-color: #eca62d;
   }
 }
 
-.icon-boxes-separator [class*="col-"] + [class*="col-"]:before {
+.icon-boxes-separator [class*='col-'] + [class*='col-']:before {
   height: 3.7rem;
   margin-top: -1.85rem;
   left: -4.5rem;
@@ -173,7 +173,7 @@ $secondary-color: #eca62d;
   padding-top: 1rem;
 }
 
-.owl-simple .owl-nav [class*="owl-"] {
+.owl-simple .owl-nav [class*='owl-'] {
   top: 45%;
 }
 .owl-simple .owl-nav {
@@ -190,7 +190,7 @@ $secondary-color: #eca62d;
   padding: 0.9rem;
   background-color: #fff;
 
-  @include mq("lg") {
+  @include mq('lg') {
     margin-bottom: 2.3rem;
   }
 }
@@ -204,7 +204,7 @@ $secondary-color: #eca62d;
   &:hover,
   &:focus {
     &:before {
-      content: "\f233";
+      content: '\f233';
     }
   }
 }
@@ -544,7 +544,7 @@ img.banner-title-img,
     border-bottom-right-radius: 0.3rem;
   }
 
-  @include mq("lg") {
+  @include mq('lg') {
     padding-left: 7rem;
     padding-right: 7rem;
   }
@@ -614,7 +614,7 @@ img.banner-title-img,
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   .nav-pills.nav-big {
     .nav-link {
       font-size: 2.2rem;
@@ -622,7 +622,7 @@ img.banner-title-img,
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .nav-pills.nav-big {
     .nav-link {
       font-size: 2.4rem;
@@ -636,7 +636,7 @@ img.banner-title-img,
   }
 }
 
-@include mq("375px", "max") {
+@include mq('375px', 'max') {
   .btn-product {
     margin-left: 0 !important;
     margin-right: 0 !important;

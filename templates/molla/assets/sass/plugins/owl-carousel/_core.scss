@@ -17,7 +17,7 @@
   }
 
   .owl-stage:after {
-    content: ".";
+    content: '.';
     display: block;
     clear: both;
     visibility: hidden;
@@ -70,7 +70,7 @@
     user-select: none;
   }
 
-  .owl-nav [class*="owl-"],
+  .owl-nav [class*='owl-'],
   button.owl-dot {
     background: none;
     color: inherit;

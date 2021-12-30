@@ -1,12 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { isIEBrowser } from "../../utils";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { isIEBrowser } from '../../utils';
 
 export default function CTA() {
   return (
     <div
       className="cta cta-display bg-image pt-4 pb-4"
-      style={{ backgroundImage: "url(assets/images/backgrounds/cta/bg-6.jpg)" }}
+      style={{ backgroundImage: 'url(assets/images/backgrounds/cta/bg-6.jpg)' }}
     >
       <div className="container">
         <div className="row justify-content-center">
@@ -14,7 +14,7 @@ export default function CTA() {
             <div className="row no-gutters flex-column flex-sm-row align-items-sm-center">
               <div
                 className="col text-center text-sm-left"
-                style={isIEBrowser() ? { minHeight: "80px" } : {}}
+                style={isIEBrowser() ? { minHeight: '80px' } : {}}
               >
                 <h3 className="cta-title text-white">Sign Up & Get 10% Off</h3>
                 <p className="cta-desc text-white">

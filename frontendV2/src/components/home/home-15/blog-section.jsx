@@ -1,9 +1,9 @@
-import React from "react";
-import PostFive from "../../features/post/post-three";
-import OwlCarousels from "../../features/owl-carousel";
+import React from 'react';
+import PostFive from '../../features/post/post-three';
+import OwlCarousels from '../../features/owl-carousel';
 
-import posts from "../../../mock_data/posts";
-import { blogSlider } from "../../settings";
+import posts from '../../../mock_data/posts';
+import { blogSlider } from '../../settings';
 
 function BlogSection(props) {
   return (

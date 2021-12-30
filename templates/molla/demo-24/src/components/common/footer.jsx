@@ -1,13 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Footer(props) {
-  const { logoFooter = "/assets/images/home/logo.png" } = props;
-  const { container = "container", border = true } = props;
+  const { logoFooter = '/assets/images/home/logo.png' } = props;
+  const { container = 'container', border = true } = props;
 
   return (
     <footer className="footer">
-      <div className={`footer-middle ${border ? "" : "border-0"}`}>
+      <div className={`footer-middle ${border ? '' : 'border-0'}`}>
         <div className={container}>
           <div className="row">
             <div className="col-sm-6 col-lg-3">
@@ -21,7 +21,7 @@ function Footer(props) {
                 />
                 <p>
                   Praesent dapibus, neque id cursus ucibus, tortor neque egestas
-                  augue, eu vulputate magna eros eu erat.{" "}
+                  augue, eu vulputate magna eros eu erat.{' '}
                 </p>
                 <div className="social-icons">
                   <a

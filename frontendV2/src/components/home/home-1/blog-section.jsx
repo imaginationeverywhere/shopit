@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
 // import custom component
-import OwlCarousel from "../../features/owl-carousel";
+import OwlCarousel from '../../features/owl-carousel';
 
-import posts from "../../../mock_data/posts";
-import PostTen from "../../features/post/post-ten";
-import { blogSlider } from "../../settings";
+import posts from '../../../mock_data/posts';
+import PostTen from '../../features/post/post-ten';
+import { blogSlider } from '../../settings';
 
 function BlogSection(props) {
   return (

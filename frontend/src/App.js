@@ -1,65 +1,65 @@
-import React, { useEffect, useState } from "react";
-import { Route, BrowserRouter as Router } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 
 // global layout components imports
-import Footer from "./components/layout/Footer";
-import Header from "./components/layout/Header";
-import Home from "./components/Home";
+import Footer from './components/layout/Footer';
+import Header from './components/layout/Header';
+import Home from './components/Home';
 
 // Auth or User imports
-import Login from "./components/user/Login";
-import Register from "./components/user/Register";
-import Profile from "./components/user/Profile";
-import UpdateProfile from "./components/user/UpdateProfile";
-import UpdatePassword from "./components/user/UpdatePassword";
-import ForgotPassword from "./components/user/ForgotPassword";
-import NewPassword from "./components/user/NewPassword";
+import Login from './components/user/Login';
+import Register from './components/user/Register';
+import Profile from './components/user/Profile';
+import UpdateProfile from './components/user/UpdateProfile';
+import UpdatePassword from './components/user/UpdatePassword';
+import ForgotPassword from './components/user/ForgotPassword';
+import NewPassword from './components/user/NewPassword';
 
 // Cart Imports
-import Cart from "./components/cart/Cart";
-import Shipping from "./components/cart/Shipping";
-import ConfirmOrder from "./components/cart/ConfirmOrder";
-import Payment from "./components/cart/Payment";
-import OrderSuccess from "./components/cart/OrderSuccess";
+import Cart from './components/cart/Cart';
+import Shipping from './components/cart/Shipping';
+import ConfirmOrder from './components/cart/ConfirmOrder';
+import Payment from './components/cart/Payment';
+import OrderSuccess from './components/cart/OrderSuccess';
 
 // Order Imports
-import ListOrders from "./components/order/ListOrders";
-import OrderDetails from "./components/order/OrderDetails";
+import ListOrders from './components/order/ListOrders';
+import OrderDetails from './components/order/OrderDetails';
 
 // Product imports
-import ProductDetails from "./components/product/ProductDetails";
+import ProductDetails from './components/product/ProductDetails';
 
 // Admin Imports
-import Dashboard from "./components/admin/Dashboard";
-import ProductsList from "./components/admin/ProductsList";
-import NewProduct from "./components/admin/NewProduct";
-import UpdateProduct from "./components/admin/UpdateProduct";
-import OrdersList from "./components/admin/OrdersList";
-import ProcessOrder from "./components/admin/ProcessOrder";
-import UsersList from "./components/admin/UsersList";
-import UpdateUser from "./components/admin/UpdateUser";
-import ProductReviews from "./components/admin/ProductReviews";
+import Dashboard from './components/admin/Dashboard';
+import ProductsList from './components/admin/ProductsList';
+import NewProduct from './components/admin/NewProduct';
+import UpdateProduct from './components/admin/UpdateProduct';
+import OrdersList from './components/admin/OrdersList';
+import ProcessOrder from './components/admin/ProcessOrder';
+import UsersList from './components/admin/UsersList';
+import UpdateUser from './components/admin/UpdateUser';
+import ProductReviews from './components/admin/ProductReviews';
 
-import ProtectedRoute from "./components/route/ProtectedRoute";
-import { loadUser } from "./actions/userActions";
-import { useSelector } from "react-redux";
-import store from "./store";
-import axios from "axios";
+import ProtectedRoute from './components/route/ProtectedRoute';
+import { loadUser } from './actions/userActions';
+import { useSelector } from 'react-redux';
+import store from './store';
+import axios from 'axios';
 
 // Payment
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 
-import "./App.css";
+import './App.css';
 
 function App() {
-  const [stripeApiKey, setStripeApiKey] = useState("");
+  const [stripeApiKey, setStripeApiKey] = useState('');
 
   useEffect(() => {
     store.dispatch(loadUser());
 
     async function getStripApiKey() {
-      const { data } = await axios.get("/api/v1/stripeapi");
+      const { data } = await axios.get('/api/v1/stripeapi');
 
       setStripeApiKey(data.stripeApiKey);
     }
@@ -150,7 +150,7 @@ function App() {
           exact
         />
 
-        {!loading && (!isAuthenticated || user.role !== "admin") && <Footer />}
+        {!loading && (!isAuthenticated || user.role !== 'admin') && <Footer />}
       </div>
     </Router>
   );

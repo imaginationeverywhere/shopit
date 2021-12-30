@@ -1,10 +1,10 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Tabs, Tab, TabList, TabPanel } from 'react-tabs';
 
 // import custom component
-import OwlCarousel from "../../features/owl-carousel";
-import ProductNine from "../../features/product/product-nine";
+import OwlCarousel from '../../features/owl-carousel';
+import ProductNine from '../../features/product/product-nine';
 
 // import Actions & Services
 import {
@@ -12,16 +12,16 @@ import {
   toggleWishlist,
   addToCompare,
   showQuickViewModal,
-} from "../../../actions";
-import { getProductsByCategory } from "../../../services";
+} from '../../../actions';
+import { getProductsByCategory } from '../../../services';
 
 // import Slider Settings
-import { productSlider } from "../../settings";
+import { productSlider } from '../../settings';
 
 function TrendyCollection(props) {
   const { addToCart, toggleWishlist, showQuickViewModal } = props;
 
-  let categoryName = ["Women", "Men"];
+  let categoryName = ['Women', 'Men'];
   let products = props.products;
   products = products.slice(15, 20);
 

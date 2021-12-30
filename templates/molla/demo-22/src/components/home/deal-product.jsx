@@ -1,11 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 // import Utils
-import { safeContent } from "../../utils";
+import { safeContent } from '../../utils';
 
 function ProductTwo(props) {
-  const { product, adClass = "", height = "150" } = props;
+  const { product, adClass = '', height = '150' } = props;
 
   return product ? (
     <div className={`product-lg ${adClass}`}>
@@ -14,10 +14,10 @@ function ProductTwo(props) {
 
         <Link to={`${process.env.PUBLIC_URL}/product/default/${product.id}`}>
           <img
-            src={process.env.PUBLIC_URL + "/" + product.pictures[0]}
+            src={process.env.PUBLIC_URL + '/' + product.pictures[0]}
             alt="Product desc"
             className="product-image"
-            style={{ minHeight: height + "px" }}
+            style={{ minHeight: height + 'px' }}
           />
           {/* { product.pictures[ 1 ] ? <img src={ process.env.PUBLIC_URL + '/' + product.pictures[ 1 ] } alt={ 1 } className="product-image-hover" /> : '' } */}
         </Link>
@@ -89,7 +89,7 @@ function ProductTwo(props) {
       </div>
     </div>
   ) : (
-    ""
+    ''
   );
 }
 

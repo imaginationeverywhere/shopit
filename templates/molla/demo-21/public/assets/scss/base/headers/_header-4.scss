@@ -140,7 +140,7 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .header-4 {
     .header-search-extended {
       margin-right: 7rem;
@@ -148,7 +148,7 @@
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .header-4 {
     .header-search-extended {
       margin-right: 15rem;
@@ -156,7 +156,7 @@
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .header-4 {
     .header-search-visible {
       .header-search-wrapper {
@@ -168,7 +168,7 @@
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .header-4 .cart-dropdown,
   .header-4 .compare-dropdown,
   .header-4 .wishlist {

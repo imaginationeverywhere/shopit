@@ -1,22 +1,22 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import Breadcrumb from "../../common/breadcrumb";
-import ProfileOne from "../../features/profile/profile-one";
-import OwlCarousels from "../../features/owl-carousel";
-import Testimonial from "../../features/testimonial";
+import Breadcrumb from '../../common/breadcrumb';
+import ProfileOne from '../../features/profile/profile-one';
+import OwlCarousels from '../../features/owl-carousel';
+import Testimonial from '../../features/testimonial';
 
 // import Utils
-import { mainSlider5 } from "../../settings";
+import { mainSlider5 } from '../../settings';
 
-import _data from "../../../mock_data/data.json";
+import _data from '../../../mock_data/data.json';
 
 function AboutOne() {
   useEffect(() => {
-    document.querySelector(".footer-middle") &&
-      document.querySelector(".footer-middle").classList.add("border-0");
+    document.querySelector('.footer-middle') &&
+      document.querySelector('.footer-middle').classList.add('border-0');
   });
 
   return (
@@ -29,7 +29,7 @@ function AboutOne() {
 
       <Breadcrumb
         title="About Us"
-        parent1={["Pages", "pages/about"]}
+        parent1={['Pages', 'pages/about']}
         adClass="border-0 mb-0"
       />
 
@@ -56,7 +56,7 @@ function AboutOne() {
                 Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi
                 neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium,
                 ligula sollicitudin laoreet viverra, tortor libero sodales leo,
-                eget blandit nunc tortor eu nibh.{" "}
+                eget blandit nunc tortor eu nibh.{' '}
               </p>
             </div>
 
@@ -66,7 +66,7 @@ function AboutOne() {
                 Sed egestas, ante et vulputate volutpat, eros pede semper est,
                 vitae luctus metus libero eu augue. Morbi purus libero, faucibus
                 adipiscing, commodo quis, gravida id, est. Sed lectus. <br />
-                Praesent elementum hendrerit tortor. Sed semper lorem at felis.{" "}
+                Praesent elementum hendrerit tortor. Sed semper lorem at felis.{' '}
               </p>
             </div>
           </div>
@@ -87,7 +87,7 @@ function AboutOne() {
                   Sed pretium, ligula sollicitudin laoreet viverra, tortor
                   libero sodales leo, eget blandit nunc tortor eu nibh.
                   Suspendisse potenti. Sed egestas, ante et vulputate volutpat,
-                  uctus metus libero eu augue.{" "}
+                  uctus metus libero eu augue.{' '}
                 </p>
 
                 <Link
@@ -137,7 +137,7 @@ function AboutOne() {
                     <div className="col-6 col-sm-4" key={index}>
                       <Link to="#" className="brand">
                         <img
-                          src={process.env.PUBLIC_URL + "/" + brand.image}
+                          src={process.env.PUBLIC_URL + '/' + brand.image}
                           alt="Brand Name"
                         />
                       </Link>

@@ -1,5 +1,5 @@
-import React from "react";
-import ImageHandler from "../common/components/ImageHandler";
+import React from 'react';
+import ImageHandler from '../common/components/ImageHandler';
 
 const ProductImages = ({ imageObj, setImage }) => {
   return (

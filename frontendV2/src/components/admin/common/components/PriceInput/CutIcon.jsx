@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 const CutIcon = ({ width, height }) => {
   return (
     <svg
-      width={width || "6"}
-      height={height || "6"}
+      width={width || '6'}
+      height={height || '6'}
       viewBox="0 0 6 6"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

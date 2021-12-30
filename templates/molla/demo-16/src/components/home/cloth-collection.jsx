@@ -1,17 +1,17 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
-import ProductNine from "../features/product/product-nine";
-import Banner from "./banner";
+import ProductNine from '../features/product/product-nine';
+import Banner from './banner';
 
 import {
   addToCart,
   toggleWishlist,
   addToCompare,
   showQuickViewModal,
-} from "../../actions";
+} from '../../actions';
 
-import data from "../../mock_data/data";
+import data from '../../mock_data/data';
 
 function ClothCollection(props) {
   const {
@@ -30,7 +30,7 @@ function ClothCollection(props) {
     singleProduct = products[single],
     bannerId;
 
-  if (type === "Dress") bannerId = 0;
+  if (type === 'Dress') bannerId = 0;
   else bannerId = 1;
 
   return (
@@ -39,11 +39,11 @@ function ClothCollection(props) {
         <Banner banner={data.banner[bannerId]} />
       </div>
 
-      <div className={`col-sm-4 col-lg-3 ${!bannerId ? "order-lg-first" : ""}`}>
+      <div className={`col-sm-4 col-lg-3 ${!bannerId ? 'order-lg-first' : ''}`}>
         <div className="display-products-col">
           <ProductNine
             product={singleProduct}
-            adClass={type === "dress" ? "mb-7" : ""}
+            adClass={type === 'dress' ? 'mb-7' : ''}
             type={2}
             onAddToCart={addToCart}
             onToggleWishlist={toggleWishlist}
@@ -53,14 +53,14 @@ function ClothCollection(props) {
         </div>
       </div>
 
-      <div className={`col-sm-8 col-lg-3 ${bannerId ? "order-lg-first" : ""}`}>
+      <div className={`col-sm-8 col-lg-3 ${bannerId ? 'order-lg-first' : ''}`}>
         <div className="display-products-col">
           <div className="row">
             {productArr.map((item, index) => (
               <div className="col-6 col-lg-12" key={index}>
                 <ProductNine
                   product={item}
-                  adClass={type === "dress" ? "mb-7" : ""}
+                  adClass={type === 'dress' ? 'mb-7' : ''}
                   type={2}
                   onAddToCart={addToCart}
                   onToggleWishlist={toggleWishlist}

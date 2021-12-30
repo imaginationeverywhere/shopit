@@ -1,16 +1,16 @@
-import React from "react";
-import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { Tabs, TabList, Tab, TabPanel } from 'react-tabs';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import Breadcrumb from "../../common/breadcrumb";
+import Breadcrumb from '../../common/breadcrumb';
 
 function LoginOne() {
   return (
     <div className="main">
       <Helmet>
         <title>
-          Molla React Ecommerce - {`${process.env.PUBLIC_URL}/pages/contact`}{" "}
+          Molla React Ecommerce - {`${process.env.PUBLIC_URL}/pages/contact`}{' '}
           Page
         </title>
       </Helmet>
@@ -21,7 +21,7 @@ function LoginOne() {
 
       <Breadcrumb
         title="Login"
-        parent1={["pages", "pages/about"]}
+        parent1={['pages', 'pages/about']}
         adClass="border-0 mb-0"
       />
 
@@ -46,7 +46,7 @@ function LoginOne() {
                 </TabList>
 
                 <div className="tab-content">
-                  <TabPanel style={{ paddingTop: "2rem" }}>
+                  <TabPanel style={{ paddingTop: '2rem' }}>
                     <div>
                       <form action="#">
                         <div className="form-group">
@@ -173,7 +173,7 @@ function LoginOne() {
                             className="custom-control-label"
                             htmlFor="register-policy-2"
                           >
-                            I agree to the{" "}
+                            I agree to the{' '}
                             <a href="pages/login/#a">privacy policy</a> *
                           </label>
                         </div>

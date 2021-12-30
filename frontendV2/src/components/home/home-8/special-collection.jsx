@@ -1,25 +1,25 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Tab, Tabs, TabPanel, TabList } from "react-tabs";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Tab, Tabs, TabPanel, TabList } from 'react-tabs';
 
 // Import Custom Component
-import OwlCarousel from "../../features/owl-carousel";
-import ProductNine from "../../features/product/product-nine";
+import OwlCarousel from '../../features/owl-carousel';
+import ProductNine from '../../features/product/product-nine';
 
 // Import Services & Actions
 import {
   getFeaturedProducts,
   getSaleProducts,
   getTopRatingProducts,
-} from "../../../services";
+} from '../../../services';
 import {
   addToCart,
   toggleWishlist,
   showQuickViewModal,
-} from "../../../actions";
+} from '../../../actions';
 
 // Import Slider Settings
-import { productSlider } from "../../settings";
+import { productSlider } from '../../settings';
 
 function SpecialCollection(props) {
   const { addToCart, toggleWishlist, showQuickViewModal } = props;

@@ -1,22 +1,22 @@
-import React from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Link } from 'react-router-dom';
 
-import { safeContent } from "../../../utils";
+import { safeContent } from '../../../utils';
 
 export default function Banner(props) {
   const {
-    bannerClass = "col-12",
-    adClass = "",
+    bannerClass = 'col-12',
+    adClass = '',
     img,
-    text = "",
-    contentBoxAdClass = "",
-    contentAdClass = "text-white",
+    text = '',
+    contentBoxAdClass = '',
+    contentAdClass = 'text-white',
     subtitle,
-    width = "400",
-    height = "400",
+    width = '400',
+    height = '400',
     title,
-    btnText = "Shop Now",
+    btnText = 'Shop Now',
   } = props.data;
 
   return (
@@ -28,8 +28,8 @@ export default function Banner(props) {
           <LazyLoadImage
             src={`${process.env.PUBLIC_URL}/${img}`}
             alt="Banner"
-            width={width + "px"}
-            height={height + "px"}
+            width={width + 'px'}
+            height={height + 'px'}
             effect="blur"
           />
         </Link>

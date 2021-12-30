@@ -1,21 +1,21 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Tabs, Tab, TabList, TabPanel } from 'react-tabs';
+import { Link } from 'react-router-dom';
 
 // import custom component
-import ProductNine from "../features/product/product-nine";
+import ProductNine from '../features/product/product-nine';
 
 // import Component
-import DealProduct from "./deal-product";
+import DealProduct from './deal-product';
 
 // import Service & Options
-import { addToCart, toggleWishlist, showQuickViewModal } from "../../actions";
+import { addToCart, toggleWishlist, showQuickViewModal } from '../../actions';
 import {
   getTopSellingProducts,
   getSaleProducts,
   getFeaturedProducts,
-} from "../../services";
+} from '../../services';
 
 function SpecialCollection(props) {
   const { addToCart, toggleWishlist, showQuickViewModal } = props;
@@ -28,7 +28,7 @@ function SpecialCollection(props) {
     <div
       className="featured-back"
       style={{
-        backgroundImage: "url(assets/images/home/banners/background-1.jpg)",
+        backgroundImage: 'url(assets/images/home/banners/background-1.jpg)',
       }}
     >
       <Tabs className="container" selectedTabClassName="show">

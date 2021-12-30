@@ -1,35 +1,35 @@
-import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import OwlCarousel from "../../features/owl-carousel";
-import NewsletterModal from "../../features/modal/newsletter-modal";
-import ServiceBox from "../../features/service";
-import Brand from "../../features/brand";
-import QuickView from "../../features/product/common/quickview-two";
+import OwlCarousel from '../../features/owl-carousel';
+import NewsletterModal from '../../features/modal/newsletter-modal';
+import ServiceBox from '../../features/service';
+import Brand from '../../features/brand';
+import QuickView from '../../features/product/common/quickview-two';
 
 // import Home Components
-import HomeSlide from "./home-slide";
-import NewCollection from "./new-collection";
-import TrendyCollection from "./trendy-collection";
-import Banner from "./banner";
-import Instagram from "./instagram";
+import HomeSlide from './home-slide';
+import NewCollection from './new-collection';
+import TrendyCollection from './trendy-collection';
+import Banner from './banner';
+import Instagram from './instagram';
 
 // import Slider Settings
-import { introSlider } from "../../settings";
+import { introSlider } from '../../settings';
 
 // import Data & Style
-import _data from "../../../mock_data/data.json";
-import style from "./style.scss";
+import _data from '../../../mock_data/data.json';
+import style from './style.scss';
 
 export default function HomePage23() {
   useEffect(() => {
-    document.getElementById("menu-home").classList.add("active");
+    document.getElementById('menu-home').classList.add('active');
 
     style.use();
 
     return () => {
-      document.getElementById("menu-home").classList.remove("active");
+      document.getElementById('menu-home').classList.remove('active');
       style.unuse();
     };
   }, []);
@@ -67,7 +67,7 @@ export default function HomePage23() {
             <Banner data={_data.banner[0]} />
           </div>
 
-          <NewCollection type={"Women"} />
+          <NewCollection type={'Women'} />
         </section>
 
         <section className="testimonials">
@@ -95,7 +95,7 @@ export default function HomePage23() {
         </section>
 
         <section className="new-men row mt-12">
-          <NewCollection type={"Men"} />
+          <NewCollection type={'Men'} />
 
           <div className="banner col-lg-6 col-md-5 col-sm-6 col-12">
             <Banner data={_data.banner[1]} />

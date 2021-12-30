@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import { SlideToggle } from "react-slide-toggle";
-import { safeContent } from "../../../utils";
+import { SlideToggle } from 'react-slide-toggle';
+import { safeContent } from '../../../utils';
 
 function Card(props) {
-  const { title, expanded, adClass, type = "default" } = props;
+  const { title, expanded, adClass, type = 'default' } = props;
 
-  return "default" === type ? (
+  return 'default' === type ? (
     <SlideToggle collapsed={expanded ? false : true}>
       {({ onToggle, setCollapsibleElement, toggleState }) => (
         <div className={`card ${adClass}`}>
@@ -15,7 +15,7 @@ function Card(props) {
               <span
                 className={`toggle-button ${toggleState.toLowerCase()}`}
                 dangerouslySetInnerHTML={safeContent(title)}
-                style={{ height: "auto" }}
+                style={{ height: 'auto' }}
               ></span>
             </h2>
           </div>
@@ -34,7 +34,7 @@ function Card(props) {
               className={`toggle-button ${toggleState.toLowerCase()}`}
               dangerouslySetInnerHTML={safeContent(title)}
               onClick={onToggle}
-              style={{ height: "auto" }}
+              style={{ height: 'auto' }}
             ></span>
           </h5>
           <div ref={setCollapsibleElement}>

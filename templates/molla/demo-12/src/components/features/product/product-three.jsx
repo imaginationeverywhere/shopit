@@ -1,12 +1,12 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import Countdown from "react-countdown";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import Countdown from 'react-countdown';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import { rendererOne } from "../count-down";
+import { rendererOne } from '../count-down';
 
-import { findIndex } from "../../../utils";
+import { findIndex } from '../../../utils';
 
 function ProductThree(props) {
   const { product, onAddToCart, showQuickView, isWishlist, onToggleWishlist } =
@@ -22,7 +22,7 @@ function ProductThree(props) {
 
   const wishlistHandler = () => {
     if (isWishlist) {
-      window.location = process.env.PUBLIC_URL + "/shop/wishlist";
+      window.location = process.env.PUBLIC_URL + '/shop/wishlist';
     } else {
       onToggleWishlist(product, isWishlist);
     }
@@ -34,17 +34,17 @@ function ProductThree(props) {
         {product.new ? (
           <span className="product-label label-circle label-new">New</span>
         ) : (
-          ""
+          ''
         )}
         {product.top ? (
           <span className="product-label label-circle label-top">Top</span>
         ) : (
-          ""
+          ''
         )}
         {product.discount ? (
           <span className="product-label label-circle label-sale">Sale</span>
         ) : (
-          ""
+          ''
         )}
 
         <Link to={`${process.env.PUBLIC_URL}/product/default/${product.id}`}>
@@ -62,7 +62,7 @@ function ProductThree(props) {
               threshold={400}
             />
           ) : (
-            ""
+            ''
           )}
         </Link>
 
@@ -71,18 +71,18 @@ function ProductThree(props) {
             <Countdown date={`2021-02-01T01:02:03`} renderer={rendererOne} />
           </div>
         ) : (
-          ""
+          ''
         )}
 
         <div className="product-action-vertical">
           <button
             className={`btn-product-icon btn-wishlist ${
-              isWishlist ? "added-to-wishlist" : "remove-from-wishlist"
+              isWishlist ? 'added-to-wishlist' : 'remove-from-wishlist'
             }`}
             onClick={wishlistHandler}
-            title={isWishlist ? "Go to wishlist" : "Add to wishlist"}
+            title={isWishlist ? 'Go to wishlist' : 'Add to wishlist'}
           >
-            <span>{isWishlist ? "go to wishlist" : "add to wishlist"}</span>
+            <span>{isWishlist ? 'go to wishlist' : 'add to wishlist'}</span>
           </button>
         </div>
 
@@ -106,7 +106,7 @@ function ProductThree(props) {
           {product.category.map((cat, index) => (
             <span key={index} className="mr-0">
               <Link to="#">{cat}</Link>
-              {index < product.category.length - 1 ? ", " : ""}
+              {index < product.category.length - 1 ? ', ' : ''}
             </span>
           ))}
         </div>
@@ -158,7 +158,7 @@ function ProductThree(props) {
           <div className="ratings">
             <div
               className="ratings-val"
-              style={{ width: product.ratings * 20 + "%" }}
+              style={{ width: product.ratings * 20 + '%' }}
             ></div>
           </div>
           <span className="ratings-text">({product.reviews} Reviews )</span>
@@ -168,9 +168,9 @@ function ProductThree(props) {
           product.variants[0].model ? (
             <div className="product-nav product-nav-thumbs">
               {product.variants.map((vari, i) => (
-                <Link to="#" key={i} className={0 === i ? "active" : ""}>
+                <Link to="#" key={i} className={0 === i ? 'active' : ''}>
                   <img
-                    src={process.env.PUBLIC_URL + "/" + vari.model}
+                    src={process.env.PUBLIC_URL + '/' + vari.model}
                     alt="product desc"
                   />
                 </Link>
@@ -182,19 +182,19 @@ function ProductThree(props) {
                 <Link
                   to="#"
                   key={i}
-                  className={0 === i ? "active" : ""}
+                  className={0 === i ? 'active' : ''}
                   style={{ background: vari.color }}
                 ></Link>
               ))}
             </div>
           )
         ) : (
-          ""
+          ''
         )}
       </div>
     </div>
   ) : (
-    ""
+    ''
   );
 }
 
@@ -203,7 +203,7 @@ function mapStateToProps(state, ownprops) {
     isWishlist:
       findIndex(
         state.wishlist.list,
-        (item) => item.id === ownprops.product.id
+        (item) => item.id === ownprops.product.id,
       ) !== -1
         ? true
         : false,

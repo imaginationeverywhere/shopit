@@ -1,17 +1,17 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
 // import custom component
-import OwlCarousel from "../features/owl-carousel";
-import ProductNine from "../features/product/product-nine";
-import { productSlider } from "../settings";
+import OwlCarousel from '../features/owl-carousel';
+import ProductNine from '../features/product/product-nine';
+import { productSlider } from '../settings';
 
 import {
   addToCart,
   toggleWishlist,
   showQuickViewModal,
   addToCompare,
-} from "../../actions";
+} from '../../actions';
 
 function BestCollection(props) {
   const { addToCart, toggleWishlist, showQuickViewModal } = props;

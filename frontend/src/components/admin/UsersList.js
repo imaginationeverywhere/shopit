@@ -1,15 +1,15 @@
-import React, { Fragment, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { MDBDataTable } from "mdbreact";
+import React, { Fragment, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { MDBDataTable } from 'mdbreact';
 
-import MetaData from "../layout/MetaData";
-import Loader from "../layout/Loader";
-import Sidebar from "./Sidebar";
+import MetaData from '../layout/MetaData';
+import Loader from '../layout/Loader';
+import Sidebar from './Sidebar';
 
-import { useAlert } from "react-alert";
-import { useDispatch, useSelector } from "react-redux";
-import { allUsers, deleteUser, clearErrors } from "../../actions/userActions";
-import { DELETE_USER_RESET } from "../../constants/userConstants";
+import { useAlert } from 'react-alert';
+import { useDispatch, useSelector } from 'react-redux';
+import { allUsers, deleteUser, clearErrors } from '../../actions/userActions';
+import { DELETE_USER_RESET } from '../../constants/userConstants';
 
 const UsersList = ({ history }) => {
   const alert = useAlert();
@@ -27,8 +27,8 @@ const UsersList = ({ history }) => {
     }
 
     if (isDeleted) {
-      alert.success("User deleted successfully");
-      history.push("/admin/users");
+      alert.success('User deleted successfully');
+      history.push('/admin/users');
       dispatch({ type: DELETE_USER_RESET });
     }
   }, [dispatch, alert, error, isDeleted, history]);
@@ -41,28 +41,28 @@ const UsersList = ({ history }) => {
     const data = {
       columns: [
         {
-          label: "User ID",
-          field: "id",
-          sort: "asc",
+          label: 'User ID',
+          field: 'id',
+          sort: 'asc',
         },
         {
-          label: "Name",
-          field: "name",
-          sort: "asc",
+          label: 'Name',
+          field: 'name',
+          sort: 'asc',
         },
         {
-          label: "Email",
-          field: "email",
-          sort: "asc",
+          label: 'Email',
+          field: 'email',
+          sort: 'asc',
         },
         {
-          label: "Role",
-          field: "role",
-          sort: "asc",
+          label: 'Role',
+          field: 'role',
+          sort: 'asc',
         },
         {
-          label: "Actions",
-          field: "actions",
+          label: 'Actions',
+          field: 'actions',
         },
       ],
       rows: [],
@@ -99,7 +99,7 @@ const UsersList = ({ history }) => {
 
   return (
     <Fragment>
-      <MetaData title={"All Users"} />
+      <MetaData title={'All Users'} />
       <div className="row">
         <div className="col-12 col-md-2">
           <Sidebar />

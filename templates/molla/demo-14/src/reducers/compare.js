@@ -3,11 +3,11 @@ import {
   REMOVE_FROM_COMPARE,
   RESET_COMPARE,
   REFRESH_STORE,
-} from "../constants/action-types";
-import { findIndex } from "../utils";
+} from '../constants/action-types';
+import { findIndex } from '../utils';
 
-import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 const initialState = {
   items: [],
@@ -54,8 +54,8 @@ function compareReducer(state = initialState, action) {
 }
 
 const persistConfig = {
-  keyPrefix: "molla-",
-  key: "comparelist",
+  keyPrefix: 'molla-',
+  key: 'comparelist',
   storage,
 };
 

@@ -1,16 +1,16 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
-import OwlCarousel from "../features/owl-carousel";
-import ProductNine from "../features/product/product-nine";
-import { productSlider } from "../settings";
+import OwlCarousel from '../features/owl-carousel';
+import ProductNine from '../features/product/product-nine';
+import { productSlider } from '../settings';
 
 import {
   addToCart,
   toggleWishlist,
   addToCompare,
   showQuickViewModal,
-} from "../../actions";
+} from '../../actions';
 
 function NewCollection(props) {
   const { addToCart, toggleWishlist, addToCompare, showQuickViewModal } = props;

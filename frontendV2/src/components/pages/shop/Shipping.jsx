@@ -1,8 +1,8 @@
-import React, { Fragment, useState } from "react";
-import { countries } from "countries-list";
-import { useDispatch, useSelector } from "react-redux";
-import CheckoutSteps from "./CheckoutSteps";
-import { saveShippingInfo } from "../../../actions/cartActions";
+import React, { Fragment, useState } from 'react';
+import { countries } from 'countries-list';
+import { useDispatch, useSelector } from 'react-redux';
+import CheckoutSteps from './CheckoutSteps';
+import { saveShippingInfo } from '../../../actions/cartActions';
 
 const Shipping = ({ history }) => {
   const countriesList = Object.values(countries);
@@ -20,7 +20,7 @@ const Shipping = ({ history }) => {
 
     dispatch(saveShippingInfo({ address, city, phoneNo, postalCode, country }));
 
-    history.push("/confirm");
+    history.push('/confirm');
   };
 
   return (

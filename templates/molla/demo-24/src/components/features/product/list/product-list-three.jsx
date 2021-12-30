@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-import imagesLoaded from "imagesloaded";
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import imagesLoaded from 'imagesloaded';
 
-import ProductFive from "../product-five";
-import Pagination from "../../pagination";
+import ProductFive from '../product-five';
+import Pagination from '../../pagination';
 
-import { addToCart, showQuickViewModal, filterSort } from "../../../../actions";
-import { getVisibleProducts } from "../../../../services";
+import { addToCart, showQuickViewModal, filterSort } from '../../../../actions';
+import { getVisibleProducts } from '../../../../services';
 
 function ProductListThree(props) {
   const { filterSort, filters, addToCart, showQuickViewModal } = props;
@@ -29,29 +29,29 @@ function ProductListThree(props) {
     setPos(0);
 
     document
-      .querySelector(".skeleton-body.skel-shop-products")
-      .classList.remove("loaded");
+      .querySelector('.skeleton-body.skel-shop-products')
+      .classList.remove('loaded');
 
-    let imgLoad = imagesLoaded(".products", { background: true });
+    let imgLoad = imagesLoaded('.products', { background: true });
 
-    imgLoad.on("done", function (instance, image) {
+    imgLoad.on('done', function (instance, image) {
       document
-        .querySelector(".skeleton-body.skel-shop-products")
-        .classList.add("loaded");
+        .querySelector('.skeleton-body.skel-shop-products')
+        .classList.add('loaded');
     });
   }, [filters]);
 
   useEffect(() => {
     document
-      .querySelector(".skeleton-body.skel-shop-products")
-      .classList.remove("loaded");
+      .querySelector('.skeleton-body.skel-shop-products')
+      .classList.remove('loaded');
 
-    let imgLoad = imagesLoaded(".products", { background: true });
+    let imgLoad = imagesLoaded('.products', { background: true });
 
-    imgLoad.on("done", function (instance, image) {
+    imgLoad.on('done', function (instance, image) {
       document
-        .querySelector(".skeleton-body.skel-shop-products")
-        .classList.add("loaded");
+        .querySelector('.skeleton-body.skel-shop-products')
+        .classList.add('loaded');
     });
   }, [startPos]);
 
@@ -86,7 +86,7 @@ function ProductListThree(props) {
           {products.slice(startPos, startPos + maxCount).map((item, index) => (
             <div
               className="col-6 col-md-4 col-xl-3"
-              key={item.id + "-" + item.name}
+              key={item.id + '-' + item.name}
             >
               <div className="skel-pro"></div>
 
@@ -107,7 +107,7 @@ function ProductListThree(props) {
       />
     </>
   ) : (
-    ""
+    ''
   );
 }
 

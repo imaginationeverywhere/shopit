@@ -1,7 +1,7 @@
-import React, { Fragment, useEffect, useState } from "react";
-import TableFooter from "./TableFooter";
-import Checkbox from "./Checkbox";
-import Columns from "./Columns";
+import React, { Fragment, useEffect, useState } from 'react';
+import TableFooter from './TableFooter';
+import Checkbox from './Checkbox';
+import Columns from './Columns';
 
 const Table = ({
   tableData,
@@ -18,7 +18,7 @@ const Table = ({
   const [lastPage, setLastPage] = useState(Math.ceil(allRows.length / perPage));
   const [paginatedPage, setPaginatedPage] = useState(page);
   const [paginatedRows, setPaginatedRows] = useState(
-    allRows.slice(paginatedPage - 1, paginatedPage - 1 + perPage)
+    allRows.slice(paginatedPage - 1, paginatedPage - 1 + perPage),
   );
   const [checkedRow, setCheckedRow] = useState(selectedRow);
 
@@ -26,7 +26,7 @@ const Table = ({
     if (allRows.length) {
       setLastPage(Math.ceil(allRows.length / perPage));
       setPaginatedRows(
-        allRows.slice(paginatedPage - 1, paginatedPage - 1 + perPage)
+        allRows.slice(paginatedPage - 1, paginatedPage - 1 + perPage),
       );
     }
   }, [allRows, perPage, paginatedPage]);
@@ -58,12 +58,12 @@ const Table = ({
 
   const sortColumn = (columnField, order) => {
     const sortedRows = allRows.sort((r1, r2) => {
-      if (order === "asc") {
-        return typeof r1[columnField] === "string"
+      if (order === 'asc') {
+        return typeof r1[columnField] === 'string'
           ? r1[columnField].localeCompare(r2[columnField])
           : r1[columnField] - r2[columnField];
       } else {
-        return typeof r1[columnField] === "string"
+        return typeof r1[columnField] === 'string'
           ? r2[columnField].localeCompare(r1[columnField])
           : r2[columnField] - r1[columnField];
       }

@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useLayoutEffect } from "react";
-import { ToastContainer } from "react-toastify";
-import { matchPath } from "react-router-dom";
-import store from "../store";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useLayoutEffect } from 'react';
+import { ToastContainer } from 'react-toastify';
+import { matchPath } from 'react-router-dom';
+import store from '../store';
+import { Link } from 'react-router-dom';
 
 // import Custom Components
-import Header from "./common/header";
-import Footer from "./common/footer";
-import MobileMenu from "./common/mobile-menu";
+import Header from './common/header';
+import Footer from './common/footer';
+import MobileMenu from './common/mobile-menu';
 
 // import Utils
 import {
@@ -15,23 +15,23 @@ import {
   preventProductDefault,
   removePreventProductDefault,
   stickyHeaderHandler,
-} from "../utils";
+} from '../utils';
 
 // import Actions
-import { closeQuickViewModal } from "../actions";
+import { closeQuickViewModal } from '../actions';
 
 // import data
-import { innerOverlayPaths } from "../mock_data/data";
-import { isIEBrowser } from "../utils";
+import { innerOverlayPaths } from '../mock_data/data';
+import { isIEBrowser } from '../utils';
 
 function App(props) {
   let matchedCount = 0;
   let overlayFlag = true;
   let flagHome = false;
-  const [container, setContainer] = useState("container");
-  const [prevPath, setPrevPath] = useState("");
+  const [container, setContainer] = useState('container');
+  const [prevPath, setPrevPath] = useState('');
 
-  if (window.location.pathname === process.env.PUBLIC_URL + "/") {
+  if (window.location.pathname === process.env.PUBLIC_URL + '/') {
     flagHome = true;
   }
 
@@ -52,8 +52,8 @@ function App(props) {
     }
 
     if (overlayFlag) {
-      document.querySelector("body").classList.remove("loaded");
-      document.querySelector("#root").classList.remove("loaded");
+      document.querySelector('body').classList.remove('loaded');
+      document.querySelector('#root').classList.remove('loaded');
     }
   });
 
@@ -61,10 +61,10 @@ function App(props) {
     mobileMenu();
 
     stickyHeaderHandler();
-    window.addEventListener("scroll", stickyHeaderHandler);
+    window.addEventListener('scroll', stickyHeaderHandler);
 
     return () => {
-      window.removeEventListener("scroll", stickyHeaderHandler);
+      window.removeEventListener('scroll', stickyHeaderHandler);
     };
   }, []);
 
@@ -74,8 +74,8 @@ function App(props) {
 
     // remove overlay
     setTimeout(() => {
-      document.querySelector("body").classList.add("loaded");
-      document.querySelector("#root").classList.add("loaded");
+      document.querySelector('body').classList.add('loaded');
+      document.querySelector('#root').classList.add('loaded');
     }, 200);
 
     // show 404 page
@@ -104,14 +104,14 @@ function App(props) {
       matchedCount >= props.children.length ||
       (props.children && !props.children.length && matchedCount === 0)
     ) {
-      window.location = process.env.PUBLIC_URL + "/pages/404";
+      window.location = process.env.PUBLIC_URL + '/pages/404';
     }
 
     // set the container type according to page grid type
-    if (props.location.pathname.indexOf("fullwidth") !== -1) {
-      setContainer("container-fluid");
+    if (props.location.pathname.indexOf('fullwidth') !== -1) {
+      setContainer('container-fluid');
     } else {
-      setContainer("container");
+      setContainer('container');
     }
 
     // close exiting quickview modal
@@ -160,7 +160,7 @@ function App(props) {
                 alt="intro"
                 width="1903"
                 height="1080"
-                style={isIEBrowser() ? { width: "100%" } : {}}
+                style={isIEBrowser() ? { width: '100%' } : {}}
               />
             </div>
           </div>

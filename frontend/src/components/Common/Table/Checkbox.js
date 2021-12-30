@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Checkbox = ({ value, handleCheckboxChange, row }) => {
   const { servicelevel: { token: valueToken } = {} } = value;

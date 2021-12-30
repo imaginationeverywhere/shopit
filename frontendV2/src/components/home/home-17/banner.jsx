@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 // import Utils
-import { safeContent } from "../../../utils";
+import { safeContent } from '../../../utils';
 
 function Banner(props) {
   const { banner } = props;
@@ -14,7 +14,7 @@ function Banner(props) {
         <div className="lazy-overlay bg-3"></div>
 
         <LazyLoadImage
-          src={process.env.PUBLIC_URL + "/" + banner.image}
+          src={process.env.PUBLIC_URL + '/' + banner.image}
           alt="Banner"
           width={100}
           height={banner.height}

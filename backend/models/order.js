@@ -1,8 +1,12 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const orderSchema = mongoose.Schema({
   shippingInfo: {
-    address: {
+    street1: {
+      type: String,
+      required: true,
+    },
+    state: {
       type: String,
       required: true,
     },
@@ -10,11 +14,15 @@ const orderSchema = mongoose.Schema({
       type: String,
       required: true,
     },
-    phoneNo: {
+    email: {
       type: String,
       required: true,
     },
-    postalCode: {
+    phone: {
+      type: String,
+      required: true,
+    },
+    zip: {
       type: String,
       required: true,
     },
@@ -23,17 +31,26 @@ const orderSchema = mongoose.Schema({
       required: true,
     },
   },
-  shipments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Shipment" }],
+  paymentInfo: {
+    id: {
+      type: String,
+    },
+    status: {
+      type: String,
+    },
+  },
+
+  shipments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Shipment' }],
   user: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: "User",
+    ref: 'User',
   },
   orderItems: [
     {
       name: {
         type: String,
-        required: true,
+        required: false,
       },
       quantity: {
         type: Number,
@@ -41,16 +58,16 @@ const orderSchema = mongoose.Schema({
       },
       image: {
         type: String,
-        required: true,
+        required: false,
       },
       price: {
         type: Number,
-        required: true,
+        required: false,
       },
       product: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: "Product",
+        ref: 'Product',
       },
     },
   ],
@@ -88,7 +105,7 @@ const orderSchema = mongoose.Schema({
   orderStatus: {
     type: String,
     required: true,
-    default: "Processing",
+    default: 'Processing',
   },
   deliveredAt: {
     type: Date,
@@ -99,4 +116,4 @@ const orderSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Order", orderSchema);
+module.exports = mongoose.model('Order', orderSchema);

@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-import Modal from "react-modal";
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import Modal from 'react-modal';
 
-import { isIEBrowser } from "../../../utils";
-import { removeNewsletterMdoal } from "../../../actions";
+import { isIEBrowser } from '../../../utils';
+import { removeNewsletterMdoal } from '../../../actions';
 
 const customStyles = {
   content: {
-    top: "50%",
-    transform: "translateY(-50%)",
+    top: '50%',
+    transform: 'translateY(-50%)',
   },
   overlay: {
-    backgroundColor: "rgba(51,51,51,0.6)",
-    zIndex: "10000",
+    backgroundColor: 'rgba(51,51,51,0.6)',
+    zIndex: '10000',
   },
 };
 
-Modal.setAppElement("#root");
+Modal.setAppElement('#root');
 
 function NewsletterModal(props) {
   const { newsletter, removeNewsletterMdoal } = props;
@@ -39,22 +39,22 @@ function NewsletterModal(props) {
 
   function changeCloseType() {
     if (document.querySelector("input[type='checkbox']").checked === true) {
-      closeType = "forever";
+      closeType = 'forever';
     } else {
-      closeType = "once";
+      closeType = 'once';
     }
   }
 
   function closeModal(e) {
-    if (closeType === "forever") {
+    if (closeType === 'forever') {
       removeNewsletterMdoal();
     }
 
     setOpen(false);
 
     document
-      .getElementById("newsletter-popup-form")
-      .classList.remove("ReactModal__Content--after-open");
+      .getElementById('newsletter-popup-form')
+      .classList.remove('ReactModal__Content--after-open');
   }
 
   return (
@@ -80,10 +80,10 @@ function NewsletterModal(props) {
                   height="15"
                 />
                 <h2 className="banner-title">
-                  get{" "}
+                  get{' '}
                   <span>
-                    25<span style={{ fontWeight: "400" }}>%</span>
-                  </span>{" "}
+                    25<span style={{ fontWeight: '400' }}>%</span>
+                  </span>{' '}
                   off
                 </h2>
                 <p>
@@ -117,7 +117,7 @@ function NewsletterModal(props) {
                   />
                   <label
                     className="custom-control-label"
-                    style={isIEBrowser() ? { padding: "2" } : {}}
+                    style={isIEBrowser() ? { padding: '2' } : {}}
                     htmlFor="register-policy-2"
                   >
                     Do not show this popup again
@@ -155,5 +155,5 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, { removeNewsletterMdoal })(
-  NewsletterModal
+  NewsletterModal,
 );

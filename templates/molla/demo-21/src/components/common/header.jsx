@@ -1,25 +1,25 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 // Common Header Components
-import MainMenu from "./partials/main-menu";
-import CartMenu from "./partials/cart-menu";
-import SearchForm from "./partials/search-form";
-import LoginModal from "../features/modal/login-modal";
+import MainMenu from './partials/main-menu';
+import CartMenu from './partials/cart-menu';
+import SearchForm from './partials/search-form';
+import LoginModal from '../features/modal/login-modal';
 
-import { showModal } from "../../actions";
+import { showModal } from '../../actions';
 
 function Header(props) {
-  const { isWishlist, showModal, container = "container" } = props;
+  const { isWishlist, showModal, container = 'container' } = props;
 
   function openLoginModal(e) {
-    showModal("login");
+    showModal('login');
     e.preventDefault();
   }
 
   function hideNotificationHandler(e) {
-    document.querySelector(".notification").style.display = "none";
+    document.querySelector('.notification').style.display = 'none';
     e.preventDefault();
   }
 

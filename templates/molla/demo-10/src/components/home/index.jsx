@@ -1,37 +1,37 @@
-import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import OwlCarousel from "../features/owl-carousel";
-import NewsletterModal from "../features/modal/newsletter-modal";
-import QuickView from "../features/product/common/quickview";
-import ServiceBox from "../features/service";
-import ProductCategoryTwo from "../features/product-category/product-category-two";
+import OwlCarousel from '../features/owl-carousel';
+import NewsletterModal from '../features/modal/newsletter-modal';
+import QuickView from '../features/product/common/quickview';
+import ServiceBox from '../features/service';
+import ProductCategoryTwo from '../features/product-category/product-category-two';
 
 // import Home Components
-import IntroSlide from "./intro-slide";
-import Banner from "./banner";
-import NewCollection from "./new-collection";
-import TopCollection from "./top-collection";
-import CTAOne from "./cta-section";
-import CTATwo from "./cta-section-two";
-import BlogSection from "./post-group";
+import IntroSlide from './intro-slide';
+import Banner from './banner';
+import NewCollection from './new-collection';
+import TopCollection from './top-collection';
+import CTAOne from './cta-section';
+import CTATwo from './cta-section-two';
+import BlogSection from './post-group';
 
 // import Slider Settings
-import { introSlider } from "../settings";
+import { introSlider } from '../settings';
 
 // import Data & Style
-import _data from "../../mock_data/data.json";
-import style from "./style.scss";
+import _data from '../../mock_data/data.json';
+import style from './style.scss';
 
 export default function HomePage() {
   useEffect(() => {
-    document.getElementById("menu-home").classList.add("active");
+    document.getElementById('menu-home').classList.add('active');
 
     style.use();
 
     return () => {
-      document.getElementById("menu-home").classList.remove("active");
+      document.getElementById('menu-home').classList.remove('active');
       style.unuse();
     };
   }, []);

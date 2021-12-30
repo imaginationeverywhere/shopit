@@ -1,11 +1,11 @@
-import React from "react";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
-import Accordion from "../../features/accordion/accordion";
-import Card from "../../features/accordion/card";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
+import Accordion from '../../features/accordion/accordion';
+import Card from '../../features/accordion/card';
 
 function Accordions() {
   return (
@@ -18,7 +18,7 @@ function Accordions() {
 
       <div className="main">
         <PageHeader title="Accordions" subTitle="Elements" />
-        <Breadcrumb title="Accordions" parent1={["Elements", "elements"]} />
+        <Breadcrumb title="Accordions" parent1={['Elements', 'elements']} />
 
         <div className="page-content">
           <div className="container">

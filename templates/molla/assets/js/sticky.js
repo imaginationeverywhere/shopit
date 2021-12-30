@@ -2,7 +2,7 @@
 
 /* Smart Resize  */
 (function ($, sr) {
-  "use strict";
+  'use strict';
 
   // debouncing function from John Hann
   // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
@@ -25,12 +25,12 @@
   };
   // smartresize
   jQuery.fn[sr] = function (fn) {
-    return fn ? this.bind("resize", debounce(fn)) : this.trigger(sr);
+    return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr);
   };
-})(jQuery, "smartresize");
+})(jQuery, 'smartresize');
 
 (function ($) {
-  "use strict";
+  'use strict';
 
   // jQuery Pin plugin
   $.fn.themePin = function (options) {
@@ -50,10 +50,10 @@
         var $this = elements[i];
 
         if (options.minWidth && $window.width() <= options.minWidth) {
-          if ($this.parent().is(".pin-wrapper")) {
+          if ($this.parent().is('.pin-wrapper')) {
             $this.unwrap();
           }
-          $this.css({ width: "", left: "", top: "", position: "" });
+          $this.css({ width: '', left: '', top: '', position: '' });
           disabled = true;
           continue;
         } else {
@@ -68,13 +68,13 @@
         var offset = $this.offset();
         var containerOffset = $container.offset();
 
-        if (typeof containerOffset == "undefined") {
+        if (typeof containerOffset == 'undefined') {
           continue;
         }
 
         var parentOffset = $this.parent().offset();
 
-        if (!$this.parent().is(".pin-wrapper")) {
+        if (!$this.parent().is('.pin-wrapper')) {
           $this.wrap("<div class='pin-wrapper'>");
         }
 
@@ -83,38 +83,38 @@
             top: 0,
             bottom: 0,
           },
-          options.padding || {}
+          options.padding || {},
         );
 
-        var pt = parseInt($this.parent().parent().css("padding-top")),
-          pb = parseInt($this.parent().parent().css("padding-bottom"));
+        var pt = parseInt($this.parent().parent().css('padding-top')),
+          pb = parseInt($this.parent().parent().css('padding-bottom'));
 
-        if (typeof options.paddingOffsetTop != "undefined") {
+        if (typeof options.paddingOffsetTop != 'undefined') {
           pad.top += parseInt(options.paddingOffsetTop, 10);
         } else {
           pad.top += 18;
         }
-        if (typeof options.paddingOffsetBottom != "undefined") {
+        if (typeof options.paddingOffsetBottom != 'undefined') {
           pad.bottom = parseInt(options.paddingOffsetBottom, 10);
         } else {
           pad.bottom = 0;
         }
 
-        var bb = $this.css("border-bottom"),
+        var bb = $this.css('border-bottom'),
           h = $this.outerHeight();
-        $this.css("border-bottom", "1px solid transparent");
+        $this.css('border-bottom', '1px solid transparent');
         var o_h = $this.outerHeight() - h - 1;
-        $this.css("border-bottom", bb);
+        $this.css('border-bottom', bb);
         $this.css({
           width:
             $this.outerWidth() <= $this.parent().width()
               ? $this.outerWidth()
               : $this.parent().width(),
         });
-        $this.parent().css("height", $this.outerHeight() + o_h);
+        $this.parent().css('height', $this.outerHeight() + o_h);
 
         if ($this.outerHeight() <= $window.height()) {
-          $this.data("themePin", {
+          $this.data('themePin', {
             pad: pad,
             from:
               (options.containerSelector ? containerOffset.top : offset.top) -
@@ -125,7 +125,7 @@
             offset: o_h,
           });
         } else {
-          $this.data("themePin", {
+          $this.data('themePin', {
             pad: pad,
             fromFitTop:
               (options.containerSelector ? containerOffset.top : offset.top) -
@@ -155,7 +155,7 @@
 
       for (var i = 0, len = elements.length; i < len; i++) {
         var $this = $(elements[i]),
-          data = $this.data("themePin"),
+          data = $this.data('themePin'),
           sidebarTop;
 
         if (!data) {
@@ -207,40 +207,40 @@
         if (isFitToTop) {
           var from = data.from - data.pad.bottom,
             to = data.to - data.pad.top - data.offset;
-          if (typeof data.fromFitTop != "undefined" && data.fromFitTop) {
+          if (typeof data.fromFitTop != 'undefined' && data.fromFitTop) {
             from = data.fromFitTop - data.pad.bottom;
           }
 
           if (from + $this.outerHeight() > data.end || from >= to) {
-            $this.css({ position: "", top: "", left: "" });
+            $this.css({ position: '', top: '', left: '' });
             if (options.activeClass) {
               $this.removeClass(options.activeClass);
             }
             continue;
           }
           if (scrollY > from && scrollY < to) {
-            !($this.css("position") == "fixed") &&
+            !($this.css('position') == 'fixed') &&
               $this
                 .css({
                   left: $this.offset().left,
                   top: data.pad.top,
                 })
-                .css("position", "fixed");
+                .css('position', 'fixed');
             if (options.activeClass) {
               $this.addClass(options.activeClass);
             }
           } else if (scrollY >= to) {
             $this
               .css({
-                left: "",
+                left: '',
                 top: to - data.parentTop + data.pad.top,
               })
-              .css("position", "absolute");
+              .css('position', 'absolute');
             if (options.activeClass) {
               $this.addClass(options.activeClass);
             }
           } else {
-            $this.css({ position: "", top: "", left: "" });
+            $this.css({ position: '', top: '', left: '' });
             if (options.activeClass) {
               $this.removeClass(options.activeClass);
             }
@@ -250,19 +250,19 @@
           fixedSideTop[i] ||
           fixedSideBottom[i]
         ) {
-          var padTop = parseInt($this.parent().parent().css("padding-top"));
+          var padTop = parseInt($this.parent().parent().css('padding-top'));
           // Reset the sideSortables style when scrolling to the top.
           if (scrollY + data.pad.top - padTop <= data.parentTop) {
-            $this.css({ position: "", top: "", bottom: "", left: "" });
+            $this.css({ position: '', top: '', bottom: '', left: '' });
             fixedSideTop[i] = fixedSideBottom[i] = false;
           } else if (scrollY >= data.to) {
             $this
               .css({
-                left: "",
+                left: '',
                 top: data.to2,
-                bottom: "",
+                bottom: '',
               })
-              .css("position", "absolute");
+              .css('position', 'absolute');
             if (options.activeClass) {
               $this.addClass(options.activeClass);
             }
@@ -276,11 +276,11 @@
 
                 $this
                   .css({
-                    left: "",
+                    left: '',
                     top: sidebarTop,
-                    bottom: "",
+                    bottom: '',
                   })
-                  .css("position", "absolute");
+                  .css('position', 'absolute');
                 if (options.activeClass) {
                   $this.addClass(options.activeClass);
                 }
@@ -292,14 +292,14 @@
                 // Pin the bottom.
                 fixedSideBottom[i] = true;
 
-                !($this.css("position") == "fixed") &&
+                !($this.css('position') == 'fixed') &&
                   $this
                     .css({
                       left: $this.offset().left,
                       bottom: data.pad.bottom,
-                      top: "",
+                      top: '',
                     })
-                    .css("position", "fixed");
+                    .css('position', 'fixed');
                 if (options.activeClass) {
                   $this.addClass(options.activeClass);
                 }
@@ -314,11 +314,11 @@
 
                 $this
                   .css({
-                    left: "",
+                    left: '',
                     top: sidebarTop,
-                    bottom: "",
+                    bottom: '',
                   })
-                  .css("position", "absolute");
+                  .css('position', 'absolute');
                 if (options.activeClass) {
                   $this.addClass(options.activeClass);
                 }
@@ -329,14 +329,14 @@
                 // Pin the top.
                 fixedSideTop[i] = true;
 
-                !($this.css("position") == "fixed") &&
+                !($this.css('position') == 'fixed') &&
                   $this
                     .css({
                       left: $this.offset().left,
                       top: data.pad.top,
-                      bottom: "",
+                      bottom: '',
                     })
-                    .css("position", "fixed");
+                    .css('position', 'fixed');
                 if (options.activeClass) {
                   $this.addClass(options.activeClass);
                 }
@@ -347,11 +347,11 @@
           // If the sidebar container is smaller than the viewport, then pin/unpin the top when scrolling.
           if (scrollY >= data.parentTop - data.pad.top) {
             $this.css({
-              position: "fixed",
+              position: 'fixed',
               top: data.pad.top,
             });
           } else {
-            $this.css({ position: "", top: "", bottom: "", left: "" });
+            $this.css({ position: '', top: '', bottom: '', left: '' });
           }
 
           fixedSideTop[i] = fixedSideBottom[i] = false;
@@ -370,26 +370,26 @@
 
     this.each(function () {
       var $this = $(this),
-        data = $(this).data("themePin") || {};
+        data = $(this).data('themePin') || {};
 
       if (data && data.update) {
         return;
       }
       elements.push($this);
-      $("img", this).one("load", recalculateLimits);
+      $('img', this).one('load', recalculateLimits);
       data.update = update;
-      $(this).data("themePin", data);
+      $(this).data('themePin', data);
       fixedSideTop.push(false);
       fixedSideBottom.push(false);
       prevDataTo.push(0);
     });
 
-    $window.on("touchmove scroll", onScroll);
+    $window.on('touchmove scroll', onScroll);
     recalculateLimits();
 
-    $window.on("load", update);
+    $window.on('load', update);
 
-    $(this).on("recalc.pin", function () {
+    $(this).on('recalc.pin', function () {
       recalculateLimits();
       onScroll();
     });
@@ -397,7 +397,7 @@
     return this;
   };
 
-  var instanceName = "__sticky";
+  var instanceName = '__sticky';
 
   var Sticky = function ($el, opts) {
     return this.initialize($el, opts);
@@ -457,14 +457,14 @@
           clearTimeout(stickyResizeTrigger);
         }
         stickyResizeTrigger = setTimeout(function () {
-          $el.trigger("recalc.pin");
+          $el.trigger('recalc.pin');
         }, 800);
 
         var $parent = $el.parent();
 
         $el.outerWidth($parent.width());
-        if ($el.css("position") == "fixed") {
-          $el.css("left", $parent.offset().left);
+        if ($el.css('position') == 'fixed') {
+          $el.css('left', $parent.offset().left);
         }
       });
 
@@ -477,9 +477,9 @@
     return this.map(function () {
       var $this = $(this);
       if ($this.data(instanceName)) {
-        $this.trigger("recalc.pin");
+        $this.trigger('recalc.pin');
         setTimeout(function () {
-          $this.trigger("recalc.pin");
+          $this.trigger('recalc.pin');
         }, 800);
         return $this.data(instanceName);
       } else {

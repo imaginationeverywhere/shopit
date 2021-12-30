@@ -35,7 +35,7 @@
     margin-bottom: 4rem;
   }
 
-  [class*="col-"] {
+  [class*='col-'] {
     display: flex;
 
     .brand {
@@ -217,11 +217,11 @@
   }
 }
 
-@include mq("md") {
+@include mq('md') {
 }
 
-@include mq("lg") {
+@include mq('lg') {
 }
 
-@include mq("xl") {
+@include mq('xl') {
 }

@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function CategoryMenu(props) {
   const { type } = props;
@@ -7,26 +7,26 @@ function CategoryMenu(props) {
   function onShowMenu(e) {
     if (
       !document
-        .querySelector(".category-dropdown.is-on")
-        .classList.contains("show")
+        .querySelector('.category-dropdown.is-on')
+        .classList.contains('show')
     ) {
-      document.querySelector(".category-dropdown.is-on").classList.add("show");
+      document.querySelector('.category-dropdown.is-on').classList.add('show');
       document
-        .querySelector(".category-dropdown.is-on > .dropdown-menu")
-        .classList.add("show");
+        .querySelector('.category-dropdown.is-on > .dropdown-menu')
+        .classList.add('show');
     } else {
       document
-        .querySelector(".category-dropdown.is-on")
-        .classList.remove("show");
+        .querySelector('.category-dropdown.is-on')
+        .classList.remove('show');
       document
-        .querySelector(".category-dropdown.is-on > .dropdown-menu")
-        .classList.remove("show");
+        .querySelector('.category-dropdown.is-on > .dropdown-menu')
+        .classList.remove('show');
     }
     e.preventDefault();
   }
 
   return (
-    <div className={`dropdown category-dropdown ${type === 2 ? "is-on" : ""}`}>
+    <div className={`dropdown category-dropdown ${type === 2 ? 'is-on' : ''}`}>
       <Link
         to="#"
         className="dropdown-toggle"

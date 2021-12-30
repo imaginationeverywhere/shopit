@@ -1,9 +1,9 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const templateSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, "name is required"],
+    required: [true, 'name is required'],
   },
   isActive: {
     type: Boolean,
@@ -15,4 +15,4 @@ const templateSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Template", templateSchema);
+module.exports = mongoose.model('Template', templateSchema);

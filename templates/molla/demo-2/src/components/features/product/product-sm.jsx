@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 function SmallProduct(props) {
   const { product } = props;
@@ -65,7 +65,7 @@ function SmallProduct(props) {
       </div>
     </div>
   ) : (
-    ""
+    ''
   );
 }
 

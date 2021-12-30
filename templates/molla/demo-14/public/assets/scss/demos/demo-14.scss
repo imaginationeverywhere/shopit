@@ -1,9 +1,9 @@
 /* Demo 14 Homepage 14 */
-@import "../mixins/clearfix";
-@import "../mixins/breakpoints";
-@import "../mixins/lazy";
+@import '../mixins/clearfix';
+@import '../mixins/breakpoints';
+@import '../mixins/lazy';
 
-@import "../config/variables";
+@import '../config/variables';
 
 .cart-dropdown {
   .btn-primary {
@@ -331,7 +331,7 @@
 
 .owl-full {
   .owl-nav {
-    [class*="owl-"] {
+    [class*='owl-'] {
       color: #666;
     }
   }
@@ -437,7 +437,7 @@
   &:hover,
   &:focus {
     &:before {
-      content: "\f233";
+      content: '\f233';
     }
   }
 }
@@ -584,7 +584,7 @@
 
     li a {
       &:before {
-        content: "•";
+        content: '•';
         margin-right: 0.8rem;
       }
     }
@@ -670,7 +670,7 @@
       position: relative;
 
       &:after {
-        content: "";
+        content: '';
         position: absolute;
         display: block;
         left: 0;
@@ -804,7 +804,7 @@
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .icon-box-side {
     display: block;
     text-align: center;
@@ -875,14 +875,14 @@
   }
 }
 
-@include mq("sm") {
+@include mq('sm') {
   .cat-banner-list {
     padding-top: 0;
     padding-bottom: 0;
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   .intro-slider.owl-nav-inside .owl-dots {
     left: 54px;
     bottom: 30px;
@@ -905,13 +905,13 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .heading .title {
     margin-bottom: 0;
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .owl-simple.brands-carousel {
     margin-left: 6rem;
     margin-right: 6rem;
@@ -956,7 +956,7 @@
   }
 }
 
-@include mq("xxl") {
+@include mq('xxl') {
   .intro-slider.owl-nav-inside .owl-dots {
     left: 124px;
     bottom: 70px;
@@ -996,7 +996,7 @@
   }
 }
 
-@include mq("xlst") {
+@include mq('xlst') {
   .cat-banner-row {
     .col-xxl-4 {
       flex: 0 0 33.65%;
@@ -1014,7 +1014,7 @@
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .cta-horizontal-box {
     .cta-txt {
       text-align: center;
@@ -1025,7 +1025,7 @@
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .product-countdown {
     display: none;
   }

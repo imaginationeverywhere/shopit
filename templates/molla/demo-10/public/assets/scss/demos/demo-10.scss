@@ -1,11 +1,11 @@
 /* Demo 3 Homepage 3 */
-@import "../mixins/clearfix";
-@import "../mixins/breakpoints";
-@import "../mixins/lazy";
-@import "../mixins/buttons";
+@import '../mixins/clearfix';
+@import '../mixins/breakpoints';
+@import '../mixins/lazy';
+@import '../mixins/buttons';
 
-@import "../config/fonts";
-@import "../config/variables";
+@import '../config/fonts';
+@import '../config/variables';
 
 $primary-color: #445f84;
 $secondary-color: #55739d;
@@ -35,7 +35,7 @@ $secondary-color: #55739d;
   }
 
   &:before {
-    @include mq("xs", "max") {
+    @include mq('xs', 'max') {
       @include aspect-ratio(480, 400);
     }
   }
@@ -316,7 +316,7 @@ $secondary-color: #55739d;
     margin-right: 0;
 
     > .col,
-    > [class*="col-"] {
+    > [class*='col-'] {
       padding-left: 0;
       padding-right: 0;
     }
@@ -434,9 +434,9 @@ $secondary-color: #55739d;
   padding-bottom: 1rem;
 }
 
-@include mq("sm") {
+@include mq('sm') {
   .products {
-    [class*="col-"] {
+    [class*='col-'] {
       border-right: 0.1rem solid #eee;
 
       &:nth-child(2n) {
@@ -458,7 +458,7 @@ $secondary-color: #55739d;
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   .intro-subtitle {
     margin-bottom: 1rem;
   }
@@ -469,7 +469,7 @@ $secondary-color: #55739d;
   }
 
   .products {
-    [class*="col-"] {
+    [class*='col-'] {
       &:nth-child(2n) {
         border-right-width: 0.1rem;
       }
@@ -498,7 +498,7 @@ $secondary-color: #55739d;
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .intro-slider.owl-simple.owl-nav-inside .owl-dots {
     bottom: 30px;
   }
@@ -523,7 +523,7 @@ $secondary-color: #55739d;
   }
 
   .products {
-    [class*="col-"] {
+    [class*='col-'] {
       &:nth-child(3n) {
         border-right-width: 0.1rem;
       }
@@ -540,7 +540,7 @@ $secondary-color: #55739d;
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .intro-content {
     .btn {
       min-width: 170px;
@@ -552,7 +552,7 @@ $secondary-color: #55739d;
   }
 
   .products {
-    [class*="col-"] {
+    [class*='col-'] {
       &:nth-child(4n) {
         border-right-width: 0.1rem;
       }
@@ -564,7 +564,7 @@ $secondary-color: #55739d;
   }
 }
 
-@include mq("375px", "max") {
+@include mq('375px', 'max') {
   .product.product-3 .btn-product {
     span {
       display: none;
@@ -578,7 +578,7 @@ $secondary-color: #55739d;
   .product.product-3 .product-action {
     &:before {
       position: absolute;
-      content: "";
+      content: '';
       height: 2.3rem;
       right: 50%;
       width: 0.1rem;

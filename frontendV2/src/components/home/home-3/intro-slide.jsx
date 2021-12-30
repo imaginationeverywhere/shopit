@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { safeContent, isIEBrowser } from "../../../utils";
+import { safeContent, isIEBrowser } from '../../../utils';
 
 function IntroSlide(props) {
   const {
@@ -10,18 +10,18 @@ function IntroSlide(props) {
     subtitle,
     title,
     price,
-    btnText = "Click Here",
+    btnText = 'Click Here',
   } = props.data;
 
   return (
     <div className="intro-slide">
       <figure className="slide-image">
-        <picture style={isIEBrowser() ? { height: "100%" } : {}}>
+        <picture style={isIEBrowser() ? { height: '100%' } : {}}>
           <source media="(max-width: 480px)" srcSet={srcSet} />
           <img
-            src={process.env.PUBLIC_URL + "/" + image}
+            src={process.env.PUBLIC_URL + '/' + image}
             alt="desc"
-            style={isIEBrowser() ? { height: "100%" } : {}}
+            style={isIEBrowser() ? { height: '100%' } : {}}
             width="780"
             height="400"
           />

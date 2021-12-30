@@ -37,7 +37,7 @@
 }
 .header.header-8 .header-middle .container::after,
 .header.header-8 .header-middle .container-fluid::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 1rem;
   right: 1rem;

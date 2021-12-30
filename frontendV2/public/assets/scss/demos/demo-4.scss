@@ -1,9 +1,9 @@
 /* Demo 4 Homepage 4 */
-@import "../mixins/clearfix";
-@import "../mixins/breakpoints";
-@import "../mixins/lazy";
+@import '../mixins/clearfix';
+@import '../mixins/breakpoints';
+@import '../mixins/lazy';
 
-@import "../config/variables";
+@import '../config/variables';
 
 $primary-color: #3399ff;
 $text-color: #ef837b;
@@ -100,7 +100,7 @@ $text-color: #ef837b;
   position: relative;
 
   &:after {
-    content: "";
+    content: '';
     display: block;
     width: 100%;
     height: 1px;
@@ -111,7 +111,7 @@ $text-color: #ef837b;
   }
 }
 
-.owl-theme .owl-nav [class*="owl-"] {
+.owl-theme .owl-nav [class*='owl-'] {
   width: 3.2rem;
   height: 3.2rem;
   font-size: 2rem;
@@ -128,13 +128,13 @@ $text-color: #ef837b;
   margin-right: -584px;
 }
 
-.owl-theme.owl-light .owl-nav [class*="owl-"] {
+.owl-theme.owl-light .owl-nav [class*='owl-'] {
   border-color: rgba(255, 255, 255, 0.7);
   background-color: rgba(255, 255, 255, 0.7);
   color: #ccc;
 }
 
-.owl-theme.owl-light .owl-nav [class*="owl-"]:not(.disabled):hover {
+.owl-theme.owl-light .owl-nav [class*='owl-']:not(.disabled):hover {
   border-color: #39f;
   background: $primary-color;
 }
@@ -150,7 +150,7 @@ $text-color: #ef837b;
 .cat-blocks-container {
   padding-top: 0.5rem;
 
-  [class*="col-"] {
+  [class*='col-'] {
     display: flex;
     align-items: stretch;
     justify-content: center;
@@ -176,7 +176,7 @@ $text-color: #ef837b;
       position: relative;
 
       &:after {
-        content: "";
+        content: '';
         display: block;
         position: absolute;
         bottom: -0.2rem;
@@ -385,7 +385,7 @@ $text-color: #ef837b;
   &:hover,
   &:focus {
     &:before {
-      content: "\f233";
+      content: '\f233';
     }
   }
 }
@@ -496,7 +496,7 @@ $text-color: #ef837b;
 
     &:not(:last-child):after {
       color: #333333;
-      content: ":";
+      content: ':';
       display: inline-block;
       font-weight: 400;
       font-size: 20px;
@@ -642,7 +642,7 @@ $text-color: #ef837b;
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   .intro-title {
     font-size: 4rem;
   }
@@ -654,7 +654,7 @@ $text-color: #ef837b;
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .intro-price {
     font-size: 4.4rem;
     sup {
@@ -667,7 +667,7 @@ $text-color: #ef837b;
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .intro-content {
     .btn {
       min-width: 170px;
@@ -688,7 +688,7 @@ $text-color: #ef837b;
     }
   }
 
-  .owl-theme .owl-nav [class*="owl-"] {
+  .owl-theme .owl-nav [class*='owl-'] {
     width: 4rem;
     height: 4rem;
     font-size: 2.2rem;
@@ -700,7 +700,7 @@ $text-color: #ef837b;
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .heading {
     text-align: center;
 

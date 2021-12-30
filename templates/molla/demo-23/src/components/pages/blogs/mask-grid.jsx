@@ -1,26 +1,26 @@
-import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
-import PostFour from "../../features/post/post-four";
-import Pagination from "../../features/pagination";
-import isotope from "isotope-layout";
-import imagesLoaded from "imagesloaded";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
+import PostFour from '../../features/post/post-four';
+import Pagination from '../../features/pagination';
+import isotope from 'isotope-layout';
+import imagesLoaded from 'imagesloaded';
 
-import { isotopeLoad } from "../../../utils";
+import { isotopeLoad } from '../../../utils';
 
-import posts from "../../../mock_data/posts";
+import posts from '../../../mock_data/posts';
 
 export default function MaskGrid() {
   useEffect(() => {
     isotopeLoad(
       isotope,
       imagesLoaded,
-      ".entry-container",
-      ".entry-item",
-      ".entry-filter"
+      '.entry-container',
+      '.entry-item',
+      '.entry-filter',
     );
   });
 
@@ -38,7 +38,7 @@ export default function MaskGrid() {
         <PageHeader title="Blog Mask Grid" subTitle="Blog" />
         <Breadcrumb
           title="Mask Grid"
-          parent1={["Blog", "blog/classic"]}
+          parent1={['Blog', 'blog/classic']}
           adClass="mb-2"
         />
 

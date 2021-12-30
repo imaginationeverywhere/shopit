@@ -1,19 +1,19 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 // import Actions
-import { showModal } from "../../actions";
+import { showModal } from '../../actions';
 
 // import utils
-import { isIEBrowser } from "../../utils";
+import { isIEBrowser } from '../../utils';
 
 function VideoBanner(props) {
   const { showModal } = props;
 
   function openVideoModalHandler(e) {
-    showModal("video");
+    showModal('video');
     e.preventDefault();
   }
 
@@ -51,7 +51,7 @@ function VideoBanner(props) {
           <Link to="#" className="btn-iframe" onClick={openVideoModalHandler}>
             <i
               className="icon-play"
-              style={isIEBrowser() ? { textIndent: ".1rem" } : {}}
+              style={isIEBrowser() ? { textIndent: '.1rem' } : {}}
             ></i>
           </Link>
         </div>

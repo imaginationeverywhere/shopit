@@ -1,11 +1,11 @@
-import React, { Fragment, useState } from "react";
-import { countries } from "countries-list";
+import React, { Fragment, useState } from 'react';
+import { countries } from 'countries-list';
 
-import MetaData from "../layout/MetaData";
-import CheckoutSteps from "./CheckoutSteps";
+import MetaData from '../layout/MetaData';
+import CheckoutSteps from './CheckoutSteps';
 
-import { useDispatch, useSelector } from "react-redux";
-import { saveShippingInfo } from "../../actions/cartActions";
+import { useDispatch, useSelector } from 'react-redux';
+import { saveShippingInfo } from '../../actions/cartActions';
 
 const Shipping = ({ history }) => {
   const countriesList = Object.values(countries);
@@ -24,12 +24,12 @@ const Shipping = ({ history }) => {
     e.preventDefault();
 
     dispatch(saveShippingInfo({ address, city, phoneNo, postalCode, country }));
-    history.push("/confirm");
+    history.push('/confirm');
   };
 
   return (
     <Fragment>
-      <MetaData title={"Shipping Info"} />
+      <MetaData title={'Shipping Info'} />
 
       <CheckoutSteps shipping />
 

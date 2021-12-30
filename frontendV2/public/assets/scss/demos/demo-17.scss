@@ -1,9 +1,9 @@
 /* Demo 14 Homepage 14 */
-@import "../mixins/clearfix";
-@import "../mixins/breakpoints";
-@import "../mixins/lazy";
+@import '../mixins/clearfix';
+@import '../mixins/breakpoints';
+@import '../mixins/lazy';
 
-@import "../config/variables";
+@import '../config/variables';
 
 $primary-color: #1cc0a0;
 $secondary-color: #19b395;
@@ -35,7 +35,7 @@ $secondary-color: #19b395;
   border-bottom: 0.1rem solid #ebebeb;
 }
 
-.owl-simple .owl-nav [class*="owl-"] {
+.owl-simple .owl-nav [class*='owl-'] {
   top: 37%;
 }
 
@@ -368,7 +368,7 @@ $secondary-color: #19b395;
   content: none;
 }
 
-@include mq("md") {
+@include mq('md') {
   .banner-content {
     left: 4rem;
 
@@ -409,7 +409,7 @@ $secondary-color: #19b395;
   }
 }
 
-@include mq("md", "max") {
+@include mq('md', 'max') {
   .intro-section .banner img {
     min-height: 40rem;
     max-height: 50rem;

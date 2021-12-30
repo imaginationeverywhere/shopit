@@ -1,12 +1,18 @@
-import React from "react";
-import ColorVariantComp from "./ColorVariantComp";
-import DashboardInput from "../common/components/DashboardInput";
-import DashboardSelect from "../common/components/DashboardSelect";
-import DashboardTextArea from "../common/components/DashboardTextArea";
+import React from 'react';
+import ColorVariantComp from './ColorVariantComp';
+import DashboardInput from '../common/components/DashboardInput';
+import DashboardSelect from '../common/components/DashboardSelect';
+import DashboardTextArea from '../common/components/DashboardTextArea';
 
-import PriceInput from "../common/components/PriceInput";
-import { brands, categories, massList, sizes, distanceList } from "../utils/helpers";
-import Select from "../common/components/Select";
+import PriceInput from '../common/components/PriceInput';
+import {
+  brands,
+  categories,
+  massList,
+  sizes,
+  distanceList,
+} from '../utils/helpers';
+import Select from '../common/components/Select';
 
 const ProductForm = ({
   formValues,
@@ -35,16 +41,16 @@ const ProductForm = ({
                 required
                 disabled={addProductLoading}
               />
-            <Select
-              onChange={handleChange}
-              label="Mass Unit"
-              placeholder=" "
-              name="mass_unit"
-              value={formValues.mass_unit}
-              options={massList}
-              required
-              disabled={addProductLoading}
-            />
+              <Select
+                onChange={handleChange}
+                label="Mass Unit"
+                placeholder=" "
+                name="mass_unit"
+                value={formValues.mass_unit}
+                options={massList}
+                required
+                disabled={addProductLoading}
+              />
             </div>
             <DashboardSelect
               onChange={handleChange}
@@ -122,16 +128,16 @@ const ProductForm = ({
                   onChange={handleChange}
                   required
                 />
-              <Select
-                onChange={handleChange}
-                label="Distance Unit"
-                placeholder=" "
-                name="distance_unit"
-                value={formValues.distance_unit}
-                options={distanceList}
-                required
-                disabled={addProductLoading}
-              />
+                <Select
+                  onChange={handleChange}
+                  label="Distance Unit"
+                  placeholder=" "
+                  name="distance_unit"
+                  value={formValues.distance_unit}
+                  options={distanceList}
+                  required
+                  disabled={addProductLoading}
+                />
               </div>
             </div>
             <DashboardTextArea

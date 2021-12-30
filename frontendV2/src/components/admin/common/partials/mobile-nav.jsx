@@ -1,10 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { mobileMenu } from "../../../../utils";
+import { mobileMenu } from '../../../../utils';
 
 function MobileMainNav(props) {
-  const PUBLIC_URL = "/react/molla";
+  const PUBLIC_URL = '/react/molla';
 
   React.useEffect(() => {
     mobileMenu();
