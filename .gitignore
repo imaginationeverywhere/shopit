@@ -98,3 +98,6 @@ dist
 
 # TernJS port file
 .tern-port
+.DS_Store
+templates/.DS_Store
+templates/molla/.DS_Store
