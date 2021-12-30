@@ -1,22 +1,22 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import { showModal } from "../../../actions";
+import { showModal } from '../../../actions';
 
 // import Custom Components
-import Breadcrumb from "../../common/breadcrumb";
-import BlogSidebar from "../../features/sidebar/blog-sidebar";
-import OwlCarousels from "../../features/owl-carousel";
-import Comments from "./partials/comments";
-import Reply from "./partials/reply";
-import RelatedPosts from "./partials/related-posts";
-import { isIEBrowser } from "../../../utils";
+import Breadcrumb from '../../common/breadcrumb';
+import BlogSidebar from '../../features/sidebar/blog-sidebar';
+import OwlCarousels from '../../features/owl-carousel';
+import Comments from './partials/comments';
+import Reply from './partials/reply';
+import RelatedPosts from './partials/related-posts';
+import { isIEBrowser } from '../../../utils';
 
-import posts from "../../../mock_data/posts";
-import VideoModal from "../../features/modal/video-modal";
+import posts from '../../../mock_data/posts';
+import VideoModal from '../../features/modal/video-modal';
 
 function SingleFullWidthSidebar(props) {
   const { showModal } = props;
@@ -39,19 +39,19 @@ function SingleFullWidthSidebar(props) {
   }
 
   if (!post) {
-    window.location = process.env.PUBLIC_URL + "/pages/404";
+    window.location = process.env.PUBLIC_URL + '/pages/404';
   }
 
   let date = new Date(post.date);
   let options = {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-    timeZone: "UTC",
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    timeZone: 'UTC',
   };
 
   const showVideoModal = (e) => {
-    showModal("video");
+    showModal('video');
     e.preventDefault();
   };
 
@@ -76,20 +76,20 @@ function SingleFullWidthSidebar(props) {
       <div className="main single-2">
         <Breadcrumb
           title="Fullwidth With Sidebar"
-          parent1={["Blog", "blog/classic"]}
+          parent1={['Blog', 'blog/classic']}
           adClass="mb-0 border-bottom-0"
         />
         <div className="page-content">
           <div className="container">
-            {post.type === "gallery" ? (
+            {post.type === 'gallery' ? (
               <figure className="entry-media">
                 <OwlCarousels adClass="owl-simple owl-light owl-nav-inside">
                   {post.image.map((item, index) => (
-                    <div key={"blog" + index}>
+                    <div key={'blog' + index}>
                       <div className="lazy-overlay bg-3"></div>
 
                       <LazyLoadImage
-                        src={process.env.PUBLIC_URL + "/" + item}
+                        src={process.env.PUBLIC_URL + '/' + item}
                         alt="blog"
                         width={100}
                         height={400}
@@ -99,12 +99,12 @@ function SingleFullWidthSidebar(props) {
                   ))}
                 </OwlCarousels>
               </figure>
-            ) : post.type === "image" ? (
+            ) : post.type === 'image' ? (
               <figure className="entry-media">
                 <div className="lazy-overlay bg-3"></div>
 
                 <LazyLoadImage
-                  src={process.env.PUBLIC_URL + "/" + post.image[0]}
+                  src={process.env.PUBLIC_URL + '/' + post.image[0]}
                   alt="blog"
                   width={100}
                   height={400}
@@ -118,7 +118,7 @@ function SingleFullWidthSidebar(props) {
 
                   <LazyLoadImage
                     alt="post_image"
-                    src={`${process.env.PUBLIC_URL + "/" + post.image[0]}`}
+                    src={`${process.env.PUBLIC_URL + '/' + post.image[0]}`}
                     threshold={100}
                     effect="blur"
                     width={300}
@@ -137,7 +137,7 @@ function SingleFullWidthSidebar(props) {
                       </span>
                       <span className="meta-separator">|</span>
                       <Link to="#">
-                        {date.toLocaleDateString("en-US", options)}
+                        {date.toLocaleDateString('en-US', options)}
                       </Link>
                       <span className="meta-separator">|</span>
                       <Link to="#">{post.comments} Comments</Link>
@@ -153,12 +153,12 @@ function SingleFullWidthSidebar(props) {
                         {post.category.map((cat, index) => (
                           <span key={index}>
                             <Link to="#">{cat}</Link>
-                            {index < post.category.length - 1 ? ", " : ""}
+                            {index < post.category.length - 1 ? ', ' : ''}
                           </span>
                         ))}
                       </div>
                     ) : (
-                      ""
+                      ''
                     )}
 
                     <div className="entry-content editor-content">
@@ -194,7 +194,7 @@ function SingleFullWidthSidebar(props) {
                       <p>
                         Phasellus hendrerit. Pellentesque aliquet nibh nec urna.
                         In nisi neque, aliquet vel, dapibus id, mattis vel,
-                        nisi. Sed pretium, ligula{" "}
+                        nisi. Sed pretium, ligula{' '}
                         <Link to="#">sollicitudin laoreet</Link> viverra, tortor
                         libero sodales leo, eget blandit nunc tortor eu nibh.
                         Nullam mollis. Ut justo. Suspendisse potenti. Sed
@@ -202,7 +202,7 @@ function SingleFullWidthSidebar(props) {
                         est, vitae luctus metus libero eu augue. Morbi purus
                         libero, faucibus adipiscing, commodo quis, gravida id,
                         est. Sed lectus. Praesent elementum hendrerit tortor.
-                        Sed semper lorem at felis.{" "}
+                        Sed semper lorem at felis.{' '}
                       </p>
 
                       <div className="pb-1"></div>
@@ -227,7 +227,7 @@ function SingleFullWidthSidebar(props) {
                         arcu, dapibus eu, fermentum et, dapibus sed, urna. Morbi
                         interdum mollis sapien. Sed ac risus. Phasellus lacinia,
                         magna a ullamcorper laoreet, lectus arcu pulvinar risus,
-                        vitae facilisis libero dolor a purus.{" "}
+                        vitae facilisis libero dolor a purus.{' '}
                       </p>
 
                       <div className="pb-1"></div>
@@ -241,7 +241,7 @@ function SingleFullWidthSidebar(props) {
                         egestas, ante et vulputate volutpat, eros pede semper
                         est, vitae luctus metus libero eu augue. Morbi purus
                         libero, faucibus adipiscing, commodo quis, gravida id,
-                        est. Sed lectus.{" "}
+                        est. Sed lectus.{' '}
                       </p>
 
                       <p>
@@ -256,7 +256,7 @@ function SingleFullWidthSidebar(props) {
                     <div className="entry-footer row no-gutters flex-column flex-md-row">
                       <div className="col-md">
                         <div className="entry-tags">
-                          <span>Tags:</span> <Link to="#">photography</Link>{" "}
+                          <span>Tags:</span> <Link to="#">photography</Link>{' '}
                           <Link to="#">style</Link>
                         </div>
                       </div>
@@ -318,10 +318,10 @@ function SingleFullWidthSidebar(props) {
                             <Link to="#">John Doe</Link>
                           </h4>
                         </div>
-                        {isIEBrowser() ? <div className="mb-1"></div> : ""}
+                        {isIEBrowser() ? <div className="mb-1"></div> : ''}
                         <div className="col-auto mt-1 mt-md-0">
                           <Link to="#" className="author-link">
-                            View all posts by John Doe{" "}
+                            View all posts by John Doe{' '}
                             <i className="icon-long-arrow-right"></i>
                           </Link>
                         </div>
@@ -331,7 +331,7 @@ function SingleFullWidthSidebar(props) {
                         <p>
                           Praesent dapibus, neque id cursus faucibus, tortor
                           neque egestas auguae, eu vulputate magna eros eu erat.
-                          Aliquam erat volutpat.{" "}
+                          Aliquam erat volutpat.{' '}
                         </p>
                       </div>
                     </div>
@@ -341,7 +341,7 @@ function SingleFullWidthSidebar(props) {
                 <nav
                   className="pager-nav"
                   aria-label="Page navigation"
-                  style={isIEBrowser() ? { flexFlow: "wrap" } : {}}
+                  style={isIEBrowser() ? { flexFlow: 'wrap' } : {}}
                 >
                   <Link
                     onClick={toTop}

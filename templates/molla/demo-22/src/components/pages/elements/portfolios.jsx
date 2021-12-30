@@ -1,25 +1,25 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import isotope from "isotope-layout";
-import imagesLoaded from "imagesloaded";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import isotope from 'isotope-layout';
+import imagesLoaded from 'imagesloaded';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
-import PortfolioOne from "../../features/portfolio/portfolio-one";
-import PortfolioTwo from "../../features/portfolio/portfolio-two";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
+import PortfolioOne from '../../features/portfolio/portfolio-one';
+import PortfolioTwo from '../../features/portfolio/portfolio-two';
 
-import { isotopeLoad } from "../../../utils";
+import { isotopeLoad } from '../../../utils';
 
 export default function Portofolios() {
   useEffect(() => {
     isotopeLoad(
       isotope,
       imagesLoaded,
-      ".portfolio-container",
-      ".portfolio-item",
-      ".portfolio-filter"
+      '.portfolio-container',
+      '.portfolio-item',
+      '.portfolio-filter',
     );
   });
 
@@ -33,7 +33,7 @@ export default function Portofolios() {
 
       <div className="main">
         <PageHeader title="Portfolio" subTitle="Elements" />
-        <Breadcrumb title="Portfolio" parent1={["Elements", "elements"]} />
+        <Breadcrumb title="Portfolio" parent1={['Elements', 'elements']} />
 
         <div className="page-content">
           <div className="container">
@@ -356,7 +356,7 @@ export default function Portofolios() {
 
           <div className="container-fluid">
             <h2 className="title text-center mb-2">
-              Fullwidth with Text{" "}
+              Fullwidth with Text{' '}
               <span className="title-separator">(No space)</span>
             </h2>
             <nav className="portfolio-nav">

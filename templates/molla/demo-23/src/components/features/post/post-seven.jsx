@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import OwlCarousel from "../owl-carousel";
+import OwlCarousel from '../owl-carousel';
 
 function PostSeven(props) {
   const { post, isIsotope = false } = props;
@@ -10,20 +10,20 @@ function PostSeven(props) {
   if (post) {
     let date = new Date(post.date);
     let options = {
-      year: "numeric",
-      month: "short",
-      day: "2-digit",
-      timeZone: "UTC",
+      year: 'numeric',
+      month: 'short',
+      day: '2-digit',
+      timeZone: 'UTC',
     };
 
     return (
       <article className="entry entry-grid text-center">
-        {"video" === post.type ? (
+        {'video' === post.type ? (
           <figure className="entry-media entry-video">
             <Link to={`${process.env.PUBLIC_URL}/blog/single/${post.id}`}>
               {isIsotope ? (
                 <img
-                  src={`${process.env.PUBLIC_URL + "/" + post.image[0]}`}
+                  src={`${process.env.PUBLIC_URL + '/' + post.image[0]}`}
                   alt="post_image"
                   width="300"
                   height="300"
@@ -34,7 +34,7 @@ function PostSeven(props) {
 
                   <LazyLoadImage
                     alt="post_image"
-                    src={`${process.env.PUBLIC_URL + "/" + post.image[0]}`}
+                    src={`${process.env.PUBLIC_URL + '/' + post.image[0]}`}
                     threshold={500}
                     effect="blur"
                     width={300}
@@ -44,11 +44,11 @@ function PostSeven(props) {
               )}
             </Link>
           </figure>
-        ) : Array.isArray(post.image) && "gallery" === post.type ? (
+        ) : Array.isArray(post.image) && 'gallery' === post.type ? (
           <figure className="entry-media">
             <OwlCarousel
               adClass="owl-simple owl-light owl-nav-inside cols-1"
-              carouselId={"post_seven" + post.id}
+              carouselId={'post_seven' + post.id}
             >
               {post.image.map((item, index) => (
                 <Link
@@ -58,7 +58,7 @@ function PostSeven(props) {
                   {isIsotope ? (
                     <img
                       src={`${
-                        process.env.PUBLIC_URL + "/" + post.image[index]
+                        process.env.PUBLIC_URL + '/' + post.image[index]
                       }`}
                       alt="post_image"
                       width="300"
@@ -71,7 +71,7 @@ function PostSeven(props) {
                       <LazyLoadImage
                         alt="post_image"
                         src={`${
-                          process.env.PUBLIC_URL + "/" + post.image[index]
+                          process.env.PUBLIC_URL + '/' + post.image[index]
                         }`}
                         threshold={500}
                         effect="blur"
@@ -89,7 +89,7 @@ function PostSeven(props) {
             <Link to={`${process.env.PUBLIC_URL}/blog/single/${post.id}`}>
               {isIsotope ? (
                 <img
-                  src={`${process.env.PUBLIC_URL + "/" + post.image[0]}`}
+                  src={`${process.env.PUBLIC_URL + '/' + post.image[0]}`}
                   alt="post_image"
                   width="300"
                   height="300"
@@ -100,7 +100,7 @@ function PostSeven(props) {
 
                   <LazyLoadImage
                     alt="post_image"
-                    src={`${process.env.PUBLIC_URL + "/" + post.image[0]}`}
+                    src={`${process.env.PUBLIC_URL + '/' + post.image[0]}`}
                     threshold={500}
                     effect="blur"
                     width={300}
@@ -114,7 +114,7 @@ function PostSeven(props) {
 
         <div className="entry-body">
           <div className="entry-meta">
-            <Link to="#">{date.toLocaleDateString("en-US", options)}</Link>
+            <Link to="#">{date.toLocaleDateString('en-US', options)}</Link>
             <span className="meta-separator">|</span>
             <Link to="#">{post.comments} Comments</Link>
           </div>
@@ -130,7 +130,7 @@ function PostSeven(props) {
             {post.category.map((cat, index) => (
               <span key={index}>
                 <Link to="#">{cat}</Link>
-                {index < post.category.length - 1 ? ", " : ""}
+                {index < post.category.length - 1 ? ', ' : ''}
               </span>
             ))}
           </div>
@@ -146,7 +146,7 @@ function PostSeven(props) {
         </div>
       </article>
     );
-  } else return "";
+  } else return '';
 }
 
 export default React.memo(PostSeven);

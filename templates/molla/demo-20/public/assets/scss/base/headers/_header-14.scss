@@ -27,7 +27,7 @@
   .header-bottom .container,
   .header-bottom .container-fluid {
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 1.95rem;
       bottom: 1.95rem;
@@ -143,7 +143,7 @@
         padding-bottom: 1.6rem;
 
         &::before {
-          content: "";
+          content: '';
           display: block;
           position: absolute;
           left: 0;
@@ -216,7 +216,7 @@
     }
 
     &.show .dropdown-toggle::after {
-      content: "\f131";
+      content: '\f131';
     }
   }
 
@@ -353,7 +353,7 @@
   .compare-dropdown,
   .cart-dropdown,
   .wishlist-link {
-    [class*="count"] {
+    [class*='count'] {
       min-width: 1.6rem;
       height: 1.6rem;
       position: absolute;
@@ -381,7 +381,7 @@
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .header-14 {
     .header-search-visible {
       .header-search-wrapper {
@@ -399,7 +399,7 @@
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   .header-14 {
     .header-middle .header-right {
       max-width: 84%;
@@ -407,10 +407,10 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .header-14 {
     .main-nav {
       margin-left: 2rem;
@@ -418,7 +418,7 @@
   }
 }
 
-@include mq("xxl") {
+@include mq('xxl') {
   .header-14 {
     .container-fluid .megamenu-container {
       position: static;
@@ -434,7 +434,7 @@
   }
 }
 
-@include mq("1500px", "max") {
+@include mq('1500px', 'max') {
   .header-14 {
     .header-bottom .col-lg-9 {
       position: static;
@@ -448,7 +448,7 @@
   }
 }
 
-@include mq("1199px", "max") {
+@include mq('1199px', 'max') {
   .header-14 {
     .menu {
       .megamenu {
@@ -500,7 +500,7 @@
   padding-right: 1rem;
 }
 
-@include mq("xxl") {
+@include mq('xxl') {
   .container {
     width: 1420px;
     max-width: 1420px;

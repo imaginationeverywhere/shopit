@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function CategoryMenu() {
-  console.log(" Categorymenu is invoked ");
+  console.log(' Categorymenu is invoked ');
 
   return (
     <div className="dropdown category-dropdown">

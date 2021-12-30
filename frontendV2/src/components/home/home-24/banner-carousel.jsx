@@ -1,19 +1,19 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 // import utils
-import { safeContent } from "../../../utils";
+import { safeContent } from '../../../utils';
 
 export default function BannerCarousel(props) {
   const {
     img,
     title,
     content,
-    btnText = "Shop Now",
-    img1 = "",
-    adClass = "",
-    width = "300",
-    height = "200",
+    btnText = 'Shop Now',
+    img1 = '',
+    adClass = '',
+    width = '300',
+    height = '200',
   } = props.data;
   return (
     <div className={adClass}>
@@ -37,8 +37,8 @@ export default function BannerCarousel(props) {
           ></Link>
         </div>
 
-        {img1 === "" ? (
-          ""
+        {img1 === '' ? (
+          ''
         ) : (
           <div className="img-percent">
             <img

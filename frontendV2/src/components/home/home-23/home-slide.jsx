@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 // import utils
-import { safeContent } from "../../../utils";
+import { safeContent } from '../../../utils';
 
 export default function HomeSlide(props) {
-  const { image, subtitle, title, btnText = "discover now" } = props.data;
+  const { image, subtitle, title, btnText = 'discover now' } = props.data;
 
   return (
     <div

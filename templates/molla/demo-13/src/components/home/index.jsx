@@ -1,47 +1,47 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import QuickView from "../features/product/common/quickview";
-import Brand from "../features/brand";
-import OwlCarousel from "../features/owl-carousel";
-import NewsletterModal from "../features/modal/newsletter-modal";
-import Service from "../features/service";
+import QuickView from '../features/product/common/quickview';
+import Brand from '../features/brand';
+import OwlCarousel from '../features/owl-carousel';
+import NewsletterModal from '../features/modal/newsletter-modal';
+import Service from '../features/service';
 
-import Banner from "./banner";
-import IntroSlider from "./intro_slider";
-import CTA from "./cta-section";
-import SpecialCollection from "./special-collection";
-import HotCollection from "./hot-collection";
-import BlogSection from "./blog-section";
+import Banner from './banner';
+import IntroSlider from './intro_slider';
+import CTA from './cta-section';
+import SpecialCollection from './special-collection';
+import HotCollection from './hot-collection';
+import BlogSection from './blog-section';
 
-import { introSlider } from "../settings";
-import { isIEBrowser } from "../../utils";
-import data from "../../mock_data/data";
-import style from "./style.scss";
+import { introSlider } from '../settings';
+import { isIEBrowser } from '../../utils';
+import data from '../../mock_data/data';
+import style from './style.scss';
 
 export default function HomePage(props) {
   useEffect(() => {
     if (isIEBrowser) {
-      document.querySelector(".header-center .header-search").style.marginLeft =
-        "-1.1rem";
+      document.querySelector('.header-center .header-search').style.marginLeft =
+        '-1.1rem';
       document.querySelector(
-        ".header-center .header-search"
-      ).style.paddingLeft = "1rem";
+        '.header-center .header-search',
+      ).style.paddingLeft = '1rem';
     }
 
-    document.getElementById("menu-home").classList.add("active");
-    document.querySelector(".category-dropdown").classList.add("show");
+    document.getElementById('menu-home').classList.add('active');
+    document.querySelector('.category-dropdown').classList.add('show');
     document
-      .querySelector(".category-dropdown .dropdown-menu")
-      .classList.add("show");
+      .querySelector('.category-dropdown .dropdown-menu')
+      .classList.add('show');
 
     style.use();
 
     return () => {
-      document.getElementById("menu-home").classList.remove("active");
+      document.getElementById('menu-home').classList.remove('active');
       style.unuse();
     };
   }, []);

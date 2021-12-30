@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 function CTATwo(props) {
   return (
     <div
       className="cta bg-image bg-dark pt-4 pb-5 mb-0"
-      style={{ backgroundImage: "url(assets/images/home/bg-2.jpg)" }}
+      style={{ backgroundImage: 'url(assets/images/home/bg-2.jpg)' }}
     >
       <div className="container">
         <div className="row justify-content-center">
@@ -15,7 +15,7 @@ function CTATwo(props) {
               </h3>
 
               <p className="cta-desc text-white">
-                and receive{" "}
+                and receive{' '}
                 <span className="font-weight-normal">$20 coupon</span> for first
                 shopping
               </p>

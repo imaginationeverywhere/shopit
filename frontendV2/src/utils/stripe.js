@@ -1,8 +1,7 @@
-import { loadStripe } from '@stripe/stripe-js'
-
+import { loadStripe } from '@stripe/stripe-js';
 
 const initStripe = () => {
-  return loadStripe(process.env.REACT_APP_STRIPE_KEY)
-}
+  return loadStripe(process.env.REACT_APP_STRIPE_KEY);
+};
 
-export default initStripe
+export default initStripe;

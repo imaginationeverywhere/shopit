@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default () => (
   <div className="cta-newsletter text-center pt-4 pb-7">

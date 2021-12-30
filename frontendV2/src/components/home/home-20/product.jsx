@@ -1,11 +1,11 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import BaseProduct from "../../features/product/common/base-product";
+import BaseProduct from '../../features/product/common/base-product';
 
 // import Utils
-import { findIndex } from "../../../utils/utils";
+import { findIndex } from '../../../utils/utils';
 
 class Product extends BaseProduct {
   render() {
@@ -16,7 +16,7 @@ class Product extends BaseProduct {
         {product.discount ? (
           <span className="product-label label-sale">Sale</span>
         ) : (
-          ""
+          ''
         )}
 
         <figure className="product-media">
@@ -29,26 +29,26 @@ class Product extends BaseProduct {
             {product.author.map((author, index) => (
               <span key={index} className="mr-0">
                 <Link to="#">{author}</Link>
-                {index < product.author.length - 1 ? " and " : ""}
+                {index < product.author.length - 1 ? ' and ' : ''}
               </span>
             ))}
           </div>
 
           {this.showProductName()}
-          {this.showProductPrice("Was")}
+          {this.showProductPrice('Was')}
 
           <div className="product-footer">
             {this.showProductRating()}
 
             <div className="product-action">
               {this.showAddToCartBtn()}
-              {this.showToggleWishlistBtn("btn-product btn-wishlist")}
+              {this.showToggleWishlistBtn('btn-product btn-wishlist')}
             </div>
           </div>
         </div>
       </div>
     ) : (
-      ""
+      ''
     );
   }
 }
@@ -58,7 +58,7 @@ export const mapStateToProps = (state, ownprops) => {
   if (
     findIndex(
       state.wishlist.list,
-      (item) => item.id === ownprops.product.id
+      (item) => item.id === ownprops.product.id,
     ) !== -1
   )
     wishlist = true;

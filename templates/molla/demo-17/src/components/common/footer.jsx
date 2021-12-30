@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Footer(props) {
-  const { adClass = "footer-2", container = "container" } = props;
+  const { adClass = 'footer-2', container = 'container' } = props;
 
   return (
     <footer className={`footer ${adClass}`}>

@@ -190,7 +190,10 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
   //   console.log({ products });
   //   console.log('====================================');
   products = products.map(
-    ({ _id, _doc: { numOfReviews, user, createdAt, parcel = {}, ...rest } }, index) => {
+    (
+      { _id, _doc: { numOfReviews, user, createdAt, parcel = {}, ...rest } },
+      index,
+    ) => {
       return {
         id: _id,
         parcel: {

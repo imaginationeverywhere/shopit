@@ -1,9 +1,9 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-import { isIEBrowser } from "../../../../../utils";
+import { isIEBrowser } from '../../../../../utils';
 
 function DescTwo(props) {
   const { product } = props;
@@ -69,7 +69,7 @@ function DescTwo(props) {
                         are perfect for holidays and home, with the thick
                         cross-over strap design and heel strap with an
                         adjustable buckle fastening. Featuring chunky soles with
-                        an espadrille and cork-style wedge.{" "}
+                        an espadrille and cork-style wedge.{' '}
                       </p>
                     </div>
 
@@ -114,7 +114,7 @@ function DescTwo(props) {
                       <p>
                         Nullam mollis. Ut justo. Suspendisse potenti. Sed
                         egestas, ante et vulputate volutpat, eros pede semper
-                        est, vitae luctus metus libero eu augue.{" "}
+                        est, vitae luctus metus libero eu augue.{' '}
                       </p>
                     </div>
                   </div>
@@ -132,7 +132,7 @@ function DescTwo(props) {
                   Donec odio. Quisque volutpat mattis eros. Nullam malesuada
                   erat ut turpis. Suspendisse urna viverra non, semper suscipit,
                   posuere a, pede. Donec nec justo eget felis facilisis
-                  fermentum. Aliquam porttitor mauris sit amet orci.{" "}
+                  fermentum. Aliquam porttitor mauris sit amet orci.{' '}
                 </p>
 
                 <h3>Fabric & care</h3>
@@ -143,7 +143,7 @@ function DescTwo(props) {
                   <li>Snake print trim interior </li>
                   <li>Adjustable cross body strap</li>
                   <li>
-                    {" "}
+                    {' '}
                     Height: 31cm; Width: 32cm; Depth: 12cm; Handle Drop: 61cm
                   </li>
                 </ul>
@@ -159,12 +159,12 @@ function DescTwo(props) {
                 <h3>Delivery & returns</h3>
                 <p>
                   We deliver to over 100 countries around the world. For full
-                  details of the delivery options we offer, please view our{" "}
+                  details of the delivery options we offer, please view our{' '}
                   <Link to="#">Delivery information</Link>
                   <br />
                   We hope you’ll love every purchase, but if you ever need to
                   return an item you can do so within a month of receipt. For
-                  full details of how to make a return, please view our{" "}
+                  full details of how to make a return, please view our{' '}
                   <Link to="#">Returns information</Link>
                 </p>
               </div>
@@ -178,7 +178,7 @@ function DescTwo(props) {
                 <div className="review">
                   <div
                     className="row no-gutters"
-                    style={isIEBrowser() ? { flexDirection: "row" } : {}}
+                    style={isIEBrowser() ? { flexDirection: 'row' } : {}}
                   >
                     <div className="col-auto">
                       <h4>
@@ -188,7 +188,7 @@ function DescTwo(props) {
                         <div className="ratings">
                           <div
                             className="ratings-val"
-                            style={{ width: "80%" }}
+                            style={{ width: '80%' }}
                           ></div>
                         </div>
                       </div>
@@ -222,7 +222,7 @@ function DescTwo(props) {
                 <div className="review">
                   <div
                     className="row no-gutters"
-                    style={isIEBrowser() ? { flexDirection: "row" } : {}}
+                    style={isIEBrowser() ? { flexDirection: 'row' } : {}}
                   >
                     <div className="col-auto">
                       <h4>
@@ -232,7 +232,7 @@ function DescTwo(props) {
                         <div className="ratings">
                           <div
                             className="ratings-val"
-                            style={{ width: "100%" }}
+                            style={{ width: '100%' }}
                           ></div>
                         </div>
                       </div>
@@ -273,7 +273,7 @@ function DescTwo(props) {
 function mapStateToProps(state, props) {
   return {
     product: state.data.products.filter(
-      (product) => product.id === parseInt(props.id)
+      (product) => product.id === parseInt(props.id),
     )[0],
   };
 }

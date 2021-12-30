@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 // import Data
-import _data from "../../../mock_data/data";
+import _data from '../../../mock_data/data';
 
 class ServiceBox extends Component {
   render() {
-    const { boxAdClass = "icon-box-side", textAdClass = "text-dark" } =
+    const { boxAdClass = 'icon-box-side', textAdClass = 'text-dark' } =
       this.props;
 
     return (

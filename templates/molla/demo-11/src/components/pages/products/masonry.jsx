@@ -1,14 +1,14 @@
-import React, { useEffect } from "react";
-import imagesLoaded from "imagesloaded";
-import { Helmet } from "react-helmet";
-import isotope from "isotope-layout";
+import React, { useEffect } from 'react';
+import imagesLoaded from 'imagesloaded';
+import { Helmet } from 'react-helmet';
+import isotope from 'isotope-layout';
 
-import MediaFour from "./partials/media/media-four";
-import DetailFive from "./partials/details/detail-five";
-import Breadcrumb from "../../common/breadcrumb";
-import QuickView from "../../features/product/common/quickview";
+import MediaFour from './partials/media/media-four';
+import DetailFive from './partials/details/detail-five';
+import Breadcrumb from '../../common/breadcrumb';
+import QuickView from '../../features/product/common/quickview';
 
-import { productGallery, isotopeLoad, setStickyValues } from "../../../utils";
+import { productGallery, isotopeLoad, setStickyValues } from '../../../utils';
 
 function MasonryProduct(props) {
   let productId = props.match.params.id;
@@ -16,17 +16,17 @@ function MasonryProduct(props) {
   useEffect(() => {
     productGallery();
 
-    document.querySelector(".skel-pro-single").classList.remove("loaded");
+    document.querySelector('.skel-pro-single').classList.remove('loaded');
 
-    let imgLoad = imagesLoaded(".product-main-image", { background: true });
+    let imgLoad = imagesLoaded('.product-main-image', { background: true });
 
-    imgLoad.on("done", function (instance, image) {
-      document.querySelector(".skel-pro-single").classList.add("loaded");
+    imgLoad.on('done', function (instance, image) {
+      document.querySelector('.skel-pro-single').classList.add('loaded');
       isotopeLoad(
         isotope,
         imagesLoaded,
-        ".product-gallery-masonry",
-        ".product-gallery-item"
+        '.product-gallery-masonry',
+        '.product-gallery-item',
       );
       setStickyValues(120);
     });
@@ -51,7 +51,7 @@ function MasonryProduct(props) {
           slug="masonry"
           adClass="breadcrumb-nav border-0 mb-0"
           productId={productId}
-          parent1={["Products", "product"]}
+          parent1={['Products', 'product']}
         />
 
         <div className="page-content">

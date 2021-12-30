@@ -9,7 +9,7 @@ body {
   text-align: #{$left};
 }
 
-[type="search"] {
+[type='search'] {
   outline-offset: -2px;
   -webkit-appearance: none;
 }
@@ -76,7 +76,7 @@ body {
   margin-right: -$gap;
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .offset-lg-1 {
     margin-#{$left}: 8.333333%;
   }
@@ -84,17 +84,17 @@ body {
 .flex-column {
   flex-direction: column !important;
 }
-@include mq("lg") {
+@include mq('lg') {
   .flex-lg-row {
     flex-direction: row !important;
   }
 }
-@include mq("md") {
+@include mq('md') {
   .flex-md-row {
     flex-direction: row !important;
   }
 }
-@include mq("sm") {
+@include mq('sm') {
   .flex-sm-row {
     flex-direction: row !important;
   }
@@ -197,7 +197,7 @@ body {
 .order-last {
   order: 13;
 }
-@include mq("lg") {
+@include mq('lg') {
   .order-lg-first {
     -ms-flex-order: -1;
     order: -1;
@@ -207,7 +207,7 @@ body {
     order: 13;
   }
 }
-@include mq("md") {
+@include mq('md') {
   .order-md-first {
     -ms-flex-order: -1;
     order: -1;
@@ -233,9 +233,9 @@ figure {
 }
 
 /* Button */
-[type="button"],
-[type="reset"],
-[type="submit"],
+[type='button'],
+[type='reset'],
+[type='submit'],
 button {
   -webkit-appearance: button;
 }
@@ -249,9 +249,9 @@ textarea {
   font-size: inherit;
   line-height: inherit;
 }
-[type="button"]:not(:disabled),
-[type="reset"]:not(:disabled),
-[type="submit"]:not(:disabled),
+[type='button']:not(:disabled),
+[type='reset']:not(:disabled),
+[type='submit']:not(:disabled),
 button:not(:disabled) {
   cursor: pointer;
 }
@@ -260,7 +260,7 @@ button:not(:disabled) {
   display: none !important;
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .d-lg-none {
     display: none !important;
   }
@@ -302,7 +302,7 @@ button:not(:disabled) {
   transition: height 0.35s ease;
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .col-5col {
     flex: 0 0 20%;
     max-width: 20%;

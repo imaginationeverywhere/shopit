@@ -224,13 +224,13 @@
   transition: color 0.35s;
 
   &::after {
-    font-family: "molla";
-    content: "\f110";
+    font-family: 'molla';
+    content: '\f110';
     display: inline-block;
   }
 
   .open > a > &::after {
-    content: "\e802";
+    content: '\e802';
   }
 }
 
@@ -245,13 +245,13 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .btn.mobile-menu-toggler {
     display: none;
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .mmenu-active {
     .mobile-menu-overlay {
       visibility: visible;

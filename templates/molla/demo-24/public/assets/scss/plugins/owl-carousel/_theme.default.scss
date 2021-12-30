@@ -1,7 +1,7 @@
 /*
  * 	Default theme - Owl Carousel CSS File
  */
-@import "../../config/variables";
+@import '../../config/variables';
 
 //nav
 $nav-width: 30px !default;
@@ -35,7 +35,7 @@ $dot-background-active: #cccccc !default;
     text-align: center;
     -webkit-tap-highlight-color: transparent;
 
-    [class*="owl-"] {
+    [class*='owl-'] {
       position: absolute;
       top: 50%;
       z-index: 99;
@@ -123,7 +123,7 @@ $dot-background-active: #cccccc !default;
 
   &.owl-light {
     .owl-nav {
-      [class*="owl-"] {
+      [class*='owl-'] {
         border-color: #b7b7b7;
 
         &:not(.disabled):hover {

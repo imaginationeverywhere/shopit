@@ -1,10 +1,10 @@
-import React from "react";
-import "./ImageHandler.scss";
-import { useState } from "react";
-import PlusIconNew from "../../../ProductCreate/SVGs/PlusIconNew";
+import React from 'react';
+import './ImageHandler.scss';
+import { useState } from 'react';
+import PlusIconNew from '../../../ProductCreate/SVGs/PlusIconNew';
 // import { useToastFuncs } from '../../context/ToastContexts';
-import Trash from "../../../ProductCreate/SVGs/Trash";
-import { useEffect } from "react";
+import Trash from '../../../ProductCreate/SVGs/Trash';
+import { useEffect } from 'react';
 
 const ImageHandler = ({ image, setImage, name, primary }) => {
   const [localImageUrl, setLocalImageUrl] = useState(null);
@@ -21,7 +21,7 @@ const ImageHandler = ({ image, setImage, name, primary }) => {
     const [imgFile] = files;
     const { size, type } = imgFile;
     const threeMB = 3000000;
-    if (size < threeMB || type.split("/")[0] === "image") {
+    if (size < threeMB || type.split('/')[0] === 'image') {
       return imgFile;
     }
     // Toast.error(
@@ -72,12 +72,12 @@ const ImageHandler = ({ image, setImage, name, primary }) => {
     }
   };
   return (
-    <div className={`imagehandler ${localImageUrl ? "has-image" : ""}`}>
+    <div className={`imagehandler ${localImageUrl ? 'has-image' : ''}`}>
       <>
         <label
           htmlFor={`${name}_changePhoto`}
           className={`upload-here flexed-column-center ${
-            dragging ? "drag" : localImageUrl || image ? "" : "opace-sect"
+            dragging ? 'drag' : localImageUrl || image ? '' : 'opace-sect'
           }`}
           onDrop={handleDrop}
           onDragEnter={handleDragEnter}
@@ -90,7 +90,7 @@ const ImageHandler = ({ image, setImage, name, primary }) => {
             <div className="drag-here flexed-column-center">
               {primary && <span>Primary image</span>}
               <PlusIconNew />
-              <p>{dragging ? "Drop Image here" : "Drag or click to upload"}</p>
+              <p>{dragging ? 'Drop Image here' : 'Drag or click to upload'}</p>
             </div>
           )}
         </label>

@@ -1,10 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { safeContent } from "../../../utils";
+import { safeContent } from '../../../utils';
 
 export default function IntroSlide(props) {
-  const { image, subtitle, title, btnText = "DISCOVER MORE" } = props.data;
+  const { image, subtitle, title, btnText = 'DISCOVER MORE' } = props.data;
 
   return (
     <div

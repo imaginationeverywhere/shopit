@@ -1,11 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import { safeContent } from "../../utils";
+import { safeContent } from '../../utils';
 
 export default function Banner(props) {
-  const { img, width, height, title, btnText = "Shop Now" } = props.banner;
+  const { img, width, height, title, btnText = 'Shop Now' } = props.banner;
 
   return (
     <div className="banner banner-hover">
@@ -13,7 +13,7 @@ export default function Banner(props) {
         <div className="lazy-overlay bg-3"></div>
 
         <LazyLoadImage
-          src={process.env.PUBLIC_URL + "/" + img}
+          src={process.env.PUBLIC_URL + '/' + img}
           alt="Banner"
           width={width}
           height={height}

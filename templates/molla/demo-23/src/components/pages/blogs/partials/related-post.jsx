@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import PostEight from "../../../features/post/post-eight";
-import OwlCarousels from "../../../features/owl-carousel";
+import PostEight from '../../../features/post/post-eight';
+import OwlCarousels from '../../../features/owl-carousel';
 
-import { mainSlider1 } from "../../../settings";
-import posts from "../../../../mock_data/posts";
+import { mainSlider1 } from '../../../settings';
+import posts from '../../../../mock_data/posts';
 
 export default function RelatedPost() {
   return (

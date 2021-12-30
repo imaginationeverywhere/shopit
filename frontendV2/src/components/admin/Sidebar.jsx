@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import classes from "../admin/styles/sidebar.module.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import classes from '../admin/styles/sidebar.module.scss';
 
 function Sidebar() {
   return (

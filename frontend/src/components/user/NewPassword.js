@@ -1,14 +1,14 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect } from 'react';
 
-import MetaData from "../layout/MetaData";
+import MetaData from '../layout/MetaData';
 
-import { useAlert } from "react-alert";
-import { useDispatch, useSelector } from "react-redux";
-import { resetPassword, clearErrors } from "../../actions/userActions";
+import { useAlert } from 'react-alert';
+import { useDispatch, useSelector } from 'react-redux';
+import { resetPassword, clearErrors } from '../../actions/userActions';
 
 const NewPassword = ({ history, match }) => {
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const alert = useAlert();
   const dispatch = useDispatch();
@@ -22,8 +22,8 @@ const NewPassword = ({ history, match }) => {
     }
 
     if (success) {
-      alert.success("Password updated successfully");
-      history.push("/login");
+      alert.success('Password updated successfully');
+      history.push('/login');
     }
   }, [dispatch, alert, error, success, history]);
 
@@ -31,15 +31,15 @@ const NewPassword = ({ history, match }) => {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.set("password", password);
-    formData.set("confirmPassword", confirmPassword);
+    formData.set('password', password);
+    formData.set('confirmPassword', confirmPassword);
 
     dispatch(resetPassword(match.params.token, formData));
   };
 
   return (
     <Fragment>
-      <MetaData title={"New Password Reset"} />
+      <MetaData title={'New Password Reset'} />
 
       <div className="row wrapper">
         <div className="col-10 col-lg-5">

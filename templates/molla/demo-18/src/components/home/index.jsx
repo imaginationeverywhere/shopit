@@ -1,30 +1,30 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import OwlCarousel from "../features/owl-carousel";
-import QuickViewTwo from "../features/product/common/quickview-two";
-import NewsletterModal from "../features/modal/newsletter-modal";
-import Brand from "../features/brand";
+import OwlCarousel from '../features/owl-carousel';
+import QuickViewTwo from '../features/product/common/quickview-two';
+import NewsletterModal from '../features/modal/newsletter-modal';
+import Brand from '../features/brand';
 
-import Banner from "./banner";
-import Sidebar from "./sidebar";
-import NewCollection from "./new-collection";
-import InstagramSection from "./instagram-section";
+import Banner from './banner';
+import Sidebar from './sidebar';
+import NewCollection from './new-collection';
+import InstagramSection from './instagram-section';
 
-import { introSlider } from "../settings";
-import { isIEBrowser } from "../../utils";
-import data from "../../mock_data/data";
-import style from "./style.scss";
+import { introSlider } from '../settings';
+import { isIEBrowser } from '../../utils';
+import data from '../../mock_data/data';
+import style from './style.scss';
 
 function HomePage(props) {
   useEffect(() => {
-    document.getElementById("menu-home").classList.add("active");
+    document.getElementById('menu-home').classList.add('active');
     style.use();
 
     return () => {
-      document.getElementById("menu-home").classList.remove("active");
+      document.getElementById('menu-home').classList.remove('active');
       style.unuse();
     };
   }, []);
@@ -52,7 +52,7 @@ function HomePage(props) {
               <div className="container">
                 <div
                   className="intro-content text-center"
-                  style={{ marginTop: isIEBrowser() ? "50%" : "" }}
+                  style={{ marginTop: isIEBrowser() ? '50%' : '' }}
                 >
                   <h3 className="intro-subtitle cross-txt text-primary">
                     SEASONAL PICKS
@@ -80,7 +80,7 @@ function HomePage(props) {
               <div className="container">
                 <div
                   className="intro-content text-center"
-                  style={{ marginTop: isIEBrowser() ? "50%" : "" }}
+                  style={{ marginTop: isIEBrowser() ? '50%' : '' }}
                 >
                   <h3 className="intro-subtitle text-primary cross-txt">
                     Women's Accessories

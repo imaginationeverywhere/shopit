@@ -1,10 +1,10 @@
-import React from "react";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import Breadcrumb from "../../common/breadcrumb";
-import PageHeader from "../../common/page-header";
-import IconBox from "../../features/icon-box";
+import Breadcrumb from '../../common/breadcrumb';
+import PageHeader from '../../common/page-header';
+import IconBox from '../../features/icon-box';
 
 function IconBoxes() {
   return (
@@ -17,7 +17,7 @@ function IconBoxes() {
 
       <div className="main">
         <PageHeader title="Icon Boxes" subTitle="Elements" />
-        <Breadcrumb title="Icon Boxes" parent1={["Elements", "elements"]} />
+        <Breadcrumb title="Icon Boxes" parent1={['Elements', 'elements']} />
 
         <div className="page-content">
           <div className="container">
@@ -57,7 +57,7 @@ function IconBoxes() {
             <hr className="mb-6" />
 
             <h2 className="title mb-5 text-center">
-              Simple Icons <span className="title-separator">/</span> Left Align{" "}
+              Simple Icons <span className="title-separator">/</span> Left Align{' '}
               <span className="title-separator">/</span> 3 Columns
             </h2>
             <div className="row justify-content-center">
@@ -127,7 +127,7 @@ function IconBoxes() {
             <hr className="mb-6" />
 
             <h2 className="title mb-5 text-center">
-              Circle Icons <span className="title-separator">/</span> Left Align{" "}
+              Circle Icons <span className="title-separator">/</span> Left Align{' '}
               <span className="title-separator">/</span> 3 Columns
             </h2>
             <div className="row justify-content-center">
@@ -206,7 +206,7 @@ function IconBoxes() {
             <hr className="mb-6" />
 
             <h2 className="title mb-5 text-center">
-              Simple Icons <span className="title-separator">/</span> Left Align{" "}
+              Simple Icons <span className="title-separator">/</span> Left Align{' '}
               <span className="title-separator">/</span> 4 Columns
             </h2>
             <div className="row justify-content-center">

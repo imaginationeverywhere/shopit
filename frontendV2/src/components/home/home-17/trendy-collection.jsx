@@ -1,21 +1,21 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Tabs, Tab, TabList, TabPanel } from 'react-tabs';
 
 // import custom component
-import ProductNine from "../../features/product/product-nine";
+import ProductNine from '../../features/product/product-nine';
 
 import {
   addToCart,
   toggleWishlist,
   addToCompare,
   showQuickViewModal,
-} from "../../../actions";
+} from '../../../actions';
 import {
   getNewProducts,
   getFeaturedProducts,
   getTopSellingProducts,
-} from "../../../services";
+} from '../../../services';
 
 function TrendyCollection(props) {
   const { addToCart, toggleWishlist, addToCompare, showQuickViewModal } = props;

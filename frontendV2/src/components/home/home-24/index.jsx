@@ -1,39 +1,39 @@
-import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import NewsletterModal from "../../features/modal/newsletter-modal";
-import Brand from "../../features/brand";
-import QuickView from "../../features/product/common/quickview";
-import VideoModal from "../../features/modal/video-modal";
-import ServiceBox from "../../features/service";
-import OwlCarousel from "../../features/owl-carousel";
+import NewsletterModal from '../../features/modal/newsletter-modal';
+import Brand from '../../features/brand';
+import QuickView from '../../features/product/common/quickview';
+import VideoModal from '../../features/modal/video-modal';
+import ServiceBox from '../../features/service';
+import OwlCarousel from '../../features/owl-carousel';
 
 // import Home Componenets
-import Banner from "./banner";
-import BannerCarousel from "./banner-carousel";
-import BestCollection from "./best-collection";
-import FeaturedCollection from "./featured-collection";
-import VideoBanner from "./video-banner";
-import CTA from "./cta-section";
-import BlogSection from "./blog-section";
-import Instagram from "./instagram";
+import Banner from './banner';
+import BannerCarousel from './banner-carousel';
+import BestCollection from './best-collection';
+import FeaturedCollection from './featured-collection';
+import VideoBanner from './video-banner';
+import CTA from './cta-section';
+import BlogSection from './blog-section';
+import Instagram from './instagram';
 
 // import Slider Settings
-import { brandSlider, bannerSlider } from "../../settings";
+import { brandSlider, bannerSlider } from '../../settings';
 
 // import Data & Style
-import _data from "../../../mock_data/data.json";
-import style from "./style.scss";
+import _data from '../../../mock_data/data.json';
+import style from './style.scss';
 
 export default function HomePage24() {
   useEffect(() => {
-    document.getElementById("menu-home").classList.add("active");
+    document.getElementById('menu-home').classList.add('active');
 
     style.use();
 
     return () => {
-      document.getElementById("menu-home").classList.remove("active");
+      document.getElementById('menu-home').classList.remove('active');
       style.unuse();
     };
   }, []);
@@ -114,7 +114,7 @@ export default function HomePage24() {
           <div className="container">
             <div className="heading">
               <p className="heading-cat">
-                Follow Us On Instagram{" "}
+                Follow Us On Instagram{' '}
                 <span className="highlight">
                   @molla_store<span></span>
                 </span>

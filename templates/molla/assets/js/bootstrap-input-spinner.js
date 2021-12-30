@@ -5,13 +5,13 @@
  */
 
 (function ($) {
-  "use strict";
+  'use strict';
 
   var spacePressed = false;
   var originalVal = $.fn.val;
   $.fn.val = function (value) {
     if (arguments.length >= 1) {
-      if (this[0] && this[0]["bootstrap-input-spinner"] && this[0].setValue) {
+      if (this[0] && this[0]['bootstrap-input-spinner'] && this[0].setValue) {
         this[0].setValue(value);
       }
     }
@@ -20,16 +20,16 @@
 
   $.fn.InputSpinner = $.fn.inputSpinner = function (options) {
     var config = {
-      decrementButton: "<strong>-</strong>", // button text
-      incrementButton: "<strong>+</strong>", // ..
-      groupClass: "", // css class of the resulting input-group
-      buttonsClass: "btn-outline-secondary",
-      buttonsWidth: "2.5rem",
-      textAlign: "center",
+      decrementButton: '<strong>-</strong>', // button text
+      incrementButton: '<strong>+</strong>', // ..
+      groupClass: '', // css class of the resulting input-group
+      buttonsClass: 'btn-outline-secondary',
+      buttonsWidth: '2.5rem',
+      textAlign: 'center',
       autoDelay: 500, // ms holding before auto value change
       autoInterval: 100, // speed of auto value change
       boostThreshold: 10, // boost after these steps
-      boostMultiplier: "auto", // you can also set a constant number as multiplier
+      boostMultiplier: 'auto', // you can also set a constant number as multiplier
       locale: null, // the locale for number rendering; if null, the browsers language is used
     };
     for (var option in options) {
@@ -47,8 +47,8 @@
       config.buttonsClass +
       '" type="button">' +
       config.decrementButton +
-      "</button>" +
-      "</div>" +
+      '</button>' +
+      '</div>' +
       '<input type="text" style="text-align: ' +
       config.textAlign +
       '" class="form-control"/>' +
@@ -59,26 +59,26 @@
       config.buttonsClass +
       '" type="button">' +
       config.incrementButton +
-      "</button>" +
-      "</div>" +
-      "</div>";
+      '</button>' +
+      '</div>' +
+      '</div>';
 
-    var locale = config.locale || navigator.language || "en-US";
+    var locale = config.locale || navigator.language || 'en-US';
 
     this.each(function () {
       var $original = $(this);
-      $original[0]["bootstrap-input-spinner"] = true;
+      $original[0]['bootstrap-input-spinner'] = true;
       $original.hide();
 
       var autoDelayHandler = null;
       var autoIntervalHandler = null;
-      var autoMultiplier = config.boostMultiplier === "auto";
+      var autoMultiplier = config.boostMultiplier === 'auto';
       var boostMultiplier = autoMultiplier ? 1 : config.boostMultiplier;
 
       var $inputGroup = $(html);
-      var $buttonDecrement = $inputGroup.find(".btn-decrement");
-      var $buttonIncrement = $inputGroup.find(".btn-increment");
-      var $input = $inputGroup.find("input");
+      var $buttonDecrement = $inputGroup.find('.btn-decrement');
+      var $buttonIncrement = $inputGroup.find('.btn-increment');
+      var $input = $inputGroup.find('input');
 
       var min = null;
       var max = null;
@@ -95,20 +95,20 @@
       var value = parseFloat($original[0].value);
       var boostStepsCount = 0;
 
-      var prefix = $original.attr("data-prefix") || "";
-      var suffix = $original.attr("data-suffix") || "";
+      var prefix = $original.attr('data-prefix') || '';
+      var suffix = $original.attr('data-suffix') || '';
 
       if (prefix) {
         var prefixElement = $(
-          '<span class="input-group-text">' + prefix + "</span>"
+          '<span class="input-group-text">' + prefix + '</span>',
         );
-        $inputGroup.find(".input-group-prepend").append(prefixElement);
+        $inputGroup.find('.input-group-prepend').append(prefixElement);
       }
       if (suffix) {
         var suffixElement = $(
-          '<span class="input-group-text">' + suffix + "</span>"
+          '<span class="input-group-text">' + suffix + '</span>',
         );
-        $inputGroup.find(".input-group-append").prepend(suffixElement);
+        $inputGroup.find('.input-group-append').prepend(suffixElement);
       }
 
       $original[0].setValue = function (newValue) {
@@ -125,9 +125,9 @@
 
       setValue(value);
 
-      $input.on("paste input change focusout", function (event) {
+      $input.on('paste input change focusout', function (event) {
         var newValue = $input[0].value;
-        var focusOut = event.type === "focusout";
+        var focusOut = event.type === 'focusout';
         newValue = parseLocaleNumber(newValue);
         setValue(newValue, focusOut);
         dispatchEvent($original, event.type);
@@ -147,10 +147,10 @@
         if (updateInput === undefined) {
           updateInput = true;
         }
-        if (isNaN(newValue) || newValue === "") {
-          $original[0].value = "";
+        if (isNaN(newValue) || newValue === '') {
+          $original[0].value = '';
           if (updateInput) {
-            $input[0].value = "";
+            $input[0].value = '';
           }
           value = 0;
         } else {
@@ -171,11 +171,11 @@
         if (type) {
           setTimeout(function () {
             var event;
-            if (typeof Event === "function") {
+            if (typeof Event === 'function') {
               event = new Event(type, { bubbles: true });
             } else {
               // IE
-              event = document.createEvent("Event");
+              event = document.createEvent('Event');
               event.initEvent(type, true, true);
             }
             $element[0].dispatchEvent(event);
@@ -215,8 +215,8 @@
           value = 0;
         }
         setValue(Math.round(value / step) * step + step);
-        dispatchEvent($original, "input");
-        dispatchEvent($original, "change");
+        dispatchEvent($original, 'input');
+        dispatchEvent($original, 'change');
       }
 
       function resetTimer() {
@@ -230,39 +230,39 @@
 
       function updateAttributes() {
         // copy properties from original to the new input
-        $input.prop("required", $original.prop("required"));
-        $input.prop("placeholder", $original.prop("placeholder"));
-        var disabled = $original.prop("disabled");
-        $input.prop("disabled", disabled);
-        $buttonIncrement.prop("disabled", disabled);
-        $buttonDecrement.prop("disabled", disabled);
+        $input.prop('required', $original.prop('required'));
+        $input.prop('placeholder', $original.prop('placeholder'));
+        var disabled = $original.prop('disabled');
+        $input.prop('disabled', disabled);
+        $buttonIncrement.prop('disabled', disabled);
+        $buttonDecrement.prop('disabled', disabled);
         if (disabled) {
           resetTimer();
         }
-        var originalClass = $original.prop("class");
-        var groupClass = "";
+        var originalClass = $original.prop('class');
+        var groupClass = '';
         // sizing
         if (/form-control-sm/g.test(originalClass)) {
-          groupClass = "input-group-sm";
+          groupClass = 'input-group-sm';
         } else if (/form-control-lg/g.test(originalClass)) {
-          groupClass = "input-group-lg";
+          groupClass = 'input-group-lg';
         }
-        var inputClass = originalClass.replace(/form-control(-(sm|lg))?/g, "");
+        var inputClass = originalClass.replace(/form-control(-(sm|lg))?/g, '');
         $inputGroup.prop(
-          "class",
-          "input-group " + groupClass + " " + config.groupClass
+          'class',
+          'input-group ' + groupClass + ' ' + config.groupClass,
         );
-        $input.prop("class", "form-control " + inputClass);
+        $input.prop('class', 'form-control ' + inputClass);
 
         // update the main attributes
-        min = parseFloat($original.prop("min")) || 0;
+        min = parseFloat($original.prop('min')) || 0;
         max =
-          isNaN($original.prop("max")) || $original.prop("max") === ""
+          isNaN($original.prop('max')) || $original.prop('max') === ''
             ? Infinity
-            : parseFloat($original.prop("max"));
-        step = parseFloat($original.prop("step")) || 1;
-        stepMax = parseInt($original.attr("data-step-max")) || 0;
-        var newDecimals = parseInt($original.attr("data-decimals")) || 0;
+            : parseFloat($original.prop('max'));
+        step = parseFloat($original.prop('step')) || 1;
+        stepMax = parseInt($original.attr('data-step-max')) || 0;
+        var newDecimals = parseInt($original.attr('data-decimals')) || 0;
         if (decimals !== newDecimals) {
           decimals = newDecimals;
           numberFormat = new Intl.NumberFormat(locale, {
@@ -274,25 +274,25 @@
 
       function parseLocaleNumber(stringNumber) {
         var numberFormat = new Intl.NumberFormat(locale);
-        var thousandSeparator = numberFormat.format(1111).replace(/1/g, "");
-        var decimalSeparator = numberFormat.format(1.1).replace(/1/g, "");
+        var thousandSeparator = numberFormat.format(1111).replace(/1/g, '');
+        var decimalSeparator = numberFormat.format(1.1).replace(/1/g, '');
         return parseFloat(
           stringNumber
-            .replace(new RegExp("\\" + thousandSeparator, "g"), "")
-            .replace(new RegExp("\\" + decimalSeparator), ".")
+            .replace(new RegExp('\\' + thousandSeparator, 'g'), '')
+            .replace(new RegExp('\\' + decimalSeparator), '.'),
         );
       }
     });
   };
 
   function onPointerUp(element, callback) {
-    element.addEventListener("mouseup", function (e) {
+    element.addEventListener('mouseup', function (e) {
       callback(e);
     });
-    element.addEventListener("touchend", function (e) {
+    element.addEventListener('touchend', function (e) {
       callback(e);
     });
-    element.addEventListener("keyup", function (e) {
+    element.addEventListener('keyup', function (e) {
       if (e.keyCode === 32) {
         spacePressed = false;
         callback(e);
@@ -301,17 +301,17 @@
   }
 
   function onPointerDown(element, callback) {
-    element.addEventListener("mousedown", function (e) {
+    element.addEventListener('mousedown', function (e) {
       e.preventDefault();
       callback(e);
     });
-    element.addEventListener("touchstart", function (e) {
+    element.addEventListener('touchstart', function (e) {
       if (e.cancelable) {
         e.preventDefault();
       }
       callback(e);
     });
-    element.addEventListener("keydown", function (e) {
+    element.addEventListener('keydown', function (e) {
       if (e.keyCode === 32 && !spacePressed) {
         spacePressed = true;
         callback(e);

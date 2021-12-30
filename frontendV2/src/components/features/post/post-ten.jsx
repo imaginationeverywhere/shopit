@@ -1,15 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 function PostTen(props) {
   const { post } = props;
   let date = new Date(post.date);
   let options = {
-    year: "numeric",
-    month: "short",
-    day: "2-digit",
-    timeZone: "UTC",
+    year: 'numeric',
+    month: 'short',
+    day: '2-digit',
+    timeZone: 'UTC',
   };
 
   return (
@@ -22,7 +22,7 @@ function PostTen(props) {
 
         <Link to={`${process.env.PUBLIC_URL}/blog/single/${post.id}`}>
           <LazyLoadImage
-            src={process.env.PUBLIC_URL + "/" + post.image}
+            src={process.env.PUBLIC_URL + '/' + post.image}
             alt="post"
             width={100}
             threshold={300}
@@ -34,7 +34,7 @@ function PostTen(props) {
       <div className="entry-body text-center">
         <div className="entry-meta">
           <Link to={`${process.env.PUBLIC_URL}/blog/single/${post.id}`}>
-            {date.toLocaleDateString("en-US", options)}
+            {date.toLocaleDateString('en-US', options)}
           </Link>
           , {post.comments} Comments
         </div>

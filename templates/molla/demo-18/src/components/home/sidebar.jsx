@@ -1,13 +1,13 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import SmallProduct from "../features/product/product-sm";
-import OwlCarousel from "../features/owl-carousel";
-import PostTen from "../features/post/post-ten";
+import SmallProduct from '../features/product/product-sm';
+import OwlCarousel from '../features/owl-carousel';
+import PostTen from '../features/post/post-ten';
 
-import { sidebarSlider } from "../settings";
-import posts from "../../mock_data/posts";
+import { sidebarSlider } from '../settings';
+import posts from '../../mock_data/posts';
 
 function Sidebar(props) {
   let products = props.products.slice(39, 43);
@@ -32,11 +32,11 @@ function Sidebar(props) {
             className="widget widget-subscribe"
             style={{
               backgroundImage: `url(${process.env.PUBLIC_URL}/assets/images/home/bg-newsletter.jpg)`,
-              backgroundColor: "#348484",
+              backgroundColor: '#348484',
             }}
           >
             <h2 className="widget-title">
-              Sign up for email <br />& get 25% off{" "}
+              Sign up for email <br />& get 25% off{' '}
             </h2>
             <p>Subcribe to get information about products and coupons</p>
 

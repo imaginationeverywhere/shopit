@@ -1,20 +1,20 @@
-import React from "react";
-import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
-import { connect } from "react-redux";
+import React from 'react';
+import { Tabs, Tab, TabList, TabPanel } from 'react-tabs';
+import { connect } from 'react-redux';
 
-import OwlCarousel from "../../features/owl-carousel";
-import ProductNine from "../../features/product/product-nine";
-import { productSlider } from "../../settings";
+import OwlCarousel from '../../features/owl-carousel';
+import ProductNine from '../../features/product/product-nine';
+import { productSlider } from '../../settings';
 
-import { getProductsByCategory, getNewProducts } from "../../../services";
+import { getProductsByCategory, getNewProducts } from '../../../services';
 import {
   addToCart,
   toggleWishlist,
   addToCompare,
   showQuickViewModal,
-} from "../../../actions";
+} from '../../../actions';
 
-import data from "../../../mock_data/data.json";
+import data from '../../../mock_data/data.json';
 
 function NewCollection(props) {
   const { addToCart, toggleWishlist, addToCompare, showQuickViewModal } = props;
@@ -47,7 +47,7 @@ function NewCollection(props) {
               {getProductsByCategory(products, item).map((item, index) => (
                 <ProductNine
                   product={item}
-                  key={"new" + index}
+                  key={'new' + index}
                   onAddToCart={addToCart}
                   onToggleWishlist={toggleWishlist}
                   onAddToCompare={addToCompare}

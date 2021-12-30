@@ -1,12 +1,12 @@
-import * as types from "../constants/action-types";
-import { findIndex } from "../utils";
+import * as types from '../constants/action-types';
+import { findIndex } from '../utils';
 
-import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 const initialState = {
   value: { min: 0, max: 10000 },
-  sortBy: "popularity",
+  sortBy: 'popularity',
   category: [],
   size: [],
   color: [],
@@ -38,7 +38,7 @@ function filterReducer(state = initialState, action) {
     case types.RESET_FILTER:
       return {
         value: { min: 0, max: 10000 },
-        sortBy: "popularity",
+        sortBy: 'popularity',
         category: [],
         size: [],
         color: [],
@@ -113,8 +113,8 @@ function filterReducer(state = initialState, action) {
 }
 
 const persistConfig = {
-  keyPrefix: "molla-",
-  key: "filter",
+  keyPrefix: 'molla-',
+  key: 'filter',
   storage,
 };
 

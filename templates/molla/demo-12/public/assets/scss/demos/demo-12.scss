@@ -1,9 +1,9 @@
 /* Demo 12 Homepage 12 */
-@import "../mixins/clearfix";
-@import "../mixins/breakpoints";
-@import "../mixins/lazy";
+@import '../mixins/clearfix';
+@import '../mixins/breakpoints';
+@import '../mixins/lazy';
 
-@import "../config/variables";
+@import '../config/variables';
 
 .header.header-9 {
   position: absolute;
@@ -265,14 +265,14 @@
   box-shadow: 0 1px 0 $primary-color;
 }
 
-@include mq("md") {
+@include mq('md') {
   .intro-subtitle {
     font-size: 1.4rem;
     margin-bottom: 1.2rem;
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .intro-content {
     .btn {
       min-width: 170px;
@@ -293,7 +293,7 @@
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .intro-content {
     .btn {
       min-width: 190px;
@@ -305,7 +305,7 @@
   }
 }
 
-@include mq("md", "max") {
+@include mq('md', 'max') {
   .banner-display {
     .banner-title {
       font-size: 1.8rem;

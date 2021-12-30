@@ -1,19 +1,19 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 // import Custom Components
-import OwlCarousel from "../features/owl-carousel";
-import ProductNine from "../features/product/product-nine";
+import OwlCarousel from '../features/owl-carousel';
+import ProductNine from '../features/product/product-nine';
 
 // import utils
-import { isIEBrowser } from "../../utils";
+import { isIEBrowser } from '../../utils';
 
 // import Actions
-import { addToCart, toggleWishlist } from "../../actions";
+import { addToCart, toggleWishlist } from '../../actions';
 
 // import Slider Settings
-import { productSlider1 } from "../settings";
+import { productSlider1 } from '../settings';
 
 function SpecialCollection(props) {
   let products = props.products;
@@ -23,7 +23,7 @@ function SpecialCollection(props) {
 
   useEffect(() => {
     if (isIEBrowser()) {
-      document.querySelector(".banner-intro").style.paddingTop = "25rem";
+      document.querySelector('.banner-intro').style.paddingTop = '25rem';
     }
   });
 
@@ -90,5 +90,5 @@ const mapStateToProps = (state, props) => {
 };
 
 export default connect(mapStateToProps, { addToCart, toggleWishlist })(
-  SpecialCollection
+  SpecialCollection,
 );

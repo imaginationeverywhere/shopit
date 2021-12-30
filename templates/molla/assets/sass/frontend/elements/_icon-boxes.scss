@@ -38,7 +38,7 @@
     position: relative;
 
     &:before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       bottom: 0;
@@ -171,7 +171,7 @@
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   .icon-box {
     margin-bottom: 4rem;
   }
@@ -181,10 +181,10 @@
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .icon-boxes-separator {
-    [class*="col-"] + [class*="col-"]:before {
-      content: "";
+    [class*='col-'] + [class*='col-']:before {
+      content: '';
       display: block;
       width: 1px;
       height: 5.3rem;
@@ -197,7 +197,7 @@
   }
 }
 
-@include mq("xl", "max") {
+@include mq('xl', 'max') {
   .icon-box-sm br {
     display: none;
   }

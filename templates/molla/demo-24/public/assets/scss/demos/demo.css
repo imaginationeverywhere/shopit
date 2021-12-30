@@ -32,7 +32,7 @@
 }
 .footer-middle .container::before,
 .footer-middle .container-fluid::before {
-  content: "";
+  content: '';
   position: absolute;
   top: -6.7rem;
   left: 1rem;
@@ -77,7 +77,7 @@
   max-width: 260px;
 }
 
-[class*="cols-"]:not(.owl-loaded) {
+[class*='cols-']:not(.owl-loaded) {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: hidden;

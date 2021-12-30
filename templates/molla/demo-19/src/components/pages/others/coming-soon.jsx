@@ -1,18 +1,18 @@
-import React, { useEffect, useLayoutEffect } from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
-import Countdown from "react-countdown";
+import React, { useEffect, useLayoutEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import Countdown from 'react-countdown';
 
-import { rendererOne } from "../../features/count-down";
+import { rendererOne } from '../../features/count-down';
 
 function ComingSoon() {
   useLayoutEffect(() => {
-    document.querySelector("body").classList.remove("loaded");
+    document.querySelector('body').classList.remove('loaded');
   }, []);
 
   useEffect(() => {
     setTimeout(() => {
-      document.querySelector("body").classList.add("loaded");
+      document.querySelector('body').classList.add('loaded');
     }, 200);
   }, []);
 

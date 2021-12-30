@@ -1,11 +1,11 @@
-import React from "react";
-import { Tabs, TabList, TabPanel, Tab } from "react-tabs";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { Tabs, TabList, TabPanel, Tab } from 'react-tabs';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
 
 function DashBoard() {
   return (
@@ -20,7 +20,7 @@ function DashBoard() {
         <PageHeader title="My Account" subTitle="Shop" />
         <Breadcrumb
           title="My Account"
-          parent1={["Shop", "shop/sidebar/list"]}
+          parent1={['Shop', 'shop/sidebar/list']}
           adClass="mb-3"
         />
 
@@ -65,36 +65,36 @@ function DashBoard() {
 
                     <div
                       className="col-md-8 col-lg-9"
-                      style={{ marginTop: "1rem" }}
+                      style={{ marginTop: '1rem' }}
                     >
                       <div className="tab-pane">
                         <TabPanel>
                           <p>
-                            Hello{" "}
+                            Hello{' '}
                             <span className="font-weight-normal text-dark">
                               User
-                            </span>{" "}
-                            (not{" "}
+                            </span>{' '}
+                            (not{' '}
                             <span className="font-weight-normal text-dark">
                               User
                             </span>
                             ? <Link to="#">Log out</Link>)
                             <br />
-                            From your account dashboard you can view your{" "}
+                            From your account dashboard you can view your{' '}
                             <Link
                               to="#tab-orders"
                               className="tab-trigger-link link-underline"
                             >
                               recent orders
                             </Link>
-                            , manage your{" "}
+                            , manage your{' '}
                             <Link
                               to="#tab-address"
                               className="tab-trigger-link"
                             >
                               shipping and billing addresses
                             </Link>
-                            , and{" "}
+                            , and{' '}
                             <Link
                               to="#tab-account"
                               className="tab-trigger-link"

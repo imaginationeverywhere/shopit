@@ -89,7 +89,7 @@
       letter-spacing: -0.01em;
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         left: 2rem;
         right: -0.5rem;
@@ -136,7 +136,7 @@
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .header-5 {
     .container-fluid {
       padding-left: 3rem;
@@ -145,7 +145,7 @@
   }
 }
 
-@include mq("xxl") {
+@include mq('xxl') {
   .header-5 {
     .container-fluid {
       padding-left: 6rem;
@@ -163,7 +163,7 @@
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .header-5 .cart-dropdown,
   .header-5 .compare-dropdown {
     padding-left: 1.4rem;
@@ -213,21 +213,21 @@
   }
 }
 
-@include mq("xxl") {
+@include mq('xxl') {
   .header-5 .container-fluid {
     padding-left: 6.2rem;
     padding-right: 6.2rem;
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .container-fluid {
     padding-left: 62px;
     padding-right: 62px;
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .header-5.header {
     padding: 15px 0;
   }

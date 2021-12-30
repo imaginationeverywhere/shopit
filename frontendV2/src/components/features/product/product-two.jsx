@@ -6,13 +6,8 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { findIndex } from '../../../utils';
 
 function ProductTwo(props) {
-  const {
-    product,
-    onAddToCart,
-    showQuickView,
-    isWishlist,
-    onToggleWishlist,
-  } = props;
+  const { product, onAddToCart, showQuickView, isWishlist, onToggleWishlist } =
+    props;
 
   const addToCartHandler = () => {
     if (0 !== product.stock) onAddToCart(product, 1);
@@ -199,7 +194,7 @@ export const mapStateToProps = (state, ownprops) => {
     isWishlist:
       findIndex(
         state.wishlist.list,
-        item => item.id === ownprops.product.id,
+        (item) => item.id === ownprops.product.id,
       ) !== -1
         ? true
         : false,

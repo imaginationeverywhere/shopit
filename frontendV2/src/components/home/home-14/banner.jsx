@@ -1,18 +1,18 @@
-import React from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Link } from 'react-router-dom';
 
-import { safeContent } from "../../../utils";
+import { safeContent } from '../../../utils';
 
 export default function Banner(props) {
   const {
-    adClass = "",
-    contentAdClass = "",
+    adClass = '',
+    contentAdClass = '',
     image,
     title,
     subtitle,
     price,
-    btnText = "Shop Now",
+    btnText = 'Shop Now',
     height,
   } = props.data;
 
@@ -21,7 +21,7 @@ export default function Banner(props) {
       <Link to="#">
         <div className="lazy-overlay bg-3"></div>
         <LazyLoadImage
-          src={process.env.PUBLIC_URL + "/" + image}
+          src={process.env.PUBLIC_URL + '/' + image}
           width={100}
           height={height}
           effect="blur"
@@ -34,7 +34,7 @@ export default function Banner(props) {
             <Link to="#">{subtitle}</Link>
           </h4>
         ) : (
-          ""
+          ''
         )}
 
         {title ? (
@@ -42,7 +42,7 @@ export default function Banner(props) {
             <Link to="#" dangerouslySetInnerHTML={safeContent(title)}></Link>
           </h3>
         ) : (
-          ""
+          ''
         )}
 
         {price ? (
@@ -51,7 +51,7 @@ export default function Banner(props) {
             dangerouslySetInnerHTML={safeContent(price)}
           ></div>
         ) : (
-          ""
+          ''
         )}
 
         <Link

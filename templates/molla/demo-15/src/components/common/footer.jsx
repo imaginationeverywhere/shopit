@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Footer(props) {
-  const { container = "container" } = props;
+  const { container = 'container' } = props;
 
   return (
     <footer className="footer">
@@ -22,7 +22,7 @@ function Footer(props) {
                   Praesent dapibus, neque id cursus ucibus, tortor neque egestas
                   augue, eu vulputate magna eros eu erat. Aliquam erat volutpat.
                   Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
-                  luctus, metus.{" "}
+                  luctus, metus.{' '}
                 </p>
 
                 <div className="widget-about-info">

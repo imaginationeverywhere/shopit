@@ -14,20 +14,60 @@ import CompleteCheckout from '../components/pages/shop/complete-checkout';
 import OrderConfirmation from '../components/pages/shop/order-confirmation';
 
 export default function ShopRoute() {
-    return (
-        <Switch>
-            <Layout>
-                <Route exact path={ `${process.env.PUBLIC_URL}/shop/category/:grid` } component={ ProductCategory } />
-                <Route exact path={ `${process.env.PUBLIC_URL}/shop/sidebar/:grid` } component={ Sidebar } />
-                <Route exact path={ `${process.env.PUBLIC_URL}/shop/nosidebar/:grid` } component={ NoSidebar } />
-                <Route exact path={ `${process.env.PUBLIC_URL}/shop/market` } component={ Market } />
-                <Route exact path={ `${process.env.PUBLIC_URL}/shop/dashboard` } component={ MyAccount } />
-                <Route exact path={ `${process.env.PUBLIC_URL}/shop/wishlist` } component={ Wishlist } />
-                <Route exact path={ `${process.env.PUBLIC_URL}/shop/cart` } component={ Cart } />
-                <Route exact path={ `${process.env.PUBLIC_URL}/shop/checkout` } component={ Checkout } />
-                <Route exact path={ `${process.env.PUBLIC_URL}/shop/checkout/:orderId` } component={ CompleteCheckout } />
-                <Route exact path={ `${process.env.PUBLIC_URL}/shop/order/confirmation/:orderId` } component={ OrderConfirmation } />
-            </Layout>
-        </Switch>
-    );
+  return (
+    <Switch>
+      <Layout>
+        <Route
+          exact
+          path={`${process.env.PUBLIC_URL}/shop/category/:grid`}
+          component={ProductCategory}
+        />
+        <Route
+          exact
+          path={`${process.env.PUBLIC_URL}/shop/sidebar/:grid`}
+          component={Sidebar}
+        />
+        <Route
+          exact
+          path={`${process.env.PUBLIC_URL}/shop/nosidebar/:grid`}
+          component={NoSidebar}
+        />
+        <Route
+          exact
+          path={`${process.env.PUBLIC_URL}/shop/market`}
+          component={Market}
+        />
+        <Route
+          exact
+          path={`${process.env.PUBLIC_URL}/shop/dashboard`}
+          component={MyAccount}
+        />
+        <Route
+          exact
+          path={`${process.env.PUBLIC_URL}/shop/wishlist`}
+          component={Wishlist}
+        />
+        <Route
+          exact
+          path={`${process.env.PUBLIC_URL}/shop/cart`}
+          component={Cart}
+        />
+        <Route
+          exact
+          path={`${process.env.PUBLIC_URL}/shop/checkout`}
+          component={Checkout}
+        />
+        <Route
+          exact
+          path={`${process.env.PUBLIC_URL}/shop/checkout/:orderId`}
+          component={CompleteCheckout}
+        />
+        <Route
+          exact
+          path={`${process.env.PUBLIC_URL}/shop/order/confirmation/:orderId`}
+          component={OrderConfirmation}
+        />
+      </Layout>
+    </Switch>
+  );
 }

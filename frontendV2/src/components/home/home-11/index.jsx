@@ -1,36 +1,36 @@
-import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import OwlCarousels from "../../features/owl-carousel";
-import QuickView from "../../features/product/common/quickview";
-import SideBarFilter from "../../features/sidebar/sidebar-filter";
-import NewsletterModal from "../../features/modal/newsletter-modal";
+import OwlCarousels from '../../features/owl-carousel';
+import QuickView from '../../features/product/common/quickview';
+import SideBarFilter from '../../features/sidebar/sidebar-filter';
+import NewsletterModal from '../../features/modal/newsletter-modal';
 
-import IntroSlide from "./intro-slide";
-import ProductCollection from "./product-collection";
-import { introSlider } from "../../settings";
+import IntroSlide from './intro-slide';
+import ProductCollection from './product-collection';
+import { introSlider } from '../../settings';
 
-import data from "../../../mock_data/data";
-import style from "./style.scss";
+import data from '../../../mock_data/data';
+import style from './style.scss';
 
 function HomePage11(props) {
   useEffect(() => {
-    document.getElementById("menu-home").classList.add("active");
+    document.getElementById('menu-home').classList.add('active');
     style.use();
 
     return () => {
-      document.getElementById("menu-home").classList.remove("active");
+      document.getElementById('menu-home').classList.remove('active');
       style.unuse();
     };
   }, []);
 
   function hideSideBar() {
     if (
-      document.querySelector("body").classList.contains("sidebar-filter-active")
+      document.querySelector('body').classList.contains('sidebar-filter-active')
     )
-      document.querySelector("body").classList.remove("sidebar-filter-active");
-    document.querySelector(".widget-filter-area").classList.remove("active");
+      document.querySelector('body').classList.remove('sidebar-filter-active');
+    document.querySelector('.widget-filter-area').classList.remove('active');
   }
 
   return (
@@ -55,7 +55,7 @@ function HomePage11(props) {
           <span className="slider-loader"></span>
         </div>
 
-        <div className="container" style={{ overflow: "hidden" }}>
+        <div className="container" style={{ overflow: 'hidden' }}>
           <SideBarFilter />
 
           <ProductCollection />

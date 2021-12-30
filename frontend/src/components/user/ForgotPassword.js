@@ -1,19 +1,19 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect } from 'react';
 
-import MetaData from "../layout/MetaData";
+import MetaData from '../layout/MetaData';
 
-import { useAlert } from "react-alert";
-import { useDispatch, useSelector } from "react-redux";
-import { forgotPassword, clearErrors } from "../../actions/userActions";
+import { useAlert } from 'react-alert';
+import { useDispatch, useSelector } from 'react-redux';
+import { forgotPassword, clearErrors } from '../../actions/userActions';
 
 const ForgotPassword = () => {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
 
   const alert = useAlert();
   const dispatch = useDispatch();
 
   const { error, loading, message } = useSelector(
-    (state) => state.forgotPassword
+    (state) => state.forgotPassword,
   );
 
   useEffect(() => {
@@ -31,14 +31,14 @@ const ForgotPassword = () => {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.set("email", email);
+    formData.set('email', email);
 
     dispatch(forgotPassword(formData));
   };
 
   return (
     <Fragment>
-      <MetaData title={"Forgot Password"} />
+      <MetaData title={'Forgot Password'} />
 
       <div className="row wrapper">
         <div className="col-10 col-lg-5">

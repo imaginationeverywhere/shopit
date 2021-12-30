@@ -1,8 +1,8 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const connectDatabase = () => {
   const uri =
-    "mongodb+srv://develop:VhUR5azEqckE8H4Y@develop.1i8ll.mongodb.net/shopit?retryWrites=true&w=majority";
+    'mongodb+srv://develop:VhUR5azEqckE8H4Y@develop.1i8ll.mongodb.net/shopit?retryWrites=true&w=majority';
   mongoose
     .connect(uri, {
       useNewUrlParser: true,

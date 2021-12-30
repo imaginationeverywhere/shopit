@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { connect } from "react-redux";
-import InputRange from "react-input-range";
-import { SlideToggle } from "react-slide-toggle";
-import { Link } from "react-router-dom";
-import "react-input-range/lib/css/index.css";
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import InputRange from 'react-input-range';
+import { SlideToggle } from 'react-slide-toggle';
+import { Link } from 'react-router-dom';
+import 'react-input-range/lib/css/index.css';
 
 // import Actions
-import { getCountByCategory } from "../../../services";
+import { getCountByCategory } from '../../../services';
 import {
   toggleCategoryFilter,
   resetFilter,
@@ -15,30 +15,30 @@ import {
   toggleColorFilter,
   filterPrice,
   filterSort,
-} from "../../../actions";
+} from '../../../actions';
 
 function SideBarFilter(props) {
   const [value, setValue] = useState({ max: 3000, min: 0 });
 
   const sortby = [
-    "Default",
-    "Popularity",
-    "Average Rating",
-    "Newness",
-    "Price: Low to High",
-    "Price: High to Low",
+    'Default',
+    'Popularity',
+    'Average Rating',
+    'Newness',
+    'Price: Low to High',
+    'Price: High to Low',
   ];
-  const colors = ["#b87145", "#f0c04a", "#333333", "#cc3333", "#ebebeb"];
-  const colorNames = ["Brown", "Yellow", "Black", "Red", "White"];
+  const colors = ['#b87145', '#f0c04a', '#333333', '#cc3333', '#ebebeb'];
+  const colorNames = ['Brown', 'Yellow', 'Black', 'Red', 'White'];
   const sortObj = {
-    Default: "default",
-    Popularity: "popularity",
-    "Average Rating": "rating",
-    Newness: "newness",
-    "Price: Low to High": "price: low to high",
-    "Price: High to Low": "price: high to low",
+    Default: 'default',
+    Popularity: 'popularity',
+    'Average Rating': 'rating',
+    Newness: 'newness',
+    'Price: Low to High': 'price: low to high',
+    'Price: High to Low': 'price: high to low',
   };
-  const categories = ["All", "Furniture", "Lighting", "Accessories", "Sale"];
+  const categories = ['All', 'Furniture', 'Lighting', 'Accessories', 'Sale'];
 
   const { products, filters } = props;
 
@@ -49,24 +49,24 @@ function SideBarFilter(props) {
 
   function clearAll(e) {
     let items = document
-      .querySelector(".filter-area-wrapper")
-      .querySelectorAll("input");
+      .querySelector('.filter-area-wrapper')
+      .querySelectorAll('input');
 
     for (let i = 0; i < items.length; i++) {
       items[i].checked = false;
     }
 
     items = document
-      .querySelector(".filter-area-wrapper")
+      .querySelector('.filter-area-wrapper')
       .querySelectorAll('input[type="radio"]');
     items[0].checked = true;
 
     items = document
-      .querySelector(".filter-area-wrapper")
-      .querySelectorAll(".selected");
+      .querySelector('.filter-area-wrapper')
+      .querySelectorAll('.selected');
 
     for (let i = 0; i < items.length; i++) {
-      items[i].classList.remove("selected");
+      items[i].classList.remove('selected');
     }
 
     setValue({ max: 3000, min: 0 });
@@ -75,22 +75,22 @@ function SideBarFilter(props) {
   }
 
   function showSideBar() {
-    document.querySelector(".widget-filter-area").classList.add("active");
+    document.querySelector('.widget-filter-area').classList.add('active');
 
     if (
-      document.querySelector("body").classList.contains("sidebar-filter-active")
+      document.querySelector('body').classList.contains('sidebar-filter-active')
     ) {
-      document.querySelector("body").classList.remove("sidebar-filter-active");
+      document.querySelector('body').classList.remove('sidebar-filter-active');
     } else {
-      document.querySelector("body").classList.add("sidebar-filter-active");
+      document.querySelector('body').classList.add('sidebar-filter-active');
     }
   }
 
   function toggleSideBar() {
     if (
       !document
-        .querySelector(".widget-filter-area")
-        .classList.contains("active")
+        .querySelector('.widget-filter-area')
+        .classList.contains('active')
     ) {
       showSideBar();
     } else {
@@ -99,40 +99,40 @@ function SideBarFilter(props) {
   }
 
   function selectColor(e) {
-    if (e.currentTarget.classList.contains("selected")) {
-      e.currentTarget.classList.remove("selected");
+    if (e.currentTarget.classList.contains('selected')) {
+      e.currentTarget.classList.remove('selected');
     } else {
-      e.currentTarget.classList.add("selected");
+      e.currentTarget.classList.add('selected');
     }
     e.preventDefault();
   }
 
   function onFilterClick() {
     if (
-      !document.querySelector(".filter-toggler").classList.contains("active")
+      !document.querySelector('.filter-toggler').classList.contains('active')
     ) {
-      document.querySelector(".filter-toggler").classList.add("active");
-      document.querySelector(".nav-filter.product-filter").style.opacity = 0;
+      document.querySelector('.filter-toggler').classList.add('active');
+      document.querySelector('.nav-filter.product-filter').style.opacity = 0;
       setTimeout(() => {
-        document.querySelector(".nav-filter.product-filter").style.display =
-          "none";
-        document.querySelector(".widget-filter-clear").style.display = "block";
+        document.querySelector('.nav-filter.product-filter').style.display =
+          'none';
+        document.querySelector('.widget-filter-clear').style.display = 'block';
       }, 400);
     } else {
-      document.querySelector(".filter-toggler").classList.remove("active");
-      document.querySelector(".nav-filter.product-filter").style.opacity = 1;
-      document.querySelector(".nav-filter.product-filter").style.display =
-        "flex";
-      document.querySelector(".widget-filter-clear").style.display = "none";
+      document.querySelector('.filter-toggler').classList.remove('active');
+      document.querySelector('.nav-filter.product-filter').style.opacity = 1;
+      document.querySelector('.nav-filter.product-filter').style.display =
+        'flex';
+      document.querySelector('.widget-filter-clear').style.display = 'none';
     }
   }
 
   function hideSideBar() {
     if (
-      document.querySelector("body").classList.contains("sidebar-filter-active")
+      document.querySelector('body').classList.contains('sidebar-filter-active')
     )
-      document.querySelector("body").classList.remove("sidebar-filter-active");
-    document.querySelector(".widget-filter-area").classList.remove("active");
+      document.querySelector('body').classList.remove('sidebar-filter-active');
+    document.querySelector('.widget-filter-area').classList.remove('active');
   }
 
   return (
@@ -235,8 +235,8 @@ function SideBarFilter(props) {
                                       props.toggleCategoryFilter(cat)
                                     }
                                     defaultChecked={
-                                      filters["category"] &&
-                                      -1 < filters["category"].indexOf(cat)
+                                      filters['category'] &&
+                                      -1 < filters['category'].indexOf(cat)
                                         ? true
                                         : false
                                     }
@@ -275,10 +275,10 @@ function SideBarFilter(props) {
                                     id={`sort-${index}`}
                                     name="sortby"
                                     defaultChecked={
-                                      filters["sortBy"] === "" &&
+                                      filters['sortBy'] === '' &&
                                       parseInt(index) === 0
                                         ? true
-                                        : filters["sortBy"] === sortObj[item]
+                                        : filters['sortBy'] === sortObj[item]
                                         ? true
                                         : false
                                     }
@@ -309,10 +309,10 @@ function SideBarFilter(props) {
                                 to="#"
                                 style={{ background: col }}
                                 className={
-                                  filters["color"] &&
-                                  -1 < filters["color"].indexOf(col)
-                                    ? "selected"
-                                    : ""
+                                  filters['color'] &&
+                                  -1 < filters['color'].indexOf(col)
+                                    ? 'selected'
+                                    : ''
                                 }
                                 onClick={(e) => {
                                   selectColor(e);

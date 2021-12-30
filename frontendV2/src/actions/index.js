@@ -1,8 +1,8 @@
-import axios from "axios";
-import * as api from "../api";
-import * as types from "../constants/action-types";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.min.css";
+import axios from 'axios';
+import * as api from '../api';
+import * as types from '../constants/action-types';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 /********** Product Action ********/
 // recieve products
@@ -62,7 +62,7 @@ export const removeNewsletterMdoal = (modal) => ({
 /************ Cart Action **************/
 // add item to cart
 export const addToCart = (product, qty) => (dispatch) => {
-  toast.success("Item Added to Cart");
+  toast.success('Item Added to Cart');
   dispatch(addToCartUnsafe(product, qty));
 };
 
@@ -75,7 +75,7 @@ export const addToCartUnsafe = (product, qty) => ({
 
 // remove item from wishlist
 export const removeFromWishlist = (productId) => (dispatch) => {
-  toast.error("Item removed from Wishlist");
+  toast.error('Item removed from Wishlist');
   dispatch({
     type: types.REMOVE_FROM_WISHLIST,
     productId,
@@ -84,14 +84,13 @@ export const removeFromWishlist = (productId) => (dispatch) => {
 
 export const clearCart = () => (dispatch) => {
   dispatch({
-    type: types.CLEAR_CART
-  })
+    type: types.CLEAR_CART,
+  });
 };
-
 
 // add item to cart from wishlist
 export const addToCartFromWishlist = (product, qty) => (dispatch) => {
-  toast.success("Item added to Cart");
+  toast.success('Item added to Cart');
 
   dispatch({
     type: types.REMOVE_FROM_WISHLIST,
@@ -103,7 +102,7 @@ export const addToCartFromWishlist = (product, qty) => (dispatch) => {
 
 // remove item from cart
 export const removeFromCart = (productId) => (dispatch) => {
-  toast.error("Item removed from Cart");
+  toast.error('Item removed from Cart');
 
   dispatch({
     type: types.REMOVE_FROM_CART,
@@ -140,7 +139,7 @@ export const toggleWishlistUnsafe = (product) => ({
 /************* Compare Action ***********/
 // add to comparelist
 export const addToCompare = (product) => (dispatch) => {
-  toast.success("Item added to Compare");
+  toast.success('Item added to Compare');
   dispatch(addToCompareUnsafe(product));
 };
 
@@ -151,7 +150,7 @@ export const addToCompareUnsafe = (product) => ({
 
 // remove all items from cartlist
 export const removeFromCompare = (productId) => (dispatch) => {
-  toast.success("Compare item removed");
+  toast.success('Compare item removed');
   dispatch(removeFromCompareUnsafe(productId));
 };
 
@@ -245,18 +244,18 @@ export const receiveTemplates = (templates) => ({
   templates,
 });
 
-export const getAllTemplates =  () =>  (dispatch) => {
+export const getAllTemplates = () => (dispatch) => {
   api.getTemplates().then((data) => {
-    dispatch({ 
-      type: types.GET_TEMPLATES_SUCCESS, 
-      templates: data.templates
-    })
-  })
+    dispatch({
+      type: types.GET_TEMPLATES_SUCCESS,
+      templates: data.templates,
+    });
+  });
 };
 
 export const setTemplate = (templateId) => async (dispatch) => {
-  console.log("here")
-  await api.setTemplate(templateId).then((templates) => { 
+  console.log('here');
+  await api.setTemplate(templateId).then((templates) => {
     return templates;
   });
 };
@@ -265,7 +264,7 @@ export const previewTemplate = (templateId) => (dispatch) => {
   api.previewTemplate(templateId).then(() => {
     return templateId;
   });
-}
+};
 
 // Users
 

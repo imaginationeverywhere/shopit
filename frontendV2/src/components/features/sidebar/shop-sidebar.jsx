@@ -117,7 +117,7 @@ function ShopSidebar(props) {
             <a
               href="#a"
               className="sidebar-filter-clear"
-              onClick={e => clearAll(e)}
+              onClick={(e) => clearAll(e)}
             >
               ClearAll
             </a>
@@ -129,7 +129,7 @@ function ShopSidebar(props) {
                 <h3 className="widget-title">
                   <a
                     href="#category"
-                    onClick={e => {
+                    onClick={(e) => {
                       onToggle(e);
                       changeIcon(e);
                       e.preventDefault();
@@ -152,14 +152,14 @@ function ShopSidebar(props) {
                               type="checkbox"
                               className="custom-control-input"
                               id={`cat-${index + 1}`}
-                              onClick={e =>
+                              onClick={(e) =>
                                 props.toggleCategoryFilter(item.name)
                               }
                               defaultChecked={
                                 -1 <
                                 findIndex(
                                   filters['category'],
-                                  filter => filter === item.name,
+                                  (filter) => filter === item.name,
                                 )
                                   ? true
                                   : false
@@ -191,7 +191,7 @@ function ShopSidebar(props) {
                 <h3 className="widget-title">
                   <a
                     href="#Size"
-                    onClick={e => {
+                    onClick={(e) => {
                       onToggle(e);
                       changeIcon(e);
                       e.preventDefault();
@@ -213,12 +213,12 @@ function ShopSidebar(props) {
                               type="checkbox"
                               className="custom-control-input"
                               id={`size-${index + 1}`}
-                              onClick={e => props.toggleSizeFilter(item)}
+                              onClick={(e) => props.toggleSizeFilter(item)}
                               defaultChecked={
                                 -1 <
                                 findIndex(
                                   filters['size'],
-                                  filter => filter === item,
+                                  (filter) => filter === item,
                                 )
                                   ? true
                                   : false
@@ -246,7 +246,7 @@ function ShopSidebar(props) {
                 <h3 className="widget-title">
                   <a
                     href="#colour"
-                    onClick={e => {
+                    onClick={(e) => {
                       onToggle(e);
                       changeIcon(e);
                       e.preventDefault();
@@ -268,13 +268,13 @@ function ShopSidebar(props) {
                             -1 <
                             findIndex(
                               filters['color'],
-                              filter => filter === item,
+                              (filter) => filter === item,
                             )
                               ? 'selected'
                               : ''
                           }
                           style={{ background: item }}
-                          onClick={e => {
+                          onClick={(e) => {
                             props.toggleColorFilter(item);
                             e.preventDefault();
                           }}
@@ -296,7 +296,7 @@ function ShopSidebar(props) {
                 <h3 className="widget-title">
                   <a
                     href="#brand"
-                    onClick={e => {
+                    onClick={(e) => {
                       onToggle(e);
                       changeIcon(e);
                       e.preventDefault();
@@ -318,12 +318,12 @@ function ShopSidebar(props) {
                               type="checkbox"
                               className="custom-control-input"
                               id={`brand-${index + 1}`}
-                              onClick={e => props.toggleBrandFilter(item)}
+                              onClick={(e) => props.toggleBrandFilter(item)}
                               defaultChecked={
                                 -1 <
                                 findIndex(
                                   filters['brand'],
-                                  filter => filter === item,
+                                  (filter) => filter === item,
                                 )
                                   ? true
                                   : false
@@ -351,7 +351,7 @@ function ShopSidebar(props) {
                 <h3 className="widget-title">
                   <a
                     href="#price"
-                    onClick={e => {
+                    onClick={(e) => {
                       onToggle(e);
                       changeIcon(e);
                       e.preventDefault();
@@ -376,12 +376,12 @@ function ShopSidebar(props) {
 
                       <div className="price-slider">
                         <InputRange
-                          formatLabel={value => `$${value}`}
+                          formatLabel={(value) => `$${value}`}
                           maxValue={100000}
                           minValue={0}
                           step={50}
                           value={value}
-                          onChange={value => {
+                          onChange={(value) => {
                             setValue(value);
                             props.filterPrice(value);
                           }}
@@ -407,7 +407,7 @@ function ShopSidebar(props) {
   );
 }
 
-export const mapStateToProps = state => {
+export const mapStateToProps = (state) => {
   return {
     filters: state.filters,
     products: state.data.products ? state.data.products : [],

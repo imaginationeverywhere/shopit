@@ -1,55 +1,55 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
-import Accordion from "../../features/accordion/accordion";
-import Card from "../../features/accordion/card";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
+import Accordion from '../../features/accordion/accordion';
+import Card from '../../features/accordion/card';
 
-import { getCartTotal } from "../../../services";
+import { getCartTotal } from '../../../services';
 
 function Checkout(props) {
   const { cartlist, total } = props;
   const shippingPrice = { free: 0, standard: 10, express: 20 };
   const shippingObj = {
-    free: "Free shipping",
-    standard: "Standard",
-    express: "Express",
+    free: 'Free shipping',
+    standard: 'Standard',
+    express: 'Express',
   };
 
   useEffect(() => {
-    let item = document.querySelector("#checkout-discount-input");
+    let item = document.querySelector('#checkout-discount-input');
 
     var opactiyEffect = function (e) {
       e.currentTarget.parentNode
-        .querySelector("label")
-        .setAttribute("style", "opacity: 0");
+        .querySelector('label')
+        .setAttribute('style', 'opacity: 0');
     };
 
     var blurEffect = function (e) {
       let $this = e.currentTarget;
       if ($this.length !== 0) {
         $this.parentNode
-          .querySelector("label")
-          .setAttribute("style", "opacity: 0");
+          .querySelector('label')
+          .setAttribute('style', 'opacity: 0');
       } else {
         $this.parentNode
-          .querySelector("label")
-          .setAttribute("style", "opacity: 1");
+          .querySelector('label')
+          .setAttribute('style', 'opacity: 1');
       }
     };
 
-    item.addEventListener("focus", opactiyEffect);
+    item.addEventListener('focus', opactiyEffect);
 
-    item.addEventListener("blur", blurEffect);
+    item.addEventListener('blur', blurEffect);
 
     return () => {
-      item.removeEventListener("focus", opactiyEffect);
+      item.removeEventListener('focus', opactiyEffect);
 
-      item.removeEventListener("blur", blurEffect);
+      item.removeEventListener('blur', blurEffect);
     };
   }, []);
 
@@ -63,7 +63,7 @@ function Checkout(props) {
 
       <div className="main">
         <PageHeader title="Checkout" subTitle="Shop" />
-        <Breadcrumb title="Checkout" parent1={["Shop", "shop/sidebar/list"]} />
+        <Breadcrumb title="Checkout" parent1={['Shop', 'shop/sidebar/list']} />
 
         <div className="page-content">
           <div className="checkout">

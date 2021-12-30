@@ -1,10 +1,10 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
-import Banner from "./banner";
-import PostTen from "../features/post/post-ten";
-import OwlCarousel from "../features/owl-carousel";
-import ProductTen from "../features/product/product-ten";
+import Banner from './banner';
+import PostTen from '../features/post/post-ten';
+import OwlCarousel from '../features/owl-carousel';
+import ProductTen from '../features/product/product-ten';
 
 // import Actions
 import {
@@ -12,11 +12,11 @@ import {
   toggleWishlist,
   addToCompare,
   showQuickViewModal,
-} from "../../actions";
-import { sidebarSlider } from "../settings";
+} from '../../actions';
+import { sidebarSlider } from '../settings';
 
-import posts from "../../mock_data/posts";
-import SmallProduct from "../features/product/product-sm";
+import posts from '../../mock_data/posts';
+import SmallProduct from '../features/product/product-sm';
 
 function Sidebar(props) {
   const {
@@ -46,7 +46,7 @@ function Sidebar(props) {
 
               <div className="products">
                 {products.slice(36, 41).map((item, index) => (
-                  <SmallProduct key={"sm" + index} product={item} />
+                  <SmallProduct key={'sm' + index} product={item} />
                 ))}
               </div>
             </div>
@@ -60,7 +60,7 @@ function Sidebar(props) {
 
               <div className="row">
                 {products.slice(39, 41).map((item, index) => (
-                  <div className="col-sm-6 col-xl-12" key={"sidebar" + index}>
+                  <div className="col-sm-6 col-xl-12" key={'sidebar' + index}>
                     <ProductTen
                       product={item}
                       onAddToCart={addToCart}

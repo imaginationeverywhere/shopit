@@ -152,7 +152,7 @@
   margin-bottom: 0.6rem;
 }
 
-@include mq("sm") {
+@include mq('sm') {
   .form-choice .col-sm-6:not(:last-child) {
     margin-bottom: 0;
   }
@@ -167,7 +167,7 @@
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   .form-box {
     padding: 3.7rem 6rem 6.4rem;
   }

@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function CategoryMenu(props) {
   return (
@@ -21,7 +21,7 @@ function CategoryMenu(props) {
         <nav className="side-nav">
           <ul
             className="menu-vertical sf-arrows sf-js-enabled"
-            style={{ touchAction: "pan-y" }}
+            style={{ touchAction: 'pan-y' }}
           >
             <li className="item-lead">
               <Link to="#">Best Books of 2018</Link>

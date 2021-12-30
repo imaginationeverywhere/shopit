@@ -1,15 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 // import custom component
-import PostTen from "../../features/post/post-ten";
-import OwlCarousel from "../../features/owl-carousel";
+import PostTen from '../../features/post/post-ten';
+import OwlCarousel from '../../features/owl-carousel';
 
 // import Slider Settings
-import { blogSlider } from "../../settings";
+import { blogSlider } from '../../settings';
 
 // import Data
-import posts_data from "../../../mock_data/posts";
+import posts_data from '../../../mock_data/posts';
 
 export default function BlogSection() {
   const posts = posts_data.slice(100, 104);

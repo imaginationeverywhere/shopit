@@ -1,17 +1,17 @@
-import React from "react";
+import React from 'react';
 
 function SearchForm() {
   return (
     <div
       className={
-        "header-search header-search-extended header-search-visible header-search-no-round"
+        'header-search header-search-extended header-search-visible header-search-no-round'
       }
     >
       <button className="search-toggle">
         <i className="icon-search"></i>
       </button>
       <form action="#" method="get">
-        <div className={"header-search-wrapper search-wrapper-wide"}>
+        <div className={'header-search-wrapper search-wrapper-wide'}>
           <label htmlFor="q" className="sr-only">
             Search
           </label>

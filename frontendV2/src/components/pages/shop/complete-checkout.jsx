@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect, useDispatch } from 'react-redux';
 import { Elements } from '@stripe/react-stripe-js';
- 
+
 import { Helmet } from 'react-helmet';
 import axios from 'axios'
 
@@ -191,4 +191,4 @@ export const mapStateToProps = (state) => ({
     shipping: state.cartlist.shipping
 })
 
-export default connect(mapStateToProps)(CompleteCheckout);
+export default connect(mapStateToProps)(CompleteCheckout); 

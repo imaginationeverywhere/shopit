@@ -1,21 +1,21 @@
-import React from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Link } from 'react-router-dom';
 
-import { safeContent } from "../../../utils";
+import { safeContent } from '../../../utils';
 
 export default function banner(props) {
   const {
     img,
     height,
-    adClass = "",
-    contentAdClass = "",
+    adClass = '',
+    contentAdClass = '',
     subtitle,
     titleImg,
     title,
     price,
-    mystyle = "",
-    btnText = "Buy Now",
+    mystyle = '',
+    btnText = 'Buy Now',
   } = props.banner;
 
   return (
@@ -24,7 +24,7 @@ export default function banner(props) {
         <div className="lazy-overlay bg-3"></div>
 
         <LazyLoadImage
-          src={process.env.PUBLIC_URL + "/" + img}
+          src={process.env.PUBLIC_URL + '/' + img}
           alt="Banner"
           width={100}
           height={height}
@@ -40,7 +40,7 @@ export default function banner(props) {
             </Link>
           </h4>
         ) : (
-          ""
+          ''
         )}
 
         {title ? (
@@ -53,10 +53,10 @@ export default function banner(props) {
         ) : (
           <img
             className="banner-title-img "
-            src={process.env.PUBLIC_URL + "/" + titleImg}
+            src={process.env.PUBLIC_URL + '/' + titleImg}
             alt="Title Figure"
             style={
-              mystyle ? { marginBottom: "1.3rem", marginTop: "-.8rem" } : {}
+              mystyle ? { marginBottom: '1.3rem', marginTop: '-.8rem' } : {}
             }
           />
         )}
@@ -67,7 +67,7 @@ export default function banner(props) {
             dangerouslySetInnerHTML={safeContent(price)}
           ></h4>
         ) : (
-          ""
+          ''
         )}
 
         <Link

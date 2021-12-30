@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import MobileMainNav from "./partials/mobile-nav";
+import MobileMainNav from './partials/mobile-nav';
 
 export default function MobileMenu(props) {
   const { adClass } = props;
