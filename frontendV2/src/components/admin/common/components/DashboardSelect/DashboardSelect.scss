@@ -1,18 +1,18 @@
 .dashboard-select {
   width: 100%;
-
+  margin-bottom: 1em;
   span {
     display: flex;
     color: #464457;
-    font-size: 0.9em;
-    font-family: "Avenir_Roman";
+    font-size: 1em;
+    font-family: 'Avenir_Roman';
     margin-bottom: 0.6em;
   }
 
   .dash-select-search {
     position: relative;
-    font-family: "Avenir_Roman";
-    font-size: 0.9em;
+    font-family: 'Avenir_Roman';
+    font-size: 1em;
     width: 100%;
     margin: 0;
     div {

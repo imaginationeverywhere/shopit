@@ -1,38 +1,38 @@
-import React, { useEffect } from "react";
-import "./ProductCreate.scss";
-import { useState } from "react";
-import useForm from "../customHook/useForm";
-import NewProductNav from "./NewProductNav";
-import ProductImages from "./ProductImages";
-import ProductForm from "./ProductForm";
-import { toast } from "react-toastify";
-import Skeleton from "../common/components/Skeleton";
+import React, { useEffect } from 'react';
+import './ProductCreate.scss';
+import { useState } from 'react';
+import useForm from '../customHook/useForm';
+import NewProductNav from './NewProductNav';
+import ProductImages from './ProductImages';
+import ProductForm from './ProductForm';
+import { toast } from 'react-toastify';
+import Skeleton from '../common/components/Skeleton';
 import {
   getSelectValues,
   getUpdateProductDetails,
   getUpdateProductImages,
-} from "../utils/helpers";
-import { addProducts, deleteProducts, updateProducts } from "../../../api";
-import { withRouter } from "react-router-dom";
-import { useSelector } from "react-redux";
-import store from "../../../store";
-import { getAllProducts } from "../../../actions";
-import ConfirmModal from "./ConfirmModal";
+} from '../utils/helpers';
+import { addProducts, deleteProducts, updateProducts } from '../../../api';
+import { withRouter } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import store from '../../../store';
+import { getAllProducts } from '../../../actions';
+import ConfirmModal from './ConfirmModal';
 
 const defaultImageValue = {
-  picture1: "",
-  picture2: "",
-  picture3: "",
-  picture4: "",
-  smPicture1: "",
-  smPicture2: "",
-  smPicture3: "",
-  smPicture4: "",
+  picture1: null,
+  picture2: null,
+  picture3: null,
+  picture4: null,
+  smPicture1: null,
+  smPicture2: null,
+  smPicture3: null,
+  smPicture4: null,
 };
 
 const defaultProductValues = {
-  name: "",
-  shortDesc: "",
+  name: '',
+  shortDesc: '',
   price: 0,
   distance_unit: 'in',
   weight: 0,
@@ -50,20 +50,32 @@ const defaultProductValues = {
 const ProductCreate = ({ match, history }) => {
   // get id params from url
   const productId = match && match.params && match.params.productId;
-  const { products } = useSelector((state) => state.data);
+  const { products } = useSelector(state => state.data);
   const [imageObj, setImageObj] = useState(defaultImageValue);
-  const setImage = (name, file) => {
-    setImageObj((prev) => ({ ...prev, [name]: file }));
+  const setImage = (name, imageObj) => {
+    setImageObj(prev => ({ ...prev, [name]: imageObj }));
   };
 
+  const search = history?.location?.search;
+  const getQuery = name => new URLSearchParams(search)?.get(name);
+
+  useEffect(() => {
+    const shouldShow = getQuery('open-image');
+    if (shouldShow) {
+      setShowProductImages(true);
+    }
+  }, [history?.location?.search]);
+
   const singleProduct =
-    products && products.find((product) => product.id === productId);
+    products && products.find(product => product.id === productId);
 
   const [addProductLoading, setAddProductLoading] = useState(false);
   const [isUpdatingProduct, setIsUpdatingProduct] = useState(false);
   const [isDeletingProduct, setIsDeletingProduct] = useState(false);
-  const { formValues, handleChange, resetForm, checkAllRequired } =
-    useForm(defaultProductValues);
+  const [showProductImages, setShowProductImages] = useState(false);
+  const { formValues, handleChange, resetForm, checkAllRequired } = useForm(
+    defaultProductValues,
+  );
   const [showDeleteConfirmModal, setShowDeleteConfirmModal] = useState(false);
 
   const genericLoading = productId
@@ -74,13 +86,13 @@ const ProductCreate = ({ match, history }) => {
     setIsDeletingProduct(true);
     try {
       await deleteProducts({ id: productId });
-      toast.success("Product deleted successfully");
+      toast.success('Product deleted successfully');
       // get all products
       store.dispatch(getAllProducts());
       // push to products page
-      history.push("/admin/products");
+      history.push('/admin/products');
     } catch (error) {
-      toast.error("Error deleting product");
+      toast.error('Error deleting product');
     }
     setIsDeletingProduct(false);
   };
@@ -88,30 +100,34 @@ const ProductCreate = ({ match, history }) => {
   useEffect(() => {
     if (productId && singleProduct && !formValues.name) {
       resetForm(getUpdateProductDetails(singleProduct));
-      setImageObj(getUpdateProductImages(singleProduct));
+      setImageObj(prev => ({
+        ...prev,
+        ...getUpdateProductImages(singleProduct),
+      }));
     }
   }, [singleProduct, productId]);
 
-  const createNewProduct = async (body) => {
+  const createNewProduct = async body => {
     setAddProductLoading(true);
     try {
       const res = await addProducts({
         body,
       });
-
-      if (res.data) {
-        toast.success("Product added successfully");
-        setImageObj(defaultImageValue);
-        resetForm(defaultProductValues);
+      console.log(res);
+      if (res?.data?.product?._id) {
+        toast.success('Product added successfully');
+        history.push(
+          `/admin/products/edit/${res.data.product?._id}?open-image=true`,
+        );
       }
     } catch (error) {
       console.log(error.message);
-      toast.error("Something went wrong");
+      toast.error('Something went wrong');
     }
     setAddProductLoading(false);
   };
 
-  const upateExistingProduct = async (body) => {
+  const upateExistingProduct = async body => {
     setIsUpdatingProduct(true);
     try {
       const res = await updateProducts({
@@ -120,37 +136,55 @@ const ProductCreate = ({ match, history }) => {
       });
 
       if (res.data) {
-        toast.success("Product updated successfully");
+        toast.success('Product updated successfully');
       }
     } catch (error) {
       console.log(error.message);
-      toast.error("Something went wrong");
+      toast.error('Something went wrong');
     }
     setIsUpdatingProduct(false);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!imageObj.picture1) {
-      toast.error("Primary image is required");
-      return;
+  const closeModal = () => {
+    const showModal = getQuery('open-image');
+    if (showModal) {
+      setShowProductImages(false);
+      history.push(`/admin/products/edit/${productId}`);
+    } else {
+      setShowProductImages(false);
     }
+  };
 
+  const handleSubmit = async e => {
+    e.preventDefault();
+    const {
+      distance_unit,
+      weight,
+      length,
+      width,
+      height,
+      mass_unit,
+      ...rest
+    } = formValues;
+    const parcel = {
+      distance_unit,
+      weight,
+      length,
+      width,
+      height,
+      mass_unit,
+    };
     const req = {
-      ...formValues,
+      ...rest,
+      parcel,
       category: getSelectValues(formValues.category),
       sizes: getSelectValues(formValues.sizes),
       brands: getSelectValues(formValues.brands),
-      variants: formValues.variants.join(", "),
-      ...imageObj,
+      variants: formValues.variants.map(variant => ({ color: variant })),
     };
 
-    const myApiForm = new FormData();
-    Object.keys(req).forEach((key) => {
-      myApiForm.append(key, req[key] || "");
-    });
     const func = productId ? upateExistingProduct : createNewProduct;
-    await func(myApiForm);
+    await func(req);
     store.dispatch(getAllProducts());
   };
 
@@ -172,19 +206,14 @@ const ProductCreate = ({ match, history }) => {
               submitLoading={genericLoading}
               deleteProduct={() => setShowDeleteConfirmModal(true)}
             />
-            <ProductImages
-              updateType={!!productId}
-              handleSubmit={handleSubmit}
-              imageObj={imageObj}
-              setImage={setImage}
-              loading={genericLoading}
-            />
             <ProductForm
               payload={singleProduct}
               loading={genericLoading}
               updateType={!!productId}
               formValues={formValues}
               handleChange={handleChange}
+              setShowProductImages={!!productId && setShowProductImages}
+              imageObj={imageObj}
             />
           </>
         )}
@@ -194,6 +223,17 @@ const ProductCreate = ({ match, history }) => {
           loading={isDeletingProduct}
           onSubmit={handleDelete}
           closeModal={() => setShowDeleteConfirmModal(false)}
+        />
+      )}
+      {showProductImages && productId && (
+        <ProductImages
+          handleSubmit={handleSubmit}
+          imageObj={imageObj}
+          setImage={setImage}
+          loading={genericLoading}
+          productId={productId}
+          closeModal={closeModal}
+          refetch={() => store.dispatch(getAllProducts())}
         />
       )}
     </div>

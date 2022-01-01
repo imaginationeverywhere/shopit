@@ -1,10 +1,10 @@
-import React from "react";
-import CheckIcon from "../common/components/CheckboxNew/CheckIconNew";
+import React from 'react';
+import CheckIcon from '../common/components/CheckboxNew/CheckIconNew';
 
 const ColorSelect = ({ isSelected, color, onSelect }) => (
   <div
     onClick={() => onSelect(color, isSelected)}
-    className={`color-variant ${isSelected ? "selected-color" : ""}`}
+    className={`color-variant ${isSelected ? 'selected-color' : ''}`}
   >
     <div
       style={{
@@ -13,7 +13,7 @@ const ColorSelect = ({ isSelected, color, onSelect }) => (
       className="circle"
     >
       {isSelected && (
-        <CheckIcon color={color === "white" ? "#888" : "#ffffffdf"} />
+        <CheckIcon color={color === 'white' ? '#888' : '#ffffffdf'} />
       )}
     </div>
   </div>
@@ -21,32 +21,33 @@ const ColorSelect = ({ isSelected, color, onSelect }) => (
 
 const ColorVariantComp = ({ variants, handleChange }) => {
   const colorArray = [
-    "#b87145",
-    "#f0c04a",
-    "#333333",
-    "#cc3333",
-    "#3399cc",
-    "#669933",
-    "#f2719c",
-    "#ebebeb",
-    "orange",
-    "violet",
-    "grey",
-    "pink",
-    "brown",
+    '#b87145',
+    '#f0c04a',
+    '#333333',
+    '#cc3333',
+    '#3399cc',
+    '#669933',
+    '#f2719c',
+    '#ebebeb',
+    'orange',
+    'violet',
+    'grey',
+    'pink',
+    'brown',
   ];
   const onSelect = (color, isSelected) => {
     let selectedVariants = variants;
+
     if (isSelected) {
       // remove from list
-      selectedVariants = variants.filter((name) => color === name);
+      selectedVariants = variants.filter(name => color !== name);
     } else {
       const oldVariants = variants || [];
       selectedVariants = [...oldVariants, color];
     }
     handleChange({
       target: {
-        name: "variants",
+        name: 'variants',
         value: selectedVariants,
       },
     });

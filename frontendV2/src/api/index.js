@@ -100,14 +100,12 @@ export const register = async values => {
 
 export const addProducts = async ({ body }) => {
   return axiosInstance.post('admin/product/new', body, {
-    contentType: 'multipart/form-data',
     headers: myHeaders(),
   });
 };
 
 export const updateProducts = async ({ id, body }) => {
   return axiosInstance.put(`admin/product/${id}`, body, {
-    contentType: 'multipart/form-data',
     headers: myHeaders(),
   });
 };
@@ -120,4 +118,24 @@ export const deleteProducts = async ({ id }) => {
       headers: myHeaders(),
     },
   );
+};
+
+export const addProductImage = async ({ body, productId }) => {
+  return axiosInstance.post(`admin/productImage/${productId}`, body, {
+    contentType: 'multipart/form-data',
+    headers: myHeaders(),
+  });
+};
+
+export const updateProductImage = async ({ productId, body }) => {
+  return axiosInstance.put(`admin/productImage/${productId}`, body, {
+    contentType: 'multipart/form-data',
+    headers: myHeaders(),
+  });
+};
+
+export const deleteProductImage = async ({ productId, body }) => {
+  return axiosInstance.put(`admin/removeProductImage/${productId}`, body, {
+    headers: myHeaders(),
+  });
 };

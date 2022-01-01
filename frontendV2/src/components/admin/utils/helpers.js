@@ -1,9 +1,9 @@
-import jwt_decode from "jwt-decode";
+import jwt_decode from 'jwt-decode';
+import ProductImages from '../ProductCreate/ProductImages';
 
-export const getSelectValues = (arr = []) =>
-  arr.map(({ value }) => value).join(", ");
+export const getSelectValues = (arr = []) => arr.map(({ value }) => value);
 
-export const getOptions = (arr) => {
+export const getOptions = arr => {
   if (!arr) return [];
 
   const options = arr.map(({ name, id }) => ({ label: name, value: id }));
@@ -12,150 +12,150 @@ export const getOptions = (arr) => {
 
 export const sizes = [
   {
-    label: "XS",
-    value: "XS",
+    label: 'XS',
+    value: 'XS',
   },
   {
-    label: "S",
-    value: "S",
+    label: 'S',
+    value: 'S',
   },
   {
-    label: "M",
-    value: "M",
+    label: 'M',
+    value: 'M',
   },
   {
-    label: "L",
-    value: "L",
+    label: 'L',
+    value: 'L',
   },
   {
-    label: "XL",
-    value: "XL",
+    label: 'XL',
+    value: 'XL',
   },
 ];
 
 export const categories = [
   {
-    label: "Furniture",
-    value: "furniture",
+    label: 'Furniture',
+    value: 'furniture',
   },
   {
-    label: "Sofas & Sleeper Sofas",
-    value: "sofas & sleeper sofas",
+    label: 'Sofas & Sleeper Sofas',
+    value: 'sofas & sleeper sofas',
   },
   {
-    label: "Beds",
-    value: "beds",
+    label: 'Beds',
+    value: 'beds',
   },
   {
-    label: "Electronics",
-    value: "electronics",
+    label: 'Electronics',
+    value: 'electronics',
   },
   {
-    label: "Arm Chair & Chaises",
-    value: "arm chair & chaises",
+    label: 'Arm Chair & Chaises',
+    value: 'arm chair & chaises',
   },
   {
-    label: "Decoration",
-    value: "decoration",
+    label: 'Decoration',
+    value: 'decoration',
   },
   {
-    label: "Lightning",
-    value: "lightning",
+    label: 'Lightning',
+    value: 'lightning',
   },
   {
-    label: "Coffee & Tables",
-    value: "coffee & tables",
+    label: 'Coffee & Tables',
+    value: 'coffee & tables',
   },
   {
-    label: "Women",
-    value: "women",
+    label: 'Women',
+    value: 'women',
   },
   {
-    label: "Men",
-    value: "men",
+    label: 'Men',
+    value: 'men',
   },
   {
-    label: "Storage Boxes & Baskets",
-    value: "Storage Boxes & Baskets",
+    label: 'Storage Boxes & Baskets',
+    value: 'Storage Boxes & Baskets',
   },
   {
-    label: "Clothing",
-    value: "clothing",
+    label: 'Clothing',
+    value: 'clothing',
   },
 ];
 
 export const massList = [
-{
-  label: 'g',
-  value: 'g'
-}, 
-{
-  label: 'oz',
-  value: 'oz'
-}, 
-{
-  label: 'lb',
-  value: 'lb'
-}, 
-{
-  label: 'kg',
-  value: 'kg'
-}, 
+  {
+    label: 'g',
+    value: 'g',
+  },
+  {
+    label: 'oz',
+    value: 'oz',
+  },
+  {
+    label: 'lb',
+    value: 'lb',
+  },
+  {
+    label: 'kg',
+    value: 'kg',
+  },
 ];
 
 export const distanceList = [
   {
     label: 'in',
-    value: 'in'
-  }, 
+    value: 'in',
+  },
   {
     label: 'ft',
-    value: 'ft'
-  }, 
+    value: 'ft',
+  },
   {
     label: 'm',
-    value: 'm'
-  }, 
+    value: 'm',
+  },
   {
     label: 'yd',
-    value: 'yd'
-  }, 
-  ];
+    value: 'yd',
+  },
+];
 
 export const brands = [
   {
-    label: "UGG",
-    value: "UGG",
+    label: 'UGG',
+    value: 'UGG',
   },
   {
-    label: "River Island",
-    value: "River Island",
+    label: 'River Island',
+    value: 'River Island',
   },
   {
-    label: "Nike",
-    value: "Nike",
+    label: 'Nike',
+    value: 'Nike',
   },
   {
-    label: "F&F",
-    value: "F&F",
+    label: 'F&F',
+    value: 'F&F',
   },
   {
-    label: "Geox",
-    value: "Geox",
+    label: 'Geox',
+    value: 'Geox',
   },
   {
-    label: "New Balance",
-    value: "New Balance",
+    label: 'New Balance',
+    value: 'New Balance',
   },
 ];
 
 export const isTokenValid = () => {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem('token');
   if (token) {
     const decoded = jwt_decode(token);
     const currentTime = Date.now() / 1000;
     if (decoded.exp < currentTime) {
-      localStorage.removeItem("token");
+      localStorage.removeItem('token');
       return false;
     }
     return true;
@@ -163,7 +163,7 @@ export const isTokenValid = () => {
   return false;
 };
 
-export const getUpdateProductDetails = (product) => {
+export const getUpdateProductDetails = product => {
   if (!product) return product;
   const {
     name,
@@ -180,7 +180,7 @@ export const getUpdateProductDetails = (product) => {
   const variantColor = [];
 
   variants &&
-    variants.forEach((variant) => {
+    variants.forEach(variant => {
       const color = variant && variant.color;
       color && variantColor.push(color);
     });
@@ -192,23 +192,24 @@ export const getUpdateProductDetails = (product) => {
     pictures,
     smPictures,
     variants: variantColor,
-    sizes: sizes && sizes.map((ele) => ({ label: ele, value: ele })),
-    category: category && category.map((ele) => ({ label: ele, value: ele })),
-    brands: brands && brands.map((ele) => ({ label: ele, value: ele })),
+    sizes: sizes && sizes.map(ele => ({ label: ele, value: ele })),
+    category: category && category.map(ele => ({ label: ele, value: ele })),
+    brands: brands && brands.map(ele => ({ label: ele, value: ele })),
     ...parcel,
   };
   return productDetails;
 };
 
-export const getUpdateProductImages = (product) => {
-  const { rawPictures: pictures, rawSmPictures: smPictures } = product;
+export const getUpdateProductImages = product => {
   const obj = {};
-  pictures.forEach((picture, index) => {
-    obj[`picture${index + 1}`] = picture;
+  // eslint-disable-next-line no-unused-expressions
+  product?.productImages?.forEach(({ name, ...rest }) => {
+    obj[name] = {
+      name,
+      ...rest,
+    };
   });
-  smPictures.forEach((picture, index) => {
-    obj[`smPicture${index + 1}`] = picture;
-  });
+
   return obj;
 };
 
@@ -216,6 +217,6 @@ export const getValue = (options, checkValue) => {
   if (!options || !checkValue) {
     return null;
   }
-  const obj = options.filter((option) => option.value === checkValue);
+  const obj = options.filter(option => option.value === checkValue);
   return obj;
 };

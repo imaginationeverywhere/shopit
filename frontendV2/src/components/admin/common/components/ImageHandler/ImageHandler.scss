@@ -19,14 +19,14 @@
   }
 
   img {
-    height: 8em;
+    height: 12em;
     width: 100%;
     object-fit: contain;
     margin: 0 auto;
   }
   .upload-here {
     cursor: pointer;
-    height: 8em;
+    height: 12em;
 
     .drag-here {
       padding: 3em;
@@ -34,7 +34,7 @@
         margin: 0 auto;
         margin-top: 1em;
         font-size: 0.9em;
-        font-family: "Avenir_Roman";
+        font-family: 'Avenir_Roman';
         color: #c66;
         text-align: center;
       }
@@ -43,7 +43,7 @@
         margin: 0 auto;
         margin-bottom: 0.5em;
         font-size: 1.2em;
-        font-family: "Avenir_Heavy";
+        font-family: 'Avenir_Heavy';
         color: #c66;
         text-align: center;
       }
@@ -60,10 +60,15 @@
   .drag {
     p {
       font-size: 1.2em;
-      font-family: "Avenir_Heavy";
+      font-family: 'Avenir_Heavy';
     }
   }
 }
 .has-image {
   border: 1px solid #e2e5ec;
+}
+
+.loading-img {
+  width: 3em !important;
+  height: 3em !important;
 }
