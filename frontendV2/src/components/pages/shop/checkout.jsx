@@ -1,58 +1,66 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { Helmet } from "react-helmet";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
+import { useSelector } from 'react-redux';
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
-import Accordion from "../../features/accordion/accordion";
-import Card from "../../features/accordion/card";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
+import Accordion from '../../features/accordion/accordion';
+import Card from '../../features/accordion/card';
 
-import { getCartTotal } from "../../../services";
+import { getCartTotal } from '../../../services';
+import CarrierList from './Carrierlist';
 
 function Checkout(props) {
-  const { cartlist, total } = props;
-  const shippingPrice = { free: 0, standard: 10, express: 20 };
-  const shippingObj = {
-    free: "Free shipping",
-    standard: "Standard",
-    express: "Express",
-  };
+  const {
+    selectedCarrier = {},
+    cartlist: { cart },
+  } = useSelector(store => store);
+  const cartlist = cart;
+  const total = getCartTotal(cart);
+  const [shippingPrice, setShippingPrice] = useState(
+    parseFloat(selectedCarrier.amount_local) || 0,
+  );
 
+  const taxPrice = Number((0.05 * total).toFixed(2));
   useEffect(() => {
-    let item = document.querySelector("#checkout-discount-input");
+    let item = document.querySelector('#checkout-discount-input');
 
-    var opactiyEffect = function (e) {
+    var opactiyEffect = function(e) {
       e.currentTarget.parentNode
-        .querySelector("label")
-        .setAttribute("style", "opacity: 0");
+        .querySelector('label')
+        .setAttribute('style', 'opacity: 0');
     };
 
-    var blurEffect = function (e) {
+    var blurEffect = function(e) {
       let $this = e.currentTarget;
       if ($this.length !== 0) {
         $this.parentNode
-          .querySelector("label")
-          .setAttribute("style", "opacity: 0");
+          .querySelector('label')
+          .setAttribute('style', 'opacity: 0');
       } else {
         $this.parentNode
-          .querySelector("label")
-          .setAttribute("style", "opacity: 1");
+          .querySelector('label')
+          .setAttribute('style', 'opacity: 1');
       }
     };
 
-    item.addEventListener("focus", opactiyEffect);
+    item.addEventListener('focus', opactiyEffect);
 
-    item.addEventListener("blur", blurEffect);
+    item.addEventListener('blur', blurEffect);
 
     return () => {
-      item.removeEventListener("focus", opactiyEffect);
+      item.removeEventListener('focus', opactiyEffect);
 
-      item.removeEventListener("blur", blurEffect);
+      item.removeEventListener('blur', blurEffect);
     };
   }, []);
-
+  useEffect(() => {
+    if (selectedCarrier.amount_local) {
+      setShippingPrice(parseFloat(selectedCarrier.amount_local));
+    }
+  }, [selectedCarrier]);
   return (
     <>
       <Helmet>
@@ -63,7 +71,7 @@ function Checkout(props) {
 
       <div className="main">
         <PageHeader title="Checkout" subTitle="Shop" />
-        <Breadcrumb title="Checkout" parent1={["Shop", "shop/sidebar/list"]} />
+        <Breadcrumb title="Checkout" parent1={['Shop', 'shop/sidebar/list']} />
 
         <div className="page-content">
           <div className="checkout">
@@ -222,16 +230,32 @@ function Checkout(props) {
                               })}
                             </td>
                           </tr>
+                          <tr className="summary-shipping">
+                            <td>Shipping</td>
+                            <td>&nbsp;</td>
+                          </tr>
+
                           <tr>
+                            <td colSpan="2">
+                              <CarrierList />
+                            </td>
+                          </tr>
+                          <tr className="summary-shipping">
+                            <td>Tax:</td>
+                            <td> ${taxPrice}</td>
+                          </tr>
+                          <tr className="summary-shipping">
                             <td>Shipping:</td>
-                            <td>{shippingObj[props.shipping]}</td>
+                            <td> ${shippingPrice}</td>
                           </tr>
                           <tr className="summary-total">
                             <td>Total:</td>
                             <td>
                               $
                               {(
-                                total + shippingPrice[props.shipping]
+                                total +
+                                shippingPrice +
+                                taxPrice
                               ).toLocaleString(undefined, {
                                 minimumFractionDigits: 2,
                                 maximumFractionDigits: 2,
@@ -303,10 +327,4 @@ function Checkout(props) {
   );
 }
 
-export const mapStateToProps = (state) => ({
-  cartlist: state.cartlist.cart,
-  total: getCartTotal(state.cartlist.cart),
-  shipping: state.cartlist.shipping,
-});
-
-export default connect(mapStateToProps)(Checkout);
+export default Checkout;

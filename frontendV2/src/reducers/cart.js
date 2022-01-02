@@ -5,6 +5,7 @@ import {
   CHANGE_SHIPPING,
   REFRESH_STORE,
   SAVE_SHIPPING_INFO,
+  SAVE_BILLING_INFO,
 } from '../constants/action-types';
 import { findIndex, makeParcelArray } from '../utils';
 import { persistReducer } from 'redux-persist';
@@ -13,7 +14,9 @@ import storage from 'redux-persist/lib/storage';
 const initialState = {
   cart: [],
   shippingInfo: {},
+  billingInfo: {},
   shipping: 'free',
+  tax: 0,
 };
 
 function cartReducer(state = initialState, action) {
@@ -96,6 +99,11 @@ function cartReducer(state = initialState, action) {
       return {
         ...state,
         shippingInfo: action.payload,
+      };
+    case SAVE_BILLING_INFO:
+      return {
+        ...state,
+        billingInfo: action.payload,
       };
 
     default:

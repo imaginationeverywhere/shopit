@@ -121,3 +121,10 @@ export const deleteProducts = async ({ id }) => {
     },
   );
 };
+
+export const newShippingInfo = async paylpad => {
+  return axiosInstance.post('address/new', paylpad, {});
+};
+export const updateShippingInfo = async paylpad => {
+  return axiosInstance.put('/address/update', paylpad, {});
+};

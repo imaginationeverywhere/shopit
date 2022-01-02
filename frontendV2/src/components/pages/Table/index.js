@@ -1,7 +1,7 @@
-import React, { Fragment, useEffect, useState } from "react";
-import TableFooter from "./TableFooter";
-import Checkbox from "./Checkbox";
-import Columns from "./Columns";
+import React, { Fragment, useEffect, useState } from 'react';
+import TableFooter from './TableFooter';
+import Checkbox from './Checkbox';
+import Columns from './Columns';
 
 const Table = ({
   tableData,
@@ -18,7 +18,7 @@ const Table = ({
   const [lastPage, setLastPage] = useState(Math.ceil(allRows.length / perPage));
   const [paginatedPage, setPaginatedPage] = useState(page);
   const [paginatedRows, setPaginatedRows] = useState(
-    allRows.slice(paginatedPage - 1, paginatedPage - 1 + perPage)
+    allRows.slice(paginatedPage - 1, paginatedPage - 1 + perPage),
   );
   const [checkedRow, setCheckedRow] = useState(selectedRow);
 
@@ -26,7 +26,7 @@ const Table = ({
     if (allRows.length) {
       setLastPage(Math.ceil(allRows.length / perPage));
       setPaginatedRows(
-        allRows.slice(paginatedPage - 1, paginatedPage - 1 + perPage)
+        allRows.slice(paginatedPage - 1, paginatedPage - 1 + perPage),
       );
     }
   }, [allRows, perPage, paginatedPage]);
@@ -51,19 +51,19 @@ const Table = ({
     setPaginatedPage(parseInt(value));
   };
 
-  const handleCheckboxChange = (row) => {
+  const handleCheckboxChange = row => {
     setCheckedRow(row);
     handleCheckboxClick(row);
   };
 
   const sortColumn = (columnField, order) => {
     const sortedRows = allRows.sort((r1, r2) => {
-      if (order === "asc") {
-        return typeof r1[columnField] === "string"
+      if (order === 'asc') {
+        return typeof r1[columnField] === 'string'
           ? r1[columnField].localeCompare(r2[columnField])
           : r1[columnField] - r2[columnField];
       } else {
-        return typeof r1[columnField] === "string"
+        return typeof r1[columnField] === 'string'
           ? r2[columnField].localeCompare(r1[columnField])
           : r2[columnField] - r1[columnField];
       }
@@ -73,9 +73,8 @@ const Table = ({
 
   return (
     <Fragment>
-      <h3 className="summary-title ">Carriers</h3>
-      <div className="table-responsive">
-        <table className="table table-striped">
+      <div>
+        <table style={{ width: '100%' }}>
           <thead>
             <tr>
               <Columns
@@ -85,35 +84,43 @@ const Table = ({
               />
             </tr>
           </thead>
-          <tbody className="table-adjustment">
+          <tbody>
             {paginatedRows.map((row, index) => (
               <tr key={index}>
                 {checkbox && (
                   <td>
-                    <Checkbox
-                      value={checkedRow}
-                      handleCheckboxChange={handleCheckboxChange}
-                      row={row}
-                    />
+                    <div style={{ display: 'flex' }}>
+                      <Checkbox
+                        value={checkedRow}
+                        index={index}
+                        handleCheckboxChange={handleCheckboxChange}
+                        row={row}
+                      />
+                      {row['provider']}
+                    </div>
                   </td>
                 )}
-                {columns.map((column) => (
-                  <td key={column.field}>{row[column.field]}</td>
-                ))}
+                <td>{row['amount_local']}</td>
+                <td>{row['estimated_days']}</td>
+                <td>{row['serviceType']}</td>
               </tr>
             ))}
+            <tr>
+              <td colSpan="4">
+                {(paginated || searchable) && (
+                  <TableFooter
+                    paginatedPage={paginatedPage}
+                    handlePageChange={handlePageChange}
+                    lastPage={lastPage}
+                    searchable={searchable}
+                    paginated={paginated}
+                  />
+                )}
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
-      {(paginated || searchable) && (
-        <TableFooter
-          paginatedPage={paginatedPage}
-          handlePageChange={handlePageChange}
-          lastPage={lastPage}
-          searchable={searchable}
-          paginated={paginated}
-        />
-      )}
     </Fragment>
   );
 };

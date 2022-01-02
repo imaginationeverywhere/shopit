@@ -1,13 +1,16 @@
-import React from "react";
-import { Tabs, TabList, TabPanel, Tab } from "react-tabs";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import React, { useState } from 'react';
+import { Tabs, TabList, TabPanel, Tab } from 'react-tabs';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
+import PageHeader from '../common/page-header';
+import Breadcrumb from '../common/breadcrumb';
+import Address from './Address';
 
 function DashBoard() {
+  const [edit, setEdit] = useState(false);
+  const [address, setAddress] = useState('shipping');
   return (
     <>
       <Helmet>
@@ -20,7 +23,7 @@ function DashBoard() {
         <PageHeader title="My Account" subTitle="Shop" />
         <Breadcrumb
           title="My Account"
-          parent1={["Shop", "shop/sidebar/list"]}
+          parent1={['Shop', 'shop/sidebar/list']}
           adClass="mb-3"
         />
 
@@ -48,7 +51,14 @@ function DashBoard() {
                         </Tab>
 
                         <Tab className="nav-item">
-                          <span className="nav-link">Addresses</span>
+                          <span
+                            onClick={() => {
+                              setEdit(false);
+                            }}
+                            className="nav-link"
+                          >
+                            Addresses
+                          </span>
                         </Tab>
 
                         <Tab className="nav-item">
@@ -65,36 +75,36 @@ function DashBoard() {
 
                     <div
                       className="col-md-8 col-lg-9"
-                      style={{ marginTop: "1rem" }}
+                      style={{ marginTop: '1rem' }}
                     >
                       <div className="tab-pane">
                         <TabPanel>
                           <p>
-                            Hello{" "}
+                            Hello{' '}
                             <span className="font-weight-normal text-dark">
                               User
-                            </span>{" "}
-                            (not{" "}
+                            </span>{' '}
+                            (not{' '}
                             <span className="font-weight-normal text-dark">
                               User
                             </span>
                             ? <Link to="#">Log out</Link>)
                             <br />
-                            From your account dashboard you can view your{" "}
+                            From your account dashboard you can view your{' '}
                             <Link
                               to="#tab-orders"
                               className="tab-trigger-link link-underline"
                             >
                               recent orders
                             </Link>
-                            , manage your{" "}
+                            , manage your{' '}
                             <Link
                               to="#tab-address"
                               className="tab-trigger-link"
                             >
                               shipping and billing addresses
                             </Link>
-                            , and{" "}
+                            , and{' '}
                             <Link
                               to="#tab-account"
                               className="tab-trigger-link"
@@ -128,59 +138,75 @@ function DashBoard() {
                         </TabPanel>
 
                         <TabPanel>
-                          <p>
-                            The following addresses will be used on the checkout
-                            page by default.
-                          </p>
+                          {!edit ? (
+                            <div>
+                              <p>
+                                The following addresses will be used on the
+                                checkout page by default.
+                              </p>
 
-                          <div className="row">
-                            <div className="col-lg-6">
-                              <div className="card card-dashboard">
-                                <div className="card-body">
-                                  <h3 className="card-title">
-                                    Billing Address
-                                  </h3>
+                              <div className="row">
+                                <div className="col-lg-6">
+                                  <div className="card card-dashboard">
+                                    <div className="card-body">
+                                      <h3 className="card-title">
+                                        Billing Address
+                                      </h3>
 
-                                  <p>
-                                    User Name
-                                    <br />
-                                    User Company
-                                    <br />
-                                    John str
-                                    <br />
-                                    New York, NY 10001
-                                    <br />
-                                    1-234-987-6543
-                                    <br />
-                                    yourmail@mail.com
-                                    <br />
-                                    <Link to="#">
-                                      Edit <i className="icon-edit"></i>
-                                    </Link>
-                                  </p>
+                                      <p>
+                                        User Name
+                                        <br />
+                                        User Company
+                                        <br />
+                                        John str
+                                        <br />
+                                        New York, NY 10001
+                                        <br />
+                                        1-234-987-6543
+                                        <br />
+                                        yourmail@mail.com
+                                        <br />
+                                        <button
+                                          onClick={e => {
+                                            setAddress('billing');
+                                            setEdit(true);
+                                          }}
+                                        >
+                                          Edit <i className="icon-edit"></i>
+                                        </button>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div className="col-lg-6">
+                                  <div className="card card-dashboard">
+                                    <div className="card-body">
+                                      <h3 className="card-title">
+                                        Shipping Address
+                                      </h3>
+
+                                      <p>
+                                        You have not set up this type of address
+                                        yet.
+                                        <br />
+                                        <button
+                                          onClick={e => {
+                                            setAddress('shipping');
+                                            setEdit(true);
+                                          }}
+                                        >
+                                          Edit <i className="icon-edit"></i>
+                                        </button>
+                                      </p>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
-
-                            <div className="col-lg-6">
-                              <div className="card card-dashboard">
-                                <div className="card-body">
-                                  <h3 className="card-title">
-                                    Shipping Address
-                                  </h3>
-
-                                  <p>
-                                    You have not set up this type of address
-                                    yet.
-                                    <br />
-                                    <Link to="#">
-                                      Edit <i className="icon-edit"></i>
-                                    </Link>
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                          ) : (
+                            <Address type={address} />
+                          )}
                         </TabPanel>
 
                         <TabPanel>

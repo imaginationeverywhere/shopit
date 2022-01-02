@@ -1,35 +1,42 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import 'mdbreact/dist/css/mdb.css';
-
-import Loader from '../../Loader';
+import loader from '../../../assets/loader.gif';
 import {
   getCarriers,
   setSelectedCarrier,
 } from '../../../actions/shipmentActions';
 import Table from '../Table/index';
 
-const addressFrom = {
+var addressFrom = {
   name: 'Shawn Ippotle',
-  street1: '777 Brockton Avenue',
-  city: 'Abington',
-  state: 'MA',
-  zip: '2351',
+  company: 'Shippo',
+  street1: '215 Clayton St.',
+  city: 'San Francisco',
+  state: 'CA',
+  zip: '94117',
   country: 'US',
+  phone: '+1 555 341 9393',
+  email: 'shippotle@goshippo.com',
 };
-const addressTo = {
+
+var addressTo = {
   name: 'Mr Hippo',
-  street1: '4133 Veterans Memorial Drive',
-  city: 'Batavia',
+  company: '',
+  street1: 'Broadway 1',
+  street2: '',
+  city: 'New York',
   state: 'NY',
-  zip: '14020',
+  zip: '10007',
   country: 'US',
+  phone: '+1 555 341 9393',
+  email: 'mrhippo@goshippo.com',
+  metadata: 'Hippos dont lie',
 };
 
 const CarrierList = () => {
   const dispatch = useDispatch();
   const {
-    cartlist: { cart, shippingInfo },
+    cartlist: { cart },
     carriers: { data: carriers, loading = true } = {},
     selectedCarrier = {},
   } = useSelector(store => store);
@@ -38,7 +45,7 @@ const CarrierList = () => {
     cart =>
       cart.reduce((acc, product) => {
         if (product?.parcel) {
-          return [...acc, product?.parcel];
+          return [...acc, ...product?.parcels];
         }
 
         return acc;
@@ -48,7 +55,7 @@ const CarrierList = () => {
 
   useEffect(() => {
     dispatch(getCarriers({ addressFrom, addressTo, parcels: parcels(cart) }));
-  }, []);
+  }, [cart]);
   const [dataTable, setDataTable] = useState({
     columns: [
       {
@@ -60,7 +67,7 @@ const CarrierList = () => {
         field: 'amount_local',
       },
       {
-        label: 'Estimated Days',
+        label: 'Days',
         field: 'estimated_days',
       },
       {
@@ -92,9 +99,9 @@ const CarrierList = () => {
   };
 
   return (
-    <div id="carrier-list">
+    <>
       {loading ? (
-        <Loader />
+        <span className="slider-loader"></span>
       ) : (
         !!dataTable.rows.length && (
           <Table
@@ -107,7 +114,7 @@ const CarrierList = () => {
           />
         )
       )}
-    </div>
+    </>
   );
 };
 
