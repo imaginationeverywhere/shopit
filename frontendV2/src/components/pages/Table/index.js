@@ -51,7 +51,7 @@ const Table = ({
     setPaginatedPage(parseInt(value));
   };
 
-  const handleCheckboxChange = (row) => {
+  const handleCheckboxChange = row => {
     setCheckedRow(row);
     handleCheckboxClick(row);
   };
@@ -73,9 +73,8 @@ const Table = ({
 
   return (
     <Fragment>
-      <h3 className="summary-title ">Carriers</h3>
-      <div className="table-responsive">
-        <table className="table table-striped">
+      <div>
+        <table style={{ width: '100%' }}>
           <thead>
             <tr>
               <Columns
@@ -85,35 +84,43 @@ const Table = ({
               />
             </tr>
           </thead>
-          <tbody className="table-adjustment">
+          <tbody>
             {paginatedRows.map((row, index) => (
               <tr key={index}>
                 {checkbox && (
                   <td>
-                    <Checkbox
-                      value={checkedRow}
-                      handleCheckboxChange={handleCheckboxChange}
-                      row={row}
-                    />
+                    <div style={{ display: 'flex' }}>
+                      <Checkbox
+                        value={checkedRow}
+                        index={index}
+                        handleCheckboxChange={handleCheckboxChange}
+                        row={row}
+                      />
+                      {row['provider']}
+                    </div>
                   </td>
                 )}
-                {columns.map((column) => (
-                  <td key={column.field}>{row[column.field]}</td>
-                ))}
+                <td>{row['amount_local']}</td>
+                <td>{row['estimated_days']}</td>
+                <td>{row['serviceType']}</td>
               </tr>
             ))}
+            <tr>
+              <td colSpan="4">
+                {(paginated || searchable) && (
+                  <TableFooter
+                    paginatedPage={paginatedPage}
+                    handlePageChange={handlePageChange}
+                    lastPage={lastPage}
+                    searchable={searchable}
+                    paginated={paginated}
+                  />
+                )}
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
-      {(paginated || searchable) && (
-        <TableFooter
-          paginatedPage={paginatedPage}
-          handlePageChange={handlePageChange}
-          lastPage={lastPage}
-          searchable={searchable}
-          paginated={paginated}
-        />
-      )}
     </Fragment>
   );
 };

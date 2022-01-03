@@ -109,11 +109,13 @@ export const addToCart = (product, qty) => (dispatch) => {
 };
 
 // add item to cart : typical action
-export const addToCartUnsafe = (product, qty) => ({
-  type: types.ADD_TO_CART,
-  product,
-  qty,
-});
+export const addToCartUnsafe = (product, qty) => {
+  return {
+    type: types.ADD_TO_CART,
+    product,
+    qty,
+  };
+};
 
 // remove item from wishlist
 export const removeFromWishlist = (productId) => (dispatch) => {

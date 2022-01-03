@@ -11,7 +11,6 @@ export const getCarriers = (payload) => async (dispatch) => {
   try {
     dispatch({ type: GET_SHIPMENT_CARRIERS_REQUEST });
     const { data } = await axiosInstance.post('/shipment/carriers', payload);
-
     dispatch({
       type: GET_SHIPMENT_CARRIERS_SUCCESS,
       payload: data,

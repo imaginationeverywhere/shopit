@@ -51,6 +51,7 @@ const order = require('./routes/order');
 const shipment = require('./routes/shipment');
 const webhooks = require('./routes/webhooks');
 const templates = require('./routes/templates');
+const address = require('./routes/address');
 
 app.use(Constants.BASE_URL, products);
 app.use(Constants.BASE_URL, auth);
@@ -59,6 +60,7 @@ app.use(Constants.BASE_URL, order);
 app.use(Constants.BASE_URL, shipment);
 app.use(Constants.BASE_URL, webhooks);
 app.use(Constants.BASE_URL, templates);
+app.use(Constants.BASE_URL, address);
 
 if (process.env.NODE_ENV === 'PRODUCTION') {
   app.use(express.static(path.join(__dirname, '../frontend/build')));

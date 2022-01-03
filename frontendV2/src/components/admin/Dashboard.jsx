@@ -5,8 +5,8 @@ import Card from './ui/Card';
 import classes from './styles/style.module.scss';
 
 function Dashboard() {
-  const { products } = useSelector((state) => state.data);
-  const { templates } = useSelector((state) => state.templates);
+  const { products } = useSelector(state => state.data);
+  const { templates } = useSelector(state => state.templates);
 
   const getOutOfStockCount = () => {
     let count = 0;

@@ -1,15 +1,22 @@
 import React from 'react';
-
-const Checkbox = ({ value, handleCheckboxChange, row }) => {
+import classes from '../../userAdmin/styles/cart.module.scss';
+const Checkbox = ({ value, handleCheckboxChange, row, index }) => {
   const { servicelevel: { token: valueToken } = {} } = value;
   const { servicelevel: { token: rowToken } = {} } = row;
+
   return (
-    <input
-      type="checkbox"
-      className="table-adjustment"
-      checked={valueToken && valueToken === rowToken}
-      onChange={() => handleCheckboxChange(row)}
-    />
+    <>
+      <div className={classes['checkbox-wrap']}>
+        <input
+          type="radio"
+          id={`${valueToken + index}`}
+          name="radio-group"
+          checked={valueToken && rowToken === valueToken}
+          onChange={() => handleCheckboxChange(row)}
+        />
+        <label htmlFor={`${valueToken + index}`}></label>
+      </div>
+    </>
   );
 };
 

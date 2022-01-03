@@ -205,4 +205,11 @@ export const deleteProductImage = async ({ productId, body }) => {
   return axiosInstance.put(`admin/removeProductImage/${productId}`, body, {
     headers: myHeaders(),
   });
+
+export const newShippingInfo = async paylpad => {
+  return axiosInstance.post('address/new', paylpad, {});
+};
+  
+export const updateShippingInfo = async paylpad => {
+  return axiosInstance.put('/address/update', paylpad, {});
 };
