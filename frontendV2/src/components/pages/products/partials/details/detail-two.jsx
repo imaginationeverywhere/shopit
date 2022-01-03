@@ -3,14 +3,10 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import StickyBox from 'react-sticky-box';
 
-import Accordion from '../../../../features/accordion/accordion';
-import Card from '../../../../features/accordion/card';
+import Accordion from 'components/features/accordion/accordion';
+import Card from 'components/features/accordion/card';
 
-import {
-  addToCart,
-  addToCompare,
-  toggleWishlist,
-} from '../../../../../actions';
+import { addToCart, addToCompare, toggleWishlist } from 'actions';
 
 import {
   quantityInputs,
@@ -18,7 +14,7 @@ import {
   isEdgeBrowser,
   stickyContentHandle,
   findIndex,
-} from '../../../../../utils';
+} from 'utils';
 
 function ProductDetailTwo(props) {
   const { product, isWishlist, type, addToCart, toggleWishlist, addToCompare } =

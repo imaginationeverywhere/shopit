@@ -1,5 +1,5 @@
 import React from 'react';
-
+import classes from '../../userAdmin/styles/cart.module.scss';
 const TableFooter = ({
   searchable,
   paginated,
@@ -8,7 +8,7 @@ const TableFooter = ({
   lastPage,
 }) => {
   return (
-    <div className="table-footer">
+    <div>
       {searchable && (
         <div>
           <input type="text" placeholder="search" />
@@ -17,7 +17,7 @@ const TableFooter = ({
       {paginated && (
         <div>
           <button
-            className="btn btn-small theme-color page-change"
+            className={classes['footer-button']}
             disabled={paginatedPage <= 1}
             onClick={() =>
               handlePageChange({
@@ -29,14 +29,16 @@ const TableFooter = ({
           </button>
           <input
             type="text"
-            value={paginatedPage}
+            min={1}
+            max={100}
+            value={paginatedPage || 1}
             name="paginatedPage"
             onChange={handlePageChange}
-            className="page-input"
+            className={classes['pageginated-input']}
           />
           <span>/{lastPage}</span>
           <button
-            className="btn btn-small theme-color page-change"
+            className={classes['footer-button']}
             disabled={paginatedPage === lastPage}
             onClick={() =>
               handlePageChange({

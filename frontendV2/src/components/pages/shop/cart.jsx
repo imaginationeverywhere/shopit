@@ -1,26 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { connect, useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Helmet } from 'react-helmet';
 // import Custom Components
 import PageHeader from '../../common/page-header';
 import Breadcrumb from '../../common/breadcrumb';
-
 import { getCartTotal } from '../../../services';
 import { quantityInputs, isIEBrowser } from '../../../utils';
-import { changeQty, removeFromCart, changeShipping } from '../../../actions';
+import { changeQty, removeFromCart } from '../../../actions';
 import CarrierList from './Carrierlist';
 
 function Cart(props) {
-  const { cartlist, total, removeFromCart } = props;
-  const [shippingPrice, setShippingPrice] = useState(0);
+  const {
+    selectedCarrier = {},
+    cartlist: { cart },
+  } = useSelector((store) => store);
+  const dispatch = useDispatch();
+  const [cartlist, setCartlist] = useState(cart);
+  const [total, setTotal] = useState(getCartTotal(cart));
+  const [shippingPrice, setShippingPrice] = useState(
+    parseFloat(selectedCarrier.amount_local) || 0,
+  );
+
   useEffect(() => {
-    quantityInputs();
-  });
-
+    setCartlist(cart);
+    setTotal(getCartTotal(cart));
+  }, [cart]);
   const taxPrice = Number((0.05 * total).toFixed(2));
-
-  const { selectedCarrier = {} } = useSelector((store) => store);
 
   useEffect(() => {
     if (selectedCarrier.amount_local) {
@@ -43,24 +49,24 @@ function Cart(props) {
     });
   }, [cartlist]);
 
-  function onChangeQty(e, productId) {
-    props.changeQty(
-      productId,
-      e.currentTarget.querySelector('input[type="number"]').value,
+  const onChangeQty = (e, productId) => {
+    dispatch(
+      changeQty(
+        productId,
+        e.currentTarget.querySelector('input[type="number"]').value,
+      ),
     );
-  }
-
-  function goToCheckout() {
-    // props.changeShipping(shipping);
-  }
-
+  };
+  const handleRemoveFromCart = (cartId) => {
+    dispatch(removeFromCart(cartId));
+  };
   return (
     <>
       <Helmet>
-        <title>Molla React eCommerce Template | Shopping Cart</title>
+        <title>Shopit | Shopping Cart</title>
       </Helmet>
 
-      <h1 className="d-none">Molla React eCommerce Template - Shopping Cart</h1>
+      <h1 className="d-none">Shopit - Shopping Cart</h1>
 
       <div className="main">
         <PageHeader title="Shopping Cart" subTitle="Shop" />
@@ -77,11 +83,11 @@ function Cart(props) {
                   <table className="table table-cart table-mobile">
                     <thead>
                       <tr>
-                        <th>Product</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Total</th>
-                        <th></th>
+                        {['Product', 'Price', 'Quantity', 'Total', ''].map(
+                          (title, index) => (
+                            <th key={title + index}>{title}</th>
+                          ),
+                        )}
                       </tr>
                     </thead>
 
@@ -161,7 +167,9 @@ function Cart(props) {
                             <td className="remove-col">
                               <button
                                 className="btn-remove"
-                                onClick={(e) => removeFromCart(item.id)}
+                                onClick={() => {
+                                  handleRemoveFromCart(item.id);
+                                }}
                               >
                                 <i className="icon-close"></i>
                               </button>
@@ -208,7 +216,6 @@ function Cart(props) {
                       <i className="icon-refresh"></i>
                     </button>
                   </div>
-                  <CarrierList />
                 </div>
                 <aside className="col-lg-3">
                   <div className="summary summary-cart">
@@ -227,12 +234,22 @@ function Cart(props) {
                           </td>
                         </tr>
                         <tr className="summary-shipping">
-                          <td>Shipping:</td>
-                          <td> ${shippingPrice}</td>
+                          <td>Shipping</td>
+                          <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td colSpan="2">
+                            {}
+                            <CarrierList />
+                          </td>
                         </tr>
                         <tr className="summary-shipping">
                           <td>Tax:</td>
                           <td> ${taxPrice}</td>
+                        </tr>
+                        <tr className="summary-shipping">
+                          <td>Shipping:</td>
+                          <td> ${shippingPrice}</td>
                         </tr>
                         <tr className="summary-shipping-estimate">
                           <td>
@@ -262,16 +279,11 @@ function Cart(props) {
                         </tr>
                       </tbody>
                     </table>
-
-
                     <Link to="/shop/checkout">
-                                        <button
-                                            className="btn btn-outline-primary-2 btn-order btn-block"
-
-                                        >
-                                            PROCEED TO CHECKOUT
-                                        </button>
-                                        </Link>
+                      <button className="btn btn-outline-primary-2 btn-order btn-block">
+                        PROCEED TO CHECKOUT
+                      </button>
+                    </Link>
                   </div>
 
                   <Link
@@ -291,14 +303,4 @@ function Cart(props) {
   );
 }
 
-export const mapStateToProps = (state) => ({
-  cartlist: state.cartlist.cart,
-  total: getCartTotal(state.cartlist.cart),
-  prevShip: state.cartlist.shipping,
-});
-
-export default connect(mapStateToProps, {
-  changeQty,
-  removeFromCart,
-  changeShipping,
-})(Cart);
+export default Cart;

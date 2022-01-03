@@ -1,0 +1,109 @@
+[type='radio']:checked,
+[type='radio']:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+[type='radio']:checked + label,
+[type='radio']:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  color: #666;
+}
+[type='radio']:checked + label:before,
+[type='radio']:not(:checked) + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  background: #fff;
+}
+[type='radio']:checked + label:after,
+[type='radio']:not(:checked) + label:after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: #c66;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+[type='radio']:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+[type='radio']:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.table-footer-class {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  button {
+    width: 100px;
+  }
+  input {
+    width: 50px;
+  }
+}
+.pageginated-input {
+  width: 50px;
+  border: #c66 solid 1.5px;
+  border-radius: 8px;
+}
+
+.street-info {
+  display: flex;
+  flex-wrap: wrap;
+
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    flex-wrap: nowrap;
+  }
+}
+.zip-info,
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    flex-wrap: nowrap;
+  }
+}
+.product-form {
+  border: 0.1rem solid #ebebeb;
+  padding: 16px;
+  border-radius: 8px;
+}
+.shipping-space {
+  width: 20px;
+}
+.shipping-flexed-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+.shipping-flexed-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.1rem solid #ebebeb;
+}
+.shipping-heading {
+  font-weight: 300;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  padding: 1.4rem 0;
+  color: #333;
+}
