@@ -6,7 +6,7 @@ const Columns = ({ checkbox, columns, sortColumn }) => {
   const DESC_SORTING = 'desc';
   const ASC_SORTING = 'asc';
 
-  const handleClick = (column) => {
+  const handleClick = column => {
     columnSorting[column.field] === ASC_SORTING
       ? setColumnSorting({ ...columnSorting, [column.field]: DESC_SORTING })
       : setColumnSorting({
@@ -19,7 +19,7 @@ const Columns = ({ checkbox, columns, sortColumn }) => {
   useEffect(() => {
     if (columns.length) {
       const tempColumnSorting = {};
-      columns.forEach((column) => {
+      columns.forEach(column => {
         tempColumnSorting[column.field] = DEFAULT_SORTING;
       });
       setColumnSorting(tempColumnSorting);
@@ -28,15 +28,22 @@ const Columns = ({ checkbox, columns, sortColumn }) => {
 
   return (
     <Fragment>
-      {checkbox && <th scope="col"></th>}
-      {columns.map((column) => (
-        <th scope="col" key={column.label} className="table-col">
-          <span onClick={() => handleClick(column)}>{column.label}</span>
-          {columnSorting[column.field] === DEFAULT_SORTING ? (
-            <i className="fas fa-arrow-up"></i>
-          ) : (
-            <i className="fas fa-arrow-down"></i>
-          )}
+      {columns.map(column => (
+        <th scope="" key={column.label} className="">
+          <span
+            style={{
+              whiteSpace: 'nowrap',
+              marginleft: '8px',
+              marginRight: '8px',
+              fontWeight: '400',
+              fontSize: '1.4rem',
+              lineHeight: '1.5',
+              color: '#999',
+            }}
+            onClick={() => handleClick(column)}
+          >
+            {column.label}
+          </span>
         </th>
       ))}
     </Fragment>
