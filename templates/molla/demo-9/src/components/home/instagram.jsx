@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-import OwlCarousels from "../features/owl-carousel";
-import { featureSlider3 } from "../settings";
+import OwlCarousels from '../features/owl-carousel';
+import { featureSlider3 } from '../settings';
 
 export default class Instagram extends Component {
   render() {
@@ -10,7 +10,7 @@ export default class Instagram extends Component {
       <OwlCarousels adClass="owl-simple" carouselOptions={featureSlider3}>
         <div key="instagram-1" className="instagram-feed">
           <img
-            src={process.env.PUBLIC_URL + "/assets/images/home/instagram/1.jpg"}
+            src={process.env.PUBLIC_URL + '/assets/images/home/instagram/1.jpg'}
             alt="img"
           />
 
@@ -27,7 +27,7 @@ export default class Instagram extends Component {
 
         <div key="instagram-2" className="instagram-feed">
           <img
-            src={process.env.PUBLIC_URL + "/assets/images/home/instagram/2.jpg"}
+            src={process.env.PUBLIC_URL + '/assets/images/home/instagram/2.jpg'}
             alt="img"
           />
 
@@ -44,7 +44,7 @@ export default class Instagram extends Component {
 
         <div key="instagram-3" className="instagram-feed">
           <img
-            src={process.env.PUBLIC_URL + "/assets/images/home/instagram/3.jpg"}
+            src={process.env.PUBLIC_URL + '/assets/images/home/instagram/3.jpg'}
             alt="img"
           />
 
@@ -61,7 +61,7 @@ export default class Instagram extends Component {
 
         <div key="instagram-4" className="instagram-feed">
           <img
-            src={process.env.PUBLIC_URL + "/assets/images/home/instagram/4.jpg"}
+            src={process.env.PUBLIC_URL + '/assets/images/home/instagram/4.jpg'}
             alt="img"
           />
 
@@ -78,7 +78,7 @@ export default class Instagram extends Component {
 
         <div key="instagram-5" className="instagram-feed">
           <img
-            src={process.env.PUBLIC_URL + "/assets/images/home/instagram/5.jpg"}
+            src={process.env.PUBLIC_URL + '/assets/images/home/instagram/5.jpg'}
             alt="img"
           />
 
@@ -95,7 +95,7 @@ export default class Instagram extends Component {
 
         <div key="instagram-6" className="instagram-feed">
           <img
-            src={process.env.PUBLIC_URL + "/assets/images/home/instagram/6.jpg"}
+            src={process.env.PUBLIC_URL + '/assets/images/home/instagram/6.jpg'}
             alt="img"
           />
 

@@ -1,18 +1,18 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { Tab, Tabs, TabPanel, TabList } from "react-tabs";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { Tab, Tabs, TabPanel, TabList } from 'react-tabs';
 
 // Import Custom Component
-import ProductNine from "../../features/product/product-nine";
+import ProductNine from '../../features/product/product-nine';
 
 // import Services & Settings
-import { getProductsByCategory } from "../../../services";
-import { addToCart, toggleWishlist } from "../../../actions";
+import { getProductsByCategory } from '../../../services';
+import { addToCart, toggleWishlist } from '../../../actions';
 
 function NewCollection(props) {
   const { addToCart, toggleWishlist } = props;
-  let categories = ["All", "Women", "Men", "Shoes", "Accessories"];
+  let categories = ['All', 'Women', 'Men', 'Shoes', 'Accessories'];
   let products = props.products;
   products = products.slice(41, 51);
 
@@ -86,5 +86,5 @@ const mapStateToProps = (state, props) => {
 };
 
 export default connect(mapStateToProps, { addToCart, toggleWishlist })(
-  NewCollection
+  NewCollection,
 );

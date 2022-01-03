@@ -1,21 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 // Common Header Components
-import MainMenu from "./partials/main-menu";
-import CartMenu from "./partials/cart-menu";
-import LoginModal from "../features/modal/login-modal";
+import MainMenu from './partials/main-menu';
+import CartMenu from './partials/cart-menu';
+import LoginModal from '../features/modal/login-modal';
 
-import { showModal } from "../../actions";
+import { showModal } from '../../actions';
 
 function Header(props) {
   function openLoginModal(e) {
-    props.showModal("login");
+    props.showModal('login');
     e.preventDefault();
   }
 
-  const { wishlist, logo = "assets/images/logo.png", container } = props;
+  const { wishlist, logo = 'assets/images/logo.png', container } = props;
 
   return (
     <header className="header header-7">
@@ -64,7 +64,7 @@ function Header(props) {
                   </li>
                   <li>
                     <Link to={`${process.env.PUBLIC_URL}/shop/wishlist`}>
-                      <i className="icon-heart-o"></i>My Wishlist{" "}
+                      <i className="icon-heart-o"></i>My Wishlist{' '}
                       <span>({wishlist.length})</span>
                     </Link>
                   </li>
@@ -104,7 +104,7 @@ function Header(props) {
 
             <Link to={`${process.env.PUBLIC_URL}/`} className="logo">
               <img
-                src={process.env.PUBLIC_URL + "/" + logo}
+                src={process.env.PUBLIC_URL + '/' + logo}
                 alt="Molla Logo"
                 width="105"
                 height="25"

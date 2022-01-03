@@ -5,7 +5,7 @@
   position: absolute;
   width: 400px;
   height: 400px;
-  content: "";
+  content: '';
   background: #fef4f6;
   border-radius: 50%;
   z-index: -1;

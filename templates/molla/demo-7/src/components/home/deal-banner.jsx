@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Countdown from "react-countdown";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Countdown from 'react-countdown';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import { rendererThree } from "../features/count-down";
+import { rendererThree } from '../features/count-down';
 
 export default function DealBanner() {
   return (

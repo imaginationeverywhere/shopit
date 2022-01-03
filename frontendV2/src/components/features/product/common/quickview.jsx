@@ -58,7 +58,7 @@ function QuickView(props) {
     quantityInputs();
     let imgLoad = imagesLoaded('.product-lg', { background: true });
 
-    imgLoad.on('done', function(instance, image) {
+    imgLoad.on('done', function (instance, image) {
       document
         .querySelector('.skel-pro-single.skel-quickview')
         .classList.add('loaded');
@@ -391,7 +391,7 @@ const mapStateToProps = (state, ownprops) => {
   if (
     findIndex(
       state.wishlist.list,
-      item => item.id === state.data.productDetail.id,
+      (item) => item.id === state.data.productDetail.id,
     ) !== -1
   )
     wishlist = true;

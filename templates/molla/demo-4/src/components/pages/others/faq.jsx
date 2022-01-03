@@ -1,14 +1,14 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
-import Accordion from "../../features/accordion/accordion";
-import Card from "../../features/accordion/card";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
+import Accordion from '../../features/accordion/accordion';
+import Card from '../../features/accordion/card';
 
-import { isIEBrowser } from "../../../utils";
+import { isIEBrowser } from '../../../utils';
 
 function FAQ() {
   return (
@@ -20,7 +20,7 @@ function FAQ() {
       <h1 className="d-none">Molla React Ecommerce - FAQ Page</h1>
 
       <PageHeader title="F.A.Q" subTitle="Pages" />
-      <Breadcrumb title="FAQ" parent1={["Pages", "pages/about"]} />
+      <Breadcrumb title="FAQ" parent1={['Pages', 'pages/about']} />
 
       <div className="page-content">
         <div className="container">
@@ -176,7 +176,7 @@ function FAQ() {
             <div className="col-md-10 col-lg-9 col-xl-7">
               <div
                 className={`row no-gutters ${
-                  isIEBrowser() ? "" : "flex-column"
+                  isIEBrowser() ? '' : 'flex-column'
                 } flex-sm-row align-items-sm-center`}
               >
                 <div className="col">

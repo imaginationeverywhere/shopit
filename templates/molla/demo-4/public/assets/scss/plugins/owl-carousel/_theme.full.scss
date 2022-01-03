@@ -1,7 +1,7 @@
 /*
  * 	Full theme - index-3, index-4 etc... Owl Carousel CSS File
  */
-@import "../../config/variables";
+@import '../../config/variables';
 
 //nav
 $nav-full-width: 30px !default;
@@ -32,7 +32,7 @@ $dot-full-background-active: $primary-color !default;
     text-align: center;
     -webkit-tap-highlight-color: transparent;
 
-    [class*="owl-"] {
+    [class*='owl-'] {
       position: absolute;
       top: 0;
       z-index: 99;
@@ -66,7 +66,7 @@ $dot-full-background-active: $primary-color !default;
       }
 
       &:before {
-        content: "";
+        content: '';
         display: block;
         width: 10px;
         height: 100%;
@@ -77,7 +77,7 @@ $dot-full-background-active: $primary-color !default;
         background-size: contain;
         background-position: center center;
         background-repeat: no-repeat;
-        background-image: url("../../../images/nav-prev-shadow.png");
+        background-image: url('../../../images/nav-prev-shadow.png');
       }
     }
     .disabled {
@@ -96,7 +96,7 @@ $dot-full-background-active: $primary-color !default;
       &:before {
         left: auto;
         right: 100%;
-        background-image: url("../../../images/nav-next-shadow.png");
+        background-image: url('../../../images/nav-next-shadow.png');
       }
     }
   }
@@ -110,7 +110,7 @@ $dot-full-background-active: $primary-color !default;
     }
 
     .owl-nav {
-      [class*="owl-"] {
+      [class*='owl-'] {
         height: calc(100% - 20px);
       }
     }
@@ -166,7 +166,7 @@ $dot-full-background-active: $primary-color !default;
 
   &.owl-nav-dark {
     .owl-nav {
-      [class*="owl-"] {
+      [class*='owl-'] {
         color: #333;
 
         &:hover,
@@ -180,7 +180,7 @@ $dot-full-background-active: $primary-color !default;
 
   .bg-light & {
     .owl-nav {
-      [class*="owl-"] {
+      [class*='owl-'] {
         &:hover,
         &:focus {
           background: #f8f8f8;

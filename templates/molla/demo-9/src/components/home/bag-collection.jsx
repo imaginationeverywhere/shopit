@@ -1,30 +1,30 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Tabs, Tab, TabList, TabPanel } from 'react-tabs';
+import { Link } from 'react-router-dom';
 
 // import custom component
-import OwlCarousel from "../features/owl-carousel";
-import ProductNine from "../features/product/product-nine";
+import OwlCarousel from '../features/owl-carousel';
+import ProductNine from '../features/product/product-nine';
 
 // import Services & Actions
-import { getProductsByCategory } from "../../services";
+import { getProductsByCategory } from '../../services';
 import {
   addToCart,
   toggleWishlist,
   addToCompare,
   showQuickViewModal,
-} from "../../actions";
+} from '../../actions';
 
 // import Slider Settings
-import { featuredSlider } from "../settings";
+import { featuredSlider } from '../settings';
 
 function BagCollection(props) {
   const { addToCart, toggleWishlist, showQuickViewModal } = props;
 
   let products = props.products;
   products = products.slice(2, 20);
-  let categoryName = ["Women", "Men"];
+  let categoryName = ['Women', 'Men'];
 
   return (
     <Tabs selectedTabClassName="show" defaultIndex={0}>
@@ -51,7 +51,7 @@ function BagCollection(props) {
               <img
                 src={
                   process.env.PUBLIC_URL +
-                  "/assets/images/home/banners/banner-6.jpg"
+                  '/assets/images/home/banners/banner-6.jpg'
                 }
                 alt="banner"
               />
@@ -100,7 +100,7 @@ function BagCollection(props) {
               >
                 {getProductsByCategory(
                   getProductsByCategory(products, cat),
-                  "Bags"
+                  'Bags',
                 ).map((item, index) => (
                   <ProductNine
                     product={item}

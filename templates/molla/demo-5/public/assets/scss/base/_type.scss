@@ -131,7 +131,7 @@ blockquote {
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   h1,
   .h1 {
     font-size: 5rem;
@@ -153,5 +153,5 @@ blockquote {
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
 }

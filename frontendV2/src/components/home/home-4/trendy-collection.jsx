@@ -1,24 +1,24 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
-import { connect } from "react-redux";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Tabs, Tab, TabList, TabPanel } from 'react-tabs';
+import { connect } from 'react-redux';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import OwlCarousel from "../../features/owl-carousel";
-import ProductNine from "../../features/product/product-nine";
-import { productSlider2 } from "../../settings";
+import OwlCarousel from '../../features/owl-carousel';
+import ProductNine from '../../features/product/product-nine';
+import { productSlider2 } from '../../settings';
 
 import {
   getTopSellingProducts,
   getSaleProducts,
   getFeaturedProducts,
-} from "../../../services";
+} from '../../../services';
 import {
   addToCart,
   toggleWishlist,
   addToCompare,
   showQuickViewModal,
-} from "../../../actions";
+} from '../../../actions';
 
 function TrendingCollection(props) {
   const { addToCart, toggleWishlist, addToCompare, showQuickViewModal } = props;

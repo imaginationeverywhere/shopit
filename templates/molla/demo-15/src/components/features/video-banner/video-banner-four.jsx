@@ -1,11 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function VideoBannerFour(props) {
   const { title, subTitle, content, image, btn, btn_link, showModal } = props;
 
   const openVideoModal = (e) => {
-    showModal("video");
+    showModal('video');
     e.preventDefault();
   };
 
@@ -24,10 +24,10 @@ export default function VideoBannerFour(props) {
                 <p>{content}</p>
 
                 <Link
-                  to={btn_link ? btn_link : "#"}
+                  to={btn_link ? btn_link : '#'}
                   className="btn btn-outline-primary"
                 >
-                  <span>{btn ? btn : "Click Here"}</span>
+                  <span>{btn ? btn : 'Click Here'}</span>
                   <i className="icon-long-arrow-right"></i>
                 </Link>
               </div>
@@ -35,7 +35,7 @@ export default function VideoBannerFour(props) {
 
             <div className="col-md-6">
               <div className="video-poster">
-                <img src={process.env.PUBLIC_URL + "/" + image} alt="poster" />
+                <img src={process.env.PUBLIC_URL + '/' + image} alt="poster" />
 
                 <div className="video-poster-content">
                   <Link

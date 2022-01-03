@@ -112,7 +112,7 @@
       margin-left: 2.1rem;
 
       &:before {
-        content: "";
+        content: '';
         display: inline-block;
         width: 1px;
         height: 1.2rem;
@@ -172,7 +172,7 @@
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: -3rem;
@@ -182,7 +182,7 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .footer-2 {
     .footer-bottom .container,
     .footer-bottom .container-fluid {
@@ -205,7 +205,7 @@
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .widget-about-info {
     .col-sm-6:not(:last-child) {
       margin-bottom: 1rem;

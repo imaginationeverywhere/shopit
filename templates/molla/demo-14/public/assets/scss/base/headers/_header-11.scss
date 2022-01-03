@@ -82,7 +82,7 @@
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .header-11 .cart-dropdown,
   .header-11 .compare-dropdown {
     padding-left: 1.4rem;
@@ -93,7 +93,7 @@
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .header-11 {
     .menu > li:not(:last-child) {
       margin-right: 3rem;

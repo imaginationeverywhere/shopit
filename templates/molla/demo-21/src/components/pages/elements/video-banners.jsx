@@ -1,17 +1,17 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
-import VideoBannerOne from "../../features/video-banner/video-banner-one";
-import VideoBannerTwo from "../../features/video-banner/video-banner-two";
-import VideoBannerThree from "../../features/video-banner/video-banner-three";
-import VideoBannerFour from "../../features/video-banner/video-banner-four";
-import VideoModal from "../../features/modal/video-modal";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
+import VideoBannerOne from '../../features/video-banner/video-banner-one';
+import VideoBannerTwo from '../../features/video-banner/video-banner-two';
+import VideoBannerThree from '../../features/video-banner/video-banner-three';
+import VideoBannerFour from '../../features/video-banner/video-banner-four';
+import VideoModal from '../../features/modal/video-modal';
 
-import { showModal } from "../../../actions";
+import { showModal } from '../../../actions';
 
 function VideoBanners(props) {
   const { showModal } = props;
@@ -26,7 +26,7 @@ function VideoBanners(props) {
 
       <div className="main">
         <PageHeader title="Video Banners" subTitle="Elements" />
-        <Breadcrumb title="Video Banners" parent1={["Elements", "elements"]} />
+        <Breadcrumb title="Video Banners" parent1={['Elements', 'elements']} />
 
         <div className="page-content">
           <div className="container">

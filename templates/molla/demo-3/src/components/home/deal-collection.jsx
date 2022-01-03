@@ -1,18 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import Countdown from "react-countdown";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import Countdown from 'react-countdown';
 
 // import custom component
-import ProductNine from "../features/product/product-nine";
-import { rendererThree } from "../features/count-down";
+import ProductNine from '../features/product/product-nine';
+import { rendererThree } from '../features/count-down';
 
 import {
   addToCart,
   toggleWishlist,
   addToCompare,
   showQuickViewModal,
-} from "../../actions";
+} from '../../actions';
 
 function DealCollection(props) {
   const { addToCart, toggleWishlist, showQuickViewModal, addToCompare } = props;

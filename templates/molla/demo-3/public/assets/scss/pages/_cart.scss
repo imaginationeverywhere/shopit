@@ -1,6 +1,6 @@
 /* Shopping Cart */
 .cart {
-  @include mq("lg") {
+  @include mq('lg') {
     .col-lg-3 {
       -ms-flex: 0 0 30%;
       flex: 0 0 30%;

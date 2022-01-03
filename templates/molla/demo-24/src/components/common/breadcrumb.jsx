@@ -1,15 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 function Breadcrumb(props) {
   const {
     title,
     products,
     adClass,
-    type = "normal",
-    slug = "default",
-    container = "container",
+    type = 'normal',
+    slug = 'default',
+    container = 'container',
     productId,
     ...parent
   } = props;
@@ -17,7 +17,7 @@ function Breadcrumb(props) {
   let x, prevProducts, prevProduct, currentProducts, nextProducts, nextProduct;
 
   for (x in parent) {
-    if ("function" !== typeof parent[x]) path.push(parent[x]);
+    if ('function' !== typeof parent[x]) path.push(parent[x]);
   }
 
   currentProducts = products.filter((item) => item.id === parseInt(productId));
@@ -35,7 +35,7 @@ function Breadcrumb(props) {
 
   return (
     <nav aria-label="breadcrumb" className={`breadcrumb-nav ${adClass}`}>
-      {type === "normal" ? (
+      {type === 'normal' ? (
         <div className={container}>
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
@@ -53,7 +53,7 @@ function Breadcrumb(props) {
             </li>
           </ol>
         </div>
-      ) : type === "product" ? (
+      ) : type === 'product' ? (
         <div className={`${container}  d-flex align-items-center`}>
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
@@ -85,7 +85,7 @@ function Breadcrumb(props) {
                   <figure>
                     <img
                       src={
-                        process.env.PUBLIC_URL + "/" + prevProduct.pictures[0]
+                        process.env.PUBLIC_URL + '/' + prevProduct.pictures[0]
                       }
                       alt="Product"
                     />
@@ -93,7 +93,7 @@ function Breadcrumb(props) {
                   <h3 className="product-name">{prevProduct.name}</h3>
                 </div>
               ) : (
-                ""
+                ''
               )}
             </Link>
 
@@ -111,7 +111,7 @@ function Breadcrumb(props) {
                   <figure>
                     <img
                       src={
-                        process.env.PUBLIC_URL + "/" + nextProduct.pictures[0]
+                        process.env.PUBLIC_URL + '/' + nextProduct.pictures[0]
                       }
                       alt="Product"
                     />
@@ -120,13 +120,13 @@ function Breadcrumb(props) {
                   <h3 className="product-name">{nextProduct.name}</h3>
                 </div>
               ) : (
-                ""
+                ''
               )}
             </Link>
           </nav>
         </div>
       ) : (
-        ""
+        ''
       )}
     </nav>
   );

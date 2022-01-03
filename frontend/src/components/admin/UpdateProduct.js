@@ -1,42 +1,42 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect } from 'react';
 
-import MetaData from "../layout/MetaData";
-import Sidebar from "./Sidebar";
+import MetaData from '../layout/MetaData';
+import Sidebar from './Sidebar';
 
-import { useAlert } from "react-alert";
-import { useDispatch, useSelector } from "react-redux";
+import { useAlert } from 'react-alert';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   updateProduct,
   getProductDetails,
   clearErrors,
-} from "../../actions/productActions";
-import { UPDATE_PRODUCT_RESET } from "../../constants/productConstants";
+} from '../../actions/productActions';
+import { UPDATE_PRODUCT_RESET } from '../../constants/productConstants';
 
 const UpdateProduct = ({ match, history }) => {
-  const [name, setName] = useState("");
+  const [name, setName] = useState('');
   const [price, setPrice] = useState(0);
-  const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("");
+  const [description, setDescription] = useState('');
+  const [category, setCategory] = useState('');
   const [stock, setStock] = useState(0);
-  const [seller, setSeller] = useState("");
+  const [seller, setSeller] = useState('');
   const [images, setImages] = useState([]);
 
   const [oldImages, setOldImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
 
   const categories = [
-    "Electronics",
-    "Cameras",
-    "Laptops",
-    "Accessories",
-    "Headphones",
-    "Food",
-    "Books",
-    "Clothes/Shoes",
-    "Beauty/Health",
-    "Sports",
-    "Outdoor",
-    "Home",
+    'Electronics',
+    'Cameras',
+    'Laptops',
+    'Accessories',
+    'Headphones',
+    'Food',
+    'Books',
+    'Clothes/Shoes',
+    'Beauty/Health',
+    'Sports',
+    'Outdoor',
+    'Home',
   ];
 
   const alert = useAlert();
@@ -75,8 +75,8 @@ const UpdateProduct = ({ match, history }) => {
     }
 
     if (isUpdated) {
-      history.push("/admin/products");
-      alert.success("Product updated successfully");
+      history.push('/admin/products');
+      alert.success('Product updated successfully');
       dispatch({ type: UPDATE_PRODUCT_RESET });
     }
   }, [
@@ -94,15 +94,15 @@ const UpdateProduct = ({ match, history }) => {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.set("name", name);
-    formData.set("price", price);
-    formData.set("description", description);
-    formData.set("category", category);
-    formData.set("stock", stock);
-    formData.set("seller", seller);
+    formData.set('name', name);
+    formData.set('price', price);
+    formData.set('description', description);
+    formData.set('category', category);
+    formData.set('stock', stock);
+    formData.set('seller', seller);
 
     images.forEach((image) => {
-      formData.append("images", image);
+      formData.append('images', image);
     });
 
     dispatch(updateProduct(product._id, formData));
@@ -131,7 +131,7 @@ const UpdateProduct = ({ match, history }) => {
 
   return (
     <Fragment>
-      <MetaData title={"Update Product"} />
+      <MetaData title={'Update Product'} />
       <div className="row">
         <div className="col-12 col-md-2">
           <Sidebar />

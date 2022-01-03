@@ -7,7 +7,7 @@ import {
   SET_SELECTED_CARRIER_REQUEST,
 } from '../constants/shipmentConstants';
 
-export const getCarriers = payload => async dispatch => {
+export const getCarriers = (payload) => async (dispatch) => {
   try {
     dispatch({ type: GET_SHIPMENT_CARRIERS_REQUEST });
     const { data } = await axiosInstance.post('/shipment/carriers', payload);
@@ -24,7 +24,7 @@ export const getCarriers = payload => async dispatch => {
   }
 };
 
-export const setSelectedCarrier = selectedCarrier => ({
+export const setSelectedCarrier = (selectedCarrier) => ({
   type: SET_SELECTED_CARRIER_REQUEST,
   payload: selectedCarrier,
 });

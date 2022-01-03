@@ -1,18 +1,18 @@
-import React from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import Breadcrumb from "../../common/breadcrumb";
-import PageHeader from "../../common/page-header";
-import OwlCarousel from "../../features/owl-carousel";
-import QuickView from "../../features/product/common/quickview";
-import ProductListThree from "../../features/product/list/product-list-three";
-import Brand from "../../features/brand";
-import ShopMarketSidebar from "../../features/sidebar/shop-market-sidebar";
+import Breadcrumb from '../../common/breadcrumb';
+import PageHeader from '../../common/page-header';
+import OwlCarousel from '../../features/owl-carousel';
+import QuickView from '../../features/product/common/quickview';
+import ProductListThree from '../../features/product/list/product-list-three';
+import Brand from '../../features/brand';
+import ShopMarketSidebar from '../../features/sidebar/shop-market-sidebar';
 
-import { mainSlider10, mainSlider11 } from "../../settings";
+import { mainSlider10, mainSlider11 } from '../../settings';
 
 function ShopMarket(props) {
   return (
@@ -24,11 +24,11 @@ function ShopMarket(props) {
       <h1 className="d-none">Molla React eCommerce Template - Shop Market</h1>
 
       <div className="main shop-market">
-        <PageHeader title={"Shop Market"} subTitle="Shop" />
+        <PageHeader title={'Shop Market'} subTitle="Shop" />
 
         <Breadcrumb
           title="Market"
-          parent1={["Shop", "shop/sidebar/list"]}
+          parent1={['Shop', 'shop/sidebar/list']}
           adClass="mb-3"
         />
 

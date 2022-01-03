@@ -39,10 +39,10 @@ const CarrierList = () => {
     cartlist: { cart },
     carriers: { data: carriers, loading = true } = {},
     selectedCarrier = {},
-  } = useSelector(store => store);
+  } = useSelector((store) => store);
 
   const parcels = useCallback(
-    cart =>
+    (cart) =>
       cart.reduce((acc, product) => {
         if (product?.parcel) {
           return [...acc, ...product?.parcels];
@@ -82,7 +82,7 @@ const CarrierList = () => {
     if (carriers.length) {
       setDataTable({
         ...dataTable,
-        rows: carriers.map(carrier => {
+        rows: carriers.map((carrier) => {
           if (carrier.servicelevel) {
             carrier.serviceType = carrier.servicelevel.name;
           }
@@ -94,7 +94,7 @@ const CarrierList = () => {
       });
     }
   }, [carriers]);
-  const handleCheckboxClick = selectedCarrier => {
+  const handleCheckboxClick = (selectedCarrier) => {
     dispatch(setSelectedCarrier(selectedCarrier));
   };
 

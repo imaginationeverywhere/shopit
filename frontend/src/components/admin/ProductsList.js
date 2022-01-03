@@ -1,19 +1,19 @@
-import React, { Fragment, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { MDBDataTable } from "mdbreact";
+import React, { Fragment, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { MDBDataTable } from 'mdbreact';
 
-import MetaData from "../layout/MetaData";
-import Loader from "../layout/Loader";
-import Sidebar from "./Sidebar";
+import MetaData from '../layout/MetaData';
+import Loader from '../layout/Loader';
+import Sidebar from './Sidebar';
 
-import { useAlert } from "react-alert";
-import { useDispatch, useSelector } from "react-redux";
+import { useAlert } from 'react-alert';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   getAdminProducts,
   deleteProduct,
   clearErrors,
-} from "../../actions/productActions";
-import { DELETE_PRODUCT_RESET } from "../../constants/productConstants";
+} from '../../actions/productActions';
+import { DELETE_PRODUCT_RESET } from '../../constants/productConstants';
 
 const ProductsList = ({ history }) => {
   const alert = useAlert();
@@ -21,7 +21,7 @@ const ProductsList = ({ history }) => {
 
   const { loading, error, products } = useSelector((state) => state.products);
   const { error: deleteError, isDeleted } = useSelector(
-    (state) => state.product
+    (state) => state.product,
   );
 
   useEffect(() => {
@@ -38,8 +38,8 @@ const ProductsList = ({ history }) => {
     }
 
     if (isDeleted) {
-      alert.success("Product deleted successfully");
-      history.push("/admin/products");
+      alert.success('Product deleted successfully');
+      history.push('/admin/products');
       dispatch({ type: DELETE_PRODUCT_RESET });
     }
   }, [dispatch, alert, error, deleteError, isDeleted, history]);
@@ -48,28 +48,28 @@ const ProductsList = ({ history }) => {
     const data = {
       columns: [
         {
-          label: "ID",
-          field: "id",
-          sort: "asc",
+          label: 'ID',
+          field: 'id',
+          sort: 'asc',
         },
         {
-          label: "Name",
-          field: "name",
-          sort: "asc",
+          label: 'Name',
+          field: 'name',
+          sort: 'asc',
         },
         {
-          label: "Price",
-          field: "price",
-          sort: "asc",
+          label: 'Price',
+          field: 'price',
+          sort: 'asc',
         },
         {
-          label: "Stock",
-          field: "stock",
-          sort: "asc",
+          label: 'Stock',
+          field: 'stock',
+          sort: 'asc',
         },
         {
-          label: "Actions",
-          field: "actions",
+          label: 'Actions',
+          field: 'actions',
         },
       ],
       rows: [],
@@ -109,7 +109,7 @@ const ProductsList = ({ history }) => {
 
   return (
     <Fragment>
-      <MetaData title={"All Products"} />
+      <MetaData title={'All Products'} />
       <div className="row">
         <div className="col-12 col-md-2">
           <Sidebar />

@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
 // import custom component
-import PostTen from "../../features/post/post-ten";
-import OwlCarousel from "../../features/owl-carousel";
+import PostTen from '../../features/post/post-ten';
+import OwlCarousel from '../../features/owl-carousel';
 
-import { blogSlider } from "../../settings";
-import posts from "../../../mock_data/posts";
+import { blogSlider } from '../../settings';
+import posts from '../../../mock_data/posts';
 
 export default function PostGroup() {
   return (

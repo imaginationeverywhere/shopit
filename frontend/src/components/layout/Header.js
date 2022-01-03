@@ -1,10 +1,10 @@
-import { Link, Route } from "react-router-dom";
-import React, { Fragment } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { Link, Route } from 'react-router-dom';
+import React, { Fragment } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { useAlert } from "react-alert";
-import { logout } from "../../actions/userActions";
-import Search from "./Search";
+import { useAlert } from 'react-alert';
+import { logout } from '../../actions/userActions';
+import Search from './Search';
 
 const Header = () => {
   const alert = useAlert();
@@ -15,7 +15,7 @@ const Header = () => {
 
   const logoutHandler = () => {
     dispatch(logout());
-    alert.success("Logged out successfully.");
+    alert.success('Logged out successfully.');
   };
 
   return (
@@ -36,7 +36,7 @@ const Header = () => {
         </div>
 
         <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
-          <Link to="/cart" style={{ textDecoration: "none" }}>
+          <Link to="/cart" style={{ textDecoration: 'none' }}>
             <span id="cart" className="ml-3">
               Cart
             </span>
@@ -69,7 +69,7 @@ const Header = () => {
                 className="dropdown-menu"
                 aria-labelledby="dropDownMenuButton"
               >
-                {user && user.role === "admin" && (
+                {user && user.role === 'admin' && (
                   <Link className="dropdown-item" to="/dashboard">
                     Dashboard
                   </Link>

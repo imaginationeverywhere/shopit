@@ -1,25 +1,25 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 // import Custom Components
-import MainMenu from "./partials/main-menu";
-import CartMenu from "./partials/cart-menu";
+import MainMenu from './partials/main-menu';
+import CartMenu from './partials/cart-menu';
 
-import LoginModal from "../features/modal/login-modal";
+import LoginModal from '../features/modal/login-modal';
 
-import { isIEBrowser } from "../../utils";
-import { showModal } from "../../actions";
+import { isIEBrowser } from '../../utils';
+import { showModal } from '../../actions';
 
 function Header(props) {
   const {
     wishlist,
-    logo = "assets/images/logo.png",
-    container = "container",
+    logo = 'assets/images/logo.png',
+    container = 'container',
   } = props;
 
   function openLoginModal(e) {
-    props.showModal("login");
+    props.showModal('login');
     e.preventDefault();
   }
 
@@ -145,7 +145,7 @@ function Header(props) {
                   </button>
                   <input
                     type="search"
-                    style={isIEBrowser() ? { paddingLeft: "30px" } : {}}
+                    style={isIEBrowser() ? { paddingLeft: '30px' } : {}}
                     className="form-control"
                     name="q"
                     id="q"

@@ -204,7 +204,7 @@ function mapStateToProps(state, ownprops) {
     isWishlist:
       findIndex(
         state.wishlist.list,
-        item => item.id === ownprops.product.id,
+        (item) => item.id === ownprops.product.id,
       ) !== -1
         ? true
         : false,

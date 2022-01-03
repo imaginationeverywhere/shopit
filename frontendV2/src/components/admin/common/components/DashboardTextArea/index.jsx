@@ -1,5 +1,5 @@
-import React from "react";
-import "./DashboardTextArea.scss";
+import React from 'react';
+import './DashboardTextArea.scss';
 
 const DashboardTextArea = ({ labelName, name, type, required, ...rest }) => {
   return (
@@ -10,7 +10,7 @@ const DashboardTextArea = ({ labelName, name, type, required, ...rest }) => {
       <textarea
         id={`input-${name}`}
         name={name}
-        type={type || "text"}
+        type={type || 'text'}
         {...rest}
         required={required}
       />

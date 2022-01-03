@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Footer(props) {
-  const { container = "container" } = props;
+  const { container = 'container' } = props;
 
   return (
     <footer className="footer footer-2">

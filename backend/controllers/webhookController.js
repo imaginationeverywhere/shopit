@@ -1,5 +1,5 @@
-const catchAsyncErrors = require("../middlewares/catchAsyncErrors");
-const ShipmentService = require("../services/shipmentService");
+const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
+const ShipmentService = require('../services/shipmentService');
 
 exports.trackShipment = catchAsyncErrors(async (req, res) => {
   const {

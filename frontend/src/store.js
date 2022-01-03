@@ -1,4 +1,4 @@
-import { applyMiddleware, combineReducers, createStore } from "redux";
+import { applyMiddleware, combineReducers, createStore } from 'redux';
 import {
   productDetailsReducer,
   productsReducer,
@@ -7,7 +7,7 @@ import {
   productReducer,
   productReviewsReducer,
   reviewReducer,
-} from "./reducers/productReducers";
+} from './reducers/productReducers';
 
 import {
   authReducer,
@@ -15,9 +15,9 @@ import {
   forgotPasswordReducer,
   allUsersReducer,
   userDetailsReducer,
-} from "./reducers/userReducers";
+} from './reducers/userReducers';
 
-import { cartReducer } from "./reducers/cartReducers";
+import { cartReducer } from './reducers/cartReducers';
 
 import {
   newOrderReducer,
@@ -25,11 +25,11 @@ import {
   orderDetailsReducer,
   allOrdersReducer,
   orderReducer,
-} from "./reducers/orderReducers";
+} from './reducers/orderReducers';
 
-import { composeWithDevTools } from "redux-devtools-extension";
-import thunk from "redux-thunk";
-import shipmentReducer from "./reducers/shipmentReducer";
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
+import shipmentReducer from './reducers/shipmentReducer';
 
 const reducer = combineReducers({
   products: productsReducer,
@@ -55,19 +55,19 @@ const reducer = combineReducers({
 
 let initialState = {
   cart: {
-    cartItems: localStorage.getItem("cartItems")
-      ? JSON.parse(localStorage.getItem("cartItems"))
+    cartItems: localStorage.getItem('cartItems')
+      ? JSON.parse(localStorage.getItem('cartItems'))
       : [],
-    shippingInfo: localStorage.getItem("shippingInfo")
-      ? JSON.parse(localStorage.getItem("shippingInfo"))
+    shippingInfo: localStorage.getItem('shippingInfo')
+      ? JSON.parse(localStorage.getItem('shippingInfo'))
       : {},
   },
   shipment: {
-    carriers: localStorage.getItem("carriers")
-      ? JSON.parse(localStorage.getItem("carriers"))
+    carriers: localStorage.getItem('carriers')
+      ? JSON.parse(localStorage.getItem('carriers'))
       : {},
-    selectedCarrier: localStorage.getItem("selectedCarrier")
-      ? JSON.parse(localStorage.getItem("selectedCarrier"))
+    selectedCarrier: localStorage.getItem('selectedCarrier')
+      ? JSON.parse(localStorage.getItem('selectedCarrier'))
       : {},
   },
 };
@@ -76,7 +76,7 @@ const middleware = [thunk];
 const store = createStore(
   reducer,
   initialState,
-  composeWithDevTools(applyMiddleware(...middleware))
+  composeWithDevTools(applyMiddleware(...middleware)),
 );
 
 export default store;

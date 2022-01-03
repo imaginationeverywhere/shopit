@@ -20,15 +20,15 @@ function Breadcrumb(props) {
     if ('function' !== typeof parent[x]) path.push(parent[x]);
   }
 
-  currentProducts = products.filter(item => item.id === productId);
+  currentProducts = products.filter((item) => item.id === productId);
 
   // get product for prev button.
-  prevProducts = products.filter(item => item.id < productId);
+  prevProducts = products.filter((item) => item.id < productId);
   if (!prevProducts || !prevProducts.length) prevProduct = currentProducts[0];
   else prevProduct = prevProducts[prevProducts.length - 1];
 
   // get product for next button.
-  nextProducts = products.filter(item => item.id > productId);
+  nextProducts = products.filter((item) => item.id > productId);
   if (!nextProducts || nextProducts.length === 0)
     nextProduct = currentProducts[0];
   else nextProduct = nextProducts[0];
@@ -41,7 +41,7 @@ function Breadcrumb(props) {
             <li className="breadcrumb-item">
               <Link to={`${process.env.PUBLIC_URL}`}>Home</Link>
             </li>
-            {path.map(item => (
+            {path.map((item) => (
               <li className="breadcrumb-item" key={item[0]}>
                 <Link to={`${process.env.PUBLIC_URL}/${item[1]}`}>
                   {item[0]}

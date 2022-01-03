@@ -179,7 +179,7 @@
 
 .menu.sf-arrows > li > .sf-with-ul {
   font-size: 1.4rem;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   letter-spacing: 0.01em;
   color: #fff;
   transition: all 0.3s;
@@ -298,7 +298,7 @@
     position: relative;
     display: block;
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: -6.7rem;
       left: 1rem;

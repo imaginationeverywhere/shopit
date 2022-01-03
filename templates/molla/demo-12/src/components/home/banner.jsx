@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 function Banner(props) {
   const {
@@ -9,7 +9,7 @@ function Banner(props) {
     img,
     title,
     subtitle,
-    btnText = "Shop Now",
+    btnText = 'Shop Now',
   } = props.banner;
 
   return (
@@ -18,7 +18,7 @@ function Banner(props) {
         <div className="lazy-overlay bg-3"></div>
 
         <LazyLoadImage
-          src={process.env.PUBLIC_URL + "/" + img}
+          src={process.env.PUBLIC_URL + '/' + img}
           alt="banner"
           height={height}
           width={100}
@@ -36,7 +36,7 @@ function Banner(props) {
             <Link to="#">{subtitle}</Link>
           </h4>
         ) : (
-          ""
+          ''
         )}
         <Link
           to={`${process.env.PUBLIC_URL}/shop/sidebar/list`}

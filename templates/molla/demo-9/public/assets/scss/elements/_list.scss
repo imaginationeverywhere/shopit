@@ -55,7 +55,7 @@
   width: 100px;
   height: 100px;
 
-  background-image: url("/assets/images/elements.png");
+  background-image: url('/assets/images/elements.png');
   background-repeat: no-repeat;
   transition: all 0.3s;
 }
@@ -73,7 +73,7 @@
 .element-type {
   font-size: 1.3rem;
   font-weight: 400;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   letter-spacing: 0.01em;
   color: #666;
   text-transform: uppercase;

@@ -1,30 +1,30 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 // import Custom Components
-import MainMenu from "./partials/main-menu";
-import CartMenu from "./partials/cart-menu";
-import CategoryMenu from "./partials/category-menu";
-import LoginModal from "../features/modal/login-modal";
+import MainMenu from './partials/main-menu';
+import CartMenu from './partials/cart-menu';
+import CategoryMenu from './partials/category-menu';
+import LoginModal from '../features/modal/login-modal';
 
-import { showModal } from "../../actions";
-import { stickyHeaderHandler, preventHeaderDefault } from "../../utils";
+import { showModal } from '../../actions';
+import { stickyHeaderHandler, preventHeaderDefault } from '../../utils';
 
 function Header(props) {
-  const { container = "container" } = props;
+  const { container = 'container' } = props;
 
   useEffect(() => {
-    window.addEventListener("scroll", stickyHeaderHandler, true);
+    window.addEventListener('scroll', stickyHeaderHandler, true);
     preventHeaderDefault();
 
     return () => {
-      window.removeEventListener("scroll", stickyHeaderHandler);
+      window.removeEventListener('scroll', stickyHeaderHandler);
     };
   }, []);
 
   function openLoginModal(e) {
-    props.showModal("login");
+    props.showModal('login');
     e.preventDefault();
   }
 
@@ -191,7 +191,7 @@ function Header(props) {
       <div className="header-bottom sticky-header">
         <div className={container}>
           <div
-            style={{ backgroundColor: "#333", display: "flex", width: "100%" }}
+            style={{ backgroundColor: '#333', display: 'flex', width: '100%' }}
           >
             <div className="header-left">
               <CategoryMenu />

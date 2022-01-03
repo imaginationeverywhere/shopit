@@ -1,24 +1,29 @@
-import React, { useEffect } from "react";
-import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
+import React, { useEffect } from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
-import { PersistGate } from "redux-persist/integration/react";
+import initStripe from './utils/stripe';
+
+import { PersistGate } from 'redux-persist/integration/react';
 
 // import store
-import store, { persistor } from "./store";
+import store, { persistor } from './store';
 
 // import action
-import { getAllProducts, refreshStore } from "./actions";
+import { getAllProducts, refreshStore } from './actions';
 
 // import routes
-import AppRoute from "./routes";
+import AppRoute from './routes';
 
 // import Utils
-import { initFunctions } from "./utils";
+import { initFunctions } from './utils';
 
-import LoadingOverlay from "./components/features/loading-overlay";
-import "./App.css";
+import './App.css';
+
+import LoadingOverlay from './components/features/loading-overlay';
+import { Elements } from '@stripe/react-stripe-js';
+
 export function Root() {
   initFunctions();
   store.dispatch(getAllProducts());
@@ -29,15 +34,18 @@ export function Root() {
     }
   }, []);
 
+  const stripe = initStripe();
   return (
-    <Provider store={store}>
-      <PersistGate persistor={persistor} loading={<LoadingOverlay />}>
-        <BrowserRouter basename={"/"}>
-          <AppRoute />
-        </BrowserRouter>
-      </PersistGate>
-    </Provider>
+    <Elements stripe={stripe}>
+      <Provider store={store}>
+        <PersistGate persistor={persistor} loading={<LoadingOverlay />}>
+          <BrowserRouter basename={'/'}>
+            <AppRoute />
+          </BrowserRouter>
+        </PersistGate>
+      </Provider>
+    </Elements>
   );
 }
 
-ReactDOM.render(<Root />, document.getElementById("root"));
+ReactDOM.render(<Root />, document.getElementById('root'));

@@ -1,18 +1,18 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
 // import custom component
-import OwlCarousel from "../features/owl-carousel";
-import ProductNine from "../features/product/product-nine";
+import OwlCarousel from '../features/owl-carousel';
+import ProductNine from '../features/product/product-nine';
 
 import {
   addToCart,
   toggleWishlist,
   showQuickViewModal,
   addToCompare,
-} from "../../actions";
+} from '../../actions';
 
-import { shopSlider } from "../settings";
+import { shopSlider } from '../settings';
 
 function ShopCollection(props) {
   const { addToCart, toggleWishlist, addToCompare, showQuickViewModal } = props;

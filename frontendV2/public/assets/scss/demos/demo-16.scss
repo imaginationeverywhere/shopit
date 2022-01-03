@@ -1,9 +1,9 @@
 /* Demo 16 Homepage 16 */
-@import "../mixins/clearfix";
-@import "../mixins/breakpoints";
-@import "../mixins/lazy";
+@import '../mixins/clearfix';
+@import '../mixins/breakpoints';
+@import '../mixins/lazy';
 
-@import "../config/variables";
+@import '../config/variables';
 
 .title {
   font-weight: 600;
@@ -261,7 +261,7 @@
   margin-bottom: 0;
 
   &:after {
-    content: "";
+    content: '';
     display: table;
     clear: both;
   }
@@ -325,7 +325,7 @@
   }
 }
 
-.owl-simple .owl-nav [class*="owl-"] {
+.owl-simple .owl-nav [class*='owl-'] {
   top: 40%;
 }
 
@@ -338,7 +338,7 @@
   }
 }
 
-@include mq("sm") {
+@include mq('sm') {
   .banner-main {
     margin-bottom: 2rem;
 
@@ -353,7 +353,7 @@
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   .banner-main {
     margin-left: 3rem;
     margin-right: 3rem;
@@ -368,7 +368,7 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .products-display {
     .display-products-col {
       margin-top: 10rem;
@@ -394,7 +394,7 @@
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .banner-main {
     .banner-content {
       padding-left: 8rem;
@@ -528,10 +528,10 @@
   padding-top: 5.5rem;
 }
 
-@include mq("sm") {
+@include mq('sm') {
 }
 
-@include mq("md") {
+@include mq('md') {
   .intro-subtitle {
     font-size: 1.4rem;
     margin-bottom: 1.4rem;
@@ -546,7 +546,7 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .intro-content {
     .btn {
       min-width: 170px;
@@ -568,7 +568,7 @@
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .home-page .intro-slider-container,
   .home-page .intro-slide {
     min-height: 0;

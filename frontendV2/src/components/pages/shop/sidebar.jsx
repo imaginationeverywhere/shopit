@@ -1,28 +1,28 @@
-import React from "react";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
-import ShopSidebar from "../../features/sidebar/shop-sidebar";
-import ProductList from "../../features/product/list/product-list";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
+import ShopSidebar from '../../features/sidebar/shop-sidebar';
+import ProductList from '../../features/product/list/product-list';
 
 function ShopList(props) {
   let grid = props.match.params.grid;
   const titles = {
-    list: "List",
-    "2cols": "Grid 2 Columns",
-    "3cols": "Grid 3 Columns",
-    "4cols": "Grid 4 Columns",
+    list: 'List',
+    '2cols': 'Grid 2 Columns',
+    '3cols': 'Grid 3 Columns',
+    '4cols': 'Grid 4 Columns',
   };
 
   if (
-    grid !== "list" &&
-    grid !== "2cols" &&
-    grid !== "3cols" &&
-    grid !== "4cols"
+    grid !== 'list' &&
+    grid !== '2cols' &&
+    grid !== '3cols' &&
+    grid !== '4cols'
   ) {
-    window.location = process.env.PUBLIC_URL + "/pages/404";
+    window.location = process.env.PUBLIC_URL + '/pages/404';
   }
 
   return (
@@ -39,7 +39,7 @@ function ShopList(props) {
         <PageHeader title={titles[grid]} subTitle="Shop" />
         <Breadcrumb
           title={titles[grid]}
-          parent1={["Shop", "shop/sidebar/list"]}
+          parent1={['Shop', 'shop/sidebar/list']}
           adClass="mb-2"
         />
 

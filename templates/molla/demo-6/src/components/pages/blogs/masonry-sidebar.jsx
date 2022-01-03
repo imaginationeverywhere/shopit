@@ -1,27 +1,27 @@
-import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
-import Pagination from "../../features/pagination";
-import PostNine from "../../features/post/post-nine";
-import BlogSidebar from "../../features/sidebar/blog-sidebar";
-import isotope from "isotope-layout";
-import imagesLoaded from "imagesloaded";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
+import Pagination from '../../features/pagination';
+import PostNine from '../../features/post/post-nine';
+import BlogSidebar from '../../features/sidebar/blog-sidebar';
+import isotope from 'isotope-layout';
+import imagesLoaded from 'imagesloaded';
 
-import { isotopeLoad } from "../../../utils";
+import { isotopeLoad } from '../../../utils';
 
-import posts from "../../../mock_data/posts";
+import posts from '../../../mock_data/posts';
 
 export default function MasonrySidebar() {
   useEffect(() => {
     isotopeLoad(
       isotope,
       imagesLoaded,
-      ".entry-container",
-      ".entry-item",
-      ".entry-filter"
+      '.entry-container',
+      '.entry-item',
+      '.entry-filter',
     );
   });
 
@@ -39,7 +39,7 @@ export default function MasonrySidebar() {
         <PageHeader title="Blog Masonry With Sidebar" subTitle="Blog" />
         <Breadcrumb
           title="Masonry With Sidebar"
-          parent1={["Blog", "blog/classic"]}
+          parent1={['Blog', 'blog/classic']}
           adClass="mb-3"
         />
 

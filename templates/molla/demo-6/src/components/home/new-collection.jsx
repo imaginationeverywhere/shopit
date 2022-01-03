@@ -1,13 +1,13 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 // Import Custom Component
-import ProductNine from "../features/product/product-nine";
+import ProductNine from '../features/product/product-nine';
 
 //Import Service & Actions
-import { getFeaturedProducts } from "../../services";
-import { addToCart, toggleWishlist } from "../../actions";
+import { getFeaturedProducts } from '../../services';
+import { addToCart, toggleWishlist } from '../../actions';
 
 function NewCollection(props) {
   const { addToCart, toggleWishlist } = props;
@@ -54,5 +54,5 @@ const mapStateToProps = (state, props) => {
 };
 
 export default connect(mapStateToProps, { addToCart, toggleWishlist })(
-  NewCollection
+  NewCollection,
 );

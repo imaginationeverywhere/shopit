@@ -1,23 +1,23 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Tabs, Tab, TabList, TabPanel } from 'react-tabs';
 
-import ProductNine from "../../features/product/product-nine";
-import OwlCarousels from "../../features/owl-carousel";
+import ProductNine from '../../features/product/product-nine';
+import OwlCarousels from '../../features/owl-carousel';
 
 import {
   getFeaturedProducts,
   getTopSellingProducts,
   getProductsByCategory,
-} from "../../../services";
+} from '../../../services';
 import {
   addToCart,
   toggleWishlist,
   addToCompare,
   showQuickViewModal,
-} from "../../../actions";
+} from '../../../actions';
 
-import { productSlider } from "../../settings";
+import { productSlider } from '../../settings';
 
 function SpecialCollection(props) {
   let {

@@ -16,7 +16,7 @@ function Checkout(props) {
   const {
     selectedCarrier = {},
     cartlist: { cart },
-  } = useSelector(store => store);
+  } = useSelector((store) => store);
   const cartlist = cart;
   const total = getCartTotal(cart);
   const [shippingPrice, setShippingPrice] = useState(

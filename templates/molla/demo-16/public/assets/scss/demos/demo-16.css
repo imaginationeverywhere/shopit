@@ -225,7 +225,7 @@
   margin-bottom: 0;
 }
 .banner-main:after {
-  content: "";
+  content: '';
   display: table;
   clear: both;
 }
@@ -279,7 +279,7 @@
   float: right;
 }
 
-.owl-simple .owl-nav [class*="owl-"] {
+.owl-simple .owl-nav [class*='owl-'] {
   top: 40%;
 }
 

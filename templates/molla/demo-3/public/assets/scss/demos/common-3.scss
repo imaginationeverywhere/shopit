@@ -18,7 +18,7 @@
 
 .home-page {
   .intro-section {
-    @include mq("xl") {
+    @include mq('xl') {
       .col-lg-4 {
         -ms-flex: 0 0 32.77%;
         flex: 0 0 32.77%;

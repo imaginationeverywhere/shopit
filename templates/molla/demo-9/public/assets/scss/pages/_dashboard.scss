@@ -1,6 +1,6 @@
 /* Dashboard */
 .dashboard {
-  @include mq("lg") {
+  @include mq('lg') {
     .col-lg-3 {
       -ms-flex: 0 0 30%;
       flex: 0 0 30%;
@@ -59,8 +59,8 @@
     border-bottom: 0.1rem solid #ebebeb;
 
     &:before {
-      font-family: "molla";
-      content: "\f274";
+      font-family: 'molla';
+      content: '\f274';
       display: block;
       font-size: 1.5rem;
       line-height: 1;

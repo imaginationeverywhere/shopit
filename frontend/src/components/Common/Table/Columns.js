@@ -1,10 +1,10 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from 'react';
 
 const Columns = ({ checkbox, columns, sortColumn }) => {
   const [columnSorting, setColumnSorting] = useState({});
-  const DEFAULT_SORTING = "asc";
-  const DESC_SORTING = "desc";
-  const ASC_SORTING = "asc";
+  const DEFAULT_SORTING = 'asc';
+  const DESC_SORTING = 'desc';
+  const ASC_SORTING = 'asc';
 
   const handleClick = (column) => {
     columnSorting[column.field] === ASC_SORTING

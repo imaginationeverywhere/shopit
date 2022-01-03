@@ -3,10 +3,10 @@ import {
   GET_TEMPLATES_SUCCESS,
   PREVIEW_TEMPLATE,
   SET_TEMPLATE,
-} from "../constants/action-types";
-import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
-import { getTemplates } from "../actions/templateAction";
+} from '../constants/action-types';
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import { getTemplates } from '../actions/templateAction';
 
 const initialState = {
   loading: false,
@@ -39,8 +39,8 @@ const templatesReducer = (state = initialState, action) => {
 };
 
 const persistConfig = {
-  keyPrefix: "molla-",
-  key: "templates",
+  keyPrefix: 'molla-',
+  key: 'templates',
   storage,
 };
 

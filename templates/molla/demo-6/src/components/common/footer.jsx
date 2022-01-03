@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Footer(props) {
-  const { logoFooter = "assets/images/home/logo-footer.png" } = props;
-  const { container = "container" } = props;
+  const { logoFooter = 'assets/images/home/logo-footer.png' } = props;
+  const { container = 'container' } = props;
 
   return (
     <footer className="footer">
@@ -15,7 +15,7 @@ function Footer(props) {
                 <h4 className="widget-title">about molla</h4>
                 <p>
                   Praesent dapibus, neque id cursus ucibus, tortor neque egestas
-                  augue, eu vulputate magna eros eu erat.{" "}
+                  augue, eu vulputate magna eros eu erat.{' '}
                 </p>
 
                 <div className="social-icons">
@@ -156,7 +156,7 @@ function Footer(props) {
             />
           </figure>
           <img
-            src={process.env.PUBLIC_URL + "/" + logoFooter}
+            src={process.env.PUBLIC_URL + '/' + logoFooter}
             alt="Molla Logo"
             width="82"
             height="25"

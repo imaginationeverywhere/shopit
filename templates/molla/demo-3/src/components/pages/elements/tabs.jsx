@@ -1,10 +1,10 @@
-import React from "react";
-import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { Tabs, Tab, TabList, TabPanel } from 'react-tabs';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
 
 function ElementTabs() {
   return (
@@ -17,7 +17,7 @@ function ElementTabs() {
 
       <div className="main">
         <PageHeader title="Tabs" subTitle="Elements" />
-        <Breadcrumb title="Tabs" parent1={["Elements", "elements"]} />
+        <Breadcrumb title="Tabs" parent1={['Elements', 'elements']} />
 
         <div className="page-content">
           <div className="container">
@@ -52,7 +52,7 @@ function ElementTabs() {
                         elit. Donec odio. Quisque volutpat mattis eros. Nullam
                         malesuada erat ut turpis. Suspendisse urna nibh, viverra
                         non, semper suscipit, posuere a, pede. Donec nec justo
-                        eget felis facilisis fermentum.{" "}
+                        eget felis facilisis fermentum.{' '}
                       </p>
                     </TabPanel>
                     <TabPanel>
@@ -108,7 +108,7 @@ function ElementTabs() {
                         elit. Donec odio. Quisque volutpat mattis eros. Nullam
                         malesuada erat ut turpis. Suspendisse urna nibh, viverra
                         non, semper suscipit, posuere a, pede. Donec nec justo
-                        eget felis facilisis fermentum.{" "}
+                        eget felis facilisis fermentum.{' '}
                       </p>
                     </TabPanel>
                     <TabPanel>
@@ -176,7 +176,7 @@ function ElementTabs() {
                         elit. Donec odio. Quisque volutpat mattis eros. Nullam
                         malesuada erat ut turpis. Suspendisse urna nibh, viverra
                         non, semper suscipit, posuere a, pede. Donec nec justo
-                        eget felis facilisis fermentum.{" "}
+                        eget felis facilisis fermentum.{' '}
                       </p>
                     </TabPanel>
                     <TabPanel>
@@ -237,7 +237,7 @@ function ElementTabs() {
                         elit. Donec odio. Quisque volutpat mattis eros. Nullam
                         malesuada erat ut turpis. Suspendisse urna nibh, viverra
                         non, semper suscipit, posuere a, pede. Donec nec justo
-                        eget felis facilisis fermentum.{" "}
+                        eget felis facilisis fermentum.{' '}
                       </p>
                     </TabPanel>
                     <TabPanel>
@@ -301,7 +301,7 @@ function ElementTabs() {
                         elit. Donec odio. Quisque volutpat mattis eros. Nullam
                         malesuada erat ut turpis. Suspendisse urna nibh, viverra
                         non, semper suscipit, posuere a, pede. Donec nec justo
-                        eget felis facilisis fermentum.{" "}
+                        eget felis facilisis fermentum.{' '}
                       </p>
                     </TabPanel>
                     <TabPanel>
@@ -362,7 +362,7 @@ function ElementTabs() {
                         elit. Donec odio. Quisque volutpat mattis eros. Nullam
                         malesuada erat ut turpis. Suspendisse urna nibh, viverra
                         non, semper suscipit, posuere a, pede. Donec nec justo
-                        eget felis facilisis fermentum.{" "}
+                        eget felis facilisis fermentum.{' '}
                       </p>
                     </TabPanel>
                     <TabPanel>
@@ -432,8 +432,8 @@ function ElementTabs() {
                           malesuada erat ut turpis. Suspendisse urna nibh,
                           viverra non, semper suscipit, posuere a, pede. Donec
                           nec justo eget felis facilisis fermentum int dolore
-                          earum rerum tempora aspernatur numquam velit.{" "}
-                        </p>{" "}
+                          earum rerum tempora aspernatur numquam velit.{' '}
+                        </p>{' '}
                       </TabPanel>
                       <TabPanel>
                         <p>
@@ -496,8 +496,8 @@ function ElementTabs() {
                           malesuada erat ut turpis. Suspendisse urna nibh,
                           viverra non, semper suscipit, posuere a, pede. Donec
                           nec justo eget felis facilisis fermentum int dolore
-                          earum rerum tempora aspernatur numquam velit.{" "}
-                        </p>{" "}
+                          earum rerum tempora aspernatur numquam velit.{' '}
+                        </p>{' '}
                       </TabPanel>
                       <TabPanel>
                         <p>

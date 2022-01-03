@@ -88,7 +88,7 @@
   ul,
   .megamenu {
     &:before {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       bottom: 100%;
@@ -161,8 +161,8 @@
       position: relative;
 
       &::after {
-        font-family: "molla";
-        content: "\f110";
+        font-family: 'molla';
+        content: '\f110';
         position: absolute;
         right: 0;
         top: 50%;
@@ -178,7 +178,7 @@
         padding-right: 4rem;
 
         &:after {
-          content: "\f112";
+          content: '\f112';
           right: 3rem;
         }
       }
@@ -402,7 +402,7 @@
 
   .menu > li > a {
     &:before {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       left: 0;
@@ -432,7 +432,7 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .main-nav {
     display: block;
   }

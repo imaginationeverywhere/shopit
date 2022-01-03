@@ -1,33 +1,33 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import OwlCarousel from "../features/owl-carousel";
-import Service from "../features/service";
-import QuickViewTwo from "../features/product/common/quickview-two";
-import NewsletterModal from "../features/modal/newsletter-modal";
-import VideoBannerOne from "../features/video-banner/video-banner-one";
-import VideoModal from "../features/modal/video-modal";
+import OwlCarousel from '../features/owl-carousel';
+import Service from '../features/service';
+import QuickViewTwo from '../features/product/common/quickview-two';
+import NewsletterModal from '../features/modal/newsletter-modal';
+import VideoBannerOne from '../features/video-banner/video-banner-one';
+import VideoModal from '../features/modal/video-modal';
 
-import CTA from "./cta-section";
-import InstgaramSection from "./instagram-section";
-import ShopCollection from "./shop-collection";
-import ClothCollection from "./cloth-collection";
-import BlogSection from "./blog-section";
-import { introSlider } from "../settings";
+import CTA from './cta-section';
+import InstgaramSection from './instagram-section';
+import ShopCollection from './shop-collection';
+import ClothCollection from './cloth-collection';
+import BlogSection from './blog-section';
+import { introSlider } from '../settings';
 
-import { scrollToElement, isIEBrowser } from "../../utils";
+import { scrollToElement, isIEBrowser } from '../../utils';
 
-import style from "./style.scss";
+import style from './style.scss';
 
 function IndexSixteen(props) {
   useEffect(() => {
-    document.getElementById("menu-home").classList.add("active");
+    document.getElementById('menu-home').classList.add('active');
     style.use();
 
     return () => {
-      document.getElementById("menu-home").classList.remove("active");
+      document.getElementById('menu-home').classList.remove('active');
       style.unuse();
     };
   }, []);
@@ -57,10 +57,10 @@ function IndexSixteen(props) {
                 style={
                   isIEBrowser()
                     ? {
-                        position: "absolute",
-                        top: "50%",
-                        left: "50%",
-                        transform: "translate(-50%, -50%)",
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
                       }
                     : {}
                 }

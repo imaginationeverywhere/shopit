@@ -14,7 +14,7 @@ function Cart(props) {
   const {
     selectedCarrier = {},
     cartlist: { cart },
-  } = useSelector(store => store);
+  } = useSelector((store) => store);
   const dispatch = useDispatch();
   const cartlist = cart;
   const total = getCartTotal(cart);
@@ -138,7 +138,7 @@ function Cart(props) {
                             >
                               <div
                                 className="cart-product-quantity"
-                                onClick={e => onChangeQty(e, item.id)}
+                                onClick={(e) => onChangeQty(e, item.id)}
                               >
                                 <input
                                   type="number"
@@ -164,7 +164,7 @@ function Cart(props) {
                             <td className="remove-col">
                               <button
                                 className="btn-remove"
-                                onClick={e => dispatch(removeFromCart(item.id))}
+                                onClick={(e) => removeFromCart(item.id)}
                               >
                                 <i className="icon-close"></i>
                               </button>

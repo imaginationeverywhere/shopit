@@ -22,7 +22,7 @@
   margin-bottom: 1.4rem;
 }
 
-@include mq("md") {
+@include mq('md') {
   .error-content {
     padding-top: 12.5rem;
     min-height: 540px;

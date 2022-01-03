@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Footer(props) {
-  const { logo = "assets/images/logo-footer.png", container = "container" } =
+  const { logo = 'assets/images/logo-footer.png', container = 'container' } =
     props;
 
   return (
@@ -13,7 +13,7 @@ function Footer(props) {
             <div className="col-sm-6 col-lg-3">
               <div className="widget widget-about">
                 <img
-                  src={process.env.PUBLIC_URL + "/" + logo}
+                  src={process.env.PUBLIC_URL + '/' + logo}
                   className="footer-logo"
                   alt="Footer Logo"
                   width="105"
@@ -21,7 +21,7 @@ function Footer(props) {
                 />
                 <p>
                   Praesent dapibus, neque id cursus ucibus, tortor neque egestas
-                  augue, eu vulputate magna eros eu erat.{" "}
+                  augue, eu vulputate magna eros eu erat.{' '}
                 </p>
 
                 <div className="widget-call">

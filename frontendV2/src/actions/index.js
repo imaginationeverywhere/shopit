@@ -6,25 +6,25 @@ import 'react-toastify/dist/ReactToastify.min.css';
 
 /********** Product Action ********/
 // recieve products
-export const receiveProducts = products => ({
+export const receiveProducts = (products) => ({
   type: types.RECEIVE_PRODUCTS,
   products,
 });
 
 // refresh local storage
 
-export const refreshUnSafe = current => ({
+export const refreshUnSafe = (current) => ({
   type: types.REFRESH_STORE,
   current,
 });
 
-export const refreshStore = current => dispatch => {
+export const refreshStore = (current) => (dispatch) => {
   dispatch(refreshUnSafe(current));
 };
 
 // get all products
-export const getAllProducts = () => dispatch => {
-  api.getProducts().then(products => {
+export const getAllProducts = () => (dispatch) => {
+  api.getProducts().then((products) => {
     dispatch(receiveProducts(products));
     return products;
   });
@@ -32,7 +32,7 @@ export const getAllProducts = () => dispatch => {
 
 /*********** Modal related Action **********/
 // display quickview
-export const showQuickViewModal = productId => ({
+export const showQuickViewModal = (productId) => ({
   type: types.SHOW_QUICKVIEW,
   productId,
 });
@@ -43,25 +43,25 @@ export const closeQuickViewModal = () => ({
 });
 
 // Show Video & Login modal
-export const showModal = modal => ({
+export const showModal = (modal) => ({
   type: types.SHOW_MODAL,
   modal: modal,
 });
 
 // close Video & Login modal
-export const closeModal = modal => ({
+export const closeModal = (modal) => ({
   type: types.CLOSE_MODAL,
   modal: modal,
 });
 
 // don't show Newsletter modal
-export const removeNewsletterMdoal = modal => ({
+export const removeNewsletterMdoal = (modal) => ({
   type: types.REMOVE_NEWSLETTER,
 });
 
 /************ Cart Action **************/
 // add item to cart
-export const addToCart = (product, qty) => dispatch => {
+export const addToCart = (product, qty) => (dispatch) => {
   toast.success('Item Added to Cart');
   dispatch(addToCartUnsafe(product, qty));
 };
@@ -76,7 +76,7 @@ export const addToCartUnsafe = (product, qty) => {
 };
 
 // remove item from wishlist
-export const removeFromWishlist = productId => dispatch => {
+export const removeFromWishlist = (productId) => (dispatch) => {
   toast.error('Item removed from Wishlist');
   dispatch({
     type: types.REMOVE_FROM_WISHLIST,
@@ -84,8 +84,14 @@ export const removeFromWishlist = productId => dispatch => {
   });
 };
 
+export const clearCart = () => (dispatch) => {
+  dispatch({
+    type: types.CLEAR_CART,
+  });
+};
+
 // add item to cart from wishlist
-export const addToCartFromWishlist = (product, qty) => dispatch => {
+export const addToCartFromWishlist = (product, qty) => (dispatch) => {
   toast.success('Item added to Cart');
 
   dispatch({
@@ -97,7 +103,7 @@ export const addToCartFromWishlist = (product, qty) => dispatch => {
 };
 
 // remove item from cart
-export const removeFromCart = productId => dispatch => {
+export const removeFromCart = (productId) => (dispatch) => {
   toast.error('Item removed from Cart');
 
   dispatch({
@@ -114,7 +120,7 @@ export const changeQty = (productId, qty) => ({
 });
 
 // change shipping method
-export const changeShipping = shipping => ({
+export const changeShipping = (shipping) => ({
   type: types.CHANGE_SHIPPING,
   shipping,
 });
@@ -122,35 +128,35 @@ export const changeShipping = shipping => ({
 /*********** Wishlist Action *********/
 
 // add item to wishlist
-export const toggleWishlist = product => dispatch => {
+export const toggleWishlist = (product) => (dispatch) => {
   dispatch(toggleWishlistUnsafe(product));
 };
 
 // add item to wishlist : typical action
-export const toggleWishlistUnsafe = product => ({
+export const toggleWishlistUnsafe = (product) => ({
   type: types.TOGGLE_WISHLIST,
   product,
 });
 
 /************* Compare Action ***********/
 // add to comparelist
-export const addToCompare = product => dispatch => {
+export const addToCompare = (product) => (dispatch) => {
   toast.success('Item added to Compare');
   dispatch(addToCompareUnsafe(product));
 };
 
-export const addToCompareUnsafe = product => ({
+export const addToCompareUnsafe = (product) => ({
   type: types.ADD_TO_COMPARE,
   product,
 });
 
 // remove all items from cartlist
-export const removeFromCompare = productId => dispatch => {
+export const removeFromCompare = (productId) => (dispatch) => {
   toast.success('Compare item removed');
   dispatch(removeFromCompareUnsafe(productId));
 };
 
-export const removeFromCompareUnsafe = productId => ({
+export const removeFromCompareUnsafe = (productId) => ({
   type: types.REMOVE_FROM_COMPARE,
   productId,
 });
@@ -163,7 +169,7 @@ export const resetCompare = () => ({
 /************** Filter Action ***********/
 
 // set order to sort
-export const filterSort = sortBy => dispatch => {
+export const filterSort = (sortBy) => (dispatch) => {
   dispatch({
     type: types.SORT_BY,
     sortBy,
@@ -171,7 +177,7 @@ export const filterSort = sortBy => dispatch => {
 };
 
 // set price range to get suitable products
-export const filterPrice = range => dispatch => {
+export const filterPrice = (range) => (dispatch) => {
   dispatch({
     type: types.PRICE_FILTER,
     range,
@@ -179,7 +185,7 @@ export const filterPrice = range => dispatch => {
 };
 
 // add/remove category to get suitable products
-export const toggleCategoryFilter = category => dispatch => {
+export const toggleCategoryFilter = (category) => (dispatch) => {
   dispatch({
     type: types.CATEGORY_FILTER,
     category,
@@ -187,7 +193,7 @@ export const toggleCategoryFilter = category => dispatch => {
 };
 
 // add/remove product size to get suitable products
-export const toggleSizeFilter = size => dispatch => {
+export const toggleSizeFilter = (size) => (dispatch) => {
   dispatch({
     type: types.SIZE_FILTER,
     size,
@@ -195,7 +201,7 @@ export const toggleSizeFilter = size => dispatch => {
 };
 
 // add/remove color to get suitable products
-export const toggleColorFilter = color => dispatch => {
+export const toggleColorFilter = (color) => (dispatch) => {
   dispatch({
     type: types.COLOR_FILTER,
     color,
@@ -203,7 +209,7 @@ export const toggleColorFilter = color => dispatch => {
 };
 
 // add/remove brand to get suitable products
-export const toggleBrandFilter = brand => dispatch => {
+export const toggleBrandFilter = (brand) => (dispatch) => {
   dispatch({
     type: types.BRAND_FILTER,
     brand,
@@ -211,7 +217,7 @@ export const toggleBrandFilter = brand => dispatch => {
 };
 
 // add/remove rating to get suitable products
-export const toggleRatingFilter = rating => dispatch => {
+export const toggleRatingFilter = (rating) => (dispatch) => {
   dispatch({
     type: types.RATING_FILTER,
     rating,
@@ -219,7 +225,7 @@ export const toggleRatingFilter = rating => dispatch => {
 };
 
 // reset filter with intialstate
-export const resetFilter = () => dispatch => {
+export const resetFilter = () => (dispatch) => {
   dispatch({
     type: types.RESET_FILTER,
   });
@@ -235,13 +241,13 @@ export const hideNewsletterModal = () => ({
 /************** Admin ***************/
 // Templates
 
-export const receiveTemplates = templates => ({
+export const receiveTemplates = (templates) => ({
   type: types.GET_TEMPLATES_SUCCESS,
   templates,
 });
 
-export const getAllTemplates = () => dispatch => {
-  api.getTemplates().then(data => {
+export const getAllTemplates = () => (dispatch) => {
+  api.getTemplates().then((data) => {
     dispatch({
       type: types.GET_TEMPLATES_SUCCESS,
       templates: data.templates,
@@ -249,14 +255,13 @@ export const getAllTemplates = () => dispatch => {
   });
 };
 
-export const setTemplate = templateId => async dispatch => {
-  console.log('here');
-  await api.setTemplate(templateId).then(templates => {
+export const setTemplate = (templateId) => async (dispatch) => {
+  await api.setTemplate(templateId).then((templates) => {
     return templates;
   });
 };
 
-export const previewTemplate = templateId => dispatch => {
+export const previewTemplate = (templateId) => (dispatch) => {
   api.previewTemplate(templateId).then(() => {
     return templateId;
   });
@@ -265,7 +270,7 @@ export const previewTemplate = templateId => dispatch => {
 // Users
 
 // Get all users
-export const allUsers = () => async dispatch => {
+export const allUsers = () => async (dispatch) => {
   try {
     dispatch({ type: types.ALL_USERS_REQUEST });
 

@@ -1,15 +1,15 @@
-import * as types from "../constants/action-types";
+import * as types from '../constants/action-types';
 
-import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 function modalReducer(
   state = {
-    modal: "login",
+    modal: 'login',
     showModal: false,
     newsletterModal: true,
   },
-  action
+  action,
 ) {
   switch (action.type) {
     case types.SHOW_MODAL:
@@ -38,8 +38,8 @@ function modalReducer(
 }
 
 const persistConfig = {
-  keyPrefix: "molla-",
-  key: "modal",
+  keyPrefix: 'molla-',
+  key: 'modal',
   storage,
 };
 

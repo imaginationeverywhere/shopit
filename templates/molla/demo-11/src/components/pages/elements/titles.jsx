@@ -1,14 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Tabs, TabList, Tab, TabPanel } from 'react-tabs';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
 
 function Titles() {
-  const category = ["ALL PRODUCTS", "WOMEN", "MEN", "ACCESSORIES"];
+  const category = ['ALL PRODUCTS', 'WOMEN', 'MEN', 'ACCESSORIES'];
 
   return (
     <>
@@ -20,7 +20,7 @@ function Titles() {
 
       <div className="main">
         <PageHeader title="Titles" subTitle="Elements" />
-        <Breadcrumb title="Titles" parent1={["Elements", "elements"]} />
+        <Breadcrumb title="Titles" parent1={['Elements', 'elements']} />
 
         <div className="page-content">
           <div className="container">
@@ -42,7 +42,7 @@ function Titles() {
                 Simple title <span className="title-separator">/</span> Subtitle
               </h2>
               <p className="title-desc">
-                Donec consectetuer ligula vulputate sem tristique cursus.{" "}
+                Donec consectetuer ligula vulputate sem tristique cursus.{' '}
               </p>
             </div>
             <p>
@@ -61,7 +61,7 @@ function Titles() {
               <div className="heading heading-flex">
                 <div className="heading-left">
                   <h2 className="title">
-                    Simple title <span className="title-separator">/</span>{" "}
+                    Simple title <span className="title-separator">/</span>{' '}
                     Product Filter
                   </h2>
                 </div>
@@ -102,12 +102,12 @@ function Titles() {
               <div className="heading heading-flex align-items-start">
                 <div className="heading-left">
                   <h2 className="title">
-                    Simple title <span className="title-separator">/</span>{" "}
+                    Simple title <span className="title-separator">/</span>{' '}
                     Subtitle <span className="title-separator">/</span> Product
                     Filter
                   </h2>
                   <p className="title-desc">
-                    Donec consectetuer ligula vulputate sem tristique cursus.{" "}
+                    Donec consectetuer ligula vulputate sem tristique cursus.{' '}
                   </p>
                 </div>
 
@@ -171,11 +171,11 @@ function Titles() {
             <div className="heading heading-flex">
               <div className="heading-left">
                 <h2 className="title">
-                  Simple title <span className="title-separator">/</span>{" "}
+                  Simple title <span className="title-separator">/</span>{' '}
                   Substitle <span className="title-separator">/</span> Link
                 </h2>
                 <p className="title-desc">
-                  Donec consectetuer ligula vulputate sem tristique cursus.{" "}
+                  Donec consectetuer ligula vulputate sem tristique cursus.{' '}
                 </p>
               </div>
 
@@ -216,7 +216,7 @@ function Titles() {
               <div className="heading heading-center">
                 <div className="heading-left">
                   <h2 className="title">
-                    Centered title <span className="title-separator">/</span>{" "}
+                    Centered title <span className="title-separator">/</span>{' '}
                     Product Filter
                   </h2>
                 </div>
@@ -302,7 +302,7 @@ function Titles() {
             <div className="heading text-center">
               <p className="title-desc mb-1">Quisque a lectus.</p>
               <h2 className="title-sm">
-                Centered Small title <span className="title-separator">/</span>{" "}
+                Centered Small title <span className="title-separator">/</span>{' '}
                 Subtitle
               </h2>
             </div>

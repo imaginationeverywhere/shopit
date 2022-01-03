@@ -1,22 +1,22 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Tabs, Tab, TabList, TabPanel } from 'react-tabs';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 // import custom component
-import OwlCarousel from "../../features/owl-carousel";
-import ProductNine from "../../features/product/product-nine";
-import { trendingSlider } from "../../settings";
+import OwlCarousel from '../../features/owl-carousel';
+import ProductNine from '../../features/product/product-nine';
+import { trendingSlider } from '../../settings';
 
 import {
   addToCart,
   toggleWishlist,
   addToCompare,
   showQuickViewModal,
-} from "../../../actions";
-import data from "../../../mock_data/data.json";
-import { getProductsByCategory, getFeaturedProducts } from "../../../services";
+} from '../../../actions';
+import data from '../../../mock_data/data.json';
+import { getProductsByCategory, getFeaturedProducts } from '../../../services';
 
 function TrendyCollection(props) {
   const { addToCart, toggleWishlist, addToCompare, showQuickViewModal } = props;
@@ -71,7 +71,7 @@ function TrendyCollection(props) {
                 {getProductsByCategory(products, cat).map((item, index) => (
                   <ProductNine
                     product={item}
-                    key={"trendy" + index}
+                    key={'trendy' + index}
                     onAddToCart={addToCart}
                     onToggleWishlist={toggleWishlist}
                     onAddToCompare={addToCompare}

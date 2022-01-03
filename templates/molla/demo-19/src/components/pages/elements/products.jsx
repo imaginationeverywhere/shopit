@@ -1,22 +1,22 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
-import ProductOne from "../../features/product/product-one";
-import ProductTwo from "../../features/product/product-two";
-import ProductThree from "../../features/product/product-three";
-import ProductFour from "../../features/product/product-four";
-import ProductFive from "../../features/product/product-five";
-import ProductSix from "../../features/product/product-six";
-import ProductSeven from "../../features/product/product-seven";
-import QuickView from "../../features/product/common/quickview";
-import OwlCarousel from "../../features/owl-carousel";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
+import ProductOne from '../../features/product/product-one';
+import ProductTwo from '../../features/product/product-two';
+import ProductThree from '../../features/product/product-three';
+import ProductFour from '../../features/product/product-four';
+import ProductFive from '../../features/product/product-five';
+import ProductSix from '../../features/product/product-six';
+import ProductSeven from '../../features/product/product-seven';
+import QuickView from '../../features/product/common/quickview';
+import OwlCarousel from '../../features/owl-carousel';
 
 // import settings
-import { mainSlider2, mainSlider4 } from "../../settings";
+import { mainSlider2, mainSlider4 } from '../../settings';
 
 // import actions
 import {
@@ -24,7 +24,7 @@ import {
   toggleWishlist,
   addToCompare,
   showQuickViewModal,
-} from "../../../actions";
+} from '../../../actions';
 
 function Products(props) {
   const {
@@ -45,7 +45,7 @@ function Products(props) {
 
       <div className="main no-span">
         <PageHeader title="Products" subTitle="Elements" />
-        <Breadcrumb title="Products" parent1={["Elements", "elements"]} />
+        <Breadcrumb title="Products" parent1={['Elements', 'elements']} />
 
         <div className="page-content">
           <div className="container">

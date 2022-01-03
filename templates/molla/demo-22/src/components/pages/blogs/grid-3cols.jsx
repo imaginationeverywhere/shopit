@@ -1,26 +1,26 @@
-import React, { useEffect } from "react";
-import isotope from "isotope-layout";
-import imagesLoaded from "imagesloaded";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import isotope from 'isotope-layout';
+import imagesLoaded from 'imagesloaded';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
-import PostSix from "../../features/post/post-six";
-import Pagination from "../../features/pagination";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
+import PostSix from '../../features/post/post-six';
+import Pagination from '../../features/pagination';
 
-import { isotopeLoad } from "../../../utils";
+import { isotopeLoad } from '../../../utils';
 
-import posts from "../../../mock_data/posts";
+import posts from '../../../mock_data/posts';
 
 export default function Grid3Cols() {
   useEffect(() => {
     isotopeLoad(
       isotope,
       imagesLoaded,
-      ".entry-container",
-      ".entry-item",
-      ".entry-filter"
+      '.entry-container',
+      '.entry-item',
+      '.entry-filter',
     );
   });
 
@@ -38,7 +38,7 @@ export default function Grid3Cols() {
         <PageHeader title="Blog Grid 3 Columns" subTitle="Blog" />
         <Breadcrumb
           title="Grid 3 Columns"
-          parent1={["Blog", "blog/classic"]}
+          parent1={['Blog', 'blog/classic']}
           adClass="mb-2"
         />
 

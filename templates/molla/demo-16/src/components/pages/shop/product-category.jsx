@@ -1,28 +1,28 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { Helmet } from "react-helmet";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import CategoryFilter from "../../features/sidebar/category-filter";
+import CategoryFilter from '../../features/sidebar/category-filter';
 
-import { initSettings } from "../../../utils";
-import data from "../../../mock_data/data";
-import { getCountByCategory } from "../../../services";
-import PageHader from "../../common/page-header";
+import { initSettings } from '../../../utils';
+import data from '../../../mock_data/data';
+import { getCountByCategory } from '../../../services';
+import PageHader from '../../common/page-header';
 
 function ProductCategory(props) {
   const { products } = props;
   const grid = props.match.params.grid;
   const title = {
-    boxed: "Product Category Boxed",
-    fullwidth: "Product Category Fullwidth",
+    boxed: 'Product Category Boxed',
+    fullwidth: 'Product Category Fullwidth',
   };
-  const breadcrumbs = { boxed: "Boxed", fullwidth: "Fullwidth" };
+  const breadcrumbs = { boxed: 'Boxed', fullwidth: 'Fullwidth' };
   let counts = [];
 
-  if (grid !== "boxed" && grid !== "fullwidth") {
-    window.location = process.env.PUBLIC_URL + "/pages/404";
+  if (grid !== 'boxed' && grid !== 'fullwidth') {
+    window.location = process.env.PUBLIC_URL + '/pages/404';
   }
 
   useEffect(() => {
@@ -30,10 +30,10 @@ function ProductCategory(props) {
   });
 
   function showSideBar() {
-    document.querySelector("body").classList.add("sidebar-filter-active");
+    document.querySelector('body').classList.add('sidebar-filter-active');
   }
 
-  if (!products) return "";
+  if (!products) return '';
 
   data.shop_categories.map((item, index) => {
     counts.push(getCountByCategory(products, item.name));
@@ -58,11 +58,11 @@ function ProductCategory(props) {
           aria-label="breadcrumb"
           className="breadcrumb-nav breadcrumb-with-filter"
         >
-          <div className={grid === "boxed" ? "container" : "container-fluid"}>
+          <div className={grid === 'boxed' ? 'container' : 'container-fluid'}>
             <button
               className="sidebar-toggler"
               onClick={showSideBar}
-              style={{ padding: "0" }}
+              style={{ padding: '0' }}
             >
               <i className="icon-bars"></i>Filters
             </button>
@@ -90,7 +90,7 @@ function ProductCategory(props) {
 
         <div className="page-content">
           <div className="categories-page" key={grid}>
-            {grid === "boxed" ? (
+            {grid === 'boxed' ? (
               <div className="container">
                 <div className="row">
                   <div className="col-md-6">
@@ -322,7 +322,7 @@ function ProductCategory(props) {
                   </div>
                 </div>
               </div>
-            ) : grid === "fullwidth" ? (
+            ) : grid === 'fullwidth' ? (
               <div className="container-fluid">
                 <div className="row">
                   <div className="col-lg-6">
@@ -571,7 +571,7 @@ function ProductCategory(props) {
                 </div>
               </div>
             ) : (
-              ""
+              ''
             )}
           </div>
         </div>

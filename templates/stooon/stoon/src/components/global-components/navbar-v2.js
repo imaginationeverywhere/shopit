@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class NavbarV2 extends Component {
   componentDidMount() {
     const $ = window.$;
 
-    let publicUrl = process.env.PUBLIC_URL + "/";
+    let publicUrl = process.env.PUBLIC_URL + '/';
 
     var shoppingCart = (function () {
       // =============================
@@ -26,14 +26,14 @@ class NavbarV2 extends Component {
 
       // Save cart
       function saveCart() {
-        sessionStorage.setItem("shoppingCart", JSON.stringify(cart));
+        sessionStorage.setItem('shoppingCart', JSON.stringify(cart));
       }
 
       // Load cart
       function loadCart() {
-        cart = JSON.parse(sessionStorage.getItem("shoppingCart"));
+        cart = JSON.parse(sessionStorage.getItem('shoppingCart'));
       }
-      if (sessionStorage.getItem("shoppingCart") != null) {
+      if (sessionStorage.getItem('shoppingCart') != null) {
         loadCart();
       }
 
@@ -116,7 +116,7 @@ class NavbarV2 extends Component {
       // List cart
       obj.listCart = function () {
         var cartCopy = [];
-        var i = "0";
+        var i = '0';
         for (i in cart) {
           item = cart[i];
           itemCopy = {};
@@ -136,47 +136,47 @@ class NavbarV2 extends Component {
     // Triggers / Events
     // *****************************************
     // Add item
-    $(document).on("click", ".add-to-cart", function (event) {
+    $(document).on('click', '.add-to-cart', function (event) {
       event.preventDefault();
-      var name = $(this).data("name");
-      var img = $(this).data("img");
-      var price = Number($(this).data("price"));
+      var name = $(this).data('name');
+      var img = $(this).data('img');
+      var price = Number($(this).data('price'));
       shoppingCart.addItemToCart(name, price, 1, img);
       displayCart();
       $(this).prepend('<div class="succes-message">Item Added</div>');
-      $(".succes-message").show(0).delay(500).hide(0);
+      $('.succes-message').show(0).delay(500).hide(0);
       setTimeout(function () {
-        $(".succes-message").remove();
+        $('.succes-message').remove();
       }, 600);
     });
 
     // Clear items
-    $(document).on("click", ".clear-cart", function (event) {
+    $(document).on('click', '.clear-cart', function (event) {
       shoppingCart.clearCart();
       displayCart();
     });
 
     function displayCart() {
       var cartArray = shoppingCart.listCart();
-      var output = "";
+      var output = '';
       for (var i in cartArray) {
         output +=
-          "<li>" +
+          '<li>' +
           '<div class="d-flex">' +
           '<div class="thumb">' +
           '<img src="' +
           publicUrl +
           cartArray[i].img +
           '" alt="">' +
-          "</div>" +
+          '</div>' +
           '<div class="content">' +
           '<h6 class="title"><a href="single-product.html">' +
           cartArray[i].name +
-          "</a></h6>" +
+          '</a></h6>' +
           '<span class="price">$' +
           cartArray[i].price +
-          "</span>" +
-          "</div>" +
+          '</span>' +
+          '</div>' +
           ' <div class="action">' +
           '<input type="number" disabled data-name="' +
           cartArray[i].name +
@@ -186,27 +186,27 @@ class NavbarV2 extends Component {
           '<a href="#" class="remove delete-item" data-name="' +
           cartArray[i].name +
           '">Remove</a>' +
-          " </div>" +
-          "</div>" +
-          "</li>";
+          ' </div>' +
+          '</div>' +
+          '</li>';
       }
 
-      $(".show-cart").html(output);
-      $(".total-cart").html(shoppingCart.totalCart());
-      $(".total-count").html(shoppingCart.totalCount());
+      $('.show-cart').html(output);
+      $('.total-cart').html(shoppingCart.totalCart());
+      $('.total-count').html(shoppingCart.totalCount());
     }
 
     // Delete item button
 
-    $(".show-cart").on("click", ".delete-item", function (event) {
-      var name = $(this).data("name");
+    $('.show-cart').on('click', '.delete-item', function (event) {
+      var name = $(this).data('name');
       shoppingCart.removeItemFromCartAll(name);
       displayCart();
     });
 
     // Item count input
-    $(".show-cart").on("change", ".item-count", function (event) {
-      var name = $(this).data("name");
+    $('.show-cart').on('change', '.item-count', function (event) {
+      var name = $(this).data('name');
       var count = Number($(this).val());
       shoppingCart.setCountForItem(name, count);
       displayCart();
@@ -216,9 +216,9 @@ class NavbarV2 extends Component {
   }
 
   render() {
-    let publicUrl = process.env.PUBLIC_URL + "/";
-    let imgattr = "logo";
-    let anchor = "#";
+    let publicUrl = process.env.PUBLIC_URL + '/';
+    let imgattr = 'logo';
+    let anchor = '#';
     return (
       <div className="stoon-navbar">
         <div className="header-top dark-header-top d-none d-md-block">
@@ -326,7 +326,7 @@ class NavbarV2 extends Component {
               <div className="col-lg-3 col-4 order-1 align-self-center">
                 <div className="logo">
                   <Link to="/">
-                    <img src={publicUrl + "assets/img/logo.png"} alt="" />
+                    <img src={publicUrl + 'assets/img/logo.png'} alt="" />
                   </Link>
                 </div>
               </div>
@@ -435,7 +435,7 @@ class NavbarV2 extends Component {
                             <span className="total-cart"></span>
                           </h6>
                           <div className="btn-wrapper">
-                            {" "}
+                            {' '}
                             <Link to="/shoping-cart" className="btn btn-cart">
                               Go to cart
                             </Link>

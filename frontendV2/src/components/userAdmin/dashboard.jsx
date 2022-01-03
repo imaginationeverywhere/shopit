@@ -167,7 +167,7 @@ function DashBoard() {
                                         yourmail@mail.com
                                         <br />
                                         <button
-                                          onClick={e => {
+                                          onClick={(e) => {
                                             setAddress('billing');
                                             setEdit(true);
                                           }}
@@ -191,7 +191,7 @@ function DashBoard() {
                                         yet.
                                         <br />
                                         <button
-                                          onClick={e => {
+                                          onClick={(e) => {
                                             setAddress('shipping');
                                             setEdit(true);
                                           }}

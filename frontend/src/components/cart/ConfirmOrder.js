@@ -1,15 +1,15 @@
-import React, { Fragment, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { Fragment, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import MetaData from "../layout/MetaData";
-import CheckoutSteps from "./CheckoutSteps";
+import MetaData from '../layout/MetaData';
+import CheckoutSteps from './CheckoutSteps';
 
-import { useSelector } from "react-redux";
-import CarrierList from "./CarrierList";
+import { useSelector } from 'react-redux';
+import CarrierList from './CarrierList';
 
 const ConfirmOrder = ({ history }) => {
   const selectedCarrier = useSelector(
-    ({ shipment: { selectedCarrier = {} } = {} }) => selectedCarrier || {}
+    ({ shipment: { selectedCarrier = {} } = {} }) => selectedCarrier || {},
   );
   const [shippingPrice, setShippingPrice] = useState(0);
 
@@ -19,7 +19,7 @@ const ConfirmOrder = ({ history }) => {
   // Calculate Order Prices
   const itemsPrice = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
-    0
+    0,
   );
 
   const taxPrice = Number((0.05 * itemsPrice).toFixed(2));
@@ -39,13 +39,13 @@ const ConfirmOrder = ({ history }) => {
       totalPrice,
     };
 
-    sessionStorage.setItem("orderInfo", JSON.stringify(data));
-    history.push("/payment");
+    sessionStorage.setItem('orderInfo', JSON.stringify(data));
+    history.push('/payment');
   };
 
   return (
     <Fragment>
-      <MetaData title={"Confirm Order"} />
+      <MetaData title={'Confirm Order'} />
 
       <CheckoutSteps shipping confirmOrder />
 
@@ -59,7 +59,7 @@ const ConfirmOrder = ({ history }) => {
             <b>Phone:</b> {shippingInfo.phoneNo}
           </p>
           <p className="mb-4">
-            <b>Address:</b>{" "}
+            <b>Address:</b>{' '}
             {`${shippingInfo.address}, ${shippingInfo.city}, ${shippingInfo.postalCode}, ${shippingInfo.country}`}
           </p>
 
@@ -81,7 +81,7 @@ const ConfirmOrder = ({ history }) => {
 
                   <div className="col-4 col-lg-4 mt-4 mt-lg-0">
                     <p>
-                      {item.quantity} x ${item.price} ={" "}
+                      {item.quantity} x ${item.price} ={' '}
                       <b>${(item.quantity * item.price).toFixed(2)}</b>
                     </p>
                   </div>
@@ -97,11 +97,11 @@ const ConfirmOrder = ({ history }) => {
             <h4>Order Summary</h4>
             <hr />
             <p>
-              Subtotal:{" "}
+              Subtotal:{' '}
               <span className="order-summary-values">${itemsPrice}</span>
             </p>
             <p>
-              Shipping:{" "}
+              Shipping:{' '}
               <span className="order-summary-values">${shippingPrice}</span>
             </p>
             <p>

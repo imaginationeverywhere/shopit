@@ -1,7 +1,7 @@
-const ErrorHandler = require("../utils/errorHandler");
-const catchAsyncErrors = require("../middlewares/catchAsyncErrors");
+const ErrorHandler = require('../utils/errorHandler');
+const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
 
-const Template = require("../models/template");
+const Template = require('../models/template');
 
 exports.getTemplates = catchAsyncErrors(async (req, res) => {
   const templates = await Template.find();
@@ -17,7 +17,7 @@ exports.setActiveTemplate = catchAsyncErrors(async (req, res) => {
 
   await Template.updateOne(
     { templateId: req.body.templateId },
-    { $set: { isActive: true } }
+    { $set: { isActive: true } },
   );
 
   const templates = await Template.find();

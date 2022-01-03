@@ -1,21 +1,21 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Tabs, Tab, TabList, TabPanel } from 'react-tabs';
 
-import ProductNine from "../features/product/product-nine";
-import OwlCarousels from "../features/owl-carousel";
+import ProductNine from '../features/product/product-nine';
+import OwlCarousels from '../features/owl-carousel';
 
-import { getProductsByCategory, getTopSellingProducts } from "../../services";
+import { getProductsByCategory, getTopSellingProducts } from '../../services';
 
 import {
   addToCart,
   toggleWishlist,
   addToCompare,
   showQuickViewModal,
-} from "../../actions";
-import data from "../../mock_data/data";
+} from '../../actions';
+import data from '../../mock_data/data';
 
-import { productSlider } from "../settings";
+import { productSlider } from '../settings';
 
 function HotCollection(props) {
   const { addToCart, toggleWishlist, addToCompare, showQuickViewModal } = props;
@@ -52,7 +52,7 @@ function HotCollection(props) {
           >
             {getProductsByCategory(
               products,
-              cat === "Clothes" ? "Clothing" : cat
+              cat === 'Clothes' ? 'Clothing' : cat,
             ).map((item, index) => (
               <ProductNine
                 product={item}

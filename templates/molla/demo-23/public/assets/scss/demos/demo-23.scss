@@ -1,15 +1,15 @@
 /* Demo 23 Homepage 23 */
-@import "../mixins/clearfix";
-@import "../mixins/breakpoints";
-@import "../mixins/buttons";
-@import "../mixins/lazy";
+@import '../mixins/clearfix';
+@import '../mixins/breakpoints';
+@import '../mixins/buttons';
+@import '../mixins/lazy';
 
-@import "../config/fonts";
-@import "../config/variables";
+@import '../config/fonts';
+@import '../config/variables';
 
 $primary-color: #cc9966;
 
-@import "../base/headers/header-23";
+@import '../base/headers/header-23';
 
 .owl-dots:focus,
 .owl-dot:focus {
@@ -32,7 +32,7 @@ $primary-color: #cc9966;
   .content h4 {
     font-size: 8rem;
     font-weight: 700;
-    font-family: "Playfair Display";
+    font-family: 'Playfair Display';
     letter-spacing: 0.01em;
     color: #fff;
     text-transform: uppercase;
@@ -81,7 +81,7 @@ $primary-color: #cc9966;
   flex-wrap: wrap;
   margin-bottom: 2.5rem;
 
-  > [class*="col-"] {
+  > [class*='col-'] {
     display: flex;
   }
 }
@@ -148,7 +148,7 @@ $primary-color: #cc9966;
 
   &::before {
     position: absolute;
-    content: "";
+    content: '';
     left: 1rem;
     right: 1rem;
     height: 0.1rem;
@@ -220,7 +220,7 @@ $primary-color: #cc9966;
   .quote {
     font-size: 10rem;
     font-weight: 400;
-    font-family: "Montserrat";
+    font-family: 'Montserrat';
     letter-spacing: 0;
     color: #222;
     line-height: 1em;
@@ -232,7 +232,7 @@ $primary-color: #cc9966;
 
   h4 {
     font-size: 1.8rem;
-    font-family: "Playfair Display";
+    font-family: 'Playfair Display';
     color: #222;
     letter-spacing: 0;
   }
@@ -345,7 +345,7 @@ $primary-color: #cc9966;
   h3.heading-title {
     font-size: 4.6rem;
     font-weight: 700;
-    font-family: "Playfair Display";
+    font-family: 'Playfair Display';
     letter-spacing: 0.01em;
     color: #222;
     text-transform: uppercase;
@@ -355,7 +355,7 @@ $primary-color: #cc9966;
   text-align: center;
 }
 
-.carousel-with-shadow.owl-simple .owl-nav [class*="owl-"]:focus {
+.carousel-with-shadow.owl-simple .owl-nav [class*='owl-']:focus {
   outline: none;
 }
 
@@ -368,7 +368,7 @@ $primary-color: #cc9966;
       right: 3rem;
     }
   }
-  .carousel-with-shadow.owl-simple .owl-nav [class*="owl-"] {
+  .carousel-with-shadow.owl-simple .owl-nav [class*='owl-'] {
     margin-top: -87px;
     background-color: #fff;
     font-size: 2.4rem;

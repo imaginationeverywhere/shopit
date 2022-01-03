@@ -1,8 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
-import ProductNine from "../../features/product/product-nine";
-import Banner from "./banner";
+import ProductNine from '../../features/product/product-nine';
+import Banner from './banner';
 
 // import Action
 import {
@@ -10,9 +10,9 @@ import {
   toggleWishlist,
   showQuickViewModal,
   addToCompare,
-} from "../../../actions";
+} from '../../../actions';
 
-import data from "../../../mock_data/data";
+import data from '../../../mock_data/data';
 
 function SecondCollection(props) {
   const { addToCart, toggleWishlist, showQuickViewModal, addToCompare } = props;
@@ -20,7 +20,7 @@ function SecondCollection(props) {
   let products = props.products;
 
   return (
-    <div className="display-row" style={{ backgroundColor: "#f2f2f2" }}>
+    <div className="display-row" style={{ backgroundColor: '#f2f2f2' }}>
       <div className="container-fluid">
         <div className="row align-items-center">
           <div className="col-lg-6">

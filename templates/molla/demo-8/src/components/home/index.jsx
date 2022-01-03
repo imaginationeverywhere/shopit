@@ -1,36 +1,36 @@
-import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 // import Custom Components
-import OwlCarousel from "../features/owl-carousel";
-import NewsletterModal from "../features/modal/newsletter-modal";
-import Brand from "../features/brand";
-import QuickView from "../features/product/common/quickview-two";
-import ServiceBox from "../features/service";
+import OwlCarousel from '../features/owl-carousel';
+import NewsletterModal from '../features/modal/newsletter-modal';
+import Brand from '../features/brand';
+import QuickView from '../features/product/common/quickview-two';
+import ServiceBox from '../features/service';
 
 // Import Home Components
-import IntroSlide from "./intro-slide";
-import Banner from "./banner";
-import SpecialCollection from "./special-collection";
-import NewCollection from "./new-collection";
-import Instagram from "./instagram";
+import IntroSlide from './intro-slide';
+import Banner from './banner';
+import SpecialCollection from './special-collection';
+import NewCollection from './new-collection';
+import Instagram from './instagram';
 
 // Import Slider Settings
-import { brandSlider, introSlider } from "../settings";
+import { brandSlider, introSlider } from '../settings';
 
 // Import Data & Style
-import _data from "../../mock_data/data.json";
-import style from "./style.scss";
+import _data from '../../mock_data/data.json';
+import style from './style.scss';
 
 export default function HomePage() {
   useEffect(() => {
-    document.getElementById("menu-home").classList.add("active");
+    document.getElementById('menu-home').classList.add('active');
 
     style.use();
 
     return () => {
-      document.getElementById("menu-home").classList.remove("active");
+      document.getElementById('menu-home').classList.remove('active');
       style.unuse();
     };
   }, []);
@@ -93,7 +93,7 @@ export default function HomePage() {
               <p className="d-none d-lg-block text-white">
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                 <br />
-                Donec odio. Quisque volutpat mattis eros.{" "}
+                Donec odio. Quisque volutpat mattis eros.{' '}
               </p>
 
               <Link

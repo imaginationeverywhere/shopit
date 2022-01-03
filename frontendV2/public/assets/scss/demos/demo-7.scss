@@ -1,9 +1,9 @@
 /* Demo 7 Homepage 7 */
-@import "../mixins/clearfix";
-@import "../mixins/breakpoints";
-@import "../mixins/lazy";
+@import '../mixins/clearfix';
+@import '../mixins/breakpoints';
+@import '../mixins/lazy';
 
-@import "../config/variables";
+@import '../config/variables';
 
 $primary-color: #cc6666;
 $secondary-color: #fcb941;
@@ -353,7 +353,7 @@ blockquote {
   }
 }
 .featured {
-  .owl-simple .owl-nav [class*="owl-"] {
+  .owl-simple .owl-nav [class*='owl-'] {
     top: 36%;
   }
   .owl-simple .owl-nav .owl-next {
@@ -365,7 +365,7 @@ blockquote {
 }
 
 .btn-compare:before {
-  content: "\e81b";
+  content: '\e81b';
 }
 
 .owl-simple {
@@ -411,7 +411,7 @@ blockquote {
 
     &:not(:last-child):after {
       color: #333333;
-      content: ":";
+      content: ':';
       display: inline-block;
       font-weight: 400;
       font-size: 20px;
@@ -489,7 +489,7 @@ blockquote {
   position: relative;
 
   &:after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     left: 0;
@@ -552,7 +552,7 @@ blockquote {
   @include aspect-ratio(430, 300);
 }
 
-@include mq("md") {
+@include mq('md') {
   .title {
     font-size: 2rem;
   }
@@ -564,7 +564,7 @@ blockquote {
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .banner-section {
     img {
       min-height: 40rem;
@@ -572,20 +572,20 @@ blockquote {
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .cta-horizontal-box {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@include mq("xl", "max") {
-  .owl-simple .owl-nav [class*="owl-"] {
+@include mq('xl', 'max') {
+  .owl-simple .owl-nav [class*='owl-'] {
     display: none;
   }
 }
 
-@include mq("xs", "max") {
+@include mq('xs', 'max') {
   .nav.nav-pills .nav-link {
     padding-left: 0;
     padding-right: 0;
