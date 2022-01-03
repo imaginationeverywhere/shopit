@@ -15,7 +15,6 @@ export const getCarriers = (payload) => async (dispatch) => {
       type: GET_SHIPMENT_CARRIERS_SUCCESS,
       payload: data,
     });
-    console.log('=======its here>', data);
   } catch (error) {
     dispatch({
       type: GET_SHIPMENT_CARRIERS_FAIL,

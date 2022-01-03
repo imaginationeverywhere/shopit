@@ -16,15 +16,16 @@ function Cart(props) {
     cartlist: { cart },
   } = useSelector((store) => store);
   const dispatch = useDispatch();
-  const cartlist = cart;
-  const total = getCartTotal(cart);
+  const [cartlist, setCartlist] = useState(cart);
+  const [total, setTotal] = useState(getCartTotal(cart));
   const [shippingPrice, setShippingPrice] = useState(
     parseFloat(selectedCarrier.amount_local) || 0,
   );
+
   useEffect(() => {
-    quantityInputs();
-  });
-  useEffect(() => {}, [cart]);
+    setCartlist(cart);
+    setTotal(getCartTotal(cart));
+  }, [cart]);
   const taxPrice = Number((0.05 * total).toFixed(2));
 
   useEffect(() => {
@@ -48,15 +49,17 @@ function Cart(props) {
     });
   }, [cartlist]);
 
-  function onChangeQty(e, productId) {
+  const onChangeQty = (e, productId) => {
     dispatch(
       changeQty(
         productId,
         e.currentTarget.querySelector('input[type="number"]').value,
       ),
     );
-  }
-
+  };
+  const handleRemoveFromCart = (cartId) => {
+    dispatch(removeFromCart(cartId));
+  };
   return (
     <>
       <Helmet>
@@ -164,7 +167,9 @@ function Cart(props) {
                             <td className="remove-col">
                               <button
                                 className="btn-remove"
-                                onClick={(e) => removeFromCart(item.id)}
+                                onClick={() => {
+                                  handleRemoveFromCart(item.id);
+                                }}
                               >
                                 <i className="icon-close"></i>
                               </button>

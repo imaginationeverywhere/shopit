@@ -11,6 +11,13 @@ import Address from './Address';
 function DashBoard() {
   const [edit, setEdit] = useState(false);
   const [address, setAddress] = useState('shipping');
+  const handleEditAddress = () => {
+    setEdit(false);
+  };
+  const handleOpenBilling = () => {
+    setAddress('billing');
+    setEdit(true);
+  };
   return (
     <>
       <Helmet>
@@ -52,9 +59,7 @@ function DashBoard() {
 
                         <Tab className="nav-item">
                           <span
-                            onClick={() => {
-                              setEdit(false);
-                            }}
+                            onClick={handleEditAddress}
                             className="nav-link"
                           >
                             Addresses
@@ -166,12 +171,7 @@ function DashBoard() {
                                         <br />
                                         yourmail@mail.com
                                         <br />
-                                        <button
-                                          onClick={(e) => {
-                                            setAddress('billing');
-                                            setEdit(true);
-                                          }}
-                                        >
+                                        <button onClick={handleOpenBilling}>
                                           Edit <i className="icon-edit"></i>
                                         </button>
                                       </p>

@@ -1,13 +1,12 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import loader from '../../../assets/loader.gif';
 import {
   getCarriers,
   setSelectedCarrier,
 } from '../../../actions/shipmentActions';
 import Table from '../Table/index';
 
-var addressFrom = {
+const addressFrom = {
   name: 'Shawn Ippotle',
   company: 'Shippo',
   street1: '215 Clayton St.',
@@ -19,7 +18,7 @@ var addressFrom = {
   email: 'shippotle@goshippo.com',
 };
 
-var addressTo = {
+const addressTo = {
   name: 'Mr Hippo',
   company: '',
   street1: 'Broadway 1',

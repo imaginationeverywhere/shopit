@@ -1,39 +1,12 @@
-const Product = require('../models/product');
-
 const ErrorHandler = require('../utils/errorHandler');
 const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
 const Address = require('../models/address');
 
 // Create a new shippingInfo  =>  /api/v1/address/new
-exports.newShippingInfo = catchAsyncErrors(async (req, res, next) => {
-  const {
-    firstName,
-    lastName,
-    company,
-    street1,
-    street2,
-    city,
-    state,
-    zip,
-    country,
-    phone,
-    email,
-    metadata,
-  } = req.body;
+exports.newShippingInfo = catchAsyncErrors(async (req, res) => {
   try {
     const shippingInfo = await Address.create({
-      firstName,
-      lastName,
-      company,
-      street1,
-      street2,
-      city,
-      state,
-      zip,
-      country,
-      phone,
-      email,
-      metadata,
+      ...req.body,
       user: req.user._id,
     });
 
@@ -47,38 +20,12 @@ exports.newShippingInfo = catchAsyncErrors(async (req, res, next) => {
 });
 
 // Updates shippingInfo  =>  /api/v1/address/update
-exports.updateShippingInfo = catchAsyncErrors(async (req, res, next) => {
-  const {
-    firstName,
-    lastName,
-    company,
-    street1,
-    street2,
-    city,
-    state,
-    zip,
-    country,
-    phone,
-    email,
-    metadata,
-  } = req.body;
-
+exports.updateShippingInfo = catchAsyncErrors(async (req, res) => {
   try {
     const shippingInfo = await Address.findByIdAndUpdate(
       { user: req.user._id },
       {
-        firstName,
-        lastName,
-        company,
-        street1,
-        street2,
-        city,
-        state,
-        zip,
-        country,
-        phone,
-        email,
-        metadata,
+        ...req.body,
         user: req.user._id,
       },
       {
