@@ -187,7 +187,7 @@
         border: 1px solid #cfcfcf;
 
         &:before {
-          content: "";
+          content: '';
           border-style: solid;
           border-width: 1px 0px 0px 1px;
           border-color: #cfcfcf;
@@ -313,7 +313,7 @@
         border: 1px solid #cfcfcf;
 
         &:before {
-          content: "";
+          content: '';
           border-style: solid;
           border-width: 1px 0px 0px 1px;
           border-color: #cfcfcf;
@@ -484,8 +484,8 @@
                   position: absolute;
                   right: 15px;
                   top: 50%;
-                  content: "\f105";
-                  font-family: "fontawesome";
+                  content: '\f105';
+                  font-family: 'fontawesome';
                   @include transform(translateY(-50%));
                 }
                 > .sub-menu {
@@ -630,7 +630,7 @@
                 opacity: 1;
 
                 .sub-menu .menu-item-has-children:before {
-                  content: "\f107";
+                  content: '\f107';
                 }
                 li {
                   &.menu-item-has-children {
@@ -730,7 +730,7 @@
         border: 1px solid #cfcfcf;
 
         &:before {
-          content: "";
+          content: '';
           border-style: solid;
           border-width: 1px 0px 0px 1px;
           border-color: #cfcfcf;
@@ -1013,7 +1013,7 @@
       width: 15px;
       height: 2px;
       background-color: $color-black;
-      content: "";
+      content: '';
       top: -10px;
     }
 
@@ -1023,7 +1023,7 @@
       width: 15px;
       height: 2px;
       background-color: $color-black;
-      content: "";
+      content: '';
       top: 10px;
     }
 
@@ -1047,7 +1047,7 @@
       width: 15px;
       height: 2px;
       background-color: $color-black;
-      content: "";
+      content: '';
       top: -10px;
     }
 
@@ -1057,7 +1057,7 @@
       width: 15px;
       height: 2px;
       background-color: $color-black;
-      content: "";
+      content: '';
       top: 10px;
     }
 

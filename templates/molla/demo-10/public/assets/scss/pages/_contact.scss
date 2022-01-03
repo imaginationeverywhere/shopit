@@ -115,13 +115,13 @@
   margin-top: 3.2rem;
 }
 
-@include mq("md") {
+@include mq('md') {
   #map {
     height: 380px;
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   #map {
     height: 492px;
   }

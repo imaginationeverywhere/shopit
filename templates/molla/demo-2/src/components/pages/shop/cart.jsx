@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { Helmet } from "react-helmet";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
 
-import { getCartTotal } from "../../../services";
-import { quantityInputs, isIEBrowser } from "../../../utils";
-import { changeQty, removeFromCart, changeShipping } from "../../../actions";
+import { getCartTotal } from '../../../services';
+import { quantityInputs, isIEBrowser } from '../../../utils';
+import { changeQty, removeFromCart, changeShipping } from '../../../actions';
 
 function Cart(props) {
   const { cartlist, total, removeFromCart, prevShip } = props;
@@ -25,11 +25,11 @@ function Cart(props) {
     cartlist.map((item, index) => {
       if (
         document.querySelector(
-          `#quantity-input-wrapper-${index} .input-group input`
+          `#quantity-input-wrapper-${index} .input-group input`,
         )
       ) {
         document.querySelector(
-          `#quantity-input-wrapper-${index} .input-group input`
+          `#quantity-input-wrapper-${index} .input-group input`,
         ).value = item.qty;
       }
       return item;
@@ -43,7 +43,7 @@ function Cart(props) {
   function onChangeQty(e, productId) {
     props.changeQty(
       productId,
-      e.currentTarget.querySelector('input[type="number"]').value
+      e.currentTarget.querySelector('input[type="number"]').value,
     );
   }
 
@@ -63,7 +63,7 @@ function Cart(props) {
         <PageHeader title="Shopping Cart" subTitle="Shop" />
         <Breadcrumb
           title="Shopping Cart"
-          parent1={["Shop", "shop/sidebar/list"]}
+          parent1={['Shop', 'shop/sidebar/list']}
         />
 
         <div className="page-content">
@@ -85,7 +85,7 @@ function Cart(props) {
                     <tbody>
                       {cartlist.length > 0 ? (
                         cartlist.map((item, index) => (
-                          <tr key={"cart-item-" + index}>
+                          <tr key={'cart-item-' + index}>
                             <td className="product-col">
                               <div className="product">
                                 <figure className="product-media">
@@ -95,7 +95,7 @@ function Cart(props) {
                                     <img
                                       src={
                                         process.env.PUBLIC_URL +
-                                        "/" +
+                                        '/' +
                                         item.pictures[0]
                                       }
                                       alt="Product"
@@ -128,7 +128,7 @@ function Cart(props) {
 
                             <td
                               className="quantity-col"
-                              id={"quantity-input-wrapper-" + index}
+                              id={'quantity-input-wrapper-' + index}
                             >
                               <div
                                 className="cart-product-quantity"
@@ -169,8 +169,8 @@ function Cart(props) {
                         <tr>
                           <td>
                             <p className="pl-2 pt-1 pb-1">
-                              {" "}
-                              No Products in Cart{" "}
+                              {' '}
+                              No Products in Cart{' '}
                             </p>
                           </td>
                         </tr>
@@ -181,7 +181,7 @@ function Cart(props) {
                   <div className="cart-bottom">
                     <div
                       className="cart-discount"
-                      style={{ minHeight: isIEBrowser() ? "40px" : "auto" }}
+                      style={{ minHeight: isIEBrowser() ? '40px' : 'auto' }}
                     >
                       <form action="#">
                         <div className="input-group">
@@ -238,9 +238,9 @@ function Cart(props) {
                                 id="free-shipping"
                                 name="shipping"
                                 className="custom-control-input"
-                                onChange={(e) => onChangeShipping("free")}
+                                onChange={(e) => onChangeShipping('free')}
                                 defaultChecked={
-                                  "free" === prevShip ? true : false
+                                  'free' === prevShip ? true : false
                                 }
                               />
                               <label
@@ -262,9 +262,9 @@ function Cart(props) {
                                 id="standard-shipping"
                                 name="shipping"
                                 className="custom-control-input"
-                                onChange={(e) => onChangeShipping("standard")}
+                                onChange={(e) => onChangeShipping('standard')}
                                 defaultChecked={
-                                  "standard" === prevShip ? true : false
+                                  'standard' === prevShip ? true : false
                                 }
                               />
                               <label
@@ -286,9 +286,9 @@ function Cart(props) {
                                 id="express-shipping"
                                 name="shipping"
                                 className="custom-control-input"
-                                onChange={(e) => onChangeShipping("express")}
+                                onChange={(e) => onChangeShipping('express')}
                                 defaultChecked={
-                                  "express" === prevShip ? true : false
+                                  'express' === prevShip ? true : false
                                 }
                               />
                               <label
@@ -305,7 +305,7 @@ function Cart(props) {
                         <tr className="summary-shipping-estimate">
                           <td>
                             Estimate for Your Country
-                            <br />{" "}
+                            <br />{' '}
                             <a
                               href={`${process.env.PUBLIC_URL}/shop/dashboard`}
                             >
@@ -324,7 +324,7 @@ function Cart(props) {
                               {
                                 minimumFractionDigits: 2,
                                 maximumFractionDigits: 2,
-                              }
+                              },
                             )}
                           </td>
                         </tr>

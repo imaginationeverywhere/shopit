@@ -1,7 +1,7 @@
-import React from "react";
-import "./CheckboxNew.scss";
-import CheckIcon from "./CheckIconNew";
-import Loading from "../Loading";
+import React from 'react';
+import './CheckboxNew.scss';
+import CheckIcon from './CheckIconNew';
+import Loading from '../Loading';
 
 const CheckboxNew = ({
   id,

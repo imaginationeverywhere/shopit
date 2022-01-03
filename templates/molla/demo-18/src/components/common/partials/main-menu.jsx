@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function MainMenu(props) {
-  const [path, setPath] = useState("");
-  const PUBLIC_URL = "/react/molla";
+  const [path, setPath] = useState('');
+  const PUBLIC_URL = '/react/molla';
 
   useEffect(() => {
     setPath(window.location.href);
   });
 
   function showAllDemos(e) {
-    let demoItems = document.querySelectorAll(".demo-item.hidden");
+    let demoItems = document.querySelectorAll('.demo-item.hidden');
 
     for (let i = 0; i < demoItems.length; i++) {
-      demoItems[i].classList.toggle("show");
+      demoItems[i].classList.toggle('show');
     }
 
     document
-      .querySelector(".view-all-demos")
-      .classList.toggle("disabled-hidden");
+      .querySelector('.view-all-demos')
+      .classList.toggle('disabled-hidden');
     e.preventDefault();
   }
 
@@ -345,7 +345,7 @@ export default function MainMenu(props) {
             </div>
           </div>
         </li>
-        <li className={path.indexOf("shop") > -1 ? "active" : ""}>
+        <li className={path.indexOf('shop') > -1 ? 'active' : ''}>
           <Link
             to={`${process.env.PUBLIC_URL}/shop/sidebar/list`}
             className="sf-with-ul"
@@ -363,9 +363,9 @@ export default function MainMenu(props) {
                       <ul>
                         <li
                           className={
-                            path.indexOf("shop/sidebar/list") > -1
-                              ? "active"
-                              : ""
+                            path.indexOf('shop/sidebar/list') > -1
+                              ? 'active'
+                              : ''
                           }
                         >
                           <Link
@@ -376,9 +376,9 @@ export default function MainMenu(props) {
                         </li>
                         <li
                           className={
-                            path.indexOf("shop/sidebar/2cols") > -1
-                              ? "active"
-                              : ""
+                            path.indexOf('shop/sidebar/2cols') > -1
+                              ? 'active'
+                              : ''
                           }
                         >
                           <Link
@@ -389,9 +389,9 @@ export default function MainMenu(props) {
                         </li>
                         <li
                           className={
-                            path.indexOf("shop/sidebar/3cols") > -1
-                              ? "active"
-                              : ""
+                            path.indexOf('shop/sidebar/3cols') > -1
+                              ? 'active'
+                              : ''
                           }
                         >
                           <Link
@@ -402,9 +402,9 @@ export default function MainMenu(props) {
                         </li>
                         <li
                           className={
-                            path.indexOf("shop/sidebar/4cols") > -1
-                              ? "active"
-                              : ""
+                            path.indexOf('shop/sidebar/4cols') > -1
+                              ? 'active'
+                              : ''
                           }
                         >
                           <Link
@@ -415,7 +415,7 @@ export default function MainMenu(props) {
                         </li>
                         <li
                           className={
-                            path.indexOf("shop/market") > -1 ? "active" : ""
+                            path.indexOf('shop/market') > -1 ? 'active' : ''
                           }
                         >
                           <Link to={`${process.env.PUBLIC_URL}/shop/market`}>
@@ -431,9 +431,9 @@ export default function MainMenu(props) {
                       <ul>
                         <li
                           className={
-                            path.indexOf("shop/nosidebar/boxed") > -1
-                              ? "active"
-                              : ""
+                            path.indexOf('shop/nosidebar/boxed') > -1
+                              ? 'active'
+                              : ''
                           }
                         >
                           <Link
@@ -447,9 +447,9 @@ export default function MainMenu(props) {
                         </li>
                         <li
                           className={
-                            path.indexOf("shop/nosidebar/fullwidth") > -1
-                              ? "active"
-                              : ""
+                            path.indexOf('shop/nosidebar/fullwidth') > -1
+                              ? 'active'
+                              : ''
                           }
                         >
                           <Link
@@ -466,9 +466,9 @@ export default function MainMenu(props) {
                       <ul>
                         <li
                           className={
-                            path.indexOf("shop/category/boxed") > -1
-                              ? "active"
-                              : ""
+                            path.indexOf('shop/category/boxed') > -1
+                              ? 'active'
+                              : ''
                           }
                         >
                           <Link
@@ -479,9 +479,9 @@ export default function MainMenu(props) {
                         </li>
                         <li
                           className={
-                            path.indexOf("shop/category/fullwidth") > -1
-                              ? "active"
-                              : ""
+                            path.indexOf('shop/category/fullwidth') > -1
+                              ? 'active'
+                              : ''
                           }
                         >
                           <Link
@@ -498,7 +498,7 @@ export default function MainMenu(props) {
                       <ul>
                         <li
                           className={
-                            path.indexOf("shop/cart") > -1 ? "active" : ""
+                            path.indexOf('shop/cart') > -1 ? 'active' : ''
                           }
                         >
                           <Link to={`${process.env.PUBLIC_URL}/shop/cart`}>
@@ -507,7 +507,7 @@ export default function MainMenu(props) {
                         </li>
                         <li
                           className={
-                            path.indexOf("shop/checkout") > -1 ? "active" : ""
+                            path.indexOf('shop/checkout') > -1 ? 'active' : ''
                           }
                         >
                           <Link to={`${process.env.PUBLIC_URL}/shop/checkout`}>
@@ -516,7 +516,7 @@ export default function MainMenu(props) {
                         </li>
                         <li
                           className={
-                            path.indexOf("shop/wishlist") > -1 ? "active" : ""
+                            path.indexOf('shop/wishlist') > -1 ? 'active' : ''
                           }
                         >
                           <Link to={`${process.env.PUBLIC_URL}/shop/wishlist`}>
@@ -525,7 +525,7 @@ export default function MainMenu(props) {
                         </li>
                         <li
                           className={
-                            path.indexOf("shop/dashboard") > -1 ? "active" : ""
+                            path.indexOf('shop/dashboard') > -1 ? 'active' : ''
                           }
                         >
                           <Link to={`${process.env.PUBLIC_URL}/shop/dashboard`}>
@@ -534,7 +534,7 @@ export default function MainMenu(props) {
                         </li>
                         <li
                           className={
-                            path.indexOf("#Lookbook") > -1 ? "active" : ""
+                            path.indexOf('#Lookbook') > -1 ? 'active' : ''
                           }
                         >
                           <Link to="#Lookbook">Lookbook</Link>
@@ -572,7 +572,7 @@ export default function MainMenu(props) {
             </div>
           </div>
         </li>
-        <li className={path.indexOf("product/") > -1 ? "active" : ""}>
+        <li className={path.indexOf('product/') > -1 ? 'active' : ''}>
           <Link
             to={`${process.env.PUBLIC_URL}/product/default/7`}
             className="sf-with-ul"
@@ -588,7 +588,7 @@ export default function MainMenu(props) {
                   <ul>
                     <li
                       className={
-                        path.indexOf("product/default") > -1 ? "active" : ""
+                        path.indexOf('product/default') > -1 ? 'active' : ''
                       }
                     >
                       <Link to={`${process.env.PUBLIC_URL}/product/default/7`}>
@@ -597,7 +597,7 @@ export default function MainMenu(props) {
                     </li>
                     <li
                       className={
-                        path.indexOf("product/centered") > -1 ? "active" : ""
+                        path.indexOf('product/centered') > -1 ? 'active' : ''
                       }
                     >
                       <Link to={`${process.env.PUBLIC_URL}/product/centered/9`}>
@@ -606,7 +606,7 @@ export default function MainMenu(props) {
                     </li>
                     <li
                       className={
-                        path.indexOf("product/extended") > -1 ? "active" : ""
+                        path.indexOf('product/extended') > -1 ? 'active' : ''
                       }
                     >
                       <Link to={`${process.env.PUBLIC_URL}/product/extended/8`}>
@@ -617,7 +617,7 @@ export default function MainMenu(props) {
                     </li>
                     <li
                       className={
-                        path.indexOf("product/gallery") > -1 ? "active" : ""
+                        path.indexOf('product/gallery') > -1 ? 'active' : ''
                       }
                     >
                       <Link to={`${process.env.PUBLIC_URL}/product/gallery/1`}>
@@ -626,7 +626,7 @@ export default function MainMenu(props) {
                     </li>
                     <li
                       className={
-                        path.indexOf("product/sticky") > -1 ? "active" : ""
+                        path.indexOf('product/sticky') > -1 ? 'active' : ''
                       }
                     >
                       <Link to={`${process.env.PUBLIC_URL}/product/sticky/6`}>
@@ -635,7 +635,7 @@ export default function MainMenu(props) {
                     </li>
                     <li
                       className={
-                        path.indexOf("product/sidebar") > -1 ? "active" : ""
+                        path.indexOf('product/sidebar') > -1 ? 'active' : ''
                       }
                     >
                       <Link to={`${process.env.PUBLIC_URL}/product/sidebar/5`}>
@@ -644,7 +644,7 @@ export default function MainMenu(props) {
                     </li>
                     <li
                       className={
-                        path.indexOf("product/fullwidth") > -1 ? "active" : ""
+                        path.indexOf('product/fullwidth') > -1 ? 'active' : ''
                       }
                     >
                       <Link
@@ -655,7 +655,7 @@ export default function MainMenu(props) {
                     </li>
                     <li
                       className={
-                        path.indexOf("product/masonry") > -1 ? "active" : ""
+                        path.indexOf('product/masonry') > -1 ? 'active' : ''
                       }
                     >
                       <Link to={`${process.env.PUBLIC_URL}/product/masonry/4`}>

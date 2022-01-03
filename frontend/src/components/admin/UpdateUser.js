@@ -1,21 +1,21 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect } from 'react';
 
-import MetaData from "../layout/MetaData";
-import Sidebar from "./Sidebar";
+import MetaData from '../layout/MetaData';
+import Sidebar from './Sidebar';
 
-import { useAlert } from "react-alert";
-import { useDispatch, useSelector } from "react-redux";
+import { useAlert } from 'react-alert';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   updateUser,
   getUserDetails,
   clearErrors,
-} from "../../actions/userActions";
-import { UPDATE_USER_RESET } from "../../constants/userConstants";
+} from '../../actions/userActions';
+import { UPDATE_USER_RESET } from '../../constants/userConstants';
 
 const UpdateUser = ({ history, match }) => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [role, setRole] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [role, setRole] = useState('');
 
   const alert = useAlert();
   const dispatch = useDispatch();
@@ -41,9 +41,9 @@ const UpdateUser = ({ history, match }) => {
     }
 
     if (isUpdated) {
-      alert.success("User updated successfully");
+      alert.success('User updated successfully');
 
-      history.push("/admin/users");
+      history.push('/admin/users');
 
       dispatch({
         type: UPDATE_USER_RESET,
@@ -55,9 +55,9 @@ const UpdateUser = ({ history, match }) => {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.set("name", name);
-    formData.set("email", email);
-    formData.set("role", role);
+    formData.set('name', name);
+    formData.set('email', email);
+    formData.set('role', role);
 
     dispatch(updateUser(user._id, formData));
   };

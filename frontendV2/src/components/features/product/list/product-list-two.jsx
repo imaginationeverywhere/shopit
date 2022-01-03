@@ -49,7 +49,7 @@ function ProductListTwo(props) {
       setLoading(true);
 
       timer = setTimeout(() => {
-        setLoadedCount(prevCount => prevCount + 4);
+        setLoadedCount((prevCount) => prevCount + 4);
         setLoading(false);
 
         if (loadedCount >= products.length - 4) {
@@ -161,7 +161,7 @@ function ProductListTwo(props) {
   );
 }
 
-export const mapStateToProps = state => {
+export const mapStateToProps = (state) => {
   return {
     products: state.data.products ? state.data.products : [],
     filters: state.filters,

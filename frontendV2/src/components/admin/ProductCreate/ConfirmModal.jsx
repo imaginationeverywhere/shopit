@@ -1,7 +1,7 @@
-import React from "react";
-import DashboardButton from "../common/components/DashboardButton";
-import ModalWrapComp from "../common/components/ModalWrapComp";
-import CutIcon from "../common/components/PriceInput/CutIcon";
+import React from 'react';
+import DashboardButton from '../common/components/DashboardButton';
+import ModalWrapComp from '../common/components/ModalWrapComp';
+import CutIcon from '../common/components/PriceInput/CutIcon';
 
 const ConfirmModal = ({ closeModal, onSubmit, loading }) => {
   return (

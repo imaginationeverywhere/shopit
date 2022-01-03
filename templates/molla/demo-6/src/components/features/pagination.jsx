@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 function Pagination(props) {
   const { aclass, count = 12, unit = 6, filters, cols } = props;
@@ -47,10 +47,10 @@ function Pagination(props) {
   return (
     <nav
       aria-label="Page navigation"
-      style={{ display: 0 === count ? "none" : "" }}
+      style={{ display: 0 === count ? 'none' : '' }}
     >
       <ul className={`pagination ${aclass}`}>
-        <li className={`page-item ${1 === pos ? "disabled" : ""}`}>
+        <li className={`page-item ${1 === pos ? 'disabled' : ''}`}>
           <button
             className="page-link page-link-prev"
             to="#"
@@ -68,7 +68,7 @@ function Pagination(props) {
 
         {pageNumbers.map((item, index) => (
           <li
-            className={`page-item ${item === pos ? "active" : ""}`}
+            className={`page-item ${item === pos ? 'active' : ''}`}
             aria-current="page"
             key={index}
           >
@@ -85,17 +85,17 @@ function Pagination(props) {
         {pageCount > 3 && pos < pageCount ? (
           <li className="page-item-total">of {pageCount}</li>
         ) : (
-          ""
+          ''
         )}
 
-        <li className={`page-item ${pageCount === pos ? "disabled" : ""}`}>
+        <li className={`page-item ${pageCount === pos ? 'disabled' : ''}`}>
           <button
             className="page-link page-link-next"
             to="#"
             aria-label="Next"
             onClick={onNext}
           >
-            Next{" "}
+            Next{' '}
             <span aria-hidden="true">
               <i className="icon-long-arrow-right"></i>
             </span>

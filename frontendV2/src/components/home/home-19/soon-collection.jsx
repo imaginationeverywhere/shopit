@@ -1,18 +1,18 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
-import ProductNine from "../../features/product/product-nine";
-import CategoryBanner from "./category-banner";
-import OwlCarousel from "../../features/owl-carousel";
-import { bannerSlider } from "../../settings";
+import ProductNine from '../../features/product/product-nine';
+import CategoryBanner from './category-banner';
+import OwlCarousel from '../../features/owl-carousel';
+import { bannerSlider } from '../../settings';
 
 import {
   addToCart,
   toggleWishlist,
   addToCompare,
   showQuickViewModal,
-} from "../../../actions";
-import data from "../../../mock_data/data";
+} from '../../../actions';
+import data from '../../../mock_data/data';
 
 function SoonCollection(props) {
   const { addToCart, toggleWishlist, addToCompare, showQuickViewModal } = props;

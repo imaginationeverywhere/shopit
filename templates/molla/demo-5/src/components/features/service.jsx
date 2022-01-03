@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 // import jsons
-import data from "../../mock_data/data";
+import data from '../../mock_data/data';
 
 function Service(props) {
-  const { boxAdClass = "icon-box-side", textAdClass = "text-dark" } = props;
+  const { boxAdClass = 'icon-box-side', textAdClass = 'text-dark' } = props;
 
   return (
     <div className="row justify-content-center">

@@ -1,21 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { safeContent, isIEBrowser } from "../../utils";
+import { safeContent, isIEBrowser } from '../../utils';
 
 export default function IntroSlide(props) {
   const { image, srcSet, subtitle, title, price, text, btnText } = props.slide;
   return (
     <div className="intro-slide">
       <figure className="slide-image">
-        <picture style={isIEBrowser() ? { height: "100%" } : {}}>
+        <picture style={isIEBrowser() ? { height: '100%' } : {}}>
           <source media="(max-width: 480px)" srcSet={srcSet} />
           <img
-            src={process.env.PUBLIC_URL + "/" + image}
+            src={process.env.PUBLIC_URL + '/' + image}
             alt="desc"
             style={
               isIEBrowser()
-                ? { width: "auto", height: "100%", maxWidth: "100%" }
+                ? { width: 'auto', height: '100%', maxWidth: '100%' }
                 : {}
             }
             width="1180"
@@ -37,7 +37,7 @@ export default function IntroSlide(props) {
             dangerouslySetInnerHTML={safeContent(text)}
           ></div>
         ) : (
-          ""
+          ''
         )}
 
         {price ? (
@@ -46,7 +46,7 @@ export default function IntroSlide(props) {
             dangerouslySetInnerHTML={safeContent(price)}
           ></div>
         ) : (
-          ""
+          ''
         )}
 
         <Link

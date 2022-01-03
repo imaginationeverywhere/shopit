@@ -95,7 +95,7 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .header-8 {
     .header-top {
       .top-menu a:hover,
@@ -106,7 +106,7 @@
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .header-8 {
     .top-menu ul a:not(:hover):not(:focus) {
       color: #666;
@@ -127,7 +127,7 @@
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .header-8 {
     .header-search .header-search-wrapper {
       display: flex;
@@ -268,7 +268,7 @@
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .header.header-6 .header-center {
     margin-left: 1rem;
   }
@@ -278,7 +278,7 @@
   }
 }
 
-@include mq("xl", "max") {
+@include mq('xl', 'max') {
   .header.header-6 .header-center {
     margin-right: auto;
   }

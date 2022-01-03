@@ -145,7 +145,7 @@
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .table-mobile,
   .table-mobile tbody,
   .table-mobile tr,
@@ -218,13 +218,13 @@
   }
 }
 
-@include mq("md", "max") {
+@include mq('md', 'max') {
   .table-mobile .product-col .product-media {
     margin-right: 1.5rem;
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .cart-bottom {
     flex-direction: column;
     margin-bottom: 4rem;

@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 function ProductOne(props) {
   const { product, onAddToCart } = props;
@@ -14,8 +14,8 @@ function ProductOne(props) {
       <img
         src={
           product.backPictures
-            ? process.env.PUBLIC_URL + "/" + product.backPictures[0]
-            : process.env.PUBLIC_URL + "/" + product.pictures[0]
+            ? process.env.PUBLIC_URL + '/' + product.backPictures[0]
+            : process.env.PUBLIC_URL + '/' + product.pictures[0]
         }
         alt="product bg"
         width="452"
@@ -39,7 +39,7 @@ function ProductOne(props) {
                 threshold={400}
               />
             ) : (
-              ""
+              ''
             )}
           </Link>
         </figure>
@@ -51,10 +51,10 @@ function ProductOne(props) {
               ? product.author.map((author, index) => (
                   <span key={index} className="mr-0">
                     <Link to="#">{author}</Link>
-                    {index < product.author.length - 1 ? " and " : ""}
+                    {index < product.author.length - 1 ? ' and ' : ''}
                   </span>
                 ))
-              : ""}
+              : ''}
           </div>
 
           <h3 className="product-title">
@@ -109,7 +109,7 @@ function ProductOne(props) {
       </div>
     </div>
   ) : (
-    ""
+    ''
   );
 }
 

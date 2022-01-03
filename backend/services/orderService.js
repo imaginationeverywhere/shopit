@@ -1,26 +1,26 @@
-const Order = require("../models/order");
-const fetch = require("node-fetch");
-const Constants = require("../utils/constants");
+const Order = require('../models/order');
+const fetch = require('node-fetch');
+const Constants = require('../utils/constants');
 
 const subscribeForTracking = async ({ carrier, trackingNo, orderId }) => {
   const body = JSON.stringify({
-    carrier: "shippo",
-    tracking_number: "SHIPPO_TRANSIT",
+    carrier: 'shippo',
+    tracking_number: 'SHIPPO_TRANSIT',
     metadata: `Order ${orderId}`,
   }); // TODO: please remove me, this for test tracking
 
   // const body = JSON.stringify({ carrier, tracking_number: trackingNo, metadata: `Order ${orderId}` }) // this should be used for actual integration
 
   fetch(process.env.SHIPPO_TRACKING_URL, {
-    method: "POST",
+    method: 'POST',
     body: body,
     headers: {
       Authorization: `ShippoToken ${process.env.SHIPPO_TOKEN}`,
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
   })
     .then((res) => res.json())
-    .then((json) => console.log("====subscribe for tracking"));
+    .then((json) => console.log('====subscribe for tracking'));
 };
 
 const createOrder = async (
@@ -36,7 +36,7 @@ const createOrder = async (
     paidAt,
     user,
   },
-  ShipmentService
+  ShipmentService,
 ) => {
   const order = await Order.create({
     orderItems,

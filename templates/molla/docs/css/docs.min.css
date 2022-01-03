@@ -20,7 +20,7 @@ code {
   color: #e83e8cd6;
 }
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .page-content {
   min-height: 397px;
@@ -212,25 +212,25 @@ header .logo {
 }
 .widget-collapsible .toggle-btn:before,
 .widget-collapsible .toggle-btn:after {
-  content: "";
+  content: '';
   position: absolute;
   border-top: 2px solid #666;
   width: 10px;
   transition: transform 0.3s;
 }
 .widget-collapsible .toggle-btn:before {
-  content: "";
+  content: '';
   display: block;
   font-size: 1rem;
   font-weight: 600;
-  font-family: "molla";
+  font-family: 'molla';
   line-height: 1;
   transition: transform 0.5s;
 }
 .widget-collapsible > .collapsed .toggle-btn:before {
   font-size: 1rem;
   font-weight: 600;
-  font-family: "molla";
+  font-family: 'molla';
   line-height: 1;
   transition: transform 0.5s;
   transform: rotate(90deg);
@@ -257,7 +257,7 @@ header .logo {
   transition: color 0.3s, padding 0.3s;
 }
 .list-arrow li:before {
-  content: "\f112";
+  content: '\f112';
   display: block;
   position: absolute;
   left: 0;
@@ -265,7 +265,7 @@ header .logo {
   transform: translateY(-50%);
   opacity: 0;
   visibility: hidden;
-  font-family: "LineAwesome";
+  font-family: 'LineAwesome';
   font-size: 1rem;
   font-weight: 700;
   transition: opacity 0.3s, visibility 0.3s;

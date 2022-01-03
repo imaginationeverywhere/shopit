@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function BannerSection(props) {
   const { data } = props;
@@ -12,7 +12,7 @@ function BannerSection(props) {
             <div className="banner banner-group banner-overlay banner-overlay-light">
               <Link to={`${process.env.PUBLIC_URL}/shop/sidebar/list`}>
                 <img
-                  src={process.env.PUBLIC_URL + "/" + item.img}
+                  src={process.env.PUBLIC_URL + '/' + item.img}
                   alt="Banner"
                 />
               </Link>
@@ -26,7 +26,7 @@ function BannerSection(props) {
 
                 <h3 className="banner-title">
                   <Link to={`${process.env.PUBLIC_URL}/shop/sidebar/list`}>
-                    {item.title}{" "}
+                    {item.title}{' '}
                     <strong>
                       {item.title_str} <br />
                       {item.title_br}

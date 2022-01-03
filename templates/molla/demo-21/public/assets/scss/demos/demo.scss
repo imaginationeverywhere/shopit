@@ -1,5 +1,5 @@
-@import "../config/variables";
-@import "../mixins/breakpoints";
+@import '../config/variables';
+@import '../mixins/breakpoints';
 
 // demo-21
 .container {
@@ -79,14 +79,14 @@ footer.footer {
   background-image: url(/assets/images/home/banners/background.jpg);
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .col-2xl-5col {
     flex: 0 0 40%;
     max-width: 40%;
   }
 }
 
-@include mq("xl", "max") {
+@include mq('xl', 'max') {
   .choose-style .banner-intro {
     background-image: url(/assets/images/home/banners/inspirationback.jpg);
   }

@@ -1,24 +1,24 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import StickyBox from "react-sticky-box";
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import StickyBox from 'react-sticky-box';
 
 // import Custom Components
-import Breadcrumb from "../../common/breadcrumb";
-import OwlCarousels from "../../features/owl-carousel";
-import Reply from "./partials/reply";
-import RelatedPosts from "./partials/related-posts";
+import Breadcrumb from '../../common/breadcrumb';
+import OwlCarousels from '../../features/owl-carousel';
+import Reply from './partials/reply';
+import RelatedPosts from './partials/related-posts';
 
-import { showModal } from "../../../actions";
+import { showModal } from '../../../actions';
 import {
   setStickyValues,
   stickyContentHandle,
   isIEBrowser,
-} from "../../../utils";
+} from '../../../utils';
 
-import posts from "../../../mock_data/posts";
+import posts from '../../../mock_data/posts';
 
 function SingleFullWidth(props) {
   const { showModal } = props;
@@ -42,19 +42,19 @@ function SingleFullWidth(props) {
 
   useEffect(() => {
     setStickyValues();
-    window.addEventListener("scroll", stickyContentHandle, true);
+    window.addEventListener('scroll', stickyContentHandle, true);
 
     return () => {
-      window.removeEventListener("scroll", stickyContentHandle);
+      window.removeEventListener('scroll', stickyContentHandle);
     };
   }, []);
 
   if (!post) {
-    window.location = process.env.PUBLIC_URL + "/pages/404";
+    window.location = process.env.PUBLIC_URL + '/pages/404';
   }
 
   const showVideoModal = (e) => {
-    showModal("video");
+    showModal('video');
     e.preventDefault();
   };
 
@@ -66,10 +66,10 @@ function SingleFullWidth(props) {
 
   let date = new Date(post.date);
   let options = {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-    timeZone: "UTC",
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    timeZone: 'UTC',
   };
 
   return (
@@ -87,20 +87,20 @@ function SingleFullWidth(props) {
       <div className="main single-2">
         <Breadcrumb
           title="Fullwidth"
-          parent1={["Blog", "blog/classic"]}
+          parent1={['Blog', 'blog/classic']}
           adClass="breadcrumb-nav border-0 mb-0"
         />
 
         <div className="page-content">
-          {post.type === "gallery" ? (
+          {post.type === 'gallery' ? (
             <figure className="entry-media">
               <OwlCarousels adClass="owl-simple owl-light owl-nav-inside">
                 {post.image.map((item, index) => (
-                  <div key={"blog" + index}>
+                  <div key={'blog' + index}>
                     <div className="lazy-overlay bg-3"></div>
 
                     <LazyLoadImage
-                      src={process.env.PUBLIC_URL + "/" + item}
+                      src={process.env.PUBLIC_URL + '/' + item}
                       alt="blog"
                       width={100}
                       height={400}
@@ -110,12 +110,12 @@ function SingleFullWidth(props) {
                 ))}
               </OwlCarousels>
             </figure>
-          ) : post.type === "image" ? (
+          ) : post.type === 'image' ? (
             <figure className="entry-media">
               <div className="lazy-overlay bg-3"></div>
 
               <LazyLoadImage
-                src={process.env.PUBLIC_URL + "/" + post.image[0]}
+                src={process.env.PUBLIC_URL + '/' + post.image[0]}
                 alt="blog"
                 width={100}
                 height={400}
@@ -129,7 +129,7 @@ function SingleFullWidth(props) {
 
                 <LazyLoadImage
                   alt="post_image"
-                  src={`${process.env.PUBLIC_URL + "/" + post.image[0]}`}
+                  src={`${process.env.PUBLIC_URL + '/' + post.image[0]}`}
                   threshold={100}
                   effect="blur"
                   width={300}
@@ -149,11 +149,11 @@ function SingleFullWidth(props) {
                           by <Link to="#">{post.author}</Link>
                         </span>
                       ) : (
-                        ""
+                        ''
                       )}
                       <span className="meta-separator">|</span>
                       <Link to="#">
-                        {date.toLocaleDateString("en-US", options)}
+                        {date.toLocaleDateString('en-US', options)}
                       </Link>
                       <span className="meta-separator">|</span>
                       <Link to="#">{post.comments} Comments</Link>
@@ -217,7 +217,7 @@ function SingleFullWidth(props) {
                         egestas, ante et vulputate volutpat, eros pede semper
                         est, vitae luctus metus libero eu augue. Morbi purus
                         libero, faucibus adipiscing, commodo quis, gravida id,
-                        est. Sed lectus. Praesent{" "}
+                        est. Sed lectus. Praesent{' '}
                         <Link to="#">elementum hendrerit</Link> tortor. Sed
                         semper lorem at felis. Vestibulum volutpat, lacus a
                         ultrices sagittis, mi neque euismod dui, eu pulvinar
@@ -244,7 +244,7 @@ function SingleFullWidth(props) {
                         arcu, dapibus eu, fermentum et, dapibus sed, urna. Morbi
                         interdum mollis sapien. Sed ac risus. Phasellus lacinia,
                         magna a ullamcorper laoreet, lectus arcu pulvinar risus,
-                        vitae facilisis libero dolor a purus. Sed vel lacus.{" "}
+                        vitae facilisis libero dolor a purus. Sed vel lacus.{' '}
                       </p>
 
                       <p>
@@ -284,7 +284,7 @@ function SingleFullWidth(props) {
                     <div className="entry-footer row no-gutters">
                       <div className="col">
                         <div className="entry-tags">
-                          <span>Tags:</span> <Link to="#">photography</Link>{" "}
+                          <span>Tags:</span> <Link to="#">photography</Link>{' '}
                           <Link to="#">style</Link>
                         </div>
                       </div>
@@ -351,10 +351,10 @@ function SingleFullWidth(props) {
                         <Link to="#">John Doe</Link>
                       </h4>
                     </div>
-                    {isIEBrowser() ? <div className="mb-1"></div> : ""}
+                    {isIEBrowser() ? <div className="mb-1"></div> : ''}
                     <div className="col-auto mt-1 mt-md-0">
                       <Link to="#" className="author-link">
-                        View all posts by John Doe{" "}
+                        View all posts by John Doe{' '}
                         <i className="icon-long-arrow-right"></i>
                       </Link>
                     </div>
@@ -364,7 +364,7 @@ function SingleFullWidth(props) {
                     <p>
                       Praesent dapibus, neque id cursus faucibus, tortor neque
                       egestas auguae, eu vulputate magna eros eu erat. Aliquam
-                      erat volutpat.{" "}
+                      erat volutpat.{' '}
                     </p>
                   </div>
                 </div>
@@ -374,7 +374,7 @@ function SingleFullWidth(props) {
             <nav
               className="pager-nav"
               aria-label="Page navigation"
-              style={isIEBrowser() ? { flexFlow: "wrap" } : {}}
+              style={isIEBrowser() ? { flexFlow: 'wrap' } : {}}
             >
               <Link
                 onClick={toTop}

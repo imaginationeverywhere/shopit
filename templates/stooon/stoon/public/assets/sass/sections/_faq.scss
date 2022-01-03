@@ -36,20 +36,20 @@
           position: absolute;
           right: 30px;
           top: 15px;
-          font-family: "fontawesome";
+          font-family: 'fontawesome';
           font-size: 16px;
           color: #666;
         }
-        &[aria-expanded="false"] {
+        &[aria-expanded='false'] {
           &:after {
-            content: "\f067";
+            content: '\f067';
           }
         }
-        &[aria-expanded="true"] {
+        &[aria-expanded='true'] {
           color: $color-main;
 
           &:after {
-            content: "\f068";
+            content: '\f068';
             color: #141414;
             font-weight: 100;
           }

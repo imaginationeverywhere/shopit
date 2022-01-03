@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function CategoryMenu(props) {
   const { type = 1 } = props;
@@ -17,7 +17,7 @@ function CategoryMenu(props) {
         title="Browse Categories"
       >
         Browse Categories
-        {type === 3 ? <i className="icon-angle-down"></i> : ""}
+        {type === 3 ? <i className="icon-angle-down"></i> : ''}
       </Link>
 
       <div className="dropdown-menu">

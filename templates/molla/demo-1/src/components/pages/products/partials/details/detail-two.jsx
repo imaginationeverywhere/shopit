@@ -1,16 +1,16 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import StickyBox from "react-sticky-box";
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import StickyBox from 'react-sticky-box';
 
-import Accordion from "../../../../features/accordion/accordion";
-import Card from "../../../../features/accordion/card";
+import Accordion from '../../../../features/accordion/accordion';
+import Card from '../../../../features/accordion/card';
 
 import {
   addToCart,
   addToCompare,
   toggleWishlist,
-} from "../../../../../actions";
+} from '../../../../../actions';
 
 import {
   quantityInputs,
@@ -18,7 +18,7 @@ import {
   isEdgeBrowser,
   stickyContentHandle,
   findIndex,
-} from "../../../../../utils";
+} from '../../../../../utils';
 
 function ProductDetailTwo(props) {
   const { product, isWishlist, type, addToCart, toggleWishlist, addToCompare } =
@@ -26,16 +26,16 @@ function ProductDetailTwo(props) {
 
   useEffect(() => {
     quantityInputs();
-    window.addEventListener("scroll", stickyContentHandle);
+    window.addEventListener('scroll', stickyContentHandle);
 
     return () => {
-      window.removeEventListener("scroll", stickyContentHandle);
+      window.removeEventListener('scroll', stickyContentHandle);
     };
   }, []);
 
   const addToCartHandler = () => {
     if (0 !== product.stock)
-      addToCart(product, document.querySelector("#qty").value);
+      addToCart(product, document.querySelector('#qty').value);
   };
 
   const addToCompareHandler = () => {
@@ -44,7 +44,7 @@ function ProductDetailTwo(props) {
 
   const wishlistHandler = () => {
     if (isWishlist) {
-      window.location = process.env.PUBLIC_URL + "/shop/wishlist";
+      window.location = process.env.PUBLIC_URL + '/shop/wishlist';
     } else {
       toggleWishlist(product, isWishlist);
     }
@@ -57,7 +57,7 @@ function ProductDetailTwo(props) {
         <div className="ratings">
           <div
             className="ratings-val"
-            style={{ width: product.ratings * 20 + "%" }}
+            style={{ width: product.ratings * 20 + '%' }}
           ></div>
         </div>
         <Link
@@ -110,7 +110,7 @@ function ProductDetailTwo(props) {
         <p>{product.shortDesc}</p>
       </div>
 
-      {type === "color" && product.variants ? (
+      {type === 'color' && product.variants ? (
         <div className="details-filter-row details-row-size">
           <label>Color:</label>
           {product.variants[0].color ? (
@@ -119,7 +119,7 @@ function ProductDetailTwo(props) {
                 <Link
                   to="#"
                   key={i}
-                  className={0 === i ? "active" : ""}
+                  className={0 === i ? 'active' : ''}
                   style={{ backgroundColor: vari.color }}
                 ></Link>
               ))}
@@ -128,28 +128,28 @@ function ProductDetailTwo(props) {
             <div className="product-nav product-nav-thumbs">
               {product.variants[0].model
                 ? product.variants.map((vari, i) => (
-                    <Link to="#" key={i} className={0 === i ? "active" : ""}>
+                    <Link to="#" key={i} className={0 === i ? 'active' : ''}>
                       <img
-                        src={process.env.PUBLIC_URL + "/" + vari.model}
+                        src={process.env.PUBLIC_URL + '/' + vari.model}
                         alt="product desc"
                       />
                     </Link>
                   ))
                 : product.variants[0].image
                 ? product.variants.map((vari, i) => (
-                    <Link to="#" key={i} className={0 === i ? "active" : ""}>
+                    <Link to="#" key={i} className={0 === i ? 'active' : ''}>
                       <img
-                        src={process.env.PUBLIC_URL + "/" + vari.image}
+                        src={process.env.PUBLIC_URL + '/' + vari.image}
                         alt="product desc"
                       />
                     </Link>
                   ))
-                : ""}
+                : ''}
             </div>
           )}
         </div>
       ) : (
-        ""
+        ''
       )}
       <div className="details-filter-row details-row-size">
         <label htmlFor="size">Size:</label>
@@ -195,7 +195,7 @@ function ProductDetailTwo(props) {
           <button
             className="btn-product btn-cart"
             onClick={addToCartHandler}
-            style={{ minHeight: "4rem" }}
+            style={{ minHeight: '4rem' }}
           >
             <span>add to cart</span>
           </button>
@@ -209,19 +209,19 @@ function ProductDetailTwo(props) {
           <div className="details-action-wrapper IE-detail-action-wrapper">
             <button
               className={`btn-product btn-wishlist pl-0 pr-0 ${
-                isWishlist ? "added-to-wishlist" : "remove-from-wishlist"
+                isWishlist ? 'added-to-wishlist' : 'remove-from-wishlist'
               }`}
               onClick={wishlistHandler}
-              title={isWishlist ? "Go to Wishlist" : "Add to Wishlist"}
+              title={isWishlist ? 'Go to Wishlist' : 'Add to Wishlist'}
             >
-              <span>{isWishlist ? "Go to Wishlist" : "Add to Wishlist"}</span>
+              <span>{isWishlist ? 'Go to Wishlist' : 'Add to Wishlist'}</span>
             </button>
 
             <button
               className="btn-product btn-compare pr-0"
               title="Compare"
               onClick={addToCompareHandler}
-              style={{ minWidth: "157px" }}
+              style={{ minWidth: '157px' }}
             >
               <span>Add to Compare</span>
             </button>
@@ -230,12 +230,12 @@ function ProductDetailTwo(props) {
           <div className="details-action-wrapper">
             <button
               className={`btn-product btn-wishlist pl-0 pr-0 ${
-                isWishlist ? "added-to-wishlist" : "remove-from-wishlist"
+                isWishlist ? 'added-to-wishlist' : 'remove-from-wishlist'
               }`}
               onClick={wishlistHandler}
-              title={isWishlist ? "Go to Wishlist" : "Add to Wishlist"}
+              title={isWishlist ? 'Go to Wishlist' : 'Add to Wishlist'}
             >
-              <span>{isWishlist ? "Go to Wishlist" : "Add to Wishlist"}</span>
+              <span>{isWishlist ? 'Go to Wishlist' : 'Add to Wishlist'}</span>
             </button>
 
             <button
@@ -255,7 +255,7 @@ function ProductDetailTwo(props) {
           {product.category.map((cat, index) => (
             <span key={index} className="mr-0">
               <Link to="#">{cat}</Link>
-              {index < product.category.length - 1 ? ", " : ""}
+              {index < product.category.length - 1 ? ', ' : ''}
             </span>
           ))}
         </div>
@@ -300,7 +300,7 @@ function ProductDetailTwo(props) {
             <ul>
               <li>
                 Nunc nec porttitor turpis. In eu risus enim. In vitae mollis
-                elit.{" "}
+                elit.{' '}
               </li>
               <li>Vivamus finibus vel mauris ut vehicula.</li>
               <li>
@@ -347,12 +347,12 @@ function ProductDetailTwo(props) {
           <div className="product-desc-content">
             <p>
               We deliver to over 100 countries around the world. For full
-              details of the delivery options we offer, please view our{" "}
+              details of the delivery options we offer, please view our{' '}
               <Link to="#">Delivery information</Link>
               <br />
               We hope you’ll love every purchase, but if you ever need to return
               an item you can do so within a month of receipt. For full details
-              of how to make a return, please view our{" "}
+              of how to make a return, please view our{' '}
               <Link to="#">Returns information</Link>
             </p>
           </div>
@@ -362,7 +362,7 @@ function ProductDetailTwo(props) {
             <div className="review">
               <div
                 className="row no-gutters"
-                style={isIEBrowser() ? { flexDirection: "row" } : {}}
+                style={isIEBrowser() ? { flexDirection: 'row' } : {}}
               >
                 <div className="col-auto">
                   <h4>
@@ -372,7 +372,7 @@ function ProductDetailTwo(props) {
                     <div className="ratings">
                       <div
                         className="ratings-val"
-                        style={{ width: "80%" }}
+                        style={{ width: '80%' }}
                       ></div>
                     </div>
                   </div>
@@ -406,7 +406,7 @@ function ProductDetailTwo(props) {
             <div className="review">
               <div
                 className="row no-gutters"
-                style={isIEBrowser() ? { flexDirection: "row" } : {}}
+                style={isIEBrowser() ? { flexDirection: 'row' } : {}}
               >
                 <div className="col-auto">
                   <h4>
@@ -416,7 +416,7 @@ function ProductDetailTwo(props) {
                     <div className="ratings">
                       <div
                         className="ratings-val"
-                        style={{ width: "100%" }}
+                        style={{ width: '100%' }}
                       ></div>
                     </div>
                   </div>
@@ -455,12 +455,12 @@ function ProductDetailTwo(props) {
 function mapStateToProps(state, props) {
   return {
     product: state.data.products.filter(
-      (product) => product.id === parseInt(props.id)
+      (product) => product.id === parseInt(props.id),
     )[0],
     isWishlist:
       findIndex(
         state.wishlist.list,
-        (item) => item.id === parseInt(props.id)
+        (item) => item.id === parseInt(props.id),
       ) !== -1
         ? true
         : false,

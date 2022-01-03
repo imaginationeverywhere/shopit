@@ -1,5 +1,5 @@
-@import "../config/variables";
-@import "../mixins/breakpoints";
+@import '../config/variables';
+@import '../mixins/breakpoints';
 
 @media (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .cta .col {
@@ -44,7 +44,7 @@
   .header-middle {
     .container::after,
     .container-fluid::after {
-      content: "";
+      content: '';
       position: absolute;
       left: 1rem;
       right: 1rem;
@@ -115,7 +115,7 @@
   margin-right: auto !important;
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .header-8 {
     .main-nav {
       margin-right: 35.5rem;
@@ -136,7 +136,7 @@
   background-color: #525455;
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .header-middle .container-fluid .header-right {
     justify-content: flex-end;
   }

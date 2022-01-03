@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Countdown from "react-countdown";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Countdown from 'react-countdown';
 
-import { rendererOne } from "../../features/count-down";
+import { rendererOne } from '../../features/count-down';
 
 function DealProduct(props) {
   const {
@@ -14,7 +14,7 @@ function DealProduct(props) {
     bigImage,
     linkTitle,
   } = props.data;
-  let back = process.env.PUBLIC_URL + "/" + bigImage;
+  let back = process.env.PUBLIC_URL + '/' + bigImage;
 
   return (
     <div className="deal" style={{ backgroundImage: `url(${back})` }}>
@@ -32,7 +32,7 @@ function DealProduct(props) {
 
         <div className="product-price">
           <span className="new-price">{newPrice}</span>
-          {oldPrice ? <span className="old-price">Was {oldPrice}</span> : ""}
+          {oldPrice ? <span className="old-price">Was {oldPrice}</span> : ''}
         </div>
 
         <Link

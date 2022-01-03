@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { safeContent } from "../../utils";
+import { safeContent } from '../../utils';
 
 function IntroSlide(props) {
   const {
@@ -10,9 +10,9 @@ function IntroSlide(props) {
     subtitle,
     subtitleAdClass,
     price,
-    btnText = "Shop More",
+    btnText = 'Shop More',
   } = props.data;
-  let back = process.env.PUBLIC_URL + "/" + image;
+  let back = process.env.PUBLIC_URL + '/' + image;
 
   return (
     <div className="intro-slide" style={{ backgroundImage: `url( ${back} )` }}>

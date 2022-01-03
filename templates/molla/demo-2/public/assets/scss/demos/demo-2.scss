@@ -1,8 +1,8 @@
-@import "../mixins/clearfix";
-@import "../mixins/breakpoints";
-@import "../mixins/lazy";
+@import '../mixins/clearfix';
+@import '../mixins/breakpoints';
+@import '../mixins/lazy';
 
-@import "../config/variables";
+@import '../config/variables';
 
 .trendy-collection {
   .owl-simple .owl-nav.disabled + .owl-dots {
@@ -27,13 +27,13 @@
   }
 }
 
-@include mq("xl", "max") {
+@include mq('xl', 'max') {
   .intro-section {
     padding-top: 1rem;
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .slider-container-1:before,
   .intro-slider-1 .slide-image:before {
     min-height: 40rem;
@@ -51,7 +51,7 @@
   }
 }
 
-@include mq("425px", "max") {
+@include mq('425px', 'max') {
   .btn-product:before {
     margin-right: 0.5rem;
   }
@@ -61,7 +61,7 @@
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .categories {
     .banner img {
       max-height: 30rem;

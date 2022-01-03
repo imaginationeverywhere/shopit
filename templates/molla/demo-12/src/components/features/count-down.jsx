@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 // countdown renderer for comming soon
 export const rendererOne = ({ days, hours, minutes, seconds }) => (

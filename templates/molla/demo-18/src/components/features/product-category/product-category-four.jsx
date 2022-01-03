@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function ProductCategoryFour(props) {
   const { image, category, count, type } = props;
@@ -7,7 +7,7 @@ function ProductCategoryFour(props) {
   return (
     <div className="banner banner-cat banner-link-anim">
       <Link to={`${process.env.PUBLIC_URL}/shop/sidebar/list`}>
-        <img src={process.env.PUBLIC_URL + "/" + image} alt="Banner" />
+        <img src={process.env.PUBLIC_URL + '/' + image} alt="Banner" />
       </Link>
 
       <div className={`banner-content ${type}`}>

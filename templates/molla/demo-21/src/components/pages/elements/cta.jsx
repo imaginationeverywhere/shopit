@@ -1,19 +1,19 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import Breadcrumb from "../../common/breadcrumb";
-import PageHeader from "../../common/page-header";
+import Breadcrumb from '../../common/breadcrumb';
+import PageHeader from '../../common/page-header';
 
-import { parallax } from "../../../utils";
+import { parallax } from '../../../utils';
 
 export default function CTA() {
   useEffect(() => {
-    document.addEventListener("scroll", parallax);
+    document.addEventListener('scroll', parallax);
 
     return () => {
-      document.removeEventListener("scroll", parallax);
+      document.removeEventListener('scroll', parallax);
     };
   }, []);
 
@@ -29,7 +29,7 @@ export default function CTA() {
 
       <div className="main">
         <PageHeader title="Call to Action" subTitle="Elements" />
-        <Breadcrumb title="Call To Action" parent1={["Elements", "elements"]} />
+        <Breadcrumb title="Call To Action" parent1={['Elements', 'elements']} />
 
         <div className="page-content pb-0">
           <div className="container">
@@ -129,7 +129,7 @@ export default function CTA() {
 
           <div className="container">
             <h2 className="title text-center mb-5">
-              Newsletter Banner <span className="title-separator">/</span>{" "}
+              Newsletter Banner <span className="title-separator">/</span>{' '}
               Without Background
             </h2>
 
@@ -170,7 +170,7 @@ export default function CTA() {
             <hr className="mb-5" />
 
             <h2 className="title text-center mb-5">
-              Call to Action <span className="title-separator">/</span>{" "}
+              Call to Action <span className="title-separator">/</span>{' '}
               Newsletter Banner <span className="title-separator">/</span> With
               Background
             </h2>
@@ -189,7 +189,7 @@ export default function CTA() {
                     </h3>
                     <p className="cta-desc">
                       Donec nec justo eget felis facilisis fermentum. Aliquam
-                      porttitor mauris sit amet orci.{" "}
+                      porttitor mauris sit amet orci.{' '}
                     </p>
 
                     <Link to="#" className="btn btn-primary btn-rounded">
@@ -227,7 +227,7 @@ export default function CTA() {
             <hr className="mt-3 mb-5" />
 
             <h2 className="title text-center mb-5">
-              Call to Action <span className="title-separator">/</span>{" "}
+              Call to Action <span className="title-separator">/</span>{' '}
               Newsletter Banner <span className="title-separator">/</span> No
               Background
             </h2>
@@ -240,7 +240,7 @@ export default function CTA() {
                     </h3>
                     <p className="cta-desc">
                       Donec nec justo eget felis facilisis fermentum. Aliquam
-                      porttitor mauris sit amet orci.{" "}
+                      porttitor mauris sit amet orci.{' '}
                     </p>
 
                     <Link to="#" className="btn btn-primary btn-rounded">
@@ -278,7 +278,7 @@ export default function CTA() {
             <hr className="mt-3 mb-5" />
 
             <h2 className="title text-center mb-5">
-              Call to Action <span className="title-separator">/</span>{" "}
+              Call to Action <span className="title-separator">/</span>{' '}
               Newsletter Banner <span className="title-separator">/</span> With
               Background
             </h2>
@@ -297,7 +297,7 @@ export default function CTA() {
                     </h3>
                     <p className="cta-desc">
                       Donec nec justo eget felis facilisis fermentum. Aliquam
-                      porttitor mauris sit amet orci.{" "}
+                      porttitor mauris sit amet orci.{' '}
                     </p>
 
                     <Link to="#" className="btn btn-primary btn-rounded">

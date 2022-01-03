@@ -1,5 +1,5 @@
-import React from "react";
-import CommingSoonSection from "./section-components/comming-soon";
+import React from 'react';
+import CommingSoonSection from './section-components/comming-soon';
 
 const CommingSoon = () => {
   return (

@@ -1,9 +1,9 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import { findIndex } from "../../../utils";
+import { findIndex } from '../../../utils';
 
 function ProductNine(props) {
   const { product, isWishlist, onAddToCart, onToggleWishlist, adClass } = props;
@@ -14,7 +14,7 @@ function ProductNine(props) {
 
   const wishlistHandler = () => {
     if (isWishlist) {
-      window.location = process.env.PUBLIC_URL + "/shop/wishlist";
+      window.location = process.env.PUBLIC_URL + '/shop/wishlist';
     } else {
       onToggleWishlist(product, isWishlist);
     }
@@ -26,17 +26,17 @@ function ProductNine(props) {
         {product.new ? (
           <span className="product-label label-new">New</span>
         ) : (
-          ""
+          ''
         )}
         {product.discount ? (
           <span className="product-label label-sale">Sale</span>
         ) : (
-          ""
+          ''
         )}
         {0 === product.stock ? (
           <span className="product-label label-out">Out Of Stock</span>
         ) : (
-          ""
+          ''
         )}
 
         <Link to={`${process.env.PUBLIC_URL}/product/default/${product.id}`}>
@@ -56,19 +56,19 @@ function ProductNine(props) {
               wrapperClassName="product-image-hover product-image"
             />
           ) : (
-            ""
+            ''
           )}
         </Link>
 
         <div className="product-action-vertical">
           <button
             className={`btn-product-icon btn-wishlist ${
-              isWishlist ? "added-to-wishlist" : "remove-from-wishlist"
+              isWishlist ? 'added-to-wishlist' : 'remove-from-wishlist'
             }`}
             onClick={wishlistHandler}
-            title={isWishlist ? "Go to wishlist" : "Add to wishlist"}
+            title={isWishlist ? 'Go to wishlist' : 'Add to wishlist'}
           >
-            <span>{isWishlist ? "go to wishlist" : "add to wishlist"}</span>
+            <span>{isWishlist ? 'go to wishlist' : 'add to wishlist'}</span>
           </button>
         </div>
 
@@ -84,7 +84,7 @@ function ProductNine(props) {
           {product.category.map((cat, index) => (
             <span key={`cat_${index}`} className="mr-0">
               <Link to="#">{cat}</Link>
-              {index < product.category.length - 1 ? ", " : ""}
+              {index < product.category.length - 1 ? ', ' : ''}
             </span>
           ))}
         </div>
@@ -139,10 +139,10 @@ function ProductNine(props) {
                 <Link
                   to="#"
                   key={`vari_${i}`}
-                  className={0 === i ? "active" : ""}
+                  className={0 === i ? 'active' : ''}
                 >
                   <img
-                    src={process.env.PUBLIC_URL + "/" + vari.model}
+                    src={process.env.PUBLIC_URL + '/' + vari.model}
                     alt="product desc"
                   />
                 </Link>
@@ -154,19 +154,19 @@ function ProductNine(props) {
                 <Link
                   to="#"
                   key={`vari_${i}`}
-                  className={0 === i ? "active" : ""}
+                  className={0 === i ? 'active' : ''}
                   style={{ background: vari.color }}
                 ></Link>
               ))}
             </div>
           )
         ) : (
-          ""
+          ''
         )}
       </div>
     </div>
   ) : (
-    ""
+    ''
   );
 }
 
@@ -175,7 +175,7 @@ function mapStateToProps(state, ownprops) {
     isWishlist:
       findIndex(
         state.wishlist.list,
-        (item) => item.id === ownprops.product.id
+        (item) => item.id === ownprops.product.id,
       ) !== -1
         ? true
         : false,

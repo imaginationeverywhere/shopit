@@ -1,17 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function CTASection() {
   function ctaFormFocusIn() {
     document
-      .querySelector(".input-group")
-      .querySelector(".btn").style.borderColor = "#c66";
+      .querySelector('.input-group')
+      .querySelector('.btn').style.borderColor = '#c66';
   }
 
   function ctaFormFocusOut() {
     document
-      .querySelector(".input-group")
-      .querySelector(".btn").style.borderColor = "#e1e1e1";
+      .querySelector('.input-group')
+      .querySelector('.btn').style.borderColor = '#e1e1e1';
   }
 
   return (
@@ -23,7 +23,7 @@ function CTASection() {
               <h3 className="cta-title">Shop Social</h3>
               <p className="cta-desc">
                 Donec nec justo eget felis facilisis fermentum. Aliquam
-                porttitor mauris sit amet orci.{" "}
+                porttitor mauris sit amet orci.{' '}
               </p>
 
               <div className="social-icons social-icons-colored justify-content-center">

@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const PostList = () => {
-  let publicUrl = process.env.PUBLIC_URL + "/";
+  let publicUrl = process.env.PUBLIC_URL + '/';
   //   let imagealt = 'image';
 
   return (
@@ -14,7 +14,7 @@ const PostList = () => {
               <div className="col-md-12">
                 <div className="single-blog">
                   <div className="thumb">
-                    <img src={publicUrl + "assets/img/blog/10.png"} alt="" />
+                    <img src={publicUrl + 'assets/img/blog/10.png'} alt="" />
                     <span className="tag">lifestyle</span>
                   </div>
                   <div className="content">
@@ -39,7 +39,7 @@ const PostList = () => {
               <div className="col-md-12">
                 <div className="single-blog">
                   <div className="thumb">
-                    <img src={publicUrl + "assets/img/blog/11.png"} alt="" />
+                    <img src={publicUrl + 'assets/img/blog/11.png'} alt="" />
                     <span className="tag">lifestyle</span>
                   </div>
                   <div className="content">
@@ -64,7 +64,7 @@ const PostList = () => {
               <div className="col-md-12">
                 <div className="single-blog">
                   <div className="thumb">
-                    <img src={publicUrl + "assets/img/blog/12.png"} alt="" />
+                    <img src={publicUrl + 'assets/img/blog/12.png'} alt="" />
                     <span className="tag">lifestyle</span>
                   </div>
                   <div className="content">
@@ -187,7 +187,7 @@ const PostList = () => {
             </div>
             <div className="banner margin-top-20">
               <Link to="/">
-                <img src={publicUrl + "assets/img/others/add1.png"} alt="" />
+                <img src={publicUrl + 'assets/img/others/add1.png'} alt="" />
               </Link>
             </div>
             <div className="seller-widget margin-top-20">
@@ -195,7 +195,7 @@ const PostList = () => {
               <div className="seller-content">
                 <div className="single-seller-content d-flex">
                   <div className="thumb">
-                    <img src={publicUrl + "assets/img/seller/1.png"} alt="" />
+                    <img src={publicUrl + 'assets/img/seller/1.png'} alt="" />
                   </div>
                   <div className="content">
                     <h6>
@@ -206,7 +206,7 @@ const PostList = () => {
                 </div>
                 <div className="single-seller-content d-flex">
                   <div className="thumb">
-                    <img src={publicUrl + "assets/img/seller/2.png"} alt="" />
+                    <img src={publicUrl + 'assets/img/seller/2.png'} alt="" />
                   </div>
                   <div className="content">
                     <h6>
@@ -217,7 +217,7 @@ const PostList = () => {
                 </div>
                 <div className="single-seller-content d-flex">
                   <div className="thumb">
-                    <img src={publicUrl + "assets/img/seller/3.png"} alt="" />
+                    <img src={publicUrl + 'assets/img/seller/3.png'} alt="" />
                   </div>
                   <div className="content">
                     <h6>

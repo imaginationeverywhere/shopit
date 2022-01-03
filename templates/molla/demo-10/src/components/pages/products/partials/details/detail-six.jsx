@@ -1,18 +1,18 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import Accordion from "../../../../features/accordion/accordion";
-import Card from "../../../../features/accordion/card";
+import Accordion from '../../../../features/accordion/accordion';
+import Card from '../../../../features/accordion/card';
 
-import { addToCart, toggleWishlist } from "../../../../../actions";
+import { addToCart, toggleWishlist } from '../../../../../actions';
 
 import {
   quantityInputs,
   isIEBrowser,
   isEdgeBrowser,
   findIndex,
-} from "../../../../../utils";
+} from '../../../../../utils';
 
 function ProductDetailSix(props) {
   const { product, isWishlist, type, addToCart, toggleWishlist } = props;
@@ -23,12 +23,12 @@ function ProductDetailSix(props) {
 
   const addToCartHandler = () => {
     if (0 !== product.stock)
-      addToCart(product, document.querySelector("#qty").value);
+      addToCart(product, document.querySelector('#qty').value);
   };
 
   const wishlistHandler = () => {
     if (isWishlist) {
-      window.location = "/shop/wishlist";
+      window.location = '/shop/wishlist';
     } else {
       toggleWishlist(product, isWishlist);
     }
@@ -42,7 +42,7 @@ function ProductDetailSix(props) {
         <div className="ratings">
           <div
             className="ratings-val"
-            style={{ width: product.ratings * 20 + "%" }}
+            style={{ width: product.ratings * 20 + '%' }}
           ></div>
         </div>
         <Link
@@ -104,7 +104,7 @@ function ProductDetailSix(props) {
                 <Link
                   to="#"
                   key={i}
-                  className={0 === i ? "active" : ""}
+                  className={0 === i ? 'active' : ''}
                   style={{ backgroundColor: vari.color }}
                 ></Link>
               ))}
@@ -113,28 +113,28 @@ function ProductDetailSix(props) {
             <div className="product-nav product-nav-thumbs">
               {product.variants[0].model
                 ? product.variants.map((vari, i) => (
-                    <Link to="#" key={i} className={0 === i ? "active" : ""}>
+                    <Link to="#" key={i} className={0 === i ? 'active' : ''}>
                       <img
-                        src={process.env.PUBLIC_URL + "/" + vari.model}
+                        src={process.env.PUBLIC_URL + '/' + vari.model}
                         alt="product desc"
                       />
                     </Link>
                   ))
                 : product.variants[0].image
                 ? product.variants.map((vari, i) => (
-                    <Link to="#" key={i} className={0 === i ? "active" : ""}>
+                    <Link to="#" key={i} className={0 === i ? 'active' : ''}>
                       <img
-                        src={process.env.PUBLIC_URL + "/" + vari.image}
+                        src={process.env.PUBLIC_URL + '/' + vari.image}
                         alt="product desc"
                       />
                     </Link>
                   ))
-                : ""}
+                : ''}
             </div>
           )}
         </div>
       ) : (
-        ""
+        ''
       )}
       <div className="details-filter-row details-row-size">
         <label htmlFor="size">Size:</label>
@@ -153,12 +153,12 @@ function ProductDetailSix(props) {
           </select>
         </div>
 
-        {"default" === type ? (
+        {'default' === type ? (
           <Link to="#" className="size-guide">
             <i className="icon-th-list"></i>size guide
           </Link>
         ) : (
-          ""
+          ''
         )}
       </div>
 
@@ -184,7 +184,7 @@ function ProductDetailSix(props) {
           <button
             className="btn-product btn-cart"
             onClick={addToCartHandler}
-            style={{ minHeight: "4rem" }}
+            style={{ minHeight: '4rem' }}
           >
             <span>add to cart</span>
           </button>
@@ -197,24 +197,24 @@ function ProductDetailSix(props) {
           <div className="details-action-wrapper IE-detail-action-wrapper">
             <button
               className={`btn-product btn-wishlist pl-0 pr-0 ${
-                isWishlist ? "added-to-wishlist" : "remove-from-wishlist"
+                isWishlist ? 'added-to-wishlist' : 'remove-from-wishlist'
               }`}
               onClick={wishlistHandler}
-              title={isWishlist ? "Go to wishlist" : "Add to wishlist"}
+              title={isWishlist ? 'Go to wishlist' : 'Add to wishlist'}
             >
-              <span>{isWishlist ? "go to wishlist" : "add to wishlist"}</span>
+              <span>{isWishlist ? 'go to wishlist' : 'add to wishlist'}</span>
             </button>
           </div>
         ) : (
           <div className="details-action-wrapper">
             <button
               className={`btn-product btn-wishlist pl-0 pr-0 ${
-                isWishlist ? "added-to-wishlist" : "remove-from-wishlist"
+                isWishlist ? 'added-to-wishlist' : 'remove-from-wishlist'
               }`}
               onClick={wishlistHandler}
-              title={isWishlist ? "Go to wishlist" : "Add to wishlist"}
+              title={isWishlist ? 'Go to wishlist' : 'Add to wishlist'}
             >
-              <span>{isWishlist ? "Go to Wishlist" : "Add to Wishlist"}</span>
+              <span>{isWishlist ? 'Go to Wishlist' : 'Add to Wishlist'}</span>
             </button>
           </div>
         )}
@@ -226,7 +226,7 @@ function ProductDetailSix(props) {
           {product.category.map((cat, index) => (
             <span key={index} className="mr-0">
               <Link to="#">{cat}</Link>
-              {index < product.category.length - 1 ? ", " : ""}
+              {index < product.category.length - 1 ? ', ' : ''}
             </span>
           ))}
         </div>
@@ -271,7 +271,7 @@ function ProductDetailSix(props) {
             <ul>
               <li>
                 Nunc nec porttitor turpis. In eu risus enim. In vitae mollis
-                elit.{" "}
+                elit.{' '}
               </li>
               <li>Vivamus finibus vel mauris ut vehicula.</li>
               <li>
@@ -318,12 +318,12 @@ function ProductDetailSix(props) {
           <div className="product-desc-content">
             <p>
               We deliver to over 100 countries around the world. For full
-              details of the delivery options we offer, please view our{" "}
+              details of the delivery options we offer, please view our{' '}
               <Link to="#">Delivery information</Link>
               <br />
               We hope you’ll love every purchase, but if you ever need to return
               an item you can do so within a month of receipt. For full details
-              of how to make a return, please view our{" "}
+              of how to make a return, please view our{' '}
               <Link to="#">Returns information</Link>
             </p>
           </div>
@@ -333,7 +333,7 @@ function ProductDetailSix(props) {
             <div className="review">
               <div
                 className="row no-gutters"
-                style={isIEBrowser() ? { flexDirection: "row" } : {}}
+                style={isIEBrowser() ? { flexDirection: 'row' } : {}}
               >
                 <div className="col-auto">
                   <h4>
@@ -343,7 +343,7 @@ function ProductDetailSix(props) {
                     <div className="ratings">
                       <div
                         className="ratings-val"
-                        style={{ width: "80%" }}
+                        style={{ width: '80%' }}
                       ></div>
                     </div>
                   </div>
@@ -377,7 +377,7 @@ function ProductDetailSix(props) {
             <div className="review">
               <div
                 className="row no-gutters"
-                style={isIEBrowser() ? { flexDirection: "row" } : {}}
+                style={isIEBrowser() ? { flexDirection: 'row' } : {}}
               >
                 <div className="col-auto">
                   <h4>
@@ -387,7 +387,7 @@ function ProductDetailSix(props) {
                     <div className="ratings">
                       <div
                         className="ratings-val"
-                        style={{ width: "100%" }}
+                        style={{ width: '100%' }}
                       ></div>
                     </div>
                   </div>
@@ -426,12 +426,12 @@ function ProductDetailSix(props) {
 function mapStateToProps(state, props) {
   return {
     product: state.data.products.filter(
-      (product) => product.id === parseInt(props.id)
+      (product) => product.id === parseInt(props.id),
     )[0],
     isWishlist:
       findIndex(
         state.wishlist.list,
-        (item) => item.id === parseInt(props.id)
+        (item) => item.id === parseInt(props.id),
       ) !== -1
         ? true
         : false,
@@ -439,5 +439,5 @@ function mapStateToProps(state, props) {
 }
 
 export default connect(mapStateToProps, { addToCart, toggleWishlist })(
-  ProductDetailSix
+  ProductDetailSix,
 );

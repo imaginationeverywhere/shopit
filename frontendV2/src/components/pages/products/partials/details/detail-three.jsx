@@ -11,13 +11,8 @@ import {
 import { quantityInputs, isIEBrowser, findIndex } from '../../../../../utils';
 
 function ProductDetailThree(props) {
-  const {
-    product,
-    isWishlist,
-    addToCart,
-    toggleWishlist,
-    addToCompare,
-  } = props;
+  const { product, isWishlist, addToCart, toggleWishlist, addToCompare } =
+    props;
 
   useEffect(() => {
     quantityInputs();
@@ -253,9 +248,11 @@ function ProductDetailThree(props) {
 
 function mapStateToProps(state, props) {
   return {
-    product: state.data.products.filter(product => product.id === props.id)[0],
+    product: state.data.products.filter(
+      (product) => product.id === props.id,
+    )[0],
     isWishlist:
-      findIndex(state.wishlist.list, item => item.id === props.id) !== -1
+      findIndex(state.wishlist.list, (item) => item.id === props.id) !== -1
         ? true
         : false,
   };

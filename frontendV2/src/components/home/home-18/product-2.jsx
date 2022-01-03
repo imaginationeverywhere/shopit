@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import BaseProduct from "../../../features/product/common/base-product";
+import BaseProduct from '../../../features/product/common/base-product';
 
 class ProductTwo extends BaseProduct {
   render() {
@@ -15,11 +15,11 @@ class ProductTwo extends BaseProduct {
         <div className="product-body">
           {this.showProductCatSection()}
           {this.showProductName()}
-          {this.showProductPrice("Was", "Now")}
+          {this.showProductPrice('Was', 'Now')}
         </div>
       </div>
     ) : (
-      ""
+      ''
     );
   }
 }

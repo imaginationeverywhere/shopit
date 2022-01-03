@@ -1,15 +1,15 @@
-import "rc-slider/assets/index.css";
+import 'rc-slider/assets/index.css';
 
-import React, { Fragment, useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { Fragment, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import Loader from "./layout/Loader";
-import MetaData from "./layout/MetaData";
-import Pagination from "react-js-pagination";
-import Product from "./product/Product";
-import Slider from "rc-slider";
-import { getProducts } from "../actions/productActions";
-import { useAlert } from "react-alert";
+import Loader from './layout/Loader';
+import MetaData from './layout/MetaData';
+import Pagination from 'react-js-pagination';
+import Product from './product/Product';
+import Slider from 'rc-slider';
+import { getProducts } from '../actions/productActions';
+import { useAlert } from 'react-alert';
 
 const { createSliderWithTooltip } = Slider;
 const Range = createSliderWithTooltip(Slider.Range);
@@ -17,22 +17,22 @@ const Range = createSliderWithTooltip(Slider.Range);
 const Home = ({ match }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [price, setPrice] = useState([1, 1000]);
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState('');
   const [rating, setRating] = useState(0);
 
   const categories = [
-    "Electronics",
-    "Cameras",
-    "Laptops",
-    "Accessories",
-    "Headphones",
-    "Food",
-    "Books",
-    "Clothes/Shoes",
-    "Beauty/Health",
-    "Sports",
-    "Outdoor",
-    "Home",
+    'Electronics',
+    'Cameras',
+    'Laptops',
+    'Accessories',
+    'Headphones',
+    'Food',
+    'Books',
+    'Clothes/Shoes',
+    'Beauty/Health',
+    'Sports',
+    'Outdoor',
+    'Home',
   ];
 
   const alert = useAlert();
@@ -72,7 +72,7 @@ const Home = ({ match }) => {
         <Loader />
       ) : (
         <Fragment>
-          <MetaData title={"Buy Best Products Online"} />
+          <MetaData title={'Buy Best Products Online'} />
 
           <h1 id="products_heading">Latest Products</h1>
 
@@ -92,7 +92,7 @@ const Home = ({ match }) => {
                         defaultValue={[1, 1000]}
                         tipFormatter={(value) => `$${value}`}
                         tipProps={{
-                          placement: "top",
+                          placement: 'top',
                           visible: true,
                         }}
                         value={price}
@@ -108,8 +108,8 @@ const Home = ({ match }) => {
                           {categories.map((category) => (
                             <li
                               style={{
-                                cursor: "pointer",
-                                listStyleType: "none",
+                                cursor: 'pointer',
+                                listStyleType: 'none',
                               }}
                               key={category}
                               onClick={() => setCategory(category)}
@@ -129,8 +129,8 @@ const Home = ({ match }) => {
                           {[5, 4, 3, 2, 1].map((star) => (
                             <li
                               style={{
-                                cursor: "pointer",
-                                listStyleType: "none",
+                                cursor: 'pointer',
+                                listStyleType: 'none',
                               }}
                               key={star}
                               onClick={() => setRating(star)}
@@ -173,10 +173,10 @@ const Home = ({ match }) => {
                 itemsCountPerPage={resPerPage}
                 totalItemsCount={productsCount}
                 onChange={setCurrentPageNo}
-                nextPageText={"Next"}
-                prevPageText={"Prev"}
-                firstPageText={"First"}
-                lastPageText={"Last"}
+                nextPageText={'Next'}
+                prevPageText={'Prev'}
+                firstPageText={'First'}
+                lastPageText={'Last'}
                 itemClass="page-item"
                 linkClass="page-link"
               />

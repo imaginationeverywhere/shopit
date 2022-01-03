@@ -108,7 +108,7 @@
       padding-bottom: 1.9rem;
 
       &::before {
-        content: "";
+        content: '';
         display: block;
         position: absolute;
         left: 2rem;
@@ -185,7 +185,7 @@
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .header-7 .cart-dropdown,
   .header-7 .compare-dropdown {
     padding-left: 1.4rem;

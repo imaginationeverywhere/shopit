@@ -58,7 +58,7 @@
 .header-bottom .container .header-left {
   position: relative;
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     right: 2rem;
@@ -123,7 +123,7 @@
   position: relative;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     bottom: 0;
@@ -137,7 +137,7 @@
   padding-right: 3rem;
   font-size: 1.4rem;
   font-weight: 700;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   letter-spacing: -0.01rem;
 }
 
@@ -157,7 +157,7 @@
 span.wishlist-count,
 span.cart-count {
   font-size: 1.2rem;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-weight: 400;
   color: #333;
 }
@@ -180,14 +180,14 @@ span.cart-count {
 .category-dropdown .dropdown-toggle {
   font-size: 1.4rem;
   font-weight: 700;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   letter-spacing: -0.01rem;
   color: #fff;
 }
 
 .category-dropdown .dropdown-toggle:before {
-  content: "\f131";
-  font-family: "molla";
+  content: '\f131';
+  font-family: 'molla';
   border: none;
   font-size: 2.3rem;
   line-height: 1;
@@ -201,8 +201,8 @@ span.cart-count {
 }
 
 .category-dropdown .dropdown-toggle:after {
-  content: "\f110";
-  font-family: "molla";
+  content: '\f110';
+  font-family: 'molla';
   border: none;
   font-size: 1rem;
   line-height: 1;
@@ -212,16 +212,16 @@ span.cart-count {
 }
 
 .category-dropdown.show .dropdown-toggle:before {
-  content: "\f191";
+  content: '\f191';
 }
 
 .category-dropdown.show .dropdown-toggle:after {
-  content: "\f110";
+  content: '\f110';
 }
 
 .menu.sf-arrows li:last-child .sf-with-ul::after {
-  font-family: "molla";
-  content: "\f110";
+  font-family: 'molla';
+  content: '\f110';
   position: absolute;
   right: 0;
   top: 50%;
@@ -264,7 +264,7 @@ span.cart-count {
   a {
     font-size: 1.4rem;
     font-weight: 400;
-    font-family: "Roboto";
+    font-family: 'Roboto';
     letter-spacing: 0;
     color: #fff;
   }
@@ -399,7 +399,7 @@ span.cart-count {
   select {
     font-size: 1.4rem;
     font-weight: 400;
-    font-family: "Roboto";
+    font-family: 'Roboto';
     color: #777;
   }
 
@@ -452,7 +452,7 @@ span.cart-count {
   }
 }
 
-@include mq("md", "max") {
+@include mq('md', 'max') {
   .dropdown.category-dropdown {
     .dropdown-toggle {
       min-width: 230px;
@@ -464,7 +464,7 @@ span.cart-count {
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .dropdown.category-dropdown {
     .dropdown-toggle {
       min-width: 200px;

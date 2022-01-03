@@ -1,15 +1,15 @@
-import React from "react";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
-import PostTwo from "../../features/post/post-two";
-import PostThree from "../../features/post/post-three";
-import PostFour from "../../features/post/post-four";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
+import PostTwo from '../../features/post/post-two';
+import PostThree from '../../features/post/post-three';
+import PostFour from '../../features/post/post-four';
 
 // import post data
-import posts from "../../../mock_data/posts";
+import posts from '../../../mock_data/posts';
 
 function BlogPosts() {
   return (
@@ -22,7 +22,7 @@ function BlogPosts() {
 
       <div className="main">
         <PageHeader title="Blog Posts" subTitle="Elements" />
-        <Breadcrumb title="Blog Posts" parent1={["Elements", "elements"]} />
+        <Breadcrumb title="Blog Posts" parent1={['Elements', 'elements']} />
 
         <div className="page-content">
           <div className="container">

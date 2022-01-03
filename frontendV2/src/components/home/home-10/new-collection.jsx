@@ -1,27 +1,27 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Tabs, Tab, TabList, TabPanel } from 'react-tabs';
 
 // import custom component
-import OwlCarousel from "../../features/owl-carousel";
-import ProductNine from "../../features/product/product-nine";
+import OwlCarousel from '../../features/owl-carousel';
+import ProductNine from '../../features/product/product-nine';
 
 // import Services & Actions
-import { getProductsByCategory } from "../../../services";
+import { getProductsByCategory } from '../../../services';
 import {
   addToCart,
   toggleWishlist,
   showQuickViewModal,
-} from "../../../actions";
+} from '../../../actions';
 
 // import Slider Settings
-import { productSlider } from "../../settings";
+import { productSlider } from '../../settings';
 
 function TrendyCollection(props) {
   const { addToCart, toggleWishlist, showQuickViewModal } = props;
 
-  let categories = ["All", "Women's", "Men's"];
-  let categoryName = ["All", "Women", "Men"];
+  let categories = ['All', "Women's", "Men's"];
+  let categoryName = ['All', 'Women', 'Men'];
   let products = props.products;
   products = products.slice(35, 41);
 

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import HintIcon from "../../../ProductCreate/SVGs/HintIcon";
-import CutIcon from "./CutIcon";
-import "./PriceInput.scss";
+import React, { useState } from 'react';
+import HintIcon from '../../../ProductCreate/SVGs/HintIcon';
+import CutIcon from './CutIcon';
+import './PriceInput.scss';
 
 const PriceInput = ({
   labelName,
@@ -41,7 +41,7 @@ const PriceInput = ({
           autoComplete="off"
           id={`input-${name}`}
           name={name}
-          type={type || "text"}
+          type={type || 'text'}
           {...rest}
           required={required}
         />

@@ -1,11 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function CTA() {
   return (
     <div
       className="cta cta-horizontal cta-horizontal-box bg-image mb-4 mb-lg-6"
-      style={{ backgroundImage: "url(assets/images/home/bg-1.jpg)" }}
+      style={{ backgroundImage: 'url(assets/images/home/bg-1.jpg)' }}
     >
       <div className="row flex-column flex-lg-row align-items-lg-center">
         <div className="col">
@@ -14,8 +14,8 @@ export default function CTA() {
           </h3>
 
           <p className="cta-desc">
-            Get{" "}
-            <em className="font-weight-medium">FREE SHIPPING* & 5% rewards</em>{" "}
+            Get{' '}
+            <em className="font-weight-medium">FREE SHIPPING* & 5% rewards</em>{' '}
             on every order with Molla Theme rewards program
           </p>
         </div>

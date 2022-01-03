@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const useForm = (formInput) => {
   const [formValues, setFormValues] = useState(formInput);
@@ -19,7 +19,7 @@ const useForm = (formInput) => {
       setFormValues((prevVal) => {
         const newVals = {};
         Object.keys(prevVal).forEach((key) => {
-          newVals[key] = "";
+          newVals[key] = '';
         });
         return newVals;
       });

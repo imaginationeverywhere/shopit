@@ -1,36 +1,36 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import OwlCarousel from "../features/owl-carousel";
-import QuickView from "../features/product/common/quickview";
-import Service from "../features/service";
-import NewsletterModal from "../features/modal/newsletter-modal";
-import Brand from "../features/brand";
+import OwlCarousel from '../features/owl-carousel';
+import QuickView from '../features/product/common/quickview';
+import Service from '../features/service';
+import NewsletterModal from '../features/modal/newsletter-modal';
+import Brand from '../features/brand';
 
-import DealProduct from "./deal-product";
-import IntroSlide from "./intro-slide";
-import Banner from "./banner";
-import BannerSection from "./banner-section";
-import NewCollection from "./new-collection";
-import TrendingCollection from "./trendy-collection";
-import ProductCollection from "./product-collection";
+import DealProduct from './deal-product';
+import IntroSlide from './intro-slide';
+import Banner from './banner';
+import BannerSection from './banner-section';
+import NewCollection from './new-collection';
+import TrendingCollection from './trendy-collection';
+import ProductCollection from './product-collection';
 
-import { introSlider } from "../settings";
+import { introSlider } from '../settings';
 
 // import Utils
-import { isIEBrowser } from "../../utils";
-import data from "../../mock_data/data.json";
-import style from "./style.scss";
+import { isIEBrowser } from '../../utils';
+import data from '../../mock_data/data.json';
+import style from './style.scss';
 
 export default function HomePage() {
   useEffect(() => {
-    document.getElementById("menu-home").classList.add("active");
+    document.getElementById('menu-home').classList.add('active');
     style.use();
 
     return () => {
-      document.getElementById("menu-home").classList.remove("active");
+      document.getElementById('menu-home').classList.remove('active');
       style.unuse();
     };
   }, []);
@@ -94,7 +94,7 @@ export default function HomePage() {
               <div className="col-md-12">
                 <div
                   className="cta-content"
-                  style={{ display: !isIEBrowser() ? "flex" : "auto" }}
+                  style={{ display: !isIEBrowser() ? 'flex' : 'auto' }}
                 >
                   <div className="cta-text text-right text-white">
                     <p>
@@ -174,7 +174,7 @@ export default function HomePage() {
                 <div className="cta-heading text-center">
                   <h3 className="cta-title text-white">Get The Latest Deals</h3>
                   <p className="cta-desc text-white">
-                    and receive{" "}
+                    and receive{' '}
                     <span className="font-weight-normal">$20 coupon</span> for
                     first shopping
                   </p>
@@ -188,7 +188,7 @@ export default function HomePage() {
                       placeholder="Enter your Email Address"
                       aria-label="Email Adress"
                       required
-                      style={isIEBrowser() ? { border: "none" } : {}}
+                      style={isIEBrowser() ? { border: 'none' } : {}}
                     />
                     <div className="input-group-append">
                       <button className="btn btn-primary" type="submit">

@@ -1,13 +1,13 @@
 /* eslint-disable react/button-has-type */
 // react libraries
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 // styles
-import "./DashboardButton.scss";
+import './DashboardButton.scss';
 
 // components
-import Loading from "../Loading";
+import Loading from '../Loading';
 
 const DashboardButton = ({
   loading,
@@ -21,10 +21,10 @@ const DashboardButton = ({
   colored,
 }) => (
   <button
-    className={`dashboardbutton  ${colored ? "colored-blue" : ""} ${classes} ${
-      disabled ? (colored ? "colored-grey" : "grey") : ""
+    className={`dashboardbutton  ${colored ? 'colored-blue' : ''} ${classes} ${
+      disabled ? (colored ? 'colored-grey' : 'grey') : ''
     } `}
-    type={type || "button"}
+    type={type || 'button'}
     onClick={onClick}
     name={name}
     disabled={disabled || loading}

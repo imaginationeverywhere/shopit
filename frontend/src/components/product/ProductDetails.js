@@ -1,34 +1,34 @@
-import React, { Fragment, useState, useEffect } from "react";
-import { Carousel } from "react-bootstrap";
+import React, { Fragment, useState, useEffect } from 'react';
+import { Carousel } from 'react-bootstrap';
 
-import Loader from "../layout/Loader";
-import MetaData from "../layout/MetaData";
-import ListReviews from "../review/ListReviews";
+import Loader from '../layout/Loader';
+import MetaData from '../layout/MetaData';
+import ListReviews from '../review/ListReviews';
 
-import { useAlert } from "react-alert";
-import { useDispatch, useSelector } from "react-redux";
+import { useAlert } from 'react-alert';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   getProductDetails,
   newReview,
   clearErrors,
-} from "../../actions/productActions";
-import { addItemToCart } from "../../actions/cartActions";
-import { NEW_REVIEW_RESET } from "../../constants/productConstants";
+} from '../../actions/productActions';
+import { addItemToCart } from '../../actions/cartActions';
+import { NEW_REVIEW_RESET } from '../../constants/productConstants';
 
 const ProductDetails = ({ match }) => {
   const [quantity, setQuantity] = useState(1);
   const [rating, setRating] = useState(0);
-  const [comment, setComment] = useState("");
+  const [comment, setComment] = useState('');
 
   const dispatch = useDispatch();
   const alert = useAlert();
 
   const { loading, error, product } = useSelector(
-    (state) => state.productDetails
+    (state) => state.productDetails,
   );
   const { user } = useSelector((state) => state.auth);
   const { error: reviewError, success } = useSelector(
-    (state) => state.newReview
+    (state) => state.newReview,
   );
 
   useEffect(() => {
@@ -45,18 +45,18 @@ const ProductDetails = ({ match }) => {
     }
 
     if (success) {
-      alert.success("Reivew posted successfully");
+      alert.success('Reivew posted successfully');
       dispatch({ type: NEW_REVIEW_RESET });
     }
   }, [dispatch, alert, error, reviewError, match.params.id, success]);
 
   const addToCart = () => {
     dispatch(addItemToCart(match.params.id, quantity));
-    alert.success("Item Added to Cart");
+    alert.success('Item Added to Cart');
   };
 
   const increaseQty = () => {
-    const count = document.querySelector(".count");
+    const count = document.querySelector('.count');
 
     if (count.valueAsNumber >= product.stock) return;
 
@@ -65,7 +65,7 @@ const ProductDetails = ({ match }) => {
   };
 
   const decreaseQty = () => {
-    const count = document.querySelector(".count");
+    const count = document.querySelector('.count');
 
     if (count.valueAsNumber <= 1) return;
 
@@ -74,38 +74,38 @@ const ProductDetails = ({ match }) => {
   };
 
   function setUserRatings() {
-    const stars = document.querySelectorAll(".star");
+    const stars = document.querySelectorAll('.star');
 
     stars.forEach((star, index) => {
       star.starValue = index + 1;
 
-      ["click", "mouseover", "mouseout"].forEach(function (e) {
+      ['click', 'mouseover', 'mouseout'].forEach(function (e) {
         star.addEventListener(e, showRatings);
       });
     });
 
     function showRatings(e) {
       stars.forEach((star, index) => {
-        if (e.type === "click") {
+        if (e.type === 'click') {
           if (index < this.starValue) {
-            star.classList.add("orange");
+            star.classList.add('orange');
 
             setRating(this.starValue);
           } else {
-            star.classList.remove("orange");
+            star.classList.remove('orange');
           }
         }
 
-        if (e.type === "mouseover") {
+        if (e.type === 'mouseover') {
           if (index < this.starValue) {
-            star.classList.add("yellow");
+            star.classList.add('yellow');
           } else {
-            star.classList.remove("yellow");
+            star.classList.remove('yellow');
           }
         }
 
-        if (e.type === "mouseout") {
-          star.classList.remove("yellow");
+        if (e.type === 'mouseout') {
+          star.classList.remove('yellow');
         }
       });
     }
@@ -114,9 +114,9 @@ const ProductDetails = ({ match }) => {
   const reviewHandler = () => {
     const formData = new FormData();
 
-    formData.set("rating", rating);
-    formData.set("comment", comment);
-    formData.set("productId", match.params.id);
+    formData.set('rating', rating);
+    formData.set('comment', comment);
+    formData.set('productId', match.params.id);
 
     dispatch(newReview(formData));
   };
@@ -190,12 +190,12 @@ const ProductDetails = ({ match }) => {
               <hr />
 
               <p>
-                Status:{" "}
+                Status:{' '}
                 <span
                   id="stock_status"
-                  className={product.stock > 0 ? "greenColor" : "redColor"}
+                  className={product.stock > 0 ? 'greenColor' : 'redColor'}
                 >
-                  {product.stock > 0 ? "In Stock" : "Out of Stock"}
+                  {product.stock > 0 ? 'In Stock' : 'Out of Stock'}
                 </span>
               </p>
 

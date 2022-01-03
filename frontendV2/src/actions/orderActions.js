@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 import {
   CREATE_ORDER_REQUEST,
@@ -20,7 +20,7 @@ import {
   DELETE_ORDER_SUCCESS,
   DELETE_ORDER_FAIL,
   CLEAR_ERRORS,
-} from "../constants/orderConstants";
+} from '../constants/orderConstants';
 
 export const createOrder = (order) => async (dispatch, getState) => {
   try {
@@ -28,11 +28,11 @@ export const createOrder = (order) => async (dispatch, getState) => {
 
     const config = {
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     };
 
-    const { data } = await axios.post("/api/v1/order/new", order, config);
+    const { data } = await axios.post('/api/v1/order/new', order, config);
 
     dispatch({
       type: CREATE_ORDER_SUCCESS,
@@ -51,7 +51,7 @@ export const myOrders = () => async (dispatch) => {
   try {
     dispatch({ type: MY_ORDERS_REQUEST });
 
-    const { data } = await axios.get("/api/v1/orders/me");
+    const { data } = await axios.get('/api/v1/orders/me');
 
     dispatch({
       type: MY_ORDERS_SUCCESS,
@@ -110,14 +110,14 @@ export const updateOrder = (id, orderData) => async (dispatch) => {
 
     const config = {
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     };
 
     const { data } = await axios.put(
       `/api/v1/admin/order/${id}`,
       orderData,
-      config
+      config,
     );
 
     dispatch({

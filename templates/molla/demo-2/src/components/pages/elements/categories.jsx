@@ -1,17 +1,17 @@
-import React from "react";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
-import ProductCategoryOne from "../../features/product-category/product-category-one";
-import ProductCategoryTwo from "../../features/product-category/product-category-two";
-import ProductCategoryThree from "../../features/product-category/product-category-three";
-import ProductCategoryFour from "../../features/product-category/product-category-four";
-import ProductCategoryFive from "../../features/product-category/product-category-five";
-import OwlCarousel from "../../features/owl-carousel";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
+import ProductCategoryOne from '../../features/product-category/product-category-one';
+import ProductCategoryTwo from '../../features/product-category/product-category-two';
+import ProductCategoryThree from '../../features/product-category/product-category-three';
+import ProductCategoryFour from '../../features/product-category/product-category-four';
+import ProductCategoryFive from '../../features/product-category/product-category-five';
+import OwlCarousel from '../../features/owl-carousel';
 
-import { mainSlider3 } from "../../settings";
+import { mainSlider3 } from '../../settings';
 
 function Categories() {
   return (
@@ -28,7 +28,7 @@ function Categories() {
         <PageHeader title="Product Category" subTitle="Elements" />
         <Breadcrumb
           title="Product Category"
-          parent1={["Elements", "element/list"]}
+          parent1={['Elements', 'element/list']}
         />
 
         <div className="page-content">

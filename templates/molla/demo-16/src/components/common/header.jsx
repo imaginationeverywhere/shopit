@@ -1,18 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 // import Custom Components
-import MainMenu from "./partials/main-menu";
-import CartMenu from "./partials/cart-menu";
+import MainMenu from './partials/main-menu';
+import CartMenu from './partials/cart-menu';
 
-import { isIEBrowser } from "../../utils";
+import { isIEBrowser } from '../../utils';
 
 function Header(props) {
   const {
     wishlist,
-    logo = "assets/images/logo.png",
-    container = "container",
+    logo = 'assets/images/logo.png',
+    container = 'container',
   } = props;
 
   return (
@@ -34,7 +34,7 @@ function Header(props) {
                   </button>
                   <input
                     type="search"
-                    style={isIEBrowser() ? { paddingLeft: "30px" } : {}}
+                    style={isIEBrowser() ? { paddingLeft: '30px' } : {}}
                     className="form-control"
                     name="q"
                     id="q"

@@ -1,5 +1,5 @@
-import React from "react";
-import Comment from "./comment";
+import React from 'react';
+import Comment from './comment';
 
 function Comments() {
   return (

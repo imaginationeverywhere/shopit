@@ -37,7 +37,7 @@
   }
 }
 
-@include mq("480px", "max") {
+@include mq('480px', 'max') {
   .Toastify__toast-container {
     left: auto !important;
     right: 0px !important;

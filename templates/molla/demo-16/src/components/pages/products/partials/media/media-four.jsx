@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { Magnifier } from "react-image-magnifiers";
-import Lightbox from "react-image-lightbox";
-import "react-image-lightbox/style.css";
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { Magnifier } from 'react-image-magnifiers';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
-import { stickyContentHandle, setStickyValues } from "../../../../../utils";
+import { stickyContentHandle, setStickyValues } from '../../../../../utils';
 
 function MediaFour(props) {
   const { product } = props;
 
   if (!product) {
-    window.location = process.env.PUBLIC_URL + "pages/404";
+    window.location = process.env.PUBLIC_URL + 'pages/404';
   }
 
   const [photoIndex, setPhotoIndex] = useState(0);
@@ -27,16 +27,16 @@ function MediaFour(props) {
   }, []);
 
   useEffect(() => {
-    window.addEventListener("scroll", stickyContentHandle);
+    window.addEventListener('scroll', stickyContentHandle);
 
     return () => {
-      window.removeEventListener("scroll", stickyContentHandle);
+      window.removeEventListener('scroll', stickyContentHandle);
     };
   });
 
   function openLightBox() {
     let index = parseInt(
-      document.querySelector(".product-main-image").getAttribute("index")
+      document.querySelector('.product-main-image').getAttribute('index'),
     );
 
     if (!index) {
@@ -56,7 +56,7 @@ function MediaFour(props) {
 
   const setPrevHandler = () => {
     setPhotoIndex(
-      (photoIndex) => (photoIndex + bigImages.length - 1) % bigImages.length
+      (photoIndex) => (photoIndex + bigImages.length - 1) % bigImages.length,
     );
   };
 
@@ -67,25 +67,25 @@ function MediaFour(props) {
           {product.discount > 0 ? (
             <span className="product-label label-sale">Sale</span>
           ) : (
-            ""
+            ''
           )}
 
           {product.new ? (
             <span className="product-label label-new">New</span>
           ) : (
-            ""
+            ''
           )}
 
           {product.top ? (
             <span className="product-label label-top">Top</span>
           ) : (
-            ""
+            ''
           )}
 
           <Magnifier
-            imageSrc={process.env.PUBLIC_URL + "/" + product.pictures[0]}
+            imageSrc={process.env.PUBLIC_URL + '/' + product.pictures[0]}
             imageAlt="Example"
-            largeImageSrc={process.env.PUBLIC_URL + "/" + bigImages[0]} // Optional
+            largeImageSrc={process.env.PUBLIC_URL + '/' + bigImages[0]} // Optional
             dragToMove={false}
             mouseActivation="hover"
             cursorStyleActive="crosshair"
@@ -110,38 +110,38 @@ function MediaFour(props) {
             parseInt(index) > 0 ? (
               <Link
                 className={`product-gallery-item ${
-                  2 === index ? "gallery-item-wide" : ""
+                  2 === index ? 'gallery-item-wide' : ''
                 }`}
                 to="#"
-                data-image={process.env.PUBLIC_URL + "/" + item}
+                data-image={process.env.PUBLIC_URL + '/' + item}
                 data-zoom-image={
-                  process.env.PUBLIC_URL + "/" + bigImages[index]
+                  process.env.PUBLIC_URL + '/' + bigImages[index]
                 }
                 key={index}
               >
                 <img
-                  src={process.env.PUBLIC_URL + "/" + smallImages[index]}
+                  src={process.env.PUBLIC_URL + '/' + smallImages[index]}
                   alt="product back"
                 />
               </Link>
             ) : (
-              ""
-            )
+              ''
+            ),
           )}
         </div>
       </div>
 
       {isOpen ? (
         <Lightbox
-          mainSrc={process.env.PUBLIC_URL + "/" + bigImages[photoIndex]}
+          mainSrc={process.env.PUBLIC_URL + '/' + bigImages[photoIndex]}
           nextSrc={
             process.env.PUBLIC_URL +
-            "/" +
+            '/' +
             bigImages[(photoIndex + 1) % bigImages.length]
           }
           prevSrc={
             process.env.PUBLIC_URL +
-            "/" +
+            '/' +
             bigImages[(photoIndex + bigImages.length - 1) % bigImages.length]
           }
           onCloseRequest={closeLightBox}
@@ -149,7 +149,7 @@ function MediaFour(props) {
           onMoveNextRequest={setPrevHandler}
         />
       ) : (
-        ""
+        ''
       )}
     </>
   );
@@ -158,7 +158,7 @@ function MediaFour(props) {
 function mapStateToProps(state, props) {
   return {
     product: state.data.products.filter(
-      (product) => product.id === parseInt(props.id)
+      (product) => product.id === parseInt(props.id),
     )[0],
   };
 }

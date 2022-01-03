@@ -1,5 +1,5 @@
-@import "../config/variables";
-@import "../mixins/breakpoints";
+@import '../config/variables';
+@import '../mixins/breakpoints';
 
 .cart-dropdown {
   .btn-primary {
@@ -90,7 +90,7 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .footer-bottom .container-fluid {
     figure {
       -ms-flex: 1;

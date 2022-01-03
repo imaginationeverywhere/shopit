@@ -1,14 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import OwlCarousels from "../../features/owl-carousel";
+import OwlCarousels from '../../features/owl-carousel';
 
-import { featureSlider4 } from "../../settings";
-import data from "../../../mock_data/data";
+import { featureSlider4 } from '../../settings';
+import data from '../../../mock_data/data';
 
 export default function InstagramTwo(props) {
-  const { adClass = "" } = props;
+  const { adClass = '' } = props;
 
   return (
     <OwlCarousels
@@ -21,7 +21,7 @@ export default function InstagramTwo(props) {
             <div className="lazy-overlay bg-3"></div>
 
             <LazyLoadImage
-              src={process.env.PUBLIC_URL + "/" + item.img}
+              src={process.env.PUBLIC_URL + '/' + item.img}
               alt="img"
               width={100}
               height={200}

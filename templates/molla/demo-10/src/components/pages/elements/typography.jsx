@@ -1,9 +1,9 @@
-import React from "react";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
 
 function Typography() {
   return (
@@ -18,7 +18,7 @@ function Typography() {
         <PageHeader title="Typography & Text Grid" subTitle="Elements" />
         <Breadcrumb
           title="Typography & Text Grid"
-          parent1={["Elements", "elements"]}
+          parent1={['Elements', 'elements']}
         />
 
         <div className="page-content">
@@ -126,7 +126,7 @@ function Typography() {
                   Morbi purus libero, faucibus adipiscing, commodo quis, gravida
                   id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed
                   semper lorem at felis. Vestibulum volutpat, lacus a ultrices
-                  sagittis, mi neque euismod{" "}
+                  sagittis, mi neque euismod{' '}
                 </p>
               </div>
 
@@ -135,7 +135,7 @@ function Typography() {
                   Morbi purus libero, faucibus adipiscing, commodo quis, gravida
                   id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed
                   semper lorem at felis. Vestibulum volutpat, lacus a ultrices
-                  sagittis, mi neque euismod{" "}
+                  sagittis, mi neque euismod{' '}
                 </p>
               </div>
 
@@ -144,7 +144,7 @@ function Typography() {
                   Morbi purus libero, faucibus adipiscing, commodo quis, gravida
                   id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed
                   semper lorem at felis. Vestibulum volutpat, lacus a ultrices
-                  sagittis, mi neque euismod{" "}
+                  sagittis, mi neque euismod{' '}
                 </p>
               </div>
             </div>
@@ -156,7 +156,7 @@ function Typography() {
                 <p>
                   Morbi purus libero, faucibus adipiscing, commodo quis, gravida
                   id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed
-                  semper lorem at felis.{" "}
+                  semper lorem at felis.{' '}
                 </p>
               </div>
 
@@ -164,7 +164,7 @@ function Typography() {
                 <p>
                   Morbi purus libero, faucibus adipiscing, commodo quis, gravida
                   id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed
-                  semper lorem at felis.{" "}
+                  semper lorem at felis.{' '}
                 </p>
               </div>
 
@@ -172,7 +172,7 @@ function Typography() {
                 <p>
                   Morbi purus libero, faucibus adipiscing, commodo quis, gravida
                   id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed
-                  semper lorem at felis.{" "}
+                  semper lorem at felis.{' '}
                 </p>
               </div>
 
@@ -180,7 +180,7 @@ function Typography() {
                 <p>
                   Morbi purus libero, faucibus adipiscing, commodo quis, gravida
                   id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed
-                  semper lorem at felis.{" "}
+                  semper lorem at felis.{' '}
                 </p>
               </div>
             </div>

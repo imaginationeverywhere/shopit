@@ -91,7 +91,7 @@
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .header-7 .cart-dropdown,
   .header-7 .compare-dropdown {
     padding-left: 1.4rem;

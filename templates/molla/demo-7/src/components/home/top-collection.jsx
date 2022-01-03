@@ -1,16 +1,16 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Tab, Tabs, TabPanel, TabList } from "react-tabs";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Tab, Tabs, TabPanel, TabList } from 'react-tabs';
 
 // Import Custom Component
-import ProductNine from "../features/product/product-nine";
+import ProductNine from '../features/product/product-nine';
 
-import { getTopSellingProducts, getProductsByCategory } from "../../services";
-import { addToCart, toggleWishlist } from "../../actions";
+import { getTopSellingProducts, getProductsByCategory } from '../../services';
+import { addToCart, toggleWishlist } from '../../actions';
 
 function TopCollection(props) {
   const { addToCart, toggleWishlist } = props;
-  let categories = ["All", "Furniture", "Decoration", "Lighting"];
+  let categories = ['All', 'Furniture', 'Decoration', 'Lighting'];
   let products = props.products;
   products = products.slice(20, 35);
 
@@ -66,5 +66,5 @@ const mapStateToProps = (state, props) => {
 };
 
 export default connect(mapStateToProps, { addToCart, toggleWishlist })(
-  TopCollection
+  TopCollection,
 );

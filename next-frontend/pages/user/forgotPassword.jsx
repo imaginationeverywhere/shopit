@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { Input, FormModal } from "../../components";
+import Link from 'next/link';
+import { Input, FormModal } from '../../components';
 
 const ForgotPassword = () => {
   return (

@@ -1,14 +1,14 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import { findIndex } from "../../../utils";
+import { findIndex } from '../../../utils';
 
 function ProductNine(props) {
   const { product, isWishlist, onAddToCart, showQuickView, onToggleWishlist } =
     props;
-  let btnClass = product.stock === 0 ? "disabled" : "";
-  btnClass = btnClass + " btn-product btn-cart";
+  let btnClass = product.stock === 0 ? 'disabled' : '';
+  btnClass = btnClass + ' btn-product btn-cart';
 
   const addToCartHandler = () => {
     if (0 !== product.stock) onAddToCart(product, 1);
@@ -20,7 +20,7 @@ function ProductNine(props) {
 
   const wishlistHandler = () => {
     if (isWishlist) {
-      window.location = process.env.PUBLIC_URL + "/shop/wishlist";
+      window.location = process.env.PUBLIC_URL + '/shop/wishlist';
     } else {
       onToggleWishlist(product, isWishlist);
     }
@@ -34,22 +34,22 @@ function ProductNine(props) {
             {product.new ? (
               <span className="product-label label-new">New</span>
             ) : (
-              ""
+              ''
             )}
             {product.top ? (
               <span className="product-label label-top">Top</span>
             ) : (
-              ""
+              ''
             )}
             {product.discount > 0 ? (
               <span className="product-label label-sale">Sale</span>
             ) : (
-              ""
+              ''
             )}
             {product.stock === 0 ? (
               <span className="product-label label-out">Out</span>
             ) : (
-              ""
+              ''
             )}
 
             <Link
@@ -68,7 +68,7 @@ function ProductNine(props) {
                   />
                 </span>
               ) : (
-                ""
+                ''
               )}
             </Link>
           </figure>
@@ -80,7 +80,7 @@ function ProductNine(props) {
               {product.category.map((cat, index) => (
                 <span key={index} className="mr-0">
                   <Link to="#">{cat}</Link>
-                  {index < product.category.length - 1 ? ", " : ""}
+                  {index < product.category.length - 1 ? ', ' : ''}
                 </span>
               ))}
             </div>
@@ -101,11 +101,11 @@ function ProductNine(props) {
                   {product.variants.map((vari, i) => (
                     <Link
                       to="#"
-                      key={"modal" + i}
-                      className={0 === i ? "active" : ""}
+                      key={'modal' + i}
+                      className={0 === i ? 'active' : ''}
                     >
                       <img
-                        src={process.env.PUBLIC_URL + "/" + vari.model}
+                        src={process.env.PUBLIC_URL + '/' + vari.model}
                         alt="product desc"
                       />
                     </Link>
@@ -116,15 +116,15 @@ function ProductNine(props) {
                   {product.variants.map((vari, i) => (
                     <Link
                       to="#"
-                      key={"color" + i}
-                      className={0 === i ? "active" : ""}
+                      key={'color' + i}
+                      className={0 === i ? 'active' : ''}
                       style={{ background: vari.color }}
                     ></Link>
                   ))}
                 </div>
               )
             ) : (
-              ""
+              ''
             )}
           </div>
         </div>
@@ -172,7 +172,7 @@ function ProductNine(props) {
               <div className="ratings">
                 <div
                   className="ratings-val"
-                  style={{ width: product.ratings * 20 + "%" }}
+                  style={{ width: product.ratings * 20 + '%' }}
                 ></div>
               </div>
               <span className="ratings-text">({product.reviews} Reviews )</span>
@@ -189,10 +189,10 @@ function ProductNine(props) {
 
               <button
                 className={`btn-product btn-wishlist p-0 ${
-                  isWishlist ? "added-to-wishlist" : "remove-from-wishlist"
+                  isWishlist ? 'added-to-wishlist' : 'remove-from-wishlist'
                 }`}
                 onClick={wishlistHandler}
-                title={isWishlist ? "Go to wishlist" : "Add to wishlist"}
+                title={isWishlist ? 'Go to wishlist' : 'Add to wishlist'}
               >
                 <span>wishlist</span>
               </button>
@@ -206,7 +206,7 @@ function ProductNine(props) {
       </div>
     </div>
   ) : (
-    ""
+    ''
   );
 }
 
@@ -215,7 +215,7 @@ export const mapStateToProps = (state, ownprops) => {
     isWishlist:
       findIndex(
         state.wishlist.list,
-        (item) => item.id === ownprops.product.id
+        (item) => item.id === ownprops.product.id,
       ) !== -1
         ? true
         : false,

@@ -1,6 +1,6 @@
-import React from "react";
-import { safeContent } from "../../../../utils";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { safeContent } from '../../../../utils';
+import { Link } from 'react-router-dom';
 
 function Comment(props) {
   const { image, name, date, content } = props;
@@ -9,7 +9,7 @@ function Comment(props) {
     <div className="comment">
       <figure className="comment-media">
         <Link to="#">
-          <img src={process.env.PUBLIC_URL + "/" + image} alt="User name" />
+          <img src={process.env.PUBLIC_URL + '/' + image} alt="User name" />
         </Link>
       </figure>
 

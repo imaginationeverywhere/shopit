@@ -1,16 +1,16 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
 // import custom component
-import ProductNine from "../features/product/product-nine";
+import ProductNine from '../features/product/product-nine';
 
 import {
   addToCart,
   toggleWishlist,
   addToCompare,
   showQuickViewModal,
-} from "../../actions";
-import { getNewProducts } from "../../services";
+} from '../../actions';
+import { getNewProducts } from '../../services';
 
 function TrendyCollection(props) {
   const { addToCart, toggleWishlist, addToCompare, showQuickViewModal } = props;

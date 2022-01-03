@@ -222,7 +222,7 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .header-6 {
     .logo {
       position: absolute;
@@ -234,13 +234,13 @@
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .header-6 .header-bottom {
     display: block;
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .header-6 .header-dropdown {
     display: none;
   }

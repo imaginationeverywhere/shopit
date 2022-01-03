@@ -1,11 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 // import custom component
-import OwlCarousel from "../../features/owl-carousel";
+import OwlCarousel from '../../features/owl-carousel';
 
 // import Slider Options
-import { instagramSlider } from "../../settings";
+import { instagramSlider } from '../../settings';
 
 export default function Instagram(props) {
   const { adClass } = props;
@@ -15,7 +15,7 @@ export default function Instagram(props) {
       <OwlCarousel adClass="owl-simple" carouselOptions={instagramSlider}>
         <div key="instagram-1" className="instagram-feed">
           <img
-            src={process.env.PUBLIC_URL + "/assets/images/home/instagram/1.jpg"}
+            src={process.env.PUBLIC_URL + '/assets/images/home/instagram/1.jpg'}
             alt="img"
           />
 
@@ -32,7 +32,7 @@ export default function Instagram(props) {
 
         <div key="instagram-2" className="instagram-feed">
           <img
-            src={process.env.PUBLIC_URL + "/assets/images/home/instagram/2.jpg"}
+            src={process.env.PUBLIC_URL + '/assets/images/home/instagram/2.jpg'}
             alt="img"
           />
 
@@ -49,7 +49,7 @@ export default function Instagram(props) {
 
         <div key="instagram-3" className="instagram-feed">
           <img
-            src={process.env.PUBLIC_URL + "/assets/images/home/instagram/3.jpg"}
+            src={process.env.PUBLIC_URL + '/assets/images/home/instagram/3.jpg'}
             alt="img"
           />
 
@@ -66,7 +66,7 @@ export default function Instagram(props) {
 
         <div key="instagram-4" className="instagram-feed">
           <img
-            src={process.env.PUBLIC_URL + "/assets/images/home/instagram/4.jpg"}
+            src={process.env.PUBLIC_URL + '/assets/images/home/instagram/4.jpg'}
             alt="img"
           />
 
@@ -83,7 +83,7 @@ export default function Instagram(props) {
 
         <div key="instagram-5" className="instagram-feed">
           <img
-            src={process.env.PUBLIC_URL + "/assets/images/home/instagram/5.jpg"}
+            src={process.env.PUBLIC_URL + '/assets/images/home/instagram/5.jpg'}
             alt="img"
           />
 

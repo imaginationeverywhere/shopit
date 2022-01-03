@@ -1,5 +1,5 @@
-import React from "react";
-import "./DashboardInput.scss";
+import React from 'react';
+import './DashboardInput.scss';
 
 const DashboardInput = ({
   labelName,
@@ -11,7 +11,7 @@ const DashboardInput = ({
   ...rest
 }) => {
   return (
-    <div className={`dashboardinput ${disabled ? "disabled" : ""}`}>
+    <div className={`dashboardinput ${disabled ? 'disabled' : ''}`}>
       <label htmlFor={`input-${name}`}>
         {labelName}
         {required && <small className="asterik ml-1">*</small>}
@@ -20,9 +20,9 @@ const DashboardInput = ({
         autoComplete="off"
         id={`input-${name}`}
         name={name}
-        type={type || "text"}
+        type={type || 'text'}
         required={required}
-        value={value || ""}
+        value={value || ''}
         disabled={disabled}
         {...rest}
       />

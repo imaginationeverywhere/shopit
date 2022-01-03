@@ -102,7 +102,7 @@
       border-radius: 3px;
     }
   }
-  @include mq("xl") {
+  @include mq('xl') {
     .header-search-extended {
       max-width: 576px;
       margin-right: 10rem;
@@ -237,7 +237,7 @@
 }
 
 .games-soon {
-  @include mq("lg") {
+  @include mq('lg') {
     .col-lg-5 {
       flex: 0 0 40%;
       max-width: 40%;
@@ -251,7 +251,7 @@
 }
 
 .games-banners-slider {
-  @include mq("lg") {
+  @include mq('lg') {
     margin-top: 0;
   }
 
@@ -264,7 +264,7 @@
   background-color: #efefef;
   background-position: center top;
   background-repeat: no-repeat;
-  background-image: url("/assets/images/home/bg-1.jpg");
+  background-image: url('/assets/images/home/bg-1.jpg');
   background-attachment: fixed;
   background-size: auto;
 }
@@ -286,7 +286,7 @@
   background: #fff;
 }
 
-@include mq("1280px", "max") {
+@include mq('1280px', 'max') {
   .header-3 .header-bottom .container {
     padding-left: 15px;
     padding-right: 15px;
@@ -297,7 +297,7 @@
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .header-3 .header-top .top-menu li {
     font-size: 13px;
   }

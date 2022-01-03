@@ -1,5 +1,5 @@
-import React from "react";
-import DashboardButton from "../common/components/DashboardButton";
+import React from 'react';
+import DashboardButton from '../common/components/DashboardButton';
 
 const NewProductNav = ({
   checkAllRequired,
@@ -10,8 +10,8 @@ const NewProductNav = ({
 }) => {
   return (
     <header className="flexed-row flexed-space-between">
-      <h5>{updateType ? "Product update" : "New product"}</h5>
-      <div style={{ display: "flex" }} className="flexed-row">
+      <h5>{updateType ? 'Product update' : 'New product'}</h5>
+      <div style={{ display: 'flex' }} className="flexed-row">
         {!updateType && (
           <DashboardButton
             name="Clear"
@@ -32,8 +32,8 @@ const NewProductNav = ({
           />
         )}
         <DashboardButton
-          name={updateType ? "Update Product" : "Save Product"}
-          disabled={!checkAllRequired(["sizes"]) || submitLoading}
+          name={updateType ? 'Update Product' : 'Save Product'}
+          disabled={!checkAllRequired(['sizes']) || submitLoading}
           type="submit"
           loading={submitLoading}
           colored

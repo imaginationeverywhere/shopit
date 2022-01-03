@@ -1,12 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 // import Custom Components
-import MainMenu from "./partials/main-menu";
-import CartMenu from "./partials/cart-menu";
+import MainMenu from './partials/main-menu';
+import CartMenu from './partials/cart-menu';
 
 function Header(props) {
-  const { logo = "assets/images/logo.png" } = props;
+  const { logo = 'assets/images/logo.png' } = props;
 
   return (
     <header className="header header-5">
@@ -20,7 +20,7 @@ function Header(props) {
 
             <Link to="/" className="logo">
               <img
-                src={process.env.PUBLIC_URL + "/" + logo}
+                src={process.env.PUBLIC_URL + '/' + logo}
                 alt="Molla Logo"
                 width="105"
                 height="25"

@@ -30,7 +30,7 @@
   }
 
   &::before {
-    content: "";
+    content: '';
     display: block;
     width: 100%;
     background-image: linear-gradient(#f4f4f4 250px, transparent 0);
@@ -41,7 +41,7 @@
   }
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: -50%;
     left: -50%;
@@ -120,7 +120,7 @@
 
     &:not(:last-child):after {
       color: #fff;
-      content: ":";
+      content: ':';
       display: inline-block;
       font-weight: 400;
       font-size: 20px;
@@ -411,10 +411,10 @@
   font-size: 1.4rem;
   letter-spacing: 0.1em;
   line-height: 1;
-  font-family: "molla";
+  font-family: 'molla';
 
   &:before {
-    content: "\f318""\f318""\f318""\f318""\f318";
+    content: '\f318''\f318''\f318''\f318''\f318';
   }
 }
 
@@ -508,7 +508,7 @@
   }
 
   &:before {
-    font-family: "molla";
+    font-family: 'molla';
     margin-right: 0.9rem;
   }
 
@@ -548,7 +548,7 @@
 .product.product-2 .product-action-dark {
   &:before {
     position: absolute;
-    content: "";
+    content: '';
     top: 1rem;
     bottom: 1rem;
     right: 50%;
@@ -595,7 +595,7 @@
   background-color: #fff;
 
   &:before {
-    font-family: "molla";
+    font-family: 'molla';
   }
 
   span {
@@ -615,18 +615,18 @@
 
 .btn-cart {
   &:before {
-    content: "\e812";
+    content: '\e812';
   }
 }
 
 .btn-wishlist {
   font-size: 1.6rem;
   &:before {
-    content: "\f234";
+    content: '\f234';
   }
   &.added-to-wishlist {
     &::before {
-      content: "\f233";
+      content: '\f233';
     }
   }
 }
@@ -657,13 +657,13 @@
 
 .btn-quickview {
   &:before {
-    content: "\f145";
+    content: '\f145';
   }
 }
 
 .btn-compare {
   &:before {
-    content: "\f2d0";
+    content: '\f2d0';
   }
 }
 
@@ -1315,7 +1315,7 @@
     background-color: #fff;
     text-transform: uppercase;
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       right: 0;
@@ -1403,7 +1403,7 @@
       color: #666;
 
       &::before {
-        content: "\f233";
+        content: '\f233';
       }
     }
   }
@@ -1432,7 +1432,7 @@
       text-transform: uppercase;
     }
     &::before {
-      content: "";
+      content: '';
     }
 
     &:hover,
@@ -1455,7 +1455,7 @@
   .product-title a {
     font-size: 1.3rem;
     font-weight: 400;
-    font-family: "Poppins";
+    font-family: 'Poppins';
     letter-spacing: 0;
     color: #333;
 
@@ -1469,7 +1469,7 @@
     margin-top: 0.8rem;
     font-size: 1.3rem;
     font-weight: 700;
-    font-family: "Poppins";
+    font-family: 'Poppins';
     letter-spacing: 0;
     color: #333333;
   }
@@ -1477,14 +1477,14 @@
   .new-price {
     font-size: 1.3rem;
     font-weight: 700;
-    font-family: "Poppins";
+    font-family: 'Poppins';
     letter-spacing: 0;
   }
 
   .old-price {
     font-size: 1.3rem;
     font-weight: 400;
-    font-family: "Poppins";
+    font-family: 'Poppins';
     letter-spacing: 0;
     text-decoration: none;
   }
@@ -1495,7 +1495,7 @@
 
     font-size: 1.3rem;
     font-weight: 700;
-    font-family: "Poppins";
+    font-family: 'Poppins';
     letter-spacing: -0.01em;
   }
 
@@ -1783,7 +1783,7 @@
   }
 }
 
-@include mq("480px") {
+@include mq('480px') {
   .just-action-icons-sm {
     .btn-product {
       span {
@@ -1797,7 +1797,7 @@
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   .just-action-icons-md {
     .btn-product {
       span {
@@ -1811,7 +1811,7 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .just-action-icons-lg {
     .btn-product {
       span {
@@ -1825,7 +1825,7 @@
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .just-action-icons-xl {
     .btn-product {
       span {
@@ -1839,13 +1839,13 @@
   }
 }
 
-@include mq("xl", "max") {
+@include mq('xl', 'max') {
   .product.product-list .btn-product span {
     font-size: 11px;
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .btn-product.btn-quickview {
     padding: 0;
     font-size: 15px;
@@ -1858,7 +1858,7 @@
   }
 }
 
-@include mq("md", "max") {
+@include mq('md', 'max') {
   .product.product-list {
     .product-list-action {
       width: 80%;
@@ -1884,7 +1884,7 @@
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .product-body {
     &.product-action-inner {
       padding-right: 3rem;
@@ -1922,7 +1922,7 @@
   }
 }
 
-@include mq("425px", "max") {
+@include mq('425px', 'max') {
   .btn-product:before {
     margin-right: 0.2rem;
   }
@@ -1950,13 +1950,13 @@
   }
 }
 
-@include mq("414px", "max") {
+@include mq('414px', 'max') {
   .product-body {
     padding: 1.6rem 1rem;
   }
 }
 
-@include mq("375px", "max") {
+@include mq('375px', 'max') {
   .ratings-container {
     justify-content: flex-start;
     flex-wrap: wrap;

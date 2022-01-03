@@ -1,11 +1,11 @@
 /* Demo 6 Homepage 6 */
-@import "../mixins/clearfix";
-@import "../mixins/breakpoints";
-@import "../mixins/lazy";
-@import "../mixins/buttons";
+@import '../mixins/clearfix';
+@import '../mixins/breakpoints';
+@import '../mixins/lazy';
+@import '../mixins/buttons';
 
-@import "../config/fonts";
-@import "../config/variables";
+@import '../config/fonts';
+@import '../config/variables';
 
 .product.product-2 .product-action:before {
   display: none;
@@ -22,7 +22,7 @@
   text-transform: uppercase;
 }
 
-.owl-simple .owl-nav [class*="owl-"] {
+.owl-simple .owl-nav [class*='owl-'] {
   top: 40%;
 }
 
@@ -83,14 +83,14 @@
   text-transform: uppercase;
 }
 
-.owl-theme .owl-nav [class*="owl-"] {
+.owl-theme .owl-nav [class*='owl-'] {
   width: 3.2rem;
   height: 3.2rem;
   font-size: 2rem;
   margin-top: -1.6rem;
 }
 
-.owl-theme .owl-nav [class*="owl-"]:not(.disabled):hover {
+.owl-theme .owl-nav [class*='owl-']:not(.disabled):hover {
   color: $primary-color;
   background: transparent;
   text-decoration: none;
@@ -104,7 +104,7 @@
   right: 20px;
 }
 
-.owl-theme.owl-light .owl-nav [class*="owl-"] {
+.owl-theme.owl-light .owl-nav [class*='owl-'] {
   border-color: #fff;
   color: #fff;
 }
@@ -176,7 +176,7 @@
       color: #333;
 
       &::before {
-        content: "";
+        content: '';
         display: block;
         position: absolute;
         left: 0;
@@ -389,7 +389,7 @@
 
     &:not(:last-child):after {
       color: #333333;
-      content: ":";
+      content: ':';
       display: inline-block;
       font-weight: 500;
       font-size: 20px;
@@ -475,7 +475,7 @@
 .brands {
   position: relative;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     left: 1rem;
     right: 1rem;
@@ -492,7 +492,7 @@
   padding-left: 0;
 }
 
-@include mq("md") {
+@include mq('md') {
   .deal-content {
     h2 {
       font-size: 3.6rem;
@@ -500,7 +500,7 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .deal {
     .product-media {
       margin-bottom: 0;
@@ -538,7 +538,7 @@
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .deal-content {
     h2 {
       font-size: 2.4rem;
@@ -670,7 +670,7 @@
   text-transform: uppercase;
 }
 
-@include mq("md") {
+@include mq('md') {
   .title {
     font-size: 2.4rem;
   }
@@ -723,7 +723,7 @@
   transition: transform 0.35s ease;
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .intro-subtitle {
     font-size: 2.48rem;
   }
@@ -742,7 +742,7 @@
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .intro-content {
     .btn {
       min-width: 200px;
@@ -769,7 +769,7 @@
     margin-bottom: 2.2rem;
   }
 
-  .owl-theme .owl-nav [class*="owl-"] {
+  .owl-theme .owl-nav [class*='owl-'] {
     width: 4rem;
     height: 4rem;
     font-size: 2.2rem;
@@ -785,13 +785,13 @@
   }
 }
 
-@include mq("xl", "max") {
-  .owl-simple .owl-nav [class*="owl-"] {
+@include mq('xl', 'max') {
+  .owl-simple .owl-nav [class*='owl-'] {
     display: none;
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .intro-title {
     font-size: 4.2rem;
   }

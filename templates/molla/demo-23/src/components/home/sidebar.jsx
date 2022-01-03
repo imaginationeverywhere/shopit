@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function SideBar(props) {
-  const [path, setPath] = useState("");
-  const PUBLIC_URL = "/react/molla";
+  const [path, setPath] = useState('');
+  const PUBLIC_URL = '/react/molla';
 
   useEffect(() => {
     setPath(window.location.href);
@@ -11,28 +11,28 @@ function SideBar(props) {
 
   useEffect(() => {
     document
-      .querySelector(".megamenu-container .sf-with-ul")
-      .addEventListener("mouseover", function (e) {
-        let demoItems = document.querySelectorAll(".demo-item.show");
+      .querySelector('.megamenu-container .sf-with-ul')
+      .addEventListener('mouseover', function (e) {
+        let demoItems = document.querySelectorAll('.demo-item.show');
         for (let i = 0; i < demoItems.length; i++) {
-          demoItems[i].classList.toggle("show");
+          demoItems[i].classList.toggle('show');
         }
         document
-          .querySelector(".view-all-demos")
-          .classList.remove("disabled-hidden");
+          .querySelector('.view-all-demos')
+          .classList.remove('disabled-hidden');
       });
   });
 
   function showAllDemosHandler(e) {
-    let demoItems = document.querySelectorAll(".demo-item.hidden");
+    let demoItems = document.querySelectorAll('.demo-item.hidden');
 
     for (let i = 0; i < demoItems.length; i++) {
-      demoItems[i].classList.toggle("show");
+      demoItems[i].classList.toggle('show');
     }
 
     document
-      .querySelector(".view-all-demos")
-      .classList.toggle("disabled-hidden");
+      .querySelector('.view-all-demos')
+      .classList.toggle('disabled-hidden');
     e.preventDefault();
   }
 
@@ -241,7 +241,7 @@ function SideBar(props) {
                   </div>
                 </div>
               </li>
-              <li className={path.indexOf("shop") > -1 ? "active" : ""}>
+              <li className={path.indexOf('shop') > -1 ? 'active' : ''}>
                 <Link
                   to={`${process.env.PUBLIC_URL}/shop/sidebar/list`}
                   className="sf-with-ul"
@@ -334,12 +334,12 @@ function SideBar(props) {
                 </div>
               </li>
 
-              <li className={path.indexOf("about") > -1 ? "active" : ""}>
+              <li className={path.indexOf('about') > -1 ? 'active' : ''}>
                 <Link
                   to={`${process.env.PUBLIC_URL}/pages/about`}
                   className="sf-with-ul"
                 >
-                  About us{" "}
+                  About us{' '}
                 </Link>
 
                 <div className="megamenu demo left">
@@ -363,7 +363,7 @@ function SideBar(props) {
                 </div>
               </li>
 
-              <li className={path.indexOf("blog/") > -1 ? "active" : ""}>
+              <li className={path.indexOf('blog/') > -1 ? 'active' : ''}>
                 <Link
                   to={`${process.env.PUBLIC_URL}/blog/classic`}
                   className="sf-with-ul"
@@ -531,7 +531,7 @@ function SideBar(props) {
                 </div>
               </li>
 
-              <li className={path.indexOf("contact") > -1 ? "active" : ""}>
+              <li className={path.indexOf('contact') > -1 ? 'active' : ''}>
                 <Link
                   to={`${process.env.PUBLIC_URL}/pages/contact`}
                   className="sf-with-ul"
@@ -560,7 +560,7 @@ function SideBar(props) {
                 </div>
               </li>
 
-              <li className={path.indexOf("element") > -1 ? "active" : ""}>
+              <li className={path.indexOf('element') > -1 ? 'active' : ''}>
                 <Link to="#" className="sf-with-ul">
                   buy Molla
                 </Link>

@@ -1,15 +1,15 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
 // import Custom Components
-import ProductNine from "../features/product/product-nine";
+import ProductNine from '../features/product/product-nine';
 
 // import Component
-import DealProduct from "./deal-product";
+import DealProduct from './deal-product';
 
 // import Services & Actions
-import { addToCart, toggleWishlist, showQuickViewModal } from "../../actions";
-import { getFeaturedProducts } from "../../services";
+import { addToCart, toggleWishlist, showQuickViewModal } from '../../actions';
+import { getFeaturedProducts } from '../../services';
 
 function SpecialCollection(props) {
   let products = props.products;

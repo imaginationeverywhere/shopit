@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
-import imagesLoaded from "imagesloaded";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import imagesLoaded from 'imagesloaded';
+import { Helmet } from 'react-helmet';
 
-import Breadcrumb from "../../common/breadcrumb";
-import QuickView from "../../features/product/common/quickview";
-import MediaOne from "./partials/media/media-one";
-import DetailThree from "./partials/details/detail-three";
-import DescOne from "./partials/description/desc-one";
-import RelatedProducts from "./partials/related-products";
+import Breadcrumb from '../../common/breadcrumb';
+import QuickView from '../../features/product/common/quickview';
+import MediaOne from './partials/media/media-one';
+import DetailThree from './partials/details/detail-three';
+import DescOne from './partials/description/desc-one';
+import RelatedProducts from './partials/related-products';
 
-import { productGallery } from "../../../utils";
+import { productGallery } from '../../../utils';
 
 export default function CenteredProduct(props) {
   const productId = props.match.params.id;
@@ -17,12 +17,12 @@ export default function CenteredProduct(props) {
   useEffect(() => {
     productGallery();
 
-    document.querySelector(".skel-pro-single").classList.remove("loaded");
+    document.querySelector('.skel-pro-single').classList.remove('loaded');
 
-    let imgLoad = imagesLoaded(".product-main-image", { background: true });
+    let imgLoad = imagesLoaded('.product-main-image', { background: true });
 
-    imgLoad.on("done", function (instance, image) {
-      document.querySelector(".skel-pro-single").classList.add("loaded");
+    imgLoad.on('done', function (instance, image) {
+      document.querySelector('.skel-pro-single').classList.add('loaded');
     });
   }, [productId]);
 
@@ -39,7 +39,7 @@ export default function CenteredProduct(props) {
       <div className="main">
         <Breadcrumb
           title="Centered"
-          parent1={["Products", "product"]}
+          parent1={['Products', 'product']}
           slug="centered"
           type="product"
           adClass="breadcrumb-nav border-0 mb-0"

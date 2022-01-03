@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function ProfileOne(props) {
   const { image, name, title, content } = props;
@@ -7,7 +7,7 @@ function ProfileOne(props) {
   return (
     <div className="member member-anim text-center">
       <figure className="member-media">
-        <img src={process.env.PUBLIC_URL + "/" + image} alt="member" />
+        <img src={process.env.PUBLIC_URL + '/' + image} alt="member" />
 
         <figcaption className="member-overlay">
           <div className="member-overlay-content">

@@ -1,21 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 // Common Header Components
-import MainMenu from "./partials/main-menu";
-import CartMenu from "./partials/cart-menu";
-import CategoryMenu from "./partials/category-menu";
-import SearchForm from "./partials/search-form";
-import LoginModal from "../features/modal/login-modal";
+import MainMenu from './partials/main-menu';
+import CartMenu from './partials/cart-menu';
+import CategoryMenu from './partials/category-menu';
+import SearchForm from './partials/search-form';
+import LoginModal from '../features/modal/login-modal';
 
-import { showModal } from "../../actions";
+import { showModal } from '../../actions';
 
 function Header(props) {
-  const { container = "container", isWishlist, showModal } = props;
+  const { container = 'container', isWishlist, showModal } = props;
 
   function openLoginModal(e) {
-    showModal("login");
+    showModal('login');
     e.preventDefault();
   }
 

@@ -1,16 +1,16 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import ProductNine from "../features/product/product-nine";
+import ProductNine from '../features/product/product-nine';
 
 import {
   addToCart,
   toggleWishlist,
   addToCompare,
   showQuickViewModal,
-} from "../../actions";
-import { getTopSellingProducts } from "../../services";
+} from '../../actions';
+import { getTopSellingProducts } from '../../services';
 
 function ProductCollection(props) {
   const { addToCart, toggleWishlist, addToCompare, showQuickViewModal } = props;

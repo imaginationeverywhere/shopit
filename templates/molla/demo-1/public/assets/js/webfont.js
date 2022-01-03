@@ -34,7 +34,7 @@
   function p(a, b, c) {
     p =
       Function.prototype.bind &&
-      -1 != Function.prototype.bind.toString().indexOf("native code")
+      -1 != Function.prototype.bind.toString().indexOf('native code')
         ? aa
         : ba;
     return p.apply(null, arguments);
@@ -55,7 +55,7 @@
     if (c)
       for (var e in c)
         c.hasOwnProperty(e) &&
-          ("style" == e ? (b.style.cssText = c[e]) : b.setAttribute(e, c[e]));
+          ('style' == e ? (b.style.cssText = c[e]) : b.setAttribute(e, c[e]));
     d && b.appendChild(a.c.createTextNode(d));
     return b;
   }
@@ -89,9 +89,9 @@
       f || b.push(d[e]);
     }
     a.className = b
-      .join(" ")
-      .replace(/\s+/g, " ")
-      .replace(/^\s+|\s+$/, "");
+      .join(' ')
+      .replace(/\s+/g, ' ')
+      .replace(/^\s+|\s+$/, '');
   }
   function y(a, b) {
     for (var c = a.className.split(/\s+/), d = 0, e = c.length; d < e; d++)
@@ -99,10 +99,10 @@
     return !1;
   }
   function z(a) {
-    if ("string" === typeof a.f) return a.f;
+    if ('string' === typeof a.f) return a.f;
     var b = a.m.location.protocol;
-    "about:" == b && (b = a.a.location.protocol);
-    return "https:" == b ? "https:" : "http:";
+    'about:' == b && (b = a.a.location.protocol);
+    return 'https:' == b ? 'https:' : 'http:';
   }
   function ea(a) {
     return a.m.location.hostname || a.a.location.hostname;
@@ -111,7 +111,7 @@
     function d() {
       k && e && f && (k(g), (k = null));
     }
-    b = t(a, "link", { rel: "stylesheet", href: b, media: "all" });
+    b = t(a, 'link', { rel: 'stylesheet', href: b, media: 'all' });
     var e = !1,
       f = !0,
       g = null,
@@ -123,33 +123,33 @@
         }),
         (b.onerror = function () {
           e = !0;
-          g = Error("Stylesheet failed to load");
+          g = Error('Stylesheet failed to load');
           d();
         }))
       : setTimeout(function () {
           e = !0;
           d();
         }, 0);
-    u(a, "head", b);
+    u(a, 'head', b);
   }
   function B(a, b, c, d) {
-    var e = a.c.getElementsByTagName("head")[0];
+    var e = a.c.getElementsByTagName('head')[0];
     if (e) {
-      var f = t(a, "script", { src: b }),
+      var f = t(a, 'script', { src: b }),
         g = !1;
       f.onload = f.onreadystatechange = function () {
         g ||
           (this.readyState &&
-            "loaded" != this.readyState &&
-            "complete" != this.readyState) ||
+            'loaded' != this.readyState &&
+            'complete' != this.readyState) ||
           ((g = !0),
           c && c(null),
           (f.onload = f.onreadystatechange = null),
-          "HEAD" == f.parentNode.tagName && e.removeChild(f));
+          'HEAD' == f.parentNode.tagName && e.removeChild(f));
       };
       e.appendChild(f);
       setTimeout(function () {
-        g || ((g = !0), c && c(Error("Script load timeout")));
+        g || ((g = !0), c && c(Error('Script load timeout')));
       }, d || 5e3);
       return f;
     }
@@ -174,43 +174,43 @@
     0 == a.a && a.c && (a.c(), (a.c = null));
   }
   function G(a) {
-    this.a = a || "-";
+    this.a = a || '-';
   }
   G.prototype.c = function (a) {
     for (var b = [], c = 0; c < arguments.length; c++)
-      b.push(arguments[c].replace(/[\W_]+/g, "").toLowerCase());
+      b.push(arguments[c].replace(/[\W_]+/g, '').toLowerCase());
     return b.join(this.a);
   };
   function H(a, b) {
     this.c = a;
     this.f = 4;
-    this.a = "n";
-    var c = (b || "n4").match(/^([nio])([1-9])$/i);
+    this.a = 'n';
+    var c = (b || 'n4').match(/^([nio])([1-9])$/i);
     c && ((this.a = c[1]), (this.f = parseInt(c[2], 10)));
   }
   function fa(a) {
-    return I(a) + " " + (a.f + "00") + " 300px " + J(a.c);
+    return I(a) + ' ' + (a.f + '00') + ' 300px ' + J(a.c);
   }
   function J(a) {
     var b = [];
     a = a.split(/,\s*/);
     for (var c = 0; c < a.length; c++) {
-      var d = a[c].replace(/['"]/g, "");
-      -1 != d.indexOf(" ") || /^\d/.test(d) ? b.push("'" + d + "'") : b.push(d);
+      var d = a[c].replace(/['"]/g, '');
+      -1 != d.indexOf(' ') || /^\d/.test(d) ? b.push("'" + d + "'") : b.push(d);
     }
-    return b.join(",");
+    return b.join(',');
   }
   function K(a) {
     return a.a + a.f;
   }
   function I(a) {
-    var b = "normal";
-    "o" === a.a ? (b = "oblique") : "i" === a.a && (b = "italic");
+    var b = 'normal';
+    'o' === a.a ? (b = 'oblique') : 'i' === a.a && (b = 'italic');
     return b;
   }
   function ga(a) {
     var b = 4,
-      c = "n",
+      c = 'n',
       d = null;
     a &&
       ((d = a.match(/(normal|oblique|italic)/i)) &&
@@ -227,23 +227,23 @@
     this.c = a;
     this.f = a.m.document.documentElement;
     this.h = b;
-    this.a = new G("-");
+    this.a = new G('-');
     this.j = !1 !== b.events;
     this.g = !1 !== b.classes;
   }
   function ia(a) {
-    a.g && w(a.f, [a.a.c("wf", "loading")]);
-    L(a, "loading");
+    a.g && w(a.f, [a.a.c('wf', 'loading')]);
+    L(a, 'loading');
   }
   function M(a) {
     if (a.g) {
-      var b = y(a.f, a.a.c("wf", "active")),
+      var b = y(a.f, a.a.c('wf', 'active')),
         c = [],
-        d = [a.a.c("wf", "loading")];
-      b || c.push(a.a.c("wf", "inactive"));
+        d = [a.a.c('wf', 'loading')];
+      b || c.push(a.a.c('wf', 'inactive'));
       w(a.f, c, d);
     }
-    L(a, "inactive");
+    L(a, 'inactive');
   }
   function L(a, b, c) {
     if (a.j && a.h[b])
@@ -266,17 +266,17 @@
   function N(a, b) {
     this.c = a;
     this.f = b;
-    this.a = t(this.c, "span", { "aria-hidden": "true" }, this.f);
+    this.a = t(this.c, 'span', { 'aria-hidden': 'true' }, this.f);
   }
   function O(a) {
-    u(a.c, "body", a.a);
+    u(a.c, 'body', a.a);
   }
   function P(a) {
     return (
-      "display:block;position:absolute;top:-9999px;left:-9999px;font-size:300px;width:auto;height:auto;line-height:normal;margin:0;padding:0;font-variant:normal;white-space:nowrap;font-family:" +
+      'display:block;position:absolute;top:-9999px;left:-9999px;font-size:300px;width:auto;height:auto;line-height:normal;margin:0;padding:0;font-variant:normal;white-space:nowrap;font-family:' +
       J(a.c) +
-      ";" +
-      ("font-style:" + I(a) + ";font-weight:" + (a.f + "00") + ";")
+      ';' +
+      ('font-style:' + I(a) + ';font-weight:' + (a.f + '00') + ';')
     );
   }
   function Q(a, b, c, d, e, f) {
@@ -301,7 +301,7 @@
                 },
                 function () {
                   e();
-                }
+                },
               );
         }
         k();
@@ -315,7 +315,7 @@
       },
       function () {
         b.j(b.a);
-      }
+      },
     );
   };
   function R(a, b, c, d, e, f, g) {
@@ -323,7 +323,7 @@
     this.B = b;
     this.c = c;
     this.a = d;
-    this.s = g || "BESbswy";
+    this.s = g || 'BESbswy';
     this.f = {};
     this.w = e || 3e3;
     this.u = f || null;
@@ -332,16 +332,16 @@
     this.h = new N(this.c, this.s);
     this.j = new N(this.c, this.s);
     this.o = new N(this.c, this.s);
-    a = new H(this.a.c + ",serif", K(this.a));
+    a = new H(this.a.c + ',serif', K(this.a));
     a = P(a);
     this.g.a.style.cssText = a;
-    a = new H(this.a.c + ",sans-serif", K(this.a));
+    a = new H(this.a.c + ',sans-serif', K(this.a));
     a = P(a);
     this.h.a.style.cssText = a;
-    a = new H("serif", K(this.a));
+    a = new H('serif', K(this.a));
     a = P(a);
     this.j.a.style.cssText = a;
-    a = new H("sans-serif", K(this.a));
+    a = new H('sans-serif', K(this.a));
     a = P(a);
     this.o.a.style.cssText = a;
     O(this.g);
@@ -349,12 +349,12 @@
     O(this.j);
     O(this.o);
   }
-  var S = { D: "serif", C: "sans-serif" },
+  var S = { D: 'serif', C: 'sans-serif' },
     T = null;
   function U() {
     if (null === T) {
       var a = /AppleWebKit\/([0-9]+)(?:\.([0-9]+))/.exec(
-        window.navigator.userAgent
+        window.navigator.userAgent,
       );
       T =
         !!a &&
@@ -365,7 +365,7 @@
   }
   R.prototype.start = function () {
     this.f.serif = this.j.a.offsetWidth;
-    this.f["sans-serif"] = this.o.a.offsetWidth;
+    this.f['sans-serif'] = this.o.a.offsetWidth;
     this.A = q();
     la(this);
   };
@@ -378,7 +378,7 @@
     var b = a.g.a.offsetWidth,
       c = a.h.a.offsetWidth,
       d;
-    (d = b === a.f.serif && c === a.f["sans-serif"]) ||
+    (d = b === a.f.serif && c === a.f['sans-serif']) ||
       (d = U() && ma(a, b, c));
     d
       ? q() - a.A >= a.w
@@ -393,7 +393,7 @@
       p(function () {
         la(this);
       }, a),
-      50
+      50,
     );
   }
   function V(a, b) {
@@ -405,7 +405,7 @@
         v(this.o.a);
         b(this.a);
       }, a),
-      0
+      0,
     );
   }
   function W(a, b, c) {
@@ -421,26 +421,26 @@
     b.g &&
       w(
         b.f,
-        [b.a.c("wf", a.c, K(a).toString(), "active")],
+        [b.a.c('wf', a.c, K(a).toString(), 'active')],
         [
-          b.a.c("wf", a.c, K(a).toString(), "loading"),
-          b.a.c("wf", a.c, K(a).toString(), "inactive"),
-        ]
+          b.a.c('wf', a.c, K(a).toString(), 'loading'),
+          b.a.c('wf', a.c, K(a).toString(), 'inactive'),
+        ],
       );
-    L(b, "fontactive", a);
+    L(b, 'fontactive', a);
     this.o = !0;
     oa(this);
   };
   W.prototype.h = function (a) {
     var b = this.a;
     if (b.g) {
-      var c = y(b.f, b.a.c("wf", a.c, K(a).toString(), "active")),
+      var c = y(b.f, b.a.c('wf', a.c, K(a).toString(), 'active')),
         d = [],
-        e = [b.a.c("wf", a.c, K(a).toString(), "loading")];
-      c || d.push(b.a.c("wf", a.c, K(a).toString(), "inactive"));
+        e = [b.a.c('wf', a.c, K(a).toString(), 'loading')];
+      c || d.push(b.a.c('wf', a.c, K(a).toString(), 'inactive'));
       w(b.f, d, e);
     }
-    L(b, "fontinactive", a);
+    L(b, 'fontinactive', a);
     oa(this);
   };
   function oa(a) {
@@ -451,10 +451,10 @@
           a.g &&
             w(
               a.f,
-              [a.a.c("wf", "active")],
-              [a.a.c("wf", "loading"), a.a.c("wf", "inactive")]
+              [a.a.c('wf', 'active')],
+              [a.a.c('wf', 'loading'), a.a.c('wf', 'inactive')],
             ),
-          L(a, "active"))
+          L(a, 'active'))
         : M(a.a));
   }
   function pa(a) {
@@ -486,8 +486,8 @@
               n = k[l.c],
               r = b.a,
               x = l;
-            r.g && w(r.f, [r.a.c("wf", x.c, K(x).toString(), "loading")]);
-            L(r, "fontloading", x);
+            r.g && w(r.f, [r.a.c('wf', x.c, K(x).toString(), 'loading')]);
+            L(r, 'fontloading', x);
             r = null;
             null === X &&
               (X = window.FontFace
@@ -523,13 +523,13 @@
   }
   function ta(a, b, c) {
     var d = z(a.c);
-    a = (a.a.api || "fast.fonts.net/jsapi").replace(/^.*http(s?):(\/\/)?/, "");
-    return d + "//" + a + "/" + b + ".js" + (c ? "?v=" + c : "");
+    a = (a.a.api || 'fast.fonts.net/jsapi').replace(/^.*http(s?):(\/\/)?/, '');
+    return d + '//' + a + '/' + b + '.js' + (c ? '?v=' + c : '');
   }
   sa.prototype.load = function (a) {
     function b() {
-      if (f["__mti_fntLst" + d]) {
-        var c = f["__mti_fntLst" + d](),
+      if (f['__mti_fntLst' + d]) {
+        var c = f['__mti_fntLst' + d](),
           e = [],
           h;
         if (c)
@@ -553,11 +553,11 @@
       B(this.c, ta(c, d, e), function (e) {
         e
           ? a([])
-          : ((f["__MonotypeConfiguration__" + d] = function () {
+          : ((f['__MonotypeConfiguration__' + d] = function () {
               return c.a;
             }),
             b());
-      }).id = "__MonotypeAPIScript__" + d;
+      }).id = '__MonotypeAPIScript__' + d;
     } else a([]);
   };
   function ua(a, b) {
@@ -576,8 +576,8 @@
     var k = [];
     b = 0;
     for (c = e.length; b < c; b++)
-      if (((d = e[b].split(":")), d[1]))
-        for (var h = d[1].split(","), m = 0; m < h.length; m += 1)
+      if (((d = e[b].split(':')), d[1]))
+        for (var h = d[1].split(','), m = 0; m < h.length; m += 1)
           k.push(new H(d[0], h[m]));
       else k.push(new H(d[0]));
     F(g, function () {
@@ -588,26 +588,26 @@
     a ? (this.c = a) : (this.c = b + wa);
     this.a = [];
     this.f = [];
-    this.g = c || "";
+    this.g = c || '';
   }
-  var wa = "//fonts.googleapis.com/css";
+  var wa = '//fonts.googleapis.com/css';
   function xa(a, b) {
     for (var c = b.length, d = 0; d < c; d++) {
-      var e = b[d].split(":");
+      var e = b[d].split(':');
       3 == e.length && a.f.push(e.pop());
-      var f = "";
-      2 == e.length && "" != e[1] && (f = ":");
+      var f = '';
+      2 == e.length && '' != e[1] && (f = ':');
       a.a.push(e.join(f));
     }
   }
   function ya(a) {
-    if (0 == a.a.length) throw Error("No fonts to load!");
-    if (-1 != a.c.indexOf("kit=")) return a.c;
+    if (0 == a.a.length) throw Error('No fonts to load!');
+    if (-1 != a.c.indexOf('kit=')) return a.c;
     for (var b = a.a.length, c = [], d = 0; d < b; d++)
-      c.push(a.a[d].replace(/ /g, "+"));
-    b = a.c + "?family=" + c.join("%7C");
-    0 < a.f.length && (b += "&subset=" + a.f.join(","));
-    0 < a.g.length && (b += "&text=" + encodeURIComponent(a.g));
+      c.push(a.a[d].replace(/ /g, '+'));
+    b = a.c + '?family=' + c.join('%7C');
+    0 < a.f.length && (b += '&subset=' + a.f.join(','));
+    0 < a.g.length && (b += '&text=' + encodeURIComponent(a.g));
     return b;
   }
   function za(a) {
@@ -616,75 +616,75 @@
     this.c = {};
   }
   var Aa = {
-      latin: "BESbswy",
-      "latin-ext": "\u00e7\u00f6\u00fc\u011f\u015f",
-      cyrillic: "\u0439\u044f\u0416",
-      greek: "\u03b1\u03b2\u03a3",
-      khmer: "\u1780\u1781\u1782",
-      Hanuman: "\u1780\u1781\u1782",
+      latin: 'BESbswy',
+      'latin-ext': '\u00e7\u00f6\u00fc\u011f\u015f',
+      cyrillic: '\u0439\u044f\u0416',
+      greek: '\u03b1\u03b2\u03a3',
+      khmer: '\u1780\u1781\u1782',
+      Hanuman: '\u1780\u1781\u1782',
     },
     Ba = {
-      thin: "1",
-      extralight: "2",
-      "extra-light": "2",
-      ultralight: "2",
-      "ultra-light": "2",
-      light: "3",
-      regular: "4",
-      book: "4",
-      medium: "5",
-      "semi-bold": "6",
-      semibold: "6",
-      "demi-bold": "6",
-      demibold: "6",
-      bold: "7",
-      "extra-bold": "8",
-      extrabold: "8",
-      "ultra-bold": "8",
-      ultrabold: "8",
-      black: "9",
-      heavy: "9",
-      l: "3",
-      r: "4",
-      b: "7",
+      thin: '1',
+      extralight: '2',
+      'extra-light': '2',
+      ultralight: '2',
+      'ultra-light': '2',
+      light: '3',
+      regular: '4',
+      book: '4',
+      medium: '5',
+      'semi-bold': '6',
+      semibold: '6',
+      'demi-bold': '6',
+      demibold: '6',
+      bold: '7',
+      'extra-bold': '8',
+      extrabold: '8',
+      'ultra-bold': '8',
+      ultrabold: '8',
+      black: '9',
+      heavy: '9',
+      l: '3',
+      r: '4',
+      b: '7',
     },
-    Ca = { i: "i", italic: "i", n: "n", normal: "n" },
+    Ca = { i: 'i', italic: 'i', n: 'n', normal: 'n' },
     Da =
       /^(thin|(?:(?:extra|ultra)-?)?light|regular|book|medium|(?:(?:semi|demi|extra|ultra)-?)?bold|black|heavy|l|r|b|[1-9]00)?(n|i|normal|italic)?$/;
   function Ea(a) {
     for (var b = a.f.length, c = 0; c < b; c++) {
-      var d = a.f[c].split(":"),
-        e = d[0].replace(/\+/g, " "),
-        f = ["n4"];
+      var d = a.f[c].split(':'),
+        e = d[0].replace(/\+/g, ' '),
+        f = ['n4'];
       if (2 <= d.length) {
         var g;
         var k = d[1];
         g = [];
         if (k)
-          for (var k = k.split(","), h = k.length, m = 0; m < h; m++) {
+          for (var k = k.split(','), h = k.length, m = 0; m < h; m++) {
             var l;
             l = k[m];
             if (l.match(/^[\w-]+$/)) {
               var n = Da.exec(l.toLowerCase());
-              if (null == n) l = "";
+              if (null == n) l = '';
               else {
                 l = n[2];
-                l = null == l || "" == l ? "n" : Ca[l];
+                l = null == l || '' == l ? 'n' : Ca[l];
                 n = n[1];
-                if (null == n || "" == n) n = "4";
+                if (null == n || '' == n) n = '4';
                 else
                   var r = Ba[n],
-                    n = r ? r : isNaN(n) ? "4" : n.substr(0, 1);
-                l = [l, n].join("");
+                    n = r ? r : isNaN(n) ? '4' : n.substr(0, 1);
+                l = [l, n].join('');
               }
-            } else l = "";
+            } else l = '';
             l && g.push(l);
           }
         0 < g.length && (f = g);
         3 == d.length &&
           ((d = d[2]),
           (g = []),
-          (d = d ? d.split(",") : g),
+          (d = d ? d.split(',') : g),
           0 < d.length && (d = Aa[d[0]]) && (a.c[e] = d));
       }
       a.c[e] || ((d = Aa[e]) && (a.c[e] = d));
@@ -719,7 +719,7 @@
     b
       ? B(
           this.c,
-          (this.a.api || "https://use.typekit.net") + "/" + b + ".js",
+          (this.a.api || 'https://use.typekit.net') + '/' + b + '.js',
           function (b) {
             if (b) a([]);
             else if (c.Typekit && c.Typekit.config && c.Typekit.config.fn) {
@@ -733,7 +733,7 @@
               a(e);
             }
           },
-          2e3
+          2e3,
         )
       : a([]);
   };
@@ -754,8 +754,8 @@
             d.a.push(
               new H(
                 h.name,
-                ga("font-weight:" + h.weight + ";font-style:" + h.style)
-              )
+                ga('font-weight:' + h.weight + ';font-style:' + h.style),
+              ),
             );
           }
           a(d.a);
@@ -763,14 +763,14 @@
         B(
           this.c,
           z(this.c) +
-            (this.f.api || "//f.fontdeck.com/s/css/js/") +
+            (this.f.api || '//f.fontdeck.com/s/css/js/') +
             ea(this.c) +
-            "/" +
+            '/' +
             b +
-            ".js",
+            '.js',
           function (b) {
             b && a([]);
-          }
+          },
         ))
       : a([]);
   };
@@ -791,11 +791,11 @@
     return new Fa(b, a);
   };
   var Z = { load: p(Y.load, Y) };
-  "function" === typeof define && define.amd
+  'function' === typeof define && define.amd
     ? define(function () {
         return Z;
       })
-    : "undefined" !== typeof module && module.exports
+    : 'undefined' !== typeof module && module.exports
     ? (module.exports = Z)
     : ((window.WebFont = Z),
       window.WebFontConfig && Y.load(window.WebFontConfig));

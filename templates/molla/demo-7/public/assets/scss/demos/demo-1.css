@@ -238,7 +238,7 @@
   padding-bottom: 2.5rem;
 }
 
-.products > .row > [class*="col-"] {
+.products > .row > [class*='col-'] {
   display: block;
   margin-bottom: -4rem;
 }
@@ -351,7 +351,7 @@
 }
 .deal-countdown .countdown-section:not(:last-child):after {
   color: #333333;
-  content: ":";
+  content: ':';
   display: inline-block;
   font-weight: 400;
   font-size: 20px;

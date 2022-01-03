@@ -1,13 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function ProductCategoryTwo(props) {
-  const { image, category, count, adClass = "" } = props;
+  const { image, category, count, adClass = '' } = props;
 
   return (
     <div className="banner banner-cat">
       <Link to={`${process.env.PUBLIC_URL}/shop/sidebar/list`}>
-        <img src={process.env.PUBLIC_URL + "/" + image} alt="Banner" />
+        <img src={process.env.PUBLIC_URL + '/' + image} alt="Banner" />
       </Link>
 
       <div className="banner-content banner-content-overlay text-center">

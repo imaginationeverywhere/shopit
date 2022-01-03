@@ -1,13 +1,13 @@
-import React, { Fragment, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { MDBDataTable } from "mdbreact";
+import React, { Fragment, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { MDBDataTable } from 'mdbreact';
 
-import MetaData from "../layout/MetaData";
-import Loader from "../layout/Loader";
+import MetaData from '../layout/MetaData';
+import Loader from '../layout/Loader';
 
-import { useAlert } from "react-alert";
-import { useDispatch, useSelector } from "react-redux";
-import { myOrders, clearErrors } from "../../actions/orderActions";
+import { useAlert } from 'react-alert';
+import { useDispatch, useSelector } from 'react-redux';
+import { myOrders, clearErrors } from '../../actions/orderActions';
 
 const ListOrders = () => {
   const alert = useAlert();
@@ -28,29 +28,29 @@ const ListOrders = () => {
     const data = {
       columns: [
         {
-          label: "Order ID",
-          field: "id",
-          sort: "asc",
+          label: 'Order ID',
+          field: 'id',
+          sort: 'asc',
         },
         {
-          label: "Num of Items",
-          field: "numOfItems",
-          sort: "asc",
+          label: 'Num of Items',
+          field: 'numOfItems',
+          sort: 'asc',
         },
         {
-          label: "Amount",
-          field: "amount",
-          sort: "asc",
+          label: 'Amount',
+          field: 'amount',
+          sort: 'asc',
         },
         {
-          label: "Status",
-          field: "status",
-          sort: "asc",
+          label: 'Status',
+          field: 'status',
+          sort: 'asc',
         },
         {
-          label: "Actions",
-          field: "actions",
-          sort: "asc",
+          label: 'Actions',
+          field: 'actions',
+          sort: 'asc',
         },
       ],
       rows: [],
@@ -63,10 +63,10 @@ const ListOrders = () => {
         amount: `$${order.totalPrice}`,
         status:
           order.orderStatus &&
-          String(order.orderStatus).includes("Delivered") ? (
-            <p style={{ color: "green" }}>{order.orderStatus}</p>
+          String(order.orderStatus).includes('Delivered') ? (
+            <p style={{ color: 'green' }}>{order.orderStatus}</p>
           ) : (
-            <p style={{ color: "red" }}>{order.orderStatus}</p>
+            <p style={{ color: 'red' }}>{order.orderStatus}</p>
           ),
         actions: (
           <Link to={`/order/${order._id}`} className="btn btn-primary">
@@ -81,7 +81,7 @@ const ListOrders = () => {
 
   return (
     <Fragment>
-      <MetaData title={"My Orders"} />
+      <MetaData title={'My Orders'} />
 
       <h1 className="my-5">My Orders</h1>
 

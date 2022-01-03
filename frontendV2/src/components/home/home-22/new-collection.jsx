@@ -1,15 +1,15 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
 // import custom component
-import ProductNine from "../../features/product/product-nine";
+import ProductNine from '../../features/product/product-nine';
 
 // import Actions
 import {
   addToCart,
   toggleWishlist,
   showQuickViewModal,
-} from "../../../actions";
+} from '../../../actions';
 
 function NewCollection(props) {
   const { addToCart, toggleWishlist, showQuickViewModal } = props;

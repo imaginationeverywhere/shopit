@@ -93,7 +93,7 @@
       padding-bottom: 2.3rem;
 
       &:before {
-        content: "";
+        content: '';
         display: block;
         height: 1px;
         position: absolute;
@@ -156,7 +156,7 @@
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .header-middle .header-center {
     display: block;
   }

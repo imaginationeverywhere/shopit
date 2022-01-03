@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
-import { connect } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import { Tabs, Tab, TabList, TabPanel } from 'react-tabs';
+import { connect } from 'react-redux';
 
-import ProductNine from "../features/product/product-nine";
+import ProductNine from '../features/product/product-nine';
 
-import { getProductsByCategory } from "../../services";
-import { addToCart, toggleWishlist, showQuickViewModal } from "../../actions";
-import data from "../../mock_data/data.json";
+import { getProductsByCategory } from '../../services';
+import { addToCart, toggleWishlist, showQuickViewModal } from '../../actions';
+import data from '../../mock_data/data.json';
 
 function NewCollection(props) {
   const { addToCart, toggleWishlist, showQuickViewModal } = props;
@@ -16,7 +16,7 @@ function NewCollection(props) {
   let timer;
 
   let products = props.products;
-  products = getProductsByCategory(products.slice(35, 50), ["Women", "Men"]);
+  products = getProductsByCategory(products.slice(35, 50), ['Women', 'Men']);
 
   function loadMore() {
     // fake async api. products should be fetched from backend
@@ -66,7 +66,7 @@ function NewCollection(props) {
               <div className="row justify-content-center">
                 {getProductsByCategory(
                   products.slice(0, loadedCount),
-                  item.key
+                  item.key,
                 ).map((product, index1) => (
                   <div
                     className="col-6 col-md-4 col-lg-3 col-xl-5col"
@@ -100,7 +100,7 @@ function NewCollection(props) {
             )}
           </button>
         ) : (
-          ""
+          ''
         )}
       </div>
     </React.Fragment>

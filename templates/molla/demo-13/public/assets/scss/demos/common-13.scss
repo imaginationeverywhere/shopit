@@ -10,7 +10,7 @@
       padding-bottom: 2.8rem;
 
       &:before {
-        content: "";
+        content: '';
         display: block;
         height: 1px;
         position: absolute;
@@ -221,7 +221,7 @@
   .compare-dropdown,
   .cart-dropdown,
   .wishlist-link {
-    [class*="count"] {
+    [class*='count'] {
       min-width: 1.6rem;
       height: 1.6rem;
       position: absolute;
@@ -261,7 +261,7 @@
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .header.header-10 {
     .header-dropdown > a,
     .header-dropdown > span {

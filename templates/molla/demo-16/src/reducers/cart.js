@@ -4,14 +4,14 @@ import {
   CHANGE_QTY,
   CHANGE_SHIPPING,
   REFRESH_STORE,
-} from "../constants/action-types";
-import { findIndex } from "../utils";
-import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+} from '../constants/action-types';
+import { findIndex } from '../utils';
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 const initialState = {
   cart: [],
-  shipping: "free",
+  shipping: 'free',
 };
 
 function cartReducer(state = initialState, action) {
@@ -78,7 +78,7 @@ function cartReducer(state = initialState, action) {
       return { ...state, cart };
 
     case REFRESH_STORE:
-      return { ...state, cart: [], shipping: "free" };
+      return { ...state, cart: [], shipping: 'free' };
 
     case CHANGE_SHIPPING:
       return { ...state, shipping: action.shipping };
@@ -89,8 +89,8 @@ function cartReducer(state = initialState, action) {
 }
 
 const persistConfig = {
-  keyPrefix: "molla-",
-  key: "cartlist",
+  keyPrefix: 'molla-',
+  key: 'cartlist',
   storage,
 };
 

@@ -43,7 +43,9 @@ function MediaTwo(props) {
 
 function mapStateToProps(state, props) {
   return {
-    product: state.data.products.filter(product => product.id === props.id)[0],
+    product: state.data.products.filter(
+      (product) => product.id === props.id,
+    )[0],
   };
 }
 

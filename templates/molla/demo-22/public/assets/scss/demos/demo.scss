@@ -1,5 +1,5 @@
-@import "../config/variables";
-@import "../mixins/breakpoints";
+@import '../config/variables';
+@import '../mixins/breakpoints';
 
 .container-fluid {
   .header-search-wrapper.search-wrapper-wide {
@@ -15,13 +15,13 @@
   background-color: #444;
 }
 
-@include mq("xxl") {
+@include mq('xxl') {
   .header .container-fluid .megamenu-container .megamenu {
     transform: translateX(-30%) !important;
   }
 }
 
-@include mq("xl", "max") {
+@include mq('xl', 'max') {
   .megamenu.megamenu-md {
     transform: translateX(-30%);
   }
