@@ -12,7 +12,7 @@
   -moz-backface-visibility: hidden;
 }
 .owl-carousel .owl-stage:after {
-  content: ".";
+  content: '.';
   display: block;
   clear: both;
   visibility: hidden;
@@ -59,7 +59,7 @@
   -ms-user-select: none;
   user-select: none;
 }
-.owl-carousel .owl-nav [class*="owl-"],
+.owl-carousel .owl-nav [class*='owl-'],
 .owl-carousel button.owl-dot {
   background: 0 0;
   color: inherit;
@@ -129,7 +129,7 @@
   transition: opacity 0.4s ease;
 }
 .owl-carousel .owl-item .owl-lazy:not([src]),
-.owl-carousel .owl-item .owl-lazy[src^=""] {
+.owl-carousel .owl-item .owl-lazy[src^=''] {
   max-height: 0;
 }
 .owl-carousel .owl-item img.owl-lazy {
@@ -180,7 +180,7 @@
   text-align: center;
   -webkit-tap-highlight-color: transparent;
 }
-.owl-theme .owl-nav [class*="owl-"] {
+.owl-theme .owl-nav [class*='owl-'] {
   position: absolute;
   top: 50%;
   z-index: 99;
@@ -201,7 +201,7 @@
   border-radius: 50px;
   transition: all 0.3s ease;
 }
-.owl-theme .owl-nav [class*="owl-"]:not(.disabled):hover {
+.owl-theme .owl-nav [class*='owl-']:not(.disabled):hover {
   color: #fff;
   border-color: #2b579a;
   background: #2b579a;
@@ -249,10 +249,10 @@
   border-color: #ccc;
   background: #ccc;
 }
-.owl-theme.owl-light .owl-nav [class*="owl-"] {
+.owl-theme.owl-light .owl-nav [class*='owl-'] {
   border-color: #b7b7b7;
 }
-.owl-theme.owl-light .owl-nav [class*="owl-"]:not(.disabled):hover {
+.owl-theme.owl-light .owl-nav [class*='owl-']:not(.disabled):hover {
   border-color: #2b579a;
 }
 .owl-theme.owl-light .owl-dots .owl-dot:hover span {
@@ -280,7 +280,7 @@
   text-align: center;
   -webkit-tap-highlight-color: transparent;
 }
-.owl-simple .owl-nav [class*="owl-"] {
+.owl-simple .owl-nav [class*='owl-'] {
   position: absolute;
   top: 50%;
   z-index: 99;
@@ -301,10 +301,10 @@
   border-radius: 50px;
   transition: all 0.3s ease;
 }
-.owl-simple .owl-nav [class*="owl-"] i {
+.owl-simple .owl-nav [class*='owl-'] i {
   margin-top: 0.1rem;
 }
-.owl-simple .owl-nav [class*="owl-"]:not(.disabled):hover {
+.owl-simple .owl-nav [class*='owl-']:not(.disabled):hover {
   color: #2b579a;
   background: 0 0;
   text-decoration: none;
@@ -351,7 +351,7 @@
   border-color: #ccc;
   background: #ccc;
 }
-.owl-simple.owl-light .owl-nav [class*="owl-"] {
+.owl-simple.owl-light .owl-nav [class*='owl-'] {
   color: #fff;
 }
 .owl-simple.owl-light .owl-dots .owl-dot:hover span {
@@ -366,7 +366,7 @@
   border-color: #f8f8f8;
   background: #f8f8f8;
 }
-.owl-simple.owl-dark .owl-nav [class*="owl-"] {
+.owl-simple.owl-dark .owl-nav [class*='owl-'] {
   color: #666;
 }
 .owl-simple.owl-dark .owl-dots .owl-dot span {
@@ -394,7 +394,7 @@
   text-align: center;
   -webkit-tap-highlight-color: transparent;
 }
-.owl-full .owl-nav [class*="owl-"] {
+.owl-full .owl-nav [class*='owl-'] {
   position: absolute;
   top: 0;
   z-index: 99;
@@ -415,18 +415,18 @@
   border-radius: 0;
   transition: all 0.3s ease;
 }
-.owl-full .owl-nav [class*="owl-"] i {
+.owl-full .owl-nav [class*='owl-'] i {
   margin-top: 0.1rem;
 }
-.owl-full .owl-nav [class*="owl-"]:focus,
-.owl-full .owl-nav [class*="owl-"]:hover {
+.owl-full .owl-nav [class*='owl-']:focus,
+.owl-full .owl-nav [class*='owl-']:hover {
   color: #2b579a;
   background: #fff;
   text-decoration: none;
   outline: 0 !important;
 }
-.owl-full .owl-nav [class*="owl-"]:before {
-  content: "";
+.owl-full .owl-nav [class*='owl-']:before {
+  content: '';
   display: block;
   width: 10px;
   height: 100%;
@@ -461,7 +461,7 @@
   margin-left: 0;
   margin-right: 0;
 }
-.owl-full.carousel-with-shadow .owl-nav [class*="owl-"] {
+.owl-full.carousel-with-shadow .owl-nav [class*='owl-'] {
   height: calc(100% - 20px);
 }
 .owl-full .owl-nav.disabled + .owl-dots {
@@ -500,15 +500,15 @@
   border-color: #2b579a;
   background: #2b579a;
 }
-.owl-full.owl-nav-dark .owl-nav [class*="owl-"] {
+.owl-full.owl-nav-dark .owl-nav [class*='owl-'] {
   color: #333;
 }
-.owl-full.owl-nav-dark .owl-nav [class*="owl-"]:focus,
-.owl-full.owl-nav-dark .owl-nav [class*="owl-"]:hover {
+.owl-full.owl-nav-dark .owl-nav [class*='owl-']:focus,
+.owl-full.owl-nav-dark .owl-nav [class*='owl-']:hover {
   color: #2b579a;
   background: #fff;
 }
-.bg-light .owl-full .owl-nav [class*="owl-"]:focus,
-.bg-light .owl-full .owl-nav [class*="owl-"]:hover {
+.bg-light .owl-full .owl-nav [class*='owl-']:focus,
+.bg-light .owl-full .owl-nav [class*='owl-']:hover {
   background: #f8f8f8;
 }

@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import classes from "../styles/templates.module.scss";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import classes from '../styles/templates.module.scss';
 import {
   getAllTemplates,
   setTemplate,
   previewTemplate,
-} from "../../../actions";
+} from '../../../actions';
 
 const ActiveButton = styled.button`
   display: flex;
@@ -17,7 +17,7 @@ const ActiveButton = styled.button`
   padding: 1rem;
   border: 1px solid gray;
   border-radius: 0.25rem;
-  background: ${({ isActive }) => (isActive ? "green" : "gray")};
+  background: ${({ isActive }) => (isActive ? 'green' : 'gray')};
   color: white;
   :hover {
     background: white;
@@ -39,7 +39,7 @@ function TemplateTable() {
   if (templates.length < 1) return null;
 
   return (
-    <table className={classes["templates-table"]}>
+    <table className={classes['templates-table']}>
       <tr>
         <th>ID</th>
         <th>Name</th>
@@ -48,14 +48,14 @@ function TemplateTable() {
       {templates.map(({ templateId, name, isActive }) => {
         const handlePreview = () => {
           previewTemplate(templateId);
-          dispatch({ type: "PREVIEW_TEMPLATE", id: templateId });
+          dispatch({ type: 'PREVIEW_TEMPLATE', id: templateId });
         };
 
         return (
           <tr key={templateId}>
             <td>{templateId}</td>
             <td>{name}</td>
-            <td className={classes["templates-table-actions"]}>
+            <td className={classes['templates-table-actions']}>
               {
                 <>
                   <Link
@@ -70,8 +70,8 @@ function TemplateTable() {
                     onClick={setTemplate(templateId)}
                     isActive={isActive}
                   >
-                    {loading ? "Loading..." : ""}
-                    {!loading && isActive ? "Active" : "Set Template"}
+                    {loading ? 'Loading...' : ''}
+                    {!loading && isActive ? 'Active' : 'Set Template'}
                   </ActiveButton>
                 </>
               }

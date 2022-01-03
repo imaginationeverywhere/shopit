@@ -1,55 +1,55 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function SearchForm() {
   useEffect(() => {
     document
-      .querySelector(".search-toggle")
-      .addEventListener("click", onSearchToggleHandler);
+      .querySelector('.search-toggle')
+      .addEventListener('click', onSearchToggleHandler);
     document
-      .querySelector(".header-search")
-      .addEventListener("click", function (e) {
+      .querySelector('.header-search')
+      .addEventListener('click', function (e) {
         e.stopPropagation();
       });
 
     document
-      .querySelector("body")
-      .addEventListener("click", onSearchToggleHandler1);
+      .querySelector('body')
+      .addEventListener('click', onSearchToggleHandler1);
 
     return () => {
       document
-        .querySelector(".search-toggle")
-        .removeEventListener("click", onSearchToggleHandler);
+        .querySelector('.search-toggle')
+        .removeEventListener('click', onSearchToggleHandler);
       document
-        .querySelector(".header-search")
-        .addEventListener("click", function (e) {
+        .querySelector('.header-search')
+        .addEventListener('click', function (e) {
           e.stopPropagation();
         });
       document
-        .querySelector("body")
-        .addEventListener("click", onSearchToggleHandler1);
+        .querySelector('body')
+        .addEventListener('click', onSearchToggleHandler1);
     };
   });
 
   function onSearchToggleHandler1(e) {
     if (
-      document.querySelector(".header-search-wrapper") &&
+      document.querySelector('.header-search-wrapper') &&
       document
-        .querySelector(".header-search-wrapper")
-        .classList.contains("show")
+        .querySelector('.header-search-wrapper')
+        .classList.contains('show')
     ) {
-      document.querySelector(".header-search-wrapper").classList.remove("show");
-      document.querySelector(".search-toggle").classList.remove("active");
-      document.querySelector("body").classList.remove("is-search-active");
+      document.querySelector('.header-search-wrapper').classList.remove('show');
+      document.querySelector('.search-toggle').classList.remove('active');
+      document.querySelector('body').classList.remove('is-search-active');
       e.preventDefault();
     }
   }
 
   function onSearchToggleHandler(e) {
-    document.querySelector(".header-search-wrapper").classList.toggle("show");
-    document.querySelector(".search-toggle").classList.toggle("active");
-    document.querySelector(".header-search-wrapper input").focus();
+    document.querySelector('.header-search-wrapper').classList.toggle('show');
+    document.querySelector('.search-toggle').classList.toggle('active');
+    document.querySelector('.header-search-wrapper input').focus();
     e.preventDefault();
   }
 

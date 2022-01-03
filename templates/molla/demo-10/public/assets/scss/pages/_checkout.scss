@@ -1,6 +1,6 @@
 /* Checkout */
 .checkout {
-  @include mq("lg") {
+  @include mq('lg') {
     .col-lg-3 {
       -ms-flex: 0 0 30%;
       flex: 0 0 30%;
@@ -202,7 +202,7 @@
       }
 
       &:before {
-        content: "";
+        content: '';
         width: 1.6rem;
         height: 1.6rem;
         border-radius: 50%;
@@ -215,7 +215,7 @@
       }
 
       &:after {
-        content: "";
+        content: '';
         display: block;
         width: 0.6rem;
         height: 0.6rem;
@@ -257,7 +257,7 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .summary {
     margin-top: 0;
   }

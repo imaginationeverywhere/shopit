@@ -120,9 +120,9 @@
       &:before {
         display: block;
         height: auto;
-        content: "";
-        font-family: "molla";
-        content: "\f110";
+        content: '';
+        font-family: 'molla';
+        content: '\f110';
         position: absolute;
         left: auto;
         right: 1.8rem;
@@ -136,7 +136,7 @@
     &.show {
       .dropdown-toggle {
         &:before {
-          content: "\e801";
+          content: '\e801';
         }
       }
     }
@@ -178,7 +178,7 @@
     .container {
       position: relative;
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         top: 1.8rem;
         bottom: 1.8rem;
@@ -197,7 +197,7 @@
         padding: 1.55rem 3rem 1.55rem 1rem;
 
         &::before {
-          content: "";
+          content: '';
           display: block;
           position: absolute;
           left: 0;
@@ -265,7 +265,7 @@
   }
 }
 
-@include mq("xxl") {
+@include mq('xxl') {
   .header-12 {
     .header-search-extended {
       margin-right: 7rem;
@@ -281,7 +281,7 @@
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .header-12 {
     .header-search-visible {
       .header-search-wrapper {
@@ -293,7 +293,7 @@
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .header-12 {
     .header-text {
       display: block;
@@ -352,7 +352,7 @@
   max-width: 100%;
 }
 
-@include mq("xxl") {
+@include mq('xxl') {
   .header-12 {
     .header-search-extended {
       margin-right: 6.5rem;

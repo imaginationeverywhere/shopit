@@ -1,20 +1,20 @@
-import React from "react";
-import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
-import { connect } from "react-redux";
+import React from 'react';
+import { Tabs, Tab, TabList, TabPanel } from 'react-tabs';
+import { connect } from 'react-redux';
 
 // import custom component
-import OwlCarousel from "../features/owl-carousel";
-import ProductNine from "../features/product/product-nine";
-import { trendingSlider } from "../settings";
+import OwlCarousel from '../features/owl-carousel';
+import ProductNine from '../features/product/product-nine';
+import { trendingSlider } from '../settings';
 
-import data from "../../mock_data/data.json";
+import data from '../../mock_data/data.json';
 import {
   addToCart,
   toggleWishlist,
   addToCompare,
   showQuickViewModal,
-} from "../../actions";
-import { getProductsByCategory, getTopSellingProducts } from "../../services";
+} from '../../actions';
+import { getProductsByCategory, getTopSellingProducts } from '../../services';
 
 function TopCollection(props) {
   const { addToCart, toggleWishlist, addToCompare, showQuickViewModal } = props;
@@ -51,7 +51,7 @@ function TopCollection(props) {
             {getProductsByCategory(products, cat.name).map((item, index) => (
               <ProductNine
                 product={item}
-                key={"top" + index}
+                key={'top' + index}
                 onAddToCart={addToCart}
                 onToggleWishlist={toggleWishlist}
                 onAddToCompare={addToCompare}

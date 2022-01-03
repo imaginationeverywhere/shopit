@@ -1,10 +1,10 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import Countdown from "react-countdown";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import Countdown from 'react-countdown';
 
 //import Custom Component
-import { rendererThree } from "../features/count-down";
+import { rendererThree } from '../features/count-down';
 
 function DealCollection(props) {
   let products = props.products;
@@ -40,7 +40,7 @@ function DealCollection(props) {
                   >
                     <img
                       src={
-                        process.env.PUBLIC_URL + "/" + products[1].pictures[0]
+                        process.env.PUBLIC_URL + '/' + products[1].pictures[0]
                       }
                       alt="Product"
                       className="product-image"
@@ -83,7 +83,7 @@ function DealCollection(props) {
                   >
                     <img
                       src={
-                        process.env.PUBLIC_URL + "/" + products[0].pictures[0]
+                        process.env.PUBLIC_URL + '/' + products[0].pictures[0]
                       }
                       alt="Product"
                       className="product-image"

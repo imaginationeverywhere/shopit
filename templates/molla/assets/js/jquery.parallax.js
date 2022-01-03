@@ -38,10 +38,10 @@
  */
 (function ($, window, document, undefined) {
   // Strict Mode
-  "use strict";
+  'use strict';
 
   // Constants
-  var NAME = "parallax";
+  var NAME = 'parallax';
   var MAGIC_NUMBER = 30;
   var DEFAULTS = {
     relativeInput: false,
@@ -70,25 +70,25 @@
     this.element = element;
 
     // Selections
-    this.$context = $(element).data("api", this);
-    this.$layers = this.$context.find(".layer");
+    this.$context = $(element).data('api', this);
+    this.$layers = this.$context.find('.layer');
 
     // Data Extraction
     var data = {
-      calibrateX: this.$context.data("calibrate-x") || null,
-      calibrateY: this.$context.data("calibrate-y") || null,
-      invertX: this.$context.data("invert-x") || null,
-      invertY: this.$context.data("invert-y") || null,
-      limitX: parseFloat(this.$context.data("limit-x")) || null,
-      limitY: parseFloat(this.$context.data("limit-y")) || null,
-      scalarX: parseFloat(this.$context.data("scalar-x")) || null,
-      scalarY: parseFloat(this.$context.data("scalar-y")) || null,
-      frictionX: parseFloat(this.$context.data("friction-x")) || null,
-      frictionY: parseFloat(this.$context.data("friction-y")) || null,
-      originX: parseFloat(this.$context.data("origin-x")) || null,
-      originY: parseFloat(this.$context.data("origin-y")) || null,
-      pointerEvents: this.$context.data("pointer-events") || true,
-      precision: parseFloat(this.$context.data("precision")) || 1,
+      calibrateX: this.$context.data('calibrate-x') || null,
+      calibrateY: this.$context.data('calibrate-y') || null,
+      invertX: this.$context.data('invert-x') || null,
+      invertY: this.$context.data('invert-y') || null,
+      limitX: parseFloat(this.$context.data('limit-x')) || null,
+      limitY: parseFloat(this.$context.data('limit-y')) || null,
+      scalarX: parseFloat(this.$context.data('scalar-x')) || null,
+      scalarY: parseFloat(this.$context.data('scalar-y')) || null,
+      frictionX: parseFloat(this.$context.data('friction-x')) || null,
+      frictionY: parseFloat(this.$context.data('friction-y')) || null,
+      originX: parseFloat(this.$context.data('origin-x')) || null,
+      originY: parseFloat(this.$context.data('origin-y')) || null,
+      pointerEvents: this.$context.data('pointer-events') || true,
+      precision: parseFloat(this.$context.data('precision')) || 1,
     };
 
     // Delete Null Data Values
@@ -151,7 +151,7 @@
   }
 
   Plugin.prototype.transformSupport = function (value) {
-    var element = document.createElement("div");
+    var element = document.createElement('div');
     var propertySupport = false;
     var propertyValue = null;
     var featureSupport = false;
@@ -159,11 +159,11 @@
     var jsProperty = null;
     for (var i = 0, l = this.vendors.length; i < l; i++) {
       if (this.vendors[i] !== null) {
-        cssProperty = this.vendors[i][0] + "transform";
-        jsProperty = this.vendors[i][1] + "Transform";
+        cssProperty = this.vendors[i][0] + 'transform';
+        jsProperty = this.vendors[i][1] + 'Transform';
       } else {
-        cssProperty = "transform";
-        jsProperty = "transform";
+        cssProperty = 'transform';
+        jsProperty = 'transform';
       }
       if (element.style[jsProperty] !== undefined) {
         propertySupport = true;
@@ -171,35 +171,35 @@
       }
     }
     switch (value) {
-      case "2D":
+      case '2D':
         featureSupport = propertySupport;
         break;
-      case "3D":
+      case '3D':
         if (propertySupport) {
-          var body = document.body || document.createElement("body");
+          var body = document.body || document.createElement('body');
           var documentElement = document.documentElement;
           var documentOverflow = documentElement.style.overflow;
           var isCreatedBody = false;
           if (!document.body) {
             isCreatedBody = true;
-            documentElement.style.overflow = "hidden";
+            documentElement.style.overflow = 'hidden';
             documentElement.appendChild(body);
-            body.style.overflow = "hidden";
-            body.style.background = "";
+            body.style.overflow = 'hidden';
+            body.style.background = '';
           }
           body.appendChild(element);
-          element.style[jsProperty] = "translate3d(1px,1px,1px)";
+          element.style[jsProperty] = 'translate3d(1px,1px,1px)';
           propertyValue = window
             .getComputedStyle(element)
             .getPropertyValue(cssProperty);
           featureSupport =
             propertyValue !== undefined &&
             propertyValue.length > 0 &&
-            propertyValue !== "none";
+            propertyValue !== 'none';
           documentElement.style.overflow = documentOverflow;
           body.removeChild(element);
           if (isCreatedBody) {
-            body.removeAttribute("style");
+            body.removeAttribute('style');
             body.parentNode.removeChild(body);
           }
         }
@@ -216,34 +216,34 @@
   Plugin.prototype.wry = null;
   Plugin.prototype.portrait = null;
   Plugin.prototype.desktop = !navigator.userAgent.match(
-    /(iPhone|iPod|iPad|Android|BlackBerry|BB10|mobi|tablet|opera mini|nexus 7)/i
+    /(iPhone|iPod|iPad|Android|BlackBerry|BB10|mobi|tablet|opera mini|nexus 7)/i,
   );
   Plugin.prototype.vendors = [
     null,
-    ["-webkit-", "webkit"],
-    ["-moz-", "Moz"],
-    ["-o-", "O"],
-    ["-ms-", "ms"],
+    ['-webkit-', 'webkit'],
+    ['-moz-', 'Moz'],
+    ['-o-', 'O'],
+    ['-ms-', 'ms'],
   ];
   Plugin.prototype.motionSupport = !!window.DeviceMotionEvent;
   Plugin.prototype.orientationSupport = !!window.DeviceOrientationEvent;
   Plugin.prototype.orientationStatus = 0;
-  Plugin.prototype.transform2DSupport = Plugin.prototype.transformSupport("2D");
-  Plugin.prototype.transform3DSupport = Plugin.prototype.transformSupport("3D");
+  Plugin.prototype.transform2DSupport = Plugin.prototype.transformSupport('2D');
+  Plugin.prototype.transform3DSupport = Plugin.prototype.transformSupport('3D');
   Plugin.prototype.propertyCache = {};
 
   Plugin.prototype.initialise = function () {
     // Configure Styles
-    if (this.$context.css("position") === "static") {
+    if (this.$context.css('position') === 'static') {
       this.$context.css({
-        position: "relative",
+        position: 'relative',
       });
     }
 
     // Pointer events
     if (!this.pointerEvents) {
       this.$context.css({
-        pointerEvents: "none",
+        pointerEvents: 'none',
       });
     }
 
@@ -259,19 +259,19 @@
 
   Plugin.prototype.updateLayers = function () {
     // Cache Layer Elements
-    this.$layers = this.$context.find(".layer");
+    this.$layers = this.$context.find('.layer');
     this.depthsX = [];
     this.depthsY = [];
 
     // Configure Layer Styles
     this.$layers.css({
-      position: "absolute",
-      display: "block",
+      position: 'absolute',
+      display: 'block',
       left: 0,
       top: 0,
     });
     this.$layers.first().css({
-      position: "relative",
+      position: 'relative',
     });
 
     // Hardware Accelerate Layers
@@ -281,10 +281,10 @@
     this.$layers.each(
       $.proxy(function (index, element) {
         //Graceful fallback on depth if depth-x or depth-y is absent
-        var depth = $(element).data("depth") || 0;
-        this.depthsX.push($(element).data("depth-x") || depth);
-        this.depthsY.push($(element).data("depth-y") || depth);
-      }, this)
+        var depth = $(element).data('depth') || 0;
+        this.depthsX.push($(element).data('depth-x') || depth);
+        this.depthsY.push($(element).data('depth-y') || depth);
+      }, this),
     );
   };
 
@@ -319,15 +319,15 @@
       this.enabled = true;
       if (this.orientationSupport) {
         this.portrait = null;
-        window.addEventListener("deviceorientation", this.onDeviceOrientation);
+        window.addEventListener('deviceorientation', this.onDeviceOrientation);
         setTimeout(this.onOrientationTimer, this.supportDelay);
       } else {
         this.cx = 0;
         this.cy = 0;
         this.portrait = false;
-        window.addEventListener("mousemove", this.onMouseMove);
+        window.addEventListener('mousemove', this.onMouseMove);
       }
-      window.addEventListener("resize", this.onWindowResize);
+      window.addEventListener('resize', this.onWindowResize);
       this.raf = requestAnimationFrame(this.onAnimationFrame);
     }
   };
@@ -337,13 +337,13 @@
       this.enabled = false;
       if (this.orientationSupport) {
         window.removeEventListener(
-          "deviceorientation",
-          this.onDeviceOrientation
+          'deviceorientation',
+          this.onDeviceOrientation,
         );
       } else {
-        window.removeEventListener("mousemove", this.onMouseMove);
+        window.removeEventListener('mousemove', this.onMouseMove);
       }
-      window.removeEventListener("resize", this.onWindowResize);
+      window.removeEventListener('resize', this.onWindowResize);
       cancelAnimationFrame(this.raf);
     }
   };
@@ -389,7 +389,7 @@
     if (!jsProperty) {
       for (var i = 0, l = this.vendors.length; i < l; i++) {
         if (this.vendors[i] !== null) {
-          jsProperty = $.camelCase(this.vendors[i][1] + "-" + property);
+          jsProperty = $.camelCase(this.vendors[i][1] + '-' + property);
         } else {
           jsProperty = property;
         }
@@ -405,19 +405,19 @@
   Plugin.prototype.accelerate = function ($element) {
     for (var i = 0, l = $element.length; i < l; i++) {
       var element = $element[i];
-      this.css(element, "transform", "translate3d(0,0,0)");
-      this.css(element, "transform-style", "preserve-3d");
-      this.css(element, "backface-visibility", "hidden");
+      this.css(element, 'transform', 'translate3d(0,0,0)');
+      this.css(element, 'transform-style', 'preserve-3d');
+      this.css(element, 'backface-visibility', 'hidden');
     }
   };
 
   Plugin.prototype.setPosition = function (element, x, y) {
-    x += "px";
-    y += "px";
+    x += 'px';
+    y += 'px';
     if (this.transform3DSupport) {
-      this.css(element, "transform", "translate3d(" + x + "," + y + ",0)");
+      this.css(element, 'transform', 'translate3d(' + x + ',' + y + ',0)');
     } else if (this.transform2DSupport) {
-      this.css(element, "transform", "translate(" + x + "," + y + ")");
+      this.css(element, 'transform', 'translate(' + x + ',' + y + ')');
     } else {
       element.style.left = x;
       element.style.top = y;
@@ -569,13 +569,13 @@
  */
 (function () {
   var lastTime = 0;
-  var vendors = ["ms", "moz", "webkit", "o"];
+  var vendors = ['ms', 'moz', 'webkit', 'o'];
 
   for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-    window.requestAnimationFrame = window[vendors[x] + "RequestAnimationFrame"];
+    window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
     window.cancelAnimationFrame =
-      window[vendors[x] + "CancelAnimationFrame"] ||
-      window[vendors[x] + "CancelRequestAnimationFrame"];
+      window[vendors[x] + 'CancelAnimationFrame'] ||
+      window[vendors[x] + 'CancelRequestAnimationFrame'];
   }
 
   if (!window.requestAnimationFrame) {

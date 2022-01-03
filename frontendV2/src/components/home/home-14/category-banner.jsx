@@ -1,12 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import { safeContent } from "../../../utils";
+import { safeContent } from '../../../utils';
 
 function CategoryBanner(props) {
-  const { categories, image, subtitle, title = "", height } = props.catban;
-  let background = process.env.PUBLIC_URL + "/" + props.catban.background;
+  const { categories, image, subtitle, title = '', height } = props.catban;
+  let background = process.env.PUBLIC_URL + '/' + props.catban.background;
 
   return (
     <div className="cat-banner row no-gutters">
@@ -38,7 +38,7 @@ function CategoryBanner(props) {
             <div className="lazy-overlay bg-2"></div>
 
             <LazyLoadImage
-              src={process.env.PUBLIC_URL + "/" + image}
+              src={process.env.PUBLIC_URL + '/' + image}
               alt="Banner desc"
               width={100}
               height={height}

@@ -1,150 +1,150 @@
 (function ($) {
-  "use strict";
+  'use strict';
 
   $(document).ready(function () {
     /*-------------------------------------
             magnific popup video activation
         -------------------------------------*/
 
-    $(".video-btn-style-01").magnificPopup({
+    $('.video-btn-style-01').magnificPopup({
       items: {
-        src: "https://www.youtube.com/watch?v=AOXl0Ll_t9s",
+        src: 'https://www.youtube.com/watch?v=AOXl0Ll_t9s',
       },
-      type: "iframe",
+      type: 'iframe',
       iframe: {
         markup:
           '<div class="mfp-iframe-scaler">' +
           '<div class="mfp-close"></div>' +
           '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' +
-          "</div>",
+          '</div>',
         patterns: {
           youtube: {
-            index: "youtube.com/",
-            id: "v=",
-            src: "//www.youtube.com/embed/AOXl0Ll_t9s",
+            index: 'youtube.com/',
+            id: 'v=',
+            src: '//www.youtube.com/embed/AOXl0Ll_t9s',
           },
         },
-        srcAction: "iframe_src",
+        srcAction: 'iframe_src',
       },
     });
 
-    $(".video-btn-style-02").magnificPopup({
+    $('.video-btn-style-02').magnificPopup({
       items: {
-        src: "https://www.youtube.com/watch?v=AOXl0Ll_t9s",
+        src: 'https://www.youtube.com/watch?v=AOXl0Ll_t9s',
       },
-      type: "iframe",
+      type: 'iframe',
       iframe: {
         markup:
           '<div class="mfp-iframe-scaler">' +
           '<div class="mfp-close"></div>' +
           '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' +
-          "</div>",
+          '</div>',
         patterns: {
           youtube: {
-            index: "youtube.com/",
-            id: "v=",
-            src: "//www.youtube.com/embed/AOXl0Ll_t9s",
+            index: 'youtube.com/',
+            id: 'v=',
+            src: '//www.youtube.com/embed/AOXl0Ll_t9s',
           },
         },
-        srcAction: "iframe_src",
+        srcAction: 'iframe_src',
       },
     });
 
-    $(".video-btn-style-03").magnificPopup({
+    $('.video-btn-style-03').magnificPopup({
       items: {
-        src: "https://www.youtube.com/watch?v=AOXl0Ll_t9s",
+        src: 'https://www.youtube.com/watch?v=AOXl0Ll_t9s',
       },
-      type: "iframe",
+      type: 'iframe',
       iframe: {
         markup:
           '<div class="mfp-iframe-scaler">' +
           '<div class="mfp-close"></div>' +
           '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' +
-          "</div>",
+          '</div>',
         patterns: {
           youtube: {
-            index: "youtube.com/",
-            id: "v=",
-            src: "//www.youtube.com/embed/AOXl0Ll_t9s",
+            index: 'youtube.com/',
+            id: 'v=',
+            src: '//www.youtube.com/embed/AOXl0Ll_t9s',
           },
         },
-        srcAction: "iframe_src",
+        srcAction: 'iframe_src',
       },
     });
 
-    $(".btn-video").magnificPopup({
+    $('.btn-video').magnificPopup({
       items: {
-        src: "https://www.youtube.com/watch?v=AOXl0Ll_t9s",
+        src: 'https://www.youtube.com/watch?v=AOXl0Ll_t9s',
       },
-      type: "iframe",
+      type: 'iframe',
       iframe: {
         markup:
           '<div class="mfp-iframe-scaler">' +
           '<div class="mfp-close"></div>' +
           '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' +
-          "</div>",
+          '</div>',
         patterns: {
           youtube: {
-            index: "youtube.com/",
-            id: "v=",
-            src: "//www.youtube.com/embed/AOXl0Ll_t9s",
+            index: 'youtube.com/',
+            id: 'v=',
+            src: '//www.youtube.com/embed/AOXl0Ll_t9s',
           },
         },
-        srcAction: "iframe_src",
+        srcAction: 'iframe_src',
       },
     });
 
-    $(".menu").click(function () {
-      $(this).toggleClass("open");
+    $('.menu').click(function () {
+      $(this).toggleClass('open');
     });
 
     /*----------------------
             Search Popup
         -----------------------*/
-    var bodyOvrelay = $("#body-overlay");
-    var searchPopup = $("#search-popup");
-    var sidebarMenu = $("#sidebar-menu");
+    var bodyOvrelay = $('#body-overlay');
+    var searchPopup = $('#search-popup');
+    var sidebarMenu = $('#sidebar-menu');
 
-    $(document).on("click", "#body-overlay", function (e) {
+    $(document).on('click', '#body-overlay', function (e) {
       e.preventDefault();
-      bodyOvrelay.removeClass("active");
-      searchPopup.removeClass("active");
-      sidebarMenu.removeClass("active");
+      bodyOvrelay.removeClass('active');
+      searchPopup.removeClass('active');
+      sidebarMenu.removeClass('active');
     });
-    $(document).on("click", "#search", function (e) {
+    $(document).on('click', '#search', function (e) {
       e.preventDefault();
-      searchPopup.addClass("active");
-      bodyOvrelay.addClass("active");
+      searchPopup.addClass('active');
+      bodyOvrelay.addClass('active');
     });
 
     // sidebar menu
-    $(document).on("click", ".sidebar-menu-close", function (e) {
+    $(document).on('click', '.sidebar-menu-close', function (e) {
       e.preventDefault();
-      bodyOvrelay.removeClass("active");
-      sidebarMenu.removeClass("active");
+      bodyOvrelay.removeClass('active');
+      sidebarMenu.removeClass('active');
     });
-    $(document).on("click", "#navigation-button", function (e) {
+    $(document).on('click', '#navigation-button', function (e) {
       e.preventDefault();
-      sidebarMenu.addClass("active");
-      bodyOvrelay.addClass("active");
+      sidebarMenu.addClass('active');
+      bodyOvrelay.addClass('active');
     });
 
     // mobile menu
     if ($(window).width() < 992) {
-      $(".in-mobile").clone().appendTo(".sidebar-inner");
-      $(".in-mobile ul li.menu-item-has-children").append(
-        '<i class="fas fa-chevron-right"></i>'
+      $('.in-mobile').clone().appendTo('.sidebar-inner');
+      $('.in-mobile ul li.menu-item-has-children').append(
+        '<i class="fas fa-chevron-right"></i>',
       );
-      $('<i class="fas fa-chevron-right"></i>').insertAfter("");
+      $('<i class="fas fa-chevron-right"></i>').insertAfter('');
 
-      $(".menu-item-has-children > a").click(function (e) {
+      $('.menu-item-has-children > a').click(function (e) {
         e.preventDefault();
 
-        $(this).siblings(".sub-menu").animate(
+        $(this).siblings('.sub-menu').animate(
           {
-            height: "toggle",
+            height: 'toggle',
           },
-          300
+          300,
         );
       });
     }
@@ -152,20 +152,20 @@
     /*---------------------
             Nice Select ***
         ----------------------*/
-    $(".nice-select").niceSelect();
+    $('.nice-select').niceSelect();
 
     /**********************
      * Countdown Activation
      ***********************/
 
-    $("[data-countdown]").each(function () {
+    $('[data-countdown]').each(function () {
       var $this = $(this),
-        finalDate = $(this).data("countdown");
+        finalDate = $(this).data('countdown');
       $this.countdown(finalDate, function (event) {
         $this.html(
           event.strftime(
-            '<div><span class="days">%D</span><div class="smalltext">Days</div></div><div><span class="days">%H</span><div class="smalltext">Hrs</div></div><div><span class="days">%M</span><div class="smalltext">Min</div></div><div><span class="days">%S</span><div class="smalltext">Sec</div></div>'
-          )
+            '<div><span class="days">%D</span><div class="smalltext">Days</div></div><div><span class="days">%H</span><div class="smalltext">Hrs</div></div><div><span class="days">%M</span><div class="smalltext">Min</div></div><div><span class="days">%S</span><div class="smalltext">Sec</div></div>',
+          ),
         );
       });
     });
@@ -185,7 +185,7 @@
         -------------------------------------*/
 
     // banner slider
-    var slider = $(".banner-slider");
+    var slider = $('.banner-slider');
     slider.slick({
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -211,7 +211,7 @@
     slider.slickAnimation();
 
     // banner slider
-    var slider2 = $(".banner-slider-02");
+    var slider2 = $('.banner-slider-02');
     slider2.slick({
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -237,7 +237,7 @@
     slider2.slickAnimation();
 
     // banner slider
-    var slider3 = $(".banner-slider-03");
+    var slider3 = $('.banner-slider-03');
     slider3.slick({
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -263,25 +263,25 @@
     slider3.slickAnimation();
 
     slider3.on(
-      "beforeChange",
+      'beforeChange',
       function (event, slick, currentSlide, nextSlide) {
         var totalSlide = slick.slideCount;
         var currentSlideindex = ++slick.currentSlide;
-        $(".controler-wrapper .total-controler").text(check_number(totalSlide));
-        $(".controler-wrapper .active-controler").text(
-          check_number(currentSlideindex)
+        $('.controler-wrapper .total-controler').text(check_number(totalSlide));
+        $('.controler-wrapper .active-controler').text(
+          check_number(currentSlideindex),
         );
-      }
+      },
     );
 
     // check_number function
     function check_number(num) {
       var IsInteger = /^[0-9]+$/.test(num);
-      return IsInteger ? "0" + num : null;
+      return IsInteger ? '0' + num : null;
     }
 
     // banner slider
-    var slider4 = $(".banner-slider-04");
+    var slider4 = $('.banner-slider-04');
     slider4.slick({
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -307,7 +307,7 @@
     slider4.slickAnimation();
 
     // team slider
-    var tslider = $(".team-slider");
+    var tslider = $('.team-slider');
     tslider.slick({
       slidesToShow: 4,
       slidesToScroll: 4,
@@ -344,7 +344,7 @@
     });
 
     // thumb slider
-    $(".thumb-slider").slick({
+    $('.thumb-slider').slick({
       dots: false,
       arrows: true,
       infinite: true,
@@ -354,7 +354,7 @@
     });
 
     // brand slider
-    $(".brand-slider").slick({
+    $('.brand-slider').slick({
       dots: false,
       arrows: true,
       infinite: true,
@@ -389,7 +389,7 @@
     });
 
     // fashion slider
-    $(".fashion-slider").slick({
+    $('.fashion-slider').slick({
       dots: true,
       arrows: false,
       infinite: true,
@@ -424,7 +424,7 @@
     });
 
     // fashion slider
-    $(".collection-slider-03").slick({
+    $('.collection-slider-03').slick({
       dots: false,
       arrows: true,
       infinite: true,
@@ -450,7 +450,7 @@
     });
 
     // brand slider
-    $(".related-slider").slick({
+    $('.related-slider').slick({
       dots: false,
       arrows: true,
       infinite: true,
@@ -485,7 +485,7 @@
     });
 
     // collection slider
-    $(".collection-slider").slick({
+    $('.collection-slider').slick({
       dots: true,
       arrows: false,
       infinite: true,
@@ -519,7 +519,7 @@
     });
 
     // collection slider
-    $(".collection-slider-02").slick({
+    $('.collection-slider-02').slick({
       dots: false,
       arrows: false,
       infinite: true,
@@ -553,17 +553,17 @@
     });
 
     // product details slider
-    $(".slider-tabfor").slick({
+    $('.slider-tabfor').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: false,
       fade: true,
-      asNavFor: ".slider-tabnav",
+      asNavFor: '.slider-tabnav',
     });
-    $(".slider-tabnav").slick({
+    $('.slider-tabnav').slick({
       slidesToShow: 5,
       slidesToScroll: 5,
-      asNavFor: ".slider-tabfor",
+      asNavFor: '.slider-tabfor',
       dots: false,
       arrows: true,
       focusOnSelect: true,
@@ -571,45 +571,45 @@
       centerPadding: 0,
     });
 
-    $(".close-header").click(function () {
-      $(".header-top").hide();
+    $('.close-header').click(function () {
+      $('.header-top').hide();
     });
 
-    $("#qty_input").prop("disabled", true);
-    $("#plus-btn").click(function () {
-      $("#qty_input").val(parseInt($("#qty_input").val()) + 1);
+    $('#qty_input').prop('disabled', true);
+    $('#plus-btn').click(function () {
+      $('#qty_input').val(parseInt($('#qty_input').val()) + 1);
     });
-    $("#minus-btn").click(function () {
-      $("#qty_input").val(parseInt($("#qty_input").val()) - 1);
-      if ($("#qty_input").val() == 0) {
-        $("#qty_input").val(1);
+    $('#minus-btn').click(function () {
+      $('#qty_input').val(parseInt($('#qty_input').val()) - 1);
+      if ($('#qty_input').val() == 0) {
+        $('#qty_input').val(1);
       }
     });
 
     /* ---------------------------------------------------------
             Price Slider
         --------------------------------------------------------- */
-    $("#slider-range").slider({
+    $('#slider-range').slider({
       range: true,
       min: 50,
       max: 2000,
       values: [50, 999],
       slide: function (event, ui) {
-        $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+        $('#amount').val('$' + ui.values[0] + ' - $' + ui.values[1]);
       },
     });
-    $("#amount").val(
-      "$" +
-        $("#slider-range").slider("values", 0) +
-        " - $" +
-        $("#slider-range").slider("values", 1)
+    $('#amount').val(
+      '$' +
+        $('#slider-range').slider('values', 0) +
+        ' - $' +
+        $('#slider-range').slider('values', 1),
     );
 
     /*-------------------------------------
             owl-carousel
         -------------------------------------*/
 
-    $(".owl-carousel").owlCarousel({
+    $('.owl-carousel').owlCarousel({
       loop: true,
       margin: 20,
       nav: false,
@@ -630,37 +630,37 @@
 
     /* menu-toggle */
 
-    var menutoggle = $(".menu-toggle");
-    var mainmenu = $(".navbar-nav");
+    var menutoggle = $('.menu-toggle');
+    var mainmenu = $('.navbar-nav');
 
-    menutoggle.on("click", function () {
-      if (menutoggle.hasClass("is-active")) {
-        mainmenu.removeClass("menu-open");
+    menutoggle.on('click', function () {
+      if (menutoggle.hasClass('is-active')) {
+        mainmenu.removeClass('menu-open');
       } else {
-        mainmenu.addClass("menu-open");
+        mainmenu.addClass('menu-open');
       }
     });
 
     /*------------------
            back to top
        ------------------*/
-    $(document).on("click", ".back-to-top", function () {
-      $("html,body").animate(
+    $(document).on('click', '.back-to-top', function () {
+      $('html,body').animate(
         {
           scrollTop: 0,
         },
-        2000
+        2000,
       );
     });
   });
 
   $(document).ready(function () {
-    $(".megamenu").on("click", function (e) {
+    $('.megamenu').on('click', function (e) {
       e.stopPropagation();
     });
   });
 
-  $(window).on("scroll", function () {
+  $(window).on('scroll', function () {
     /*---------------------------------------
         sticky menu activation && Sticky Icon Bar
         -----------------------------------------*/
@@ -672,7 +672,7 @@
     //     mainMenuTop.removeClass('navbar-area-fixed');
     // }
 
-    var ScrollTop = $(".back-to-top");
+    var ScrollTop = $('.back-to-top');
     if ($(window).scrollTop() > 1000) {
       ScrollTop.fadeIn(1000);
     } else {
@@ -681,7 +681,7 @@
   });
 
   // instagram slider
-  $(".instagram-slider").slick({
+  $('.instagram-slider').slick({
     dots: false,
     arrows: false,
     infinite: true,
@@ -723,7 +723,7 @@
   });
 
   // instagram slider
-  $(".instagram-slider2").slick({
+  $('.instagram-slider2').slick({
     dots: false,
     arrows: true,
     infinite: true,
@@ -764,30 +764,30 @@
     ],
   });
 
-  $(window).on("load", function () {
+  $(window).on('load', function () {
     /*-----------------
             preloader
         ------------------*/
-    var preLoder = $("#preloader");
+    var preLoder = $('#preloader');
     preLoder.fadeOut(0);
 
     /*-----------------
             back to top
         ------------------*/
-    var backtoTop = $(".back-to-top");
+    var backtoTop = $('.back-to-top');
     backtoTop.fadeOut();
 
     /*---------------------
             Cancel Preloader
         ----------------------*/
-    $(document).on("click", ".cancel-preloader a", function (e) {
+    $(document).on('click', '.cancel-preloader a', function (e) {
       e.preventDefault();
-      $("#preloader").fadeOut(2000);
+      $('#preloader').fadeOut(2000);
     });
   });
-  $(".stone-go-top")
-    .find("a")
-    .on("click", function () {
+  $('.stone-go-top')
+    .find('a')
+    .on('click', function () {
       $(window).scrollTop(0);
     });
 })(jQuery);

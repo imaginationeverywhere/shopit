@@ -1,37 +1,37 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import OwlCarousel from "../features/owl-carousel";
-import NewsletterModal from "../features/modal/newsletter-modal";
-import ServiceBox from "../features/service";
-import Brand from "../features/brand";
-import QuickView from "../features/product/common/quickview";
+import OwlCarousel from '../features/owl-carousel';
+import NewsletterModal from '../features/modal/newsletter-modal';
+import ServiceBox from '../features/service';
+import Brand from '../features/brand';
+import QuickView from '../features/product/common/quickview';
 
 // import Home Components
-import HomeSlide from "./home-slide";
-import SpecialCollection from "./special-collection";
-import Banner from "./banner";
-import CTA from "./cta-section";
-import NewCollection from "./new-collection";
-import BlogSection from "./blog-section";
+import HomeSlide from './home-slide';
+import SpecialCollection from './special-collection';
+import Banner from './banner';
+import CTA from './cta-section';
+import NewCollection from './new-collection';
+import BlogSection from './blog-section';
 
 // import Slider Settings
-import { introSlider } from "../settings";
+import { introSlider } from '../settings';
 
 // import Data & Style
-import _data from "../../mock_data/data.json";
-import style from "./style.scss";
+import _data from '../../mock_data/data.json';
+import style from './style.scss';
 
 export default function HomePage() {
   useEffect(() => {
-    document.getElementById("menu-home").classList.add("active");
+    document.getElementById('menu-home').classList.add('active');
 
     style.use();
 
     return () => {
-      document.getElementById("menu-home").classList.remove("active");
+      document.getElementById('menu-home').classList.remove('active');
       style.unuse();
     };
   }, []);
@@ -87,7 +87,7 @@ export default function HomePage() {
             {_data.banner.slice(0, 2).map((item, index) => (
               <div
                 className="col-lg-6 col-md-6 col-sm-6 banner-lg"
-                style={{ minHeight: "21rem" }}
+                style={{ minHeight: '21rem' }}
                 key={`banner_${index}`}
               >
                 <Banner data={item} />

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const connectDatabase = () => {
   const uri = "mongodb+srv://kevoese:mongodbpassword$$@cluster0.oifcj.mongodb.net/test";;

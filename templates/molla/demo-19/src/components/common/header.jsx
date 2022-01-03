@@ -1,24 +1,24 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import LoginModal from "../features/modal/login-modal";
+import LoginModal from '../features/modal/login-modal';
 
-import MainMenu from "./partials/main-menu";
-import CartMenu from "./partials/cart-menu";
+import MainMenu from './partials/main-menu';
+import CartMenu from './partials/cart-menu';
 
-import { showModal } from "../../actions";
-import { preventHeaderDefault } from "../../utils";
+import { showModal } from '../../actions';
+import { preventHeaderDefault } from '../../utils';
 
 function Header(props) {
-  const { container = "container" } = props;
+  const { container = 'container' } = props;
 
   useEffect(() => {
     preventHeaderDefault();
   }, []);
 
   function openLoginModal(e) {
-    props.showModal("login");
+    props.showModal('login');
     e.preventDefault();
   }
 

@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import OwlCarousels from "../features/owl-carousel";
-import { ctaSlider } from "../settings";
+import OwlCarousels from '../features/owl-carousel';
+import { ctaSlider } from '../settings';
 
 function CTA(props) {
   return (
@@ -13,7 +13,7 @@ function CTA(props) {
             <h3 className="cta-title">Shop Social</h3>
             <p className="cta-desc">
               Donec nec justo eget felis facilisis fermentum. Aliquam porttitor
-              mauris sit amet orci.{" "}
+              mauris sit amet orci.{' '}
             </p>
 
             <div className="social-icons social-icons-colored justify-content-center">

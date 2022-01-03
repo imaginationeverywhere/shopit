@@ -36,8 +36,8 @@
     transition: background 0.4s, color 0.1s;
 
     &:after {
-      content: "\f131";
-      font-family: "molla";
+      content: '\f131';
+      font-family: 'molla';
       border: none;
       font-size: 2.3rem;
       line-height: 1;
@@ -45,7 +45,7 @@
     }
 
     &:before {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       left: 0;
@@ -74,7 +74,7 @@
       background-color: $primary-color;
 
       &:after {
-        content: "\f191";
+        content: '\f191';
       }
     }
   }
@@ -85,7 +85,7 @@
       background-color: $primary-color;
 
       &:after {
-        content: "\f191";
+        content: '\f191';
       }
     }
   }
@@ -206,7 +206,7 @@
       width: 694px;
     }
 
-    @include mq("xl") {
+    @include mq('xl') {
       &:not(.megamenu-sm):not(.megamenu-md) {
         width: 893px;
         min-height: 100%;
@@ -261,8 +261,8 @@
 
       &::after {
         display: block;
-        font-family: "molla";
-        content: "\f112";
+        font-family: 'molla';
+        content: '\f112';
         position: absolute;
         right: 1.8rem;
         top: 50%;
@@ -385,7 +385,7 @@
   }
 
   .col,
-  [class*="col-"] {
+  [class*='col-'] {
     display: flex;
     align-items: center;
     justify-content: center;

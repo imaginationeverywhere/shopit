@@ -1,31 +1,31 @@
-import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import OwlCarousel from "../features/owl-carousel";
-import NewsletterModal from "../features/modal/newsletter-modal";
-import ServiceBox from "../features/service";
-import Brand from "../features/brand";
+import OwlCarousel from '../features/owl-carousel';
+import NewsletterModal from '../features/modal/newsletter-modal';
+import ServiceBox from '../features/service';
+import Brand from '../features/brand';
 
-import TrendyCollection from "./trendy-collection";
-import RecentCollection from "./recent-collection";
-import BlogSection from "./blog-section";
-import IntroSlide from "./intro-slide";
-import CTA from "./cta-section";
-import BannerGroup from "./banner-group";
-import IntroBanner from "./intro-banner";
+import TrendyCollection from './trendy-collection';
+import RecentCollection from './recent-collection';
+import BlogSection from './blog-section';
+import IntroSlide from './intro-slide';
+import CTA from './cta-section';
+import BannerGroup from './banner-group';
+import IntroBanner from './intro-banner';
 
-import { introSlider } from "../settings";
-import data from "../../mock_data/data.json";
-import style from "./style.scss";
+import { introSlider } from '../settings';
+import data from '../../mock_data/data.json';
+import style from './style.scss';
 
 export default function HomePage() {
   useEffect(() => {
-    document.getElementById("menu-home").classList.add("active");
+    document.getElementById('menu-home').classList.add('active');
     style.use();
 
     return () => {
-      document.getElementById("menu-home").classList.remove("active");
+      document.getElementById('menu-home').classList.remove('active');
       style.unuse();
     };
   }, []);

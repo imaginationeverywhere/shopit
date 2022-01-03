@@ -32,7 +32,7 @@
 
   &:before {
     display: block;
-    content: "";
+    content: '';
     width: 100%;
   }
 }
@@ -44,7 +44,7 @@
   }
 
   &:before {
-    @include mq("xs", "max") {
+    @include mq('xs', 'max') {
       @include aspect-ratio(480, 400);
     }
   }
@@ -70,7 +70,7 @@
 .slider-loader {
   color: #333;
   &::after {
-    content: "\f311";
+    content: '\f311';
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,7 +78,7 @@
     height: 5rem;
     margin-top: -2.5rem;
     margin-left: -2.5rem;
-    font-family: "molla";
+    font-family: 'molla';
     position: absolute;
     left: 50%;
     top: 50%;
@@ -162,7 +162,7 @@ button:focus {
 .categories.container {
   position: relative;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     left: 1rem;
     right: 1rem;
@@ -195,7 +195,7 @@ button:focus {
     padding-top: 3rem;
   }
 
-  &.owl-simple .owl-nav [class*="owl-"] {
+  &.owl-simple .owl-nav [class*='owl-'] {
     margin-top: -31px;
   }
 }
@@ -261,7 +261,7 @@ button:focus {
 
 .owl-carousel .entry-media {
   &::before {
-    content: "";
+    content: '';
     display: block;
     width: 100%;
     @include aspect-ratio(300, 199);
@@ -328,7 +328,7 @@ button:focus {
 }
 .cross-txt:before,
 .cross-txt:after {
-  content: "";
+  content: '';
   -ms-flex: 1;
   flex: 1;
   height: 1px;
@@ -349,7 +349,7 @@ button:focus {
   padding: 4rem 4rem;
   background-color: #fff;
 
-  .owl-theme.owl-light .owl-nav [class*="owl-"] {
+  .owl-theme.owl-light .owl-nav [class*='owl-'] {
     border: none;
     font-size: 3rem;
     color: #fff;
@@ -371,11 +371,11 @@ button:focus {
     margin: 0;
   }
 
-  .owl-theme .owl-nav [class*="owl-"] {
+  .owl-theme .owl-nav [class*='owl-'] {
     top: 50%;
   }
 
-  .owl-theme.owl-light .owl-nav [class*="owl-"] {
+  .owl-theme.owl-light .owl-nav [class*='owl-'] {
     background-color: transparent;
   }
 
@@ -518,11 +518,11 @@ button:focus {
   }
 
   .btn-wishlist:before {
-    content: "\f234";
+    content: '\f234';
   }
 
   .btn-compare:before {
-    content: "\f2d0";
+    content: '\f2d0';
   }
 
   .btn-wishlist,
@@ -607,7 +607,7 @@ button:focus {
 .fullscreen-container {
   position: relative;
   button.mfp-close {
-    font: normal normal 2.6rem/1 "molla";
+    font: normal normal 2.6rem/1 'molla';
     position: absolute;
     color: #666;
     top: 1.5rem;
@@ -779,7 +779,7 @@ button:focus {
     right: 2rem;
     padding: 0;
     font: {
-      family: "molla";
+      family: 'molla';
       size: 2rem;
     }
     background-color: #fff;
@@ -795,7 +795,7 @@ button:focus {
     }
     &::before {
       position: relative;
-      content: "\f191";
+      content: '\f191';
       line-height: 1;
       color: #333;
     }
@@ -830,7 +830,7 @@ button:focus {
   opacity: 1;
 }
 
-@include mq("sm") {
+@include mq('sm') {
   .intro-content {
     left: 50px;
 
@@ -852,7 +852,7 @@ button:focus {
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   .intro-content {
     left: 70px;
 
@@ -873,7 +873,7 @@ button:focus {
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .cta-display {
     .cta-title {
       font-size: 3rem;
@@ -881,7 +881,7 @@ button:focus {
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .intro-content {
     left: 100px;
 
@@ -902,7 +902,7 @@ button:focus {
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .cta-display {
     .cta-desc {
       margin-bottom: 2rem;
@@ -935,7 +935,7 @@ button:focus {
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .banners-sm {
     .banner-link-anim {
       padding-left: 0;
@@ -948,7 +948,7 @@ button:focus {
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .newsletter-img {
     display: none;
   }
@@ -987,7 +987,7 @@ button:focus {
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .quickView-content .btn-product.btn-cart {
     max-width: 25rem;
     margin-bottom: 2rem;

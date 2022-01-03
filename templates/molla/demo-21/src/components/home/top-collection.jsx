@@ -1,27 +1,27 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Tabs, Tab, TabList, TabPanel } from 'react-tabs';
+import { Link } from 'react-router-dom';
 
 // import custom component
-import ProductNine from "../features/product/product-nine";
+import ProductNine from '../features/product/product-nine';
 
 // import Services & Actions
-import { getProductsByCategory } from "../../services";
+import { getProductsByCategory } from '../../services';
 import {
   addToCart,
   toggleWishlist,
   addToCompare,
   showQuickViewModal,
-} from "../../actions";
+} from '../../actions';
 
 function FeaturedCollection(props) {
   const { addToCart, toggleWishlist, showQuickViewModal, addToCompare } = props;
 
   let products = props.products;
   products = products.slice(23, 33);
-  let categoryName = ["All", "Women", "Men"];
-  let categories = ["All", "Women's", "Men's"];
+  let categoryName = ['All', 'Women', 'Men'];
+  let categories = ['All', "Women's", "Men's"];
 
   return (
     <Tabs selectedTabClassName="show" defaultIndex={0} className="container">

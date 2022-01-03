@@ -285,7 +285,7 @@ function ProductList(props) {
   );
 }
 
-export const mapStateToProps = state => {
+export const mapStateToProps = (state) => {
   return {
     filters: state.filters,
     products: state.data.products ? state.data.products : [],

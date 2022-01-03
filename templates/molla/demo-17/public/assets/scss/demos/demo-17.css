@@ -27,7 +27,7 @@
   border-bottom: 0.1rem solid #ebebeb;
 }
 
-.owl-simple .owl-nav [class*="owl-"] {
+.owl-simple .owl-nav [class*='owl-'] {
   top: 37%;
 }
 

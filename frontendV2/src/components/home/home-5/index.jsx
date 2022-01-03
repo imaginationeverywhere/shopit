@@ -1,35 +1,35 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import OwlCarousels from "../../features/owl-carousel";
-import Brand from "../../features/brand";
-import VideoBanner from "../../features/video-banner/video-banner-one";
-import VideoModal from "../../features/modal/video-modal";
-import NewsletterModal from "../../features/modal/newsletter-modal";
-import Service from "../../features/service";
+import OwlCarousels from '../../features/owl-carousel';
+import Brand from '../../features/brand';
+import VideoBanner from '../../features/video-banner/video-banner-one';
+import VideoModal from '../../features/modal/video-modal';
+import NewsletterModal from '../../features/modal/newsletter-modal';
+import Service from '../../features/service';
 
-import IntroSlide from "./intro-slide";
-import Banner from "./banner";
-import CTA from "./cta-section";
-import Instagram from "./instagram";
-import NewCollection from "./new-collection";
-import SpecialCollection from "./special-collection";
-import TrendyCollection from "./trendy-collection";
+import IntroSlide from './intro-slide';
+import Banner from './banner';
+import CTA from './cta-section';
+import Instagram from './instagram';
+import NewCollection from './new-collection';
+import SpecialCollection from './special-collection';
+import TrendyCollection from './trendy-collection';
 
-import { introSlider } from "../../settings";
-import data from "../../../mock_data/data.json";
+import { introSlider } from '../../settings';
+import data from '../../../mock_data/data.json';
 
-import style from "./style.scss";
+import style from './style.scss';
 
 function HomePage5() {
   useEffect(() => {
-    document.getElementById("menu-home").classList.add("active");
+    document.getElementById('menu-home').classList.add('active');
     style.use();
 
     return () => {
-      document.querySelector(".header").style.position = "static";
+      document.querySelector('.header').style.position = 'static';
       style.unuse();
     };
   }, []);
@@ -94,7 +94,7 @@ function HomePage5() {
 
         <div
           className="bg-lighter pt-7 pb-4"
-          style={{ backgroundColor: "#fafafa" }}
+          style={{ backgroundColor: '#fafafa' }}
         >
           <div className="container">
             <div className="instagram-feed-container">

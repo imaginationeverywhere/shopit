@@ -178,7 +178,7 @@
 
 .menu.sf-arrows > li > .sf-with-ul {
   font-size: 1.4rem;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   letter-spacing: 0.01em;
   color: #fff;
   transition: all 0.3s;
@@ -312,7 +312,7 @@
 .content h4 {
   font-size: 4.5rem;
   font-weight: 700;
-  font-family: "Playfair Display";
+  font-family: 'Playfair Display';
   letter-spacing: -0.025em;
   color: #fff;
   margin-bottom: 0;
@@ -467,7 +467,7 @@
   margin-top: 3rem;
 }
 
-.carousel-with-shadow.owl-simple .owl-nav [class*="owl-"]:focus {
+.carousel-with-shadow.owl-simple .owl-nav [class*='owl-']:focus {
   outline: none;
 }
 
@@ -480,7 +480,7 @@
 .best-sellers .owl-simple .owl-nav .owl-next {
   right: 3rem;
 }
-.best-sellers .carousel-with-shadow.owl-simple .owl-nav [class*="owl-"] {
+.best-sellers .carousel-with-shadow.owl-simple .owl-nav [class*='owl-'] {
   margin-top: -87px;
   background-color: #fff;
   font-size: 2.4rem;
@@ -489,7 +489,7 @@
   height: 6rem;
   box-shadow: 0 5px 20px rgba(34, 34, 34, 0.2);
 }
-.best-sellers .owl-simple .owl-nav [class*="owl-"]:not(.disabled):hover {
+.best-sellers .owl-simple .owl-nav [class*='owl-']:not(.disabled):hover {
   color: #fcb941;
   background: #fff;
 }
@@ -574,7 +574,7 @@
 .banners.stretch .banner-lg .title h3 {
   font-size: 3rem;
   font-weight: 700;
-  font-family: "Playfair Display";
+  font-family: 'Playfair Display';
   letter-spacing: 0;
   text-transform: none;
 }
@@ -625,7 +625,7 @@
 .featured-products .heading {
   margin-top: 0;
 }
-.featured-products [class*="col-"] {
+.featured-products [class*='col-'] {
   background-color: #f8f8f8;
   margin-bottom: 1rem;
 }
@@ -680,10 +680,10 @@
 .products img {
   max-width: 220px;
 }
-.products [class*="col-"] {
+.products [class*='col-'] {
   padding-left: 0;
 }
-.products [class*="col-"]:nth-child(2n) {
+.products [class*='col-']:nth-child(2n) {
   padding-right: 0;
   padding-left: 1rem;
 }
@@ -747,7 +747,7 @@
 }
 .deal-countdown .countdown-section:not(:last-child):after {
   color: #333333;
-  content: ":";
+  content: ':';
   display: inline-block;
   font-weight: 400;
   font-size: 20px;
@@ -814,7 +814,7 @@
 .intro.video .title h3 {
   font-size: 3rem;
   font-weight: 700;
-  font-family: "Playfair Display";
+  font-family: 'Playfair Display';
   letter-spacing: -0.03em;
   color: #fff;
   text-transform: none;
@@ -917,7 +917,7 @@
   color: #222;
 }
 .read-more::after {
-  content: "";
+  content: '';
 }
 .read-more:hover,
 .read-more:focus {
@@ -940,7 +940,7 @@ span.highlight {
   position: relative;
 }
 .instagram .container::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 1rem;

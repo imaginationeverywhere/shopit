@@ -1,26 +1,26 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Tabs, Tab, TabList, TabPanel } from 'react-tabs';
+import { Link } from 'react-router-dom';
 
 // import custom component
-import OwlCarousel from "../../features/owl-carousel";
-import ProductNine from "../../features/product/product-nine";
+import OwlCarousel from '../../features/owl-carousel';
+import ProductNine from '../../features/product/product-nine';
 
 // import Services & Actions
-import { getProductsByCategory } from "../../../services";
+import { getProductsByCategory } from '../../../services';
 import {
   addToCart,
   toggleWishlist,
   addToCompare,
   showQuickViewModal,
-} from "../../../actions";
+} from '../../../actions';
 
 // import Slider Settings
-import { featuredSlider } from "../../settings";
+import { featuredSlider } from '../../settings';
 
 // import Data
-import _data from "../../../mock_data/data";
+import _data from '../../../mock_data/data';
 
 function FeaturedCollection(props) {
   const { addToCart, toggleWishlist, showQuickViewModal } = props;
@@ -53,7 +53,7 @@ function FeaturedCollection(props) {
               <img
                 src={
                   process.env.PUBLIC_URL +
-                  "/assets/images/home/banners/banner-5.jpg"
+                  '/assets/images/home/banners/banner-5.jpg'
                 }
                 alt="banner"
               />
@@ -101,7 +101,7 @@ function FeaturedCollection(props) {
               >
                 {getProductsByCategory(
                   getProductsByCategory(products, cat),
-                  "Shoes"
+                  'Shoes',
                 ).map((item, index) => (
                   <ProductNine
                     product={item}

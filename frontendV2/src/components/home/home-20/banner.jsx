@@ -1,18 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import { safeContent } from "../../../utils";
+import { safeContent } from '../../../utils';
 
 export default function Banner(props) {
   const {
     img,
     height,
-    adClass = "",
-    contentAdClass = "",
+    adClass = '',
+    contentAdClass = '',
     subtitle,
     title,
-    btnText = "Discover Now",
+    btnText = 'Discover Now',
   } = props.banner;
 
   return (
@@ -21,7 +21,7 @@ export default function Banner(props) {
         <div className="lazy-overlay bg-4" />
 
         <LazyLoadImage
-          src={process.env.PUBLIC_URL + "/" + img}
+          src={process.env.PUBLIC_URL + '/' + img}
           alt="Banner"
           width={100}
           height={height}
@@ -36,7 +36,7 @@ export default function Banner(props) {
           </Link>
         </h4>
 
-        {adClass === "banner-big" ? (
+        {adClass === 'banner-big' ? (
           <h2 className="banner-title text-white">
             <Link
               to={`${process.env.PUBLIC_URL}/shop/sidebar/list`}

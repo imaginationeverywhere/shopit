@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const PopularPost = () => {
-  let publicUrl = process.env.PUBLIC_URL + "/";
-  let imagealt = "image";
+  let publicUrl = process.env.PUBLIC_URL + '/';
+  let imagealt = 'image';
 
   return (
     <div>

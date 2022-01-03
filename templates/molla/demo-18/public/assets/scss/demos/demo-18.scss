@@ -1,9 +1,9 @@
 /* Demo 18 Homepage 18 */
-@import "../mixins/clearfix";
-@import "../mixins/breakpoints";
-@import "../mixins/lazy";
+@import '../mixins/clearfix';
+@import '../mixins/breakpoints';
+@import '../mixins/lazy';
 
-@import "../config/variables";
+@import '../config/variables';
 
 .header.header-11 {
   position: absolute;
@@ -186,7 +186,7 @@
   text-transform: uppercase;
 }
 
-.owl-theme .owl-nav [class*="owl-"] {
+.owl-theme .owl-nav [class*='owl-'] {
   width: 4rem;
   height: 4rem;
   font-size: 2.2rem;
@@ -201,7 +201,7 @@
   right: 100px;
 }
 
-.owl-theme.owl-light .owl-nav [class*="owl-"] {
+.owl-theme.owl-light .owl-nav [class*='owl-'] {
   border-color: #fff;
   color: #fff;
 }
@@ -533,7 +533,7 @@
   }
 }
 
-@include mq("sm") {
+@include mq('sm') {
   .intro-subtitle {
     font-size: 1.3rem;
   }
@@ -547,7 +547,7 @@
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   .intro-subtitle {
     font-size: 1.3rem;
   }
@@ -557,7 +557,7 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .intro-content {
     .btn {
       min-width: 170px;
@@ -577,7 +577,7 @@
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .intro-slider-container,
   .intro-slide {
     min-height: 0;
@@ -616,7 +616,7 @@
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .header-middle .header-center {
     display: block;
   }
@@ -625,7 +625,7 @@
   }
 }
 
-@include mq("375px", "max") {
+@include mq('375px', 'max') {
   .btn-product {
     margin-left: 0 !important;
     margin-right: 0 !important;

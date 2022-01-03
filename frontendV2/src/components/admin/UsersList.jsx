@@ -1,7 +1,7 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { Helmet } from "react-helmet";
-import classes from "./styles/product-list.module.scss";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Helmet } from 'react-helmet';
+import classes from './styles/product-list.module.scss';
 
 const UsersList = () => {
   const { users } = useSelector((state) => state.users);
@@ -12,8 +12,8 @@ const UsersList = () => {
         <title>Shopit|Admin Users</title>
       </Helmet>
       <h2>Users</h2>
-      <div className={classes["product-table-container"]}>
-        <table className={classes["product-table"]}>
+      <div className={classes['product-table-container']}>
+        <table className={classes['product-table']}>
           <thead>
             <tr>
               <th>User ID</th>

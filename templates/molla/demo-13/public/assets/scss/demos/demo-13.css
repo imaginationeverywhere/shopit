@@ -18,8 +18,8 @@
   height: 360px;
   background-color: #fafafa;
 }
-.intro-slider-container .owl-simple .owl-nav [class*="owl-"],
-.intro-slide .owl-simple .owl-nav [class*="owl-"] {
+.intro-slider-container .owl-simple .owl-nav [class*='owl-'],
+.intro-slide .owl-simple .owl-nav [class*='owl-'] {
   top: 52%;
 }
 
@@ -84,18 +84,18 @@
   bottom: 20px;
 }
 
-.intro-slider.owl-simple .owl-nav [class*="owl-"]:not(:hover):not(:focus) {
+.intro-slider.owl-simple .owl-nav [class*='owl-']:not(:hover):not(:focus) {
   color: #666;
 }
 
-.intro-slider.owl-simple .owl-nav [class*="owl-"] {
+.intro-slider.owl-simple .owl-nav [class*='owl-'] {
   font-size: 2.6rem;
 }
 
 .cat-blocks-container {
   padding-top: 0.5rem;
 }
-.cat-blocks-container [class*="col-"] {
+.cat-blocks-container [class*='col-'] {
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -472,7 +472,7 @@
 }
 
 /* Category market page */
-.owl-simple .owl-nav [class*="owl-"] {
+.owl-simple .owl-nav [class*='owl-'] {
   font-size: 2.6rem;
 }
 
@@ -494,7 +494,7 @@
   display: flex;
   align-items: center;
 }
-.owl-nav-top.owl-simple .owl-nav [class*="owl-"] {
+.owl-nav-top.owl-simple .owl-nav [class*='owl-'] {
   position: static;
   left: auto;
   right: auto;
@@ -583,12 +583,12 @@
 }
 .widget-categories h5 .toggle-button:before {
   color: #333;
-  content: "\e802";
+  content: '\e802';
   display: inline-block;
   position: absolute;
   right: 1rem;
   top: 50%;
-  font: normal 1rem/1 "molla";
+  font: normal 1rem/1 'molla';
   transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transition: all 0.3s;
@@ -601,7 +601,7 @@
   color: #3399ff;
 }
 .widget-categories h5 .toggle-button.collapsed:before {
-  content: "\f110";
+  content: '\f110';
   transform: translateY(-50%);
   -ms-transform: translateY(-50%);
 }
@@ -650,7 +650,7 @@
   background-color: rgba(102, 102, 102, 0.2);
 }
 
-.category-banners-slider.owl-nav-inside .owl-nav [class*="owl-"] {
+.category-banners-slider.owl-nav-inside .owl-nav [class*='owl-'] {
   color: #666;
 }
 .category-banners-slider.owl-nav-inside .owl-nav .owl-prev {

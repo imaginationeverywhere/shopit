@@ -1,9 +1,9 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 import {
   GET_SHIPMENT_CARRIERS_REQUEST,
   GET_SHIPMENT_CARRIERS_SUCCESS,
   SET_SELECTED_CARRIER_REQUEST,
-} from "../constants/shipmentConstants";
+} from '../constants/shipmentConstants';
 
 const carriers = (state = { data: [] }, action) => {
   switch (action.type) {
@@ -15,7 +15,7 @@ const carriers = (state = { data: [] }, action) => {
         data: action.payload.carriers,
         loading: false,
       };
-      localStorage.setItem("carriers", JSON.stringify(updatedCarrier));
+      localStorage.setItem('carriers', JSON.stringify(updatedCarrier));
       return updatedCarrier;
     default:
       return state;
@@ -26,7 +26,7 @@ const selectedCarrier = (state = {}, action) => {
   switch (action.type) {
     case SET_SELECTED_CARRIER_REQUEST: {
       const updatedState = { ...state, ...action.payload };
-      localStorage.setItem("selectedCarrier", JSON.stringify(updatedState));
+      localStorage.setItem('selectedCarrier', JSON.stringify(updatedState));
 
       return updatedState;
     }

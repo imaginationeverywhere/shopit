@@ -1,4 +1,4 @@
-import { findIndex } from "../utils";
+import { findIndex } from '../utils';
 
 /**
  * Get visible products
@@ -9,7 +9,7 @@ import { findIndex } from "../utils";
  */
 export const getVisibleProducts = (
   products,
-  { sortBy, category, size, brand, color, rating, value }
+  { sortBy, category, size, brand, color, rating, value },
 ) => {
   return products
     .filter((item) => {
@@ -24,8 +24,8 @@ export const getVisibleProducts = (
         for (let i = 0; i < category.length; i++) {
           if (
             -1 !== findIndex(item.category, (cat) => cat === category[i]) ||
-            (category[i] === "Sale" && item.discount > 0) ||
-            category[i] === "All"
+            (category[i] === 'Sale' && item.discount > 0) ||
+            category[i] === 'All'
           )
             catResult = true;
         }
@@ -91,17 +91,17 @@ export const getVisibleProducts = (
       let price1 = product1.discount > 0 ? product1.salePrice : product1.price;
       let price2 = product2.discount > 0 ? product2.salePrice : product2.price;
 
-      if ("popularity" === sortBy) {
+      if ('popularity' === sortBy) {
         return product2.id < product1.id ? -1 : 1;
-      } else if ("rating" === sortBy) {
+      } else if ('rating' === sortBy) {
         return product2.ratings > product1.ratings ? 1 : -1;
-      } else if ("date" === sortBy) {
+      } else if ('date' === sortBy) {
         return product2.id > product1.id ? -1 : 1;
-      } else if ("newness" === sortBy) {
+      } else if ('newness' === sortBy) {
         return product2.id > product1.id ? -1 : 1;
-      } else if ("price: low to high" === sortBy) {
+      } else if ('price: low to high' === sortBy) {
         return price2 > price1 ? -1 : 1;
-      } else if ("price: high to low" === sortBy) {
+      } else if ('price: high to low' === sortBy) {
         return price2 < price1 ? -1 : 1;
       } else {
         return product2.id < product1.id ? -1 : 1;
@@ -176,10 +176,10 @@ export const getTopSellingProducts = (products) => {
  * @return {Array} filteredProducts
  */
 export const getProductsByCategory = (products, category) => {
-  if (category === "All") return products;
+  if (category === 'All') return products;
 
-  if (-1 !== category.indexOf("&")) {
-    category = category.split(" & ");
+  if (-1 !== category.indexOf('&')) {
+    category = category.split(' & ');
   }
 
   return products.filter((item) => {
@@ -205,8 +205,8 @@ export const getProductsByCategory = (products, category) => {
  * @return {Integer} count of suitable products
  */
 export const getCountByCategory = (products, category) => {
-  if (category === "All") return products.length;
-  if (category === "Sale")
+  if (category === 'All') return products.length;
+  if (category === 'Sale')
     return products.filter((item) => item.discount > 0).length;
   return products.filter((item) => -1 !== item.category.indexOf(category))
     .length;

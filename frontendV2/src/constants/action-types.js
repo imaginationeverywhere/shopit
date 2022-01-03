@@ -19,6 +19,8 @@ export const CHANGE_QTY = 'CHANGE_QTY';
 export const CHANGE_SHIPPING = 'CHANGE_SHIPPING';
 export const SAVE_SHIPPING_INFO = 'SAVE_SHIPPING_INFO';
 
+export const CLEAR_CART = 'CLEAR_CART';
+
 // WishList
 export const TOGGLE_WISHLIST = 'TOGGLE_WISHLIST';
 export const REMOVE_FROM_WISHLIST = 'REMOVE_FROM_WISHLIST';

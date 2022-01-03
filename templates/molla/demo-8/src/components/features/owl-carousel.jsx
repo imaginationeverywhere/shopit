@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import Carousel from "react-owl-carousel2";
+import React, { useEffect, useRef } from 'react';
+import Carousel from 'react-owl-carousel2';
 
 export default function OwlCarousel(props) {
   const { adClass, carouselOptions } = props;
@@ -10,19 +10,19 @@ export default function OwlCarousel(props) {
       props.children &&
       (props.children.length > 0 ||
         (props.children && props.children.length === undefined)) &&
-      carouselRef.current.props.className.indexOf("owl-quickview") > -1
+      carouselRef.current.props.className.indexOf('owl-quickview') > -1
     ) {
       let dots;
       let carousel = carouselRef.current;
 
-      if (document.querySelector("#owl-dots .carousel-dot")) {
-        if (!document.querySelector("#owl-dots .carousel-dot.active"))
+      if (document.querySelector('#owl-dots .carousel-dot')) {
+        if (!document.querySelector('#owl-dots .carousel-dot.active'))
           document
-            .querySelectorAll("#owl-dots .carousel-dot")[0]
-            .classList.add("active");
-        dots = document.querySelectorAll("#owl-dots .carousel-dot");
+            .querySelectorAll('#owl-dots .carousel-dot')[0]
+            .classList.add('active');
+        dots = document.querySelectorAll('#owl-dots .carousel-dot');
         for (let i = 0; i < dots.length; i++) {
-          dots[i].addEventListener("click", (e) => {
+          dots[i].addEventListener('click', (e) => {
             carousel.goTo(e.currentTarget.index());
           });
         }
@@ -33,19 +33,19 @@ export default function OwlCarousel(props) {
       if (
         (props.children.length > 0 ||
           (props.children && props.children.length === undefined)) &&
-        carouselRef.current.props.className.indexOf("owl-quickview") > -1
+        carouselRef.current.props.className.indexOf('owl-quickview') > -1
       ) {
         let dots;
         let carousel = carouselRef.current;
 
-        if (document.querySelector("#owl-dots .carousel-dot")) {
-          if (!document.querySelector("#owl-dots .carousel-dot.active"))
+        if (document.querySelector('#owl-dots .carousel-dot')) {
+          if (!document.querySelector('#owl-dots .carousel-dot.active'))
             document
-              .querySelectorAll("#owl-dots .carousel-dot")[0]
-              .classList.add("active");
-          dots = document.querySelectorAll("#owl-dots .carousel-dot");
+              .querySelectorAll('#owl-dots .carousel-dot')[0]
+              .classList.add('active');
+          dots = document.querySelectorAll('#owl-dots .carousel-dot');
           for (let i = 0; i < dots.length; i++) {
-            dots[i].addEventListener("click", (e) => {
+            dots[i].addEventListener('click', (e) => {
               carousel.goTo(e.currentTarget.index());
             });
           }
@@ -57,14 +57,14 @@ export default function OwlCarousel(props) {
   const events = {
     onTranslate: function (e) {
       if (!e.target) return;
-      if (e.target.closest(".owl-quickview")) {
+      if (e.target.closest('.owl-quickview')) {
         document
-          .querySelector("#owl-dots")
-          .querySelector(".active")
-          .classList.remove("active");
+          .querySelector('#owl-dots')
+          .querySelector('.active')
+          .classList.remove('active');
         document
-          .querySelector("#owl-dots")
-          .children[e.page.index].classList.add("active");
+          .querySelector('#owl-dots')
+          .children[e.page.index].classList.add('active');
       }
     },
   };
@@ -73,7 +73,7 @@ export default function OwlCarousel(props) {
     items: 1,
     loop: false,
     margin: 0,
-    responsiveClass: "true",
+    responsiveClass: 'true',
     nav: true,
     navText: ['<i class="icon-angle-left">', '<i class="icon-angle-right">'],
     dots: true,
@@ -104,9 +104,9 @@ export default function OwlCarousel(props) {
         {props.children}
       </Carousel>
     ) : (
-      ""
+      ''
     )
   ) : (
-    ""
+    ''
   );
 }

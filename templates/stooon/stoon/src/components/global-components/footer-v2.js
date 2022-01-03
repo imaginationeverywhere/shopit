@@ -1,24 +1,24 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Footer_v2 extends Component {
   componentDidMount() {
-    let publicUrl = process.env.PUBLIC_URL + "/";
-    const minscript = document.createElement("script");
+    let publicUrl = process.env.PUBLIC_URL + '/';
+    const minscript = document.createElement('script');
     minscript.async = true;
-    minscript.src = publicUrl + "assets/js/main.js";
+    minscript.src = publicUrl + 'assets/js/main.js';
 
     document.body.appendChild(minscript);
   }
 
   render() {
-    let publicUrl = process.env.PUBLIC_URL + "/";
-    let imgattr = "Footer logo";
-    let customclass = this.props.customclass ? this.props.customclass : "";
+    let publicUrl = process.env.PUBLIC_URL + '/';
+    let imgattr = 'Footer logo';
+    let customclass = this.props.customclass ? this.props.customclass : '';
 
     return (
       <footer
-        className={"footer-area footer-style-2 padding-top-80 " + customclass}
+        className={'footer-area footer-style-2 padding-top-80 ' + customclass}
       >
         <div className="footer-top padding-bottom-50">
           <div className="container">
@@ -26,7 +26,7 @@ class Footer_v2 extends Component {
               <div className="col-lg-3 col-md-6">
                 <div className="widget widget_about">
                   <Link to="/">
-                    <img src={publicUrl + "assets/img/logo-white.png"} alt="" />
+                    <img src={publicUrl + 'assets/img/logo-white.png'} alt="" />
                   </Link>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -157,7 +157,7 @@ class Footer_v2 extends Component {
             <div className="row">
               <div className="col-md-6 align-self-center">
                 <p>
-                  © Stoon 2020. Powered with <i className="fa fa-heart" /> by{" "}
+                  © Stoon 2020. Powered with <i className="fa fa-heart" /> by{' '}
                   <a href="#">Codingeek</a>.
                 </p>
               </div>
@@ -166,7 +166,7 @@ class Footer_v2 extends Component {
                   <li>
                     <a href="#">
                       <img
-                        src={publicUrl + "assets/img/payment/1.png"}
+                        src={publicUrl + 'assets/img/payment/1.png'}
                         alt=""
                       />
                     </a>
@@ -174,7 +174,7 @@ class Footer_v2 extends Component {
                   <li>
                     <a href="#">
                       <img
-                        src={publicUrl + "assets/img/payment/2.png"}
+                        src={publicUrl + 'assets/img/payment/2.png'}
                         alt=""
                       />
                     </a>
@@ -182,7 +182,7 @@ class Footer_v2 extends Component {
                   <li>
                     <a href="#">
                       <img
-                        src={publicUrl + "assets/img/payment/3.png"}
+                        src={publicUrl + 'assets/img/payment/3.png'}
                         alt=""
                       />
                     </a>
@@ -190,7 +190,7 @@ class Footer_v2 extends Component {
                   <li>
                     <a href="#">
                       <img
-                        src={publicUrl + "assets/img/payment/4.png"}
+                        src={publicUrl + 'assets/img/payment/4.png'}
                         alt=""
                       />
                     </a>
@@ -198,7 +198,7 @@ class Footer_v2 extends Component {
                   <li>
                     <a href="#">
                       <img
-                        src={publicUrl + "assets/img/payment/5.png"}
+                        src={publicUrl + 'assets/img/payment/5.png'}
                         alt=""
                       />
                     </a>
@@ -206,7 +206,7 @@ class Footer_v2 extends Component {
                   <li>
                     <a href="#">
                       <img
-                        src={publicUrl + "assets/img/payment/6.png"}
+                        src={publicUrl + 'assets/img/payment/6.png'}
                         alt=""
                       />
                     </a>

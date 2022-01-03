@@ -1,15 +1,15 @@
-import React from "react";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
-import PostFive from "../../features/post/post-five";
-import Pagination from "../../features/pagination";
-import BlogSidebar from "../../features/sidebar/blog-sidebar";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
+import PostFive from '../../features/post/post-five';
+import Pagination from '../../features/pagination';
+import BlogSidebar from '../../features/sidebar/blog-sidebar';
 
 // import post data
-import posts from "../../../mock_data/posts";
+import posts from '../../../mock_data/posts';
 
 function Classic() {
   return (
@@ -24,7 +24,7 @@ function Classic() {
         <PageHeader title="Blog Classic" subTitle="Blog" />
         <Breadcrumb
           title="Classic"
-          parent1={["Blog", "blog/classic"]}
+          parent1={['Blog', 'blog/classic']}
           adClass="mb-3"
         />
 

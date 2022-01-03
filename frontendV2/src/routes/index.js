@@ -1,18 +1,18 @@
-import React, { useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { Route, Switch } from 'react-router-dom';
 
-import LoadingOverlay from "../components/features/loading-overlay";
+import LoadingOverlay from '../components/features/loading-overlay';
 
-import { scrollTop } from "../utils";
+import { scrollTop } from '../utils';
 
-const ElementPages = React.lazy(() => import("./elements-route.js"));
-const ProductPages = React.lazy(() => import("./products-route.js"));
-const ShopPages = React.lazy(() => import("./shop-route.js"));
-const BlogPages = React.lazy(() => import("./blogs-route.js"));
-const OtherPages = React.lazy(() => import("./others-route.js"));
-const HomePage = React.lazy(() => import("./home-route.js"));
-const AdminPages = React.lazy(() => import("./admin-route.js"));
-const PreviewPages = React.lazy(() => import("./preview-route"));
+const ElementPages = React.lazy(() => import('./elements-route.js'));
+const ProductPages = React.lazy(() => import('./products-route.js'));
+const ShopPages = React.lazy(() => import('./shop-route.js'));
+const BlogPages = React.lazy(() => import('./blogs-route.js'));
+const OtherPages = React.lazy(() => import('./others-route.js'));
+const HomePage = React.lazy(() => import('./home-route.js'));
+const AdminPages = React.lazy(() => import('./admin-route.js'));
+const PreviewPages = React.lazy(() => import('./preview-route'));
 
 export default function AppRoot() {
   useEffect(() => {

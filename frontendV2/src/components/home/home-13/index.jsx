@@ -1,26 +1,26 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import QuickView from "../../features/product/common/quickview";
-import Brand from "../../features/brand";
-import OwlCarousel from "../../features/owl-carousel";
-import NewsletterModal from "../../features/modal/newsletter-modal";
-import Service from "../../features/service";
+import QuickView from '../../features/product/common/quickview';
+import Brand from '../../features/brand';
+import OwlCarousel from '../../features/owl-carousel';
+import NewsletterModal from '../../features/modal/newsletter-modal';
+import Service from '../../features/service';
 
-import Banner from "./banner";
-import IntroSlider from "./intro_slider";
-import CTA from "./cta-section";
-import SpecialCollection from "./special-collection";
-import HotCollection from "./hot-collection";
-import BlogSection from "./blog-section";
+import Banner from './banner';
+import IntroSlider from './intro_slider';
+import CTA from './cta-section';
+import SpecialCollection from './special-collection';
+import HotCollection from './hot-collection';
+import BlogSection from './blog-section';
 
-import { introSlider } from "../../settings";
-import { isIEBrowser } from "../../../utils";
-import data from "../../../mock_data/data";
-import style from "./style.scss";
+import { introSlider } from '../../settings';
+import { isIEBrowser } from '../../../utils';
+import data from '../../../mock_data/data';
+import style from './style.scss';
 
 export default function HomePage(props) {
   useEffect(() => {

@@ -1,31 +1,31 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import NewsletterModal from "../../features/modal/newsletter-modal";
-import Service from "../../features/service";
-import QuickViewTwo from "../../features/product/common/quickview-two";
+import NewsletterModal from '../../features/modal/newsletter-modal';
+import Service from '../../features/service';
+import QuickViewTwo from '../../features/product/common/quickview-two';
 
-import BannerGroup from "./banner-group";
-import Banner from "./banner";
-import SideNavBar from "./sidenav";
-import NewsletterSection from "./newsletter-section";
-import TrendyCollection from "./trendy-collection";
-import SoonCollection from "./soon-collection";
-import BestCollection from "./best-collection";
-import BlogSection from "./blog-section";
+import BannerGroup from './banner-group';
+import Banner from './banner';
+import SideNavBar from './sidenav';
+import NewsletterSection from './newsletter-section';
+import TrendyCollection from './trendy-collection';
+import SoonCollection from './soon-collection';
+import BestCollection from './best-collection';
+import BlogSection from './blog-section';
 
-import data from "../../../mock_data/data.json";
-import style from "./style.scss";
+import data from '../../../mock_data/data.json';
+import style from './style.scss';
 
 function HomePage19(props) {
   useEffect(() => {
-    document.getElementById("menu-home").classList.add("active");
+    document.getElementById('menu-home').classList.add('active');
     style.use();
 
     return () => {
-      document.getElementById("menu-home").classList.remove("active");
+      document.getElementById('menu-home').classList.remove('active');
       style.unuse();
     };
   }, []);

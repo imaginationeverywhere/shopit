@@ -288,7 +288,7 @@
   display: block !important;
 }
 
-.owl-full .owl-nav [class*="owl-"] {
+.owl-full .owl-nav [class*='owl-'] {
   color: #666;
 }
 
@@ -380,7 +380,7 @@
 
 .btn-wishlist:hover:before,
 .btn-wishlist:focus:before {
-  content: "\f233";
+  content: '\f233';
 }
 
 .product-action {
@@ -514,7 +514,7 @@
   margin-bottom: 0.8rem;
 }
 .cat-banner-list ul li a:before {
-  content: "•";
+  content: '•';
   margin-right: 0.8rem;
 }
 .cat-banner-list a {
@@ -586,7 +586,7 @@
   position: relative;
 }
 .sidebar-home .widget-title span:after {
-  content: "";
+  content: '';
   position: absolute;
   display: block;
   left: 0;

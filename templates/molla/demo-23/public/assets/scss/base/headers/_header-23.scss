@@ -170,7 +170,7 @@
 }
 
 .menu.sf-arrows .sf-with-ul::after {
-  content: "\f274";
+  content: '\f274';
   right: 6rem;
   visibility: hidden;
   font-size: 1.5rem;
@@ -280,7 +280,7 @@ ul.sub-menu {
 
   font-size: 1.3rem;
   font-weight: 300;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   letter-spacing: 0.01em;
   color: #777;
 }
@@ -295,7 +295,7 @@ ul.sub-menu {
   }
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0.4rem;
     width: 100%;
@@ -323,7 +323,7 @@ p {
   margin-bottom: 0;
   font-size: 1.3rem;
   font-weight: 400;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   letter-spacing: 0.01em;
   color: #222;
 }
@@ -425,13 +425,13 @@ p {
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .header-middle .header-right > div:nth-child(3) {
     padding: 0;
   }
 }
 
-@include mq("md", "max") {
+@include mq('md', 'max') {
   .dropdown.category-dropdown {
     .dropdown-toggle {
       min-width: 230px;
@@ -443,7 +443,7 @@ p {
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .dropdown.category-dropdown {
     .dropdown-toggle {
       min-width: 200px;
@@ -476,8 +476,8 @@ p {
   }
 
   .menu > li::after {
-    content: "\f274";
-    font-family: "molla";
+    content: '\f274';
+    font-family: 'molla';
     padding-right: 1rem;
     visibility: hidden;
   }

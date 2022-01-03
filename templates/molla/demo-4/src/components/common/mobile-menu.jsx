@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Tabs, TabList, Tab, TabPanel } from 'react-tabs';
 
-import MobileMainNav from "./partials/mobile-nav";
+import MobileMainNav from './partials/mobile-nav';
 
 export default function MobileMenu() {
   return (

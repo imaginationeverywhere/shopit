@@ -1,20 +1,20 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Tab, Tabs, TabPanel, TabList } from "react-tabs";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Tab, Tabs, TabPanel, TabList } from 'react-tabs';
 
 // Import Custom Component
-import OwlCarousel from "../features/owl-carousel";
-import ProductNine from "../features/product/product-nine";
+import OwlCarousel from '../features/owl-carousel';
+import ProductNine from '../features/product/product-nine';
 
 // Import Slider Settings
-import { productSlider } from "../settings";
+import { productSlider } from '../settings';
 
 // Import Services and Actions
-import { getProductsByCategory, getFeaturedProducts } from "../../services";
-import { addToCart, toggleWishlist } from "../../actions";
+import { getProductsByCategory, getFeaturedProducts } from '../../services';
+import { addToCart, toggleWishlist } from '../../actions';
 
 // Import Data
-import _data from "../../mock_data/data.json";
+import _data from '../../mock_data/data.json';
 
 function TrendyCollection(props) {
   const { addToCart, toggleWishlist } = props;
@@ -52,7 +52,7 @@ function TrendyCollection(props) {
                     onAddToCart={addToCart}
                     onToggleWishlist={toggleWishlist}
                   />
-                )
+                ),
               )}
             </OwlCarousel>
           </TabPanel>
@@ -69,5 +69,5 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, { addToCart, toggleWishlist })(
-  TrendyCollection
+  TrendyCollection,
 );

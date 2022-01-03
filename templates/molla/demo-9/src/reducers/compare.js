@@ -2,17 +2,17 @@ import {
   ADD_TO_COMPARE,
   REMOVE_FROM_COMPARE,
   RESET_COMPARE,
-} from "../constants/action-types";
-import { findIndex } from "../utils";
+} from '../constants/action-types';
+import { findIndex } from '../utils';
 
-import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 function compareReducer(
   state = {
     items: [],
   },
-  action
+  action,
 ) {
   switch (action.type) {
     case ADD_TO_COMPARE:
@@ -51,8 +51,8 @@ function compareReducer(
 }
 
 const persistConfig = {
-  keyPrefix: "molla-",
-  key: "comparelist",
+  keyPrefix: 'molla-',
+  key: 'comparelist',
   storage,
 };
 

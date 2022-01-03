@@ -1,11 +1,11 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect } from 'react';
 
-import MetaData from "../layout/MetaData";
-import CheckoutSteps from "./CheckoutSteps";
+import MetaData from '../layout/MetaData';
+import CheckoutSteps from './CheckoutSteps';
 
-import { useAlert } from "react-alert";
-import { useDispatch, useSelector } from "react-redux";
-import { createOrder, clearErrors } from "../../actions/orderActions";
+import { useAlert } from 'react-alert';
+import { useDispatch, useSelector } from 'react-redux';
+import { createOrder, clearErrors } from '../../actions/orderActions';
 
 import {
   useStripe,
@@ -13,17 +13,17 @@ import {
   CardNumberElement,
   CardExpiryElement,
   CardCvcElement,
-} from "@stripe/react-stripe-js";
+} from '@stripe/react-stripe-js';
 
-import axios from "axios";
+import axios from 'axios';
 
 const options = {
   style: {
     base: {
-      fontSize: "16px",
+      fontSize: '16px',
     },
     invalid: {
-      color: "#9e2146",
+      color: '#9e2146',
     },
   },
 };
@@ -37,11 +37,11 @@ const Payment = ({ history }) => {
   const { user } = useSelector((state) => state.auth);
   const { cartItems, shippingInfo } = useSelector((state) => state.cart);
   const {
-    shipment = "",
-    carrier_account = "",
-    servicelevel: { token = "" } = {},
+    shipment = '',
+    carrier_account = '',
+    servicelevel: { token = '' } = {},
   } = useSelector(
-    ({ shipment: { selectedCarrier = {} } = {} }) => selectedCarrier || {}
+    ({ shipment: { selectedCarrier = {} } = {} }) => selectedCarrier || {},
   );
 
   const {
@@ -53,11 +53,11 @@ const Payment = ({ history }) => {
   const { error } = useSelector((state) => state.newOrder);
 
   if (!loading && success) {
-    history.push("/success");
+    history.push('/success');
   }
   if (!loading && newOrderError) {
     alert.error(newOrderError);
-    history.push("/confirm");
+    history.push('/confirm');
   }
 
   useEffect(() => {
@@ -77,7 +77,7 @@ const Payment = ({ history }) => {
     },
   };
 
-  const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
+  const orderInfo = JSON.parse(sessionStorage.getItem('orderInfo'));
   if (orderInfo) {
     order.itemsPrice = orderInfo.itemsPrice;
     order.shippingPrice = orderInfo.shippingPrice;
@@ -92,17 +92,17 @@ const Payment = ({ history }) => {
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    document.querySelector("#pay_btn").disabled = true;
+    document.querySelector('#pay_btn').disabled = true;
 
     let res;
     try {
       const config = {
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
       };
 
-      res = await axios.post("/api/v1/payment/process", paymentData, config);
+      res = await axios.post('/api/v1/payment/process', paymentData, config);
 
       const clientSecret = res.data.client_secret;
 
@@ -124,10 +124,10 @@ const Payment = ({ history }) => {
 
       if (result.error) {
         alert.error(result.error.message);
-        document.querySelector("#pay_btn").disabled = false;
+        document.querySelector('#pay_btn').disabled = false;
       } else {
         // The payment is processed or not
-        if (result.paymentIntent.status === "succeeded") {
+        if (result.paymentIntent.status === 'succeeded') {
           order.paymentInfo = {
             id: result.paymentIntent.id,
             status: result.paymentIntent.status,
@@ -135,18 +135,18 @@ const Payment = ({ history }) => {
 
           dispatch(createOrder(order));
         } else {
-          alert.error("There is some issue while payment processing");
+          alert.error('There is some issue while payment processing');
         }
       }
     } catch (error) {
-      document.querySelector("#pay_btn").disabled = false;
+      document.querySelector('#pay_btn').disabled = false;
       alert.error(error.response.data.message);
     }
   };
 
   return (
     <Fragment>
-      <MetaData title={"Payment"} />
+      <MetaData title={'Payment'} />
 
       <CheckoutSteps shipping confirmOrder payment />
 

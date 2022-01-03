@@ -1,8 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
-import ProductNine from "../../features/product/product-nine";
-import Banner from "./banner";
+import ProductNine from '../../features/product/product-nine';
+import Banner from './banner';
 
 // import Action
 import {
@@ -10,9 +10,9 @@ import {
   toggleWishlist,
   showQuickViewModal,
   addToCompare,
-} from "../../../actions";
+} from '../../../actions';
 
-import data from "../../../mock_data/data";
+import data from '../../../mock_data/data';
 
 function ThirdCollection(props) {
   const { addToCart, toggleWishlist, showQuickViewModal, addToCompare } = props;

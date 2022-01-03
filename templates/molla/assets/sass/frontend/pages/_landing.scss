@@ -80,7 +80,7 @@ p {
   background-color: #ebebeb;
   overflow: hidden;
 
-  &[data-oi$=".png"] {
+  &[data-oi$='.png'] {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
@@ -207,8 +207,8 @@ p {
   z-index: 1;
 
   &:before {
-    content: "\f04b";
-    font-family: "Font Awesome 5 Free";
+    content: '\f04b';
+    font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     line-height: 50px;
   }
@@ -222,7 +222,7 @@ p {
     visibility: hidden;
     opacity: 0;
     &:before {
-      content: "\f04c";
+      content: '\f04c';
     }
   }
 }
@@ -306,7 +306,7 @@ p {
     color: #ccc;
 
     &::before {
-      content: "Coming Soon";
+      content: 'Coming Soon';
       position: absolute;
       left: 50%;
       top: 50%;
@@ -335,11 +335,11 @@ p {
   }
 
   .count-wrapper:before {
-    content: "(";
+    content: '(';
     font-size: 5rem;
   }
   .count-wrapper:after {
-    content: ")";
+    content: ')';
     font-size: 5rem;
   }
 
@@ -557,7 +557,7 @@ p {
     &::before,
     &::after {
       position: absolute;
-      content: "";
+      content: '';
       width: 10%;
       height: 100%;
       top: 0;
@@ -663,7 +663,7 @@ p {
 }
 
 /* Responsive */
-@include mq("xl") {
+@include mq('xl') {
   .feature-box {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -675,7 +675,7 @@ p {
   }
 }
 
-@include mq("xl", "max") {
+@include mq('xl', 'max') {
   .intro-content {
     width: 60.5%;
   }
@@ -690,7 +690,7 @@ p {
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .intro-device-3 {
     left: 75%;
   }
@@ -699,13 +699,13 @@ p {
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   .d-md-flex {
     display: flex;
   }
 }
 
-@include mq("md", "max") {
+@include mq('md', 'max') {
   .section-title,
   .demos-section .section-title {
     font-size: 3rem;
@@ -756,7 +756,7 @@ p {
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .optimize-section {
     min-height: 60rem;
 
@@ -931,7 +931,7 @@ p {
   display: inline-block;
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     top: 0;

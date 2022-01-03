@@ -1,50 +1,50 @@
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import "react-input-range/lib/css/index.css";
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import 'react-input-range/lib/css/index.css';
 
 // import components
-import Accordion from "../accordion/accordion";
-import Card from "../accordion/card";
+import Accordion from '../accordion/accordion';
+import Card from '../accordion/card';
 
-import { getCountByRating } from "../../../services";
+import { getCountByRating } from '../../../services';
 import {
   toggleBrandFilter,
   toggleColorFilter,
   toggleRatingFilter,
   filterPrice,
-} from "../../../actions";
-import { findIndex } from "../../../utils";
+} from '../../../actions';
+import { findIndex } from '../../../utils';
 
 function ShopSidebar(props) {
   const [toggle, setToggle] = useState(false);
 
   const colors = [
-    "#b87145",
-    "#f0c04a",
-    "#333333",
-    "#cc3333",
-    "#3399cc",
-    "#669933",
-    "#f2719c",
-    "#ebebeb",
+    '#b87145',
+    '#f0c04a',
+    '#333333',
+    '#cc3333',
+    '#3399cc',
+    '#669933',
+    '#f2719c',
+    '#ebebeb',
   ];
   const brands = [
-    "Next",
-    "River Island",
-    "Geox",
-    "New Balance",
-    "UGG",
-    "F&F",
-    "Nike",
+    'Next',
+    'River Island',
+    'Geox',
+    'New Balance',
+    'UGG',
+    'F&F',
+    'Nike',
   ];
   const ratings = [5, 4, 3, 2, 1];
   const priceTitleArr = [
-    "Under $25",
-    "$25 to $50",
-    "$50 to $100",
-    "$100 to $200",
-    "$200 & Above",
+    'Under $25',
+    '$25 to $50',
+    '$50 to $100',
+    '$100 to $200',
+    '$200 & Above',
   ];
   const priceRangeArr = [
     {
@@ -78,40 +78,40 @@ function ShopSidebar(props) {
   products = products.slice(66, 74);
 
   useEffect(() => {
-    window.addEventListener("resize", resizeHandle);
+    window.addEventListener('resize', resizeHandle);
     resizeHandle();
 
     return () => {
-      window.removeEventListener("resize", resizeHandle);
+      window.removeEventListener('resize', resizeHandle);
     };
   }, []);
 
   function resizeHandle() {
-    if (document.querySelector("body").offsetWidth < 992) setToggle(true);
+    if (document.querySelector('body').offsetWidth < 992) setToggle(true);
     else setToggle(false);
   }
 
   function hideSideBar() {
     if (
-      document.querySelector("body").classList.contains("sidebar-filter-active")
+      document.querySelector('body').classList.contains('sidebar-filter-active')
     )
-      document.querySelector("body").classList.remove("sidebar-filter-active");
+      document.querySelector('body').classList.remove('sidebar-filter-active');
   }
 
   function toggleSideBar() {
     if (
-      document.querySelector("body").classList.contains("sidebar-filter-active")
+      document.querySelector('body').classList.contains('sidebar-filter-active')
     )
-      document.querySelector("body").classList.remove("sidebar-filter-active");
-    else document.querySelector("body").classList.add("sidebar-filter-active");
+      document.querySelector('body').classList.remove('sidebar-filter-active');
+    else document.querySelector('body').classList.add('sidebar-filter-active');
   }
 
   return (
     <>
       <aside
-        className={`${toggle ? "sidebar-filter" : "sidebar"} sidebar-shop`}
+        className={`${toggle ? 'sidebar-filter' : 'sidebar'} sidebar-shop`}
       >
-        <div className={toggle ? "sidebar-filter-wrapper" : ""}>
+        <div className={toggle ? 'sidebar-filter-wrapper' : ''}>
           <div className="widget widget-categories">
             <h3 className="widget-title">Electronics</h3>
 
@@ -253,7 +253,7 @@ function ShopSidebar(props) {
                       onClick={(e) => props.toggleBrandFilter(item)}
                       defaultChecked={
                         -1 <
-                        findIndex(filters["brand"], (filter) => filter === item)
+                        findIndex(filters['brand'], (filter) => filter === item)
                           ? true
                           : false
                       }
@@ -288,9 +288,9 @@ function ShopSidebar(props) {
                           props.filterPrice(priceRangeArr[index]);
                         }}
                         defaultChecked={
-                          filters["value"] &&
-                          filters["value"].min === priceRangeArr[index].min &&
-                          filters["value"].max === priceRangeArr[index].max
+                          filters['value'] &&
+                          filters['value'].min === priceRangeArr[index].min &&
+                          filters['value'].max === priceRangeArr[index].max
                             ? true
                             : false
                         }
@@ -324,8 +324,8 @@ function ShopSidebar(props) {
                         defaultChecked={
                           -1 <
                           findIndex(
-                            filters["rating"],
-                            (filter) => filter === item
+                            filters['rating'],
+                            (filter) => filter === item,
                           )
                             ? true
                             : false
@@ -339,7 +339,7 @@ function ShopSidebar(props) {
                           <span className="ratings">
                             <span
                               className="ratings-val"
-                              style={{ width: 20 * item + "%" }}
+                              style={{ width: 20 * item + '%' }}
                             ></span>
                           </span>
                           <span className="ratings-text">
@@ -364,9 +364,9 @@ function ShopSidebar(props) {
                     to="#"
                     className={
                       -1 <
-                      findIndex(filters["color"], (filter) => filter === item)
-                        ? "selected"
-                        : ""
+                      findIndex(filters['color'], (filter) => filter === item)
+                        ? 'selected'
+                        : ''
                     }
                     style={{ background: item }}
                     onClick={(e) => {
@@ -388,7 +388,7 @@ function ShopSidebar(props) {
           <i className="icon-cog"></i>
         </button>
       ) : (
-        ""
+        ''
       )}
       <div className="sidebar-filter-overlay" onClick={hideSideBar}></div>
     </>

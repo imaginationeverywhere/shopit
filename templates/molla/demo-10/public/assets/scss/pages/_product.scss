@@ -80,7 +80,7 @@
 
   &:before,
   &:after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     left: 0.5rem;
@@ -540,7 +540,7 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .container-fluid {
     .product-details-top {
       .col-lg-7 {
@@ -558,7 +558,7 @@
   }
 }
 
-@include mq("1700px") {
+@include mq('1700px') {
   .container-fluid {
     .product-details-action .btn-cart {
       min-width: 240px;
@@ -572,7 +572,7 @@
       flex: 0 0 171px;
     }
   }
-  @include mq("1775px", "max") {
+  @include mq('1775px', 'max') {
     .details-fullwidth {
       .details-action-wrapper {
         margin-top: 1.5rem;
@@ -643,7 +643,7 @@
       padding-left: 1.3rem;
 
       &:before {
-        content: "•";
+        content: '•';
         position: absolute;
         display: block;
         top: 0;
@@ -904,13 +904,13 @@
     }
   }
 
-  @include mq("md") {
-    [class*="col-"] {
+  @include mq('md') {
+    [class*='col-'] {
       padding-top: 1rem;
     }
 
-    [class*="col-"] + [class*="col-"]:before {
-      content: "";
+    [class*='col-'] + [class*='col-']:before {
+      content: '';
       width: 1px;
       display: block;
       height: 100%;
@@ -1040,7 +1040,7 @@
   display: none;
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .product-gallery-vertical {
     .row {
       margin-left: -0.5rem;
@@ -1232,7 +1232,7 @@
   }
 }
 
-@include mq("md", "max") {
+@include mq('md', 'max') {
   .product-desc-row {
     min-height: 380px;
   }
@@ -1247,7 +1247,7 @@
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .breadcrumb-nav .d-flex {
     flex-direction: column;
     align-items: flex-start !important;
@@ -1308,19 +1308,19 @@
   }
 }
 
-@include mq("1920px", "max") {
+@include mq('1920px', 'max') {
   .details-action-col {
     flex-wrap: nowrap;
   }
 }
 
-@include mq("md", "max") {
+@include mq('md', 'max') {
   .product-main-image {
     width: 100%;
   }
 }
 
-@include mq("425px", "max") {
+@include mq('425px', 'max') {
   .product.product-list {
     .ratings-container {
       margin-bottom: 1.5rem;
@@ -1351,7 +1351,7 @@
   }
 }
 
-@include mq("375px", "max") {
+@include mq('375px', 'max') {
   .sticky-content .product-details-action {
     flex-wrap: nowrap;
   }
@@ -1388,7 +1388,7 @@
   }
 }
 
-@include mq("320px", "max") {
+@include mq('320px', 'max') {
   .details-action-col {
     flex-wrap: wrap;
   }

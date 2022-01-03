@@ -1,19 +1,19 @@
-import React, { Fragment, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { MDBDataTable } from "mdbreact";
+import React, { Fragment, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { MDBDataTable } from 'mdbreact';
 
-import MetaData from "../layout/MetaData";
-import Loader from "../layout/Loader";
-import Sidebar from "./Sidebar";
+import MetaData from '../layout/MetaData';
+import Loader from '../layout/Loader';
+import Sidebar from './Sidebar';
 
-import { useAlert } from "react-alert";
-import { useDispatch, useSelector } from "react-redux";
+import { useAlert } from 'react-alert';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   allOrders,
   deleteOrder,
   clearErrors,
-} from "../../actions/orderActions";
-import { DELETE_ORDER_RESET } from "../../constants/orderConstants";
+} from '../../actions/orderActions';
+import { DELETE_ORDER_RESET } from '../../constants/orderConstants';
 
 const OrdersList = ({ history }) => {
   const alert = useAlert();
@@ -31,8 +31,8 @@ const OrdersList = ({ history }) => {
     }
 
     if (isDeleted) {
-      alert.success("Order deleted successfully");
-      history.push("/admin/orders");
+      alert.success('Order deleted successfully');
+      history.push('/admin/orders');
       dispatch({ type: DELETE_ORDER_RESET });
     }
   }, [dispatch, alert, error, isDeleted, history]);
@@ -45,28 +45,28 @@ const OrdersList = ({ history }) => {
     const data = {
       columns: [
         {
-          label: "Order ID",
-          field: "id",
-          sort: "asc",
+          label: 'Order ID',
+          field: 'id',
+          sort: 'asc',
         },
         {
-          label: "No of Items",
-          field: "numofItems",
-          sort: "asc",
+          label: 'No of Items',
+          field: 'numofItems',
+          sort: 'asc',
         },
         {
-          label: "Amount",
-          field: "amount",
-          sort: "asc",
+          label: 'Amount',
+          field: 'amount',
+          sort: 'asc',
         },
         {
-          label: "Status",
-          field: "status",
-          sort: "asc",
+          label: 'Status',
+          field: 'status',
+          sort: 'asc',
         },
         {
-          label: "Actions",
-          field: "actions",
+          label: 'Actions',
+          field: 'actions',
         },
       ],
       rows: [],
@@ -79,10 +79,10 @@ const OrdersList = ({ history }) => {
         amount: `$${order.totalPrice}`,
         status:
           order.orderStatus &&
-          String(order.orderStatus).includes("Delivered") ? (
-            <p style={{ color: "green" }}>{order.orderStatus}</p>
+          String(order.orderStatus).includes('Delivered') ? (
+            <p style={{ color: 'green' }}>{order.orderStatus}</p>
           ) : (
-            <p style={{ color: "red" }}>{order.orderStatus}</p>
+            <p style={{ color: 'red' }}>{order.orderStatus}</p>
           ),
         actions: (
           <Fragment>
@@ -108,7 +108,7 @@ const OrdersList = ({ history }) => {
 
   return (
     <Fragment>
-      <MetaData title={"All Orders"} />
+      <MetaData title={'All Orders'} />
       <div className="row">
         <div className="col-12 col-md-2">
           <Sidebar />

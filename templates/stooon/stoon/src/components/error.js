@@ -1,5 +1,5 @@
-import React from "react";
-import ErrorSection from "./section-components/error";
+import React from 'react';
+import ErrorSection from './section-components/error';
 
 const Error = () => {
   return (

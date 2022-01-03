@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import OwlCarousel from "../features/owl-carousel";
+import OwlCarousel from '../features/owl-carousel';
 
 // import jsons
-import data from "../../mock_data/data";
-import { serviceSlider } from "../settings";
+import data from '../../mock_data/data';
+import { serviceSlider } from '../settings';
 
 function Service(props) {
   return (

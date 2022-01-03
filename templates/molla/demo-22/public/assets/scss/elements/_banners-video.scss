@@ -127,7 +127,7 @@
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   .video-banner-bg {
     padding-top: 14.5rem;
     padding-bottom: 13.5rem;
@@ -154,7 +154,7 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .video-banner-bg {
     padding-top: 18.5rem;
     padding-bottom: 17.5rem;
@@ -170,7 +170,7 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .video-box-content {
     padding-left: 7rem;
   }

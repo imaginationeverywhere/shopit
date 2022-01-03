@@ -20,18 +20,18 @@ const Select = ({
   };
 
   return (
-    <div className='select'>
+    <div className="select">
       {!hideLabel && (
-        <span className='label-name flexed-row'>
+        <span className="label-name flexed-row">
           {label}
-          {required && <small className='asterik ml-1 flexed-center '>*</small>}
+          {required && <small className="asterik ml-1 flexed-center ">*</small>}
         </span>
       )}
       <div className={`dash-select-search ${classes || ''}`}>
         <SelectSearchComp
           placeholder={placeholder}
           onChange={handleChange}
-          className='basic-single'
+          className="basic-single"
           value={getValue(options, value)}
           options={options}
           required={required}

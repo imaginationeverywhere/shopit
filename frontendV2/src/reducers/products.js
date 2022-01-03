@@ -51,7 +51,7 @@ const productReducer = (state = initialState, action) => {
     case SHOW_QUICKVIEW:
       let index = findIndex(
         state.products,
-        product => product.id === action.productId,
+        (product) => product.id === action.productId,
       );
       if (-1 !== index) {
         const item = state.products[index];

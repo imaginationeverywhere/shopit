@@ -1,58 +1,58 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
 
-import { removeFromWishlist, addToCartFromWishlist } from "../../../actions";
+import { removeFromWishlist, addToCartFromWishlist } from '../../../actions';
 
 function Wishlist(props) {
   const { wishlist } = props;
 
   useEffect(() => {
-    let items = document.querySelectorAll(".action-col .dropdown");
+    let items = document.querySelectorAll('.action-col .dropdown');
 
     for (let i = 0; i < items.length; i++) {
       let item = items[i];
-      item.addEventListener("click", dropDownHandle);
+      item.addEventListener('click', dropDownHandle);
     }
-    document.addEventListener("click", hiddenHandle);
+    document.addEventListener('click', hiddenHandle);
 
     return () => {
-      document.removeEventListener("click", hiddenHandle);
+      document.removeEventListener('click', hiddenHandle);
 
-      let items = document.querySelectorAll(".action-col .dropdown");
+      let items = document.querySelectorAll('.action-col .dropdown');
 
       for (let i = 0; i < items.length; i++) {
         let item = items[i];
-        item.removeEventListener("click", dropDownHandle);
+        item.removeEventListener('click', dropDownHandle);
       }
     };
   }, []);
 
   const dropDownHandle = (e) => {
     let item = e.currentTarget;
-    item.classList.add("show");
-    item.querySelector(".dropdown-menu").classList.add("show");
+    item.classList.add('show');
+    item.querySelector('.dropdown-menu').classList.add('show');
     item
-      .querySelector(".dropdown-menu")
+      .querySelector('.dropdown-menu')
       .setAttribute(
-        "style",
-        "position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);"
+        'style',
+        'position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);',
       );
     e.stopPropagation();
   };
 
   const hiddenHandle = () => {
-    let items = document.querySelectorAll(".action-col .dropdown");
+    let items = document.querySelectorAll('.action-col .dropdown');
     for (let i = 0; i < items.length; i++) {
       let item = items[i];
-      item.classList.remove("show");
-      item.querySelector(".dropdown-menu").classList.remove("show");
-      item.querySelector(".dropdown-menu").setAttribute("style", "");
+      item.classList.remove('show');
+      item.querySelector('.dropdown-menu').classList.remove('show');
+      item.querySelector('.dropdown-menu').setAttribute('style', '');
     }
   };
 
@@ -66,7 +66,7 @@ function Wishlist(props) {
 
       <div className="main">
         <PageHeader title="Wishlist" subTitle="Shop" />
-        <Breadcrumb title="Wishlist" parent1={["Shop", "shop/sidebar/list"]} />
+        <Breadcrumb title="Wishlist" parent1={['Shop', 'shop/sidebar/list']} />
 
         <div className="page-content">
           <div className="container">
@@ -92,7 +92,7 @@ function Wishlist(props) {
                           >
                             <img
                               src={
-                                process.env.PUBLIC_URL + "/" + item.pictures[0]
+                                process.env.PUBLIC_URL + '/' + item.pictures[0]
                               }
                               alt="Product"
                             />
@@ -124,9 +124,9 @@ function Wishlist(props) {
 
                     <td className="stock-col">
                       <span
-                        className={0 < item.stock ? "in-stock" : "out-of-stock"}
+                        className={0 < item.stock ? 'in-stock' : 'out-of-stock'}
                       >
-                        {0 < item.stock ? "In stock" : "Out of stock"}
+                        {0 < item.stock ? 'In stock' : 'Out of stock'}
                       </span>
                     </td>
 

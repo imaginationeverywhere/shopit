@@ -1,14 +1,14 @@
 /* Header 2 */
 
 a {
-  font-family: "Poppins";
+  font-family: 'Poppins';
 }
 
 p {
   margin-bottom: 0;
   font-size: 1.4rem;
   font-weight: 300;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   letter-spacing: 0;
   color: #777;
 }
@@ -31,7 +31,7 @@ p {
 
     .form-control {
       padding: 1.2rem 2.4rem 1rem 2rem;
-      font-family: "Poppins";
+      font-family: 'Poppins';
       letter-spacing: -0.01em;
       background-color: transparent;
     }
@@ -102,7 +102,7 @@ p {
     border-bottom: none;
     .container::after {
       position: absolute;
-      content: "";
+      content: '';
       bottom: -0.1rem;
       left: 1rem;
       right: 1rem;
@@ -162,7 +162,7 @@ p {
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .header-2 {
     .header-search-visible {
       .header-search-wrapper {

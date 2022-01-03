@@ -1,9 +1,9 @@
 /* Demo 11 Homepage 11 */
-@import "../mixins/clearfix";
-@import "../mixins/breakpoints";
-@import "../mixins/lazy";
+@import '../mixins/clearfix';
+@import '../mixins/breakpoints';
+@import '../mixins/lazy';
 
-@import "../config/variables";
+@import '../config/variables';
 
 .cart-dropdown {
   .btn-primary {
@@ -65,7 +65,7 @@
   margin-bottom: 1rem;
 }
 
-.owl-simple .owl-nav [class*="owl-"] {
+.owl-simple .owl-nav [class*='owl-'] {
   font-size: 2.2rem;
   color: #777;
 }
@@ -116,21 +116,21 @@
   }
 
   &:before {
-    content: "\f131";
+    content: '\f131';
     display: block;
     position: absolute;
     left: -0.2rem;
     top: 50%;
     margin-top: -1px;
     transform: translateY(-50%);
-    font-family: "molla";
+    font-family: 'molla';
     font-size: 1.9rem;
     line-height: 1;
   }
 
   &.active {
     &:before {
-      content: "\f191";
+      content: '\f191';
     }
   }
 
@@ -378,14 +378,14 @@
   box-shadow: 0 1px 0 $primary-color;
 }
 
-@include mq("sm") {
+@include mq('sm') {
   .intro-slider-container,
   .intro-slide {
     height: 400px;
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   .intro-slider-container,
   .intro-slide {
     height: 450px;
@@ -397,7 +397,7 @@
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .widget-filter-area {
     display: block;
     visibility: hidden;
@@ -463,7 +463,7 @@
   }
 }
 
-@include mq("md", "max") {
+@include mq('md', 'max') {
   .filter-toggler.mobile-mode {
     display: none;
   }
@@ -482,7 +482,7 @@
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .sidebar-fixed-toggler {
     top: 46vh;
   }
@@ -493,20 +493,20 @@
   }
 }
 
-@include mq("xs", "max") {
+@include mq('xs', 'max') {
   .intro-slide .intro-content {
     padding-left: 3rem;
     padding-right: 3rem;
   }
 }
 
-@include mq("380px", "max") {
+@include mq('380px', 'max') {
   .widget-filter-area {
     max-width: 270px;
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .intro-slider-container,
   .intro-slide {
     height: 480px;
@@ -537,7 +537,7 @@
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .intro-slider-container,
   .intro-slide {
     height: 560px;
@@ -554,7 +554,7 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .widget-close {
     display: none;
   }

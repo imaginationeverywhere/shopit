@@ -5,13 +5,8 @@ import { Link } from 'react-router-dom';
 import { findIndex } from '../../../utils';
 
 function ProductNine(props) {
-  const {
-    product,
-    isWishlist,
-    onAddToCart,
-    showQuickView,
-    onToggleWishlist,
-  } = props;
+  const { product, isWishlist, onAddToCart, showQuickView, onToggleWishlist } =
+    props;
   let btnClass = product.stock === 0 ? 'disabled' : '';
   btnClass = btnClass + ' btn-product btn-cart';
 
@@ -214,7 +209,7 @@ export const mapStateToProps = (state, ownprops) => {
     isWishlist:
       findIndex(
         state.wishlist.list,
-        item => item.id === ownprops.product.id,
+        (item) => item.id === ownprops.product.id,
       ) !== -1
         ? true
         : false,

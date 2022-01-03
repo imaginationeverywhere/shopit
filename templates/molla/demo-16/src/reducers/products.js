@@ -2,11 +2,11 @@ import {
   RECEIVE_PRODUCTS,
   SHOW_QUICKVIEW,
   CLOSE_QUICKVIEW,
-} from "../constants/action-types";
-import { findIndex } from "../utils";
+} from '../constants/action-types';
+import { findIndex } from '../utils';
 
-import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 const initialState = {
   products: [],
@@ -25,7 +25,7 @@ const productReducer = (state = initialState, action) => {
     case SHOW_QUICKVIEW:
       let index = findIndex(
         state.products,
-        (product) => product.id === action.productId
+        (product) => product.id === action.productId,
       );
       if (-1 !== index) {
         const item = state.products[index];
@@ -45,8 +45,8 @@ const productReducer = (state = initialState, action) => {
   }
 };
 const persistConfig = {
-  keyPrefix: "molla-",
-  key: "products",
+  keyPrefix: 'molla-',
+  key: 'products',
   storage,
 };
 

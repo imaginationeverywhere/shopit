@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const TableFooter = ({
   searchable,
@@ -21,7 +21,7 @@ const TableFooter = ({
             disabled={paginatedPage <= 1}
             onClick={() =>
               handlePageChange({
-                target: { name: "paginatedPage", value: paginatedPage - 1 },
+                target: { name: 'paginatedPage', value: paginatedPage - 1 },
               })
             }
           >
@@ -40,7 +40,7 @@ const TableFooter = ({
             disabled={paginatedPage === lastPage}
             onClick={() =>
               handlePageChange({
-                target: { name: "paginatedPage", value: paginatedPage + 1 },
+                target: { name: 'paginatedPage', value: paginatedPage + 1 },
               })
             }
           >

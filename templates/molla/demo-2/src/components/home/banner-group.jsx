@@ -1,7 +1,7 @@
-import React from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 export default function BannerGroup(props) {
   return (

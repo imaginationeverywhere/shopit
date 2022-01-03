@@ -1,18 +1,18 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
-import { parallax } from "../../../utils";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
+import { parallax } from '../../../utils';
 
 export default function Buttons() {
   useEffect(() => {
-    document.addEventListener("scroll", parallax);
+    document.addEventListener('scroll', parallax);
 
     return () => {
-      document.removeEventListener("scroll", parallax);
+      document.removeEventListener('scroll', parallax);
     };
   }, []);
 
@@ -26,7 +26,7 @@ export default function Buttons() {
 
       <div className="main">
         <PageHeader title="Buttons" subTitle="Elements" />
-        <Breadcrumb title="Buttons" parent1={["Elements", "elements"]} />
+        <Breadcrumb title="Buttons" parent1={['Elements', 'elements']} />
 
         <div className="page-content">
           <div className="container">

@@ -1,10 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { safeContent, isIEBrowser } from "../../utils";
+import { safeContent, isIEBrowser } from '../../utils';
 
 export default function IntroSlide(props) {
-  const { image, srcSet, subtitle, title, btnText = "SHOP NOW" } = props.data;
+  const { image, srcSet, subtitle, title, btnText = 'SHOP NOW' } = props.data;
 
   return (
     <div className="intro-slide">
@@ -12,11 +12,11 @@ export default function IntroSlide(props) {
         <picture>
           <source media="(max-width: 480px)" srcSet={srcSet} />
           <img
-            src={process.env.PUBLIC_URL + "/" + image}
+            src={process.env.PUBLIC_URL + '/' + image}
             alt="Desc"
             width="780"
             height="441"
-            style={isIEBrowser() ? { height: "100%", width: "auto" } : {}}
+            style={isIEBrowser() ? { height: '100%', width: 'auto' } : {}}
           />
         </picture>
       </figure>

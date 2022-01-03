@@ -1,14 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function PortfolioTwo(props) {
-  const { image, title = "Vestibulum auctor dapibus", category } = props;
+  const { image, title = 'Vestibulum auctor dapibus', category } = props;
 
   return (
     <div className="portfolio">
       <figure className="portfolio-media">
         <Link to="#">
-          <img src={process.env.PUBLIC_URL + "/" + image} alt="item" />
+          <img src={process.env.PUBLIC_URL + '/' + image} alt="item" />
         </Link>
       </figure>
 

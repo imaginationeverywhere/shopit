@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 // Import Component
-import Banner from "./banner";
+import Banner from './banner';
 
 // Import Data
-import data from "../../mock_data/data.json";
+import data from '../../mock_data/data.json';
 
 export default function BannerGroup(props) {
   return (

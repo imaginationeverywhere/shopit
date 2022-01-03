@@ -1,6 +1,6 @@
-const OrderService = require("./orderService");
-const Shipment = require("../models/shipment");
-const ShippoService = require("./shippo");
+const OrderService = require('./orderService');
+const Shipment = require('../models/shipment');
+const ShippoService = require('./shippo');
 
 const updateShipmentTracking = async ({
   trackingNo,
@@ -10,14 +10,14 @@ const updateShipmentTracking = async ({
   try {
     // const shipment = await Shipment.findOne({ trackingNo }) // NOTE: please uncomment me whenever in production mode
 
-    const shipment = await Shipment.findById("60e34bd029980591a26de19a"); //NOTE: this only for testing the order status update, please remove once in prod
+    const shipment = await Shipment.findById('60e34bd029980591a26de19a'); //NOTE: this only for testing the order status update, please remove once in prod
     shipment.status = status;
     shipment.trackingHistory = trackingHistory;
 
     await shipment.save();
     await OrderService.updateOrderStatus(shipment.order, status.status);
   } catch (error) {
-    console.log("Error in update shipment tracking ----", error);
+    console.log('Error in update shipment tracking ----', error);
   }
 };
 

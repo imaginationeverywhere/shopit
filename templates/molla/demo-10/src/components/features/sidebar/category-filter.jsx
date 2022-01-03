@@ -1,17 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 // import Jsons
-import data from "../../../mock_data/data";
+import data from '../../../mock_data/data';
 
 // import services functions
-import { getCountByCategory } from "../../../services";
+import { getCountByCategory } from '../../../services';
 
 function CategoryFilter(props) {
   const { products } = props;
 
-  let categoryArr = ["Women", "Men", "Holiday Shop", "Gifts", "Homeware"];
+  let categoryArr = ['Women', 'Men', 'Holiday Shop', 'Gifts', 'Homeware'];
   let humnanCountArr = [],
     wearCountArr = [],
     gridCount = 0;
@@ -30,16 +30,16 @@ function CategoryFilter(props) {
 
   function hideSideBar() {
     if (
-      document.querySelector("body").classList.contains("sidebar-filter-active")
+      document.querySelector('body').classList.contains('sidebar-filter-active')
     ) {
-      document.querySelector("body").classList.remove("sidebar-filter-active");
+      document.querySelector('body').classList.remove('sidebar-filter-active');
     }
   }
 
   function clearAll(e) {
     let items = document
-      .querySelector(".sidebar-shop")
-      .querySelectorAll("input");
+      .querySelector('.sidebar-shop')
+      .querySelectorAll('input');
 
     for (let i = 0; i < items.length; i++) {
       items[i].checked = false;
@@ -55,7 +55,7 @@ function CategoryFilter(props) {
       <aside className="sidebar-shop sidebar-filter sidebar-filter-banner">
         <div className="sidebar-filter-wrapper">
           <div className="widget widget-clean">
-            <button style={{ padding: "0" }} onClick={hideSideBar}>
+            <button style={{ padding: '0' }} onClick={hideSideBar}>
               <i className="icon-close"></i>Filters
             </button>
             <Link to="#" className="sidebar-filter-clear" onClick={clearAll}>

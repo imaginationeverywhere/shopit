@@ -12,7 +12,7 @@ export const getVisibleProducts = (
   { sortBy, category, size, brand, color, rating, value },
 ) => {
   return products
-    .filter(item => {
+    .filter((item) => {
       let catResult = false,
         sizeResult = false,
         brandResult = false,
@@ -27,7 +27,7 @@ export const getVisibleProducts = (
             -1 !==
               findIndex(
                 item.category,
-                cat => cat === category[i].toLowerCase(),
+                (cat) => cat === category[i].toLowerCase(),
               ) ||
             (category[i] === 'Sale' && item.discount > 0) ||
             category[i] === 'All'
@@ -40,7 +40,7 @@ export const getVisibleProducts = (
       console.log(item.size, size);
       if (size && size.length > 0) {
         for (let i = 0; i < size.length; i++) {
-          if (-1 !== findIndex(item.size, sz => sz === size[i]))
+          if (-1 !== findIndex(item.size, (sz) => sz === size[i]))
             sizeResult = true;
         }
       } else {
@@ -49,7 +49,7 @@ export const getVisibleProducts = (
 
       if (brand && brand.length > 0) {
         for (let i = 0; i < brand.length; i++) {
-          if (-1 !== findIndex(item.brands, br => br === brand[i]))
+          if (-1 !== findIndex(item.brands, (br) => br === brand[i]))
             brandResult = true;
         }
       } else {
@@ -58,7 +58,7 @@ export const getVisibleProducts = (
 
       if (color && color.length > 0) {
         for (let i = 0; i < color.length; i++) {
-          if (-1 !== findIndex(item.variants, cl => cl.color === color[i]))
+          if (-1 !== findIndex(item.variants, (cl) => cl.color === color[i]))
             colorResult = true;
         }
       } else {
@@ -145,8 +145,8 @@ export const processFilters = ({
  * @param {Array} products
  * @return {Array} featuredProducts
  */
-export const getFeaturedProducts = products => {
-  return products.filter(item => true === item.featured);
+export const getFeaturedProducts = (products) => {
+  return products.filter((item) => true === item.featured);
 };
 
 /**
@@ -154,8 +154,8 @@ export const getFeaturedProducts = products => {
  * @param {Array} products
  * @return {Array} saleProducts
  */
-export const getSaleProducts = products => {
-  return products.filter(item => item.discount > 0);
+export const getSaleProducts = (products) => {
+  return products.filter((item) => item.discount > 0);
 };
 
 /**
@@ -163,8 +163,8 @@ export const getSaleProducts = products => {
  * @param {Array} products
  * @return {Array} newProducts
  */
-export const getNewProducts = products => {
-  return products.filter(item => item.new);
+export const getNewProducts = (products) => {
+  return products.filter((item) => item.new);
 };
 
 /**
@@ -173,7 +173,7 @@ export const getNewProducts = products => {
  * @return {Array} dealProducts
  */
 export const getDealProducts = (products, deal) => {
-  return products.filter(item => item.deal === deal);
+  return products.filter((item) => item.deal === deal);
 };
 
 /**
@@ -181,9 +181,9 @@ export const getDealProducts = (products, deal) => {
  * @param {Array} products
  * @return {Array} topRatingProducts
  */
-export const getTopRatingProducts = products => {
+export const getTopRatingProducts = (products) => {
   return products
-    .filter(product => {
+    .filter((product) => {
       return product.ratings > 2;
     })
     .sort((product1, product2) => {
@@ -196,8 +196,8 @@ export const getTopRatingProducts = products => {
  * @param {Array} products
  * @return {Array} topSellingProducts
  */
-export const getTopSellingProducts = products => {
-  return products.filter(item => true === item.top);
+export const getTopSellingProducts = (products) => {
+  return products.filter((item) => true === item.top);
 };
 
 /**
@@ -213,7 +213,7 @@ export const getProductsByCategory = (products, category) => {
     category = category.split(' & ');
   }
 
-  return products.filter(item => {
+  return products.filter((item) => {
     let result = false;
 
     if (Array.isArray(category)) {
@@ -238,8 +238,9 @@ export const getProductsByCategory = (products, category) => {
 export const getCountByCategory = (products, category) => {
   if (category === 'All') return products.length;
   if (category === 'Sale')
-    return products.filter(item => item.discount > 0).length;
-  return products.filter(item => -1 !== item.category.indexOf(category)).length;
+    return products.filter((item) => item.discount > 0).length;
+  return products.filter((item) => -1 !== item.category.indexOf(category))
+    .length;
 };
 
 /**
@@ -247,7 +248,7 @@ export const getCountByCategory = (products, category) => {
  * @param {Array} cartItems
  * @return {Float} totalPrice
  */
-export const getCartTotal = cartItems => {
+export const getCartTotal = (cartItems) => {
   let total = 0;
   for (let i = 0; i < cartItems.length; i++) {
     total +=
@@ -262,7 +263,7 @@ export const getCartTotal = cartItems => {
  * @param {Array} cartItems
  * @return {Integer} numbers of cart items in cartlist
  */
-export const getCartCount = cartItems => {
+export const getCartCount = (cartItems) => {
   let total = 0;
 
   for (let i = 0; i < cartItems.length; i++) {
@@ -279,5 +280,5 @@ export const getCartCount = cartItems => {
  * @return {Integer} number of products filtered by rating
  */
 export const getCountByRating = (products, rating) => {
-  return products.filter(item => item.rating === rating).length;
+  return products.filter((item) => item.rating === rating).length;
 };

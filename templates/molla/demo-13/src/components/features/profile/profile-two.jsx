@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function ProfileTwo(props) {
   const { image, name, title } = props;
@@ -7,7 +7,7 @@ function ProfileTwo(props) {
   return (
     <div className="member member-2 text-center">
       <figure className="member-media">
-        <img src={process.env.PUBLIC_URL + "/" + image} alt="member" />
+        <img src={process.env.PUBLIC_URL + '/' + image} alt="member" />
 
         <figcaption className="member-overlay">
           <div className="social-icons social-icons-simple">

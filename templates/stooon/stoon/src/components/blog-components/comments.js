@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 const Comments = () => {
   //  let anchor = '#'
-  let imagealt = "image";
-  let publicUrl = process.env.PUBLIC_URL + "/";
+  let imagealt = 'image';
+  let publicUrl = process.env.PUBLIC_URL + '/';
   return (
     <div>
       <div className="comments-area">
@@ -13,7 +13,7 @@ const Comments = () => {
             <div className="single-comment-wrap">
               <div className="thumb">
                 <img
-                  src={publicUrl + "/assets/img/news/16.png"}
+                  src={publicUrl + '/assets/img/news/16.png'}
                   alt={imagealt}
                 />
               </div>
@@ -22,7 +22,7 @@ const Comments = () => {
                 <p>
                   Fun kitchen and not cookie cutter! The appliance garage is
                   easy to access and good looking on the inside too. I’ve also
-                  recently remodeled my kitchen and eliminated{" "}
+                  recently remodeled my kitchen and eliminated{' '}
                 </p>
                 <a href="#" className="like">
                   <i className="fa fa-heart-o" />
@@ -38,7 +38,7 @@ const Comments = () => {
             <div className="single-comment-wrap">
               <div className="thumb">
                 <img
-                  src={publicUrl + "/assets/img/news/17.png"}
+                  src={publicUrl + '/assets/img/news/17.png'}
                   alt={imagealt}
                 />
               </div>
@@ -47,7 +47,7 @@ const Comments = () => {
                 <p>
                   Fun kitchen and not cookie cutter! The appliance garage is
                   easy to access and good looking on the inside too. I’ve also
-                  recently remodeled my kitchen and eliminated{" "}
+                  recently remodeled my kitchen and eliminated{' '}
                 </p>
                 <a href="#" className="like">
                   <i className="fa fa-heart-o" />
@@ -63,7 +63,7 @@ const Comments = () => {
             <div className="single-comment-wrap">
               <div className="thumb">
                 <img
-                  src={publicUrl + "/assets/img/news/18.png"}
+                  src={publicUrl + '/assets/img/news/18.png'}
                   alt={imagealt}
                 />
               </div>
@@ -72,7 +72,7 @@ const Comments = () => {
                 <p>
                   Fun kitchen and not cookie cutter! The appliance garage is
                   easy to access and good looking on the inside too. I’ve also
-                  recently remodeled my kitchen and eliminated{" "}
+                  recently remodeled my kitchen and eliminated{' '}
                 </p>
                 <a href="#" className="like">
                   <i className="fa fa-heart-o" />
@@ -104,7 +104,7 @@ const Comments = () => {
             </div>
             <div className="col-lg-12">
               <div className="rld-single-input">
-                <textarea rows={10} placeholder="Message" defaultValue={""} />
+                <textarea rows={10} placeholder="Message" defaultValue={''} />
               </div>
             </div>
             <div className="col-12">

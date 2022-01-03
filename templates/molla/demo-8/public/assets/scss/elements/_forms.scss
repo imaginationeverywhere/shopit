@@ -88,7 +88,7 @@ small.form-text {
 }
 
 .required-field > label::after {
-  content: "*";
+  content: '*';
   color: #e02b27;
   font-size: 1.2rem;
   margin: 0 0 0 0.45rem;
@@ -120,8 +120,8 @@ small.form-text {
   }
 
   &::after {
-    font-family: "molla";
-    content: "\f110";
+    font-family: 'molla';
+    content: '\f110';
     position: absolute;
     display: inline-block;
     right: 1.9rem;
@@ -204,8 +204,8 @@ small.form-text {
   color: #fff;
   background-image: none;
   font-size: 1rem;
-  font-family: "molla";
-  content: "\ec2d";
+  font-family: 'molla';
+  content: '\ec2d';
   line-height: 1;
   text-align: center;
   opacity: 0;
@@ -293,10 +293,10 @@ small.form-text {
   }
 }
 
-@include mq("md") {
+@include mq('md') {
 }
 
-@include mq("lg") {
+@include mq('lg') {
 }
 
 //for IE issues in select

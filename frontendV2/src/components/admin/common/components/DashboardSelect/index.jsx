@@ -1,6 +1,6 @@
-import React from "react";
-import "./DashboardSelect.scss";
-import SelectSearchComp from "react-select";
+import React from 'react';
+import './DashboardSelect.scss';
+import SelectSearchComp from 'react-select';
 
 const DashboardSelect = ({
   options,
@@ -28,11 +28,11 @@ const DashboardSelect = ({
           {required && <small className="asterik ml-1 flexed-center ">*</small>}
         </span>
       )}
-      <div className={`dash-select-search ${classes || ""}`}>
+      <div className={`dash-select-search ${classes || ''}`}>
         <SelectSearchComp
           placeholder={placeholder}
           onChange={handleChange}
-          className={isMulti ? "basic-multi-select" : "basic-single"}
+          className={isMulti ? 'basic-multi-select' : 'basic-single'}
           value={value || []}
           options={options}
           defaultValue={defaultValue || []}

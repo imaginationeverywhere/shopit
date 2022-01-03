@@ -1,15 +1,15 @@
-import React, { Fragment, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { Fragment, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-import MetaData from "../layout/MetaData";
-import Loader from "../layout/Loader";
-import Sidebar from "./Sidebar";
+import MetaData from '../layout/MetaData';
+import Loader from '../layout/Loader';
+import Sidebar from './Sidebar';
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from 'react-redux';
 
-import { getAdminProducts } from "../../actions/productActions";
-import { allOrders } from "../../actions/orderActions";
-import { allUsers } from "../../actions/userActions";
+import { getAdminProducts } from '../../actions/productActions';
+import { allOrders } from '../../actions/orderActions';
+import { allUsers } from '../../actions/userActions';
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ const Dashboard = () => {
   const { products } = useSelector((state) => state.products);
   const { users } = useSelector((state) => state.allUsers);
   const { orders, totalAmount, loading } = useSelector(
-    (state) => state.allOrders
+    (state) => state.allOrders,
   );
 
   let outOfStock = 0;
@@ -48,7 +48,7 @@ const Dashboard = () => {
             <Loader />
           ) : (
             <Fragment>
-              <MetaData title={"Admin Dashboard"} />
+              <MetaData title={'Admin Dashboard'} />
 
               <div className="row pr-4">
                 <div className="col-xl-12 col-sm-12 mb-3">

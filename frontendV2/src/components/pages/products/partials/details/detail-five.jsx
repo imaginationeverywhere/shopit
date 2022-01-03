@@ -437,7 +437,7 @@ function mapStateToProps(state, props) {
   return {
     product: state.data.singleProduct,
     isWishlist:
-      findIndex(state.wishlist.list, item => item.id === props.id) !== -1
+      findIndex(state.wishlist.list, (item) => item.id === props.id) !== -1
         ? true
         : false,
   };

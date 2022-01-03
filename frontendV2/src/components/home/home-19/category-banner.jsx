@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 function Banner(props) {
   const { banner } = props;
@@ -11,7 +11,7 @@ function Banner(props) {
         <div className="lazy-overlay bg-3"></div>
 
         <LazyLoadImage
-          src={process.env.PUBLIC_URL + "/" + banner.img}
+          src={process.env.PUBLIC_URL + '/' + banner.img}
           alt="Banner"
           width={100}
           height={472}
@@ -26,24 +26,24 @@ function Banner(props) {
 
         <img
           className="banner-title-img"
-          src={process.env.PUBLIC_URL + "/" + banner.titleImg}
+          src={process.env.PUBLIC_URL + '/' + banner.titleImg}
           alt="desc"
         />
 
         {banner.banner_txt ? (
           <h4 className="banner-txt">{banner.banner_txt}</h4>
         ) : (
-          ""
+          ''
         )}
 
         {banner.subtitleImg ? (
           <img
             className="banner-title-img"
-            src={process.env.PUBLIC_URL + "/" + banner.subtitleImg}
+            src={process.env.PUBLIC_URL + '/' + banner.subtitleImg}
             alt="Banner-11"
           />
         ) : (
-          ""
+          ''
         )}
 
         <h4 className={`banner-price ${banner.price_adClass}`}>

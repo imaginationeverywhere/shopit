@@ -1,38 +1,38 @@
-import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import OwlCarousel from "../features/owl-carousel";
-import NewsletterModal from "../features/modal/newsletter-modal";
-import Brand from "../features/brand";
-import ServiceBox from "../features/service";
-import QuickView from "../features/product/common/quickview-two";
+import OwlCarousel from '../features/owl-carousel';
+import NewsletterModal from '../features/modal/newsletter-modal';
+import Brand from '../features/brand';
+import ServiceBox from '../features/service';
+import QuickView from '../features/product/common/quickview-two';
 
 // import Home Components
-import IntroSlide from "./intro-slide";
-import Banner from "./banner";
-import BestCollection from "./best-collection";
-import SpecialCollection from "./special-collection";
-import CatBanner from "./cat-banner";
-import NewCollection from "./new-collection";
-import CTA from "./cta-section";
-import Instagram from "./instagram";
+import IntroSlide from './intro-slide';
+import Banner from './banner';
+import BestCollection from './best-collection';
+import SpecialCollection from './special-collection';
+import CatBanner from './cat-banner';
+import NewCollection from './new-collection';
+import CTA from './cta-section';
+import Instagram from './instagram';
 
 // import Slider Settings
-import { introSlider } from "../settings";
+import { introSlider } from '../settings';
 
 // import Data & Style
-import _data from "../../mock_data/data";
-import style from "./style.scss";
+import _data from '../../mock_data/data';
+import style from './style.scss';
 
 export default function HomePage() {
   useEffect(() => {
-    document.getElementById("menu-home").classList.add("active");
+    document.getElementById('menu-home').classList.add('active');
 
     style.use();
 
     return () => {
-      document.getElementById("menu-home").classList.remove("active");
+      document.getElementById('menu-home').classList.remove('active');
       style.unuse();
     };
   }, []);

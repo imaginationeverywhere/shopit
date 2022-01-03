@@ -1,33 +1,33 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 // import Custom Components
-import OwlCarousel from "../features/owl-carousel";
-import NewsletterModal from "../features/modal/newsletter-modal";
-import ServiceBox from "../features/service";
-import Brand from "../features/brand";
+import OwlCarousel from '../features/owl-carousel';
+import NewsletterModal from '../features/modal/newsletter-modal';
+import ServiceBox from '../features/service';
+import Brand from '../features/brand';
 
-import SpecialCollection from "./special-collection";
-import TopCollection from "./top-collection";
-import BlogSection from "./blog-section";
-import BannerGroup from "./banner-group";
-import HomeSlide from "./home-slide";
-import DealBanner from "./deal-banner";
-import CTA from "./cta-section";
-import { introSlider } from "../settings";
+import SpecialCollection from './special-collection';
+import TopCollection from './top-collection';
+import BlogSection from './blog-section';
+import BannerGroup from './banner-group';
+import HomeSlide from './home-slide';
+import DealBanner from './deal-banner';
+import CTA from './cta-section';
+import { introSlider } from '../settings';
 
-import _data from "../../mock_data/data.json";
-import style from "./style.scss";
+import _data from '../../mock_data/data.json';
+import style from './style.scss';
 
 export default function () {
   useEffect(() => {
-    document.getElementById("menu-home").classList.add("active");
+    document.getElementById('menu-home').classList.add('active');
     style.use();
 
     return () => {
-      document.getElementById("menu-home").classList.remove("active");
+      document.getElementById('menu-home').classList.remove('active');
       style.unuse();
     };
   }, []);

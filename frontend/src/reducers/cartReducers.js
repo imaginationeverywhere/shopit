@@ -2,25 +2,25 @@ import {
   ADD_TO_CART,
   REMOVE_ITEM_CART,
   SAVE_SHIPPING_INFO,
-} from "../constants/cartConstants";
+} from '../constants/cartConstants';
 
 export const cartReducer = (
   state = { cartItems: [], shippingInfo: {} },
-  action
+  action,
 ) => {
   switch (action.type) {
     case ADD_TO_CART:
       const item = action.payload;
 
       const isItemExist = state.cartItems.find(
-        (i) => i.product === item.product
+        (i) => i.product === item.product,
       );
 
       if (isItemExist) {
         return {
           ...state,
           cartItems: state.cartItems.map((i) =>
-            i.product === isItemExist.product ? item : i
+            i.product === isItemExist.product ? item : i,
           ),
         };
       } else {

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getProductImages } from '../utils';
 
-axios.interceptors.response.use(null, error => {
+axios.interceptors.response.use(null, (error) => {
   // clear token for 401 error
   if (error.response && error.response.status === 401) {
     localStorage.removeItem('token');
@@ -107,7 +107,7 @@ export const getAdminProducts = function() {
         }));
       return myData;
     })
-    .catch(function(error) {
+    .catch(function (error) {
       // handle error
       console.log(error);
     });
@@ -119,48 +119,48 @@ const myHeaders = () => {
   };
 };
 
-export const getTemplates = function() {
+export const getTemplates = function () {
   return axiosInstance
     .get('templates')
-    .then(function(response) {
+    .then(function (response) {
       return response.data;
     })
-    .catch(function(error) {
+    .catch(function (error) {
       // handle error
       console.log(error);
     });
 };
 
-export const previewTemplate = function(templateId) {
+export const previewTemplate = function (templateId) {
   return axiosInstance
     .get('templates', { templateId })
-    .then(function(response) {
+    .then(function (response) {
       return response.data;
     })
-    .catch(function(error) {
+    .catch(function (error) {
       // handle error
       console.log(error);
     });
 };
 
-export const setTemplate = function(templateId) {
+export const setTemplate = function (templateId) {
   return axiosInstance
     .post('templates', { templateId })
-    .then(function(response) {
+    .then(function (response) {
       return response.data;
     })
-    .catch(function(error) {
+    .catch(function (error) {
       // handle error
       console.log(error);
     });
 };
 
-export const login = async values => {
+export const login = async (values) => {
   const res = await axiosInstance.post(`login`, values);
   return res.data;
 };
 
-export const register = async values => {
+export const register = async (values) => {
   const res = await axiosInstance.post(`register`, values);
   return res.data;
 };

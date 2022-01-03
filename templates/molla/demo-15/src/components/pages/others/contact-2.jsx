@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
-import Breadcrumb from "../../common/breadcrumb";
-import PageHeader from "../../common/page-header";
+import Breadcrumb from '../../common/breadcrumb';
+import PageHeader from '../../common/page-header';
 
 function ContactTwo() {
   return (
@@ -17,7 +17,7 @@ function ContactTwo() {
       <PageHeader title="Contact us 2" subTitle="Pages" />
       <Breadcrumb
         title="Contact Us 2"
-        parent1={["pages", "pages/about"]}
+        parent1={['pages', 'pages/about']}
         adClass="border-0 mb-0"
       />
 
@@ -44,7 +44,7 @@ function ContactTwo() {
                   <Link to="mailto:#">info@Molla.com</Link>
                 </div>
                 <div>
-                  <Link to="tel:#">+1 987-876-6543</Link>,{" "}
+                  <Link to="tel:#">+1 987-876-6543</Link>,{' '}
                   <Link to="tel:#">+1 987-976-1234</Link>
                 </div>
               </div>

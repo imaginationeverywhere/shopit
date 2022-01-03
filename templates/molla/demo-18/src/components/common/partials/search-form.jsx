@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 function SearchForm(props) {
   const {
-    adClass = "header-search-extended header-search-visible header-search-no-radius d-none d-lg-block",
-    wrapper_adClass = "search-wrapper-wide",
+    adClass = 'header-search-extended header-search-visible header-search-no-radius d-none d-lg-block',
+    wrapper_adClass = 'search-wrapper-wide',
   } = props;
 
   return (

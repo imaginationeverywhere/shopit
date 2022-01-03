@@ -1,5 +1,5 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
 function PageOverlay(prop) {
   const { isLoading } = props;
@@ -14,7 +14,7 @@ function PageOverlay(prop) {
           </div>
         </div>
       ) : (
-        ""
+        ''
       )}
     </React.Fragment>
   );

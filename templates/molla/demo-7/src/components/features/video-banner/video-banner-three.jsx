@@ -1,11 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function VideoBannerThree(props) {
   const { title, image, background, showModal } = props;
 
   const openVideoModal = (e) => {
-    showModal("video");
+    showModal('video');
     e.preventDefault();
   };
 
@@ -18,7 +18,7 @@ export default function VideoBannerThree(props) {
         <div className="row">
           <div className="col-sm-10 offset-sm-1 col-md-8 offset-md-2">
             <div className="video-poster">
-              <img src={process.env.PUBLIC_URL + "/" + image} alt="poster" />
+              <img src={process.env.PUBLIC_URL + '/' + image} alt="poster" />
 
               <div className="video-poster-content">
                 <h3 className="h4 video-poster-title text-white">{title}</h3>

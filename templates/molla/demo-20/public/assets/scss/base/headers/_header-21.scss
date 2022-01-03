@@ -119,13 +119,13 @@
   color: #666;
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .header-middle .header-right > div:nth-child(3) {
     padding: 0;
   }
 }
 
-@include mq("md", "max") {
+@include mq('md', 'max') {
   .dropdown.category-dropdown {
     .dropdown-toggle {
       min-width: 230px;
@@ -137,7 +137,7 @@
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .dropdown.category-dropdown {
     .dropdown-toggle {
       min-width: 200px;

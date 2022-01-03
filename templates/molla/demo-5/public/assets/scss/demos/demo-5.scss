@@ -1,18 +1,18 @@
 /* Demo 5 Homepage 5 */
-@import "../mixins/clearfix";
-@import "../mixins/breakpoints";
-@import "../mixins/lazy";
-@import "../mixins/buttons";
+@import '../mixins/clearfix';
+@import '../mixins/breakpoints';
+@import '../mixins/lazy';
+@import '../mixins/buttons';
 
-@import "../config/variables";
+@import '../config/variables';
 
 $primary-color: #cc6666;
 $secondary-color: #c15454;
 
 @font-face {
-  font-family: "flamingregular";
-  src: url("/assets/fonts/flaming/flaming-webfont.woff2") format("woff2"),
-    url("/assets/fonts/flaming/flaming-webfont.woff") format("woff");
+  font-family: 'flamingregular';
+  src: url('/assets/fonts/flaming/flaming-webfont.woff2') format('woff2'),
+    url('/assets/fonts/flaming/flaming-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -128,7 +128,7 @@ $secondary-color: #c15454;
 }
 
 .intro-title {
-  font-family: "flamingregular", serif;
+  font-family: 'flamingregular', serif;
   font-weight: 400;
   font-size: 8.6rem;
   line-height: 0.75;
@@ -140,14 +140,14 @@ $secondary-color: #c15454;
   margin-bottom: 1.6rem;
 }
 
-.owl-theme .owl-nav [class*="owl-"] {
+.owl-theme .owl-nav [class*='owl-'] {
   width: 3.2rem;
   height: 3.2rem;
   font-size: 2rem;
   margin-top: -1.6rem;
 }
 
-.owl-theme.owl-light .owl-nav [class*="owl-"] {
+.owl-theme.owl-light .owl-nav [class*='owl-'] {
   border-color: #fff;
   color: #fff;
 }
@@ -179,7 +179,7 @@ $secondary-color: #c15454;
   position: relative;
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     left: 30px;
     right: 30px;
@@ -289,7 +289,7 @@ $secondary-color: #c15454;
     }
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       right: -1.8rem;
@@ -326,7 +326,7 @@ $secondary-color: #c15454;
   > .row {
     align-items: stretch;
 
-    > [class*="col-"] {
+    > [class*='col-'] {
       display: flex;
       align-items: stretch;
 
@@ -572,7 +572,7 @@ $secondary-color: #c15454;
 .new-arrivals {
   position: relative;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     left: 1rem;
     right: 1rem;
@@ -779,7 +779,7 @@ $secondary-color: #c15454;
   padding-top: 5.5rem;
 }
 
-@include mq("sm") {
+@include mq('sm') {
   .intro-subtitle,
   .intro-text {
     font-size: 1.8rem;
@@ -803,7 +803,7 @@ $secondary-color: #c15454;
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   .intro-content .btn {
     min-width: 140px;
   }
@@ -831,7 +831,7 @@ $secondary-color: #c15454;
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .intro-content .btn {
     min-width: 170px;
   }
@@ -865,8 +865,8 @@ $secondary-color: #c15454;
   }
 }
 
-@include mq("xl") {
-  .owl-theme .owl-nav [class*="owl-"] {
+@include mq('xl') {
+  .owl-theme .owl-nav [class*='owl-'] {
     width: 4rem;
     height: 4rem;
     font-size: 2.2rem;
@@ -874,7 +874,7 @@ $secondary-color: #c15454;
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .cta .cta-wrapper {
     .input-group {
       flex-direction: row;
@@ -893,14 +893,14 @@ $secondary-color: #c15454;
   }
 }
 
-@include mq("425px", "max") {
+@include mq('425px', 'max') {
   .product-2 .btn-product {
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
 }
 
-@include mq("420px", "max") {
+@include mq('420px', 'max') {
   .banner-set-image .banner-content {
     bottom: 3rem;
   }

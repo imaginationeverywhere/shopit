@@ -103,7 +103,7 @@ export const removeNewsletterMdoal = modal => ({
 
 /************ Cart Action **************/
 // add item to cart
-export const addToCart = (product, qty) => dispatch => {
+export const addToCart = (product, qty) => (dispatch) => {
   toast.success('Item Added to Cart');
   dispatch(addToCartUnsafe(product, qty));
 };
@@ -116,7 +116,7 @@ export const addToCartUnsafe = (product, qty) => ({
 });
 
 // remove item from wishlist
-export const removeFromWishlist = productId => dispatch => {
+export const removeFromWishlist = (productId) => (dispatch) => {
   toast.error('Item removed from Wishlist');
   dispatch({
     type: types.REMOVE_FROM_WISHLIST,
@@ -124,8 +124,14 @@ export const removeFromWishlist = productId => dispatch => {
   });
 };
 
+export const clearCart = () => (dispatch) => {
+  dispatch({
+    type: types.CLEAR_CART,
+  });
+};
+
 // add item to cart from wishlist
-export const addToCartFromWishlist = (product, qty) => dispatch => {
+export const addToCartFromWishlist = (product, qty) => (dispatch) => {
   toast.success('Item added to Cart');
 
   dispatch({
@@ -137,7 +143,7 @@ export const addToCartFromWishlist = (product, qty) => dispatch => {
 };
 
 // remove item from cart
-export const removeFromCart = productId => dispatch => {
+export const removeFromCart = (productId) => (dispatch) => {
   toast.error('Item removed from Cart');
 
   dispatch({
@@ -174,7 +180,7 @@ export const toggleWishlistUnsafe = product => ({
 
 /************* Compare Action ***********/
 // add to comparelist
-export const addToCompare = product => dispatch => {
+export const addToCompare = (product) => (dispatch) => {
   toast.success('Item added to Compare');
   dispatch(addToCompareUnsafe(product));
 };
@@ -185,7 +191,7 @@ export const addToCompareUnsafe = product => ({
 });
 
 // remove all items from cartlist
-export const removeFromCompare = productId => dispatch => {
+export const removeFromCompare = (productId) => (dispatch) => {
   toast.success('Compare item removed');
   dispatch(removeFromCompareUnsafe(productId));
 };
@@ -289,9 +295,8 @@ export const getAllTemplates = () => dispatch => {
   });
 };
 
-export const setTemplate = templateId => async dispatch => {
-  console.log('here');
-  await api.setTemplate(templateId).then(templates => {
+export const setTemplate = (templateId) => async (dispatch) => {
+  await api.setTemplate(templateId).then((templates) => {
     return templates;
   });
 };

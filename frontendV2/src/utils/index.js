@@ -17,7 +17,7 @@ export const definePolyfills = () => {
 
         let res = [];
 
-        Object.keys(obj).map(function(key) {
+        Object.keys(obj).map(function (key) {
           res.push(obj[key]);
           return 1;
         });
@@ -28,7 +28,7 @@ export const definePolyfills = () => {
   }
 
   if (window.Element && !Element.prototype.closest) {
-    Element.prototype.closest = function(s) {
+    Element.prototype.closest = function (s) {
       var matches = (this.document || this.ownerDocument).querySelectorAll(s),
         i,
         el = this;
@@ -42,7 +42,7 @@ export const definePolyfills = () => {
   }
 
   if (!Element.prototype.index) {
-    Element.prototype.index = function(s) {
+    Element.prototype.index = function (s) {
       let self = this;
       let children = self.parentElement.children;
       for (let i = 0; i < children.length; i++) {
@@ -56,7 +56,7 @@ export const definePolyfills = () => {
 /**
  * refresh all settings.
  */
-export const initSettings = function() {
+export const initSettings = function () {
   scrollTop();
   mobileMenu();
 };
@@ -96,7 +96,7 @@ function preventDefaultHandler(e) {
 /**
  * Apply sticky header
  */
-export const stickyHeaderHandler = function() {
+export const stickyHeaderHandler = function () {
   let top = document.querySelector('main')
     ? document.querySelector('main').offsetTop
     : 300;
@@ -149,7 +149,7 @@ export const stickyHeaderHandler = function() {
  */
 let stickyContent, top, bottom, offHeight, originHeight, originWidth;
 
-export const setStickyValues = function(height = 82) {
+export const setStickyValues = function (height = 82) {
   if (isIEBrowser()) {
     stickyContent = document.querySelector('.sticky-content');
     if (!stickyContent) return;
@@ -211,11 +211,11 @@ export const stickyContentHandle = () => {
 /**
  * utils to scroll element to top
  */
-export const scrollTop = function() {
+export const scrollTop = function () {
   let scrollTop = document.querySelector('#scroll-top');
   document.addEventListener(
     'scroll',
-    function() {
+    function () {
       if (window.pageYOffset >= 400) {
         scrollTop.classList.add('show');
       } else {
@@ -225,7 +225,7 @@ export const scrollTop = function() {
     false,
   );
 
-  scrollTop.addEventListener('click', function(e) {
+  scrollTop.addEventListener('click', function (e) {
     if (isIEBrowser() || isSafariBrowser() || isEdgeBrowser()) {
       let pos = window.pageYOffset;
       let timerId = setInterval(() => {
@@ -246,7 +246,7 @@ export const scrollTop = function() {
 /**
  * utils to scroll element to target element
  */
-export const scrollToElement = e => {
+export const scrollToElement = (e) => {
   let top =
     document
       .querySelector(e.currentTarget.getAttribute('data-target'))
@@ -270,21 +270,21 @@ export const scrollToElement = e => {
 /**
  * utils to make mobile menu
  */
-export const mobileMenu = function(e) {
+export const mobileMenu = function (e) {
   let showMobile = document.querySelector('.mobile-menu-toggler');
   let mobileMenu = document.querySelector('body');
 
-  showMobile.addEventListener('click', function(e) {
+  showMobile.addEventListener('click', function (e) {
     mobileMenu.classList.add('mmenu-active');
   });
 
   let mobileClose = document.querySelector('.mobile-menu-close');
-  mobileClose.addEventListener('click', function(e) {
+  mobileClose.addEventListener('click', function (e) {
     mobileMenu.classList.remove('mmenu-active');
   });
 
   let overLay = document.querySelector('.mobile-menu-overlay');
-  overLay.addEventListener('click', function(e) {
+  overLay.addEventListener('click', function (e) {
     mobileMenu.classList.remove('mmenu-active');
   });
 
@@ -298,7 +298,7 @@ export const mobileMenu = function(e) {
       item.querySelector('a').appendChild(span);
     }
 
-    item.addEventListener('click', function() {
+    item.addEventListener('click', function () {
       if (mobileMenu.classList.contains('mmenu-active')) {
         mobileMenu.classList.remove('mmenu-active');
       }
@@ -309,7 +309,7 @@ export const mobileMenu = function(e) {
   for (let i = 0; i < items.length; i++) {
     let item = items[i];
 
-    item.addEventListener('click', function(e) {
+    item.addEventListener('click', function (e) {
       let parent = item.parentElement.parentElement;
       let targetUI = parent.querySelector('ul');
       targetUI.setAttribute('style', 'display: block; visibility: hidden;');
@@ -391,7 +391,7 @@ export const parallax = () => {
  * @param {String} html
  * @return {Object}
  */
-export const safeContent = html => {
+export const safeContent = (html) => {
   const SCRIPT_REGEX = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi;
 
   //Removing the <script> tags
@@ -410,7 +410,7 @@ export const safeContent = html => {
 /**
  * utils to handle hover event in product
  */
-export const hoverIntent = function() {
+export const hoverIntent = function () {
   let items = document.querySelectorAll('.product-3');
 
   for (let i = 0; i < items.length; i++) {
@@ -509,7 +509,7 @@ export const quantityInputs = () => {
  * utils to detect IE browser
  * @return {bool}
  */
-export const isIEBrowser = function() {
+export const isIEBrowser = function () {
   let sUsrAg = navigator.userAgent;
   if (sUsrAg.indexOf('Trident') > -1) return true;
   return false;
@@ -519,7 +519,7 @@ export const isIEBrowser = function() {
  * utils to detect safari browser
  * @return {bool}
  */
-export const isSafariBrowser = function() {
+export const isSafariBrowser = function () {
   let sUsrAg = navigator.userAgent;
   if (sUsrAg.indexOf('Safari') !== -1 && sUsrAg.indexOf('Chrome') === -1)
     return true;
@@ -530,7 +530,7 @@ export const isSafariBrowser = function() {
  * utils to detect Edge browser
  * @return {bool}
  */
-export const isEdgeBrowser = function() {
+export const isEdgeBrowser = function () {
   let sUsrAg = navigator.userAgent;
   if (sUsrAg.indexOf('Edge') > -1) return true;
   return false;
@@ -539,7 +539,7 @@ export const isEdgeBrowser = function() {
 /**
  * find index of first matched string
  */
-export const findIndex = function(array, cb) {
+export const findIndex = function (array, cb) {
   if (array) {
     for (let i = 0; i < array.length; i++) {
       if (true === cb(array[i])) return i;
@@ -552,11 +552,11 @@ export const findIndex = function(array, cb) {
  * Creates an array of parcel
  */
 export const makeParcelArray = (length, parcel) =>
-  Array.from(Array(length), _ => parcel);
+  Array.from(Array(length), (_) => parcel);
 /**
  * utils to set countto in about-2
  */
-export const countTo = function() {
+export const countTo = function () {
   let items = document.querySelectorAll('.count');
 
   if (items) {
@@ -626,7 +626,7 @@ export function isotopeLoad(
     });
 
     let imgLoad = imagesLoaded(item, { background: true });
-    imgLoad.on('done', function(instance, image) {
+    imgLoad.on('done', function (instance, image) {
       iso.layout();
     });
 
@@ -634,7 +634,7 @@ export function isotopeLoad(
       let tabList = document.querySelectorAll(filterNav + ' a');
 
       for (let i = 0; i < tabList.length; i++) {
-        tabList[i].addEventListener('click', function(e) {
+        tabList[i].addEventListener('click', function (e) {
           e.preventDefault();
 
           let filterValue = e.currentTarget.getAttribute('data-filter');
@@ -683,7 +683,8 @@ export const productGallery = () => {
   }
 };
 
-const email = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:]|])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:)+)\])/;
+const email =
+  /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:]|])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:)+)\])/;
 const password = /^[^\n]{8,}$/;
 
 export const patterns = {

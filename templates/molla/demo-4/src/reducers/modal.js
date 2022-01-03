@@ -1,11 +1,11 @@
-import * as types from "../constants/action-types";
+import * as types from '../constants/action-types';
 
-import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 const initialState = {
   current: 0,
-  modal: "login",
+  modal: 'login',
   showModal: false,
   newsletterModal: true,
 };
@@ -41,8 +41,8 @@ function modalReducer(state = initialState, action) {
 }
 
 const persistConfig = {
-  keyPrefix: "molla-",
-  key: "modal",
+  keyPrefix: 'molla-',
+  key: 'modal',
   storage,
 };
 

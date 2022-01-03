@@ -1,14 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 // import Custom Components
-import MainMenu from "./partials/main-menu";
-import CartMenu from "./partials/cart-menu";
-import SearchForm from "./partials/search-form";
+import MainMenu from './partials/main-menu';
+import CartMenu from './partials/cart-menu';
+import SearchForm from './partials/search-form';
 
 function Header(props) {
-  const { wishlist, container = "container" } = props;
+  const { wishlist, container = 'container' } = props;
 
   return (
     <header className="header header-11">
