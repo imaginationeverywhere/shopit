@@ -460,7 +460,7 @@ function ProductDetailTwo(props) {
 
 function mapStateToProps(state, props) {
   return {
-    product: state.data.products.filter(product => product.id === props.id)[0],
+    product: state.data.singleProduct,
     isWishlist:
       findIndex(state.wishlist.list, item => item.id === props.id) !== -1
         ? true

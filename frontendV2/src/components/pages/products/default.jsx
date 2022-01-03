@@ -1,17 +1,18 @@
-import React, { useEffect } from "react";
-import imagesLoaded from "imagesloaded";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import imagesLoaded from 'imagesloaded';
+import { Helmet } from 'react-helmet';
 
-import MediaOne from "./partials/media/media-one";
-import ProductDetailOne from "./partials/details/detail-one";
-import DescOne from "./partials/description/desc-one";
-import RelatedProducts from "./partials/related-products";
-import StickyBar from "./partials/sticky-bar";
+import MediaOne from './partials/media/media-one';
+import ProductDetailOne from './partials/details/detail-one';
+import DescOne from './partials/description/desc-one';
+import RelatedProducts from './partials/related-products';
+import StickyBar from './partials/sticky-bar';
 
-import Breadcrumb from "../../common/breadcrumb";
-import QuickView from "../../features/product/common/quickview";
+import Breadcrumb from '../../common/breadcrumb';
+import QuickView from '../../features/product/common/quickview';
 
-import { productGallery } from "../../../utils";
+import { productGallery } from '../../../utils';
+import withSingleProduct from '../../../utils/withSingleProduct';
 
 function SingleProduct(props) {
   let productId = props.match.params.id;
@@ -19,12 +20,12 @@ function SingleProduct(props) {
   useEffect(() => {
     productGallery();
 
-    document.querySelector(".skel-pro-single").classList.remove("loaded");
+    document.querySelector('.skel-pro-single').classList.remove('loaded');
 
-    let imgLoad = imagesLoaded(".product-main-image", { background: true });
+    let imgLoad = imagesLoaded('.product-main-image', { background: true });
 
-    imgLoad.on("done", function (instance, image) {
-      document.querySelector(".skel-pro-single").classList.add("loaded");
+    imgLoad.on('done', function(instance, image) {
+      document.querySelector('.skel-pro-single').classList.add('loaded');
     });
   }, [productId]);
 
@@ -44,7 +45,7 @@ function SingleProduct(props) {
           slug="default"
           adClass="breadcrumb-nav border-0 mb-0"
           productId={productId}
-          parent1={["Products", "product"]}
+          parent1={['Products', 'product']}
         />
 
         <div className="page-content">
@@ -89,4 +90,4 @@ function SingleProduct(props) {
   );
 }
 
-export default SingleProduct;
+export default withSingleProduct(SingleProduct);

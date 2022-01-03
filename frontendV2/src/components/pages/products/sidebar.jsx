@@ -1,16 +1,17 @@
-import React, { useEffect } from "react";
-import imagesLoaded from "imagesloaded";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import imagesLoaded from 'imagesloaded';
+import { Helmet } from 'react-helmet';
 
-import MediaOne from "./partials/media/media-one";
-import ProductDetailOne from "./partials/details/detail-one";
-import DescOne from "./partials/description/desc-one";
-import RelatedProducts from "./partials/related-products";
-import ProductSidebar from "../../features/sidebar/product-sidebar";
-import Breadcrumb from "../../common/breadcrumb";
-import QuickView from "../../features/product/common/quickview";
+import MediaOne from './partials/media/media-one';
+import ProductDetailOne from './partials/details/detail-one';
+import DescOne from './partials/description/desc-one';
+import RelatedProducts from './partials/related-products';
+import ProductSidebar from '../../features/sidebar/product-sidebar';
+import Breadcrumb from '../../common/breadcrumb';
+import QuickView from '../../features/product/common/quickview';
 
-import { productGallery } from "../../../utils";
+import { productGallery } from '../../../utils';
+import withSingleProduct from '../../../utils/withSingleProduct';
 
 function SidebarProduct(props) {
   let productId = props.match.params.id;
@@ -19,16 +20,16 @@ function SidebarProduct(props) {
     productGallery();
 
     // remove loaded-class on productId change
-    let skelItems = document.querySelectorAll(".skel-pro-single");
+    let skelItems = document.querySelectorAll('.skel-pro-single');
     for (let i = 0; i < skelItems.length; i++) {
-      skelItems[i].classList.remove("loaded");
+      skelItems[i].classList.remove('loaded');
     }
 
-    let imgLoad = imagesLoaded(".product-gallery", { background: true });
+    let imgLoad = imagesLoaded('.product-gallery', { background: true });
 
-    imgLoad.on("done", function (instance, image) {
+    imgLoad.on('done', function(instance, image) {
       for (let i = 0; i < skelItems.length; i++) {
-        skelItems[i].classList.add("loaded");
+        skelItems[i].classList.add('loaded');
       }
     });
   }, [productId]);
@@ -50,7 +51,7 @@ function SidebarProduct(props) {
           slug="sidebar"
           adClass="breadcrumb-nav border-0 mb-0"
           productId={productId}
-          parent1={["Products", "product"]}
+          parent1={['Products', 'product']}
         />
 
         <div className="page-content">
@@ -109,4 +110,4 @@ function SidebarProduct(props) {
   );
 }
 
-export default SidebarProduct;
+export default withSingleProduct(SidebarProduct);

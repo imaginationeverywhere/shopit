@@ -20,10 +20,10 @@ const ProductForm = ({
   handleChange,
   loading: addProductLoading,
   setShowProductImages,
-  imageObj,
+  productImages,
 }) => {
   const firstOrNoImage =
-    Object.values(imageObj)?.[0]?.url ||
+    productImages?.[0]?.url ||
     'https://res.cloudinary.com/dflmq4zxb/image/upload/v1641064670/noimage1_b8pkau.svg';
   return (
     <div className="product-form">

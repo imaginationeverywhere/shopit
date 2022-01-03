@@ -7,65 +7,7 @@ const { getPublicId, getOldImagesFromProduct } = require('../utils/helpers');
 
 exports.newProduct = catchAsyncErrors(async (req, res, next) => {
   // default State of Small and large Pictures
-  req.body.pictures = [];
-  req.body.smPictures = [];
-  req.body.category =
-    (req.body.category && req.body.category.split(', ')) || [];
-  req.body.brands = (req.body.brands && req.body.brands.split(', ')) || [];
-  req.body.variants =
-    req.body.variants &&
-    req.body.variants.length &&
-    req.body.variants.split(', ').map((ele) => ({ color: ele }));
-  req.body.imagesLinks = [];
   req.body.user = req.user.id;
-  const parcel = {
-    distance_unit: req.body.distance_unit,
-    weight: req.body.weight,
-    width: req.body.width,
-    height: req.body.height,
-    length: req.body.length,
-    mass_unit: req.body.mass_unit,
-  };
-  req.body.parcel = parcel;
-
-  const imgObj = {
-    picture1: req.body.picture1 || '',
-    picture2: req.body.picture2 || '',
-    picture3: req.body.picture3 || '',
-    picture4: req.body.picture4 || '',
-    smPicture1: req.body.smPicture1 || '',
-    smPicture2: req.body.smPicture2 || '',
-    smPicture3: req.body.smPicture3 || '',
-    smPicture4: req.body.smPicture4 || '',
-  };
-
-  const keysArr = Object.keys(imgObj);
-
-  for (let i = 0; i < keysArr.length; i++) {
-    const pictureKey = keysArr[i];
-    const isSmallPictureType = pictureKey.includes('smPicture');
-    const isLargePictureType = pictureKey.includes('picture');
-
-    if (req.files && req.files[pictureKey]) {
-      // its a file
-      const tempPath = req.files[pictureKey].tempFilePath;
-      const result = await cloudinary.v2.uploader.upload(tempPath, {
-        folder: 'products',
-      });
-      if (isSmallPictureType) {
-        req.body.smPictures.push(result.secure_url);
-      } else if (isLargePictureType) {
-        req.body.pictures.push(result.secure_url);
-      }
-    } else {
-      if (isSmallPictureType) {
-        req.body.smPictures.push(imgObj[pictureKey]);
-      } else {
-        req.body.pictures.push(imgObj[pictureKey]);
-      }
-    }
-  }
-
   const product = await Product.create(req.body);
 
   res.status(201).json({
@@ -81,72 +23,10 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
     return next(new ErrorHandler('Product not found', 404));
   }
 
-  req.body.pictures = [];
-  req.body.smPictures = [];
-  req.body.category =
-    (req.body.category && req.body.category.split(', ')) || [];
-  req.body.brands = (req.body.brands && req.body.brands.split(', ')) || [];
-  req.body.variants =
-    req.body.variants &&
-    req.body.variants.length &&
-    req.body.variants.split(', ').map((ele) => ({ color: ele }));
-  req.body.imagesLinks = [];
-
-  req.body.user = req.user._id;
-  const parcel = {
-    distance_unit: req.body.distance_unit,
-    weight: req.body.weight,
-    width: req.body.width,
-    height: req.body.height,
-    length: req.body.length,
-    mass_unit: req.body.mass_unit,
-  };
-  req.body.parcel = parcel;
-
-  const imgObj = {
-    picture1: req.body.picture1 || '',
-    picture2: req.body.picture2 || '',
-    picture3: req.body.picture3 || '',
-    picture4: req.body.picture4 || '',
-    smPicture1: req.body.smPicture1 || '',
-    smPicture2: req.body.smPicture2 || '',
-    smPicture3: req.body.smPicture3 || '',
-    smPicture4: req.body.smPicture4 || '',
-  };
-
-  const oldImgObj = getOldImagesFromProduct(oldProduct);
-  const keysArr = Object.keys(imgObj);
-
-  for (let i = 0; i < keysArr.length; i++) {
-    const pictureKey = keysArr[i];
-    const isSmallPictureType = pictureKey.includes('smPicture');
-    const isLargePictureType = pictureKey.includes('picture');
-
-    if (oldImgObj[pictureKey] && !imgObj[pictureKey]) {
-      // remove delete images from cloudinarry
-      const publicId = getPublicId(oldImgObj[pictureKey]);
-      publicId && (await cloudinary.v2.uploader.destroy(publicId));
-    }
-
-    if (req.files && req.files[pictureKey]) {
-      // its a file
-      const tempPath = req.files[pictureKey].tempFilePath;
-      const result = await cloudinary.v2.uploader.upload(tempPath, {
-        folder: 'products',
-      });
-      if (isSmallPictureType) {
-        req.body.smPictures.push(result.secure_url);
-      } else if (isLargePictureType) {
-        req.body.pictures.push(result.secure_url);
-      }
-    } else {
-      if (isSmallPictureType) {
-        req.body.smPictures.push(imgObj[pictureKey] || '');
-      } else {
-        req.body.pictures.push(imgObj[pictureKey] || '');
-      }
-    }
-  }
+  // // check if user is admin or owner of product
+  // if (req.user.id !== oldProduct.user) {
+  //   return next(new ErrorHandler('Not Authorized. This is not your product', 401));
+  // }
 
   product = await Product.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
@@ -160,17 +40,47 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
+const manageFilters = ({ size, brand, category, color, value } = {}) => {
+  console.log(value, 'value');
+  const filterObj = {};
+  if (category?.length) {
+    filterObj.category = { $in: category };
+  }
+  if (size?.length) {
+    filterObj.size = { $in: size };
+  }
+  if (brand?.length) {
+    filterObj.brand = { $in: brand };
+  }
+  if (color?.length) {
+    filterObj['variant.color'] = { $in: brand };
+  }
+  if (!isNaN(value?.min) && !isNaN(value?.max)) {
+    filterObj.price = { $gt: Number(value?.min), $lt: Number(value?.max) };
+  }
+  console.log(filterObj);
+  return filterObj;
+};
+
 // Get all products => /api/v1/products
 exports.getProducts = catchAsyncErrors(async (req, res, next) => {
   // return next(new ErrorHandler('My Error', 400))
-
-  const resPerPage = 15;
-
+  const filters = req.body.filters;
+  const resPerPage = Number(req.query.pageSize) || 15;
+  // console.log({ resPerPage });
   const productsCount = await Product.countDocuments();
-
-  const apiFeatures = new APIFeatures(Product.find(), req.query)
-    .search()
-    .filter();
+  const sortBy = ['createdAt', 'price', 'stock', 'rating'].includes(
+    filters.sortBy,
+  )
+    ? filters.sortBy
+    : 'createdAt';
+  const apiFeatures = new APIFeatures(
+    Product.find({
+      productImages: { $gt: [] },
+      ...manageFilters(filters),
+    }).sort({ [sortBy]: 1 }), // don't return products without images
+    req.query,
+  ).search();
 
   let products = await apiFeatures.query;
   let filteredProductsCount = products.length;
@@ -178,35 +88,13 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
   apiFeatures.pagination(resPerPage);
   products = await apiFeatures.query;
 
-  // test delay for loading products
-  // setTimeout(() => {
-  //   res.status(200).json({
-  //     success: true,
-  //     productsCount,
-  //     products,
-  //   });
-  // }, 2000);
-  //   console.log('====================================');
-  //   console.log({ products });
-  //   console.log('====================================');
-  products = products.map(
-    ({ _id, _doc: { numOfReviews, user, createdAt, parcel = {}, ...rest } }, index) => {
-      return {
-        id: _id,
-        parcel: {
-          ...parcel,
-          distance_unit: parcel.distance_unit || 'in',
-          mass_unit: parcel.mass_unit || 'lb',
-        },
-        ...rest,
-      };
-    },
-  );
+  const pageCount = Math.ceil(productsCount / resPerPage);
 
   res.status(200).json({
     success: true,
     productsCount,
     resPerPage,
+    pageCount,
     filteredProductsCount,
     products,
   });
@@ -233,13 +121,11 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
   if (!product) {
     return next(new ErrorHandler('Product not found', 404));
   }
-  product.smPictures = product.smPictures || [];
-  product.pictures = product.pictures || [];
-  const allImages = product.smPictures.concat(product.pictures);
-  console.log(allImages);
+
+  const allImages = product.productImages;
   // Deleting images associated with the product
   for (let i = 0; i < allImages.length; i++) {
-    const publicId = getPublicId(allImages[i]);
+    const publicId = allImages[i].public_id;
     publicId && (await cloudinary.v2.uploader.destroy(publicId));
   }
   await product.remove();
@@ -338,25 +224,100 @@ exports.deleteReview = catchAsyncErrors(async (req, res, next) => {
 // Get all products (Admin)  =>   /api/v1/admin/products
 exports.getAdminProducts = catchAsyncErrors(async (req, res, next) => {
   const products = await Product.find();
+  const productsCount = await Product.countDocuments();
 
   res.status(200).json({
     success: true,
     products,
+    productsCount,
   });
 });
 
-/*
+exports.addImageToProduct = catchAsyncErrors(async (req, res, next) => {
+  const product = await Product.findById(req.params.id);
 
-[
-  'https://res.cloudinary.com/imagination-everywhere-inc/image/upload/v1639478290/products/fy9v9lbbfvcdv6r3rz8j.jpg',
-  'https://res.cloudinary.com/imagination-everywhere-inc/image/upload/v1639478291/products/srnqeljdstlja6zpvrrr.jpg',
-  'https://res.cloudinary.com/imagination-everywhere-inc/image/upload/v1639478292/products/pvgj9dxa8o4kktxsceti.jpg',
-  'https://res.cloudinary.com/imagination-everywhere-inc/image/upload/v1639478293/products/szktytp4z2j4dbbmnezl.jpg'
-] [
-  'https://res.cloudinary.com/imagination-everywhere-inc/image/upload/v1639478294/products/bttc9f5t9t6m3axguoio.jpg',
-  'https://res.cloudinary.com/imagination-everywhere-inc/image/upload/v1639478295/products/ori4ouk0i63lqwxeebe8.jpg',
-  'https://res.cloudinary.com/imagination-everywhere-inc/image/upload/v1639478297/products/epjslt6t8emrnvyzdeh8.jpg',
-  'https://res.cloudinary.com/imagination-everywhere-inc/image/upload/v1639478298/products/cvzyynkw9xx8jlcazntw.jpg'
-]
+  if (!product) {
+    return next(new ErrorHandler('Product not found', 404));
+  }
 
-*/
+  if (req.files && req.files.productImage) {
+    const { productImage } = req.files;
+    const image = await cloudinary.v2.uploader.upload(
+      productImage.tempFilePath,
+    );
+    const imageObj = {
+      url: image.secure_url,
+      publicId: image.public_id,
+      name: req.body.name,
+    };
+    product.productImages.push(imageObj);
+    await product.save();
+    res.status(200).json({
+      success: true,
+      product,
+      imageObj,
+    });
+  } else {
+    return next(new ErrorHandler('No file uploaded', 400));
+  }
+});
+
+exports.removeImageFromProduct = catchAsyncErrors(async (req, res, next) => {
+  const product = await Product.findById(req.params.id);
+
+  if (!product) {
+    return next(new ErrorHandler('Product not found', 404));
+  }
+  const image = product.productImages.find(
+    (image) => image.publicId === req.body.imagePublicId,
+  );
+  if (!image) {
+    return next(new ErrorHandler('Image not found', 404));
+  }
+  const publicId = image.publicId;
+  const imageIndex = product.productImages.indexOf(image);
+  product.productImages.splice(imageIndex, 1);
+  await product.save();
+  await cloudinary.v2.uploader.destroy(publicId);
+  res.status(200).json({
+    success: true,
+    product,
+  });
+});
+
+exports.updateImageOnProduct = catchAsyncErrors(async (req, res, next) => {
+  const product = await Product.findById(req.params.id);
+
+  if (!product) {
+    return next(new ErrorHandler('Product not found', 404));
+  }
+  const publicId = req.body.imagePublicId;
+  const imageIndex = product.productImages.findIndex(
+    (image) => image.publicId === publicId,
+  );
+  if (imageIndex === -1) {
+    return next(new ErrorHandler('Image not found', 404));
+  }
+
+  await cloudinary.v2.uploader.destroy(publicId);
+  if (req.files && req.files.productImage) {
+    const { productImage } = req.files;
+    const image = await cloudinary.v2.uploader.upload(
+      productImage.tempFilePath,
+    );
+    const imageObj = {
+      url: image.secure_url,
+      publicId: image.public_id,
+      name: product.productImages[imageIndex].name,
+    };
+    product.productImages[imageIndex] = imageObj;
+    await product.save();
+    res.status(200).json({
+      success: true,
+      product,
+      imageObj,
+    });
+  } else {
+    return next(new ErrorHandler('No file uploaded', 400));
+  }
+});

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { getProductImages } from '../utils';
 
 axios.interceptors.response.use(null, error => {
   // clear token for 401 error
@@ -22,9 +23,79 @@ export const axiosInstance = axios.create({
 });
 
 // API to get products from mock server
-export const getProducts = function() {
+export const getProductsWithFilters = function(queries = {}) {
   return axiosInstance
-    .get('products')
+    .post(
+      `products/withFilters?page=${queries?.page ||
+        1}&pageSize=${queries?.pageSize || 4}`,
+      { filters: queries },
+    )
+    .then(function(response) {
+      if (response?.data?.products) {
+        const payload = response.data;
+        const products = payload.products.map(({ _id, sizes, ...rest }) => ({
+          ...rest,
+          id: _id,
+          size: sizes,
+          sizes,
+          ...getProductImages(rest?.productImages),
+        }));
+        return { ...payload, products };
+      } else throw new Error('Products do not exist');
+    })
+    .catch(function(error) {
+      // handle error
+      console.log(error);
+    });
+};
+
+export const getProducts = function(queries = {}) {
+  return axiosInstance
+    .get(
+      `products?page=${queries?.page || 1}&pageSize=${queries?.pageSize || 4}`,
+    )
+    .then(function(response) {
+      if (response?.data?.products) {
+        const payload = response.data;
+        const products = payload.products.map(({ _id, sizes, ...rest }) => ({
+          ...rest,
+          id: _id,
+          size: sizes,
+          sizes,
+          ...getProductImages(rest?.productImages),
+        }));
+        return { ...payload, products };
+      } else throw new Error('Products do not exist');
+    })
+    .catch(function(error) {
+      // handle error
+      console.log(error);
+    });
+};
+
+export const getSingleProduct = function(id) {
+  return axiosInstance
+    .get(`product/${id}`)
+    .then(function(response) {
+      if (response.data.product) {
+        const myData = {
+          ...response.data.product,
+          ...getProductImages(response.data.product?.productImages),
+        };
+        return myData;
+      } else {
+        throw new Error('Invalid product id');
+      }
+    })
+    .catch(function(error) {
+      // handle error
+      console.log(error);
+    });
+};
+
+export const getAdminProducts = function() {
+  return axiosInstance
+    .get('admin/products')
     .then(function(response) {
       const myData =
         response.data &&
@@ -33,10 +104,6 @@ export const getProducts = function() {
           id: _id,
           size: sizes,
           sizes,
-          rawSmPictures: rest.smPictures,
-          rawPictures: rest.pictures,
-          smPictures: rest.smPictures.filter(url => !!url),
-          pictures: rest.pictures.filter(url => !!url),
         }));
       return myData;
     })

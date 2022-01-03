@@ -114,6 +114,32 @@ export const getVisibleProducts = (
     });
 };
 
+export const processFilters = ({
+  page,
+  pageSize,
+  sortBy,
+  category,
+  size,
+  brand,
+  color,
+  rating,
+  value,
+}) => {
+  const filters = {
+    page,
+    pageSize,
+    sortBy,
+    category,
+    size,
+    brand,
+    color,
+    rating,
+    value,
+  };
+
+  return filters;
+};
+
 /**
  * Get featured products
  * @param {Array} products

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 // utils to initialize other funcs
 export const initFunctions = () => {
   definePolyfills();
@@ -696,4 +697,20 @@ export const patterns = {
 export const validate = (field, Regex) => {
   if (patterns[Regex].test(field)) return true;
   return false;
+};
+
+export const getProductImages = productImages => {
+  const pictures = [];
+  if (productImages?.length) {
+    productImages?.sort((a, b) => {
+      if (a?.name > b?.name) return 1;
+      else if (a?.name < b?.name) return -1;
+      return 0;
+    });
+
+    productImages?.forEach(({ name, url }) => {
+      pictures.push(url);
+    });
+  }
+  return { pictures, smPictures: pictures };
 };

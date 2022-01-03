@@ -48,7 +48,7 @@ const ProductImages = ({
             refetch={refetch}
           />
         </div>
-        <div className="image-upload-wrap">
+        {/* <div className="image-upload-wrap">
           <ImageHandler
             name="smPicture1"
             image={imageObj.smPicture1}
@@ -77,7 +77,7 @@ const ProductImages = ({
             productId={productId}
             refetch={refetch}
           />
-        </div>
+        </div> */}
       </div>
     </ModalWrapComp>
   );

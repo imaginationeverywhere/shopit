@@ -28,21 +28,9 @@ const productSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  pictures: [
-    {
-      type: String,
-      // required: true
-    },
-  ],
-  smPictures: [
-    {
-      type: String,
-      // required: true
-    },
-  ],
   productImages: [
     {
-      public_id: {
+      publicId: {
         type: String,
         required: true,
       },
@@ -53,7 +41,7 @@ const productSchema = new mongoose.Schema({
       name: {
         type: String,
         required: true,
-      }
+      },
     },
   ],
   brands: [

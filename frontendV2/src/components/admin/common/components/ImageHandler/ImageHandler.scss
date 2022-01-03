@@ -1,5 +1,5 @@
 .imagehandler {
-  width: 21%;
+  width: 23%;
   border: 1px dashed #c66;
   position: relative;
 
@@ -19,14 +19,14 @@
   }
 
   img {
-    height: 12em;
+    height: 16em;
     width: 100%;
     object-fit: contain;
     margin: 0 auto;
   }
   .upload-here {
     cursor: pointer;
-    height: 12em;
+    height: 16em;
 
     .drag-here {
       padding: 3em;

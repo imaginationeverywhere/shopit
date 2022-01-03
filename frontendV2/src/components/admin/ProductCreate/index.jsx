@@ -16,7 +16,7 @@ import { addProducts, deleteProducts, updateProducts } from '../../../api';
 import { withRouter } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import store from '../../../store';
-import { getAllProducts } from '../../../actions';
+import { getAdminProducts } from '../../../actions';
 import ConfirmModal from './ConfirmModal';
 
 const defaultImageValue = {
@@ -24,10 +24,6 @@ const defaultImageValue = {
   picture2: null,
   picture3: null,
   picture4: null,
-  smPicture1: null,
-  smPicture2: null,
-  smPicture3: null,
-  smPicture4: null,
 };
 
 const defaultProductValues = {
@@ -50,7 +46,7 @@ const defaultProductValues = {
 const ProductCreate = ({ match, history }) => {
   // get id params from url
   const productId = match && match.params && match.params.productId;
-  const { products } = useSelector(state => state.data);
+  const { adminProducts: products } = useSelector(state => state.data);
   const [imageObj, setImageObj] = useState(defaultImageValue);
   const setImage = (name, imageObj) => {
     setImageObj(prev => ({ ...prev, [name]: imageObj }));
@@ -88,7 +84,7 @@ const ProductCreate = ({ match, history }) => {
       await deleteProducts({ id: productId });
       toast.success('Product deleted successfully');
       // get all products
-      store.dispatch(getAllProducts());
+      store.dispatch(getAdminProducts());
       // push to products page
       history.push('/admin/products');
     } catch (error) {
@@ -185,7 +181,7 @@ const ProductCreate = ({ match, history }) => {
 
     const func = productId ? upateExistingProduct : createNewProduct;
     await func(req);
-    store.dispatch(getAllProducts());
+    store.dispatch(getAdminProducts());
   };
 
   return (
@@ -213,7 +209,7 @@ const ProductCreate = ({ match, history }) => {
               formValues={formValues}
               handleChange={handleChange}
               setShowProductImages={!!productId && setShowProductImages}
-              imageObj={imageObj}
+              productImages={singleProduct?.productImages}
             />
           </>
         )}
@@ -233,7 +229,7 @@ const ProductCreate = ({ match, history }) => {
           loading={genericLoading}
           productId={productId}
           closeModal={closeModal}
-          refetch={() => store.dispatch(getAllProducts())}
+          refetch={() => store.dispatch(getAdminProducts())}
         />
       )}
     </div>

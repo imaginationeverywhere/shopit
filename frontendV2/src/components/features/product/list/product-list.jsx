@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable no-unused-expressions */
+import React, { useState, useEffect, useMemo } from 'react';
 import Link from 'react-router-dom/Link';
 import { connect } from 'react-redux';
 import imagesLoaded from 'imagesloaded';
@@ -6,7 +7,7 @@ import imagesLoaded from 'imagesloaded';
 import ProductSix from '../product-six';
 import ProductEight from '../product-eight';
 import QuickView from '../common/quickview';
-import Pagination from '../../pagination';
+import Pagination from '../../NewPagination';
 
 import {
   addToCart,
@@ -14,8 +15,11 @@ import {
   addToCompare,
   showQuickViewModal,
   filterSort,
+  getAllProductsWithFilters,
 } from '../../../../actions';
-import { getVisibleProducts } from '../../../../services';
+import { getVisibleProducts, processFilters } from '../../../../services';
+import store from '../../../../store';
+import filter from '../../../../reducers/filter';
 
 function ProductList(props) {
   let {
@@ -27,10 +31,20 @@ function ProductList(props) {
     toggleWishlist,
     addToCompare,
     showQuickViewModal,
+    productsInfo,
+    productLoading,
   } = props;
 
-  const [start, setStart] = useState(0);
+  const productLength = productsInfo?.filteredProductsCount || products.length;
+  const [page, setPage] = useState(1);
   const [cols, setCols] = useState(column);
+
+  const getProducts = () =>
+    store.dispatch(
+      getAllProductsWithFilters({
+        ...processFilters({ page, pageSize: 4, ...filters }),
+      }),
+    );
 
   useEffect(() => {
     document
@@ -43,12 +57,14 @@ function ProductList(props) {
     let imgLoad = imagesLoaded('.products', { background: true });
 
     imgLoad.on('done', function(instance, image) {
-      document
-        .querySelector('.skeleton-body.skel-shop-products')
-        .classList.add('loaded');
-      document
-        .querySelector('.skeleton-body.skel-shop-sidebar')
-        .classList.add('loaded');
+      !productLoading &&
+        document
+          .querySelector('.skeleton-body.skel-shop-products')
+          .classList.add('loaded');
+      !productLoading &&
+        document
+          .querySelector('.skeleton-body.skel-shop-sidebar')
+          .classList.add('loaded');
     });
 
     setCols(column);
@@ -62,28 +78,47 @@ function ProductList(props) {
     let imgLoad = imagesLoaded('.products', { background: true });
 
     imgLoad.on('done', function(instance, image) {
-      document
-        .querySelector('.skeleton-body.skel-shop-products')
-        .classList.add('loaded');
-    });
-  }, [filters]);
-
-  function changePos(pos) {
-    setStart(pos);
-
-    document.querySelector('.skeleton-body.skel-shop-products') &&
-      document
-        .querySelector('.skeleton-body.skel-shop-products')
-        .classList.remove('loaded');
-
-    let imgLoad = imagesLoaded('.products', { background: true });
-
-    imgLoad.on('done', function(instance, image) {
-      document.querySelector('.skeleton-body.skel-shop-products') &&
+      !productLoading &&
         document
           .querySelector('.skeleton-body.skel-shop-products')
           .classList.add('loaded');
     });
+  }, [filters]);
+
+  useEffect(() => {
+    if (productLoading) {
+      document
+        .querySelector('.skeleton-body.skel-shop-products')
+        ?.classList.remove('loaded');
+      document
+        .querySelector('.skeleton-body.skel-shop-sidebar')
+        ?.classList.remove('loaded');
+    } else {
+      console.log('here');
+      document
+        .querySelector('.skeleton-body.skel-shop-products')
+        ?.classList.add('loaded');
+      document
+        .querySelector('.skeleton-body.skel-shop-sidebar')
+        ?.classList.add('loaded');
+    }
+  }, [productLoading]);
+
+  function changePos(pos) {
+    setPage(pos);
+    if (page !== pos)
+      document
+        .querySelector('.skeleton-body.skel-shop-products')
+        ?.classList.remove('loaded');
+
+    // let imgLoad = imagesLoaded('.products', { background: true });
+
+    // imgLoad.on('done', function(instance, image) {
+    //   !productLoading &&
+    //     document
+    //       .querySelector('.skeleton-body.skel-shop-products')
+    //       ?.classList.add('loaded');
+    // });
 
     window.scrollTo({
       top: 0,
@@ -92,7 +127,7 @@ function ProductList(props) {
 
   function changeFilter(e) {
     filterSort(e.target.value);
-    setStart(0);
+    setPage(0);
   }
 
   const grid = {
@@ -100,11 +135,14 @@ function ProductList(props) {
     '3cols': 'col-6 col-md-4 col-lg-4',
     '4cols': 'col-6 col-md-4 col-lg-4 col-xl-3',
   };
-  const units = { list: 6, '2cols': 6, '3cols': 9, '4cols': 12 };
-  const itemsPerPage = units[cols];
+  // const units = { list: 6, '2cols': 6, '3cols': 9, '4cols': 12 };
+  // const itemsPerPage = units[cols];
+  // products = getVisibleProducts(products, filters);
 
-  products = getVisibleProducts(products, filters);
-  // console.log(products.slice( -15 ))
+  useEffect(() => {
+    if (page) getProducts();
+  }, [page]);
+
   return (
     <>
       <div className="toolbox">
@@ -112,8 +150,7 @@ function ProductList(props) {
           <div className="toolbox-info">
             Showing{' '}
             <span>
-              {Math.min(itemsPerPage, products.length - start)} of{' '}
-              {products.length}
+              {products?.length} of {productLength}
             </span>{' '}
             Products
           </div>
@@ -130,9 +167,10 @@ function ProductList(props) {
                 className="form-control"
                 onChange={changeFilter}
               >
-                <option value="popularity">Most Popular</option>
+                <option value="createdAt">Date</option>
+                <option value="price">Price</option>
+                <option value="stock">Quantity</option>
                 <option value="rating">Most Rated</option>
-                <option value="date">Date</option>
               </select>
             </div>
           </div>
@@ -201,7 +239,7 @@ function ProductList(props) {
 
       <div className="products mb-3">
         {'list' === cols ? (
-          products.slice(start, start + 6).map((item, index) => (
+          products.map((item, index) => (
             <div key={'seleton-' + index}>
               <div className="skel-pro skel-pro-list"></div>
 
@@ -216,7 +254,7 @@ function ProductList(props) {
           ))
         ) : (
           <div className="row">
-            {products.slice(start, start + itemsPerPage).map((item, index) => (
+            {products.map((item, index) => (
               <div className={grid[cols]} key={'product' + index}>
                 <div className="skel-pro"></div>
 
@@ -237,8 +275,8 @@ function ProductList(props) {
 
       <Pagination
         aclass={`${'list' === props.cols ? '' : 'justify-content-center'}`}
-        count={products.length}
-        unit={itemsPerPage}
+        count={productLength}
+        pageCount={productsInfo?.pageCount}
         onChange={changePos}
         cols={cols}
         filters={filters}
@@ -251,6 +289,8 @@ export const mapStateToProps = state => {
   return {
     filters: state.filters,
     products: state.data.products ? state.data.products : [],
+    productLoading: state.data.loading,
+    productsInfo: state.data.productsInfo || {},
   };
 };
 
