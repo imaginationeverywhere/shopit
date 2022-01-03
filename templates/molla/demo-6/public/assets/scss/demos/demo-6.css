@@ -16,7 +16,7 @@
   text-transform: uppercase;
 }
 
-.owl-simple .owl-nav [class*="owl-"] {
+.owl-simple .owl-nav [class*='owl-'] {
   top: 40%;
 }
 
@@ -74,14 +74,14 @@
   text-transform: uppercase;
 }
 
-.owl-theme .owl-nav [class*="owl-"] {
+.owl-theme .owl-nav [class*='owl-'] {
   width: 3.2rem;
   height: 3.2rem;
   font-size: 2rem;
   margin-top: -1.6rem;
 }
 
-.owl-theme .owl-nav [class*="owl-"]:not(.disabled):hover {
+.owl-theme .owl-nav [class*='owl-']:not(.disabled):hover {
   color: #cc9966;
   background: transparent;
   text-decoration: none;
@@ -95,7 +95,7 @@
   right: 20px;
 }
 
-.owl-theme.owl-light .owl-nav [class*="owl-"] {
+.owl-theme.owl-light .owl-nav [class*='owl-'] {
   border-color: #fff;
   color: #fff;
 }
@@ -157,7 +157,7 @@
   color: #333;
 }
 .main .nav.nav-pills .nav-link::before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   left: 0;
@@ -335,7 +335,7 @@
 }
 .deal-countdown .countdown-section:not(:last-child):after {
   color: #333333;
-  content: ":";
+  content: ':';
   display: inline-block;
   font-weight: 500;
   font-size: 20px;
@@ -413,7 +413,7 @@
   position: relative;
 }
 .brands::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 1rem;
   right: 1rem;
@@ -669,7 +669,7 @@
     margin-bottom: 2.2rem;
   }
 
-  .owl-theme .owl-nav [class*="owl-"] {
+  .owl-theme .owl-nav [class*='owl-'] {
     width: 4rem;
     height: 4rem;
     font-size: 2.2rem;
@@ -685,7 +685,7 @@
   }
 }
 @media screen and (max-width: 1199px) {
-  .owl-simple .owl-nav [class*="owl-"] {
+  .owl-simple .owl-nav [class*='owl-'] {
     display: none;
   }
 }

@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 // import jsons
-import _data from "../../mock_data/data";
+import _data from '../../mock_data/data';
 
 export default function ServiceBox(props) {
-  const { boxAdClass = "icon-box-side", textAdClass = "text-dark" } = props;
+  const { boxAdClass = 'icon-box-side', textAdClass = 'text-dark' } = props;
 
   return (
     <div className="row justify-content-center">

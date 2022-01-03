@@ -1,27 +1,27 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import OwlCarousel from "../../features/owl-carousel";
-import Service from "../../features/service";
-import QuickViewTwo from "../../features/product/common/quickview-two";
-import NewsletterModal from "../../features/modal/newsletter-modal";
+import OwlCarousel from '../../features/owl-carousel';
+import Service from '../../features/service';
+import QuickViewTwo from '../../features/product/common/quickview-two';
+import NewsletterModal from '../../features/modal/newsletter-modal';
 
-import Banner from "./banner";
-import NewCollection from "./new-collection";
+import Banner from './banner';
+import NewCollection from './new-collection';
 
-import { introSlider } from "../../settings";
-import data from "../../../mock_data/data";
-import style from "./style.scss";
+import { introSlider } from '../../settings';
+import data from '../../../mock_data/data';
+import style from './style.scss';
 
 function HomePage12() {
   useEffect(() => {
-    document.getElementById("menu-home").classList.add("active");
+    document.getElementById('menu-home').classList.add('active');
     style.use();
 
     return () => {
-      document.getElementById("menu-home").classList.remove("active");
+      document.getElementById('menu-home').classList.remove('active');
       style.unuse();
     };
   }, []);

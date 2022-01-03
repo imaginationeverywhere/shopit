@@ -1,7 +1,7 @@
 /*
  * 	Simple theme - Owl Carousel CSS File
  */
-@import "../../frontend/config/variables";
+@import '../../frontend/config/variables';
 
 //nav
 $nav-simple-width: 42px !default;
@@ -33,7 +33,7 @@ $dot-simple-background-active: #cccccc !default;
     text-align: center;
     -webkit-tap-highlight-color: transparent;
 
-    [class*="owl-"] {
+    [class*='owl-'] {
       position: absolute;
       top: 50%;
       z-index: 99;
@@ -124,7 +124,7 @@ $dot-simple-background-active: #cccccc !default;
 
   &.owl-light {
     .owl-nav {
-      [class*="owl-"] {
+      [class*='owl-'] {
         color: #fff;
       }
     }
@@ -162,7 +162,7 @@ $dot-simple-background-active: #cccccc !default;
 
   &.owl-dark {
     .owl-nav {
-      [class*="owl-"] {
+      [class*='owl-'] {
         color: #666666;
       }
     }

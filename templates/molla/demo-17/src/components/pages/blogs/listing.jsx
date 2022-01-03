@@ -1,15 +1,15 @@
-import React from "react";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
-import PostTwo from "../../features/post/post-two";
-import Pagination from "../../features/pagination";
-import BlogSidebar from "../../features/sidebar/blog-sidebar";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
+import PostTwo from '../../features/post/post-two';
+import Pagination from '../../features/pagination';
+import BlogSidebar from '../../features/sidebar/blog-sidebar';
 
 // import post data
-import posts from "../../../mock_data/posts";
+import posts from '../../../mock_data/posts';
 
 function Listing() {
   return (
@@ -24,7 +24,7 @@ function Listing() {
         <PageHeader title="Blog Listing" subTitle="Blog" />
         <Breadcrumb
           title="Listing"
-          parent1={["Blog", "blog/classic"]}
+          parent1={['Blog', 'blog/classic']}
           adClass="mb-3"
         />
 

@@ -169,7 +169,7 @@
   text-transform: uppercase;
 }
 
-.owl-theme .owl-nav [class*="owl-"] {
+.owl-theme .owl-nav [class*='owl-'] {
   width: 4rem;
   height: 4rem;
   font-size: 2.2rem;
@@ -184,7 +184,7 @@
   right: 100px;
 }
 
-.owl-theme.owl-light .owl-nav [class*="owl-"] {
+.owl-theme.owl-light .owl-nav [class*='owl-'] {
   border-color: #fff;
   color: #fff;
 }

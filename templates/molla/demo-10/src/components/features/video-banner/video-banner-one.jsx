@@ -1,13 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { safeContent } from "../../../utils";
+import { safeContent } from '../../../utils';
 
 export default function VideoBannerOne(props) {
   const { content, image, showModal } = props;
 
   const openVideoModal = (e) => {
-    showModal("video");
+    showModal('video');
     e.preventDefault();
   };
 

@@ -1,15 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { safeContent } from "../../utils";
+import { safeContent } from '../../utils';
 
 export default function HomeSlide(props) {
-  const { image, subtitle, title, btnText = "Shop Now" } = props.data;
+  const { image, subtitle, title, btnText = 'Shop Now' } = props.data;
 
   return (
     <div
       className="intro-slide"
-      style={{ backgroundImage: "url(" + process.env.PUBLIC_URL + image + ")" }}
+      style={{ backgroundImage: 'url(' + process.env.PUBLIC_URL + image + ')' }}
     >
       <div className="container intro-content">
         <h3 className="intro-subtitle">{subtitle}</h3>

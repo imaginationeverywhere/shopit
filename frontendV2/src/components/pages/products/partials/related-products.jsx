@@ -42,7 +42,7 @@ function RelatedProducts(props) {
   );
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   products: state.data.products,
 });
 

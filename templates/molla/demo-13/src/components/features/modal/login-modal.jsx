@@ -1,23 +1,23 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
-import { connect } from "react-redux";
-import Modal from "react-modal";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Tabs, TabList, Tab, TabPanel } from 'react-tabs';
+import { connect } from 'react-redux';
+import Modal from 'react-modal';
 
-import { closeModal } from "../../../actions";
+import { closeModal } from '../../../actions';
 
 const customStyles = {
   content: {
-    top: "50%",
-    transform: "translateY(-50%)",
+    top: '50%',
+    transform: 'translateY(-50%)',
   },
   overlay: {
-    backgroundColor: "rgba(77,77,77,0.6)",
-    zIndex: "10000",
+    backgroundColor: 'rgba(77,77,77,0.6)',
+    zIndex: '10000',
   },
 };
 
-Modal.setAppElement("#root");
+Modal.setAppElement('#root');
 
 function LoginModal(props) {
   const { showModal, modal } = props;
@@ -25,11 +25,11 @@ function LoginModal(props) {
 
   function closeModal() {
     document
-      .getElementById("login-modal")
-      .classList.remove("ReactModal__Content--after-open");
+      .getElementById('login-modal')
+      .classList.remove('ReactModal__Content--after-open');
 
     timer = setTimeout(() => {
-      props.closeModal("login");
+      props.closeModal('login');
     }, 200);
   }
 
@@ -41,7 +41,7 @@ function LoginModal(props) {
 
   return (
     <Modal
-      isOpen={showModal && "login" === modal}
+      isOpen={showModal && 'login' === modal}
       onRequestClose={closeModal}
       style={customStyles}
       contentLabel="Login Modal"
@@ -75,7 +75,7 @@ function LoginModal(props) {
                 </TabList>
 
                 <div className="tab-content">
-                  <TabPanel style={{ paddingTop: "2rem" }}>
+                  <TabPanel style={{ paddingTop: '2rem' }}>
                     <div>
                       <form action="#">
                         <div className="form-group">

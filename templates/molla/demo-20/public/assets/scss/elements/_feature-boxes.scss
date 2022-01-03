@@ -102,7 +102,7 @@
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   .feature-box {
     padding: 4.1rem 4.5rem 4rem;
 
@@ -112,7 +112,7 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .feature-box {
     p {
       min-height: 120px;

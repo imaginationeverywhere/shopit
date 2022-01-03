@@ -1,9 +1,9 @@
 /* Demo 20 Homepage 20 */
-@import "../mixins/clearfix";
-@import "../mixins/breakpoints";
-@import "../mixins/lazy";
+@import '../mixins/clearfix';
+@import '../mixins/breakpoints';
+@import '../mixins/lazy';
 
-@import "../config/variables";
+@import '../config/variables';
 
 $primary-color: #1cc0a0;
 
@@ -74,7 +74,7 @@ $primary-color: #1cc0a0;
   margin-bottom: -12rem;
 
   &:after {
-    content: "";
+    content: '';
     display: table;
     clear: both;
   }
@@ -214,7 +214,7 @@ $primary-color: #1cc0a0;
   &:hover,
   &:focus {
     &:before {
-      content: "\f233";
+      content: '\f233';
     }
   }
 }
@@ -585,7 +585,7 @@ $primary-color: #1cc0a0;
   }
 }
 
-@include mq("sm") {
+@include mq('sm') {
   .banner-big .banner-content {
     left: 4rem;
   }
@@ -601,7 +601,7 @@ $primary-color: #1cc0a0;
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .product-footer {
     .btn-product {
       &::before {
@@ -611,7 +611,7 @@ $primary-color: #1cc0a0;
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .banner-content {
     left: 4rem;
   }
@@ -634,7 +634,7 @@ $primary-color: #1cc0a0;
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .intro-section {
     .banner-overlay.banner-big img {
       min-height: 40rem;
@@ -642,13 +642,13 @@ $primary-color: #1cc0a0;
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .banner-overlay img {
     max-height: 30rem;
   }
 }
 
-@include mq("xs", "max") {
+@include mq('xs', 'max') {
   .home-page .product:not(.product-big) {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -677,7 +677,7 @@ $primary-color: #1cc0a0;
 
       &:before {
         position: absolute;
-        content: "";
+        content: '';
         top: 1rem;
         bottom: 1rem;
         right: 50%;
@@ -697,7 +697,7 @@ $primary-color: #1cc0a0;
   }
 }
 
-@include mq("375px", "max") {
+@include mq('375px', 'max') {
   .product-big {
     .product-title,
     .product-price {

@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
-import ProfileTwo from "../../features/profile/profile-two";
-import IconBox from "../../features/icon-box";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
+import ProfileTwo from '../../features/profile/profile-two';
+import IconBox from '../../features/icon-box';
 
-import { countTo } from "../../../utils";
-import data from "../../../mock_data/data.json";
+import { countTo } from '../../../utils';
+import data from '../../../mock_data/data.json';
 
 function AboutTwo() {
   useEffect(() => {
@@ -25,7 +25,7 @@ function AboutTwo() {
       <h1 className="d-none">Molla React Ecommerce - About Page</h1>
 
       <PageHeader title="About us 2" subTitle="Pages" />
-      <Breadcrumb title="About Us 2" parent1={["Pages", "pages/about"]} />
+      <Breadcrumb title="About Us 2" parent1={['Pages', 'pages/about']} />
 
       <div className="page-content pb-3">
         <div className="container">
@@ -40,7 +40,7 @@ function AboutTwo() {
                   uctus metus libero eu augue. Morbi purus libero, faucibus
                   adipiscing, commodo quis, gravida id, est. Sed lectus.
                   Praesent elementum hendrerit tortor. Sed semper lorem at
-                  felis.{" "}
+                  felis.{' '}
                 </p>
                 <img
                   src={`${process.env.PUBLIC_URL}/assets/images/about/about-2/signature.png`}
@@ -215,7 +215,7 @@ function AboutTwo() {
                     <div className="col-6 col-sm-4 col-md-3" key={index}>
                       <Link to="#" className="brand">
                         <img
-                          src={process.env.PUBLIC_URL + "/" + brand.image}
+                          src={process.env.PUBLIC_URL + '/' + brand.image}
                           alt="Brand Name"
                         />
                       </Link>

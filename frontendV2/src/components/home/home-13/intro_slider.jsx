@@ -1,12 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 // import Utils
-import { safeContent } from "../../../utils";
+import { safeContent } from '../../../utils';
 
 export default function Slider(props) {
   const { slider } = props;
-  let image = process.env.PUBLIC_URL + "/" + slider.image;
+  let image = process.env.PUBLIC_URL + '/' + slider.image;
 
   return (
     <div

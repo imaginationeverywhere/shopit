@@ -17,7 +17,7 @@
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   @for $i from 0 through 15 {
     .mt-md-#{$i} {
       margin-top: #{$i}rem !important;
@@ -43,7 +43,7 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   @for $i from 0 through 15 {
     .mt-lg-#{$i} {
       margin-top: #{$i}rem !important;
@@ -69,7 +69,7 @@
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   @for $i from 0 through 15 {
     .mt-xl-#{$i} {
       margin-top: #{$i}rem !important;
@@ -83,7 +83,7 @@
   }
 }
 
-@include mq("xxl") {
+@include mq('xxl') {
   @for $i from 0 through 15 {
     .mt-xxl-#{$i} {
       margin-top: #{$i}rem !important;

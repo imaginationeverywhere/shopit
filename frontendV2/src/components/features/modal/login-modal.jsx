@@ -54,7 +54,7 @@ function LoginModal(props) {
     'register-password': '',
   });
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     const { name, value } = event.target;
 
     const newErrors = { ...errors, [name]: !validate(value, name) };
@@ -95,7 +95,7 @@ function LoginModal(props) {
 
     // check if at least one element fails validation
     const shouldNotSubmit = Object.keys(errorMap).some(
-      inputName => errorMap[inputName],
+      (inputName) => errorMap[inputName],
     );
 
     if (shouldNotSubmit) {
@@ -258,7 +258,7 @@ function LoginModal(props) {
                   </TabPanel>
 
                   <TabPanel>
-                    <form onSubmit={e => handleSubmit(e, true)}>
+                    <form onSubmit={(e) => handleSubmit(e, true)}>
                       <div className="form-group">
                         <label htmlFor="name-2">Your full name *</label>
                         <input

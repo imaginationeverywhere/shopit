@@ -1,20 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 // import utils
-import { safeContent } from "../../../utils";
+import { safeContent } from '../../../utils';
 
 export default function BannerGroup(props) {
   const {
     img,
     title,
     content,
-    btnText = "Shop Now",
-    img1 = "",
-    adClass = "",
-    width = "300",
-    height = "200",
+    btnText = 'Shop Now',
+    img1 = '',
+    adClass = '',
+    width = '300',
+    height = '200',
   } = props.data;
 
   return (
@@ -27,8 +27,8 @@ export default function BannerGroup(props) {
 
         <LazyLoadImage
           alt="banner"
-          width={width + "px"}
-          height={height + "px"}
+          width={width + 'px'}
+          height={height + 'px'}
           src={`${process.env.PUBLIC_URL}/${img}`}
           threshold={200}
           effect="blur"
@@ -43,8 +43,8 @@ export default function BannerGroup(props) {
           ></Link>
         </div>
 
-        {img1 === "" ? (
-          ""
+        {img1 === '' ? (
+          ''
         ) : (
           <div className="img-percent">
             <img

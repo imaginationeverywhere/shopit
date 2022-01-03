@@ -33,7 +33,7 @@
   }
 
   &:before {
-    @include mq("xl", "max") {
+    @include mq('xl', 'max') {
       padding-top: 40rem;
     }
   }
@@ -55,7 +55,7 @@
   padding: 4.5rem 5rem 5rem;
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .owl-simple.brands-carousel {
     margin-left: 6rem;
     margin-right: 6rem;
@@ -76,7 +76,7 @@
   padding-right: 1rem;
 }
 
-@include mq("xxl") {
+@include mq('xxl') {
   .container {
     width: 1420px;
     max-width: 1420px;

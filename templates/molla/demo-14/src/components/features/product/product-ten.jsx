@@ -1,12 +1,12 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import Countdown from "react-countdown";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import Countdown from 'react-countdown';
 
-import { rendererOne } from "../count-down";
+import { rendererOne } from '../count-down';
 
-import { findIndex } from "../../../utils";
+import { findIndex } from '../../../utils';
 
 function ProductNine(props) {
   const {
@@ -24,7 +24,7 @@ function ProductNine(props) {
 
   const wishlistHandler = () => {
     if (isWishlist) {
-      window.location = process.env.PUBLIC_URL + "/shop/wishlist";
+      window.location = process.env.PUBLIC_URL + '/shop/wishlist';
     } else {
       onToggleWishlist(product, isWishlist);
     }
@@ -60,19 +60,19 @@ function ProductNine(props) {
               wrapperClassName="product-image-hover product-image"
             />
           ) : (
-            ""
+            ''
           )}
         </Link>
 
         <div className="product-action-vertical">
           <button
             className={`btn-product-icon btn-wishlist btn-expandable ${
-              isWishlist ? "added-to-wishlist" : "remove-from-wishlist"
+              isWishlist ? 'added-to-wishlist' : 'remove-from-wishlist'
             }`}
             onClick={wishlistHandler}
-            title={isWishlist ? "Go to wishlist" : "Add to wishlist"}
+            title={isWishlist ? 'Go to wishlist' : 'Add to wishlist'}
           >
-            <span>{isWishlist ? "go to wishlist" : "add to wishlist"}</span>
+            <span>{isWishlist ? 'go to wishlist' : 'add to wishlist'}</span>
           </button>
 
           <button
@@ -157,7 +157,7 @@ function ProductNine(props) {
           <div className="ratings">
             <div
               className="ratings-val"
-              style={{ width: product.ratings * 20 + "%" }}
+              style={{ width: product.ratings * 20 + '%' }}
             ></div>
           </div>
           <span className="ratings-text">({product.reviews} Reviews )</span>
@@ -169,7 +169,7 @@ function ProductNine(props) {
       </div>
     </div>
   ) : (
-    ""
+    ''
   );
 }
 
@@ -178,7 +178,7 @@ function mapStateToProps(state, ownprops) {
     isWishlist:
       findIndex(
         state.wishlist.list,
-        (item) => item.id === ownprops.product.id
+        (item) => item.id === ownprops.product.id,
       ) !== -1
         ? true
         : false,

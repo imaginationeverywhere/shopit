@@ -1,14 +1,14 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
 // import custom component
-import OwlCarousel from "../../features/owl-carousel";
-import ProductNine from "../../features/product/product-nine";
-import ProductTen from "../../features/product/product-ten";
+import OwlCarousel from '../../features/owl-carousel';
+import ProductNine from '../../features/product/product-nine';
+import ProductTen from '../../features/product/product-ten';
 
-import { addToCart, toggleWishlist } from "../../../actions";
-import { productSlider1, productSlider2 } from "../../settings";
-import { getNewProducts } from "../../../services";
+import { addToCart, toggleWishlist } from '../../../actions';
+import { productSlider1, productSlider2 } from '../../settings';
+import { getNewProducts } from '../../../services';
 
 function NewCollection(props) {
   const { addToCart, toggleWishlist } = props;
@@ -64,5 +64,5 @@ function mapStateToProps(state, props) {
 }
 
 export default connect(mapStateToProps, { addToCart, toggleWishlist })(
-  NewCollection
+  NewCollection,
 );

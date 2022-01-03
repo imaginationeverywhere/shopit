@@ -1,11 +1,11 @@
 /* Demo 9 Homepage 9 */
-@import "../mixins/clearfix";
-@import "../mixins/breakpoints";
-@import "../mixins/lazy";
-@import "../mixins/buttons";
+@import '../mixins/clearfix';
+@import '../mixins/breakpoints';
+@import '../mixins/lazy';
+@import '../mixins/buttons';
 
-@import "../config/fonts";
-@import "../config/variables";
+@import '../config/fonts';
+@import '../config/variables';
 
 $primary-color: #1cc0a0;
 $secondary-color: #23aa90;
@@ -58,7 +58,7 @@ hr {
   }
 
   &:before {
-    @include mq("xs", "max") {
+    @include mq('xs', 'max') {
       @include aspect-ratio(480, 400);
     }
   }
@@ -68,7 +68,7 @@ hr {
   position: relative;
 
   &:after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     left: 0;
@@ -299,8 +299,8 @@ hr {
   span {
     &:before {
       display: block;
-      content: "\e812";
-      font-family: "molla";
+      content: '\e812';
+      font-family: 'molla';
       position: absolute;
       opacity: 0;
       transform: translateX(-25px);
@@ -425,7 +425,7 @@ hr {
       right: 30px;
     }
   }
-  .owl-simple .owl-nav [class*="owl-"] {
+  .owl-simple .owl-nav [class*='owl-'] {
     top: 41%;
     font-size: 2.4rem;
     color: #333;
@@ -513,7 +513,7 @@ hr {
   visibility: visible;
 }
 
-@include mq("md") {
+@include mq('md') {
   .intro-content {
     .btn {
       margin-top: 1rem;
@@ -533,7 +533,7 @@ hr {
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .intro-section {
     .icon-boxes-container {
       order: -1;
@@ -553,7 +553,7 @@ hr {
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .intro-content {
     left: 17rem;
     .btn {
@@ -599,13 +599,13 @@ hr {
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .heading {
     text-align: center;
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .cta {
     .cta-title {
       font-size: 2.2rem;
@@ -628,7 +628,7 @@ hr {
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .intro-text {
     font-size: 4rem;
   }

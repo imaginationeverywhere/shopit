@@ -16,7 +16,7 @@
 .clearfix:after {
   display: table;
   line-height: 0;
-  content: "";
+  content: '';
 }
 
 .clearfix:after {
@@ -117,12 +117,12 @@
   .row:after {
     display: table;
     line-height: 0;
-    content: "";
+    content: '';
   }
   .row:after {
     clear: both;
   }
-  [class*="span"] {
+  [class*='span'] {
     float: left;
     min-height: 1px;
     margin-left: 30px;
@@ -213,12 +213,12 @@
   .row-fluid:after {
     display: table;
     line-height: 0;
-    content: "";
+    content: '';
   }
   .row-fluid:after {
     clear: both;
   }
-  .row-fluid [class*="span"] {
+  .row-fluid [class*='span'] {
     display: block;
     float: left;
     width: 100%;
@@ -229,10 +229,10 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
-  .row-fluid [class*="span"]:first-child {
+  .row-fluid [class*='span']:first-child {
     margin-left: 0;
   }
-  .row-fluid .controls-row [class*="span"] + [class*="span"] {
+  .row-fluid .controls-row [class*='span'] + [class*='span'] {
     margin-left: 2.564102564102564%;
   }
   .row-fluid .span12 {
@@ -384,7 +384,7 @@
   .uneditable-input {
     margin-left: 0;
   }
-  .controls-row [class*="span"] + [class*="span"] {
+  .controls-row [class*='span'] + [class*='span'] {
     margin-left: 30px;
   }
   input.span12,
@@ -467,12 +467,12 @@
   .row:after {
     display: table;
     line-height: 0;
-    content: "";
+    content: '';
   }
   .row:after {
     clear: both;
   }
-  [class*="span"] {
+  [class*='span'] {
     float: left;
     min-height: 1px;
     margin-left: 20px;
@@ -563,12 +563,12 @@
   .row-fluid:after {
     display: table;
     line-height: 0;
-    content: "";
+    content: '';
   }
   .row-fluid:after {
     clear: both;
   }
-  .row-fluid [class*="span"] {
+  .row-fluid [class*='span'] {
     display: block;
     float: left;
     width: 100%;
@@ -579,10 +579,10 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
-  .row-fluid [class*="span"]:first-child {
+  .row-fluid [class*='span']:first-child {
     margin-left: 0;
   }
-  .row-fluid .controls-row [class*="span"] + [class*="span"] {
+  .row-fluid .controls-row [class*='span'] + [class*='span'] {
     margin-left: 2.7624309392265194%;
   }
   .row-fluid .span12 {
@@ -734,7 +734,7 @@
   .uneditable-input {
     margin-left: 0;
   }
-  .controls-row [class*="span"] + [class*="span"] {
+  .controls-row [class*='span'] + [class*='span'] {
     margin-left: 20px;
   }
   input.span12,
@@ -836,9 +836,9 @@
     float: none;
     margin-left: 0;
   }
-  [class*="span"],
-  .uneditable-input[class*="span"],
-  .row-fluid [class*="span"] {
+  [class*='span'],
+  .uneditable-input[class*='span'],
+  .row-fluid [class*='span'] {
     display: block;
     float: none;
     width: 100%;
@@ -854,15 +854,15 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
-  .row-fluid [class*="offset"]:first-child {
+  .row-fluid [class*='offset']:first-child {
     margin-left: 0;
   }
   .input-large,
   .input-xlarge,
   .input-xxlarge,
-  input[class*="span"],
-  select[class*="span"],
-  textarea[class*="span"],
+  input[class*='span'],
+  select[class*='span'],
+  textarea[class*='span'],
   .uneditable-input {
     display: block;
     width: 100%;
@@ -873,12 +873,12 @@
   }
   .input-prepend input,
   .input-append input,
-  .input-prepend input[class*="span"],
-  .input-append input[class*="span"] {
+  .input-prepend input[class*='span'],
+  .input-append input[class*='span'] {
     display: inline-block;
     width: auto;
   }
-  .controls-row [class*="span"] + [class*="span"] {
+  .controls-row [class*='span'] + [class*='span'] {
     margin-left: 0;
   }
   .modal {
@@ -905,8 +905,8 @@
     display: block;
     line-height: 20px;
   }
-  input[type="checkbox"],
-  input[type="radio"] {
+  input[type='checkbox'],
+  input[type='radio'] {
     border: 1px solid #ccc;
   }
   .form-horizontal .control-label {

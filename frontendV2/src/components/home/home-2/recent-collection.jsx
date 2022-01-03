@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-import { Tab, Tabs, TabPanel, TabList } from "react-tabs";
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Tab, Tabs, TabPanel, TabList } from 'react-tabs';
 
 // Import Custom Component
-import ProductNine from "../../features/product/product-nine";
+import ProductNine from '../../features/product/product-nine';
 
-import { getProductsByCategory } from "../../../services";
-import { addToCart, toggleWishlist } from "../../../actions";
-import data from "../../../mock_data/data.json";
+import { getProductsByCategory } from '../../../services';
+import { addToCart, toggleWishlist } from '../../../actions';
+import data from '../../../mock_data/data.json';
 
 function RecentCollection(props) {
   const { addToCart, toggleWishlist } = props;
@@ -18,9 +18,9 @@ function RecentCollection(props) {
   let products = props.products,
     timer;
   products = getProductsByCategory(products, [
-    "Furniture",
-    "Decoration",
-    "Lighting",
+    'Furniture',
+    'Decoration',
+    'Lighting',
   ]);
 
   function loadMore() {
@@ -77,7 +77,7 @@ function RecentCollection(props) {
                         key={index}
                       />
                     </div>
-                  )
+                  ),
                 )}
               </div>
             </div>
@@ -98,7 +98,7 @@ function RecentCollection(props) {
               )}
             </button>
           ) : (
-            ""
+            ''
           )}
         </div>
       </div>
@@ -113,5 +113,5 @@ function mapStateToProps(state, props) {
 }
 
 export default connect(mapStateToProps, { addToCart, toggleWishlist })(
-  RecentCollection
+  RecentCollection,
 );

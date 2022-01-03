@@ -84,7 +84,7 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .sticky-header.fixed.header-middle .menu > li > a {
     padding-top: 3rem;
     padding-bottom: 3rem;

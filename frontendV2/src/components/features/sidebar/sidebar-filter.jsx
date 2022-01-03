@@ -148,7 +148,7 @@ function SideBarFilter(props) {
               <div className="toolbox-left">
                 <button
                   className="button filter-toggler"
-                  onClick={e => {
+                  onClick={(e) => {
                     onToggle(e);
                     onFilterClick(e);
                   }}
@@ -231,7 +231,7 @@ function SideBarFilter(props) {
                                     type="checkbox"
                                     className="custom-control-input"
                                     id={`cat-${index}`}
-                                    onClick={e =>
+                                    onClick={(e) =>
                                       props.toggleCategoryFilter(cat)
                                     }
                                     defaultChecked={
@@ -281,7 +281,7 @@ function SideBarFilter(props) {
                                         ? true
                                         : false
                                     }
-                                    onClick={e =>
+                                    onClick={(e) =>
                                       props.filterSort(sortObj[item])
                                     }
                                   />
@@ -312,7 +312,7 @@ function SideBarFilter(props) {
                                     ? 'selected'
                                     : ''
                                 }
-                                onClick={e => {
+                                onClick={(e) => {
                                   selectColor(e);
                                   props.toggleColorFilter(col);
                                 }}
@@ -340,12 +340,12 @@ function SideBarFilter(props) {
 
                           <div className="price-slider">
                             <InputRange
-                              formatLabel={value => `$${value}`}
+                              formatLabel={(value) => `$${value}`}
                               maxValue={30000}
                               minValue={0}
                               step={50}
                               value={value}
-                              onChange={value => {
+                              onChange={(value) => {
                                 setValue(value);
                                 props.filterPrice(value);
                               }}
@@ -365,7 +365,7 @@ function SideBarFilter(props) {
   );
 }
 
-export const mapStateToProps = state => {
+export const mapStateToProps = (state) => {
   return {
     products: state.data.products ? state.data.products : [],
     filters: state.filters,

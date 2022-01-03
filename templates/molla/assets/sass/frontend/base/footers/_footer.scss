@@ -24,7 +24,7 @@
   }
 
   .links li + li:before {
-    content: "|";
+    content: '|';
     margin: 0 6px;
   }
 }
@@ -66,13 +66,13 @@
   -webkit-transform: translateY(0);
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   #scroll-top {
     bottom: 60px;
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   #scroll-top {
     display: flex;
   }

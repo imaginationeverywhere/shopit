@@ -15,7 +15,7 @@
   text-align: center;
 
   &:after {
-    content: "";
+    content: '';
     display: table;
     clear: both;
   }
@@ -74,7 +74,7 @@
 
 .countdown-separator {
   .countdown-section:not(:last-child):after {
-    content: ":";
+    content: ':';
     display: inline-block;
     font-size: 30px;
     line-height: 1;

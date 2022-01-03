@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
-import { connect } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import { Tabs, Tab, TabList, TabPanel } from 'react-tabs';
+import { connect } from 'react-redux';
 
-import ProductNine from "../../features/product/product-nine";
+import ProductNine from '../../features/product/product-nine';
 
-import { getProductsByCategory, getNewProducts } from "../../../services";
-import { addToCart, toggleWishlist } from "../../../actions";
+import { getProductsByCategory, getNewProducts } from '../../../services';
+import { addToCart, toggleWishlist } from '../../../actions';
 
-import data from "../../../mock_data/data.json";
+import data from '../../../mock_data/data.json';
 
 function NewCollection(props) {
   const { addToCart, toggleWishlist } = props;
@@ -15,12 +15,12 @@ function NewCollection(props) {
   let timer;
   let products = props.products;
   products = getProductsByCategory(getNewProducts(products.slice(35, 49)), [
-    "Clothing",
-    "Handbags",
-    "Bags",
-    "Shoes",
-    "Boots",
-    "Accessories",
+    'Clothing',
+    'Handbags',
+    'Bags',
+    'Shoes',
+    'Boots',
+    'Accessories',
   ]);
 
   const [loadedCount, setLoadedCount] = useState(8);
@@ -84,7 +84,7 @@ function NewCollection(props) {
                         onToggleWishlist={toggleWishlist}
                       />
                     </div>
-                  )
+                  ),
                 )}
               </div>
             </TabPanel>
@@ -101,11 +101,11 @@ function NewCollection(props) {
               {loading ? (
                 <i className="icon-refresh load-more-rotating"></i>
               ) : (
-                ""
+                ''
               )}
             </button>
           ) : (
-            ""
+            ''
           )}
         </div>
       </Tabs>
@@ -120,5 +120,5 @@ function mapStateToProps(state, props) {
 }
 
 export default connect(mapStateToProps, { addToCart, toggleWishlist })(
-  NewCollection
+  NewCollection,
 );

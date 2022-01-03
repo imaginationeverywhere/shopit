@@ -1,22 +1,22 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Tabs, Tab, TabList, TabPanel } from 'react-tabs';
+import { Link } from 'react-router-dom';
 
 // import custom component
-import ProductNine from "../../features/product/product-nine";
+import ProductNine from '../../features/product/product-nine';
 
 // Import Services & Actions
-import { getProductsByCategory } from "../../../services";
+import { getProductsByCategory } from '../../../services';
 import {
   addToCart,
   toggleWishlist,
   addToCompare,
   showQuickViewModal,
-} from "../../../actions";
+} from '../../../actions';
 
 // Import Data
-import _data from "../../../mock_data/data";
+import _data from '../../../mock_data/data';
 
 function NewCollection(props) {
   const { addToCart, toggleWishlist, showQuickViewModal } = props;

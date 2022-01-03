@@ -24,12 +24,12 @@ function MediaThree(props) {
   }
 
   const setNextHandler = () => {
-    setPhotoIndex(photoIndex => (photoIndex + 1) % bigImages.length);
+    setPhotoIndex((photoIndex) => (photoIndex + 1) % bigImages.length);
   };
 
   const setPrevHandler = () => {
     setPhotoIndex(
-      photoIndex => (photoIndex + bigImages.length - 1) % bigImages.length,
+      (photoIndex) => (photoIndex + bigImages.length - 1) % bigImages.length,
     );
   };
 
@@ -102,7 +102,9 @@ function MediaThree(props) {
 
 function mapStateToProps(state, props) {
   return {
-    product: state.data.products.filter(product => product.id === props.id)[0],
+    product: state.data.products.filter(
+      (product) => product.id === props.id,
+    )[0],
   };
 }
 

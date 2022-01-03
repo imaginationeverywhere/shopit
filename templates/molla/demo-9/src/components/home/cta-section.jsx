@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default function CTA() {
   return (
@@ -10,7 +10,7 @@ export default function CTA() {
               <h3 className="cta-title">Sign Up for updates from Molla</h3>
 
               <p className="cta-desc">
-                and receive{" "}
+                and receive{' '}
                 <span className="font-weight-normal">$20 coupon</span> for first
                 shopping
               </p>

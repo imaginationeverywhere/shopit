@@ -1,12 +1,12 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
 // import Custom Components
-import OwlCarousel from "../features/owl-carousel";
+import OwlCarousel from '../features/owl-carousel';
 
-import CategoryBanner from "./category-banner";
-import ProductNine from "../features/product/product-nine";
-import { productSlider1 } from "../settings";
+import CategoryBanner from './category-banner';
+import ProductNine from '../features/product/product-nine';
+import { productSlider1 } from '../settings';
 
 // import Actions & Services & data
 import {
@@ -14,10 +14,10 @@ import {
   toggleWishlist,
   addToCompare,
   showQuickViewModal,
-} from "../../actions";
+} from '../../actions';
 
-import data from "../../mock_data/data";
-import { getProductsByCategory } from "../../services";
+import data from '../../mock_data/data';
+import { getProductsByCategory } from '../../services';
 
 function ProductCollection(props) {
   const {
@@ -45,7 +45,7 @@ function ProductCollection(props) {
           {products.map((item, index) => (
             <ProductNine
               product={item}
-              key={category + "/" + index}
+              key={category + '/' + index}
               onAddToCart={addToCart}
               onToggleWishlist={toggleWishlist}
               onAddToCompare={addToCompare}

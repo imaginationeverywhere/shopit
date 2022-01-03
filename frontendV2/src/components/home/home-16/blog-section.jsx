@@ -1,12 +1,12 @@
-import React from "react";
-import Link from "react-router-dom/Link";
+import React from 'react';
+import Link from 'react-router-dom/Link';
 
 // import custom component
-import PostOne from "../../features/post/post-one";
-import OwlCarousel from "../../features/owl-carousel";
+import PostOne from '../../features/post/post-one';
+import OwlCarousel from '../../features/owl-carousel';
 
-import { blogSlider } from "../../settings";
-import posts from "../../../mock_data/posts";
+import { blogSlider } from '../../settings';
+import posts from '../../../mock_data/posts';
 
 export default function BlogSection() {
   return (

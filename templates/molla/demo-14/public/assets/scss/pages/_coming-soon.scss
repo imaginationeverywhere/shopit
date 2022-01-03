@@ -112,7 +112,7 @@
   }
 }
 
-@include mq("sm") {
+@include mq('sm') {
   .soon-content {
     font-size: 1.6rem;
 
@@ -141,7 +141,7 @@
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   .soon-content {
     padding-right: 3rem;
   }
@@ -151,7 +151,7 @@
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .soon-content {
     padding-right: 0;
   }

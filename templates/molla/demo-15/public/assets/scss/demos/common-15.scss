@@ -33,7 +33,7 @@
   }
 
   &:before {
-    @include mq("xl", "max") {
+    @include mq('xl', 'max') {
       padding-top: 40rem;
     }
   }
@@ -66,7 +66,7 @@
   max-width: 33rem;
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .owl-simple.brands-carousel {
     margin-left: 6rem;
     margin-right: 6rem;
@@ -74,7 +74,7 @@
   }
 }
 
-@include mq("xxl") {
+@include mq('xxl') {
   .footer-bottom {
     .container-fluid {
       &:before {
@@ -130,21 +130,21 @@
   }
 }
 
-@include mq("xxl") {
+@include mq('xxl') {
   .header-5 .container-fluid {
     padding-left: 6.2rem;
     padding-right: 6.2rem;
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .container-fluid {
     padding-left: 62px;
     padding-right: 62px;
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .header-5.header {
     padding: 15px 0;
   }

@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
-import Breadcrumb from "../../common/breadcrumb";
+import Breadcrumb from '../../common/breadcrumb';
 
 function ContactOne() {
   return (
@@ -15,7 +15,7 @@ function ContactOne() {
 
       <Breadcrumb
         title="Contact Us"
-        parent1={["pages", "pages/about"]}
+        parent1={['pages', 'pages/about']}
         adClass="border-0 mb-0"
       />
 
@@ -72,7 +72,7 @@ function ContactOne() {
                     <ul className="contact-list">
                       <li>
                         <i className="icon-clock-o"></i>
-                        <span className="text-dark">Monday-Saturday</span>{" "}
+                        <span className="text-dark">Monday-Saturday</span>{' '}
                         <br />
                         11am-7pm ET
                       </li>

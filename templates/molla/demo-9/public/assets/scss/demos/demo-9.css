@@ -52,7 +52,7 @@ hr {
   position: relative;
 }
 .intro-slide:after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   left: 0;
@@ -254,8 +254,8 @@ hr {
 
 .btn-cart span:before {
   display: block;
-  content: "\e812";
-  font-family: "molla";
+  content: '\e812';
+  font-family: 'molla';
   position: absolute;
   opacity: 0;
   transform: translateX(-25px);
@@ -367,7 +367,7 @@ hr {
 .featured .owl-simple .owl-nav .owl-next {
   right: 30px;
 }
-.featured .owl-simple .owl-nav [class*="owl-"] {
+.featured .owl-simple .owl-nav [class*='owl-'] {
   top: 41%;
   font-size: 2.4rem;
   color: #333;
@@ -376,8 +376,8 @@ hr {
   background-color: white;
   box-shadow: 0 5px 20px rgba(34, 34, 34, 0.3);
 }
-.featured .owl-simple .owl-nav [class*="owl-"]:hover,
-.featured .owl-simple .owl-nav [class*="owl-"]:focus {
+.featured .owl-simple .owl-nav [class*='owl-']:hover,
+.featured .owl-simple .owl-nav [class*='owl-']:focus {
   color: #1cc0a0;
   background-color: white;
 }

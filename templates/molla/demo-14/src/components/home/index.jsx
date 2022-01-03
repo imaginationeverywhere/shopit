@@ -1,38 +1,38 @@
-import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import OwlCarousel from "../features/owl-carousel";
-import Service from "../features/service";
-import QuickView from "../features/product/common/quickview";
-import NewsletterModal from "../features/modal/newsletter-modal";
-import Brand from "../features/brand";
+import OwlCarousel from '../features/owl-carousel';
+import Service from '../features/service';
+import QuickView from '../features/product/common/quickview';
+import NewsletterModal from '../features/modal/newsletter-modal';
+import Brand from '../features/brand';
 
-import Introslide from "./intro-slide";
-import Sidebar from "./sidebar";
-import Banner from "./banner";
-import CTA from "./cta-section";
-import TrendyCollection from "./trendy-collection";
-import ProductCollection from "./product-collection";
+import Introslide from './intro-slide';
+import Sidebar from './sidebar';
+import Banner from './banner';
+import CTA from './cta-section';
+import TrendyCollection from './trendy-collection';
+import ProductCollection from './product-collection';
 
-import { introSlider, homeBrandSlider } from "../settings";
+import { introSlider, homeBrandSlider } from '../settings';
 
-import data from "../../mock_data/data";
-import style from "./style.scss";
+import data from '../../mock_data/data';
+import style from './style.scss';
 
 function HomePage() {
   useEffect(() => {
-    document.getElementById("menu-home").classList.add("active");
+    document.getElementById('menu-home').classList.add('active');
     style.use();
 
-    document.getElementById("menu-home").classList.add("active");
-    document.querySelector(".category-dropdown").classList.add("show");
+    document.getElementById('menu-home').classList.add('active');
+    document.querySelector('.category-dropdown').classList.add('show');
     document
-      .querySelector(".category-dropdown .dropdown-menu")
-      .classList.add("show");
+      .querySelector('.category-dropdown .dropdown-menu')
+      .classList.add('show');
 
     return () => {
-      document.getElementById("menu-home").classList.remove("active");
+      document.getElementById('menu-home').classList.remove('active');
       style.unuse();
     };
   }, []);

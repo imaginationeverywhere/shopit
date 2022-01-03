@@ -1,35 +1,35 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect } from 'react';
 
-import MetaData from "../layout/MetaData";
+import MetaData from '../layout/MetaData';
 
-import { useAlert } from "react-alert";
-import { useDispatch, useSelector } from "react-redux";
-import { register, clearErrors } from "../../actions/userActions";
+import { useAlert } from 'react-alert';
+import { useDispatch, useSelector } from 'react-redux';
+import { register, clearErrors } from '../../actions/userActions';
 
 const Register = ({ history }) => {
   const [user, setUser] = useState({
-    name: "",
-    email: "",
-    password: "",
+    name: '',
+    email: '',
+    password: '',
   });
 
   const { name, email, password } = user;
 
-  const [avatar, setAvatar] = useState("");
+  const [avatar, setAvatar] = useState('');
   const [avatarPreview, setAvatarPreview] = useState(
-    "/images/default_avatar.jpg"
+    '/images/default_avatar.jpg',
   );
 
   const alert = useAlert();
   const dispatch = useDispatch();
 
   const { isAuthenticated, error, loading } = useSelector(
-    (state) => state.auth
+    (state) => state.auth,
   );
 
   useEffect(() => {
     if (isAuthenticated) {
-      history.push("/");
+      history.push('/');
     }
 
     if (error) {
@@ -42,16 +42,16 @@ const Register = ({ history }) => {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.set("name", name);
-    formData.set("email", email);
-    formData.set("password", password);
-    formData.set("avatar", avatar);
+    formData.set('name', name);
+    formData.set('email', email);
+    formData.set('password', password);
+    formData.set('avatar', avatar);
 
     dispatch(register(formData));
   };
 
   const onChange = (e) => {
-    if (e.target.name === "avatar") {
+    if (e.target.name === 'avatar') {
       const reader = new FileReader();
 
       reader.onload = () => {
@@ -69,7 +69,7 @@ const Register = ({ history }) => {
 
   return (
     <Fragment>
-      <MetaData title={"Register User"} />
+      <MetaData title={'Register User'} />
 
       <div className="row wrapper">
         <div className="col-10 col-lg-5">

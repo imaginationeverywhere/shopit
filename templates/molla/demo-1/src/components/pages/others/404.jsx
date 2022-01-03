@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import Breadcrumb from "../../common/breadcrumb";
+import Breadcrumb from '../../common/breadcrumb';
 
 function ErrorPage() {
   return (
@@ -16,7 +16,7 @@ function ErrorPage() {
 
       <Breadcrumb
         title="404"
-        parent1={["Pages", "pages/about"]}
+        parent1={['Pages', 'pages/about']}
         adClass="border-0 mb-0"
       />
 

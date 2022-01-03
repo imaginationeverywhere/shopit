@@ -12,7 +12,7 @@ jQuery(document).ready(function ($) {
 
   function initHeadline() {
     //insert <i> element for each letter of a changing word
-    singleLetters($(".word-rotator.letters").find("b"));
+    singleLetters($('.word-rotator.letters').find('b'));
     //initialise headline animation
 
     // $('.word-rotator').each(function() {
@@ -47,21 +47,21 @@ jQuery(document).ready(function ($) {
     //     });
     // })
 
-    animateHeadline($(".word-rotator"));
+    animateHeadline($('.word-rotator'));
   }
 
   function singleLetters($words) {
     $words.each(function () {
       var word = $(this),
-        letters = word.text().split(""),
-        selected = word.hasClass("is-visible");
+        letters = word.text().split(''),
+        selected = word.hasClass('is-visible');
       for (i in letters) {
         letters[i] = selected
-          ? '<i class="in">' + letters[i] + "</i>"
-          : "<i>" + letters[i] + "</i>";
+          ? '<i class="in">' + letters[i] + '</i>'
+          : '<i>' + letters[i] + '</i>';
       }
-      var newLetters = letters.join("");
-      word.html(newLetters).css("opacity", 1);
+      var newLetters = letters.join('');
+      word.html(newLetters).css('opacity', 1);
     });
   }
 
@@ -70,20 +70,20 @@ jQuery(document).ready(function ($) {
     $headlines.each(function () {
       var headline = $(this);
 
-      if (!headline.hasClass("type")) {
+      if (!headline.hasClass('type')) {
         //assign to .word-rotator-words the width of its longest word
-        var words = headline.find(".word-rotator-words b"),
+        var words = headline.find('.word-rotator-words b'),
           width = 0;
         words.each(function () {
           var wordWidth = $(this).outerWidth();
           if (wordWidth > width) width = wordWidth;
         });
-        headline.find(".word-rotator-words").css("width", width);
+        headline.find('.word-rotator-words').css('width', width);
       }
 
       //trigger animation
       setTimeout(function () {
-        hideWord(headline.find(".is-visible").eq(0));
+        hideWord(headline.find('.is-visible').eq(0));
       }, duration);
     });
   }
@@ -92,17 +92,17 @@ jQuery(document).ready(function ($) {
     var nextWord = takeNext($word);
 
     var bool =
-      $word.children("i").length >= nextWord.children("i").length
+      $word.children('i').length >= nextWord.children('i').length
         ? true
         : false;
-    hideLetter($word.find("i").eq(0), $word, bool, lettersDelay);
-    showLetter(nextWord.find("i").eq(0), nextWord, bool, lettersDelay);
+    hideLetter($word.find('i').eq(0), $word, bool, lettersDelay);
+    showLetter(nextWord.find('i').eq(0), nextWord, bool, lettersDelay);
   }
 
   function hideLetter($letter, $word, $bool, $duration) {
-    $letter.removeClass("in").addClass("out");
+    $letter.removeClass('in').addClass('out');
 
-    if (!$letter.is(":last-child")) {
+    if (!$letter.is(':last-child')) {
       setTimeout(function () {
         hideLetter($letter.next(), $word, $bool, $duration);
       }, $duration);
@@ -114,9 +114,9 @@ jQuery(document).ready(function ($) {
   }
 
   function showLetter($letter, $word, $bool, $duration) {
-    $letter.addClass("in").removeClass("out");
+    $letter.addClass('in').removeClass('out');
 
-    if (!$letter.is(":last-child")) {
+    if (!$letter.is(':last-child')) {
       setTimeout(function () {
         showLetter($letter.next(), $word, $bool, $duration);
       }, $duration);
@@ -127,20 +127,20 @@ jQuery(document).ready(function ($) {
         }, animationDelay);
       }
 
-      $word.closest(".word-rotator-words").stop(true, true).animate({
+      $word.closest('.word-rotator-words').stop(true, true).animate({
         width: $word.outerWidth(),
       });
     }
   }
 
   function takeNext($word) {
-    return !$word.is(":last-child")
+    return !$word.is(':last-child')
       ? $word.next()
       : $word.parent().children().eq(0);
   }
 
   function takePrev($word) {
-    return !$word.is(":first-child")
+    return !$word.is(':first-child')
       ? $word.prev()
       : $word.parent().children().last();
   }

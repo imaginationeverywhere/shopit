@@ -100,7 +100,7 @@
   }
 }
 @for $i from 1 through 12 {
-  @include mq("sm") {
+  @include mq('sm') {
     .col-sm-#{$i} {
       max-width: #{round(100% / 12 * $i * 10000) / 10000};
       flex: 0 0 #{round(100% / 12 * $i * 10000) / 10000};
@@ -108,7 +108,7 @@
   }
 }
 @for $i from 1 through 12 {
-  @include mq("md") {
+  @include mq('md') {
     .col-md-#{$i} {
       max-width: #{round(100% / 12 * $i * 10000) / 10000};
       flex: 0 0 #{round(100% / 12 * $i * 10000) / 10000};
@@ -116,7 +116,7 @@
   }
 }
 @for $i from 1 through 12 {
-  @include mq("lg") {
+  @include mq('lg') {
     .col-lg-#{$i} {
       max-width: #{round(100% / 12 * $i * 10000) / 10000};
       flex: 0 0 #{round(100% / 12 * $i * 10000) / 10000};
@@ -124,7 +124,7 @@
   }
 }
 @for $i from 1 through 12 {
-  @include mq("xl") {
+  @include mq('xl') {
     .col-xl-#{$i} {
       max-width: #{round(100% / 12 * $i * 10000) / 10000};
       flex: 0 0 #{round(100% / 12 * $i * 10000) / 10000};
@@ -132,7 +132,7 @@
   }
 }
 @for $i from 1 through 12 {
-  @include mq("xxl") {
+  @include mq('xxl') {
     .col-xxl-#{$i} {
       max-width: #{round(100% / 12 * $i * 10000) / 10000};
       flex: 0 0 #{round(100% / 12 * $i * 10000) / 10000};
@@ -140,7 +140,7 @@
   }
 }
 
-[class*=" c-"] > * {
+[class*=' c-'] > * {
   width: 100%;
   padding-left: $gap;
   padding-right: $gap;

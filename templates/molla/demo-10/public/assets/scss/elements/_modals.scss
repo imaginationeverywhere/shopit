@@ -36,21 +36,21 @@
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   .modal-dialog {
     max-width: 575px;
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
 }
 
 .modal-close {
   position: absolute;
-  font: normal normal 2.6rem/1 "molla";
+  font: normal normal 2.6rem/1 'molla';
   color: #666;
   font-size: 1.8rem;
   top: 1.5rem;

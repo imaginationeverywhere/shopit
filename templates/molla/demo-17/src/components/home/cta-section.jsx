@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 function CTA(props) {
   return (
@@ -13,7 +13,7 @@ function CTA(props) {
           <div className="col-sm-10 col-md-8 col-lg-6">
             <div className="cta-heading text-center">
               <h3 className="cta-title text-white">
-                Sign up for email & get 25% off{" "}
+                Sign up for email & get 25% off{' '}
               </h3>
               <p className="cta-desc text-white">
                 Subcribe to get information about products and coupons

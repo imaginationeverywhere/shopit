@@ -1,23 +1,23 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Tab, Tabs, TabPanel, TabList } from "react-tabs";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Tab, Tabs, TabPanel, TabList } from 'react-tabs';
 
 import {
   getSaleProducts,
   getTopRatingProducts,
   getFeaturedProducts,
-} from "../../services";
+} from '../../services';
 import {
   addToCart,
   toggleWishlist,
   addToCompare,
   showQuickViewModal,
-} from "../../actions";
+} from '../../actions';
 
 // Import Custom Component
-import OwlCarousel from "../features/owl-carousel";
-import ProductNine from "../features/product/product-nine";
-import { featuredSlider } from "../settings";
+import OwlCarousel from '../features/owl-carousel';
+import ProductNine from '../features/product/product-nine';
+import { featuredSlider } from '../settings';
 
 function SpecialCollection(props) {
   const { addToCart, addToCompare, toggleWishlist, showQuickViewModal } = props;
@@ -83,7 +83,7 @@ function SpecialCollection(props) {
         >
           {getTopRatingProducts(products).map((item, index) => (
             <ProductNine
-              key={"special" + index}
+              key={'special' + index}
               product={item}
               onAddToCart={addToCart}
               onToggleWishlist={toggleWishlist}

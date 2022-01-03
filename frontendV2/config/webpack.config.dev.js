@@ -112,7 +112,7 @@ module.exports = {
     // This is the URL that app is served from. We use "/" in development.
     publicPath: publicPath,
     // Point sourcemap entries to original disk location (format as URL on Windows)
-    devtoolModuleFilenameTemplate: info =>
+    devtoolModuleFilenameTemplate: (info) =>
       path.resolve(info.absoluteResourcePath).replace(/\\/g, '/'),
   },
   optimization: {
@@ -143,8 +143,8 @@ module.exports = {
     // `web` extension prefixes have been added for better support
     // for React Native Web.
     extensions: paths.moduleFileExtensions
-      .map(ext => `.${ext}`)
-      .filter(ext => useTypeScript || !ext.includes('ts')),
+      .map((ext) => `.${ext}`)
+      .filter((ext) => useTypeScript || !ext.includes('ts')),
     alias: {
       // add as many aliases as you like!
       components: path.resolve(__dirname, '../src/components'),

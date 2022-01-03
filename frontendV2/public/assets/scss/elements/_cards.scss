@@ -48,13 +48,13 @@
     }
 
     &:before {
-      content: "\e802";
+      content: '\e802';
       display: inline-block;
       position: absolute;
       right: 1.2rem;
       top: 50%;
       color: $primary-color;
-      font-family: "molla";
+      font-family: 'molla';
       line-height: 1;
       transform: translateY(-50%);
       -ms-transform: translateY(-50%);
@@ -70,7 +70,7 @@
       }
 
       &:before {
-        content: "\f110";
+        content: '\f110';
         color: #8c8c8c;
         transform: translateY(-50%);
         -ms-transform: translateY(-50%);
@@ -93,12 +93,12 @@
   .card-title {
     .toggle-button {
       &:before {
-        content: "\f28e";
+        content: '\f28e';
       }
 
       &.collapsed {
         &:before {
-          content: "\f2c2";
+          content: '\f2c2';
         }
       }
     }
@@ -179,7 +179,7 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .card-title {
     font-size: 2rem;
   }

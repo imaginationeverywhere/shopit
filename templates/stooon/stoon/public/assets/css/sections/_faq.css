@@ -32,18 +32,18 @@
   position: absolute;
   right: 30px;
   top: 15px;
-  font-family: "fontawesome";
+  font-family: 'fontawesome';
   font-size: 16px;
   color: #666;
 }
-.accordion-style .card .card-header a[aria-expanded="false"]:after {
-  content: "\f067";
+.accordion-style .card .card-header a[aria-expanded='false']:after {
+  content: '\f067';
 }
-.accordion-style .card .card-header a[aria-expanded="true"] {
+.accordion-style .card .card-header a[aria-expanded='true'] {
   color: #141414;
 }
-.accordion-style .card .card-header a[aria-expanded="true"]:after {
-  content: "\f068";
+.accordion-style .card .card-header a[aria-expanded='true']:after {
+  content: '\f068';
   color: #141414;
   font-weight: 100;
 }

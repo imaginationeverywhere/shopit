@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
 // import jsons
-import _data from "../../mock_data/data";
+import _data from '../../mock_data/data';
 
-import { serviceSlider } from "../settings";
-import OwlCarousel from "../features/owl-carousel";
+import { serviceSlider } from '../settings';
+import OwlCarousel from '../features/owl-carousel';
 
 export default function ServiceBox(props) {
-  const { adClass = "pt-0 pb-0" } = props;
+  const { adClass = 'pt-0 pb-0' } = props;
 
   return (
     <div className={`icon-boxes-container ${adClass}`}>

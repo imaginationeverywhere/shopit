@@ -2,7 +2,7 @@
   .header-middle {
     min-height: 86px;
     .container::after {
-      content: "";
+      content: '';
       position: absolute;
       left: 1rem;
       right: 1rem;
@@ -60,7 +60,7 @@
   }
 }
 
-@include mq("sm") {
+@include mq('sm') {
   .header-6 .header-middle .container {
     min-height: 86px;
   }

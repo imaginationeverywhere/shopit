@@ -34,7 +34,7 @@ function ProductListThree(props) {
 
     let imgLoad = imagesLoaded('.products', { background: true });
 
-    imgLoad.on('done', function(instance, image) {
+    imgLoad.on('done', function (instance, image) {
       document
         .querySelector('.skeleton-body.skel-shop-products')
         .classList.add('loaded');
@@ -48,7 +48,7 @@ function ProductListThree(props) {
 
     let imgLoad = imagesLoaded('.products', { background: true });
 
-    imgLoad.on('done', function(instance, image) {
+    imgLoad.on('done', function (instance, image) {
       document
         .querySelector('.skeleton-body.skel-shop-products')
         .classList.add('loaded');
@@ -111,7 +111,7 @@ function ProductListThree(props) {
   );
 }
 
-export const mapStateToProps = state => {
+export const mapStateToProps = (state) => {
   return {
     filters: state.filters,
     products: state.data.products ? state.data.products : [],

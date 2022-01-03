@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
 // import jsons
-import data from "../../mock_data/data";
+import data from '../../mock_data/data';
 
 function Service(props) {
   const {
-    adClass = "bg-transparent",
-    iconAdClass = "text-dark",
-    container = "container",
+    adClass = 'bg-transparent',
+    iconAdClass = 'text-dark',
+    container = 'container',
   } = props;
 
   return (

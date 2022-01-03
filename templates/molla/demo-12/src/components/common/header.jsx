@@ -1,13 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 // Common Header Components
-import MainMenu from "./partials/main-menu";
-import CartMenu from "./partials/cart-menu";
-import SearchToggle from "./partials/search-toggle";
+import MainMenu from './partials/main-menu';
+import CartMenu from './partials/cart-menu';
+import SearchToggle from './partials/search-toggle';
 
-import { showModal } from "../../actions";
+import { showModal } from '../../actions';
 
 function Header(props) {
   const { wishlist, container } = props;

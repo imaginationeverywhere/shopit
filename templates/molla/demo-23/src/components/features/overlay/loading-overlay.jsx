@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default function PageOverlay(props) {
   const { isLoading } = props;
@@ -14,7 +14,7 @@ export default function PageOverlay(props) {
           </div>
         </div>
       ) : (
-        ""
+        ''
       )}
     </React.Fragment>
   );

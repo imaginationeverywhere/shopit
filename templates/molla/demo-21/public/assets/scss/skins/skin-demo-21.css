@@ -1337,10 +1337,10 @@ a:focus {
 }
 
 /* Plugins */
-.owl-theme .owl-nav [class*="owl-"] {
+.owl-theme .owl-nav [class*='owl-'] {
   color: #6666ff;
 }
-.owl-theme.owl-light .owl-nav [class*="owl-"]:not(.disabled):hover {
+.owl-theme.owl-light .owl-nav [class*='owl-']:not(.disabled):hover {
   border-color: #6666ff;
 }
 .owl-theme.owl-light .owl-dots .owl-dot:hover span {
@@ -1352,11 +1352,11 @@ a:focus {
   background: #6666ff;
 }
 
-.owl-full .owl-nav [class*="owl-"] {
+.owl-full .owl-nav [class*='owl-'] {
   color: #6666ff;
 }
-.owl-full .owl-nav [class*="owl-"]:hover,
-.owl-full .owl-nav [class*="owl-"]:focus {
+.owl-full .owl-nav [class*='owl-']:hover,
+.owl-full .owl-nav [class*='owl-']:focus {
   color: #6666ff;
 }
 .owl-full .owl-dots .owl-dot span {
@@ -1370,12 +1370,12 @@ a:focus {
   border-color: #6666ff;
   background: #6666ff;
 }
-.owl-full.owl-nav-dark .owl-nav [class*="owl-"]:hover,
-.owl-full.owl-nav-dark .owl-nav [class*="owl-"]:focus {
+.owl-full.owl-nav-dark .owl-nav [class*='owl-']:hover,
+.owl-full.owl-nav-dark .owl-nav [class*='owl-']:focus {
   color: #6666ff;
 }
 
-.owl-simple .owl-nav [class*="owl-"]:not(.disabled):hover {
+.owl-simple .owl-nav [class*='owl-']:not(.disabled):hover {
   color: #6666ff;
 }
 .owl-simple.owl-light .owl-dots .owl-dot:hover span {
@@ -1387,13 +1387,13 @@ a:focus {
   background: #6666ff;
 }
 
-.quickView-content .owl-theme.owl-light .owl-nav [class*="owl-"] {
+.quickView-content .owl-theme.owl-light .owl-nav [class*='owl-'] {
   border: none;
   font-size: 3rem;
   color: #fff;
 }
-.quickView-content .owl-theme.owl-light .owl-nav [class*="owl-"]:hover,
-.quickView-content .owl-theme.owl-light .owl-nav [class*="owl-"]:focus {
+.quickView-content .owl-theme.owl-light .owl-nav [class*='owl-']:hover,
+.quickView-content .owl-theme.owl-light .owl-nav [class*='owl-']:focus {
   color: #6666ff;
   background-color: transparent;
 }

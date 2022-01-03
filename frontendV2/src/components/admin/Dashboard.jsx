@@ -1,8 +1,8 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { Helmet } from "react-helmet";
-import Card from "./ui/Card";
-import classes from "./styles/style.module.scss";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Helmet } from 'react-helmet';
+import Card from './ui/Card';
+import classes from './styles/style.module.scss';
 
 function Dashboard() {
   const { products } = useSelector((state) => state.data);
@@ -23,9 +23,9 @@ function Dashboard() {
       <Helmet>
         <title>Shopit|Admin baba</title>
       </Helmet>
-      <div className={classes["admin-content-wrapper"]}>
+      <div className={classes['admin-content-wrapper']}>
         <h3>Dashboard</h3>
-        <div style={{ marginBottom: "10px" }}>
+        <div style={{ marginBottom: '10px' }}>
           <Card
             title="Total Amount"
             amount="12,000,000"
@@ -33,7 +33,7 @@ function Dashboard() {
             hasBottom={false}
           />
         </div>
-        <div className={classes["admin-dashboard-container"]}>
+        <div className={classes['admin-dashboard-container']}>
           <Card
             title="Products"
             amount={products && products.length}

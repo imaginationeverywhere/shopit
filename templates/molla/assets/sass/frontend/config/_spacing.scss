@@ -29,7 +29,7 @@
   }
 }
 
-@include mq("sm") {
+@include mq('sm') {
   @for $i from 0 through 10 {
     .mt-sm-#{$i} {
       margin-top: #{$i / 2}rem !important;
@@ -46,7 +46,7 @@
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   @for $i from 0 through 10 {
     .mt-md-#{$i} {
       margin-top: #{$i / 2}rem !important;
@@ -63,7 +63,7 @@
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   @for $i from 0 through 10 {
     .mt-lg-#{$i} {
       margin-top: #{$i / 2}rem !important;
@@ -80,7 +80,7 @@
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   @for $i from 0 through 10 {
     .mt-xl-#{$i} {
       margin-top: #{$i / 2}rem !important;
@@ -101,7 +101,7 @@
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .mt-lg-max-0 {
     margin-top: 0 !important;
   }
@@ -165,9 +165,9 @@ $i: 25;
 
 @for $i from 0 through 100 {
   .x-#{$i} {
-    #{$left}: #{$i + "%"};
+    #{$left}: #{$i + '%'};
   }
   .y-#{$i} {
-    top: #{$i + "%"};
+    top: #{$i + '%'};
   }
 }

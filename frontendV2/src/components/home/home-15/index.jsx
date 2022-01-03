@@ -1,33 +1,33 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import QuickViewTwo from "../../features/product/common/quickview-two";
-import OwlCarousels from "../../features/owl-carousel";
-import VideoBanner from "../../features/video-banner/video-banner-one";
-import VideoModal from "../../features/modal/video-modal";
-import NewsletterModal from "../../features/modal/newsletter-modal";
+import QuickViewTwo from '../../features/product/common/quickview-two';
+import OwlCarousels from '../../features/owl-carousel';
+import VideoBanner from '../../features/video-banner/video-banner-one';
+import VideoModal from '../../features/modal/video-modal';
+import NewsletterModal from '../../features/modal/newsletter-modal';
 
-import FirstCollection from "./first-collection";
-import SecondCollection from "./second-collection";
-import ThirdCollection from "./third-collection";
-import FourthCollection from "./fourth-collection";
-import BlogSection from "./blog-section";
-import CTA from "./cta-section";
+import FirstCollection from './first-collection';
+import SecondCollection from './second-collection';
+import ThirdCollection from './third-collection';
+import FourthCollection from './fourth-collection';
+import BlogSection from './blog-section';
+import CTA from './cta-section';
 
-import { introSlider } from "../../settings";
+import { introSlider } from '../../settings';
 
-import style from "./style.scss";
-import { scrollToElement } from "../../../utils";
+import style from './style.scss';
+import { scrollToElement } from '../../../utils';
 
 function HomePage15() {
   useEffect(() => {
-    document.getElementById("menu-home").classList.add("active");
+    document.getElementById('menu-home').classList.add('active');
     style.use();
 
     return () => {
-      document.getElementById("menu-home").classList.remove("active");
+      document.getElementById('menu-home').classList.remove('active');
       style.unuse();
     };
   }, []);

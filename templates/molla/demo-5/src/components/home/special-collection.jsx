@@ -1,12 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 // import custom component
-import ProductNine from "../features/product/product-nine";
+import ProductNine from '../features/product/product-nine';
 
-import { addToCart, toggleWishlist } from "../../actions";
+import { addToCart, toggleWishlist } from '../../actions';
 
 function SpecialCollection(props) {
   const { addToCart, toggleWishlist } = props;
@@ -15,7 +15,7 @@ function SpecialCollection(props) {
   products.push(props.products[46], props.products[37]);
 
   return (
-    <div className="pt-6 pb-6" style={{ backgroundColor: "#fff" }}>
+    <div className="pt-6 pb-6" style={{ backgroundColor: '#fff' }}>
       <div className="container">
         <div className="banner-set">
           <div className="row">
@@ -27,7 +27,7 @@ function SpecialCollection(props) {
 
                   <p>
                     Get on our exclusive email list and be the first to hear
-                    about sales, coupons, new arrivals and more!{" "}
+                    about sales, coupons, new arrivals and more!{' '}
                   </p>
 
                   <div className="banner-set-products">
@@ -103,5 +103,5 @@ function mapStateToProps(state, props) {
 }
 
 export default connect(mapStateToProps, { addToCart, toggleWishlist })(
-  SpecialCollection
+  SpecialCollection,
 );

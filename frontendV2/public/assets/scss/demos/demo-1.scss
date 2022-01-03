@@ -1,11 +1,11 @@
 /* Demo 2 Homepage 2 */
-@import "../mixins/clearfix";
-@import "../mixins/breakpoints";
-@import "../mixins/lazy";
-@import "../mixins/buttons";
+@import '../mixins/clearfix';
+@import '../mixins/breakpoints';
+@import '../mixins/lazy';
+@import '../mixins/buttons';
 
-@import "../config/fonts";
-@import "../config/variables";
+@import '../config/fonts';
+@import '../config/variables';
 
 $primary-color: #a6c76c;
 $secondary-color: #92b25a;
@@ -129,7 +129,7 @@ $secondary-color: #92b25a;
 .banner-group {
   margin-bottom: 3rem;
 
-  @include mq("lg") {
+  @include mq('lg') {
     .col-lg-3 {
       -ms-flex: 0 0 26.05%;
       flex: 0 0 26.05%;
@@ -286,7 +286,7 @@ $secondary-color: #92b25a;
     padding-bottom: 2.5rem;
   }
 }
-.products > .row > [class*="col-"] {
+.products > .row > [class*='col-'] {
   display: block;
   margin-bottom: -4rem;
 }
@@ -416,7 +416,7 @@ $secondary-color: #92b25a;
 
     &:not(:last-child):after {
       color: #333333;
-      content: ":";
+      content: ':';
       display: inline-block;
       font-weight: 400;
       font-size: 20px;
@@ -469,7 +469,7 @@ $secondary-color: #92b25a;
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   .deal {
     display: flex;
     flex-direction: row;
@@ -490,7 +490,7 @@ $secondary-color: #92b25a;
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .deal-content {
     padding: 3.5rem 3rem 2rem;
 
@@ -586,7 +586,7 @@ $secondary-color: #92b25a;
   }
 }
 
-@include mq("sm") {
+@include mq('sm') {
   .intro-slider-container,
   .intro-slide {
     height: 400px;
@@ -605,7 +605,7 @@ $secondary-color: #92b25a;
   }
 }
 
-@include mq("md") {
+@include mq('md') {
   .intro-slider-container,
   .intro-slide {
     height: 440px;
@@ -641,7 +641,7 @@ $secondary-color: #92b25a;
   height: 460px;
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .intro-title {
     sup {
       font-size: 1.8rem;
@@ -655,7 +655,7 @@ $secondary-color: #92b25a;
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .intro-slider-container,
   .intro-slide {
     height: 500px;
@@ -682,7 +682,7 @@ $secondary-color: #92b25a;
   font-weight: 600;
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .header-2 .header-middle .container::after {
     content: none;
   }
@@ -699,7 +699,7 @@ $secondary-color: #92b25a;
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .header-top {
     .header-left {
       > * {

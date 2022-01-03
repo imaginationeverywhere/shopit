@@ -1,10 +1,10 @@
-import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
+import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
-import MetaData from "../layout/MetaData";
+import MetaData from '../layout/MetaData';
 
-import { useDispatch, useSelector } from "react-redux";
-import { addItemToCart, removeItemFromCart } from "../../actions/cartActions";
+import { useDispatch, useSelector } from 'react-redux';
+import { addItemToCart, removeItemFromCart } from '../../actions/cartActions';
 
 const Cart = ({ history }) => {
   const dispatch = useDispatch();
@@ -32,12 +32,12 @@ const Cart = ({ history }) => {
   };
 
   const checkoutHandler = () => {
-    history.push("/shipping");
+    history.push('/shipping');
   };
 
   return (
     <Fragment>
-      <MetaData title={"Your Cart"} />
+      <MetaData title={'Your Cart'} />
       {cartItems.length === 0 ? (
         <h2 className="mt-5">Your Cart is Empty</h2>
       ) : (
@@ -97,7 +97,7 @@ const Cart = ({ history }) => {
                               increaseQty(
                                 item.product,
                                 item.quantity,
-                                item.stock
+                                item.stock,
                               )
                             }
                           >
@@ -125,23 +125,23 @@ const Cart = ({ history }) => {
                 <h4>Order Summary</h4>
                 <hr />
                 <p>
-                  Subtotal:{" "}
+                  Subtotal:{' '}
                   <span className="order-summary-values">
                     {cartItems.reduce(
                       (acc, item) => acc + Number(item.quantity),
-                      0
-                    )}{" "}
+                      0,
+                    )}{' '}
                     (Units)
                   </span>
                 </p>
                 <p>
-                  Est. total:{" "}
+                  Est. total:{' '}
                   <span className="order-summary-values">
                     $
                     {cartItems
                       .reduce(
                         (acc, item) => acc + item.quantity * item.price,
-                        0
+                        0,
                       )
                       .toFixed(2)}
                   </span>

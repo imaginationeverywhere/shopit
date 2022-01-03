@@ -25,7 +25,7 @@
       .clearfix:before,
       .clearfix:after {
         display: table;
-        content: "";
+        content: '';
         line-height: 0;
       }
       .clearfix:after {
@@ -65,7 +65,7 @@
       }
       body {
         margin: 0;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         font-size: 14px;
         line-height: 20px;
         color: #333;
@@ -86,13 +86,13 @@
       .row:before,
       .row:after {
         display: table;
-        content: "";
+        content: '';
         line-height: 0;
       }
       .row:after {
         clear: both;
       }
-      [class*="span"] {
+      [class*='span'] {
         float: left;
         min-height: 1px;
         margin-left: 20px;
@@ -139,8 +139,8 @@
       .span1 {
         width: 60px;
       }
-      [class*="span"].pull-right,
-      .row-fluid [class*="span"].pull-right {
+      [class*='span'].pull-right,
+      .row-fluid [class*='span'].pull-right {
         float: right;
       }
       .container {
@@ -151,7 +151,7 @@
       .container:before,
       .container:after {
         display: table;
-        content: "";
+        content: '';
         line-height: 0;
       }
       .container:after {
@@ -237,18 +237,18 @@
         display: none;
       }
       @font-face {
-        font-family: "molla";
-        src: url("./molla.eot?88103062");
-        src: url("./molla.eot?88103062#iefix") format("embedded-opentype"),
-          url("./molla.woff?88103062") format("woff"),
-          url("./molla.ttf?88103062") format("truetype"),
-          url("./molla.svg?88103062#molla") format("svg");
+        font-family: 'molla';
+        src: url('./molla.eot?88103062');
+        src: url('./molla.eot?88103062#iefix') format('embedded-opentype'),
+          url('./molla.woff?88103062') format('woff'),
+          url('./molla.ttf?88103062') format('truetype'),
+          url('./molla.svg?88103062#molla') format('svg');
         font-weight: normal;
         font-style: normal;
       }
 
       .demo-icon {
-        font-family: "molla";
+        font-family: 'molla';
         font-style: normal;
         font-weight: normal;
         speak: none;
@@ -288,12 +288,12 @@
     [endif]-->
     <script>
       function toggleCodes(on) {
-        var obj = document.getElementById("icons");
+        var obj = document.getElementById('icons');
 
         if (on) {
-          obj.className += " codesOn";
+          obj.className += ' codesOn';
         } else {
-          obj.className = obj.className.replace(" codesOn", "");
+          obj.className = obj.className.replace(' codesOn', '');
         }
       }
     </script>

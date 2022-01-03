@@ -1,16 +1,16 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 // import Custom Components
-import MainMenu from "./partials/main-menu";
-import CartMenu from "./partials/cart-menu";
+import MainMenu from './partials/main-menu';
+import CartMenu from './partials/cart-menu';
 
 function Header(props) {
   const {
     wishlist,
-    logo = "assets/images/logo.png",
-    container = "container",
+    logo = 'assets/images/logo.png',
+    container = 'container',
   } = props;
 
   return (
@@ -25,7 +25,7 @@ function Header(props) {
 
             <Link to={`${process.env.PUBLIC_URL}/`} className="logo">
               <img
-                src={process.env.PUBLIC_URL + "/" + logo}
+                src={process.env.PUBLIC_URL + '/' + logo}
                 alt="Molla Logo"
                 width="105"
                 height="25"

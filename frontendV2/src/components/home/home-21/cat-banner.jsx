@@ -1,9 +1,9 @@
-import React from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Link } from 'react-router-dom';
 
 export default function Banner(props) {
-  const { img, title, btnText = "SHOP NOW" } = props.data;
+  const { img, title, btnText = 'SHOP NOW' } = props.data;
 
   return (
     <>

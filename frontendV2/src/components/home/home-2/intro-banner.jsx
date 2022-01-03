@@ -1,11 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import { safeContent } from "../../../utils";
+import { safeContent } from '../../../utils';
 
 export default function IntroBanner(props) {
-  const { img, subtitle, title, btnText, adClass = "" } = props.data;
+  const { img, subtitle, title, btnText, adClass = '' } = props.data;
 
   return (
     <div className={`banner banner-display ${adClass}`}>
@@ -13,7 +13,7 @@ export default function IntroBanner(props) {
         <div className="lazy-overlay bg-2"></div>
 
         <LazyLoadImage
-          src={process.env.PUBLIC_URL + "/" + img}
+          src={process.env.PUBLIC_URL + '/' + img}
           alt="banner"
           width={370}
           height={205}

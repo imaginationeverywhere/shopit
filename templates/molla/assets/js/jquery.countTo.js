@@ -1,10 +1,10 @@
 (function (factory) {
-  if (typeof define === "function" && define.amd) {
+  if (typeof define === 'function' && define.amd) {
     // AMD
-    define(["jquery"], factory);
-  } else if (typeof exports === "object") {
+    define(['jquery'], factory);
+  } else if (typeof exports === 'object') {
     // CommonJS
-    factory(require("jquery"));
+    factory(require('jquery'));
   } else {
     // Browser globals
     factory(jQuery);
@@ -36,11 +36,11 @@
 
   CountTo.prototype.dataOptions = function () {
     var options = {
-      from: this.$element.data("from"),
-      to: this.$element.data("to"),
-      speed: this.$element.data("speed"),
-      refreshInterval: this.$element.data("refresh-interval"),
-      decimals: this.$element.data("decimals"),
+      from: this.$element.data('from'),
+      to: this.$element.data('to'),
+      speed: this.$element.data('speed'),
+      refreshInterval: this.$element.data('refresh-interval'),
+      decimals: this.$element.data('decimals'),
     };
 
     var keys = Object.keys(options);
@@ -48,7 +48,7 @@
     for (var i in keys) {
       var key = keys[i];
 
-      if (typeof options[key] === "undefined") {
+      if (typeof options[key] === 'undefined') {
         delete options[key];
       }
     }
@@ -62,7 +62,7 @@
 
     this.render();
 
-    if (typeof this.options.onUpdate == "function") {
+    if (typeof this.options.onUpdate == 'function') {
       this.options.onUpdate.call(this.$element, this.value);
     }
 
@@ -70,7 +70,7 @@
       clearInterval(this.interval);
       this.value = this.options.to;
 
-      if (typeof this.options.onComplete == "function") {
+      if (typeof this.options.onComplete == 'function') {
         this.options.onComplete.call(this.$element, this.value);
       }
     }
@@ -80,7 +80,7 @@
     var formattedValue = this.options.formatter.call(
       this.$element,
       this.value,
-      this.options
+      this.options,
     );
     this.$element.text(formattedValue);
   };
@@ -96,7 +96,7 @@
     this.render();
     this.interval = setInterval(
       this.update.bind(this),
-      this.options.refreshInterval
+      this.options.refreshInterval,
     );
   };
 
@@ -121,14 +121,14 @@
   $.fn.countTo = function (option) {
     return this.each(function () {
       var $this = $(this);
-      var data = $this.data("countTo");
-      var init = !data || typeof option === "object";
-      var options = typeof option === "object" ? option : {};
-      var method = typeof option === "string" ? option : "start";
+      var data = $this.data('countTo');
+      var init = !data || typeof option === 'object';
+      var options = typeof option === 'object' ? option : {};
+      var method = typeof option === 'string' ? option : 'start';
 
       if (init) {
         if (data) data.stop();
-        $this.data("countTo", (data = new CountTo(this, options)));
+        $this.data('countTo', (data = new CountTo(this, options)));
       }
 
       data[method].call(data);

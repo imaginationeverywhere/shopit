@@ -1,8 +1,8 @@
 /* Skin structure */
 
-@import "../config/variables";
-@import "../mixins/buttons";
-@import "../mixins/breakpoints";
+@import '../config/variables';
+@import '../mixins/buttons';
+@import '../mixins/breakpoints';
 
 $link-color: $primary-color !default;
 
@@ -992,7 +992,7 @@ a:focus {
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .header-4 {
     .header-search-visible {
       .header-search-wrapper {
@@ -1581,7 +1581,7 @@ a:focus {
 /* Plugins */
 .owl-theme {
   .owl-nav {
-    [class*="owl-"] {
+    [class*='owl-'] {
       color: $primary-color;
       // &:not(.disabled):hover {
       //     border-color: $primary-color;
@@ -1592,7 +1592,7 @@ a:focus {
 
   &.owl-light {
     .owl-nav {
-      [class*="owl-"] {
+      [class*='owl-'] {
         &:not(.disabled):hover {
           border-color: $primary-color;
         }
@@ -1620,7 +1620,7 @@ a:focus {
 
 .owl-full {
   .owl-nav {
-    [class*="owl-"] {
+    [class*='owl-'] {
       color: $primary-color;
       &:hover,
       &:focus {
@@ -1653,7 +1653,7 @@ a:focus {
 
   &.owl-nav-dark {
     .owl-nav {
-      [class*="owl-"] {
+      [class*='owl-'] {
         &:hover,
         &:focus {
           color: $primary-color;
@@ -1665,7 +1665,7 @@ a:focus {
 
 .owl-simple {
   .owl-nav {
-    [class*="owl-"] {
+    [class*='owl-'] {
       &:not(.disabled):hover {
         color: $primary-color;
       }
@@ -1693,7 +1693,7 @@ a:focus {
 }
 
 .quickView-content {
-  .owl-theme.owl-light .owl-nav [class*="owl-"] {
+  .owl-theme.owl-light .owl-nav [class*='owl-'] {
     border: none;
     font-size: 3rem;
     color: #fff;

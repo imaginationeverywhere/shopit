@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import isotope from "isotope-layout";
-import imagesLoaded from "imagesloaded";
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import isotope from 'isotope-layout';
+import imagesLoaded from 'imagesloaded';
 
-import ProductNine from "../features/product/product-nine";
+import ProductNine from '../features/product/product-nine';
 
-import { toggleWishlist, showQuickViewModal, addToCart } from "../../actions";
-import { getVisibleProducts } from "../../services";
-import { isotopeLoad } from "../../utils";
+import { toggleWishlist, showQuickViewModal, addToCart } from '../../actions';
+import { getVisibleProducts } from '../../services';
+import { isotopeLoad } from '../../utils';
 
 function ProductCollection(props) {
   let timer;
@@ -23,10 +23,10 @@ function ProductCollection(props) {
     isotopeLoad(
       isotope,
       imagesLoaded,
-      ".products-container",
-      ".product-item",
-      ".product-filter",
-      "fitRows"
+      '.products-container',
+      '.product-item',
+      '.product-filter',
+      'fitRows',
     );
   }, [loadedCount]);
 
@@ -70,7 +70,7 @@ function ProductCollection(props) {
           <div
             className={`product-item col-6 col-md-4 col-lg-3 ${item.category
               .toString()
-              .replace(",", " ")} ${item.discount > 0 ? "Sale" : ""}`}
+              .replace(',', ' ')} ${item.discount > 0 ? 'Sale' : ''}`}
             key={`product_${index}_${item.name}`}
           >
             <ProductNine
@@ -104,7 +104,7 @@ function ProductCollection(props) {
             </button>
           )
         ) : (
-          ""
+          ''
         )}
       </div>
     </>

@@ -1,32 +1,32 @@
-import React from "react";
-import { connect } from "react-redux";
-import Modal from "react-modal";
+import React from 'react';
+import { connect } from 'react-redux';
+import Modal from 'react-modal';
 
-import { closeModal } from "../../../actions";
+import { closeModal } from '../../../actions';
 
 const customStyles = {
   content: {
-    top: "50%",
-    transform: "translateY(-50%)",
+    top: '50%',
+    transform: 'translateY(-50%)',
   },
   overlay: {
-    backgroundColor: "rgba(77,77,77,0.6)",
-    zIndex: "10000",
+    backgroundColor: 'rgba(77,77,77,0.6)',
+    zIndex: '10000',
   },
 };
 
-Modal.setAppElement("#root");
+Modal.setAppElement('#root');
 
 function VideoModal(props) {
   const { showModal, modal, closeModal } = props;
 
   const closeHandler = () => {
-    closeModal("video");
+    closeModal('video');
   };
 
   return (
     <Modal
-      isOpen={showModal && "video" === modal}
+      isOpen={showModal && 'video' === modal}
       onRequestClose={closeHandler}
       style={customStyles}
       contentLabel="Video Modal"

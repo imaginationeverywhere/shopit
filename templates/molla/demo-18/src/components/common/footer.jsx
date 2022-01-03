@@ -1,14 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import Service from "../features/service";
+import Service from '../features/service';
 
 function Footer(props) {
   const {
-    logo = "assets/images/logo-footer.png",
-    width = "82",
-    height = "25",
-    container = "container",
+    logo = 'assets/images/logo-footer.png',
+    width = '82',
+    height = '25',
+    container = 'container',
   } = props;
 
   return (
@@ -21,7 +21,7 @@ function Footer(props) {
             <div className="col-sm-6 col-lg-3">
               <div className="widget widget-about">
                 <img
-                  src={process.env.PUBLIC_URL + "/" + logo}
+                  src={process.env.PUBLIC_URL + '/' + logo}
                   className="footer-logo"
                   alt="Footer Logo"
                   width={width}
@@ -30,12 +30,12 @@ function Footer(props) {
 
                 <p>
                   Praesent dapibus, neque id cursus ucibus, tortor neque egestas
-                  augue, eu vulputate magna eros eu erat.{" "}
+                  augue, eu vulputate magna eros eu erat.{' '}
                 </p>
 
                 <div className="social-icons">
                   <Link
-                    to={"https://www.facebook.com/"}
+                    to={'https://www.facebook.com/'}
                     className="social-icon"
                     target="_blank"
                     title="Facebook"
@@ -43,7 +43,7 @@ function Footer(props) {
                     <i className="icon-facebook-f"></i>
                   </Link>
                   <Link
-                    to={"https://twitter.com/"}
+                    to={'https://twitter.com/'}
                     className="social-icon"
                     target="_blank"
                     title="Twitter"
@@ -51,7 +51,7 @@ function Footer(props) {
                     <i className="icon-twitter"></i>
                   </Link>
                   <Link
-                    to={"https://instagram.com/"}
+                    to={'https://instagram.com/'}
                     className="social-icon"
                     target="_blank"
                     title="Instagram"
@@ -59,7 +59,7 @@ function Footer(props) {
                     <i className="icon-instagram"></i>
                   </Link>
                   <Link
-                    to={"https://youtube.com/"}
+                    to={'https://youtube.com/'}
                     className="social-icon"
                     target="_blank"
                     title="Youtube"
@@ -67,7 +67,7 @@ function Footer(props) {
                     <i className="icon-youtube"></i>
                   </Link>
                   <Link
-                    to={"https://pinterest.com/"}
+                    to={'https://pinterest.com/'}
                     className="social-icon"
                     target="_blank"
                     title="Pinterest"

@@ -12,7 +12,7 @@ const getRandomProductId = (product = []) => {
 export default function MainMenu(props) {
   const [path, setPath] = useState('');
   const PUBLIC_URL = '/react/molla';
-  const { products } = useSelector(state => state.data);
+  const { products } = useSelector((state) => state.data);
 
   useEffect(() => {
     setPath(window.location.href);

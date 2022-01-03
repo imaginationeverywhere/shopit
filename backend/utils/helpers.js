@@ -21,12 +21,12 @@ const getOldImagesFromProduct = (product) => {
 
 const getPublicId = (url) => {
   // regex test for a valid url
-  if (!url) return "";
-  if (!url.match(/^(http:\/\/|https:\/\/).+/)) return "";
+  if (!url) return '';
+  if (!url.match(/^(http:\/\/|https:\/\/).+/)) return '';
   // get public_id from cloudinary url;
-  const splitArr = url.split("/");
+  const splitArr = url.split('/');
   const fileNameWithExtension = splitArr[splitArr.length - 1];
-  const fileName = fileNameWithExtension.split(".")[0];
+  const fileName = fileNameWithExtension.split('.')[0];
   const id = `${splitArr[splitArr.length - 2]}/${fileName}`;
   return id;
 };

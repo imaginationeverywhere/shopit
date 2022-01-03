@@ -119,7 +119,7 @@
   color: #666;
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .top-menu:not(.top-link-menu) ul {
     min-width: 182px;
   }
@@ -129,7 +129,7 @@
   }
 }
 
-@include mq("md", "max") {
+@include mq('md', 'max') {
   .dropdown.category-dropdown {
     .dropdown-toggle {
       min-width: 230px;
@@ -141,7 +141,7 @@
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .dropdown.category-dropdown {
     .dropdown-toggle {
       min-width: 200px;

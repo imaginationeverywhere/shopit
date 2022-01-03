@@ -99,7 +99,7 @@
     padding-bottom: 2.9rem;
 
     &:before {
-      content: "";
+      content: '';
       display: block;
       height: 1px;
       position: absolute;
@@ -161,13 +161,13 @@
   -ms-transform: translateY(0);
 }
 
-@include mq("md") {
+@include mq('md') {
   #scroll-top {
     display: flex;
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .footer-bottom {
     .container,
     .container-fluid {
@@ -185,7 +185,7 @@
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .footer-bottom {
     .container-fluid {
       &:before {
@@ -196,7 +196,7 @@
   }
 }
 
-@include mq("xxl") {
+@include mq('xxl') {
   .footer-bottom {
     .container-fluid {
       &:before {

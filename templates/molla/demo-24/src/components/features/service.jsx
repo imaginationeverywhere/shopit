@@ -1,17 +1,17 @@
-import React from "react";
+import React from 'react';
 
 // import jsons
-import data from "../../mock_data/data";
+import data from '../../mock_data/data';
 
 export default function ServiceBox(props) {
   const {
-    adClass = "justify-content-center",
-    iconAdClass = "",
-    container = "container",
+    adClass = 'justify-content-center',
+    iconAdClass = '',
+    container = 'container',
   } = props;
 
   return (
-    <div className={"service mt-3"} style={{ backgroundColor: "#222" }}>
+    <div className={'service mt-3'} style={{ backgroundColor: '#222' }}>
       <div className={container}>
         <div className={`row ${adClass}`}>
           {data.services.slice(0, 4).map((item, index) => (

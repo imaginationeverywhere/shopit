@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 function Instagram(props) {
   const { img, likes, comments } = props.insta;
@@ -10,7 +10,7 @@ function Instagram(props) {
         <div className="lazy-overlay bg-2"></div>
 
         <LazyLoadImage
-          src={process.env.PUBLIC_URL + "/" + img}
+          src={process.env.PUBLIC_URL + '/' + img}
           alt="instagram"
           width={100}
           height={218}

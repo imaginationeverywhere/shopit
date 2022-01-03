@@ -1,17 +1,17 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
 import {
   addToCart,
   addToCompare,
   toggleWishlist,
   showQuickViewModal,
-} from "../../../../actions";
+} from '../../../../actions';
 
-import ProductSix from "../../../features/product/product-six";
-import OwlCarousel from "../../../features/owl-carousel";
+import ProductSix from '../../../features/product/product-six';
+import OwlCarousel from '../../../features/owl-carousel';
 
-import { mainSlider8 } from "../../../settings";
+import { mainSlider8 } from '../../../settings';
 
 function RelatedProducts(props) {
   const {

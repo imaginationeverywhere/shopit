@@ -28,8 +28,8 @@
   align-items: center;
 }
 .sidenav-title::before {
-  content: "\f131";
-  font-family: "molla";
+  content: '\f131';
+  font-family: 'molla';
   border: none;
   font-size: 2.2rem;
   line-height: 1;
@@ -104,7 +104,7 @@
   letter-spacing: -0.01em;
 }
 
-.icon-boxes-separator [class*="col-"] + [class*="col-"]:before {
+.icon-boxes-separator [class*='col-'] + [class*='col-']:before {
   height: 3.7rem;
   margin-top: -1.85rem;
   left: -4.5rem;
@@ -139,7 +139,7 @@
   padding-top: 1rem;
 }
 
-.owl-simple .owl-nav [class*="owl-"] {
+.owl-simple .owl-nav [class*='owl-'] {
   top: 45%;
 }
 
@@ -170,7 +170,7 @@
 }
 .btn-wishlist:hover:before,
 .btn-wishlist:focus:before {
-  content: "\f233";
+  content: '\f233';
 }
 
 .btn-product-icon {

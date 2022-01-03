@@ -217,8 +217,8 @@ module.exports = {
     // `web` extension prefixes have been added for better support
     // for React Native Web.
     extensions: paths.moduleFileExtensions
-      .map(ext => `.${ext}`)
-      .filter(ext => useTypeScript || !ext.includes('ts')),
+      .map((ext) => `.${ext}`)
+      .filter((ext) => useTypeScript || !ext.includes('ts')),
     alias: {
       // add as many aliases as you like!
       components: path.resolve(__dirname, '../src/components'),

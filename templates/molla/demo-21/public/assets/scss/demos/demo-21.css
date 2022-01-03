@@ -169,7 +169,7 @@
   color: #ebebeb;
 }
 
-.owl-theme .owl-nav [class*="owl-"] {
+.owl-theme .owl-nav [class*='owl-'] {
   width: 3.2rem;
   height: 3.2rem;
   font-size: 2rem;
@@ -186,7 +186,7 @@
   margin-right: -584px;
 }
 
-.owl-theme.owl-light .owl-nav [class*="owl-"] {
+.owl-theme.owl-light .owl-nav [class*='owl-'] {
   border-color: rgba(255, 255, 255, 0.7);
   background-color: rgba(255, 255, 255, 0.7);
   color: #ccc;
@@ -256,7 +256,7 @@
   background-size: cover;
 }
 .banner-container::before {
-  content: "";
+  content: '';
   box-shadow: 0 10px 20px #999;
   margin-top: 2rem;
   width: 96%;
@@ -282,7 +282,7 @@
   height: 100%;
 }
 .col-pd1 > a:after {
-  content: "";
+  content: '';
   width: 100%;
   height: 100%;
   position: absolute;
@@ -346,7 +346,7 @@
 .logos .owl-simple .owl-nav .owl-next {
   right: -5.5rem;
 }
-.logos .owl-simple .owl-nav [class*="owl-"]:not(.disabled):hover {
+.logos .owl-simple .owl-nav [class*='owl-']:not(.disabled):hover {
   color: #6666ff;
   background: transparent;
   text-decoration: none;
@@ -452,8 +452,8 @@
   margin-right: auto;
 }
 .btn-addtolist:before {
-  content: "\f234";
-  font-family: "molla";
+  content: '\f234';
+  font-family: 'molla';
 }
 .btn-addtolist:hover,
 .btn-addtolist:focus,
@@ -463,8 +463,8 @@
 .btn-addtolist:hover:before,
 .btn-addtolist:focus:before,
 .btn-addtolist.wishlisted:before {
-  content: "\f233";
-  font-family: "molla";
+  content: '\f233';
+  font-family: 'molla';
 }
 
 .btn-product {
@@ -546,7 +546,7 @@
   background-color: #fff;
 }
 .btn-product-icon:before {
-  font-family: "molla";
+  font-family: 'molla';
 }
 .btn-product-icon span {
   display: inline;
@@ -604,7 +604,7 @@
   background: transparent;
 }
 .choose-style .product::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   right: 0;
@@ -637,7 +637,7 @@
   color: #ebebeb;
   font-weight: 400;
   font-size: 1.2rem;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   letter-spacing: 0em;
   margin-top: 1.8rem;
   margin-bottom: 0.8rem;
@@ -695,8 +695,8 @@
 }
 .category-banner .row > div:hover .action:after,
 .category-banner .row > div:focus .action:after {
-  content: "\f274";
-  font-family: "molla";
+  content: '\f274';
+  font-family: 'molla';
   visibility: visible;
   opacity: 1;
   transform: translateX(0px);
@@ -720,8 +720,8 @@
   transition: all 0.2s;
 }
 .category-banner .banner-content .action::after {
-  content: "\f274";
-  font-family: "molla";
+  content: '\f274';
+  font-family: 'molla';
   transform: translateX(-25px);
   opacity: 0;
   visibility: hidden;
@@ -768,7 +768,7 @@
   position: relative;
 }
 .newsletter .background::before {
-  content: "";
+  content: '';
   box-shadow: 0 0 20px #666;
   width: 98%;
   height: 80%;
@@ -782,8 +782,8 @@
   margin-right: 0.8rem;
 }
 .newsletter .subscribe-title:before {
-  content: "\f1c6";
-  font-family: "molla";
+  content: '\f1c6';
+  font-family: 'molla';
   font-size: 4.5rem;
   color: #fff;
 }

@@ -175,7 +175,7 @@
     }
 
     &.show .dropdown-toggle:after {
-      content: "\f131";
+      content: '\f131';
     }
 
     .dropdown-menu {
@@ -201,7 +201,7 @@
   }
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .header-10 {
     .header-search-visible {
       .header-search-wrapper {
@@ -217,7 +217,7 @@
   }
 }
 
-@include mq("xl") {
+@include mq('xl') {
   .header-10 {
     .header-search-extended {
       margin-right: 6.6rem;

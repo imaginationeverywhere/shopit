@@ -1,10 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import { getCartCount, getCartTotal } from "../../../services";
-import { removeFromCart } from "../../../actions";
-import { safeContent } from "../../../utils";
+import { getCartCount, getCartTotal } from '../../../services';
+import { removeFromCart } from '../../../actions';
+import { safeContent } from '../../../utils';
 
 function CartMenu(props) {
   const { cartlist, removeFromCart } = props;
@@ -24,7 +24,7 @@ function CartMenu(props) {
         <i className="icon-shopping-cart"></i>
         <span className="cart-count">{getCartCount(cartlist)}</span>
         <span className="cart-txt">
-          ${" "}
+          ${' '}
           {total.toLocaleString(undefined, {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
@@ -34,7 +34,7 @@ function CartMenu(props) {
 
       <div
         className={`dropdown-menu dropdown-menu-right ${
-          cartlist.length === 0 ? "text-center" : ""
+          cartlist.length === 0 ? 'text-center' : ''
         }`}
       >
         {0 === cartlist.length ? (
@@ -72,9 +72,9 @@ function CartMenu(props) {
                       className="product-image"
                     >
                       <img
-                        src={process.env.PUBLIC_URL + "/" + item.pictures[0]}
+                        src={process.env.PUBLIC_URL + '/' + item.pictures[0]}
                         data-oi={
-                          process.env.PUBLIC_URL + "/" + item.pictures[0]
+                          process.env.PUBLIC_URL + '/' + item.pictures[0]
                         }
                         alt="product"
                       />

@@ -1,18 +1,18 @@
 import {
   TOGGLE_WISHLIST,
   REMOVE_FROM_WISHLIST,
-} from "../constants/action-types";
-import { findIndex } from "../utils";
-import { toast } from "react-toastify";
+} from '../constants/action-types';
+import { findIndex } from '../utils';
+import { toast } from 'react-toastify';
 
-import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 function wishlistReducer(
   state = {
     list: [],
   },
-  action
+  action,
 ) {
   switch (action.type) {
     case TOGGLE_WISHLIST:
@@ -22,12 +22,12 @@ function wishlistReducer(
         const list = state.list.reduce((cartAcc, product) => {
           if (product.id !== productId) {
             cartAcc.push(product);
-          } else toast.error("Item removed from Wishlist");
+          } else toast.error('Item removed from Wishlist');
           return cartAcc;
         }, []);
 
         return { ...state, list };
-      } else toast.success("Item added to Wishlist");
+      } else toast.success('Item added to Wishlist');
 
       return { ...state, list: [...state.list, action.product] };
 
@@ -42,8 +42,8 @@ function wishlistReducer(
 }
 
 const persistConfig = {
-  keyPrefix: "molla-",
-  key: "wishlist",
+  keyPrefix: 'molla-',
+  key: 'wishlist',
   storage,
 };
 

@@ -1,12 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 // Common Header Components
-import CartMenu from "./partials/cart-menu";
-import SearchForm from "./partials/search-form";
+import CartMenu from './partials/cart-menu';
+import SearchForm from './partials/search-form';
 
-import { getCartTotal } from "../../services";
+import { getCartTotal } from '../../services';
 
 function Header(props) {
   const { isWishlist, cartlist } = props;
@@ -51,7 +51,7 @@ function Header(props) {
           <CartMenu />
 
           <p className="price">
-            ${" "}
+            ${' '}
             {total.toLocaleString(undefined, {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,

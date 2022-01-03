@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
 // import custom component
-import PostOne from "../features/post/post-one";
-import OwlCarousel from "../features/owl-carousel";
+import PostOne from '../features/post/post-one';
+import OwlCarousel from '../features/owl-carousel';
 
 // Import Slider Settings
-import { blogSlider } from "../settings";
+import { blogSlider } from '../settings';
 
 // Import Data
-import posts_data from "../../mock_data/posts";
+import posts_data from '../../mock_data/posts';
 
 export default function BlogSection() {
   const posts = posts_data.slice(100, 103);

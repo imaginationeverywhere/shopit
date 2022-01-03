@@ -1,17 +1,17 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import { showModal } from "../../../actions";
+import { showModal } from '../../../actions';
 
-import { safeContent } from "../../../utils";
+import { safeContent } from '../../../utils';
 
 function VideoBannerOne(props) {
   const { content, showModal } = props;
-  let image = process.env.PUBLIC_URL + "/" + props.image;
+  let image = process.env.PUBLIC_URL + '/' + props.image;
 
   const openVideoModal = (e) => {
-    showModal("video");
+    showModal('video');
     e.preventDefault();
   };
 

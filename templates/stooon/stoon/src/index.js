@@ -1,28 +1,28 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import {
   BrowserRouter as Router,
   HashRouter,
   Route,
   Switch,
-} from "react-router-dom";
-import HomeV1 from "./components/home-v1";
-import HomeV2 from "./components/home-v2";
-import HomeV3 from "./components/home-v3";
-import HomeV4 from "./components/home-v4";
-import HomeV5 from "./components/home-v5";
-import About from "./components/about";
-import Blog from "./components/blog";
-import BlogDetails from "./components/blog-details";
-import SingleProducts from "./components/product-details";
-import ShoppingCart from "./components/shoping-cart";
-import Faq from "./components/faq";
-import Error from "./components/error";
-import CommingSoon from "./components/comming-soon";
-import Collection from "./components/collection";
-import CollectionList from "./components/collection-list";
-import CollectionFull from "./components/collection-full";
-import Contact from "./components/contact";
+} from 'react-router-dom';
+import HomeV1 from './components/home-v1';
+import HomeV2 from './components/home-v2';
+import HomeV3 from './components/home-v3';
+import HomeV4 from './components/home-v4';
+import HomeV5 from './components/home-v5';
+import About from './components/about';
+import Blog from './components/blog';
+import BlogDetails from './components/blog-details';
+import SingleProducts from './components/product-details';
+import ShoppingCart from './components/shoping-cart';
+import Faq from './components/faq';
+import Error from './components/error';
+import CommingSoon from './components/comming-soon';
+import Collection from './components/collection';
+import CollectionList from './components/collection-list';
+import CollectionFull from './components/collection-full';
+import Contact from './components/contact';
 
 class Root extends Component {
   render() {
@@ -58,4 +58,4 @@ class Root extends Component {
 
 export default Root;
 
-ReactDOM.render(<Root />, document.getElementById("stoon"));
+ReactDOM.render(<Root />, document.getElementById('stoon'));

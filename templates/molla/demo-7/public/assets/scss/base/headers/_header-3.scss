@@ -79,7 +79,7 @@
     background-color: transparent;
   }
 }
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .header-3 {
     .header-search-visible {
       .header-search-wrapper {
@@ -92,7 +92,7 @@
   }
 }
 
-@include mq("sm", "max") {
+@include mq('sm', 'max') {
   .header-3 .cart-dropdown,
   .header-3 .compare-dropdown,
   .header-3 .wishlist {

@@ -1,26 +1,26 @@
-import React, { Fragment, useEffect, useState } from "react";
-import { clearErrors, login } from "../../actions/userActions";
-import { useDispatch, useSelector } from "react-redux";
+import React, { Fragment, useEffect, useState } from 'react';
+import { clearErrors, login } from '../../actions/userActions';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { Link } from "react-router-dom";
-import Loader from "../layout/Loader";
-import MetaData from "../layout/MetaData";
-import { useAlert } from "react-alert";
+import { Link } from 'react-router-dom';
+import Loader from '../layout/Loader';
+import MetaData from '../layout/MetaData';
+import { useAlert } from 'react-alert';
 
 const Login = ({ history, location }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const alert = useAlert();
   const dispatch = useDispatch();
 
   const { isAuthenticated, error, loading } = useSelector(
-    (state) => state.auth
+    (state) => state.auth,
   );
 
   useEffect(() => {
     if (isAuthenticated) {
-      history.push("/");
+      history.push('/');
     }
 
     if (error) {
@@ -40,7 +40,7 @@ const Login = ({ history, location }) => {
         <Loader />
       ) : (
         <Fragment>
-          <MetaData title={"Login"} />
+          <MetaData title={'Login'} />
           <div className="row wrapper">
             <div className="col-10 col-lg-5">
               <form className="shadow-lg" onSubmit={submitHandler}>

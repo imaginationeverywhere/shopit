@@ -1,20 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function PortfolioOne(props) {
   const {
     image,
-    title = "Vestibulum auctor dapibus",
+    title = 'Vestibulum auctor dapibus',
     category,
-    type = "bottom",
+    type = 'bottom',
   } = props;
 
-  if (type === "bottom")
+  if (type === 'bottom')
     return (
       <div className="portfolio portfolio-overlay">
         <figure className="portfolio-media">
           <Link to="#">
-            <img src={process.env.PUBLIC_URL + "/" + image} alt="item" />
+            <img src={process.env.PUBLIC_URL + '/' + image} alt="item" />
           </Link>
         </figure>
         <div className="portfolio-content">
@@ -28,12 +28,12 @@ function PortfolioOne(props) {
       </div>
     );
 
-  if (type === "center")
+  if (type === 'center')
     return (
       <div className="portfolio portfolio-overlay">
         <figure className="portfolio-media">
           <Link to="#">
-            <img src={process.env.PUBLIC_URL + "/" + image} alt="item" />
+            <img src={process.env.PUBLIC_URL + '/' + image} alt="item" />
           </Link>
         </figure>
         <div className="portfolio-content portfolio-content-center">

@@ -1,27 +1,27 @@
-import React, { useEffect } from "react";
-import isotope from "isotope-layout";
-import imagesLoaded from "imagesloaded";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import isotope from 'isotope-layout';
+import imagesLoaded from 'imagesloaded';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
-import PostEight from "../../features/post/post-eight";
-import Pagination from "../../features/pagination";
-import BlogSidebar from "../../features/sidebar/blog-sidebar";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
+import PostEight from '../../features/post/post-eight';
+import Pagination from '../../features/pagination';
+import BlogSidebar from '../../features/sidebar/blog-sidebar';
 
-import { isotopeLoad } from "../../../utils";
+import { isotopeLoad } from '../../../utils';
 
-import posts from "../../../mock_data/posts";
+import posts from '../../../mock_data/posts';
 
 export default function GridSidebar() {
   useEffect(() => {
     isotopeLoad(
       isotope,
       imagesLoaded,
-      ".entry-container",
-      ".entry-item",
-      ".entry-filter"
+      '.entry-container',
+      '.entry-item',
+      '.entry-filter',
     );
   });
 
@@ -39,7 +39,7 @@ export default function GridSidebar() {
         <PageHeader title="Blog Grid With Sidebar" subTitle="Blog" />
         <Breadcrumb
           title="Grid With Sidebar"
-          parent1={["Blog", "blog/classic"]}
+          parent1={['Blog', 'blog/classic']}
           adClass="mb-3"
         />
 

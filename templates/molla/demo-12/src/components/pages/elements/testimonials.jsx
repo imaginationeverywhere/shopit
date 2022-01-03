@@ -1,24 +1,24 @@
-import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
-import OwlCarousel from "../../features/owl-carousel";
-import Testimonial from "../../features/testimonial";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
+import OwlCarousel from '../../features/owl-carousel';
+import Testimonial from '../../features/testimonial';
 
 // import utils
-import { parallax } from "../../../utils";
+import { parallax } from '../../../utils';
 
 // import settings
-import { mainSlider5, mainSlider6, mainSlider7 } from "../../settings";
+import { mainSlider5, mainSlider6, mainSlider7 } from '../../settings';
 
 function Testimonials() {
   useEffect(() => {
-    document.addEventListener("scroll", parallax, true);
+    document.addEventListener('scroll', parallax, true);
 
     return () => {
-      document.removeEventListener("scroll", parallax);
+      document.removeEventListener('scroll', parallax);
     };
   }, []);
 
@@ -32,7 +32,7 @@ function Testimonials() {
 
       <div className="main">
         <PageHeader title="Testimonials" subTitle="Elements" />
-        <Breadcrumb title="Testimonials" parent1={["Elements", "elements"]} />
+        <Breadcrumb title="Testimonials" parent1={['Elements', 'elements']} />
 
         <div className="page-content">
           <div className="container">
