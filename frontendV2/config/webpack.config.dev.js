@@ -146,6 +146,15 @@ module.exports = {
       .map((ext) => `.${ext}`)
       .filter((ext) => useTypeScript || !ext.includes('ts')),
     alias: {
+      // add as many aliases as you like!
+      components: path.resolve(__dirname, '../src/components'),
+      actions: path.resolve(__dirname, '../src/actions'),
+      reducers: path.resolve(__dirname, '../src/reducers'),
+      hooks: path.resolve(__dirname, '../src/hooks'),
+      pages: path.resolve(__dirname, '../src/pages'),
+      utils: path.resolve(__dirname, '../src/utils'),
+      assets: path.resolve(__dirname, '../src/assets'),
+
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',

@@ -2,13 +2,9 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import {
-  addToCart,
-  addToCompare,
-  toggleWishlist,
-} from '../../../../../actions';
+import { addToCart, addToCompare, toggleWishlist } from 'actions';
 
-import { quantityInputs, isIEBrowser, findIndex } from '../../../../../utils';
+import { quantityInputs, isIEBrowser, findIndex } from 'utils';
 
 function ProductDetailThree(props) {
   const { product, isWishlist, addToCart, toggleWishlist, addToCompare } =
