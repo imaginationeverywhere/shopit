@@ -1,15 +1,11 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { ProductPrice, ProductSize, ProductVariant } from './components';
 
-import { addToCart, toggleWishlist } from '../../../../../actions';
+import { addToCart, toggleWishlist } from 'actions';
 
-import {
-  quantityInputs,
-  isIEBrowser,
-  isEdgeBrowser,
-  findIndex,
-} from '../../../../../utils';
+import { quantityInputs, isIEBrowser, isEdgeBrowser, findIndex } from 'utils';
 
 function ProductDetailOne(props) {
   const { product, isWishlist, type, addToCart, toggleWishlist } = props;
@@ -51,98 +47,16 @@ function ProductDetailOne(props) {
         </Link>
       </div>
 
-      {0 === product.stock ? (
-        <div className="product-price">
-          <span className="out-price">
-            $
-            {product.price.toLocaleString(undefined, {
-              minimumFractionDigits: 2,
-              maximumFractionDigits: 2,
-            })}
-          </span>
-        </div>
-      ) : 0 < product.discount ? (
-        <div className="product-price">
-          <span className="new-price">
-            $
-            {product.salePrice.toLocaleString(undefined, {
-              minimumFractionDigits: 2,
-              maximumFractionDigits: 2,
-            })}
-          </span>
-          <span className="old-price">
-            $
-            {product.price.toLocaleString(undefined, {
-              minimumFractionDigits: 2,
-              maximumFractionDigits: 2,
-            })}
-          </span>
-        </div>
-      ) : (
-        <div className="product-price">
-          $
-          {product.price.toLocaleString(undefined, {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
-          })}
-        </div>
-      )}
+      <ProductPrice product={product} />
 
       <div className="product-content">
         <p>{product.shortDesc}</p>
       </div>
 
-      {product.variants ? (
-        <div className="details-filter-row details-row-size">
-          <label>Color:</label>
-          {product.variants[0].color ? (
-            <div className="product-nav product-nav-dots">
-              {product.variants.map((vari, i) => (
-                <Link
-                  to="#"
-                  key={i}
-                  className={0 === i ? 'active' : ''}
-                  style={{ backgroundColor: vari.color }}
-                ></Link>
-              ))}
-            </div>
-          ) : (
-            <div className="product-nav product-nav-thumbs">
-              {product.variants[0].model
-                ? product.variants.map((vari, i) => (
-                    <Link to="#" key={i} className={0 === i ? 'active' : ''}>
-                      <img src={vari.model} alt="product desc" />
-                    </Link>
-                  ))
-                : product.variants[0].image
-                ? product.variants.map((vari, i) => (
-                    <Link to="#" key={i} className={0 === i ? 'active' : ''}>
-                      <img src={vari.image} alt="product desc" />
-                    </Link>
-                  ))
-                : ''}
-            </div>
-          )}
-        </div>
-      ) : (
-        ''
-      )}
+      <ProductVariant product={product} />
+
       <div className="details-filter-row details-row-size">
-        <label htmlFor="size">Size:</label>
-        <div className="select-custom">
-          <select
-            name="size"
-            id="size"
-            className="form-control"
-            defaultValue="#"
-          >
-            <option value="#">Select a size</option>
-            <option value="s">Small</option>
-            <option value="m">Medium</option>
-            <option value="l">Large</option>
-            <option value="xl">Extra Large</option>
-          </select>
-        </div>
+        <ProductSize product={product} />
 
         {'default' === type ? (
           <Link to="#" className="size-guide">
