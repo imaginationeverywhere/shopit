@@ -61,7 +61,7 @@
   display: block;
   background-color: rgba(0, 0, 0, 0.54);
   z-index: 99999;
-  content: "";
+  content: '';
   left: 100%;
   top: 0;
   visibility: hidden;
@@ -157,7 +157,7 @@
     margin-bottom: 30px;
     display: flex;
 
-    input[type="text"] {
+    input[type='text'] {
       border: 1px solid #ccd3dc;
       border-right: 0;
       height: 45px;

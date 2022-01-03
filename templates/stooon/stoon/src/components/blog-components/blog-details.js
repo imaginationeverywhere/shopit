@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 // import { Link } from 'react-router-dom';
 // import Comments from './comments';
 
 const BlogDetails = () => {
-  let publicUrl = process.env.PUBLIC_URL + "/";
+  let publicUrl = process.env.PUBLIC_URL + '/';
   //   let imagealt = 'image';
 
   return (
@@ -43,7 +43,7 @@ const BlogDetails = () => {
                 want to inject some colour into your life. And who doesn’t want
                 that? We couldn’t agree more.
               </p>
-              <img src={publicUrl + "assets/img/blog/4.png"} alt="" />
+              <img src={publicUrl + 'assets/img/blog/4.png'} alt="" />
               <p>
                 When, while the lovely valley teems with vapour around me, and
                 the meridian sun strikes the upper surface of the impenetrable
@@ -100,22 +100,22 @@ const BlogDetails = () => {
                   <ul>
                     <li>
                       <a href="#">
-                        <i className="fa fa-thumbs-o-up" /> Like{" "}
+                        <i className="fa fa-thumbs-o-up" /> Like{' '}
                       </a>
                     </li>
                     <li>
                       <a href="#">
-                        <i className="fa fa-facebook-f" /> Share{" "}
+                        <i className="fa fa-facebook-f" /> Share{' '}
                       </a>
                     </li>
                     <li>
                       <a href="#">
-                        <i className="fa fa-twitter" /> Tweet{" "}
+                        <i className="fa fa-twitter" /> Tweet{' '}
                       </a>
                     </li>
                     <li>
                       <a href="#">
-                        <i className="fa fa-pinterest" /> Tweet{" "}
+                        <i className="fa fa-pinterest" /> Tweet{' '}
                       </a>
                     </li>
                   </ul>
@@ -124,7 +124,7 @@ const BlogDetails = () => {
               <div className="user-comment">
                 <div className="d-flex">
                   <div className="thumb mt-3">
-                    <img src={publicUrl + "assets/img/blog/5.png"} alt="" />
+                    <img src={publicUrl + 'assets/img/blog/5.png'} alt="" />
                   </div>
                   <div className="content mt-3">
                     <h4 className="name">Published by Jeremy Harville</h4>
@@ -181,7 +181,7 @@ const BlogDetails = () => {
                 <div className="d-md-flex">
                   <div className="prev-post">
                     <a href="#">
-                      <i className="fa fa-angle-left" aria-hidden="true" />{" "}
+                      <i className="fa fa-angle-left" aria-hidden="true" />{' '}
                       Previous Post
                     </a>
                     <h6>
@@ -191,7 +191,7 @@ const BlogDetails = () => {
                   </div>
                   <div className="next-post">
                     <a href="#">
-                      Next Post{" "}
+                      Next Post{' '}
                       <i className="fa fa-angle-right" aria-hidden="true" />
                     </a>
                     <h6>
@@ -213,7 +213,7 @@ const BlogDetails = () => {
                         <div className="thumb">
                           <img
                             alt=""
-                            src={publicUrl + "assets/img/blog/6.png"}
+                            src={publicUrl + 'assets/img/blog/6.png'}
                             className="avatar"
                           />
                         </div>
@@ -243,7 +243,7 @@ const BlogDetails = () => {
                             <div className="thumb">
                               <img
                                 alt=""
-                                src={publicUrl + "assets/img/blog/7.png"}
+                                src={publicUrl + 'assets/img/blog/7.png'}
                                 className="avatar"
                               />
                             </div>
@@ -276,7 +276,7 @@ const BlogDetails = () => {
                         <div className="thumb">
                           <img
                             alt=""
-                            src={publicUrl + "assets/img/blog/8.png"}
+                            src={publicUrl + 'assets/img/blog/8.png'}
                             className="avatar"
                           />
                         </div>
@@ -338,7 +338,7 @@ const BlogDetails = () => {
                       id="exampleFormControlTextarea1"
                       rows={5}
                       placeholder="Comment"
-                      defaultValue={""}
+                      defaultValue={''}
                     />
                   </div>
                   <div className="form-check margin-top-30">

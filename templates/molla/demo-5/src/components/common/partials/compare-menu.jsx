@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import { removeFromCompare, resetCompare } from "../../../actions";
-import { safeContent } from "../../../utils";
+import { removeFromCompare, resetCompare } from '../../../actions';
+import { safeContent } from '../../../utils';
 
 function CompareMenuTwo(props) {
   const { compareList, removeFromCompare, resetCompare } = props;
@@ -48,7 +48,7 @@ function CompareMenuTwo(props) {
           {0 === compareList.length ? (
             <p className="mb-1">No products in the compare.</p>
           ) : (
-            ""
+            ''
           )}
         </ul>
         <div className="compare-actions">
@@ -71,5 +71,5 @@ function mapStateToProps(state) {
   };
 }
 export default connect(mapStateToProps, { removeFromCompare, resetCompare })(
-  CompareMenuTwo
+  CompareMenuTwo,
 );

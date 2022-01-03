@@ -1,11 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Helmet } from 'react-helmet';
 
 // import Custom Components
-import PageHeader from "../../common/page-header";
-import Breadcrumb from "../../common/breadcrumb";
+import PageHeader from '../../common/page-header';
+import Breadcrumb from '../../common/breadcrumb';
 
 export default function Banners() {
   return (
@@ -18,7 +18,7 @@ export default function Banners() {
 
       <div className="main">
         <PageHeader title="Banners" subTitle="Elements" />
-        <Breadcrumb title="Banners" parent1={["Elements", "elements"]} />
+        <Breadcrumb title="Banners" parent1={['Elements', 'elements']} />
 
         <div className="page-content">
           <div className="container">

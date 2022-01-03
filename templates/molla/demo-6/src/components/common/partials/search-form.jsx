@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { isIEBrowser } from "../../../utils";
+import { isIEBrowser } from '../../../utils';
 
 function SearchForm() {
   return (
@@ -17,7 +17,7 @@ function SearchForm() {
           <button
             className="btn btn-primary"
             type="submit"
-            style={{ paddingLeft: isIEBrowser() ? "0" : "" }}
+            style={{ paddingLeft: isIEBrowser() ? '0' : '' }}
           >
             <i className="icon-search"></i>
           </button>
@@ -27,7 +27,7 @@ function SearchForm() {
             name="q"
             id="q"
             placeholder="Search product ..."
-            style={{ paddingLeft: isIEBrowser() ? "30px" : "" }}
+            style={{ paddingLeft: isIEBrowser() ? '30px' : '' }}
             required
           />
         </div>

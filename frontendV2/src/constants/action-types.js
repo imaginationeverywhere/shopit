@@ -14,6 +14,7 @@ export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const CHANGE_QTY = 'CHANGE_QTY';
 export const CHANGE_SHIPPING = 'CHANGE_SHIPPING';
 export const SAVE_SHIPPING_INFO = 'SAVE_SHIPPING_INFO';
+
 export const CLEAR_CART = 'CLEAR_CART';
 
 // WishList

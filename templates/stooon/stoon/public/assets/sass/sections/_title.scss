@@ -9,7 +9,7 @@
 
     &:before {
       position: absolute;
-      content: "";
+      content: '';
       width: 80px;
       height: 1px;
       background: $color-para;
@@ -20,7 +20,7 @@
 
     &:after {
       position: absolute;
-      content: "";
+      content: '';
       bottom: -5px;
       background: #fff;
       width: 11px;

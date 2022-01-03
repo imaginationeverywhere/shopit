@@ -31,15 +31,6 @@ const orderSchema = mongoose.Schema({
       required: true,
     },
   },
-  paymentInfo: {
-    id: {
-      type: String,
-    },
-    status: {
-      type: String,
-    },
-  },
-
   shipments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Shipment' }],
   user: {
     type: mongoose.Schema.Types.ObjectId,

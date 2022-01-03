@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function CTAOne(props) {
   return (
@@ -22,10 +22,10 @@ function CTAOne(props) {
 
               <div className="cta-text">
                 <p>
-                  Get{" "}
+                  Get{' '}
                   <span className="text-dark font-weight-normal">
                     FREE SHIPPING* & 5% rewards
-                  </span>{" "}
+                  </span>{' '}
                   on <br />
                   every order with Molla Theme rewards program
                 </p>

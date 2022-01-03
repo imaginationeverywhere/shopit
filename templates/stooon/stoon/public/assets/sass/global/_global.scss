@@ -2,8 +2,8 @@
   --main-color: #ff8e78;
   --heading-color: #404040;
   --paragraph-color: #666;
-  --body-font: "Muli", sans-serif;
-  --secondary-font: "Cormorant", serif;
+  --body-font: 'Muli', sans-serif;
+  --secondary-font: 'Cormorant', serif;
 }
 
 html {
@@ -57,10 +57,10 @@ body {
   color: $color-white !important;
 }
 
-[class^="flaticon-"]:before,
-[class*=" flaticon-"]:before,
-[class^="flaticon-"]:after,
-[class*=" flaticon-"]:after {
+[class^='flaticon-']:before,
+[class*=' flaticon-']:before,
+[class^='flaticon-']:after,
+[class*=' flaticon-']:after {
   margin-left: 0px;
 }
 
@@ -154,17 +154,17 @@ ol li:before {
 
 /*input and button type focus outline disable*/
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="number"]:focus,
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='url']:focus,
+input[type='password']:focus,
+input[type='search']:focus,
+input[type='tel']:focus,
+input[type='number']:focus,
 textarea:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
+input[type='button']:focus,
+input[type='reset']:focus,
+input[type='submit']:focus,
 select:focus {
   outline: none;
   -webkit-box-shadow: none;
@@ -181,11 +181,11 @@ select:focus {
   padding-right: 0;
 }
 
-.no-gutter > [class^="col-"] {
+.no-gutter > [class^='col-'] {
   padding-left: 0;
   padding-right: 0;
 }
-.no-gutter[class^="col-"] {
+.no-gutter[class^='col-'] {
   padding-left: 0;
   padding-right: 0;
 }
@@ -211,8 +211,8 @@ code {
       position: absolute;
       left: 0;
       top: 0;
-      font-family: "fontawesome";
-      content: "\f105";
+      font-family: 'fontawesome';
+      content: '\f105';
       color: var(--main-color);
     }
   }
@@ -313,7 +313,7 @@ code {
 
 /* Do not show the outline on the skip link target. */
 
-#content[tabindex="-1"]:focus {
+#content[tabindex='-1']:focus {
   outline: 0;
 }
 
@@ -1019,7 +1019,7 @@ code {
 .site-content:after,
 .site-footer:before,
 .site-footer:after {
-  content: "";
+  content: '';
   display: table;
   table-layout: fixed;
 }
@@ -1082,7 +1082,7 @@ object {
   clear: both;
 }
 
-.wp-caption img[class*="wp-image-"] {
+.wp-caption img[class*='wp-image-'] {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -1147,7 +1147,7 @@ ul {
   color: #333;
 }
 
-.post-password-form input[type="submit"] {
+.post-password-form input[type='submit'] {
   width: 100px;
   height: 50px;
   background-color: var(--main-color);
@@ -1160,6 +1160,6 @@ ul {
   transition: 0.3s ease-in;
 }
 
-.post-password-form input[type="submit"]:hover {
+.post-password-form input[type='submit']:hover {
   background-color: #121a2f;
 }

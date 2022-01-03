@@ -1,12 +1,12 @@
 @charset 'UTF-8';
 
-@import "./mixins/clearfix";
-@import "./mixins/breakpoints";
-@import "./mixins/lazy";
-@import "./mixins/buttons";
+@import './mixins/clearfix';
+@import './mixins/breakpoints';
+@import './mixins/lazy';
+@import './mixins/buttons';
 
-@import "./config/fonts";
-@import "./config/variables";
+@import './config/fonts';
+@import './config/variables';
 
 h1,
 h2,
@@ -34,7 +34,7 @@ code {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .page-content {
@@ -267,7 +267,7 @@ header {
 
     &:before,
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       border-top: 2px solid #666;
       width: 10px;
@@ -275,11 +275,11 @@ header {
     }
 
     &:before {
-      content: "";
+      content: '';
       display: block;
       font-size: 1rem;
       font-weight: 600;
-      font-family: "molla";
+      font-family: 'molla';
       line-height: 1;
       transition: transform 0.5s;
     }
@@ -289,7 +289,7 @@ header {
     &:before {
       font-size: 1rem;
       font-weight: 600;
-      font-family: "molla";
+      font-family: 'molla';
       line-height: 1;
       transition: transform 0.5s;
       transform: rotate(90deg);
@@ -324,7 +324,7 @@ header {
   transition: color 0.3s, padding 0.3s;
 
   &:before {
-    content: "\f112";
+    content: '\f112';
     display: block;
     position: absolute;
     left: 0;
@@ -332,7 +332,7 @@ header {
     transform: translateY(-50%);
     opacity: 0;
     visibility: hidden;
-    font-family: "LineAwesome";
+    font-family: 'LineAwesome';
     font-size: 1rem;
     font-weight: 700;
     transition: opacity 0.3s, visibility 0.3s;
@@ -519,14 +519,14 @@ label {
   border: 0.1rem solid #ccc;
 }
 
-@include mq("lg", "max") {
+@include mq('lg', 'max') {
   .sidebar-content {
     width: 30rem;
     background-color: #fff;
   }
 }
 
-@include mq("xs", "max") {
+@include mq('xs', 'max') {
   .search-wrapper-wide input {
     width: 30rem;
   }
@@ -537,7 +537,7 @@ label {
   }
 }
 
-@include mq("lg") {
+@include mq('lg') {
   .sidebar-fixed {
     transition: margin 0.4s;
 

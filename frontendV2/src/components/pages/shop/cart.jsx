@@ -20,7 +20,7 @@ function Cart(props) {
 
   const taxPrice = Number((0.05 * total).toFixed(2));
 
-  const { selectedCarrier = {} } = useSelector(store => store);
+  const { selectedCarrier = {} } = useSelector((store) => store);
 
   useEffect(() => {
     if (selectedCarrier.amount_local) {
@@ -135,7 +135,7 @@ function Cart(props) {
                             >
                               <div
                                 className="cart-product-quantity"
-                                onClick={e => onChangeQty(e, item.id)}
+                                onClick={(e) => onChangeQty(e, item.id)}
                               >
                                 <input
                                   type="number"
@@ -161,7 +161,7 @@ function Cart(props) {
                             <td className="remove-col">
                               <button
                                 className="btn-remove"
-                                onClick={e => removeFromCart(item.id)}
+                                onClick={(e) => removeFromCart(item.id)}
                               >
                                 <i className="icon-close"></i>
                               </button>
@@ -291,7 +291,7 @@ function Cart(props) {
   );
 }
 
-export const mapStateToProps = state => ({
+export const mapStateToProps = (state) => ({
   cartlist: state.cartlist.cart,
   total: getCartTotal(state.cartlist.cart),
   prevShip: state.cartlist.shipping,

@@ -2,7 +2,9 @@ import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+
 import initStripe from './utils/stripe';
+
 import { PersistGate } from 'redux-persist/integration/react';
 
 // import store
@@ -16,6 +18,8 @@ import AppRoute from './routes';
 
 // import Utils
 import { initFunctions } from './utils';
+
+import './App.css';
 
 import LoadingOverlay from './components/features/loading-overlay';
 import { Elements } from '@stripe/react-stripe-js';

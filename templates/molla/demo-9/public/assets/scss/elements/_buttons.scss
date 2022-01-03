@@ -444,7 +444,7 @@
   }
 }
 
-@include mq("992px") {
+@include mq('992px') {
   .btn-close.btn-product {
     display: none;
   }

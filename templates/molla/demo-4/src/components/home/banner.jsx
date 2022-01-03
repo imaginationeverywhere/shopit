@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function banner(props) {
   const { image, name } = props.data;
@@ -12,7 +12,7 @@ function banner(props) {
       >
         <figure>
           <span>
-            <img src={process.env.PUBLIC_URL + "/" + image} alt="Category" />
+            <img src={process.env.PUBLIC_URL + '/' + image} alt="Category" />
           </span>
         </figure>
 
