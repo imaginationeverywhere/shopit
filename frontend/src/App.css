@@ -656,3 +656,10 @@ ul.CTAs a {
 #carrier-list thead:hover i {
   visibility: visible;
 }
+
+.reactloading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}

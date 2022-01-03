@@ -263,12 +263,15 @@ function Cart(props) {
                       </tbody>
                     </table>
 
-                    <button
-                      className="btn btn-outline-primary-2 btn-order btn-block"
-                      onClick={goToCheckout}
-                    >
-                      PROCEED TO CHECKOUT
-                    </button>
+
+                    <Link to="/shop/checkout">
+                                        <button
+                                            className="btn btn-outline-primary-2 btn-order btn-block"
+
+                                        >
+                                            PROCEED TO CHECKOUT
+                                        </button>
+                                        </Link>
                   </div>
 
                   <Link
