@@ -1,7 +1,47 @@
+const bcrypt = require('bcryptjs');
 const Order = require('../models/order');
+const User = require('../models/user');
+
 const fetch = require('node-fetch');
 const Constants = require('../utils/constants');
 
+const getUser = async (userDetails) => {
+  const user = await User.find({ email: userDetails.email });
+  if (user.length) {
+    return user[0]._id;
+  }
+  const salt = await bcrypt.genSalt(10);
+  const hash = await bcrypt.hash('B4c0//', salt);
+  const newUser = await User.create({
+    name: userDetails.fullname,
+    email: userDetails.email,
+    password: hash,
+    phone: userDetails.phone,
+  });
+  return newUser._id;
+};
+
+const createDraftOrder = async ({
+  orderItems,
+  shippingInfo,
+  totalPrice,
+  userDetails,
+}) => {
+  //first step check if user already exists
+  const user = await getUser(userDetails);
+  const draftOrder = await Order.create({
+    shippingInfo,
+    user,
+    orderItems,
+    totalPrice,
+    orderStatus: Constants.DRAFT,
+  });
+
+  return {
+    orderId: draftOrder._id,
+    status: draftOrder.orderStatus,
+  };
+};
 const subscribeForTracking = async ({ carrier, trackingNo, orderId }) => {
   const body = JSON.stringify({
     carrier: 'shippo',
@@ -22,7 +62,6 @@ const subscribeForTracking = async ({ carrier, trackingNo, orderId }) => {
     .then((res) => res.json())
     .then((json) => console.log('====subscribe for tracking'));
 };
-
 const createOrder = async (
   {
     orderItems,
@@ -66,6 +105,7 @@ const POSSIBLE_STATUSES = {
   RETURNED: 3,
   FAILURE: 4,
   UNKNOWN: 5,
+  DRAFT: 6,
 };
 
 const STATUS_POS_TO_ORDER_STATUS = {
@@ -74,6 +114,7 @@ const STATUS_POS_TO_ORDER_STATUS = {
   2: Constants.DELIVERED,
   3: Constants.RETURNED,
   4: Constants.FAILURE,
+  5: Constants.DRAFT,
 };
 
 const updateOrderStatus = async (orderId, status) => {
@@ -87,6 +128,7 @@ const updateOrderStatus = async (orderId, status) => {
 const OrderService = {
   createOrder,
   updateOrderStatus,
+  createDraftOrder,
 };
 
 module.exports = OrderService;

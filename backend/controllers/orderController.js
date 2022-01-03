@@ -1,10 +1,62 @@
 const Order = require('../models/order');
 const Product = require('../models/product');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const ErrorHandler = require('../utils/errorHandler');
 const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
 const OrderService = require('../services/orderService');
 const ShipmentService = require('../services/shipmentService');
+
+// Create a new order   =>  /api/v1/order/new
+exports.draftOrder = catchAsyncErrors(async (req, res, next) => {
+  const { orderItems, shippingInfo, totalPrice, userDetails } = req.body;
+
+  //validation ??
+  try {
+    const order = await OrderService.createDraftOrder({
+      orderItems,
+      shippingInfo,
+      totalPrice,
+      userDetails,
+    });
+    res.status(200).json({
+      success: true,
+      order,
+    });
+  } catch (error) {
+    console.log('Error is creating order-----', error);
+    res.status(422).json({ success: false, message: 'Something went wrong' });
+  }
+});
+
+exports.finalizeOrder = catchAsyncErrors(async (req, res, next) => {
+  const { orderId, paymentIntentId } = req.body;
+
+  //validation ??
+  try {
+    const paymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId);
+    const order = await Order.findById(orderId);
+    if (String(paymentIntent.metadata.orderId) === String(orderId) && order) {
+      //finalize order
+      order.paymentInfo = {
+        id: paymentIntentId,
+        status: paymentIntent.status,
+      };
+      order.paidAt = paymentIntent.created;
+
+      const updatedOrder = await order.save();
+
+      res.status(200).json({
+        success: true,
+        order: updatedOrder,
+      });
+    }
+    res.status(422).json({ success: false, message: 'ssSomething went wrong' });
+  } catch (error) {
+    console.log('Error is creating order-----', error);
+    res.status(422).json({ success: false, message: 'Something went wrong' });
+  }
+});
 
 // Create a new order   =>  /api/v1/order/new
 exports.newOrder = catchAsyncErrors(async (req, res, next) => {
@@ -47,10 +99,10 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
 
 // Get single order   =>   /api/v1/order/:id
 exports.getSingleOrder = catchAsyncErrors(async (req, res, next) => {
-  const order = await Order.findById(req.params.id).populate(
-    'user',
-    'name email',
-  );
+  const order = await Order.findById(req.params.orderId).populate({
+    path: 'user',
+    select: ['email', 'name', 'password', 'phone'],
+  });
 
   if (!order) {
     return next(new ErrorHandler('No Order found with this ID', 404));
