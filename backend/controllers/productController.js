@@ -40,11 +40,15 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
+const ArrayLowercase = (array) => {
+  return array?.map?.((item) => item.toLowerCase()) || array;
+};
+
 const manageFilters = ({ size, brand, category, color, value } = {}) => {
   console.log(value, 'value');
   const filterObj = {};
   if (category?.length) {
-    filterObj.category = { $in: category };
+    filterObj.category = { $in: ArrayLowercase(category) };
   }
   if (size?.length) {
     filterObj.size = { $in: size };
@@ -70,9 +74,9 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
   // console.log({ resPerPage });
   const productsCount = await Product.countDocuments();
   const sortBy = ['createdAt', 'price', 'stock', 'rating'].includes(
-    filters.sortBy,
+    filters?.sortBy,
   )
-    ? filters.sortBy
+    ? filters?.sortBy
     : 'createdAt';
   const apiFeatures = new APIFeatures(
     Product.find({

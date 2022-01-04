@@ -90,17 +90,17 @@ function ProductList(props) {
       document
         .querySelector('.skeleton-body.skel-shop-products')
         ?.classList.remove('loaded');
-      document
-        .querySelector('.skeleton-body.skel-shop-sidebar')
-        ?.classList.remove('loaded');
+      // document
+      //   .querySelector('.skeleton-body.skel-shop-sidebar')
+      //   ?.classList.remove('loaded');
     } else {
       console.log('here');
       document
         .querySelector('.skeleton-body.skel-shop-products')
         ?.classList.add('loaded');
-      document
-        .querySelector('.skeleton-body.skel-shop-sidebar')
-        ?.classList.add('loaded');
+      // document
+      //   .querySelector('.skeleton-body.skel-shop-sidebar')
+      //   ?.classList.add('loaded');
     }
   }, [productLoading]);
 
@@ -126,7 +126,7 @@ function ProductList(props) {
   }
 
   function changeFilter(e) {
-    filterSort(e.target.value);
+    filterSort(e.target.value?.toLowerCase());
     setPage(0);
   }
 
@@ -141,7 +141,7 @@ function ProductList(props) {
 
   useEffect(() => {
     if (page) getProducts();
-  }, [page]);
+  }, [page, filters]);
 
   return (
     <>

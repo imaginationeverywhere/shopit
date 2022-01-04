@@ -24,6 +24,7 @@ export const axiosInstance = axios.create({
 
 // API to get products from mock server
 export const getProductsWithFilters = function(queries = {}) {
+  const cancelToken = axios.CancelToken.source();
   return axiosInstance
     .post(
       `products/withFilters?page=${queries?.page ||
@@ -107,7 +108,7 @@ export const getAdminProducts = function() {
         }));
       return myData;
     })
-    .catch(function (error) {
+    .catch(function(error) {
       // handle error
       console.log(error);
     });
@@ -119,37 +120,37 @@ const myHeaders = () => {
   };
 };
 
-export const getTemplates = function () {
+export const getTemplates = function() {
   return axiosInstance
     .get('templates')
-    .then(function (response) {
+    .then(function(response) {
       return response.data;
     })
-    .catch(function (error) {
+    .catch(function(error) {
       // handle error
       console.log(error);
     });
 };
 
-export const previewTemplate = function (templateId) {
+export const previewTemplate = function(templateId) {
   return axiosInstance
     .get('templates', { templateId })
-    .then(function (response) {
+    .then(function(response) {
       return response.data;
     })
-    .catch(function (error) {
+    .catch(function(error) {
       // handle error
       console.log(error);
     });
 };
 
-export const setTemplate = function (templateId) {
+export const setTemplate = function(templateId) {
   return axiosInstance
     .post('templates', { templateId })
-    .then(function (response) {
+    .then(function(response) {
       return response.data;
     })
-    .catch(function (error) {
+    .catch(function(error) {
       // handle error
       console.log(error);
     });
@@ -205,11 +206,12 @@ export const deleteProductImage = async ({ productId, body }) => {
   return axiosInstance.put(`admin/removeProductImage/${productId}`, body, {
     headers: myHeaders(),
   });
+};
 
-export const newShippingInfo = async paylpad => {
+export const newShippingInfo = async (paylpad) => {
   return axiosInstance.post('address/new', paylpad, {});
 };
-  
-export const updateShippingInfo = async paylpad => {
+
+export const updateShippingInfo = async (paylpad) => {
   return axiosInstance.put('/address/update', paylpad, {});
 };
