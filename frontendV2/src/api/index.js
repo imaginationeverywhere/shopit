@@ -22,15 +22,28 @@ export const axiosInstance = axios.create({
   },
 });
 
+let currentCancelToken;
+
 // API to get products from mock server
 export const getProductsWithFilters = function(queries = {}) {
-  const cancelToken = axios.CancelToken.source();
-  return axiosInstance
-    .post(
-      `products/withFilters?page=${queries?.page ||
-        1}&pageSize=${queries?.pageSize || 4}`,
-      { filters: queries },
-    )
+  const query = `products/withFilters?page=${queries?.page ||
+    1}&pageSize=${queries?.pageSize || 4}`;
+
+  if (currentCancelToken) {
+    currentCancelToken.cancel();
+  }
+
+  currentCancelToken = axios.CancelToken?.source();
+
+  const getproducts = currentCancelToken
+    ? axiosInstance.post(
+        query,
+        { filters: queries },
+        { cancelToken: currentCancelToken?.token },
+      )
+    : axiosInstance.post(query, { filters: queries });
+
+  return getproducts
     .then(function(response) {
       if (response?.data?.products) {
         const payload = response.data;
@@ -41,6 +54,8 @@ export const getProductsWithFilters = function(queries = {}) {
           sizes,
           ...getProductImages(rest?.productImages),
         }));
+
+        currentCancelToken = null;
         return { ...payload, products };
       } else throw new Error('Products do not exist');
     })
