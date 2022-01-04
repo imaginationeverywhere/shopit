@@ -1,9 +1,10 @@
 import jwt_decode from 'jwt-decode';
 import ProductImages from '../ProductCreate/ProductImages';
 
-export const getSelectValues = (arr = []) => arr.map(({ value }) => value);
+export const getSelectValues = (arr = []) =>
+  arr.map(({ value }) => value?.toLowerCase());
 
-export const getOptions = arr => {
+export const getOptions = (arr) => {
   if (!arr) return [];
 
   const options = arr.map(({ name, id }) => ({ label: name, value: id }));
@@ -13,24 +14,35 @@ export const getOptions = arr => {
 export const sizes = [
   {
     label: 'XS',
-    value: 'XS',
+    value: 'xs',
   },
   {
     label: 'S',
-    value: 'S',
+    value: 's',
   },
   {
     label: 'M',
-    value: 'M',
+    value: 'm',
   },
   {
     label: 'L',
-    value: 'L',
+    value: 'l',
   },
   {
     label: 'XL',
-    value: 'XL',
+    value: 'xl',
   },
+];
+
+export const colors = [
+  '#b87145',
+  '#f0c04a',
+  '#333333',
+  '#cc3333',
+  '#3399cc',
+  '#669933',
+  '#f2719c',
+  '#ebebeb',
 ];
 
 export const categories = [
@@ -125,27 +137,27 @@ export const distanceList = [
 export const brands = [
   {
     label: 'UGG',
-    value: 'UGG',
+    value: 'ugg',
   },
   {
     label: 'River Island',
-    value: 'River Island',
+    value: 'river island',
   },
   {
     label: 'Nike',
-    value: 'Nike',
+    value: 'nike',
   },
   {
     label: 'F&F',
-    value: 'F&F',
+    value: 'f&f',
   },
   {
     label: 'Geox',
-    value: 'Geox',
+    value: 'geox',
   },
   {
     label: 'New Balance',
-    value: 'New Balance',
+    value: 'new balance',
   },
 ];
 
@@ -163,7 +175,7 @@ export const isTokenValid = () => {
   return false;
 };
 
-export const getUpdateProductDetails = product => {
+export const getUpdateProductDetails = (product) => {
   if (!product) return product;
   const {
     name,
@@ -180,7 +192,7 @@ export const getUpdateProductDetails = product => {
   const variantColor = [];
 
   variants &&
-    variants.forEach(variant => {
+    variants.forEach((variant) => {
       const color = variant && variant.color;
       color && variantColor.push(color);
     });
@@ -192,15 +204,20 @@ export const getUpdateProductDetails = product => {
     pictures,
     smPictures,
     variants: variantColor,
-    sizes: sizes && sizes.map(ele => ({ label: ele, value: ele })),
-    category: category && category.map(ele => ({ label: ele, value: ele })),
-    brands: brands && brands.map(ele => ({ label: ele, value: ele })),
+    sizes:
+      sizes &&
+      sizes.map((ele) => ({
+        label: ele?.toUpperCase(),
+        value: ele?.toLowerCase?.(),
+      })),
+    category: category && category.map((ele) => ({ label: ele, value: ele })),
+    brands: brands && brands.map((ele) => ({ label: ele, value: ele })),
     ...parcel,
   };
   return productDetails;
 };
 
-export const getUpdateProductImages = product => {
+export const getUpdateProductImages = (product) => {
   const obj = {};
   // eslint-disable-next-line no-unused-expressions
   product?.productImages?.forEach(({ name, ...rest }) => {
@@ -217,6 +234,6 @@ export const getValue = (options, checkValue) => {
   if (!options || !checkValue) {
     return null;
   }
-  const obj = options.filter(option => option.value === checkValue);
+  const obj = options.filter((option) => option.value === checkValue);
   return obj;
 };

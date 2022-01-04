@@ -22,7 +22,6 @@ export const getVisibleProducts = (
 
       if (category && category.length > 0) {
         for (let i = 0; i < category.length; i++) {
-          // console.log(item.category, category[i] && category[i].toLowerCase(), '????>.khvghcyfg')
           if (
             -1 !==
               findIndex(
@@ -37,7 +36,6 @@ export const getVisibleProducts = (
       } else {
         catResult = true;
       }
-      console.log(item.size, size);
       if (size && size.length > 0) {
         for (let i = 0; i < size.length; i++) {
           if (-1 !== findIndex(item.size, (sz) => sz === size[i]))

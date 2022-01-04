@@ -24,7 +24,7 @@ function filterReducer(state = initialState, action) {
 
     case types.CATEGORY_FILTER:
       let category = Object.assign([], state.category);
-      let index = findIndex(category, item => item === action.category);
+      let index = findIndex(category, (item) => item === action.category);
       if (-1 === index) {
         category.push(action.category);
       } else {
@@ -48,7 +48,7 @@ function filterReducer(state = initialState, action) {
 
     case types.SIZE_FILTER:
       let size = Object.assign([], state.size);
-      index = findIndex(size, item => item === action.size);
+      index = findIndex(size, (item) => item === action.size);
       if (-1 === index) {
         size.push(action.size);
       } else {
@@ -56,12 +56,12 @@ function filterReducer(state = initialState, action) {
       }
       return {
         ...state,
-        size: size,
+        size,
       };
 
     case types.COLOR_FILTER:
       let color = Object.assign([], state.color);
-      index = findIndex(color, item => item === action.color);
+      index = findIndex(color, (item) => item === action.color);
       if (-1 === index) {
         color.push(action.color);
       } else {
@@ -74,7 +74,7 @@ function filterReducer(state = initialState, action) {
 
     case types.BRAND_FILTER:
       let brand = Object.assign([], state.brand);
-      index = findIndex(brand, item => item === action.brand);
+      index = findIndex(brand, (item) => item === action.brand);
       if (-1 === index) {
         brand.push(action.brand);
       } else {
@@ -87,7 +87,7 @@ function filterReducer(state = initialState, action) {
 
     case types.RATING_FILTER:
       let rating = Object.assign([], state.rating);
-      index = findIndex(rating, item => item === action.rating);
+      index = findIndex(rating, (item) => item === action.rating);
       if (-1 === index) {
         rating.push(action.rating);
       } else {

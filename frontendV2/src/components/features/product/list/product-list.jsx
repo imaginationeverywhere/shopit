@@ -17,9 +17,8 @@ import {
   filterSort,
   getAllProductsWithFilters,
 } from '../../../../actions';
-import { getVisibleProducts, processFilters } from '../../../../services';
+import { processFilters } from '../../../../services';
 import store from '../../../../store';
-import filter from '../../../../reducers/filter';
 
 function ProductList(props) {
   let {
@@ -71,36 +70,14 @@ function ProductList(props) {
   }, [cols, column]);
 
   useEffect(() => {
-    document
-      .querySelector('.skeleton-body.skel-shop-products')
-      .classList.remove('loaded');
-
-    let imgLoad = imagesLoaded('.products', { background: true });
-
-    imgLoad.on('done', function(instance, image) {
-      !productLoading &&
-        document
-          .querySelector('.skeleton-body.skel-shop-products')
-          .classList.add('loaded');
-    });
-  }, [filters]);
-
-  useEffect(() => {
     if (productLoading) {
       document
         .querySelector('.skeleton-body.skel-shop-products')
         ?.classList.remove('loaded');
-      // document
-      //   .querySelector('.skeleton-body.skel-shop-sidebar')
-      //   ?.classList.remove('loaded');
     } else {
-      console.log('here');
       document
         .querySelector('.skeleton-body.skel-shop-products')
         ?.classList.add('loaded');
-      // document
-      //   .querySelector('.skeleton-body.skel-shop-sidebar')
-      //   ?.classList.add('loaded');
     }
   }, [productLoading]);
 

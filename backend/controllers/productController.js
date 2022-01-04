@@ -45,33 +45,29 @@ const ArrayLowercase = (array) => {
 };
 
 const manageFilters = ({ size, brand, category, color, value } = {}) => {
-  console.log(value, 'value');
   const filterObj = {};
   if (category?.length) {
     filterObj.category = { $in: ArrayLowercase(category) };
   }
   if (size?.length) {
-    filterObj.size = { $in: size };
+    filterObj.sizes = { $in: ArrayLowercase(size) };
   }
   if (brand?.length) {
-    filterObj.brand = { $in: brand };
+    filterObj.brands = { $in: ArrayLowercase(brand) };
   }
   if (color?.length) {
-    filterObj['variant.color'] = { $in: brand };
+    filterObj['variants.color'] = { $in: color };
   }
   if (!isNaN(value?.min) && !isNaN(value?.max)) {
-    filterObj.price = { $gt: Number(value?.min), $lt: Number(value?.max) };
+    filterObj.price = { $gte: Number(value?.min), $lte: Number(value?.max) };
   }
-  console.log(filterObj);
   return filterObj;
 };
 
 // Get all products => /api/v1/products
 exports.getProducts = catchAsyncErrors(async (req, res, next) => {
-  // return next(new ErrorHandler('My Error', 400))
   const filters = req.body.filters;
   const resPerPage = Number(req.query.pageSize) || 15;
-  // console.log({ resPerPage });
   const productsCount = await Product.countDocuments();
   const sortBy = ['createdAt', 'price', 'stock', 'rating'].includes(
     filters?.sortBy,
@@ -88,11 +84,20 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
 
   let products = await apiFeatures.query;
   let filteredProductsCount = products.length;
-
   apiFeatures.pagination(resPerPage);
   products = await apiFeatures.query;
 
-  const pageCount = Math.ceil(productsCount / resPerPage);
+  const pageCount = Math.ceil(filteredProductsCount / resPerPage);
+
+  const minAndMaxPrice = await Product.aggregate([
+    {
+      $group: {
+        _id: null,
+        minPrice: { $min: '$price' },
+        maxPrice: { $max: '$price' },
+      },
+    },
+  ]);
 
   res.status(200).json({
     success: true,
@@ -101,6 +106,8 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
     pageCount,
     filteredProductsCount,
     products,
+    minPrice: minAndMaxPrice?.[0]?.minPrice || 0,
+    maxPrice: minAndMaxPrice?.[0]?.maxPrice || 100000,
   });
 });
 
@@ -193,8 +200,6 @@ exports.getProductReviews = catchAsyncErrors(async (req, res, next) => {
 // Delete Product Review   =>   /api/v1/reviews
 exports.deleteReview = catchAsyncErrors(async (req, res, next) => {
   const product = await Product.findById(req.query.productId);
-
-  console.log(product);
 
   const reviews = product.reviews.filter(
     (review) => review._id.toString() !== req.query.id.toString(),
