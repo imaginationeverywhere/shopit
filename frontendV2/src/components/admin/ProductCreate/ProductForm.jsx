@@ -2,7 +2,6 @@ import React from 'react';
 import ColorVariantComp from './ColorVariantComp';
 import DashboardInput from '../common/components/DashboardInput';
 import DashboardSelect from '../common/components/DashboardSelect';
-import DashboardTextArea from '../common/components/DashboardTextArea';
 
 import PriceInput from '../common/components/PriceInput';
 import {
@@ -14,6 +13,7 @@ import {
 } from '../utils/helpers';
 import Select from '../common/components/Select';
 import DashboardButton from '../common/components/DashboardButton';
+import MarkdownEditor from '../common/components/MarkdownEditor';
 
 const ProductForm = ({
   formValues,
@@ -144,13 +144,19 @@ const ProductForm = ({
                 required
               />
             </div>
-            <DashboardTextArea
+            {/* <DashboardTextArea
               labelName="Description"
               name="shortDesc"
               value={formValues.shortDesc}
               onChange={handleChange}
               required
-            />
+            /> */}
+            <MarkdownEditor  
+              labelName="Description"
+              name="shortDesc"
+              value={formValues.shortDesc}
+              handleChange={handleChange}
+              required />
           </div>
         </div>
         <div className="price-form">

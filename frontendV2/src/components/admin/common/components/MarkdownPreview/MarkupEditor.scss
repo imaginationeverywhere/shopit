@@ -1,0 +1,19 @@
+.markup {
+  height: 300px;
+  width: 100%;
+  margin: 1em auto;
+
+  .w-md-editor-text {
+    background-color: #fef9f9 !important;
+  }
+  label {
+    display: block;
+    color: #464457;
+    font-size: 1em;
+    margin-bottom: 0.6em;
+  }
+  .preview-span {
+    margin-right: 0.3em;
+    display: block;
+  }
+}

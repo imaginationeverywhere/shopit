@@ -1,0 +1,23 @@
+.markdown {
+  height: 300px;
+  width: 100%;
+  margin: 1em auto;
+
+  .mde-textarea-wrapper textarea.mde-text {
+    outline: none;
+  }
+  .mde-header {
+    // background: #cc666626;
+    background-color: #fef9f9;
+  }
+  label {
+    display: block;
+    color: #464457;
+    font-size: 1em;
+    margin-bottom: 0.6em;
+  }
+  .preview-span {
+    margin-right: 0.3em;
+    display: block;
+  }
+}
