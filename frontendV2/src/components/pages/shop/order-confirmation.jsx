@@ -50,7 +50,6 @@ function OrderConfirmation(props) {
     stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
       if (paymentIntent.status === 'succeeded') {
         //finalize payment
-        console.log(paymentIntent);
         (async () => {
           const config = {
             headers: {

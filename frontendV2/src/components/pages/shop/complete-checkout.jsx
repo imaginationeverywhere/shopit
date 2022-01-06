@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { connect, useDispatch } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import { Elements } from '@stripe/react-stripe-js';
 
 import { Helmet } from 'react-helmet';
@@ -16,21 +16,48 @@ import { getOrderDetails } from '../../../actions/orderActions';
 import LoadingOverlay from '../../features/loading-overlay';
 import PaymentForm from './payment-form';
 import initStripe from '../../../utils/stripe'
+import CarrierList from './Carrierlist';
 
 const stripe = initStripe()
 const API_URL = process.env.REACT_APP_API_URL;
 
 function CompleteCheckout(props) {
     const [clientSecret, setClientSecret] = useState("");
+    const {
+        selectedCarrier = {},
+        cartlist: { cart },
+    } = useSelector((store) => store);
+
+
+    const [cartlist, setCartlist] = useState(cart);
+    const [total, setTotal] = useState(getCartTotal(cart)); 
 
     const dispatch = useDispatch()
-    const { cartlist, total, order, match, history } = props;
+    const {  order, match, history } = props;
 
     const orderId = match.params.orderId
 
     if (!orderId) {
         history.push('/pages/404')
     }
+
+    const [shippingPrice, setShippingPrice] = useState(
+        parseFloat(selectedCarrier.amount_local) || 0,
+    );
+
+    useEffect(() => {
+        setCartlist(cart);
+        setTotal(getCartTotal(cart));
+    }, [cart]);
+    const taxPrice = Number((0.05 * total).toFixed(2));
+
+    useEffect(() => {
+        console.log(selectedCarrier)
+        if (selectedCarrier.amount_local) {
+            setShippingPrice(parseFloat(selectedCarrier.amount_local));
+        }
+    }, [selectedCarrier]);
+
 
     useEffect(() => {
 
@@ -50,12 +77,7 @@ function CompleteCheckout(props) {
 
     }, [])
 
-    const shippingPrice = { "free": 0, "standard": 10, "express": 20 };
-    const shippingObj = { "free": "Free shipping", "standard": "Standard", "express": "Express" };
-
-
     if (order.loading || !Object.values(order.order).length || !clientSecret) {
-        console.log(clientSecret)
         return (
             <div className='reactloading'>
                 <LoadingOverlay />
@@ -69,8 +91,8 @@ function CompleteCheckout(props) {
     const options = {
         clientSecret,
         appearance,
-    }; 
-
+    };
+ 
     return (
         <>
             <Helmet>
@@ -123,7 +145,7 @@ function CompleteCheckout(props) {
                                                     </tr>
                                                     <tr>
                                                         <td>Address:</td>
-                                                        <td>{order.order.shippingInfo.street1}</td>
+                                                        <td>{order.order.shippingInfo.street1} {order.order.shippingInfo.street2}</td>
                                                     </tr>
                                                     <tr>
                                                         <td>Zip:</td>
@@ -158,13 +180,36 @@ function CompleteCheckout(props) {
                                                         <td>Subtotal:</td>
                                                         <td>${total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
                                                     </tr>
+                                                    <tr className="summary-shipping">
+                                                        <td>Shipping</td>
+                                                        <td>&nbsp;</td>
+                                                    </tr>
                                                     <tr>
+                                                        <td colSpan="2">
+                                                            { }
+                                                            <CarrierList addressTo={{...order.order.shippingInfo, name:order.order.user.name, email: order.order.user.email}  } />
+                                                        </td>
+                                                    </tr>
+                                                    <tr className="summary-shipping">
+                                                        <td>Tax:</td>
+                                                        <td> ${taxPrice}</td>
+                                                    </tr>
+                                                    <tr className="summary-shipping">
                                                         <td>Shipping:</td>
-                                                        <td>{shippingObj[props.shipping]}</td>
+                                                        <td> ${shippingPrice}</td>
                                                     </tr>
                                                     <tr className="summary-total">
                                                         <td>Total:</td>
-                                                        <td>${(total + shippingPrice[props.shipping]).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                                                        <td>
+                                                            $
+                                                            {(total + shippingPrice + taxPrice).toLocaleString(
+                                                                undefined,
+                                                                {
+                                                                    minimumFractionDigits: 2,
+                                                                    maximumFractionDigits: 2,
+                                                                },
+                                                            )}
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                             </table>

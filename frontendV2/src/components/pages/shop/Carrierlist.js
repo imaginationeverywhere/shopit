@@ -18,21 +18,23 @@ const addressFrom = {
   email: 'shippotle@goshippo.com',
 };
 
-const addressTo = {
-  name: 'Mr Hippo',
-  company: '',
-  street1: 'Broadway 1',
-  street2: '',
-  city: 'New York',
-  state: 'NY',
-  zip: '10007',
-  country: 'US',
-  phone: '+1 555 341 9393',
-  email: 'mrhippo@goshippo.com',
-  metadata: 'Hippos dont lie',
-};
+// const addressTo = {
+//   name: 'Mr Hippo',
+//   company: '',
+//   street1: 'Broadway 1',
+//   street2: '',
+//   city: 'New York',
+//   state: 'NY',
+//   zip: '10007',
+//   country: 'US',
+//   phone: '+1 555 341 9393',
+//   email: 'mrhippo@goshippo.com',
+//   metadata: 'Hippos dont lie',
+// };
 
-const CarrierList = () => {
+const CarrierList = ({addressTo}) => {
+
+  if (!addressTo) return null;
   const dispatch = useDispatch();
   const {
     cartlist: { cart },

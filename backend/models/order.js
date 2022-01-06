@@ -6,6 +6,10 @@ const orderSchema = mongoose.Schema({
       type: String,
       required: true,
     },
+    street1: {
+      type: String,
+      default: ''
+    },
     state: {
       type: String,
       required: true,

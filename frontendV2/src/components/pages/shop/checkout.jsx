@@ -79,7 +79,6 @@ function Checkout(props) {
       !state ||
       !city ||
       !street1 ||
-      !street2 ||
       !zip
     ) {
       setError('Kindly complete all required fields');
@@ -117,6 +116,7 @@ function Checkout(props) {
       },
       shippingInfo: {
         street1,
+        street2,
         city,
         state,
         zip,
@@ -226,7 +226,7 @@ function Checkout(props) {
                           </tr>
                           <tr>
                             <td>Shipping:</td>
-                            <td>{shippingObj[props.shipping]}</td>
+                            <td>.......</td>
                           </tr>
                           <tr className="summary-total">
                             <td>Total:</td>

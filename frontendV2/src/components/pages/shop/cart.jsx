@@ -6,21 +6,16 @@ import { Helmet } from 'react-helmet';
 import PageHeader from '../../common/page-header';
 import Breadcrumb from '../../common/breadcrumb';
 import { getCartTotal } from '../../../services';
-import { quantityInputs, isIEBrowser } from '../../../utils';
-import { changeQty, removeFromCart } from '../../../actions';
-import CarrierList from './Carrierlist';
+import {  isIEBrowser } from '../../../utils';
+import { changeQty, removeFromCart } from '../../../actions'; 
 
 function Cart(props) {
-  const {
-    selectedCarrier = {},
+  const { 
     cartlist: { cart },
   } = useSelector((store) => store);
   const dispatch = useDispatch();
   const [cartlist, setCartlist] = useState(cart);
-  const [total, setTotal] = useState(getCartTotal(cart));
-  const [shippingPrice, setShippingPrice] = useState(
-    parseFloat(selectedCarrier.amount_local) || 0,
-  );
+  const [total, setTotal] = useState(getCartTotal(cart)); 
 
   useEffect(() => {
     setCartlist(cart);
@@ -28,11 +23,7 @@ function Cart(props) {
   }, [cart]);
   const taxPrice = Number((0.05 * total).toFixed(2));
 
-  useEffect(() => {
-    if (selectedCarrier.amount_local) {
-      setShippingPrice(parseFloat(selectedCarrier.amount_local));
-    }
-  }, [selectedCarrier]);
+ 
 
   useEffect(() => {
     cartlist.map((item, index) => {
@@ -235,40 +226,20 @@ function Cart(props) {
                         </tr>
                         <tr className="summary-shipping">
                           <td>Shipping</td>
-                          <td>&nbsp;</td>
+                          <td>&nbsp;.......</td>
                         </tr>
-                        <tr>
-                          <td colSpan="2">
-                            {}
-                            <CarrierList />
-                          </td>
-                        </tr>
+                         
                         <tr className="summary-shipping">
                           <td>Tax:</td>
                           <td> ${taxPrice}</td>
                         </tr>
-                        <tr className="summary-shipping">
-                          <td>Shipping:</td>
-                          <td> ${shippingPrice}</td>
-                        </tr>
-                        <tr className="summary-shipping-estimate">
-                          <td>
-                            Estimate for Your Country
-                            <br />{' '}
-                            <a
-                              href={`${process.env.PUBLIC_URL}/shop/dashboard`}
-                            >
-                              Change address
-                            </a>
-                          </td>
-                          <td>&nbsp;</td>
-                        </tr>
+                         
 
                         <tr className="summary-total">
                           <td>Total:</td>
                           <td>
                             $
-                            {(total + shippingPrice + taxPrice).toLocaleString(
+                            {(total + taxPrice).toLocaleString(
                               undefined,
                               {
                                 minimumFractionDigits: 2,
