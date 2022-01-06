@@ -1,10 +1,15 @@
-.markup {
-  height: 300px;
+.markdown-preview {
   width: 100%;
   margin: 1em auto;
 
   .w-md-editor-text {
     background-color: #fef9f9 !important;
+  }
+  .w-md-editor-text::selection {
+    background-color: #fef9f9 !important;
+  }
+  .wmde-markdown {
+    font-size: 0.9em;
   }
   label {
     display: block;

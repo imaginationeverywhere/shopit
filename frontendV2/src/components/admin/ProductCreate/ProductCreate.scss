@@ -257,7 +257,6 @@
             display: grid;
             grid-template-columns: 48% 24% 24%;
             column-gap: 2%;
-            margin-bottom: 1.5em;
           }
 
           .weight-info {
@@ -284,9 +283,10 @@
         }
 
         .price-form {
-          width: 30%;
+          min-width: 30%;
           padding: 2em 1.5em;
           height: 400px;
+          // width: 350px;
         }
       }
 

@@ -1,3 +1,4 @@
+import Skeleton from 'components/admin/common/components/Skeleton';
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { getSingleProductAction } from '../actions';
@@ -14,7 +15,9 @@ const withSingleProduct = (Component) => (props) => {
       }
     }
   }, [props?.match?.params?.id]);
-
+if(!singleProduct) {
+  return <div><Skeleton height="500px" /></div>
+}
   return <Component {...props} />;
 };
 

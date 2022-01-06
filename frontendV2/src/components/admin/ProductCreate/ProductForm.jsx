@@ -13,7 +13,7 @@ import {
 } from '../utils/helpers';
 import Select from '../common/components/Select';
 import DashboardButton from '../common/components/DashboardButton';
-import MarkdownEditor from '../common/components/MarkdownEditor';
+import MarkdownEditor from '../common/components/MarkdownEditor/newEditor';
 
 const ProductForm = ({
   formValues,
@@ -30,7 +30,7 @@ const ProductForm = ({
       <div className="form-main flexed-row">
         <div className="other-product-detail">
           <div className="general-form">
-            <div className="weight-info">
+            <div className="product-name-info">
               <DashboardInput
                 name="name"
                 value={formValues.name}
@@ -38,10 +38,20 @@ const ProductForm = ({
                 labelName="Product Name"
                 required
               />
+                           <Select
+                onChange={handleChange}
+                label="Mass Unit"
+                placeholder=" "
+                name="mass_unit"
+                value={formValues.mass_unit}
+                options={massList}
+                required
+                disabled={addProductLoading}
+              />
               <DashboardInput
-                labelName="Stock"
-                name="stock"
-                value={formValues.stock}
+                labelName="Weight"
+                name="weight"
+                value={formValues.weight}
                 onChange={handleChange}
                 type="number"
                 required
@@ -71,7 +81,8 @@ const ProductForm = ({
               isMulti
               disabled={addProductLoading}
             />
-            <DashboardSelect
+            <div className="weight-info">
+               <DashboardSelect
               onChange={handleChange}
               label="Sizes"
               placeholder=" "
@@ -82,31 +93,22 @@ const ProductForm = ({
               isMulti
               disabled={addProductLoading}
             />
-            <div className="weight-info">
-              <DashboardInput
-                labelName="Weight"
-                name="weight"
-                value={formValues.weight}
+                <DashboardInput
+                labelName="Stock"
+                name="stock"
+                value={formValues.stock}
                 onChange={handleChange}
                 type="number"
                 required
                 disabled={addProductLoading}
               />
-              <Select
-                onChange={handleChange}
-                label="Mass Unit"
-                placeholder=" "
-                name="mass_unit"
-                value={formValues.mass_unit}
-                options={massList}
-                required
-                disabled={addProductLoading}
-              />
             </div>
+
+            <div className="weight-info">
             <div className="weight-info">
               <Select
                 onChange={handleChange}
-                label="Select unit for Dimensions"
+                label="Dimensions unit"
                 placeholder=" "
                 name="distance_unit"
                 value={formValues.distance_unit}
@@ -143,6 +145,7 @@ const ProductForm = ({
                 onChange={handleChange}
                 required
               />
+            </div>
             </div>
             {/* <DashboardTextArea
               labelName="Description"

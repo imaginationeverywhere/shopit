@@ -1,28 +1,14 @@
 import React from "react";
 import MDEditor from '@uiw/react-md-editor';
-import './MarkupEditor.scss';
-import rehypeSanitize from "rehype-sanitize";
+import './MarkdownPreview.scss';
 
 
-const MarkupEditor = function ({ labelName, required, value, name , handleChange}) {
+const MarkdownPreview = function ({ text }) {
   return (
-    <div className="markup">
-      <div className="flexed-space-between">
-        <label>
-        {labelName} {required && <small className="asterik ml-1">*</small>}
-      </label>
-      <span className="preview span">Preview</span>
-      </div>
-      
-      <MDEditor
-        value={value}
-        onChange={(val) => handleChange({ target: { name, value: val } })}
-        previewOptions={{
-          rehypePlugins: [[rehypeSanitize]]
-        }}
-        preview="edit" />
+    <div className="markdown-preview">
+      <MDEditor.Markdown source={text} />
     </div>
   );
 }
 
-export default MarkupEditor;
+export default MarkdownPreview;
