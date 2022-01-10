@@ -36,6 +36,11 @@ const orderSchema = mongoose.Schema({
     },
   },
   shipments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Shipment' }],
+  selectedCarrier: {
+    carrierId: String,
+    shipmentId: String,
+    serviceLevelToken: String
+  },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,

@@ -6,6 +6,7 @@ const ErrorHandler = require('../utils/errorHandler');
 const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
 const OrderService = require('../services/orderService');
 const ShipmentService = require('../services/shipmentService');
+const Constants = require('../utils/constants');
 
 // Create a new order   =>  /api/v1/order/new
 exports.draftOrder = catchAsyncErrors(async (req, res, next) => {
@@ -29,31 +30,33 @@ exports.draftOrder = catchAsyncErrors(async (req, res, next) => {
   }
 });
 
-exports.finalizeOrder = catchAsyncErrors(async (req, res, next) => {
-  const { orderId, paymentIntentId } = req.body;
+exports.updateOrderShipping = catchAsyncErrors(async (req, res, next) => {
+  const { orderId, selectedCarrier, tax, total, shipping } = req.body;
+
 
   //validation ??
   try {
-    const paymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId);
-    const order = await Order.findById(orderId);
-    if (String(paymentIntent.metadata.orderId) === String(orderId) && order) {
-      //finalize order
-      order.paymentInfo = {
-        id: paymentIntentId,
-        status: paymentIntent.status,
-      };
-      order.paidAt = paymentIntent.created;
-
-      const updatedOrder = await order.save();
-
-      res.status(200).json({
-        success: true,
-        order: updatedOrder,
-      });
-    }
-    res.status(422).json({ success: false, message: 'ssSomething went wrong' });
+    const order = await OrderService.updateOrderShipping(orderId, selectedCarrier, tax, total, shipping)
+    res.status(200).json({
+      success: true,
+      order
+    });
   } catch (error) {
-    console.log('Error is creating order-----', error);
+    res.status(422).json({ success: false, message: 'Something went wrong' });
+  }
+});
+
+
+exports.finalizeOrder = catchAsyncErrors(async (req, res, next) => {
+  const { orderId, paymentIntentId } = req.body;
+  //validation ??
+  try {
+    const updatedOrder = await OrderService.finalizeOrder({ orderId, paymentIntentId })
+    res.status(200).json({
+      success: true,
+      order: updatedOrder,
+    });
+  } catch (error) {
     res.status(422).json({ success: false, message: 'Something went wrong' });
   }
 });

@@ -12,17 +12,12 @@ import PageHeader from '../../common/page-header';
 import Breadcrumb from '../../common/breadcrumb';
 
 import { getCartTotal } from '../../../services';
-import { getOrderDetails } from '../../../actions/orderActions';
+import { getOrderDetails, updateOrderShipping } from '../../../actions/orderActions';
 import LoadingOverlay from '../../features/loading-overlay';
-import PaymentForm from './payment-form';
-import initStripe from '../../../utils/stripe'
 import CarrierList from './Carrierlist';
 
-const stripe = initStripe()
-const API_URL = process.env.REACT_APP_API_URL;
 
-function CompleteCheckout(props) {
-    const [clientSecret, setClientSecret] = useState("");
+function SelectShipping(props) {
     const {
         selectedCarrier = {},
         cartlist: { cart },
@@ -30,10 +25,10 @@ function CompleteCheckout(props) {
 
 
     const [cartlist, setCartlist] = useState(cart);
-    const [total, setTotal] = useState(getCartTotal(cart)); 
+    const [total, setTotal] = useState(getCartTotal(cart));
 
     const dispatch = useDispatch()
-    const {  order, match, history } = props;
+    const { order, match, history } = props;
 
     const orderId = match.params.orderId
 
@@ -50,26 +45,38 @@ function CompleteCheckout(props) {
         setTotal(getCartTotal(cart));
     }, [cart]);
     const taxPrice = Number((0.05 * total).toFixed(2));
- 
+
     useEffect(() => {
-
-        async function createIntent() {
-            const config = {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }
-
-            const { data } = await axios.post(API_URL + 'payment/create-intent', { orderId }, config)
-            setClientSecret(data.client_secret)
+        console.log(selectedCarrier)
+        if (selectedCarrier.amount_local) {
+            setShippingPrice(parseFloat(selectedCarrier.amount_local));
+            //update backend with shipping details for order
         }
-        createIntent()
+    }, [selectedCarrier]);
+
+
+    useEffect(() => {
         dispatch(getOrderDetails(orderId))
-
-
     }, [])
 
-    if (order.loading || !Object.values(order.order).length || !clientSecret) {
+    const updateShipping = async () => {
+        if (!Object.values(order.order).length) return
+
+        const carrier = {
+            carrierId: selectedCarrier.carrier_account,
+            shipmentId: selectedCarrier.shipment,
+            serviceLevelToken: selectedCarrier.servicelevel.token
+        }
+        dispatch(updateOrderShipping(orderId, carrier))
+    }
+
+
+
+    if (order.order && order.order.selectedCarrier && order.order.selectedCarrier.carrierId) {
+        props.history.push(`/shop/checkout/${orderId}`);
+    }
+
+    if (order.loading || !Object.values(order.order).length) {
         return (
             <div className='reactloading'>
                 <LoadingOverlay />
@@ -77,14 +84,8 @@ function CompleteCheckout(props) {
         )
     }
 
-    const appearance = {
-        theme: 'stripe',
-    };
-    const options = {
-        clientSecret,
-        appearance,
-    };
- 
+
+
     return (
         <>
             <Helmet>
@@ -110,38 +111,17 @@ function CompleteCheckout(props) {
 
                                     <div className="col-lg-6">
                                         <div className="summary">
-                                            <h3 className="summary-title">Customer Info</h3>
+                                            <h3 className="summary-title">Select Shipping</h3>
 
                                             <table className="table table-summary">
 
                                                 <tbody>
+
                                                     <tr>
-                                                        <td>Fullname:</td>
-                                                        <td>{order.order.user.name}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Email:</td>
-                                                        <td>{order.order.user.email}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Phone:</td>
-                                                        <td>{order.order.user.phone}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>State:</td>
-                                                        <td>{order.order.shippingInfo.state}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>City:</td>
-                                                        <td>{order.order.shippingInfo.city}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Address:</td>
-                                                        <td>{order.order.shippingInfo.street1} {order.order.shippingInfo.street2}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Zip:</td>
-                                                        <td>{order.order.shippingInfo.zip}</td>
+                                                        <td colSpan="2">
+                                                            { }
+                                                            <CarrierList addressTo={{ ...order.order.shippingInfo, name: order.order.user.name, email: order.order.user.email }} />
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -150,7 +130,7 @@ function CompleteCheckout(props) {
 
                                     <aside className="col-lg-6">
                                         <div className="summary">
-                                            <h3 className="summary-title">Your Order</h3>
+                                            <h3 className="summary-title">Your Order Summary</h3>
 
                                             <table className="table table-summary">
                                                 <thead>
@@ -171,7 +151,11 @@ function CompleteCheckout(props) {
                                                     <tr className="summary-subtotal">
                                                         <td>Subtotal:</td>
                                                         <td>${total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
-                                                    </tr> 
+                                                    </tr>
+                                                    <tr className="summary-shipping">
+                                                        <td>Shipping</td>
+                                                        <td>&nbsp;</td>
+                                                    </tr>
                                                     <tr className="summary-shipping">
                                                         <td>Tax:</td>
                                                         <td> ${taxPrice}</td>
@@ -195,11 +179,17 @@ function CompleteCheckout(props) {
                                                     </tr>
                                                 </tbody>
                                             </table>
+                                            <button
+                                                type="button"
+                                                className="btn btn-outline-primary-2 btn-order btn-block"
+                                                disabled={order.loading}
+                                                onClick={updateShipping}
+                                            >
+                                                <span className=" ">
+                                                    {order.loading ? 'Loading...' : 'Proceed to payment'}
+                                                </span>
+                                            </button>
 
-                                            {clientSecret &&
-                                                <Elements options={options} stripe={stripe}>
-                                                    <PaymentForm orderId={orderId} />
-                                                </Elements>}
                                         </div>
                                     </aside>
                                 </div>
@@ -218,4 +208,4 @@ export const mapStateToProps = (state) => ({
     shipping: state.cartlist.shipping
 })
 
-export default connect(mapStateToProps)(CompleteCheckout); 
+export default connect(mapStateToProps)(SelectShipping); 

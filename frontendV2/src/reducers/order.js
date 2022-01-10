@@ -6,7 +6,10 @@ import {
     CREATE_DRAFT_ORDER_FAIL,
     ORDER_DETAILS_REQUEST,
     ORDER_DETAILS_SUCCESS,
-    ORDER_DETAILS_FAIL
+    ORDER_DETAILS_FAIL,
+    UPDATE_ORDER_SHIPPING_REQUEST,
+    UPDATE_ORDER_SHIPPING_SUCCESS,
+    UPDATE_ORDER_SHIPPING_FAIL
 } from "../constants/orderConstants";
 
 const initialState = {
@@ -51,6 +54,25 @@ const orderReducer = (state = initialState, action) => {
                 error: ""
             };
         case ORDER_DETAILS_FAIL:
+            return {
+                ...state,
+                loading: false,
+                error: "An error occurred. Please contact support"
+            };
+        case UPDATE_ORDER_SHIPPING_REQUEST:
+            return {
+                ...state,
+                loading: true,
+                error: ""
+            };
+        case UPDATE_ORDER_SHIPPING_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                order: action.payload.order,
+                error: ""
+            };
+        case UPDATE_ORDER_SHIPPING_FAIL:
             return {
                 ...state,
                 loading: false,

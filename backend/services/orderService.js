@@ -4,6 +4,7 @@ const User = require('../models/user');
 
 const fetch = require('node-fetch');
 const Constants = require('../utils/constants');
+const ShipmentService = require('./shipmentService');
 
 const getUser = async (userDetails) => {
   const user = await User.find({ email: userDetails.email });
@@ -62,6 +63,31 @@ const subscribeForTracking = async ({ carrier, trackingNo, orderId }) => {
     .then((res) => res.json())
     .then((json) => console.log('====subscribe for tracking'));
 };
+
+const finalizeOrder = async ({ orderId, paymentIntentId }) => {
+  const paymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId);
+  const order = await Order.findById(orderId);
+  if (String(paymentIntent.metadata.orderId) === String(orderId) && order) {
+    //finalize order
+    order.paymentInfo = {
+      id: paymentIntentId,
+      status: paymentIntent.status,
+    };
+    order.paidAt = paymentIntent.created;
+    order.orderStatus = Constants.SUCCESS;
+    const updatedOrder = await order.save();
+
+    //shipping 
+    const { carrier, trackingNo } = await ShipmentService.createShipment({
+      order: orderId,
+      selectedCarrier: updatedOrder.selectedCarrier,
+    });
+    subscribeForTracking({ carrier, trackingNo, orderId });
+
+    return updatedOrder
+  }
+  throw new Error('Something when wrong')
+}
 const createOrder = async (
   {
     orderItems,
@@ -125,10 +151,23 @@ const updateOrderStatus = async (orderId, status) => {
   await order.save();
 };
 
+const updateOrderShipping = async (orderId, selectedCarrier, tax, total, shipping) => {
+  const order = await Order.findById(orderId);
+  order.selectedCarrier = selectedCarrier
+  order.taxPrice = tax
+  order.totalPrice = total
+  order.shippingPrice = shipping
+
+  const updatedOrder = await order.save();
+  return updatedOrder
+}
+
 const OrderService = {
   createOrder,
   updateOrderStatus,
   createDraftOrder,
+  updateOrderShipping,
+  finalizeOrder
 };
 
 module.exports = OrderService;

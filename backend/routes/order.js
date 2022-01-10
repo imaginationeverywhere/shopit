@@ -10,6 +10,7 @@ const {
   deleteOrder,
   draftOrder,
   finalizeOrder,
+  updateOrderShipping,
 } = require('../controllers/orderController');
 
 const { isAuthenticatedUser, authorizeRoles } = require('../middlewares/auth');
@@ -17,6 +18,7 @@ const { isAuthenticatedUser, authorizeRoles } = require('../middlewares/auth');
 router.route('/order/draft').post(draftOrder);
 router.route('/order/:orderId').get(getSingleOrder);
 router.route('/order/finalize').post(finalizeOrder);
+router.route('/order/update-shipping').post(updateOrderShipping);
 router.route('/order/new').post(isAuthenticatedUser, newOrder);
 
 router.route('/orders/me').get(isAuthenticatedUser, myOrders);

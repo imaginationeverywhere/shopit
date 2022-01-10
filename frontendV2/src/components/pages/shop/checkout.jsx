@@ -137,7 +137,7 @@ function Checkout(props) {
 
   useEffect(() => {
     if (order.order && order.order.orderId) {
-      props.history.push(`/shop/checkout/${order.order.orderId}`);
+      props.history.push(`/shop/shipping/${order.order.orderId}`);
     }
   }, [order.order]);
 
