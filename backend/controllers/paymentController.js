@@ -1,9 +1,17 @@
 const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
-
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+// import Stripe from 'stripe';
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
+  maxNetworkRetries:2
+});
 const Order = require('../models/order');
 
 // Process stripe payments   =>   /api/v1/payment/process
+
+
+// const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+//   maxNetworkRetries: 2
+// });
+
 exports.processPayment = catchAsyncErrors(async (req, res, next) => {
   const paymentIntent = await stripe.paymentIntents.create({
     amount: req.body.amount,

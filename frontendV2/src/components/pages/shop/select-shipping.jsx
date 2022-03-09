@@ -67,24 +67,23 @@ function SelectShipping(props) {
             shipmentId: selectedCarrier.shipment,
             serviceLevelToken: selectedCarrier.servicelevel.token
         }
-        dispatch(updateOrderShipping(orderId, carrier))
+        dispatch(updateOrderShipping(orderId, carrier, shippingPrice ))
     }
 
 
 
     if (order.order && order.order.selectedCarrier && order.order.selectedCarrier.carrierId) {
         props.history.push(`/shop/checkout/${orderId}`);
-    }
+    } 
 
-    if (order.loading || !Object.values(order.order).length) {
+    if (!order || order.loading || !Object.values(order.order).length || !order.order.user) {
+        console.log("loading overlay")
         return (
             <div className='reactloading'>
                 <LoadingOverlay />
             </div>
         )
-    }
-
-
+    } 
 
     return (
         <>
@@ -99,9 +98,7 @@ function SelectShipping(props) {
                 <PageHeader title="Checkout" subTitle="Shop" />
                 <Breadcrumb title="Checkout" parent1={["Shop", "shop/sidebar/list"]} />
 
-                <div className="page-content">
-                    {
-
+                <div className="page-content"> 
                         <div className="checkout">
                             <div className="container">
                                 <div className="checkout-discount">
@@ -194,7 +191,7 @@ function SelectShipping(props) {
                                     </aside>
                                 </div>
                             </div>
-                        </div>}
+                        </div>
                 </div>
             </div>
         </>

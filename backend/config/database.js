@@ -12,6 +12,9 @@ const connectDatabase = () => {
     })
     .then((con) => {
       console.log(`MongoDB Database connect with HOST: ${con.connection.host}`);
+    })
+    .catch(err => {
+      console.log(err)
     });
 };
 

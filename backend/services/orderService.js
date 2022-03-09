@@ -5,6 +5,9 @@ const User = require('../models/user');
 const fetch = require('node-fetch');
 const Constants = require('../utils/constants');
 const ShipmentService = require('./shipmentService');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
+  maxNetworkRetries:2
+});
 
 const getUser = async (userDetails) => {
   const user = await User.find({ email: userDetails.email });
@@ -78,11 +81,11 @@ const finalizeOrder = async ({ orderId, paymentIntentId }) => {
     const updatedOrder = await order.save();
 
     //shipping 
-    const { carrier, trackingNo } = await ShipmentService.createShipment({
-      order: orderId,
-      selectedCarrier: updatedOrder.selectedCarrier,
-    });
-    subscribeForTracking({ carrier, trackingNo, orderId });
+    // const { carrier, trackingNo } = await ShipmentService.createShipment({
+    //   order: orderId,
+    //   selectedCarrier: updatedOrder.selectedCarrier,
+    // });
+    // subscribeForTracking({ carrier, trackingNo, orderId });
 
     return updatedOrder
   }
@@ -151,14 +154,18 @@ const updateOrderStatus = async (orderId, status) => {
   await order.save();
 };
 
-const updateOrderShipping = async (orderId, selectedCarrier, tax, total, shipping) => {
+const updateOrderShipping = async (orderId, selectedCarrier,shippingPrice) => {
   const order = await Order.findById(orderId);
+  const tax = 0.05 * order.totalPrice
   order.selectedCarrier = selectedCarrier
   order.taxPrice = tax
-  order.totalPrice = total
-  order.shippingPrice = shipping
+  order.totalPrice = order.totalPrice + tax + shippingPrice
+  order.shippingPrice = shippingPrice
+
+  console.log(order)
 
   const updatedOrder = await order.save();
+  console.log(updatedOrder)
   return updatedOrder
 }
 

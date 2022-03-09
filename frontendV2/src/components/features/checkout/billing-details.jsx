@@ -114,7 +114,7 @@ const BillingDetails = ({
               className="form-control"
               defaultValue="#"
             >
-              <option disabled="disabled" defaultValue="sdfasf">
+              <option  defaultValue="sdfasf">
                 Select State
               </option>
               {Object.keys(states).map((state) => (

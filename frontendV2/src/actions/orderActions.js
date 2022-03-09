@@ -50,7 +50,7 @@ export const createDraftOrder = (order) => async (dispatch, getState) => {
   }
 };
 
-export const updateOrderShipping = (orderId, selectedCarrier, tax, total, shipping) => async (dispatch, getState) => {
+export const updateOrderShipping = (orderId, selectedCarrier, shippingPrice) => async (dispatch, getState) => {
   try {
     dispatch({ type: UPDATE_ORDER_SHIPPING_REQUEST });
     const config = {
@@ -61,9 +61,7 @@ export const updateOrderShipping = (orderId, selectedCarrier, tax, total, shippi
     const param = {
       orderId,
       selectedCarrier,
-      tax,
-      total,
-      shipping
+      shippingPrice
     }
     const { data } = await axiosInstance.post('order/update-shipping', param, config);
 

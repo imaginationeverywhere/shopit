@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import {
   getCarriers,
   setSelectedCarrier,
@@ -32,13 +33,14 @@ const addressFrom = {
 //   metadata: 'Hippos dont lie',
 // };
 
-const CarrierList = ({addressTo}) => {
+const CarrierList = ({ addressTo }) => {
 
   if (!addressTo) return null;
   const dispatch = useDispatch();
+
   const {
     cartlist: { cart },
-    carriers: { data: carriers, loading = true } = {},
+    carriers: { data: carriers, loading = true, showError } = {},
     selectedCarrier = {},
   } = useSelector((store) => store);
 
@@ -94,6 +96,19 @@ const CarrierList = ({addressTo}) => {
         }),
       });
     }
+    if (showError && !carriers.length) {
+      toast.error("No shipping available for your location. Please use a different address.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
+
+
+    }
   }, [carriers]);
   const handleCheckboxClick = (selectedCarrier) => {
     dispatch(setSelectedCarrier(selectedCarrier));
@@ -108,8 +123,7 @@ const CarrierList = ({addressTo}) => {
           <Table
             tableData={dataTable}
             checkbox
-            paginated
-            perPage={10}
+            paginated={false}
             handleCheckboxClick={handleCheckboxClick}
             selectedRow={selectedCarrier}
           />

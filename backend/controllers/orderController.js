@@ -31,12 +31,11 @@ exports.draftOrder = catchAsyncErrors(async (req, res, next) => {
 });
 
 exports.updateOrderShipping = catchAsyncErrors(async (req, res, next) => {
-  const { orderId, selectedCarrier, tax, total, shipping } = req.body;
-
+  const { orderId, selectedCarrier, shippingPrice } = req.body; 
 
   //validation ??
   try {
-    const order = await OrderService.updateOrderShipping(orderId, selectedCarrier, tax, total, shipping)
+    const order = await OrderService.updateOrderShipping(orderId, selectedCarrier,shippingPrice)
     res.status(200).json({
       success: true,
       order

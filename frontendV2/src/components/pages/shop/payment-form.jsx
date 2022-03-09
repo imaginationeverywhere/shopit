@@ -48,7 +48,7 @@ export default function PaymentForm(props) {
 
   return (
     <form id="payment-form" onSubmit={handleSubmit}>
-      <PaymentElement id="payment-element" />
+      <PaymentElement id="payment-element"  />
       <button
         className="btn btn-outline-primary-2 btn-order btn-block mt-2"
         disabled={isLoading || !stripe || !elements}

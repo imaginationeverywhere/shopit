@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { connect, useDispatch } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet';
 
 // import Custom Components
@@ -10,10 +10,11 @@ import Breadcrumb from '../../common/breadcrumb';
 import { getCartTotal } from '../../../services';
 import BillingDetails from '../../features/checkout/billing-details';
 import { createDraftOrder } from '../../../actions/orderActions';
+import { toast } from 'react-toastify';
 
 function Checkout(props) {
   const dispatch = useDispatch();
-
+  const { order: orders } = useSelector((store) => store);
   const { cartlist, total, order } = props;
 
   const [firstName, setFirstName] = useState('');
@@ -21,7 +22,7 @@ function Checkout(props) {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [extras, setExtras] = useState('');
-  const [state, setState] = useState('');
+  const [state, setState] = useState('CA');
   const [city, setCity] = useState('');
   const [street1, setStreet1] = useState('');
   const [street2, setStreet2] = useState('');
@@ -36,6 +37,31 @@ function Checkout(props) {
     express: 'Express',
   };
 
+  const removeURLParameter = (url, parameter) => {
+    const urlparts = url.split('?');
+    if (urlparts.length >= 2) {
+
+        const prefix = encodeURIComponent(parameter) + '=';
+        const pars = urlparts[1].split(/[&;]/g);
+
+        //reverse iteration as may be destructive
+        for (let i = pars.length; i-- > 0;) {
+            if (pars[i].lastIndexOf(prefix, 0) !== -1) {
+                pars.splice(i, 1);
+            }
+        }
+
+        return urlparts[0] + (pars.length > 0 ? '?' + pars.join('&') : '');
+    }
+    return url;
+  }
+
+  const removeURLParameters = (url, parameters ) =>  {
+    parameters.forEach(parameter => {
+      url = removeURLParameter(url, parameter)
+    })
+    return url
+  }
   useEffect(() => {
     let item = document.querySelector('#checkout-discount-input');
 
@@ -140,6 +166,21 @@ function Checkout(props) {
       props.history.push(`/shop/shipping/${order.order.orderId}`);
     }
   }, [order.order]);
+
+  useEffect(() => {
+    if (orders.error) {
+      toast.error(orders.error, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
+    }
+  }, [orders.error])
+
 
   return (
     <>
