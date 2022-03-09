@@ -15,7 +15,7 @@ import {
 } from '../utils';
 
 // import Actions
-import { closeQuickViewModal } from '../actions';
+import { closeQuickViewModal, getAdminProducts } from '../actions';
 
 // import data
 import { innerOverlayPaths } from '../mock_data/data';
@@ -119,6 +119,8 @@ function App(props) {
       setContainer('container');
     }
   });
+
+  store.dispatch(getAdminProducts());
 
   return (
     <>

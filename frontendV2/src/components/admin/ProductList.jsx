@@ -6,9 +6,9 @@ import DashboardButton from './common/components/DashboardButton';
 import { withRouter } from 'react-router-dom';
 
 const ProductList = ({ history }) => {
-  const { products } = useSelector((state) => state.data);
+  const { adminProducts: products } = useSelector(state => state.data);
   return (
-    <>
+    <div className="p-8">
       <Helmet>
         <title>Shopit|Admin Templates</title>
       </Helmet>
@@ -53,7 +53,7 @@ const ProductList = ({ history }) => {
           </tbody>
         </table>
       </div>
-    </>
+    </div>
   );
 };
 

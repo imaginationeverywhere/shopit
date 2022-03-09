@@ -9,7 +9,6 @@ input {
   position: relative;
 
   label {
-    font-family: 'Avenir_Heavy';
     font-style: normal;
     font-weight: normal;
     font-size: 1em;
@@ -36,7 +35,6 @@ input {
     color: #667e93;
     box-sizing: border-box;
     border-radius: 10px;
-    font-family: 'Avenir_Roman';
     font-size: 1em;
     padding-top: 10px;
     flex-grow: 1;
@@ -49,7 +47,6 @@ input {
     font-weight: 500;
 
     &::placeholder {
-      font-family: 'Avenir_Book';
       font-size: 0.9em;
       font-weight: 400;
       color: rgb(112, 112, 112);
@@ -63,7 +60,6 @@ input {
   small {
     margin: 0;
     padding: 0 0.5em;
-    font-family: 'Avenir_Roman';
     color: #eb5757;
     font-size: 0.9em;
   }

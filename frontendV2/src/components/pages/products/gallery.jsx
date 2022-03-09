@@ -9,8 +9,9 @@ import MediaTwo from './partials/media/media-two';
 import DescOne from './partials/description/desc-one';
 import RelatedProducts from './partials/related-products';
 import DetailFour from './partials/details/detail-four';
+import withSingleProduct from '../../../utils/withSingleProduct';
 
-export default function GalleryProduct(props) {
+function GalleryProduct(props) {
   let productId = props.match.params.id;
 
   useEffect(() => {
@@ -18,7 +19,7 @@ export default function GalleryProduct(props) {
 
     let imgLoad = imagesLoaded('.product-lg', { background: true });
 
-    imgLoad.on('done', function (instance, image) {
+    imgLoad.on('done', function(instance, image) {
       if (document.querySelector('.skel-pro-single')) {
         document.querySelector('.skel-pro-single').classList.add('loaded');
       }
@@ -94,3 +95,5 @@ export default function GalleryProduct(props) {
     </>
   );
 }
+
+export default withSingleProduct(GalleryProduct);

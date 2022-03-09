@@ -6,7 +6,7 @@ import storage from 'redux-persist/lib/storage';
 
 const initialState = {
   value: { min: 0, max: 10000 },
-  sortBy: 'popularity',
+  sortBy: 'createdAt',
   category: [],
   size: [],
   color: [],
@@ -56,7 +56,7 @@ function filterReducer(state = initialState, action) {
       }
       return {
         ...state,
-        size: size,
+        size,
       };
 
     case types.COLOR_FILTER:

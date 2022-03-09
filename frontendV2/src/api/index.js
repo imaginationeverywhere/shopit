@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { getProductImages } from '../utils';
 
 axios.interceptors.response.use(null, (error) => {
   // clear token for 401 error
@@ -21,11 +22,97 @@ export const axiosInstance = axios.create({
   },
 });
 
+let currentCancelToken;
+
 // API to get products from mock server
-export const getProducts = function () {
+export const getProductsWithFilters = function(queries = {}) {
+  const query = `products/withFilters?page=${queries?.page ||
+    1}&pageSize=${queries?.pageSize || 4}`;
+
+  if (currentCancelToken) {
+    currentCancelToken.cancel();
+  }
+
+  currentCancelToken = axios.CancelToken?.source();
+
+  const getproducts = currentCancelToken
+    ? axiosInstance.post(
+        query,
+        { filters: queries },
+        { cancelToken: currentCancelToken?.token },
+      )
+    : axiosInstance.post(query, { filters: queries });
+
+  return getproducts
+    .then(function(response) {
+      if (response?.data?.products) {
+        const payload = response.data;
+        const products = payload.products.map(({ _id, sizes, ...rest }) => ({
+          ...rest,
+          id: _id,
+          size: sizes,
+          sizes,
+          ...getProductImages(rest?.productImages),
+        }));
+
+        currentCancelToken = null;
+        return { ...payload, products };
+      } else throw new Error('Products do not exist');
+    })
+    .catch(function(error) {
+      // handle error
+      console.log(error);
+    });
+};
+
+export const getProducts = function(queries = {}) {
   return axiosInstance
-    .get('products')
-    .then(function (response) {
+    .get(
+      `products?page=${queries?.page || 1}&pageSize=${queries?.pageSize || 4}`,
+    )
+    .then(function(response) {
+      if (response?.data?.products) {
+        const payload = response.data;
+        const products = payload.products.map(({ _id, sizes, ...rest }) => ({
+          ...rest,
+          id: _id,
+          size: sizes,
+          sizes,
+          ...getProductImages(rest?.productImages),
+        }));
+        return { ...payload, products };
+      } else throw new Error('Products do not exist');
+    })
+    .catch(function(error) {
+      // handle error
+      console.log(error);
+    });
+};
+
+export const getSingleProduct = function(id) {
+  return axiosInstance
+    .get(`product/${id}`)
+    .then(function(response) {
+      if (response.data.product) {
+        const myData = {
+          ...response.data.product,
+          ...getProductImages(response.data.product?.productImages),
+        };
+        return myData;
+      } else {
+        throw new Error('Invalid product id');
+      }
+    })
+    .catch(function(error) {
+      // handle error
+      console.log(error);
+    });
+};
+
+export const getAdminProducts = function() {
+  return axiosInstance
+    .get('admin/products')
+    .then(function(response) {
       const myData =
         response.data &&
         response.data.products.map(({ _id, sizes, ...rest }) => ({
@@ -33,14 +120,10 @@ export const getProducts = function () {
           id: _id,
           size: sizes,
           sizes,
-          rawSmPictures: rest.smPictures,
-          rawPictures: rest.pictures,
-          smPictures: rest.smPictures.filter((url) => !!url),
-          pictures: rest.pictures.filter((url) => !!url),
         }));
       return myData;
     })
-    .catch(function (error) {
+    .catch(function(error) {
       // handle error
       console.log(error);
     });
@@ -52,37 +135,37 @@ const myHeaders = () => {
   };
 };
 
-export const getTemplates = function () {
+export const getTemplates = function() {
   return axiosInstance
     .get('templates')
-    .then(function (response) {
+    .then(function(response) {
       return response.data;
     })
-    .catch(function (error) {
+    .catch(function(error) {
       // handle error
       console.log(error);
     });
 };
 
-export const previewTemplate = function (templateId) {
+export const previewTemplate = function(templateId) {
   return axiosInstance
     .get('templates', { templateId })
-    .then(function (response) {
+    .then(function(response) {
       return response.data;
     })
-    .catch(function (error) {
+    .catch(function(error) {
       // handle error
       console.log(error);
     });
 };
 
-export const setTemplate = function (templateId) {
+export const setTemplate = function(templateId) {
   return axiosInstance
     .post('templates', { templateId })
-    .then(function (response) {
+    .then(function(response) {
       return response.data;
     })
-    .catch(function (error) {
+    .catch(function(error) {
       // handle error
       console.log(error);
     });
@@ -100,14 +183,12 @@ export const register = async (values) => {
 
 export const addProducts = async ({ body }) => {
   return axiosInstance.post('admin/product/new', body, {
-    contentType: 'multipart/form-data',
     headers: myHeaders(),
   });
 };
 
 export const updateProducts = async ({ id, body }) => {
   return axiosInstance.put(`admin/product/${id}`, body, {
-    contentType: 'multipart/form-data',
     headers: myHeaders(),
   });
 };
@@ -122,9 +203,30 @@ export const deleteProducts = async ({ id }) => {
   );
 };
 
-export const newShippingInfo = async paylpad => {
+export const addProductImage = async ({ body, productId }) => {
+  return axiosInstance.post(`admin/productImage/${productId}`, body, {
+    contentType: 'multipart/form-data',
+    headers: myHeaders(),
+  });
+};
+
+export const updateProductImage = async ({ productId, body }) => {
+  return axiosInstance.put(`admin/productImage/${productId}`, body, {
+    contentType: 'multipart/form-data',
+    headers: myHeaders(),
+  });
+};
+
+export const deleteProductImage = async ({ productId, body }) => {
+  return axiosInstance.put(`admin/removeProductImage/${productId}`, body, {
+    headers: myHeaders(),
+  });
+};
+
+export const newShippingInfo = async (paylpad) => {
   return axiosInstance.post('address/new', paylpad, {});
 };
-export const updateShippingInfo = async paylpad => {
+
+export const updateShippingInfo = async (paylpad) => {
   return axiosInstance.put('/address/update', paylpad, {});
 };

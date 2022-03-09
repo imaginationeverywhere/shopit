@@ -16,41 +16,30 @@ import {
   filterPrice,
 } from '../../../actions';
 import { findIndex } from '../../../utils';
+import {
+  brands,
+  categories,
+  colors,
+  sizes,
+} from 'components/admin/utils/helpers';
 
 function ShopSidebar(props) {
-  const [value, setValue] = useState({ max: 1000000, min: 0 });
-  const [toggle, setToggle] = useState(false);
-  const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
-  const brands = [
-    'Next',
-    'River Island',
-    'Geox',
-    'New Balance',
-    'UGG',
-    'F&F',
-    'Nike',
-  ];
-  const colors = [
-    '#b87145',
-    '#f0c04a',
-    '#333333',
-    '#cc3333',
-    '#3399cc',
-    '#669933',
-    '#f2719c',
-    '#ebebeb',
-  ];
-  let categoryCountArr = [];
-  const { filters, products } = props;
-
-  _data.shop_categories.map((item, index) => {
-    return categoryCountArr.push(
-      getCountByCategory(
-        products.slice(0, 47),
-        item.name && item.name.toLowerCase(),
-      ),
-    );
+  const [value, setValue] = useState({
+    max: props?.productsInfo?.maxPrice || 10000,
+    min: props?.productsInfo?.minPrice || 0,
   });
+  const [toggle, setToggle] = useState(false);
+
+  const { filters, products } = props;
+  //  let categoryCountArr = [];
+  // _data.shop_categories.map((item, index) => {
+  //   return categoryCountArr.push(
+  //     getCountByCategory(
+  //       products.slice(0, 47),
+  //       item.name && item.name.toLowerCase(),
+  //     ),
+  //   );
+  // });
 
   useEffect(() => {
     window.addEventListener('resize', resizeHandle);
@@ -145,7 +134,7 @@ function ShopSidebar(props) {
                 <div ref={setCollapsibleElement}>
                   <div className="widget-body">
                     <div className="filter-items filter-items-count">
-                      {_data.shop_categories.map((item, index) => (
+                      {categories.map((item, index) => (
                         <div className="filter-item" key={`cat_${index}`}>
                           <div className="custom-control custom-checkbox">
                             <input
@@ -153,13 +142,13 @@ function ShopSidebar(props) {
                               className="custom-control-input"
                               id={`cat-${index + 1}`}
                               onClick={(e) =>
-                                props.toggleCategoryFilter(item.name)
+                                props.toggleCategoryFilter(item.value)
                               }
                               defaultChecked={
                                 -1 <
                                 findIndex(
                                   filters['category'],
-                                  (filter) => filter === item.name,
+                                  (filter) => filter === item.value,
                                 )
                                   ? true
                                   : false
@@ -170,12 +159,12 @@ function ShopSidebar(props) {
                               className="custom-control-label"
                               htmlFor={`cat-${index + 1}`}
                             >
-                              {item.name}
+                              {item.label}
                             </label>
                           </div>
-                          <span className="item-count">
+                          {/* <span className="item-count">
                             {categoryCountArr[index]}
-                          </span>
+                          </span> */}
                         </div>
                       ))}
                     </div>
@@ -213,12 +202,14 @@ function ShopSidebar(props) {
                               type="checkbox"
                               className="custom-control-input"
                               id={`size-${index + 1}`}
-                              onClick={(e) => props.toggleSizeFilter(item)}
+                              onClick={(e) =>
+                                props.toggleSizeFilter(item?.value)
+                              }
                               defaultChecked={
                                 -1 <
                                 findIndex(
                                   filters['size'],
-                                  (filter) => filter === item,
+                                  (filter) => filter === item?.value,
                                 )
                                   ? true
                                   : false
@@ -228,7 +219,7 @@ function ShopSidebar(props) {
                               className="custom-control-label"
                               htmlFor={`size-${index + 1}`}
                             >
-                              {item}
+                              {item.label}
                             </label>
                           </div>
                         </div>
@@ -318,12 +309,14 @@ function ShopSidebar(props) {
                               type="checkbox"
                               className="custom-control-input"
                               id={`brand-${index + 1}`}
-                              onClick={(e) => props.toggleBrandFilter(item)}
+                              onClick={(e) =>
+                                props.toggleBrandFilter(item?.value)
+                              }
                               defaultChecked={
                                 -1 <
                                 findIndex(
                                   filters['brand'],
-                                  (filter) => filter === item,
+                                  (filter) => filter === item?.value,
                                 )
                                   ? true
                                   : false
@@ -333,7 +326,7 @@ function ShopSidebar(props) {
                               className="custom-control-label"
                               htmlFor={`brand-${index + 1}`}
                             >
-                              {item}
+                              {item.label}
                             </label>
                           </div>
                         </div>
@@ -377,9 +370,9 @@ function ShopSidebar(props) {
                       <div className="price-slider">
                         <InputRange
                           formatLabel={(value) => `$${value}`}
-                          maxValue={100000}
-                          minValue={0}
-                          step={50}
+                          maxValue={props?.productsInfo?.maxPrice || 10000}
+                          minValue={props?.productsInfo?.minPrice || 0}
+                          step={10}
                           value={value}
                           onChange={(value) => {
                             setValue(value);
@@ -411,6 +404,7 @@ export const mapStateToProps = (state) => {
   return {
     filters: state.filters,
     products: state.data.products ? state.data.products : [],
+    productsInfo: state.data.productsInfo || {},
   };
 };
 

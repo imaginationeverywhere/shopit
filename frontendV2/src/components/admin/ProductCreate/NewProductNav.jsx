@@ -7,10 +7,21 @@ const NewProductNav = ({
   submitLoading,
   updateType,
   deleteProduct,
+  hasImages,
 }) => {
   return (
     <header className="flexed-row flexed-space-between">
-      <h5>{updateType ? 'Product update' : 'New product'}</h5>
+      <div className="flexed-row">
+        <h5>{updateType ? 'Product update' : 'New product'}</h5>
+        <div className="no-image-warning">
+          <span style={{ color: hasImages ? '#666' : '' }}>
+            {hasImages
+              ? 'Modify Products'
+              : '*NOTE: Provide at least an image for product to display on shop list'}
+          </span>
+        </div>
+      </div>
+
       <div style={{ display: 'flex' }} className="flexed-row">
         {!updateType && (
           <DashboardButton

@@ -9,6 +9,7 @@ import Breadcrumb from '../../common/breadcrumb';
 import QuickView from '../../features/product/common/quickview';
 
 import { productGallery, isotopeLoad, setStickyValues } from '../../../utils';
+import withSingleProduct from '../../../utils/withSingleProduct';
 
 function MasonryProduct(props) {
   let productId = props.match.params.id;
@@ -20,7 +21,7 @@ function MasonryProduct(props) {
 
     let imgLoad = imagesLoaded('.product-main-image', { background: true });
 
-    imgLoad.on('done', function (instance, image) {
+    imgLoad.on('done', function(instance, image) {
       document.querySelector('.skel-pro-single').classList.add('loaded');
       isotopeLoad(
         isotope,
@@ -92,4 +93,4 @@ function MasonryProduct(props) {
   );
 }
 
-export default MasonryProduct;
+export default withSingleProduct(MasonryProduct);

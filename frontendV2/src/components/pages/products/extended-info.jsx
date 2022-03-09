@@ -11,8 +11,9 @@ import DescTwo from './partials/description/desc-two';
 import RelatedProducts from './partials/related-products';
 
 import { productGallery } from '../../../utils';
+import withSingleProduct from '../../../utils/withSingleProduct';
 
-export default function ExtendedInfo(props) {
+function ExtendedInfo(props) {
   const productId = props.match.params.id;
 
   useEffect(() => {
@@ -22,7 +23,7 @@ export default function ExtendedInfo(props) {
 
     let imgLoad = imagesLoaded('.product-main-image', { background: true });
 
-    imgLoad.on('done', function (instance, image) {
+    imgLoad.on('done', function(instance, image) {
       document.querySelector('.skel-pro-single').classList.add('loaded');
     });
   }, [productId]);
@@ -88,3 +89,5 @@ export default function ExtendedInfo(props) {
     </>
   );
 }
+
+export default withSingleProduct(ExtendedInfo);

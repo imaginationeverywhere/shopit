@@ -1,12 +1,12 @@
 main {
   width: 100%;
   min-height: 100vh;
-  padding: 0 2.5rem 1rem 2.5rem;
+  padding: 0 0 1rem 0;
 }
 
 .admin {
   &-page-wrapper {
-    padding: 0 10px 0 0;
+    padding: 0 0 0 0;
     display: flex;
   }
   &-content-wrapper {

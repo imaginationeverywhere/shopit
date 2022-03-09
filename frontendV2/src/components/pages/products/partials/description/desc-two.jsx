@@ -1,3 +1,4 @@
+import MarkdownPreview from 'components/admin/common/components/MarkdownPreview';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -30,127 +31,12 @@ function DescTwo(props) {
         </TabList>
 
         <div className="tab-content">
-          <TabPanel className="tab-pane">
-            <div className="product-desc-content">
-              <div
-                className="product-desc-row bg-image"
-                style={{
-                  backgroundImage: `url(${process.env.PUBLIC_URL}/assets/images/products/single/extended/bg-1.jpg)`,
-                }}
-              >
-                <div className="container">
-                  <div className="row justify-content-end">
-                    <div className="col-sm-6 col-lg-4">
-                      <h2>Product Information</h2>
-                      <ul>
-                        <li>Faux suede fabric upper</li>
-                        <li>Tie strap buckle detail</li>
-                        <li>Block heel</li>
-                        <li>Open toe</li>
-                        <li>Heel Height: 7cm / 2.5 inches</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                className="product-desc-row bg-image text-white"
-                style={{
-                  backgroundImage: `url(${process.env.PUBLIC_URL}/assets/images/products/single/extended/bg-2.jpg)`,
-                }}
-              >
-                <div className="container">
-                  <div className="row">
-                    <div className="col-md-6">
-                      <h2>Design</h2>
-                      <p>
-                        The perfect choice for the summer months. These wedges
-                        are perfect for holidays and home, with the thick
-                        cross-over strap design and heel strap with an
-                        adjustable buckle fastening. Featuring chunky soles with
-                        an espadrille and cork-style wedge.{' '}
-                      </p>
-                    </div>
-
-                    <div className="col-md-6">
-                      <h2>Fabric & care</h2>
-                      <p>
-                        As part of our Forever Comfort collection, these wedges
-                        have ultimate cushioning with soft padding and flexi
-                        soles. Perfect for strolls into the old town on holiday
-                        or a casual wander into the village.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="mb-5"></div>
-
-                  <img
-                    src={`${process.env.PUBLIC_URL}/assets/images/products/single/extended/sign.png`}
-                    alt=""
-                    className="ml-auto mr-auto"
-                  />
-                </div>
-              </div>
-
-              <div
-                className="product-desc-row bg-image"
-                style={{
-                  backgroundImage: `url(${process.env.PUBLIC_URL}/assets/images/products/single/extended/bg-3.jpg)`,
-                }}
-              >
-                <div className="container">
-                  <div className="row">
-                    <div className="col-lg-5">
-                      <blockquote>
-                        <p>
-                          “ Everything is important - <br />
-                          that success is in the details. ”
-                        </p>
-
-                        <cite>– Steve Jobs</cite>
-                      </blockquote>
-                      <p>
-                        Nullam mollis. Ut justo. Suspendisse potenti. Sed
-                        egestas, ante et vulputate volutpat, eros pede semper
-                        est, vitae luctus metus libero eu augue.{' '}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <TabPanel className="tab-pane">
+            <MarkdownPreview text={product?.shortDesc} />
           </TabPanel>
 
           <TabPanel className="tab-pane">
-            <div className="product-desc-content">
-              <div className="container">
-                <h3>Information</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Donec odio. Quisque volutpat mattis eros. Nullam malesuada
-                  erat ut turpis. Suspendisse urna viverra non, semper suscipit,
-                  posuere a, pede. Donec nec justo eget felis facilisis
-                  fermentum. Aliquam porttitor mauris sit amet orci.{' '}
-                </p>
-
-                <h3>Fabric & care</h3>
-                <ul>
-                  <li>Faux suede fabric</li>
-                  <li>Gold tone metal hoop handles.</li>
-                  <li>RI branding</li>
-                  <li>Snake print trim interior </li>
-                  <li>Adjustable cross body strap</li>
-                  <li>
-                    {' '}
-                    Height: 31cm; Width: 32cm; Depth: 12cm; Handle Drop: 61cm
-                  </li>
-                </ul>
-                <h3>Size</h3>
-                <p>one size</p>
-              </div>
-            </div>
+            <MarkdownPreview text={product?.shortDesc} />
           </TabPanel>
 
           <TabPanel className="tab-pane">
@@ -272,9 +158,7 @@ function DescTwo(props) {
 
 function mapStateToProps(state, props) {
   return {
-    product: state.data.products.filter(
-      (product) => product.id === props.id,
-    )[0],
+    product: state.data.singleProduct,
   };
 }
 

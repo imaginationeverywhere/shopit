@@ -1,6 +1,6 @@
 .productcreate {
   padding: 1.5em;
-  // height: calc(100vh - 60px);
+  height: 100vh;
   overflow-y: scroll;
   input,
   select {
@@ -49,7 +49,6 @@
         transform: scale(0.8);
       }
       h3 {
-        font-family: 'Avenir_Heavy';
         font-size: 1.3em;
         margin: 0;
         margin-bottom: 1em;
@@ -59,7 +58,6 @@
       }
 
       p {
-        font-family: 'Avenir_Medium';
         font-size: 1em;
         margin: 0.5em 0 1em;
         margin-bottom: 1em;
@@ -67,7 +65,6 @@
         color: #595d6e;
       }
       span {
-        font-family: 'Avenir_Book';
         color: #595d6e;
       }
       .button-wrap {
@@ -80,7 +77,6 @@
           margin: 0 1em;
           cursor: pointer;
           span {
-            font-family: 'Avenir_Heavy';
             font-size: 1em;
             margin: 0 auto;
             text-align: center;
@@ -161,7 +157,7 @@
 
   .new-product-div {
     background-color: white;
-    min-height: 80vh;
+    // min-height: 80vh;
     margin: 0 auto;
     border: 1px solid #e2e5ec;
     border-radius: 4px;
@@ -172,20 +168,11 @@
       h4 {
         font-size: 1em;
         margin: 0;
-        font-family: 'Avenir_Heavy';
         color: #464457;
       }
       .marg-2 {
         margin: 0 1em;
       }
-    }
-
-    .image-upload-wrap {
-      padding: 1.5em;
-      background-color: #fef9f9;
-      border-bottom: 1px solid #e2e5ec;
-      display: flex;
-      justify-content: space-between;
     }
 
     .product-form {
@@ -222,7 +209,21 @@
           border: 0.4px dashed #636363c5;
         }
       }
+      .show-img-wrap {
+        margin-top: 3em;
 
+        .product-img-placeholder {
+          width: 100%;
+          object-fit: contain;
+          margin: 0 auto;
+          max-height: 400px;
+          cursor: pointer;
+        }
+        .show-img-btn {
+          width: 100%;
+          margin-top: 1em;
+        }
+      }
       .form-header {
         display: flex;
         border-bottom: 1px solid #e2e5ec;
@@ -233,7 +234,7 @@
           border-bottom: 3px solid transparent;
           span {
             font-size: 1em;
-            font-family: 'Avenir_Medium';
+
             color: #464457;
           }
         }
@@ -251,13 +252,11 @@
           border-right: 1px solid #e2e5ec;
           .general-form {
             padding: 1.5em;
-            height: 560px;
           }
           .product-name-info {
             display: grid;
             grid-template-columns: 48% 24% 24%;
             column-gap: 2%;
-            margin-bottom: 1.5em;
           }
 
           .weight-info {
@@ -273,33 +272,9 @@
             margin-top: 1.5em;
           }
 
-          .attributes-form {
-            padding: 1.5em;
-            height: 480px;
-            overflow-y: scroll;
-            .attr-info {
-              display: grid;
-              grid-template-columns: 42% 42% 10%;
-              column-gap: 2%;
-              margin-top: 1.5em;
-              align-items: flex-end;
-              margin-bottom: 2em;
-
-              .delete-btn {
-                max-width: 40px;
-                padding: 0.6em;
-                background-color: #f7f7fa;
-                border: 1px solid #e2e5ec;
-                border-radius: 5px;
-                height: 2.3em;
-                cursor: pointer;
-              }
-            }
-          }
-
           h5 {
             font-size: 1em;
-            font-family: 'Avenir_Heavy';
+
             color: #595d6e;
             text-align: center;
             margin: 0.7em auto;
@@ -308,9 +283,10 @@
         }
 
         .price-form {
-          width: 30%;
+          min-width: 30%;
           padding: 2em 1.5em;
           height: 400px;
+          // width: 350px;
         }
       }
 
@@ -328,7 +304,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 90vw;
     position: relative;
     .cut-icon {
       position: absolute;
@@ -341,6 +317,24 @@
       width: 100%;
       display: flex;
       justify-content: space-between;
+    }
+  }
+  .image-upload-wrap-border {
+    width: 90vw;
+    max-width: 1200px;
+    background-color: #fef9f9;
+    padding: 2em 0;
+    header {
+      align-items: center;
+      padding: 1em 3em;
+      padding-top: 0;
+      border-bottom: 1px solid #e2e5ec;
+    }
+    .image-upload-wrap {
+      padding: 2em 3em;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
   }
 }

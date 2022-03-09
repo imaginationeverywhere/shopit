@@ -97,7 +97,7 @@ function StickyBar(props) {
 }
 
 const mapStateToProps = (state, props) => ({
-  product: state.data.products.filter((product) => product.id === props.id)[0],
+  product: state.data.singleProduct, // state.data?.singleProduct?.price ? state.data.singleProduct : state.data.products.filter(product => product.id === props.id)[0],
   isWishlist:
     findIndex(state.wishlist.list, (item) => item.id === props.id) !== -1
       ? true

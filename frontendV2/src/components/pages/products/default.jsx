@@ -12,6 +12,7 @@ import Breadcrumb from '../../common/breadcrumb';
 import QuickView from '../../features/product/common/quickview';
 
 import { productGallery } from '../../../utils';
+import withSingleProduct from '../../../utils/withSingleProduct';
 
 function SingleProduct(props) {
   let productId = props.match.params.id;
@@ -23,7 +24,7 @@ function SingleProduct(props) {
 
     let imgLoad = imagesLoaded('.product-main-image', { background: true });
 
-    imgLoad.on('done', function (instance, image) {
+    imgLoad.on('done', function(instance, image) {
       document.querySelector('.skel-pro-single').classList.add('loaded');
     });
   }, [productId]);
@@ -89,4 +90,4 @@ function SingleProduct(props) {
   );
 }
 
-export default SingleProduct;
+export default withSingleProduct(SingleProduct);

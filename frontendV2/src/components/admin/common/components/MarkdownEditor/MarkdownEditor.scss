@@ -1,0 +1,49 @@
+.markdown {
+  width: 100%;
+  margin: 1em auto;
+
+  .w-md-editor {
+    box-shadow: none;
+    font: normal 300 0.9em 'Poppins';
+    color: #464457;
+  }
+
+  .w-md-editor-text-input::selection {
+    -webkit-text-fill-color: white !important;
+  }
+
+  .w-md-editor-text {
+    line-height: unset !important;
+    font-size: 1.05em;
+  }
+  .w-md-editor-toolbar {
+    background-color: transparent;
+  }
+  .wmde-markdown {
+    font-size: 0.9em;
+  }
+  .markd-cover {
+    border: 1px solid #e2e5ec;
+    padding: 0.5em 0;
+    .span-wrapper {
+      display: flex;
+      padding: 0.5em 1em;
+      span {
+        margin-right: 0.5em;
+        display: block;
+        border: 1px solid transparent;
+        padding: 0.2em 0.5em;
+        cursor: pointer;
+      }
+      .active-span {
+        border: 1px solid #e2e5ec;
+      }
+    }
+  }
+  label {
+    display: block;
+    color: #464457;
+    font-size: 1em;
+    margin-bottom: 0.6em;
+  }
+}

@@ -2,7 +2,6 @@ import React from 'react';
 import ColorVariantComp from './ColorVariantComp';
 import DashboardInput from '../common/components/DashboardInput';
 import DashboardSelect from '../common/components/DashboardSelect';
-import DashboardTextArea from '../common/components/DashboardTextArea';
 
 import PriceInput from '../common/components/PriceInput';
 import {
@@ -13,12 +12,19 @@ import {
   distanceList,
 } from '../utils/helpers';
 import Select from '../common/components/Select';
+import DashboardButton from '../common/components/DashboardButton';
+import MarkdownEditor from '../common/components/MarkdownEditor/newEditor';
 
 const ProductForm = ({
   formValues,
   handleChange,
   loading: addProductLoading,
+  setShowProductImages,
+  productImages,
 }) => {
+  const firstOrNoImage =
+    productImages?.[0]?.url ||
+    'https://res.cloudinary.com/dflmq4zxb/image/upload/v1641064670/noimage1_b8pkau.svg';
   return (
     <div className="product-form">
       <div className="form-main flexed-row">
@@ -32,22 +38,22 @@ const ProductForm = ({
                 labelName="Product Name"
                 required
               />
-              <DashboardInput
-                labelName="Weight"
-                name="weight"
-                value={formValues.weight}
-                onChange={handleChange}
-                type="number"
-                required
-                disabled={addProductLoading}
-              />
-              <Select
+                           <Select
                 onChange={handleChange}
                 label="Mass Unit"
                 placeholder=" "
                 name="mass_unit"
                 value={formValues.mass_unit}
                 options={massList}
+                required
+                disabled={addProductLoading}
+              />
+              <DashboardInput
+                labelName="Weight"
+                name="weight"
+                value={formValues.weight}
+                onChange={handleChange}
+                type="number"
                 required
                 disabled={addProductLoading}
               />
@@ -76,7 +82,18 @@ const ProductForm = ({
               disabled={addProductLoading}
             />
             <div className="weight-info">
-              <DashboardInput
+               <DashboardSelect
+              onChange={handleChange}
+              label="Sizes"
+              placeholder=" "
+              name="sizes"
+              value={formValues.sizes}
+              options={sizes}
+              required
+              isMulti
+              disabled={addProductLoading}
+            />
+                <DashboardInput
                 labelName="Stock"
                 name="stock"
                 value={formValues.stock}
@@ -85,68 +102,64 @@ const ProductForm = ({
                 required
                 disabled={addProductLoading}
               />
-              <DashboardSelect
+            </div>
+
+            <div className="weight-info">
+            <div className="weight-info">
+              <Select
                 onChange={handleChange}
-                label="Sizes"
+                label="Dimensions unit"
                 placeholder=" "
-                name="sizes"
-                value={formValues.sizes}
-                options={sizes}
+                name="distance_unit"
+                value={formValues.distance_unit}
+                options={distanceList}
                 required
-                isMulti
                 disabled={addProductLoading}
               />
+              <DashboardInput
+                labelName="Height"
+                type="number"
+                name="height"
+                value={formValues.height}
+                disabled={addProductLoading}
+                onChange={handleChange}
+                required
+              />
             </div>
-            <div className="weight-info mt-1">
-              <div className="weight-info">
-                <DashboardInput
-                  labelName="Length (in)"
-                  type="number"
-                  name="length"
-                  value={formValues.length}
-                  disabled={addProductLoading}
-                  onChange={handleChange}
-                  required
-                />
-                <DashboardInput
-                  labelName="Width (in)"
-                  type="number"
-                  name="width"
-                  value={formValues.width}
-                  disabled={addProductLoading}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="weight-info">
-                <DashboardInput
-                  labelName="Height (in)"
-                  type="number"
-                  name="height"
-                  value={formValues.height}
-                  disabled={addProductLoading}
-                  onChange={handleChange}
-                  required
-                />
-                <Select
-                  onChange={handleChange}
-                  label="Distance Unit"
-                  placeholder=" "
-                  name="distance_unit"
-                  value={formValues.distance_unit}
-                  options={distanceList}
-                  required
-                  disabled={addProductLoading}
-                />
-              </div>
+            <div className="weight-info">
+              <DashboardInput
+                labelName="Length"
+                type="number"
+                name="length"
+                value={formValues.length}
+                disabled={addProductLoading}
+                onChange={handleChange}
+                required
+              />
+              <DashboardInput
+                labelName="Width"
+                type="number"
+                name="width"
+                value={formValues.width}
+                disabled={addProductLoading}
+                onChange={handleChange}
+                required
+              />
             </div>
-            <DashboardTextArea
+            </div>
+            {/* <DashboardTextArea
               labelName="Description"
               name="shortDesc"
               value={formValues.shortDesc}
               onChange={handleChange}
               required
-            />
+            /> */}
+            <MarkdownEditor  
+              labelName="Description"
+              name="shortDesc"
+              value={formValues.shortDesc}
+              handleChange={handleChange}
+              required />
           </div>
         </div>
         <div className="price-form">
@@ -163,6 +176,22 @@ const ProductForm = ({
             variants={formValues.variants}
             handleChange={handleChange}
           />
+          {setShowProductImages && (
+            <div className="show-img-wrap">
+              <img
+                className="product-img-placeholder"
+                src={firstOrNoImage}
+                alt="view-img"
+                onClick={() => setShowProductImages(true)}
+              />
+              <DashboardButton
+                classes="show-img-btn"
+                name="Open Product Images"
+                onClick={() => setShowProductImages(true)}
+                colored
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>

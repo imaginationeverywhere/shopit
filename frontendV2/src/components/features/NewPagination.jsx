@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 function Pagination(props) {
-  const { aclass, count = 12, unit = 6, filters, cols } = props;
+  const { aclass, count = 12, filters, cols, pageCount } = props;
 
   const [pos, setPos] = useState(1);
 
-  let pageCount = parseInt(count / unit) + (0 < count % unit ? 1 : 0);
+  // let pageCount = parseInt(count / (unit * pos));
   let pageNumbers = [];
 
   for (let i = -1; i < 2 && pageCount >= 3; i++) {
@@ -22,26 +22,26 @@ function Pagination(props) {
     setPos(1);
 
     if (props.onChange) {
-      props.onChange(0, 0);
+      props.onChange(1);
     }
   }, [filters, cols]);
 
   function onPageLink(e, index) {
     setPos(index);
 
-    if (props.onChange) props.onChange((index - 1) * props.unit, index - 1);
+    if (props.onChange) props.onChange(index);
   }
 
   function onPrev(e) {
     setPos(pos - 1);
 
-    if (props.onChange) props.onChange((pos - 2) * props.unit, pos - 2);
+    if (props.onChange) props.onChange(pos - 1);
   }
 
   function onNext(e) {
     setPos(pos + 1);
 
-    if (props.onChange) props.onChange(pos * props.unit, pos);
+    if (props.onChange) props.onChange(pos + 1);
   }
 
   return (

@@ -10,8 +10,9 @@ import DescOne from './partials/description/desc-one';
 import RelatedProducts from './partials/related-products';
 
 import { productGallery } from '../../../utils';
+import withSingleProduct from '../../../utils/withSingleProduct';
 
-export default function CenteredProduct(props) {
+function CenteredProduct(props) {
   const productId = props.match.params.id;
 
   useEffect(() => {
@@ -21,7 +22,7 @@ export default function CenteredProduct(props) {
 
     let imgLoad = imagesLoaded('.product-main-image', { background: true });
 
-    imgLoad.on('done', function (instance, image) {
+    imgLoad.on('done', function(instance, image) {
       document.querySelector('.skel-pro-single').classList.add('loaded');
     });
   }, [productId]);
@@ -85,3 +86,5 @@ export default function CenteredProduct(props) {
     </>
   );
 }
+
+export default withSingleProduct(CenteredProduct);

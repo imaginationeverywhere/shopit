@@ -9,6 +9,7 @@ import Breadcrumb from '../../common/breadcrumb';
 import QuickView from '../../features/product/common/quickview';
 
 import { productGallery } from '../../../utils';
+import withSingleProduct from '../../../utils/withSingleProduct';
 
 function SingleProduct(props) {
   let productId = props.match.params.id;
@@ -25,7 +26,7 @@ function SingleProduct(props) {
 
     let imgLoad = imagesLoaded('.product-gallery', { background: true });
 
-    imgLoad.on('done', function (instance, image) {
+    imgLoad.on('done', function(instance, image) {
       for (let i = 0; i < skelItems.length; i++) {
         skelItems[i].classList.add('loaded');
       }
@@ -107,4 +108,4 @@ function SingleProduct(props) {
   );
 }
 
-export default SingleProduct;
+export default withSingleProduct(SingleProduct);

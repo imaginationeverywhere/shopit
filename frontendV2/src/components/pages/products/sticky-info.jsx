@@ -8,8 +8,9 @@ import RelatedProducts from './partials/related-products';
 import MediaThree from './partials/media/media-three';
 import DetailTwo from './partials/details/detail-two';
 import { setStickyValues } from '../../../utils';
+import withSingleProduct from '../../../utils/withSingleProduct';
 
-export default function StickyInfo(props) {
+function StickyInfo(props) {
   let productId = props.match.params.id;
 
   useEffect(() => {
@@ -17,7 +18,7 @@ export default function StickyInfo(props) {
 
     let imgLoad = imagesLoaded('.product-gallery', { background: true });
 
-    imgLoad.on('done', function (instance, image) {
+    imgLoad.on('done', function(instance, image) {
       document.querySelector('.skel-pro-single').classList.add('loaded');
       setStickyValues(120);
     });
@@ -86,3 +87,5 @@ export default function StickyInfo(props) {
     </>
   );
 }
+
+export default withSingleProduct(StickyInfo);

@@ -1,23 +1,85 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './ImageHandler.scss';
-import { useState } from 'react';
 import PlusIconNew from '../../../ProductCreate/SVGs/PlusIconNew';
 // import { useToastFuncs } from '../../context/ToastContexts';
 import Trash from '../../../ProductCreate/SVGs/Trash';
-import { useEffect } from 'react';
+import { toast } from 'react-toastify';
+import {
+  addProductImage,
+  updateProductImage,
+  deleteProductImage,
+} from '../../../../../api';
+const loadingGif =
+  'https://res.cloudinary.com/dflmq4zxb/image/upload/v1641046969/loaderGif_um59qb.gif';
 
-const ImageHandler = ({ image, setImage, name, primary }) => {
+const ImageLoading = () => (
+  <img className="loading-img" src={loadingGif} alt="product loading pic" />
+);
+
+const ImageHandler = ({
+  image,
+  setImage,
+  name,
+  primary,
+  productId,
+  refetch,
+}) => {
   const [localImageUrl, setLocalImageUrl] = useState(null);
   const [dragging, setDragging] = useState(false);
+  const [isImageUploading, setIsImageUploading] = useState(false);
   // const Toast = useToastFuncs();
-
-  const loadFilePath = async (file) => {
-    const readPath = new FileReader();
-    readPath.readAsDataURL(file);
-    readPath.onload = (e) => setLocalImageUrl(e.target.result);
+  const withLoading = async func => {
+    setIsImageUploading(true);
+    try {
+      await func();
+    } catch (error) {
+      // log error
+      console.log(error);
+      toast.error(error.message);
+    }
+    setIsImageUploading(false);
   };
 
-  const validateFile = (files) => {
+  const createProductImage = async file => {
+    const formData = new FormData();
+    formData.append('productImage', file);
+    formData.append('name', name);
+    const response = await addProductImage({
+      productId,
+      body: formData,
+    });
+    if (response?.data) {
+      const data = response.data.imageObj;
+      console.log(data);
+      setImage(name, data);
+    }
+  };
+
+  const modifyProductImage = async file => {
+    const formData = new FormData();
+    formData.append('productImage', file);
+    formData.append('imagePublicId', image.publicId);
+    const response = await updateProductImage({
+      productId,
+      body: formData,
+    });
+
+    if (response?.data) {
+      const imgObj = response.data.imageObj;
+      setImage(name, imgObj);
+    }
+  };
+
+  const removeImage = async () => {
+    await deleteProductImage({
+      productId,
+      body: { imagePublicId: image.publicId },
+    });
+    setImage(name, null);
+    setLocalImageUrl(null);
+  };
+
+  const validateFile = files => {
     const [imgFile] = files;
     const { size, type } = imgFile;
     const threeMB = 3000000;
@@ -30,34 +92,40 @@ const ImageHandler = ({ image, setImage, name, primary }) => {
     return false;
   };
 
-  const handleChange = (event) => {
+  const loadFilePath = async pictureFile => {
+    console.log(image?.url);
+    image?.url
+      ? await withLoading(() => modifyProductImage(pictureFile))
+      : await withLoading(() => createProductImage(pictureFile));
+    refetch();
+  };
+  const handleChange = event => {
     const [pictureFile] = event.target.files;
-    setImage(name, pictureFile);
     loadFilePath(pictureFile);
   };
 
-  const handleDragOver = (e) => {
+  const handleDragOver = e => {
     e.preventDefault();
     e.stopPropagation();
     if (e.dataTransfer.files) {
       !dragging && setDragging(true);
     }
   };
-  const handleDragEnter = (e) => {
+  const handleDragEnter = e => {
     e.preventDefault();
     e.stopPropagation();
     if (e.dataTransfer.files) {
       !dragging && setDragging(true);
     }
   };
-  const handleDragLeave = (e) => {
+  const handleDragLeave = e => {
     e.preventDefault();
     e.stopPropagation();
     if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
       dragging && setDragging(false);
     }
   };
-  const handleDrop = (e) => {
+  const handleDrop = e => {
     e.preventDefault();
     e.stopPropagation();
     dragging && setDragging(false);
@@ -66,7 +134,7 @@ const ImageHandler = ({ image, setImage, name, primary }) => {
       const newImg = validateFile(files);
       if (newImg) {
         loadFilePath(newImg);
-        setImage(name, newImg);
+        // setImage(name, newImg);
       }
       e.dataTransfer.clearData();
     }
@@ -77,15 +145,17 @@ const ImageHandler = ({ image, setImage, name, primary }) => {
         <label
           htmlFor={`${name}_changePhoto`}
           className={`upload-here flexed-column-center ${
-            dragging ? 'drag' : localImageUrl || image ? '' : 'opace-sect'
+            dragging ? 'drag' : image ? '' : 'opace-sect'
           }`}
           onDrop={handleDrop}
           onDragEnter={handleDragEnter}
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
         >
-          {image ? (
-            <img src={localImageUrl || image} alt="product pic" />
+          {isImageUploading ? (
+            <ImageLoading />
+          ) : image?.url ? (
+            <img loading="lazy" src={image?.url} alt="product pic" />
           ) : (
             <div className="drag-here flexed-column-center">
               {primary && <span>Primary image</span>}
@@ -105,10 +175,7 @@ const ImageHandler = ({ image, setImage, name, primary }) => {
       </>
       {image && (
         <div
-          onClick={() => {
-            setImage(name, null);
-            setLocalImageUrl(null);
-          }}
+          onClick={() => withLoading(removeImage)}
           className="delete-btn flexed-center"
         >
           <Trash color="#C8372D" />

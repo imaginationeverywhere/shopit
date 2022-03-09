@@ -1,5 +1,8 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+// import 'mdbreact/dist/css/mdb.css';
+
+import Loader from '../../Loader';
 import {
   getCarriers,
   setSelectedCarrier,
