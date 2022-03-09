@@ -24,7 +24,7 @@ app.use(
       'Access-Control-Allow-Headers',
       'Content-Type',
     ],
-    origin: 'http://localhost:3000',
+    origin: 'http://localhost:3001',
   }),
 );
 

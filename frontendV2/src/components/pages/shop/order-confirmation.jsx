@@ -15,6 +15,7 @@ import { getOrderDetails } from '../../../actions/orderActions';
 import LoadingOverlay from '../../features/loading-overlay';
 
 import initStripe from '../../../utils/stripe';
+import { toast } from 'react-toastify';
 
 const stripe = initStripe();
 const API_URL = process.env.REACT_APP_API_URL;
@@ -50,7 +51,6 @@ function OrderConfirmation(props) {
     stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
       if (paymentIntent.status === 'succeeded') {
         //finalize payment
-        console.log(paymentIntent);
         (async () => {
           const config = {
             headers: {
@@ -65,6 +65,16 @@ function OrderConfirmation(props) {
           setOrderDetails(orderDetails);
           setIsLoading(false);
           dispatch(refreshStore());
+
+          toast.success("Order created successfully", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          })
         })();
       } else {
         //show payment error

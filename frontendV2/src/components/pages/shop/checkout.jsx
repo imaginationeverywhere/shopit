@@ -1,39 +1,77 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet';
 
-import { useSelector } from 'react-redux';
 // import Custom Components
 import PageHeader from '../../common/page-header';
 import Breadcrumb from '../../common/breadcrumb';
-import Accordion from '../../features/accordion/accordion';
-import Card from '../../features/accordion/card';
 
 import { getCartTotal } from '../../../services';
-import CarrierList from './Carrierlist';
+import BillingDetails from '../../features/checkout/billing-details';
+import { createDraftOrder } from '../../../actions/orderActions';
+import { toast } from 'react-toastify';
 
 function Checkout(props) {
-  const {
-    selectedCarrier = {},
-    cartlist: { cart },
-  } = useSelector((store) => store);
-  const cartlist = cart;
-  const total = getCartTotal(cart);
-  const [shippingPrice, setShippingPrice] = useState(
-    parseFloat(selectedCarrier.amount_local) || 0,
-  );
+  const dispatch = useDispatch();
+  const { order: orders } = useSelector((store) => store);
+  const { cartlist, total, order } = props;
 
-  const taxPrice = Number((0.05 * total).toFixed(2));
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [extras, setExtras] = useState('');
+  const [state, setState] = useState('CA');
+  const [city, setCity] = useState('');
+  const [street1, setStreet1] = useState('');
+  const [street2, setStreet2] = useState('');
+  const [zip, setZip] = useState('');
+  const [error, setError] = useState('');
+  const [showError, setShowError] = useState(false);
+
+  const shippingPrice = { free: 0, standard: 10, express: 20 };
+  const shippingObj = {
+    free: 'Free shipping',
+    standard: 'Standard',
+    express: 'Express',
+  };
+
+  const removeURLParameter = (url, parameter) => {
+    const urlparts = url.split('?');
+    if (urlparts.length >= 2) {
+
+        const prefix = encodeURIComponent(parameter) + '=';
+        const pars = urlparts[1].split(/[&;]/g);
+
+        //reverse iteration as may be destructive
+        for (let i = pars.length; i-- > 0;) {
+            if (pars[i].lastIndexOf(prefix, 0) !== -1) {
+                pars.splice(i, 1);
+            }
+        }
+
+        return urlparts[0] + (pars.length > 0 ? '?' + pars.join('&') : '');
+    }
+    return url;
+  }
+
+  const removeURLParameters = (url, parameters ) =>  {
+    parameters.forEach(parameter => {
+      url = removeURLParameter(url, parameter)
+    })
+    return url
+  }
   useEffect(() => {
     let item = document.querySelector('#checkout-discount-input');
 
-    var opactiyEffect = function(e) {
+    var opactiyEffect = function (e) {
       e.currentTarget.parentNode
         .querySelector('label')
         .setAttribute('style', 'opacity: 0');
     };
 
-    var blurEffect = function(e) {
+    var blurEffect = function (e) {
       let $this = e.currentTarget;
       if ($this.length !== 0) {
         $this.parentNode
@@ -56,11 +94,94 @@ function Checkout(props) {
       item.removeEventListener('blur', blurEffect);
     };
   }, []);
-  useEffect(() => {
-    if (selectedCarrier.amount_local) {
-      setShippingPrice(parseFloat(selectedCarrier.amount_local));
+
+  const validateFields = () => {
+    if (
+      !firstName ||
+      !lastName ||
+      !email ||
+      !phone ||
+      !extras ||
+      !state ||
+      !city ||
+      !street1 ||
+      !zip
+    ) {
+      setError('Kindly complete all required fields');
+      return false;
     }
-  }, [selectedCarrier]);
+    //check email to be sure it's correct
+    if (
+      String(email)
+        .toLowerCase()
+        .match(
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+        )
+    ) {
+      return true;
+    }
+    setError('Invalid email entered');
+    return false;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setShowError(false);
+    setError('');
+
+    if (!validateFields) {
+      setShowError(true);
+      return false;
+    }
+
+    // create draft order and generate checkout ID.
+    const orderObject = {
+      orderItems: {
+        product: '61c8e78a877763645c790268',
+        quantity: 2,
+      },
+      shippingInfo: {
+        street1,
+        street2,
+        city,
+        state,
+        zip,
+        country: 'US',
+        phone,
+        email,
+      },
+      totalPrice: total,
+      userDetails: {
+        fullname: firstName + ' ' + lastName,
+        email,
+        phone,
+      },
+    };
+
+    dispatch(createDraftOrder(orderObject));
+  };
+
+  useEffect(() => {
+    if (order.order && order.order.orderId) {
+      props.history.push(`/shop/shipping/${order.order.orderId}`);
+    }
+  }, [order.order]);
+
+  useEffect(() => {
+    if (orders.error) {
+      toast.error(orders.error, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
+    }
+  }, [orders.error])
+
+
   return (
     <>
       <Helmet>
@@ -92,106 +213,20 @@ function Checkout(props) {
                   </label>
                 </form>
               </div>
-
-              <form action="#">
+              <form action="#" onSubmit={handleSubmit}>
                 <div className="row">
-                  <div className="col-lg-9">
-                    <h2 className="checkout-title">Billing Details</h2>
-                    <div className="row">
-                      <div className="col-sm-6">
-                        <label>First Name *</label>
-                        <input type="text" className="form-control" required />
-                      </div>
-
-                      <div className="col-sm-6">
-                        <label>Last Name *</label>
-                        <input type="text" className="form-control" required />
-                      </div>
-                    </div>
-
-                    <label>Company Name (Optional)</label>
-                    <input type="text" className="form-control" />
-
-                    <label>Country *</label>
-                    <input type="text" className="form-control" required />
-
-                    <label>Street address *</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="House number and Street name"
-                      required
-                    />
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Appartments, suite, unit etc ..."
-                      required
-                    />
-
-                    <div className="row">
-                      <div className="col-sm-6">
-                        <label>Town / City *</label>
-                        <input type="text" className="form-control" required />
-                      </div>
-
-                      <div className="col-sm-6">
-                        <label>State / County *</label>
-                        <input type="text" className="form-control" required />
-                      </div>
-                    </div>
-
-                    <div className="row">
-                      <div className="col-sm-6">
-                        <label>Postcode / ZIP *</label>
-                        <input type="text" className="form-control" required />
-                      </div>
-
-                      <div className="col-sm-6">
-                        <label>Phone *</label>
-                        <input type="tel" className="form-control" required />
-                      </div>
-                    </div>
-
-                    <label>Email address *</label>
-                    <input type="email" className="form-control" required />
-
-                    <div className="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        className="custom-control-input"
-                        id="checkout-create-acc"
-                      />
-                      <label
-                        className="custom-control-label"
-                        htmlFor="checkout-create-acc"
-                      >
-                        Create an account?
-                      </label>
-                    </div>
-
-                    <div className="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        className="custom-control-input"
-                        id="checkout-diff-address"
-                      />
-                      <label
-                        className="custom-control-label"
-                        htmlFor="checkout-diff-address"
-                      >
-                        Ship to a different address?
-                      </label>
-                    </div>
-
-                    <label>Order notes (optional)</label>
-                    <textarea
-                      className="form-control"
-                      cols="30"
-                      rows="4"
-                      placeholder="Notes about your order, e.g. special notes for delivery"
-                    ></textarea>
-                  </div>
+                  <BillingDetails
+                    setFirstName={setFirstName}
+                    setLastName={setLastName}
+                    setEmail={setEmail}
+                    setPhone={setPhone}
+                    setExtras={setExtras}
+                    setState={setState}
+                    setCity={setCity}
+                    setStreet1={setStreet1}
+                    setStreet2={setStreet2}
+                    setZip={setZip}
+                  />
 
                   <aside className="col-lg-3">
                     <div className="summary">
@@ -230,32 +265,16 @@ function Checkout(props) {
                               })}
                             </td>
                           </tr>
-                          <tr className="summary-shipping">
-                            <td>Shipping</td>
-                            <td>&nbsp;</td>
-                          </tr>
-
                           <tr>
-                            <td colSpan="2">
-                              <CarrierList />
-                            </td>
-                          </tr>
-                          <tr className="summary-shipping">
-                            <td>Tax:</td>
-                            <td> ${taxPrice}</td>
-                          </tr>
-                          <tr className="summary-shipping">
                             <td>Shipping:</td>
-                            <td> ${shippingPrice}</td>
+                            <td>.......</td>
                           </tr>
                           <tr className="summary-total">
                             <td>Total:</td>
                             <td>
                               $
                               {(
-                                total +
-                                shippingPrice +
-                                taxPrice
+                                total + shippingPrice[props.shipping]
                               ).toLocaleString(undefined, {
                                 minimumFractionDigits: 2,
                                 maximumFractionDigits: 2,
@@ -265,54 +284,13 @@ function Checkout(props) {
                         </tbody>
                       </table>
 
-                      <Accordion type="checkout">
-                        <Card title="Direct bank transfer" expanded={true}>
-                          Make your payment directly into our bank account.
-                          Please use your Order ID as the payment reference.
-                          Your order will not be shipped until the funds have
-                          cleared in our account.
-                        </Card>
-
-                        <Card title="Check payments">
-                          Ipsum dolor sit amet, consectetuer adipiscing elit.
-                          Donec odio. Quisque volutpat mattis eros. Nullam
-                          malesuada erat ut turpis.
-                        </Card>
-
-                        <Card title="Cash on delivery">
-                          Quisque volutpat mattis eros. Lorem ipsum dolor sit
-                          amet, consectetuer adipiscing elit. Donec odio.
-                          Quisque volutpat mattis eros.
-                        </Card>
-
-                        <Card title="PayPal">
-                          <small className="float-right paypal-link">
-                            What is PayPal?
-                          </small>
-                          Nullam malesuada erat ut turpis. Suspendisse urna
-                          nibh, viverra non, semper suscipit, posuere a, pede.
-                          Donec nec justo eget felis facilisis fermentum.
-                        </Card>
-
-                        <Card title="Credit Card (Stripe)">
-                          <img
-                            src={`${process.env.PUBLIC_URL}/assets/images/payments-summary.png`}
-                            alt="payments cards"
-                          />
-                          Donec nec justo eget felis facilisis fermentum.Lorem
-                          ipsum dolor sit amet, consectetuer adipiscing elit.
-                          Donec odio. Quisque volutpat mattis eros. Lorem ipsum
-                          dolor sit ame.
-                        </Card>
-                      </Accordion>
-
                       <button
                         type="submit"
                         className="btn btn-outline-primary-2 btn-order btn-block"
+                        disabled={order.loading}
                       >
-                        <span className="btn-text">Place Order</span>
-                        <span className="btn-hover-text">
-                          Proceed to Checkout
+                        <span className=" ">
+                          {order.loading ? 'Loading...' : 'Proceed to payment'}
                         </span>
                       </button>
                     </div>
@@ -327,4 +305,11 @@ function Checkout(props) {
   );
 }
 
-export default Checkout;
+export const mapStateToProps = (state) => ({
+  cartlist: state.cartlist.cart,
+  total: getCartTotal(state.cartlist.cart),
+  order: state.order,
+  shipping: state.cartlist.shipping,
+});
+
+export default connect(mapStateToProps)(Checkout);

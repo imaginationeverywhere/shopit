@@ -12,6 +12,7 @@ import Checkout from '../components/pages/shop/checkout';
 import Market from '../components/pages/shop/market';
 import CompleteCheckout from '../components/pages/shop/complete-checkout';
 import OrderConfirmation from '../components/pages/shop/order-confirmation';
+import selectShipping from 'components/pages/shop/select-shipping';
 
 export default function ShopRoute() {
   return (
@@ -56,6 +57,11 @@ export default function ShopRoute() {
           exact
           path={`${process.env.PUBLIC_URL}/shop/checkout`}
           component={Checkout}
+        />
+        <Route
+          exact
+          path={`${process.env.PUBLIC_URL}/shop/shipping/:orderId`}
+          component={selectShipping}
         />
         <Route
           exact

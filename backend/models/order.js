@@ -6,6 +6,10 @@ const orderSchema = mongoose.Schema({
       type: String,
       required: true,
     },
+    street1: {
+      type: String,
+      default: ''
+    },
     state: {
       type: String,
       required: true,
@@ -32,6 +36,11 @@ const orderSchema = mongoose.Schema({
     },
   },
   shipments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Shipment' }],
+  selectedCarrier: {
+    carrierId: String,
+    shipmentId: String,
+    serviceLevelToken: String
+  },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,

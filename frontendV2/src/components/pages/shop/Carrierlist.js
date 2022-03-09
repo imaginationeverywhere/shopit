@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import {
   getCarriers,
   setSelectedCarrier,
@@ -18,25 +19,28 @@ const addressFrom = {
   email: 'shippotle@goshippo.com',
 };
 
-const addressTo = {
-  name: 'Mr Hippo',
-  company: '',
-  street1: 'Broadway 1',
-  street2: '',
-  city: 'New York',
-  state: 'NY',
-  zip: '10007',
-  country: 'US',
-  phone: '+1 555 341 9393',
-  email: 'mrhippo@goshippo.com',
-  metadata: 'Hippos dont lie',
-};
+// const addressTo = {
+//   name: 'Mr Hippo',
+//   company: '',
+//   street1: 'Broadway 1',
+//   street2: '',
+//   city: 'New York',
+//   state: 'NY',
+//   zip: '10007',
+//   country: 'US',
+//   phone: '+1 555 341 9393',
+//   email: 'mrhippo@goshippo.com',
+//   metadata: 'Hippos dont lie',
+// };
 
-const CarrierList = () => {
+const CarrierList = ({ addressTo }) => {
+
+  if (!addressTo) return null;
   const dispatch = useDispatch();
+
   const {
     cartlist: { cart },
-    carriers: { data: carriers, loading = true } = {},
+    carriers: { data: carriers, loading = true, showError } = {},
     selectedCarrier = {},
   } = useSelector((store) => store);
 
@@ -92,6 +96,19 @@ const CarrierList = () => {
         }),
       });
     }
+    if (showError && !carriers.length) {
+      toast.error("No shipping available for your location. Please use a different address.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
+
+
+    }
   }, [carriers]);
   const handleCheckboxClick = (selectedCarrier) => {
     dispatch(setSelectedCarrier(selectedCarrier));
@@ -106,8 +123,7 @@ const CarrierList = () => {
           <Table
             tableData={dataTable}
             checkbox
-            paginated
-            perPage={10}
+            paginated={false}
             handleCheckboxClick={handleCheckboxClick}
             selectedRow={selectedCarrier}
           />

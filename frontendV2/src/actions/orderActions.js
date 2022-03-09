@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { axiosInstance } from '../api';
 
 import {
   CREATE_DRAFT_ORDER_REQUEST,
@@ -20,6 +21,9 @@ import {
   DELETE_ORDER_SUCCESS,
   DELETE_ORDER_FAIL,
   CLEAR_ERRORS,
+  UPDATE_ORDER_SHIPPING_REQUEST,
+  UPDATE_ORDER_SHIPPING_SUCCESS,
+  UPDATE_ORDER_SHIPPING_FAIL,
 } from '../constants/orderConstants';
 
 const API_URL = process.env.REACT_APP_API_URL;
@@ -45,6 +49,34 @@ export const createDraftOrder = (order) => async (dispatch, getState) => {
     });
   }
 };
+
+export const updateOrderShipping = (orderId, selectedCarrier, shippingPrice) => async (dispatch, getState) => {
+  try {
+    dispatch({ type: UPDATE_ORDER_SHIPPING_REQUEST });
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    const param = {
+      orderId,
+      selectedCarrier,
+      shippingPrice
+    }
+    const { data } = await axiosInstance.post('order/update-shipping', param, config);
+
+    dispatch({
+      type: UPDATE_ORDER_SHIPPING_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: UPDATE_ORDER_SHIPPING_FAIL,
+      payload: error.response.data.message,
+    });
+  }
+};
+
 
 // Get curretly logged in user orders
 export const myOrders = () => async (dispatch) => { };

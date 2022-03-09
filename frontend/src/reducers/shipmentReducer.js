@@ -8,12 +8,13 @@ import {
 const carriers = (state = { data: [] }, action) => {
   switch (action.type) {
     case GET_SHIPMENT_CARRIERS_REQUEST:
-      return { ...state, loading: true };
+      return { ...state, loading: true, showError: false };
     case GET_SHIPMENT_CARRIERS_SUCCESS:
       const updatedCarrier = {
         ...state,
         data: action.payload.carriers,
         loading: false,
+        showError: action.payload.carriers.length < 0 
       };
       localStorage.setItem('carriers', JSON.stringify(updatedCarrier));
       return updatedCarrier;
